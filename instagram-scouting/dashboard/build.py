@@ -54,7 +54,7 @@ def build_page(handle):
     page = dict(profile=s.PROFILE, median=median, counted=len(base), reels=reels, concepts=concepts,
                 snapshots=[dict(at=x["at"], approx=x["approx"], n=len(x["views"])) for x in s.SNAPSHOTS], growth=growth,
                 findings=json.loads((OUT / handle / "findings.json").read_text(encoding="utf-8")))
-    (OUT / handle / "page.json").write_text(json.dumps(page, indent=1, ensure_ascii=False), encoding="utf-8")
+    (OUT / handle / "page.json").write_text(json.dumps(page, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
     return page
 
 def main():

@@ -139,10 +139,11 @@ class Desk:
     OWN = ["instagram-scouting/input/queue.json", "instagram-scouting/output/desk-status.json", "instagram-scouting/output/cli-status.json", "instagram-scouting/input/cli-queue.json"]
 
     def own_paths(self):
-        return self.OWN + [str(p.relative_to(self.repo)).replace("\\", "/") for p in (self.root / "output").glob("*/cli/*.json")]
+        # page.json is rebuilt on this computer every time the dashboard is built (new transcripts change it), so it counts as this app's file too
+        return self.OWN + [str(p.relative_to(self.repo)).replace("\\", "/") for pat in ("*/cli/*.json", "*/page.json") for p in (self.root / "output").glob(pat)]
 
     def is_own(self, path):
-        return path in self.OWN or bool(re.fullmatch(r"instagram-scouting/output/[^/]+/cli/[^/]+\.json", path))
+        return path in self.OWN or bool(re.fullmatch(r"instagram-scouting/output/[^/]+/(cli/[^/]+|page)\.json", path))
 
     def pull(self):
         """Bring in what others pushed without ever mixing files by guesswork.
