@@ -21,3 +21,7 @@ Limits for one run: at most 2 pages looked at and 3 batches queued; pace as the 
 
 Finish
 Run python3 tarot-talk/dashboard/build.py to confirm it builds (do not commit index.html). Update your session card. Commit only the files you changed, pull with rebase, push to main; if the push is refused, say so. Report in at most 6 lines: items done, pages looked at, reels queued for the desktop app, checks recorded, what the reviewer said, and what is waiting on the owner.
+
+## What a forwarded link is for
+
+Links arrive with purpose "auto" (from the phone shortcut, the web page or the app). The owner does not sort them. After reading the item, decide yourself whether it is content research (what a page posts and why it works) or process research (a method: funnel, script technique, tool), set `purpose` to "content" or "process" on the queue item, and file the finding in the matching place (a profile's findings, or the Process list and Playbook).

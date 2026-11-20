@@ -224,3 +224,7 @@ A finding or a borrowed idea is shown as verified only when all of these are rec
 3. Fits how Sakshi speaks (her call).
 4. An independent reviewer agrees.
 Record each check on the India-fit board (`strategy.transfer` in `tarot-talk/dashboard/workspace.json`). Until then the board says "not checked".
+
+## What a forwarded link is for
+
+Links arrive with purpose "auto" (from the phone shortcut, the web page or the app). The owner does not sort them. After reading the item, decide yourself whether it is content research (what a page posts and why it works) or process research (a method: funnel, script technique, tool), set `purpose` to "content" or "process" on the queue item, and file the finding in the matching place (a profile's findings, or the Process list and Playbook).

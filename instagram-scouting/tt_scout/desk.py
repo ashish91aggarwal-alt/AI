@@ -238,7 +238,7 @@ class Desk:
             req_ = parse_request(it["title"] + "\n" + body)
             if not req_:
                 continue
-            found.append({**req_, "n": int(it["number"]), "purpose": "process" if field(body, "purpose").lower().startswith("process") else "content",
+            found.append({**req_, "n": int(it["number"]), "purpose": (field(body, "purpose").lower() if field(body, "purpose").lower() in ("content", "process") else "auto"),   # auto: the agent decides after reading
                           "scoutProfile": field(body, "profile", "yes").lower().startswith("y") and req_["kind"] in ("reel", "post"),
                           "by": field(body, "by", who)[:40], "note": field(body, "note")[:300], "asked": str(it.get("created_at", ""))[:16].replace("T", " ") + " UTC"})
         return found
@@ -253,7 +253,7 @@ class Desk:
                 wr(self.qfile, q); self.log(f"{added} new request(s) from the dashboard queue.")
         return added
 
-    def add_local(self, text, purpose="content", by="desktop", note="", profile=None):
+    def add_local(self, text, purpose="auto", by="desktop", note="", profile=None):
         """Returns "added", "duplicate" or None (not an Instagram link)."""
         r = parse_request(text)
         if not r:
@@ -416,7 +416,7 @@ class App:
         if name == "pause":
             d.paused = not d.paused; self.say("Paused." if d.paused else "Resumed."); self.wake.set(); return "Paused." if d.paused else "Resumed."
         if name == "add":
-            got = d.add_local(str(a.get("text", ""))[:400], purpose="process" if a.get("purpose") == "process" else "content", by=str(a.get("by", "desktop"))[:40],
+            got = d.add_local(str(a.get("text", ""))[:400], purpose=a.get("purpose") if a.get("purpose") in ("content", "process") else "auto", by=str(a.get("by", "desktop"))[:40],
                               note=str(a.get("note", "")), profile=bool(a["profile"]) if "profile" in a else None)
             if not got: return "!That is not an Instagram reel, post or page link."
             if got == "duplicate": return "That link is already waiting in the queue. Nothing was added."
