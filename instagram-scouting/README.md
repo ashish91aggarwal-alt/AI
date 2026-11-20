@@ -28,7 +28,7 @@ Until step 2 has run and pushed, the dashboard marks transcripts and audio as "w
 
 ## Desktop app (Tarot Talk Desk) and command line
 
-One package, two commands: `tt-desk` (the window) and `tt-scout` (the command line).
+One package. The desktop app is the main place: the Desktop shortcut runs `pythonw -m tt_scout.desk`, which opens the whole workspace in its own window with a Desk tab (tools, queue, add a link, work log, every command as a button). The same steps exist on the command line as `python -m tt_scout check|queue|run|push`. Windows may block the small `tt-desk.exe` / `tt-scout.exe` starters because they are unsigned; starting through Python avoids that.
 
 Install on the PC, from inside your clone of the AI repo:
 
@@ -41,7 +41,7 @@ It installs the package (with yt-dlp and faster-whisper), and puts a "Tarot Talk
 How the three parts talk, with no agent carrying data:
 
 1. Dashboard: "Forward a link" opens a prefilled GitHub issue titled `scout: <link>`.
-2. Desk (window open on the PC): every 3 minutes it pulls the repo and reads open issues from the accounts in `desk-config.json` (`allowed_users`). For a reel it fetches the sound, writes transcript, audio numbers and public counters, deletes the file, updates `input/queue.json` and `output/`, commits and pushes. A page request is marked "needs agent".
+2. Desk (app running on the PC; it keeps working after its window is closed, until Quit): every 3 minutes it pulls the repo and reads open issues from the accounts in `desk-config.json` (`allowed_users`). For a reel it fetches the sound, writes transcript, audio numbers and public counters, deletes the file, updates `input/queue.json` and `output/`, commits and pushes. A page request is marked "needs agent".
 3. GitHub Action (`.github/workflows/dashboard.yml`): rebuilds the dashboard page and publishes it with GitHub Pages on every push.
 4. Agent (a Claude session, when asked): pulls the repo, studies what is "ready for agent" or "needs agent", updates findings, sets the request to `done`.
 

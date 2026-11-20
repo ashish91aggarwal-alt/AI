@@ -67,7 +67,7 @@ function inbox() {
       const body = ["link: " + (p.url || p.target), "purpose: " + state.purpose, "profile: " + (profile ? "yes" : "no"), "by: " + by, note ? "note: " + note : ""].filter(Boolean).join("\n");
       const url = "https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + (p.url || p.target)) + "&body=" + encodeURIComponent(body);
       if (p.kind === "topic") { msg.textContent = "Topic search is not built yet. Paste a reel or page link."; return; }
-      if (LOCAL) { const r = await api("add", { text: p.url || p.target, purpose: state.purpose, by }); msg.textContent = r.msg + (r.ok ? " Watch it on the Desk tab." : ""); if (r.ok) $("#target").value = ""; return; }
+      if (LOCAL) { const r = await api("add", { text: p.url || p.target, purpose: state.purpose, by, note, profile }); msg.textContent = r.msg + (r.ok ? " Watch it on the Desk tab." : ""); if (r.ok) $("#target").value = ""; return; }
       $("#gobox").hidden = false; $("#golink").href = url; msg.textContent = "One more tap: the button below opens GitHub with the request filled in. Press \"Submit new issue\" there. It is picked up within a few minutes if the PC is on with the Tarot Talk Desk app open, and only when sent from a GitHub account on the app's allowed list.";
     } },
     h("label", { for: "target" }, "Reel link, page link, @handle or topic", h("input", { id: "target", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
@@ -209,26 +209,26 @@ function vProfile() {
 /* ---------- desk: only inside the desktop app. Every command the computer can do, as buttons. ---------- */
 const LOCAL = window.TT_LOCAL || null;
 async function api(name, body) {
-  try { const r = await fetch("/api/" + name, { method: "POST", headers: { "Content-Type": "application/json", "X-TT-Token": LOCAL.token }, body: JSON.stringify(body || {}) }); const j = await r.json(); poll(); return j; }
+  try { const r = await fetch("/api/" + name, { method: "POST", headers: { "Content-Type": "application/json", "X-TT-Token": LOCAL.token }, body: JSON.stringify(body || {}) }); if (!r.ok) return { ok: false, msg: "The app was restarted. Reload this window (Ctrl+R) and try again." }; const j = await r.json(); poll(); return j; }
   catch (e) { return { ok: false, msg: "The desktop app is not answering. Start it again from the Desktop shortcut." }; }
 }
 let deskSig = "";
 async function poll() {
   if (!LOCAL) return;
-  try { const r = await fetch("/api/state", { headers: { "X-TT-Token": LOCAL.token } }); state.desk = await r.json(); state.deskDown = false; } catch (e) { state.deskDown = true; }
+  try { const r = await fetch("/api/state", { headers: { "X-TT-Token": LOCAL.token } }); if (!r.ok) throw new Error("stale"); state.desk = await r.json(); state.deskDown = false; } catch (e) { state.deskDown = true; }
   const sig = JSON.stringify(state.desk || {}) + state.deskDown, a = document.activeElement;
   if (sig !== deskSig && route().tab === "desk" && !(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName))) { deskSig = sig; const y = scrollY; render(); scrollTo(0, y); }
 }
 function vDesk() {
   const s = state.desk;
-  if (state.deskDown) return [card("", h("h3", {}, "The desktop app has stopped"), h("p", { class: "sub" }, "Start it again from the Tarot Talk Desk shortcut on the Desktop, then reload this window."))];
+  if (state.deskDown) return [card("", h("h3", {}, "This window lost touch with the app"), h("p", { class: "sub" }, "If the app was restarted, reload this window. If it was closed, start it again from the Tarot Talk Desk shortcut on the Desktop."), h("button", { type: "button", class: "dbtn hot", onclick: () => location.reload() }, "Reload"))];
   if (!s) return [h("p", { class: "sub" }, "Connecting to the desktop app ...")];
   const say = h("div", { class: "msg", role: "status" }, state.deskMsg || "");
   const run = (name, body, wait) => async e => { const b = e.currentTarget; b.disabled = true; if (wait) say.textContent = wait; const r = await api(name, body); state.deskMsg = r.msg; say.textContent = r.msg; b.disabled = false; };
   const btn = (t, fn, cls) => h("button", { type: "button", class: "dbtn " + (cls || ""), onclick: fn }, t);
   const waiting = s.queue.filter(x => x.state === "queued" || x.state === "working").length, forAgent = s.queue.filter(x => x.state === "ready-for-agent" || x.state === "needs-agent").length;
   const light = s.paused ? ["Paused", "wait"] : s.busy ? ["Working", "acc"] : ["Watching the queue", "good"];
-  const gh = s.sync_failed ? ["Not syncing", "bad"] : s.last_ok ? ["Synced " + s.last_ok.slice(11), "good"] : ["Not synced yet", "wait"];
+  const gh = s.sync_failed ? ["Not in sync", "bad"] : s.last_ok ? ["In sync " + s.last_ok.slice(11), "good"] : ["Not checked yet", "wait"];
   const node = (title, st, line) => h("div", { class: "dnode" }, h("b", {}, title), pill(st[0], st[1]), h("span", {}, line));
   const addBox = h("form", { class: "req", onsubmit: async e => { e.preventDefault(); const r = await api("add", { text: $("#dlink").value, purpose: $("#dpurpose").value }); state.deskMsg = r.msg; say.textContent = r.msg; if (r.ok) $("#dlink").value = ""; } },
     h("label", { for: "dlink" }, "Reel link, page link or @handle", h("input", { id: "dlink", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
@@ -237,7 +237,7 @@ function vDesk() {
     s.restart ? card("", h("h3", {}, "An update was downloaded"), h("p", { class: "sub" }, "Quit the app below and start it again from the Desktop shortcut to use the new version.")) : null,
     s.rev !== LOCAL.rev ? card("", h("div", { class: "qrow" }, h("div", {}, h("h3", {}, "New results are in"), h("div", { class: "sub" }, "Reload to see them on the other tabs.")), btn("Reload", () => location.reload(), "hot"))) : null,
     s.broken ? card("", h("h3", {}, "The queue file is damaged"), h("p", { class: "sub" }, s.broken)) : null,
-    h("div", { class: "dflow" }, node("Web dashboard", gh, s.sync_failed ? "GitHub did not accept the last sync. See the work log." : "Sakshi's view. Requests sent there arrive here."), h("i", { "aria-hidden": "true" }, "⇄"),
+    h("div", { class: "dflow" }, node("Web dashboard", gh, s.sync_failed ? (s.sync_note || "The last round did not sync. See the work log.") : "Sakshi's view. Requests sent there arrive here."), h("i", { "aria-hidden": "true" }, "⇄"),
       node("This desktop app", light, waiting + " waiting here · " + s.reels_today + " of " + s.max_reels + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
       node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,

@@ -38,4 +38,4 @@ $desktop = [Environment]::GetFolderPath('Desktop')
 Make-Shortcut (Join-Path $desktop 'Tarot Talk Desk.lnk')
 Write-Host "Shortcut created: $desktop\Tarot Talk Desk.lnk" -ForegroundColor Green
 if ($Startup) { Make-Shortcut (Join-Path ([Environment]::GetFolderPath('Startup')) 'Tarot Talk Desk.lnk'); Write-Host "It will also start with Windows." -ForegroundColor Green }
-Write-Host "Done. Double-click 'Tarot Talk Desk' on the Desktop."
+Write-Host "Done. Double-click 'Tarot Talk Desk' on the Desktop. Everything is done from that window from now on."

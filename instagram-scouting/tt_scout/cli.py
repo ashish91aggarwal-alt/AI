@@ -79,7 +79,7 @@ def load_status():
 
 def save_status(s):
     STATUS.parent.mkdir(parents=True, exist_ok=True)
-    STATUS.write_text(json.dumps(s, indent=1, ensure_ascii=False), encoding="utf-8")
+    tmp = STATUS.with_suffix(".json.tmp"); tmp.write_text(json.dumps(s, indent=1, ensure_ascii=False), encoding="utf-8"); os.replace(tmp, STATUS)
 
 
 def cmd_check(_):
@@ -225,12 +225,18 @@ def cmd_run(a):
 def cmd_push(_):
     repo = ROOT.parent
     paths = [str(p) for p in (OUT, QUEUE) if p.exists()]
-    ident = [] if run(["git", "config", "user.email"], cwd=repo).stdout.strip() else ["-c", "user.name=tarot-talk-desk", "-c", "user.email=tarot-talk-desk@users.noreply.github.com"]
-    for c in (["git", "add", "--"] + paths, ["git", *ident, "commit", "-m", "Scout: command-line results", "--"] + paths, ["git", "push"]):
+    ident = []
+    if not run(["git", "config", "user.email"], cwd=repo).stdout.strip():      # no git name on this computer: use the owner's GitHub no-reply address
+        try: u = (json.loads((ROOT / "desk-config.json").read_text(encoding="utf-8")).get("allowed_users") or [""])[0]
+        except Exception: u = ""
+        if not u:
+            print("git has no name set on this computer. Set one with: git config --global user.email you@example.com"); return 1
+        ident = ["-c", f"user.name={u}", "-c", f"user.email={u}@users.noreply.github.com"]
+    for label, c in (("git add", ["git", "add", "--"] + paths), ("git commit", ["git", *ident, "commit", "-m", "Scout: command-line results", "--"] + paths), ("git push", ["git", "push"])):
         r = run(c, cwd=repo)
-        last = ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-1:] or ["ok"]
-        print(" ".join(c[:2]), "->", last[0])
-        if r.returncode and not (c[1] == "commit" and "nothing to commit" in (r.stdout or "") + (r.stderr or "")):
+        both = (r.stdout or "") + (r.stderr or "")
+        print(label, "->", (both.strip().splitlines()[-1:] or ["ok"])[0])
+        if r.returncode and not (label == "git commit" and ("nothing to commit" in both or "nothing added to commit" in both)):
             print("Stopped: git reported a problem. Nothing further was done."); return 1
     return 0
 
