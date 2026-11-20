@@ -214,28 +214,92 @@
     "state": "held for Chaitra Navratri, 7-15 April 2027"
    }
   ],
-  "common": {
-   "note": "What repeats across the pages studied. With one page scouted, these are leads, not patterns yet. Each line shows how many pages it was seen on.",
+  "transfer": {
+   "note": "Ideas that worked on a page abroad. Nothing here is used until four checks are done: is it already working on Indian pages, is the topic searched in India (Google Trends), does it fit how Sakshi speaks, and has an independent reviewer agreed. None of the checks has been run yet.",
    "items": [
     {
-     "text": "Reels that give a task and a time to come back are where the spikes come from.",
-     "seen": 1
+     "name": "A task with a return date",
+     "from": "@pagetkagy",
+     "proof": "6 reels, 3 of her 4 recent hits",
+     "status": "review",
+     "checks": [
+      {
+       "name": "Indian pages",
+       "result": "not checked",
+       "done": false
+      },
+      {
+       "name": "Trends India",
+       "result": "not checked",
+       "done": false
+      },
+      {
+       "name": "Fits our voice",
+       "result": "yes, without secrecy hooks",
+       "done": true
+      },
+      {
+       "name": "Reviewer",
+       "result": "not yet",
+       "done": false
+      }
+     ]
     },
     {
-     "text": "A two-role skit with a named character is a steady, repeatable format.",
-     "seen": 1
+     "name": "A named character who answers the viewer",
+     "from": "@pagetkagy",
+     "proof": "9 of 28 reels, steady at her median",
+     "status": "review",
+     "checks": [
+      {
+       "name": "Indian pages",
+       "result": "not checked",
+       "done": false
+      },
+      {
+       "name": "Trends India",
+       "result": "not checked",
+       "done": false
+      },
+      {
+       "name": "Fits our voice",
+       "result": "not decided",
+       "done": false
+      },
+      {
+       "name": "Reviewer",
+       "result": "not yet",
+       "done": false
+      }
+     ]
     },
     {
-     "text": "One fixed hook line stays on screen for the whole reel, with captions on every spoken line.",
-     "seen": 1
-    },
-    {
-     "text": "The most-seen reel doubles as the sales page for a paid programme.",
-     "seen": 1
-    },
-    {
-     "text": "Topic alone (money) and a clock in the hook did not separate hits from ordinary reels.",
-     "seen": 1
+     "name": "Top reel as the sales page",
+     "from": "@pagetkagy",
+     "proof": "her most-seen pinned reel sells a paid programme",
+     "status": "review",
+     "checks": [
+      {
+       "name": "Indian pages",
+       "result": "not checked",
+       "done": false
+      },
+      {
+       "name": "Trends India",
+       "result": "does not apply",
+       "done": true
+      },
+      {
+       "name": "Fits our voice",
+       "result": "not decided",
+       "done": false
+      },
+      {
+       "name": "Reviewer",
+       "result": "not yet",
+       "done": false
+      }
+     ]
     }
    ]
   }
@@ -843,11 +907,5 @@
    "One keyword, and what they get",
    9
   ]
- ],
- "cli": {
-  "name": "Tarot Talk Desk + tt-scout",
-  "state": "written, not yet installed on the PC",
-  "install": "cd $HOME\\Documents\ngit clone https://github.com/ashish91aggarwal-alt/AI.git\ncd AI\npowershell -ExecutionPolicy Bypass -File .\\instagram-scouting\\install-desk.ps1",
-  "run": "Double-click \"Tarot Talk Desk\" on the Desktop.\nCommand line, if you prefer:  tt-scout check   tt-scout run   tt-desk --once"
- }
+ ]
 }

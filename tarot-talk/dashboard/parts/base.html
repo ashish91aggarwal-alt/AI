@@ -267,6 +267,18 @@ function cover(r, i) {
     h("div", { class: "hook" + (r.cover ? "" : " none") }, r.cover || "Cover not read yet"),
     h("div", { class: "bot" }, h("div", { class: "views" }, fmt(r.views), h("small", {}, r.pinned || r.fresh ? "views" : r.multiple + "x median")), h("div", { class: "stg" }, stageDots(r))));
 }
+function player(id, kind) {
+  const box = h("div", { class: "player" });
+  box.append(h("button", { type: "button", class: "go", onclick: () => { const f = document.createElement("iframe"); f.src = "https://www.instagram.com/" + (kind === "post" ? "p" : "reel") + "/" + encodeURIComponent(id) + "/embed/"; f.title = "Playing from Instagram"; f.loading = "lazy"; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; box.replaceChildren(f); } }, "Play it here"), h("div", { class: "sub" }, "Plays from Instagram itself. Nothing is copied or stored."));
+  return box;
+}
+/* one-tap research requests: inside the desktop app they go straight to its queue; on the web they open a filled-in GitHub request */
+function ask(kind, target, label) {
+  const TXT = { similar: "Find more pages like this", topic: "Search more on this topic", verify: "Get it verified" };
+  return h("button", { type: "button", class: "dbtn", onclick: async e => { const bt = e.currentTarget;
+    if (window.TT_LOCAL) { const r = await api("ask", { kind, target }); bt.textContent = r.ok ? "Asked. See the Desk tab" : r.msg; bt.disabled = r.ok; }
+    else open("https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + kind + " " + target) + "&body=" + encodeURIComponent("by: Ashish or Sakshi"), "_blank", "noopener"); } }, label || TXT[kind]);
+}
 function openSheet(r) {
   const kv = (k, v, sub) => h("div", {}, h("div", { class: "k" }, k), h("div", { class: "val" }, v), sub ? h("div", { class: "r" }, sub) : null);
   const opener = document.activeElement;
@@ -277,6 +289,7 @@ function openSheet(r) {
     h("div", { class: "sheet", role: "dialog", "aria-modal": "true", "aria-label": "Reel details", style: "--c:" + hue(r.concept) },
       closeBtn, h("div", { class: "bar" }),
       h("h3", {}, r.cover || "Cover not read yet"),
+      player(r.id),
       h("div", { class: "qrow", style: "justify-content:flex-start" }, h("span", { class: "pill plain", style: "color:" + hue(r.concept) + ";border-color:" + hue(r.concept) }, cLabel(r.concept)), r.format ? pill(r.format, "plain") : null, r.pinned ? pill("pinned", "acc") : null, r.fresh ? pill("just posted", "wait") : null),
       h("div", { class: "kv" }, kv("Views", fmt(r.views), r.pinned || r.fresh ? null : r.multiple + "x the median"), ...(r.likes ? [kv("Length", r.seconds + " s"), kv("Likes", fmt(r.likes), r.like_rate + "% of views"), kv("Comments", fmt(r.comments), r.comment_rate + "% of views"), kv("Reposts", fmt(r.reposts)), kv("Shares", fmt(r.shares), r.share_rate + "% of views")] : [])),
       r.likes ? null : h("div", { class: "sub" }, "Caption and counters not read yet. Only the view count" + (r.cover ? " and the cover are" : " is") + " known."),

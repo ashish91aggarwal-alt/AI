@@ -1,6 +1,6 @@
 {
  "rule": "The app cannot see inside a Claude chat, and a chat cannot read its own token count. Each session writes this card itself when it works on the repo. The health light uses what a session does know: how many times its history was squeezed to make room (compactions). 0 = fresh. 1 = finish the piece in hand, then move to a new chat. 2 or more = move now.",
- "handoff": "Continue the Tarot Talk work. Repo: ashish91aggarwal-alt/AI. First read tarot-talk/dashboard/workspace.json and tarot-talk/dashboard/sessions.json, then use the skills tarot-motion-series and instagram-scouting. Add your own session card to sessions.json before you start.",
+ "handoff": "Continue the Tarot Talk work. Repo: ashish91aggarwal-alt/AI. First read tarot-talk/dashboard/workspace.json and tarot-talk/dashboard/sessions.json, then instagram-scouting/NEXT.md, then use the skills tarot-motion-series and instagram-scouting. Add your own session card to sessions.json before you start.",
  "sessions": [
   {
    "id": "session_01CNnzjus3VFacLen2FZUq3Y",
@@ -8,8 +8,8 @@
    "link": "https://claude.ai/code/session_01CNnzjus3VFacLen2FZUq3Y",
    "where": "Claude app (cloud session linked to the PC)",
    "started": "2026-11-20",
-   "last_seen": "2026-11-20 19:15 IST",
-   "doing": "Building the desktop app; waiting for the first transcripts from the PC",
+   "last_seen": "2026-11-20 19:35 IST",
+   "doing": "Web app refined (playable reels, research buttons, progress, India-fit board). Next batch is written in instagram-scouting/NEXT.md",
    "compactions": 1
   }
  ]

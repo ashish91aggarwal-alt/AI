@@ -62,6 +62,10 @@ def merge_queues(theirs, mine):
 def parse_request(text):
     """Find what is being asked for in free text. Only Instagram links and plain handles are accepted; nothing is ever run from it."""
     text = text or ""
+    m = re.match(r"\s*(?:scout:\s*)?(similar|topic|verify)\b[:\s]+([^\r\n]{2,200})", text, re.I)
+    if m:                                             # a research request in words: kept as plain text for the agent, never run
+        kind, val = m.group(1).lower(), re.sub(r"[^\w @.,:'&()/+-]", " ", m.group(2)).strip()[:160]
+        return {"kind": kind, "target": val, "url": ""} if val else None
     m = REEL.search(text)
     if m:
         kind = "post" if m.group(1) == "p" else "reel"
@@ -231,7 +235,7 @@ class Desk:
             if not req_:
                 continue
             found.append({**req_, "n": int(it["number"]), "purpose": "process" if field(body, "purpose").lower().startswith("process") else "content",
-                          "scoutProfile": field(body, "profile", "yes").lower().startswith("y") and req_["kind"] != "page",
+                          "scoutProfile": field(body, "profile", "yes").lower().startswith("y") and req_["kind"] in ("reel", "post"),
                           "by": field(body, "by", who)[:40], "note": field(body, "note")[:300], "asked": str(it.get("created_at", ""))[:16].replace("T", " ") + " UTC"})
         return found
 
@@ -255,7 +259,7 @@ class Desk:
             if any(x.get("target") == r["target"] and x.get("state") in ("queued", "working") for x in q):
                 return "duplicate"
             q.append({**r, "n": "L" + datetime.datetime.now().strftime("%m%d%H%M%S") + os.urandom(2).hex(), "purpose": purpose,
-                      "scoutProfile": r["kind"] != "page" and (profile if profile is not None else True), "by": by, "note": str(note)[:300],
+                      "scoutProfile": r["kind"] in ("reel", "post") and (profile if profile is not None else True), "by": by, "note": str(note)[:300],
                       "asked": now_ist(), "state": "queued", "result": "", "updated": now_ist()})
             wr(self.qfile, q)
         return "added"
@@ -287,8 +291,8 @@ class Desk:
         if not item:
             return False
         n = item["n"]
-        if item["kind"] in ("page", "topic"):
-            self.set(n, state="needs-agent", result="A page look is done by the agent's browser, not by this app."); self.close_issue(n, "Passed to the agent: a page look needs its browser."); self.log(f"#{n}: page request passed to the agent."); return True
+        if item["kind"] not in ("reel", "post"):
+            self.set(n, state="needs-agent", result="This needs looking and judging, which the agent does, not this app."); self.close_issue(n, "Passed to the agent."); self.log(f"#{n}: {item['kind']} request passed to the agent."); return True
         s = self.status()
         if s.get("reels_today", 0) >= int(self.cfg.get("max_reels_per_day", 20)):
             self.log("Daily limit reached; the rest waits until tomorrow."); return False
@@ -413,6 +417,13 @@ class App:
             if got == "duplicate": return "That link is already waiting in the queue. Nothing was added."
             self.say("Added from the desktop."); self.rev += 1; self.wake.set()
             return "Added to the queue." + (" The app is paused, so it waits." if d.paused else "")
+        if name == "ask":                             # a research request in words (more like this, more on a topic, verify)
+            kind = str(a.get("kind", ""))
+            if kind not in ("similar", "topic", "verify"): return "!Unknown request."
+            got = d.add_local(f"{kind}: {str(a.get('target', ''))[:200]}", by="desktop")
+            if not got: return "!Nothing to ask about."
+            if got == "added": self.say(f"Asked the agent: {kind}."); self.rev += 1; self.wake.set()
+            return "Asked. It waits for the agent." if got == "added" else "That is already waiting."
         if name == "hits":                            # the strongest reels of a scouted page: pinned ones and those at 3x its median
             handle = cli.safe_handle(a.get("handle"))
             page = rd(d.root / "output" / handle / "page.json", None)

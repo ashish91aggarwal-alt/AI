@@ -21,6 +21,8 @@ def main():
                 requests=rd(SCOUT / "input" / "requests.json"), agent=rd(HERE / "agent.json"), styles=rd(HERE / "styles.json"), images=images,
                 repo="ashish91aggarwal-alt/AI", sessions=rd(s) if (s := HERE / "sessions.json").exists() else None, queue=rd(q) if (q := SCOUT / "input" / "queue.json").exists() else [],
                 desk=rd(d) if (d := SCOUT / "output" / "desk-status.json").exists() else None)
+    data["progress"] = dict(pages=len(pages), reels=sum(len(p.get("reels", [])) for p in pages.values()), heard=len(list((SCOUT / "output").glob("*/cli/*.json"))),
+                            reviewed=sum(1 for t in data["workspace"]["strategy"]["transfer"]["items"] if any(c["name"] == "Reviewer" and c["done"] for c in t["checks"])))
     tx = lambda n: (HERE / "parts" / n).read_text(encoding="utf-8")
     template = tx("base.html").replace("/*__HUBCSS__*/", tx("hub.css")) + tx("hub.js")   # base: shell + profile views; hub: workspace views
     for item in data["queue"]:                    # what the desktop app read for a forwarded reel, shown on its queue card

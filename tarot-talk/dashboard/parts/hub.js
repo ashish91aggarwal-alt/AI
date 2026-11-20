@@ -54,7 +54,7 @@ function parseLink(v) {
   if ((m = v.match(/^@?([A-Za-z0-9_.]{2,30})$/))) return { kind: "page", target: m[1], url: "https://www.instagram.com/" + m[1] + "/" };
   return v ? { kind: "topic", target: v, url: null } : null;
 }
-const KIND = { page: "Page", reel: "Reel", post: "Post", topic: "Topic", competitor: "Competitor" };
+const KIND = { page: "Page", reel: "Reel", post: "Post", topic: "Topic", competitor: "Competitor", similar: "More like", verify: "Verify" };
 const QSTATE = { queued: ["queued", "wait"], working: ["desktop working", "acc"], "ready-for-agent": ["ready for agent", "warn"], "needs-agent": ["needs agent", "warn"], refused: ["refused by Instagram", "bad"], failed: ["failed", "bad"], done: ["done", "good"], scouted: ["scouted", "good"] };
 function queue() { return [...(D.queue || []).slice().reverse(), ...D.requests]; }
 const waitingDesk = () => queue().filter(r => r.state === "queued" || r.state === "working").length, waitingAgent = () => queue().filter(r => r.state === "ready-for-agent" || r.state === "needs-agent").length;
@@ -78,14 +78,14 @@ function inbox() {
     h("div", { id: "gobox", hidden: true }, h("a", { id: "golink", class: "go", href: "#", target: "_blank", rel: "noopener", style: "display:inline-block;text-decoration:none" }, "Open GitHub to submit")));
   return [h("div", { class: "path", style: "margin:10px 0 4px" }, ["You paste a link", "Desktop app reads it", "Agent studies it", "Shown here"].map((t, i) => h("span", { style: "--k:" + i }, t))),
     h("p", { class: "sub" }, "The queue lives on GitHub. For a reel, the desktop app fetches the sound, transcript and numbers by itself. A whole-page look still needs the agent's browser. The agent starts when you ask a Claude session to work the queue; nothing triggers it by itself yet."), card("", form),
-    h("div", { class: "stack", style: "margin-top:12px" }, queue().map(r => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (r.kind === "topic" ? "" : r.kind === "page" || r.kind === "competitor" ? "@" : KIND[r.kind] + " ") + r.target), h("div", { class: "sub" }, (KIND[r.kind] || r.kind) + (r.scoutProfile ? " + its profile" : "") + (r.purpose ? " · " + r.purpose : "") + (r.by ? " · from " + r.by : "") + " · " + r.asked), r.result ? h("div", { style: "font-size:14px;margin-top:4px" }, r.result) : null, r.transcript ? reading(r.transcript + (r.transcript.length >= 700 ? " ..." : ""), "Transcript, as heard by the desktop app") : null, r.url ? h("a", { class: "out", href: r.url, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open on Instagram") : null), pill((QSTATE[r.state] || [r.state, "wait"])[0], (QSTATE[r.state] || [r.state, "wait"])[1])))))];
+    h("div", { class: "stack", style: "margin-top:12px" }, queue().map(r => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (r.kind === "page" || r.kind === "competitor" ? "@" : (KIND[r.kind] || r.kind) + ": ") + r.target), h("div", { class: "sub" }, (KIND[r.kind] || r.kind) + (r.scoutProfile ? " + its profile" : "") + (r.purpose ? " · " + r.purpose : "") + (r.by ? " · from " + r.by : "") + " · " + r.asked), r.result ? h("div", { style: "font-size:14px;margin-top:4px" }, r.result) : null, r.transcript ? reading(r.transcript + (r.transcript.length >= 700 ? " ..." : ""), "Transcript, as heard by the desktop app") : null, r.kind === "reel" || r.kind === "post" ? player(r.target, r.kind) : null, r.url ? h("a", { class: "out", href: r.url, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open on Instagram") : null), pill((QSTATE[r.state] || [r.state, "wait"])[0], (QSTATE[r.state] || [r.state, "wait"])[1])))))];
 }
 function shapeSheet(s) { sheet(s.name, h("h3", {}, s.name), h("div", { class: "qrow", style: "justify-content:flex-start" }, pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"), h("a", { class: "pill plain", href: "#p-" + s.handle }, "@" + s.handle)), h("div", { class: "sub" }, "Seen in: " + s.from), h("div", {}, s.structure), reading(s.ours, s.ok ? "Ours could be" : "Why not", true)); }
 function vResearch() {
   const pots = potentials(), q = waitingDesk() + waitingAgent();
   const head = seg([["content", "Content", allProfiles().length], ["process", "Process", W.process.length], ["forward", "Forward a link", q || null]], state.rtab, k => { state.rtab = k; render(); });
   if (state.rtab === "process") return [head, h("p", { class: "sub" }, "How to do it: funnels, script technique, ranking, film method. Tap a card for what we kept, changed and rejected."), h("div", { class: "posters" }, W.process.map(processCard))];
-  if (state.rtab === "forward") return [head, ...inbox()];
+  if (state.rtab === "forward") return window.TT_LOCAL ? [head, ...inbox().slice(0, 3)] : [head, ...inbox()];
   return [head,
     h("p", { class: "sub" }, "What other pages post, and what works for them."),
     h("h2", {}, "Profiles scouted"),
@@ -126,12 +126,14 @@ function vHome() {
     h("h2", {}, "Waiting on you"),
     h("div", { class: "wgrid" }, W.waiting.map((t, i) => h("div", { class: "wcard" }, h("b", { class: "gt" }, String(i + 1)), h("span", {}, t)))),
     h("h2", {}, "At a glance"),
-    h("div", { class: "tiles" }, tile("Profiles scouted", profs.length, reels + " reels listed", "research"), tile("Skills applied", pb.filter(x => x.status === "applied").length, pb.filter(x => x.status === "trial").length + " in trial, " + pb.filter(x => x.status === "review").length + " under review", "playbook"), tile("Rejected", pb.filter(x => x.status === "rejected").length, "kept so nobody proposes them again", "playbook"), tile("Scout queue", q + qa, q + qa ? q + " for the desktop, " + qa + " for the agent" : "nothing waiting", "research")),
+    h("div", { class: "goals" }, [["Pages scouted", D.progress.pages], ["Reels listed", D.progress.reels], ["Reels heard (transcript)", D.progress.heard], ["Borrowed ideas cleared for India", D.progress.reviewed]].map(([t, n]) => { const goal = [10, 100, 1000, 10000].find(g => g > n); return h("a", { class: "goal", href: "#research" }, h("b", {}, String(n)), h("span", {}, t), h("div", { class: "meter" }, h("i", { style: "width:" + Math.max(3, Math.round(100 * n / goal)) + "%;background:var(--grad)" })), h("span", { class: "sub" }, "next mark: " + goal)); })),
+    h("div", { class: "tiles" }, tile("Skills applied", pb.filter(x => x.status === "applied").length, pb.filter(x => x.status === "trial").length + " in trial, " + pb.filter(x => x.status === "review").length + " under review", "playbook"), tile("Rejected", pb.filter(x => x.status === "rejected").length, "kept so nobody proposes them again", "playbook"), tile("Scout queue", q + qa, q + qa ? q + " for the desktop, " + qa + " for the agent" : "nothing waiting", "research")),
+    ...(window.TT_LOCAL ? [] : [
     h("h2", {}, "Who is doing what"),
     h("div", { class: "posters g3" },
       h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("search", 24)), h("div", { class: "pt" }, "Dashboard"), h("div", { class: "ps" }, "Links are pasted here and sent as GitHub issues. This page is rebuilt on GitHub after every change."), pill("live", "good")),
       h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("bolt", 24)), h("div", { class: "pt" }, "Desktop app"), h("div", { class: "ps" }, dk ? "Last seen " + dk.seen + ". " + tok + " of " + dk.tools.length + " tools ready. " + (dk.reels_today || 0) + " reels read today." : "Not installed on the PC yet. With its window open it fetches a reel's sound, transcript and numbers with no agent."), pill(dk ? (q ? q + " waiting" : "queue clear") : "not installed", dk ? (tok === dk.tools.length ? "good" : "warn") : "wait")),
-      h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("compass", 24)), h("div", { class: "pt" }, "Agent"), h("div", { class: "ps" }, D.agent.text), pill(qa ? qa + " waiting for the agent" : D.agent.state, qa ? "warn" : D.agent.tone))),
+      h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("compass", 24)), h("div", { class: "pt" }, "Agent"), h("div", { class: "ps" }, D.agent.text), pill(qa ? qa + " waiting for the agent" : D.agent.state, qa ? "warn" : D.agent.tone)))]),
     h("h2", {}, "Recent work"),
     card("", h("ol", { class: "acts" }, acts.slice(0, 8).map(a => h("li", {}, h("span", { class: "num sub" }, a.at), h("span", {}, a.text)))))
   ];
@@ -153,9 +155,10 @@ function vStrategy() {
     h("div", { class: "dd" }, h("div", {}, h("div", { class: "lab2 good" }, "We say"), chipsRow(W.speak.do, "good")), h("div", {}, h("div", { class: "lab2 bad" }, "We never say"), chipsRow(W.speak.dont, "bad"))),
     h("h2", {}, "Series plan"),
     h("div", { class: "tgrid" }, S.series.map(s => h("div", { class: "tcard" + (s.state === "active" ? " on" : "") }, h("b", {}, s.name), pill(s.state, s.state === "active" ? "good" : s.state.startsWith("held") ? "acc" : "wait")))),
-    h("h2", {}, "Common strategy"),
-    h("p", { class: "sub" }, S.common.note),
-    h("div", { class: "tgrid" }, S.common.items.map(c => h("div", { class: "tcard" }, h("span", {}, c.text), h("div", { class: "meter", role: "img", "aria-label": "seen on " + c.seen + " of " + np + " pages" }, Array.from({ length: Math.max(np, 3) }, (_, k) => h("i", { class: k < c.seen ? "d" : "" })), h("span", { class: "sub" }, c.seen + " of " + np + " page" + (np > 1 ? "s" : ""))))))
+    h("h2", {}, "Borrowed from abroad: will it work in India?"),
+    h("p", { class: "sub" }, S.transfer.note),
+    h("div", { class: "stack" }, S.transfer.items.map(t => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", {}, t.name), h("div", { class: "sub" }, "Seen on " + t.from + " · " + t.proof)), pill((STAT[t.status] || [t.status])[0], (STAT[t.status] || [0, "wait"])[1])),
+      h("div", { class: "checks" }, t.checks.map(c => h("span", { class: "chk " + (c.done ? "y" : "") }, c.name + ": " + c.result))), ask("verify", "India fit of: " + t.name, "Run the India checks"))))
   ];
 }
 
@@ -187,9 +190,7 @@ function vProduction() {
     seg([["suits", "Suggested", L.items.filter(s => s.suits).length], ["all", "All", L.items.length], ["picked", "Shortlist", pk.length]], state.sfilter, k => { state.sfilter = k; render(); }),
     list.length ? h("div", { class: "sgal" }, list.map((s, i) => h("button", { class: "scard" + (pk.includes(s.slug) ? " on" : ""), style: "--i:" + Math.min(i, 20), onclick: () => styleSheet(s) }, h("img", { src: D.images["styles/" + s.slug], alt: "", loading: "lazy", width: s.w, height: s.h }), h("span", {}, s.name), pk.includes(s.slug) ? h("i", { class: "tick" }, "shortlisted") : s.tried ? h("i", { class: "tick tr" }, "tried") : null)))
       : card("", h("span", { class: "sub" }, "Nothing shortlisted yet. Open Suggested or All and add a few.")),
-    h("div", { class: "sub", style: "margin-top:8px" }, L.credit + " Also available: p5.brush (watercolour, tested once, flickers in motion) and Remotion (video in React, not tried)."),
-    h("h2", {}, "Command-line package"),
-    card("", h("div", { class: "qrow" }, h("h3", {}, h("span", { class: "led" }), W.cli.name), pill(D.status.cli ? "checked on the PC" : W.cli.state, D.status.cli ? "acc" : "wait")), h("div", { class: "sub" }, "Transcripts and audio numbers for queued reels. Install once on the PC:"), h("pre", { class: "cmd" }, W.cli.install), h("div", { class: "sub", style: "margin-top:10px" }, "Then, inside your clone of the AI repo:"), h("pre", { class: "cmd" }, W.cli.run), h("div", { class: "sub", style: "margin-top:8px" }, "Fetching reels with a script is against Instagram's terms. It never logs in, stops at the first refusal, and is yours to run or not."))
+    h("div", { class: "sub", style: "margin-top:8px" }, L.credit + " Also available: p5.brush (watercolour, tested once, flickers in motion) and Remotion (video in React, not tried).")
   ];
 }
 
@@ -200,6 +201,7 @@ function vProfile() {
   return [
     h("a", { class: "back", href: "#research" }, "Back to Research"),
     h("div", { class: "hero" }, h("div", { class: "ring", "aria-hidden": "true" }, h("b", {}, pr.handle.slice(0, 2).toUpperCase())), h("div", { class: "who" }, h("div", { class: "h" }, "@" + pr.handle), h("div", { class: "facts" }, h("span", {}, h("b", {}, pr.followers), " followers"), h("span", {}, h("b", {}, pr.posts.toLocaleString()), " posts"), h("span", { class: "sub" }, pr.niche)), h("div", { class: "sub", style: "margin-top:4px" }, "Looked at " + pr.scouted_on + " · ", h("a", { class: "out", href: "https://www.instagram.com/" + pr.handle + "/", target: "_blank", rel: "noopener" }, "open on Instagram")))),
+    h("div", { class: "dbar" }, ask("similar", "@" + pr.handle), ask("topic", pr.niche, "Search more in this field"), ask("verify", "findings on @" + pr.handle, "Get these findings verified")),
     seg(PTABS.map(([k, t]) => [k, t]), tab[0], k => { state.ptab = k; render(); }),
     h("h2", { style: "margin-top:18px" }, tab[1]),
     ...tab[2]().filter(Boolean)
@@ -258,7 +260,7 @@ function vDesk() {
     h("h3", { style: "margin-top:18px" }, "Tools on this computer"),
     h("div", { class: "tiles" }, s.tools.map(t => card("", h("div", { class: "qrow" }, h("h3", {}, t.name), pill(t.ok ? "ready" : "missing", t.ok ? "good" : "bad")), h("div", { class: "sub" }, t.used_for), t.ok ? null : t.fixable ? btn("Install it", run("fix", { key: t.key }, "Installing. This can take a few minutes ..."), "hot") : h("div", { class: "sub", style: "margin-top:6px" }, "Install by hand: ", h("code", {}, t.install))))),
     h("h3", { style: "margin-top:18px" }, "Queue"),
-    s.queue.length ? h("div", { class: "stack" }, s.queue.map(x => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (x.kind === "page" ? "@" : x.kind + " ") + x.target), h("div", { class: "sub" }, (x.purpose || "") + " · from " + (x.by || "?") + " · " + (x.updated || x.asked || "")), x.result ? h("div", { style: "font-size:14px;margin-top:4px" }, x.result) : null,
+    s.queue.length ? h("div", { class: "stack" }, s.queue.map(x => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (x.kind === "page" ? "@" : (KIND[x.kind] || x.kind) + ": ") + x.target), h("div", { class: "sub" }, (x.purpose || "") + " · from " + (x.by || "?") + " · " + (x.updated || x.asked || "")), x.result ? h("div", { style: "font-size:14px;margin-top:4px" }, x.result) : null,
       x.state === "failed" ? btn("Try again", run("retry", { n: x.n })) : x.state === "refused" ? btn("Try again now (skips the 24 hour wait)", run("retry", { n: x.n, force: true })) : null), pill((QSTATE[x.state] || [x.state, "wait"])[0], (QSTATE[x.state] || [x.state, "wait"])[1]))))) : h("p", { class: "sub" }, "Nothing in the queue."),
     h("h3", { style: "margin-top:18px" }, "Work log"), h("pre", { class: "dlog" }, s.logs.length ? s.logs.slice().reverse().join("\n") : "Nothing yet.")
   ];
