@@ -14,6 +14,8 @@ Proof this works: the New Year 2026 mulank series sold a yearly report at Rs 555
 Folder `tarot-talk/` in the owner's shared GitHub repo `AI` (ashish91aggarwal-alt/AI), which holds every project in its own folder. Tarot Talk is the channel's handle. Attach the repo at the start of every session and work only inside `tarot-talk/`. If it cannot be attached, tell the owner and stop before saving anywhere else.
 
 - `SKILL.md` — a copy of this skill. When the skill changes, update the copy in the same commit.
+- `FRAMEWORK.md` — how Tarot Talk plans a series and writes an episode (the TAROT episode shape, what a series idea needs, how to read the numbers). Read it with this skill. If the two differ, this skill wins.
+- `audience.md` — the audience in their own words, from real comments, DMs and buyer questions. Fill it before any script; never from an AI's guess.
 - `ideas/series-ideas.md` — the one running list of series ideas. Read it first. Add to it; never start a second list.
 - `reviews/` — every independent review, dated.
 - `references/` — notes on benchmark reels (see "References").
