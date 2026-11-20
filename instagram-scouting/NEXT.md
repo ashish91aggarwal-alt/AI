@@ -16,12 +16,6 @@ The desktop app does NOT get its own Instagram browser. Looking at pages needs j
 
 No fixed limit on how many reels or pages are studied. Work goes in batches (about 10 reels). After each batch the agent reads the results and decides from the data whether another batch is needed and which reels go in it. The pace inside a batch stays slow, and everything stops at the first refusal from Instagram, with the 24 hour wait. Those two rules protect the account and are not a research limit.
 
-## To build
+## Status, 20 Nov 2026 evening
 
-1. Trends check as a script step. Verify by search what is free and allowed today before building (Google Trends has no open public API as far as known; unofficial libraries get blocked; Wikipedia pageviews and YouTube search suggestions are possible extra signals). It feeds the "Trends India" check on the India-fit board.
-2. Scheduler: a scheduled Claude task that works "ready for agent" items in batches as above and writes what it did. Frequency not yet given by the owner.
-3. Every finding on the dashboard carries its checks (trends, seen on Indian pages, independent reviewer). Nothing shows as verified until they are done.
-
-## Numbers first (owner, 20 Nov 2026)
-
-Before watching anything, the agent reads the page's own code with the snippets in `snippets/` to get the numbers for every reel on the grid (views, pinned, and where shown likes and comments), with no reading of comments and almost no tokens. From that table it decides: which reels stand out, whether the page is worth more batches at all, and which reels go in the next batch. Watching and reading are spent only on the reels the numbers point to. The decision and its reason are written into the page's findings.
+Done: the rules above are in the scouting skill. Trends: checked, there is no free open API (official Google Trends API is an invite-only alpha; the unofficial library is archived and gets blocked), so the Trends India check is a look at the public Trends website by the agent. The owner can apply for the official alpha at developers.google.com/search/apis/trends. The daily scheduled agent run is NOT set up: creating it was not permitted from the build chat. Its full instructions are in `scheduled-agent-prompt.md`; the owner can create the task himself or ask a chat to create it and approve the prompt. Not done: no India check has actually been run yet; the first transcripts from the PC have not arrived.

@@ -205,3 +205,22 @@ Simple, short text. Numbers first, then what the reel does, then what it may mea
 ## Session card
 
 Before starting work, add or update your own card in `tarot-talk/dashboard/sessions.json` (name, link, where, started, last_seen in IST, doing, compactions) and update `last_seen` and `doing` each time you push. `compactions` is how many times this chat's history has been summarised to make room; say it truthfully. At 1, finish the piece in hand and tell the owner to start a new chat with the `handoff` text; at 2 or more, stop and hand over. The desktop app shows these cards.
+
+## Who does what (owner's rule)
+
+Script (the Tarot Talk Desk app on the PC, no tokens): fetches a reel's sound, transcript, audio numbers and public counters; keeps the queue; syncs with GitHub; counts progress; builds the dashboard. An agent never does these by hand: it puts reels in the queue (`input/queue.json`, state `queued`) and reads the script's output in `output/<handle>/cli/`.
+
+Agent (inference only): looks at pages in the built-in browser, decides what is worth reading, names concepts, writes findings, runs the checks below, asks for the independent review.
+
+## Numbers first, then batches
+
+Before watching anything, run the page-code snippets to get the numbers for every reel on the grid. From that table decide which reels stand out, whether the page deserves more work at all, and which reels go in the next batch (about 10). After each batch, read the results and decide from the data whether another batch is needed; write the decision and its reason into the page's findings. There is no fixed cap on reels or pages. The slow pace inside a batch and the full stop at the first refusal (24 hour wait) stay: they protect the account.
+
+## Checks before anything is called verified
+
+A finding or a borrowed idea is shown as verified only when all of these are recorded with date and source:
+1. Seen working on Indian pages (at least three, named).
+2. Trends India: open the public Google Trends website (geo IN) in the built-in browser and read it. There is no free open Trends API (Google's official one is an invite-only alpha; unofficial libraries are blocked often), so this is a look by the agent, not a script.
+3. Fits how Sakshi speaks (her call).
+4. An independent reviewer agrees.
+Record each check on the India-fit board (`strategy.transfer` in `tarot-talk/dashboard/workspace.json`). Until then the board says "not checked".

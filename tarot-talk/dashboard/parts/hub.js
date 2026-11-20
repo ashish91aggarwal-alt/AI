@@ -158,7 +158,7 @@ function vStrategy() {
     h("h2", {}, "Borrowed from abroad: will it work in India?"),
     h("p", { class: "sub" }, S.transfer.note),
     h("div", { class: "stack" }, S.transfer.items.map(t => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", {}, t.name), h("div", { class: "sub" }, "Seen on " + t.from + " · " + t.proof)), pill((STAT[t.status] || [t.status])[0], (STAT[t.status] || [0, "wait"])[1])),
-      h("div", { class: "checks" }, t.checks.map(c => h("span", { class: "chk " + (c.done ? "y" : "") }, c.name + ": " + c.result))), ask("verify", "India fit of: " + t.name, "Run the India checks"))))
+      h("div", { class: "checks" }, t.checks.map(c => h("span", { class: "chk " + (c.done ? "y" : "") }, c.name + ": " + c.result))), h("div", { class: "dbar" }, ask("verify", "India fit of: " + t.name, "Run the India checks"), h("a", { class: "dbtn", target: "_blank", rel: "noopener", href: "https://trends.google.com/trends/explore?geo=IN&q=" + encodeURIComponent(t.trend_term) }, "Open Google Trends India: " + t.trend_term)))))
   ];
 }
 
