@@ -26,23 +26,25 @@ instagram-scouting/
 
 Until step 2 has run and pushed, the dashboard marks transcripts and audio as "waiting for command line".
 
-## Command line (the `tt-scout` package)
+## Desktop app (Tarot Talk Desk) and command line
 
-Install once on the PC (also installs yt-dlp and faster-whisper):
+One package, two commands: `tt-desk` (the window) and `tt-scout` (the command line).
 
-```
-python -m pip install "git+https://github.com/ashish91aggarwal-alt/AI.git#subdirectory=instagram-scouting"
-winget install Gyan.FFmpeg
-```
-
-Then, from anywhere inside your clone of the AI repo:
+Install on the PC, from inside your clone of the AI repo:
 
 ```
-tt-scout check
-tt-scout queue pagetkagy
-tt-scout run
-tt-scout push
-python tarot-talk/dashboard/build.py      (rebuilds the workspace dashboard with the new results)
+powershell -ExecutionPolicy Bypass -File .\instagram-scouting\install-desk.ps1
 ```
 
-Written on 20 Nov 2026. `check` and `queue` have been run; `run` has not yet been run against Instagram.
+It installs the package (with yt-dlp and faster-whisper), and puts a "Tarot Talk Desk" shortcut on the Desktop. Add `-Startup` to start it with Windows. ffmpeg is separate: `winget install Gyan.FFmpeg`.
+
+How the three parts talk, with no agent carrying data:
+
+1. Dashboard: "Forward a link" opens a prefilled GitHub issue titled `scout: <link>`.
+2. Desk (window open on the PC): every 3 minutes it pulls the repo and reads open issues from the accounts in `desk-config.json` (`allowed_users`). For a reel it fetches the sound, writes transcript, audio numbers and public counters, deletes the file, updates `input/queue.json` and `output/`, commits and pushes. A page request is marked "needs agent".
+3. GitHub Action (`.github/workflows/dashboard.yml`): rebuilds the dashboard page and publishes it with GitHub Pages on every push.
+4. Agent (a Claude session, when asked): pulls the repo, studies what is "ready for agent" or "needs agent", updates findings, sets the request to `done`.
+
+Add a tool to the Status tab by adding an entry to `tools.json`. Add a GitHub account that may send requests in `desk-config.json`.
+
+Written on 20 Nov 2026 and reviewed once. Not yet run on Windows; fetching has not been run against Instagram.

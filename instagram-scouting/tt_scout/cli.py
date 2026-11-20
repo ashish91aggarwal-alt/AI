@@ -104,7 +104,14 @@ def cmd_queue(a):
 
 
 def run(cmd, **kw):
+    if os.name == "nt": kw.setdefault("creationflags", 0x08000000)      # no console window flashing
     return subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", **kw)
+
+
+def safe_handle(v):
+    """A folder name taken from fetched data must never be able to leave the output folder."""
+    v = str(v or "")
+    return v if re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_.]{0,29}", v) and ".." not in v else "_unknown"
 
 
 def audio_stats(wav):
@@ -125,14 +132,19 @@ def process(item, model):
                 "retries": 0, "extractor_retries": 0, "fragment_retries": 0}
         with yt_dlp.YoutubeDL(opts) as y:
             info = y.extract_info(url, download=True)
-        video = next(tmp.glob("v.*"))
+        video = next(tmp.glob("v.*"), None)
+        if video is None:
+            raise RuntimeError("no video or sound found in this post (it may be pictures only)")
         wav = tmp / "a.wav"
         r = run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(video), "-vn", "-ac", "1", "-ar", "16000", str(wav)])
         if r.returncode or not wav.exists():
             raise RuntimeError("ffmpeg could not read the audio: " + r.stderr[-200:])
         segs, meta = model.transcribe(str(wav), vad_filter=True)
         transcript = [{"from": round(s.start, 1), "to": round(s.end, 1), "text": s.text.strip()} for s in segs]
-        res = {"id": item["id"], "handle": item["handle"], "done": now(), "seconds": info.get("duration"),
+        handle = safe_handle(item.get("handle") or info.get("channel") or info.get("uploader"))
+        facts = {k: info.get(k) for k in ("like_count", "comment_count", "view_count", "upload_date", "description") if info.get(k) is not None}
+        if "description" in facts: facts["description"] = str(facts["description"])[:1200]
+        res = {"id": item["id"], "handle": handle, "done": now(), "seconds": info.get("duration"), "facts": facts,
                "language": meta.language, "transcript": transcript, "audio": audio_stats(wav),
                }
     finally:
@@ -141,7 +153,7 @@ def process(item, model):
             time.sleep(1); shutil.rmtree(tmp, ignore_errors=True)
     res["media_deleted"] = not tmp.exists()
     res["note"] = "Text and numbers only." + ("" if res["media_deleted"] else f" WARNING: could not delete {tmp}; delete it by hand.")
-    d = OUT / item["handle"] / "cli"; d.mkdir(parents=True, exist_ok=True)
+    d = OUT / res["handle"] / "cli"; d.mkdir(parents=True, exist_ok=True)
     (d / f"{item['id']}.json").write_text(json.dumps(res, indent=1, ensure_ascii=False), encoding="utf-8")
     return res
 

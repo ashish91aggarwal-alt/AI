@@ -1,0 +1,6 @@
+[
+  {"key": "git",     "name": "Git",            "check": ["exe", "git"],               "used_for": "Syncing the queue and results with GitHub", "install": "winget install Git.Git"},
+  {"key": "ffmpeg",  "name": "ffmpeg",         "check": ["exe", "ffmpeg"],            "used_for": "Reading a reel's sound track",             "install": "winget install Gyan.FFmpeg"},
+  {"key": "ytdlp",   "name": "yt-dlp",         "check": ["module", "yt_dlp"],         "used_for": "Fetching a reel's sound and its public numbers", "install": "python -m pip install -U yt-dlp"},
+  {"key": "whisper", "name": "faster-whisper", "check": ["module", "faster_whisper"], "used_for": "Turning speech into a timed transcript",   "install": "python -m pip install -U faster-whisper"}
+]

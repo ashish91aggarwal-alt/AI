@@ -1,1 +1,5 @@
-{"state": "no schedule set", "tone": "wait", "text": "Requests are picked up when a Claude session is asked to work the queue, with the Claude desktop app open on the PC. No automatic schedule is set up yet. Each pick-up follows the instagram-scouting skill, records what it found and updates the status here."}
+{
+ "state": "on request",
+ "tone": "wait",
+ "text": "For the thinking, and for whole-page looks through its browser: judging what works, updating findings. Starts when you ask a Claude session to work the queue; no automatic schedule is set."
+}

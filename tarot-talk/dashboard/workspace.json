@@ -64,6 +64,10 @@
  "activity": [
   {
    "at": "20 Nov",
+   "text": "Desktop app (Tarot Talk Desk) written; the scout queue moved to GitHub so it works without an agent."
+  },
+  {
+   "at": "20 Nov",
    "text": "Command-line step packaged as tt-scout; playbook board and style library added."
   },
   {
@@ -841,9 +845,9 @@
   ]
  ],
  "cli": {
-  "name": "tt-scout",
-  "state": "packaged, not yet run on the PC",
-  "install": "python -m pip install \"git+https://github.com/ashish91aggarwal-alt/AI.git#subdirectory=instagram-scouting\"\nwinget install Gyan.FFmpeg",
-  "run": "tt-scout check\ntt-scout queue pagetkagy\ntt-scout run\ntt-scout push"
+  "name": "Tarot Talk Desk + tt-scout",
+  "state": "written, not yet installed on the PC",
+  "install": "cd $HOME\\Documents\ngit clone https://github.com/ashish91aggarwal-alt/AI.git\ncd AI\npowershell -ExecutionPolicy Bypass -File .\\instagram-scouting\\install-desk.ps1",
+  "run": "Double-click \"Tarot Talk Desk\" on the Desktop.\nCommand line, if you prefer:  tt-scout check   tt-scout run   tt-desk --once"
  }
 }

@@ -1,2 +1,2 @@
-"""Tarot Talk Instagram scout: command-line step (transcripts and audio numbers)."""
-__version__ = "0.1.0"
+"""Tarot Talk Instagram scout: command line (tt-scout) and desktop app (tt-desk)."""
+__version__ = "0.2.0"

@@ -55,30 +55,33 @@ function parseLink(v) {
   return v ? { kind: "topic", target: v, url: null } : null;
 }
 const KIND = { page: "Page", reel: "Reel", post: "Post", topic: "Topic", competitor: "Competitor" };
-function queue() { const dbr = state.dbReqs || []; return [...dbr, ...D.requests.filter(r => !dbr.some(x => x.target === r.target && x.kind === r.kind))]; }
+const QSTATE = { queued: ["queued", "wait"], working: ["desktop working", "acc"], "ready-for-agent": ["ready for agent", "warn"], "needs-agent": ["needs agent", "warn"], refused: ["refused by Instagram", "bad"], failed: ["failed", "bad"], done: ["done", "good"], scouted: ["scouted", "good"] };
+function queue() { return [...(D.queue || []).slice().reverse(), ...D.requests]; }
+const waitingDesk = () => queue().filter(r => r.state === "queued" || r.state === "working").length, waitingAgent = () => queue().filter(r => r.state === "ready-for-agent" || r.state === "needs-agent").length;
 function inbox() {
   const msg = h("div", { class: "msg", id: "reqmsg", role: "status" });
   const form = h("form", { class: "req", onsubmit: async e => {
       e.preventDefault(); const p = parseLink($("#target").value);
       if (!p) { msg.textContent = "Paste a reel link, a page link, an @handle or a topic first."; return; }
-      const r = { ...p, purpose: state.purpose, scoutProfile: (p.kind === "reel" || p.kind === "post") && $("#alsoprofile").checked, by: $("#by").value, note: $("#note").value.trim(), asked: new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 16).replace("T", " ") + " IST", state: "queued" };
-      const line = "Scout request from " + r.by + " (" + r.purpose + " research): " + KIND[r.kind].toLowerCase() + " " + (r.url || "\"" + r.target + "\"") + (r.scoutProfile ? " (also scout its profile)" : "") + (r.note ? ". Note: " + r.note : "");
-      if (db) { try { await db.collection("requests").add(r); msg.textContent = "Saved. It waits in the queue until an agent session picks it up; its status will show here."; e.target.reset(); return; } catch (err) { msg.textContent = "Could not save it here (" + (err && err.code || "error") + "). Copy the line below and send it to Claude."; } }
-      else msg.textContent = "This copy of the page cannot save requests. Copy the line below and send it to Claude.";
-      $("#copybox").hidden = false; $("#copytext").value = line;
+      const profile = (p.kind === "reel" || p.kind === "post") && $("#alsoprofile").checked, by = $("#by").value, note = $("#note").value.trim();
+      const body = ["link: " + (p.url || p.target), "purpose: " + state.purpose, "profile: " + (profile ? "yes" : "no"), "by: " + by, note ? "note: " + note : ""].filter(Boolean).join("\n");
+      const url = "https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + (p.url || p.target)) + "&body=" + encodeURIComponent(body);
+      if (p.kind === "topic") { msg.textContent = "Topic search is not built yet. Paste a reel or page link."; return; }
+      $("#gobox").hidden = false; $("#golink").href = url; msg.textContent = "One more tap: the button below opens GitHub with the request filled in. Press \"Submit new issue\" there. It is picked up within a few minutes if the PC is on with the Tarot Talk Desk app open, and only when sent from a GitHub account on the app's allowed list.";
     } },
     h("label", { for: "target" }, "Reel link, page link, @handle or topic", h("input", { id: "target", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
     h("div", {}, h("div", { class: "flabel" }, "What is it for?"), seg([["content", "Content: what they post"], ["process", "Process: how to do it"]], state.purpose, k => { state.purpose = k; const v = $("#target").value, n = $("#note").value; render(); $("#target").value = v; $("#note").value = n; })),
     h("label", { class: "check", for: "alsoprofile" }, h("input", { id: "alsoprofile", type: "checkbox", checked: state.purpose === "content" }), h("span", {}, "If it is a reel, scout its whole profile too")),
     h("div", { class: "two" }, h("label", { for: "by" }, "Sent by", h("select", { id: "by" }, h("option", {}, "Ashish"), h("option", {}, "Sakshi"))), h("label", { for: "note" }, "What you want to know (optional)", h("input", { id: "note", placeholder: "why did this one work?", autocomplete: "off" }))),
-    h("button", { class: "go", type: "submit" }, "Send to the scout queue"), msg,
-    h("div", { id: "copybox", hidden: true, class: "stack" }, h("textarea", { id: "copytext", rows: "3", readonly: true, "aria-label": "Request text" }), h("button", { class: "ghost", type: "button", onclick: async () => { try { await navigator.clipboard.writeText($("#copytext").value); msg.textContent = "Copied."; } catch (e) { $("#copytext").select(); msg.textContent = "Select the text and copy it."; } } }, "Copy")));
-  return [h("p", { class: "sub" }, "A connected agent picks requests up when a session runs on the PC with the Claude desktop app open, follows the scouting skill, records what it found and updates the status here."), card("", form),
-    h("div", { class: "stack", style: "margin-top:12px" }, queue().map(r => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (r.kind === "topic" ? "" : r.kind === "page" || r.kind === "competitor" ? "@" : KIND[r.kind] + " ") + r.target), h("div", { class: "sub" }, (KIND[r.kind] || r.kind) + (r.scoutProfile ? " + its profile" : "") + (r.purpose ? " · " + r.purpose : "") + (r.by ? " · from " + r.by : "") + " · " + r.asked), r.result ? h("div", { style: "font-size:14px;margin-top:4px" }, r.result) : null, r.url ? h("a", { class: "out", href: r.url, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open on Instagram") : null), pill(r.state, { scouted: "good", done: "good", queued: "wait", running: "acc", refused: "bad", "not built": "warn" }[r.state] || "wait")))))];
+    h("button", { class: "go", type: "submit" }, "Prepare the request"), msg,
+    h("div", { id: "gobox", hidden: true }, h("a", { id: "golink", class: "go", href: "#", target: "_blank", rel: "noopener", style: "display:inline-block;text-decoration:none" }, "Open GitHub to submit")));
+  return [h("div", { class: "path", style: "margin:10px 0 4px" }, ["You paste a link", "Desktop app reads it", "Agent studies it", "Shown here"].map((t, i) => h("span", { style: "--k:" + i }, t))),
+    h("p", { class: "sub" }, "The queue lives on GitHub. For a reel, the desktop app fetches the sound, transcript and numbers by itself. A whole-page look still needs the agent's browser. The agent starts when you ask a Claude session to work the queue; nothing triggers it by itself yet."), card("", form),
+    h("div", { class: "stack", style: "margin-top:12px" }, queue().map(r => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (r.kind === "topic" ? "" : r.kind === "page" || r.kind === "competitor" ? "@" : KIND[r.kind] + " ") + r.target), h("div", { class: "sub" }, (KIND[r.kind] || r.kind) + (r.scoutProfile ? " + its profile" : "") + (r.purpose ? " · " + r.purpose : "") + (r.by ? " · from " + r.by : "") + " · " + r.asked), r.result ? h("div", { style: "font-size:14px;margin-top:4px" }, r.result) : null, r.transcript ? reading(r.transcript + (r.transcript.length >= 700 ? " ..." : ""), "Transcript, as heard by the desktop app") : null, r.url ? h("a", { class: "out", href: r.url, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open on Instagram") : null), pill((QSTATE[r.state] || [r.state, "wait"])[0], (QSTATE[r.state] || [r.state, "wait"])[1])))))];
 }
 function shapeSheet(s) { sheet(s.name, h("h3", {}, s.name), h("div", { class: "qrow", style: "justify-content:flex-start" }, pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"), h("a", { class: "pill plain", href: "#p-" + s.handle }, "@" + s.handle)), h("div", { class: "sub" }, "Seen in: " + s.from), h("div", {}, s.structure), reading(s.ours, s.ok ? "Ours could be" : "Why not", true)); }
 function vResearch() {
-  const pots = potentials(), q = queue().filter(r => r.state === "queued").length;
+  const pots = potentials(), q = waitingDesk() + waitingAgent();
   const head = seg([["content", "Content", allProfiles().length], ["process", "Process", W.process.length], ["forward", "Forward a link", q || null]], state.rtab, k => { state.rtab = k; render(); });
   if (state.rtab === "process") return [head, h("p", { class: "sub" }, "How to do it: funnels, script technique, ranking, film method. Tap a card for what we kept, changed and rejected."), h("div", { class: "posters" }, W.process.map(processCard))];
   if (state.rtab === "forward") return [head, ...inbox()];
@@ -111,7 +114,7 @@ function vPlaybook() {
 
 /* ---------- home ---------- */
 function vHome() {
-  const profs = allProfiles(), reels = profs.reduce((a, [, p]) => a + p.reels.length, 0), q = queue().filter(r => r.state === "queued").length, pb = W.playbook;
+  const profs = allProfiles(), reels = profs.reduce((a, [, p]) => a + p.reels.length, 0), q = waitingDesk(), qa = waitingAgent(), pb = W.playbook, dk = D.desk, tok = dk ? dk.tools.filter(t => t.ok).length : 0;
   const tile = (lab, val, sub, href) => h("a", { class: "card tile", href: "#" + href, style: "text-decoration:none;color:inherit" }, h("div", { class: "lab" }, lab), h("div", { class: "big num gt" }, String(val)), h("div", { class: "sub" }, sub));
   const acts = [...(state.dbActs || []), ...W.activity];
   return [
@@ -122,9 +125,12 @@ function vHome() {
     h("h2", {}, "Waiting on you"),
     h("div", { class: "wgrid" }, W.waiting.map((t, i) => h("div", { class: "wcard" }, h("b", { class: "gt" }, String(i + 1)), h("span", {}, t)))),
     h("h2", {}, "At a glance"),
-    h("div", { class: "tiles" }, tile("Profiles scouted", profs.length, reels + " reels listed", "research"), tile("Skills applied", pb.filter(x => x.status === "applied").length, pb.filter(x => x.status === "trial").length + " in trial, " + pb.filter(x => x.status === "review").length + " under review", "playbook"), tile("Rejected", pb.filter(x => x.status === "rejected").length, "kept so nobody proposes them again", "playbook"), tile("Scout queue", q, q ? "waiting for an agent session" : "nothing waiting", "research")),
-    h("h2", {}, "Agent"),
-    card("", h("div", { class: "qrow" }, h("h3", {}, h("span", { class: "led " + (q ? "ready" : "working") }), q ? q + " request" + (q > 1 ? "s" : "") + " waiting" : "Queue is clear"), pill(D.agent.state, D.agent.tone)), h("div", { class: "sub" }, D.agent.text)),
+    h("div", { class: "tiles" }, tile("Profiles scouted", profs.length, reels + " reels listed", "research"), tile("Skills applied", pb.filter(x => x.status === "applied").length, pb.filter(x => x.status === "trial").length + " in trial, " + pb.filter(x => x.status === "review").length + " under review", "playbook"), tile("Rejected", pb.filter(x => x.status === "rejected").length, "kept so nobody proposes them again", "playbook"), tile("Scout queue", q + qa, q + qa ? q + " for the desktop, " + qa + " for the agent" : "nothing waiting", "research")),
+    h("h2", {}, "Who is doing what"),
+    h("div", { class: "posters g3" },
+      h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("search", 24)), h("div", { class: "pt" }, "Dashboard"), h("div", { class: "ps" }, "Links are pasted here and sent as GitHub issues. This page is rebuilt on GitHub after every change."), pill("live", "good")),
+      h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("bolt", 24)), h("div", { class: "pt" }, "Desktop app"), h("div", { class: "ps" }, dk ? "Last seen " + dk.seen + ". " + tok + " of " + dk.tools.length + " tools ready. " + (dk.reels_today || 0) + " reels read today." : "Not installed on the PC yet. With its window open it fetches a reel's sound, transcript and numbers with no agent."), pill(dk ? (q ? q + " waiting" : "queue clear") : "not installed", dk ? (tok === dk.tools.length ? "good" : "warn") : "wait")),
+      h("div", { class: "poster", style: "cursor:default" }, h("span", { class: "pico" }, icon("compass", 24)), h("div", { class: "pt" }, "Agent"), h("div", { class: "ps" }, D.agent.text), pill(qa ? qa + " waiting for the agent" : D.agent.state, qa ? "warn" : D.agent.tone))),
     h("h2", {}, "Recent work"),
     card("", h("ol", { class: "acts" }, acts.slice(0, 8).map(a => h("li", {}, h("span", { class: "num sub" }, a.at), h("span", {}, a.text)))))
   ];
@@ -223,7 +229,6 @@ render();
     if (!d) return;
     db = d;
     const rerender = () => { const a = document.activeElement; if (!(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName)) && !$("#sheetroot").firstChild) render(); };
-    d.collection("requests").onSnapshot(snap => { state.dbReqs = snap.docs.map(x => ({ id: x.id, ...x.data() })).sort((a, b) => String(b.asked).localeCompare(String(a.asked))); rerender(); }, () => { db = null; });
     d.collection("activity").orderBy("at", "desc").limit(10).onSnapshot(snap => { state.dbActs = snap.docs.map(x => x.data()).map(a => ({ at: a.day || a.at, text: a.text })); rerender(); }, () => {});
     d.doc("choices/styles").onSnapshot(s => { if (s.exists && Array.isArray(s.data().picked)) { state.picks = s.data().picked.slice(); rerender(); } }, () => {});
   } catch (e) {}

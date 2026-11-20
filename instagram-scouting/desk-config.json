@@ -1,0 +1,10 @@
+{
+  "repo": "ashish91aggarwal-alt/AI",
+  "allowed_users": [
+    "ashish91aggarwal-alt"
+  ],
+  "poll_seconds": 180,
+  "max_reels_per_day": 20,
+  "dashboard_url": "https://ashish91aggarwal-alt.github.io/AI/",
+  "autopush": true
+}
