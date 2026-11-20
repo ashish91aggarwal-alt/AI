@@ -1,0 +1,41 @@
+{
+ "day": "2026-11-20",
+ "reels_today": 0,
+ "seen": "2026-11-20 19:55 IST",
+ "tools": [
+  {
+   "key": "git",
+   "name": "Git",
+   "ok": true,
+   "used_for": "Syncing the queue and results with GitHub"
+  },
+  {
+   "key": "ffmpeg",
+   "name": "ffmpeg",
+   "ok": true,
+   "used_for": "Reading a reel's sound track"
+  },
+  {
+   "key": "ytdlp",
+   "name": "yt-dlp",
+   "ok": true,
+   "used_for": "Fetching a reel's sound and its public numbers"
+  },
+  {
+   "key": "whisper",
+   "name": "faster-whisper",
+   "ok": true,
+   "used_for": "Turning speech into a timed transcript"
+  }
+ ],
+ "queue": {
+  "queued": 0,
+  "working": 0,
+  "ready-for-agent": 0,
+  "needs-agent": 0,
+  "refused": 0,
+  "failed": 0,
+  "done": 0
+ },
+ "note": ""
+}
