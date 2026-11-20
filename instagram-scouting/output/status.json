@@ -1,0 +1,78 @@
+{
+ "updated": "20 Nov 2026, about 5:15 pm IST",
+ "tools": [
+  {
+   "key": "browser",
+   "name": "Built-in browser on the PC",
+   "does": "Scrolls the reels grid, reads views, covers, captions and counters, pulls still frames",
+   "state": "working",
+   "detail": "Used today on 1 page: 28 reels listed, 25 covers, 9 reels read, 2 with stills."
+  },
+  {
+   "key": "hear",
+   "name": "Sound measuring in the page",
+   "does": "Loudness, pitch and spectrum of a reel's audio, measured inside the browser",
+   "state": "ready",
+   "detail": "Existing skill. Not run on any reel of this page yet."
+  },
+  {
+   "key": "ytdlp",
+   "name": "yt-dlp (command line)",
+   "does": "Fetches a reel to a temporary file on the PC so the tools below can read it",
+   "state": "waiting",
+   "detail": "Needs the command-line script to be run on the PC. Not run yet."
+  },
+  {
+   "key": "whisper",
+   "name": "faster-whisper (command line)",
+   "does": "Turns the spoken words into a timed transcript",
+   "state": "waiting",
+   "detail": "Not run yet. No reel on this page has a transcript."
+  },
+  {
+   "key": "ffmpeg",
+   "name": "ffmpeg audio stats (command line)",
+   "does": "Loudness and silence map of the soundtrack",
+   "state": "waiting",
+   "detail": "Not run yet."
+  }
+ ],
+ "stages": [
+  {
+   "key": "list",
+   "name": "Listed",
+   "tool": "browser",
+   "short": "List"
+  },
+  {
+   "key": "cover",
+   "name": "Cover read",
+   "tool": "browser",
+   "short": "Cover"
+  },
+  {
+   "key": "facts",
+   "name": "Caption + counters",
+   "tool": "browser",
+   "short": "Facts"
+  },
+  {
+   "key": "stills",
+   "name": "Still frames",
+   "tool": "browser",
+   "short": "Stills"
+  },
+  {
+   "key": "transcript",
+   "name": "Transcript",
+   "tool": "whisper",
+   "short": "Words"
+  },
+  {
+   "key": "audio",
+   "name": "Audio stats",
+   "tool": "ffmpeg",
+   "short": "Audio"
+  }
+ ]
+}
