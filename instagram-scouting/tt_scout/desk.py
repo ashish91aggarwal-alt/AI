@@ -294,7 +294,8 @@ class Desk:
         if item["kind"] not in ("reel", "post"):
             self.set(n, state="needs-agent", result="This needs looking and judging, which the agent does, not this app."); self.close_issue(n, "Passed to the agent."); self.log(f"#{n}: {item['kind']} request passed to the agent."); return True
         s = self.status()
-        if s.get("reels_today", 0) >= int(self.cfg.get("max_reels_per_day", 20)):
+        cap = int(self.cfg.get("max_reels_per_day", 0) or 0)          # 0 = no daily cap; the pace (one reel, then a pause) and stop-on-refusal still hold
+        if cap and s.get("reels_today", 0) >= cap:
             self.log("Daily limit reached; the rest waits until tomorrow."); return False
         cs = cli.load_status(); ref = cs.get("refused_at")
         if ref and (datetime.datetime.now() - datetime.datetime.fromisoformat(ref)).total_seconds() < cli.COOL_OFF_H * 3600:

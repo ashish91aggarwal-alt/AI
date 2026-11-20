@@ -250,7 +250,7 @@ function vDesk() {
     s.rev !== LOCAL.rev ? card("", h("div", { class: "qrow" }, h("div", {}, h("h3", {}, "New results are in"), h("div", { class: "sub" }, "Reload to see them on the other tabs.")), btn("Reload", () => location.reload(), "hot"))) : null,
     s.broken ? card("", h("h3", {}, "The queue file is damaged"), h("p", { class: "sub" }, s.broken)) : null,
     h("div", { class: "dflow" }, node("Web dashboard", gh, s.sync_failed ? (s.sync_note || "The last round did not sync. See the work log.") : "Sakshi's view. Requests sent there arrive here."), h("i", { "aria-hidden": "true" }, "⇄"),
-      node("This desktop app", light, waiting + " waiting here · " + s.reels_today + " of " + s.max_reels + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
+      node("This desktop app", light, waiting + " waiting here · " + s.reels_today + (s.max_reels ? " of " + s.max_reels : "") + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
       node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),

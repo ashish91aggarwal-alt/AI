@@ -2,7 +2,22 @@
 
 Start with an independent review of the 20 Nov web-app batch (playable reels, research buttons, progress marks, India-fit board). It was tested but not reviewed.
 
-1. Browser inside the desktop app. The app opens its own browser window (Playwright driving the Edge already on the PC, with its own saved profile). The owner signs in to Instagram there himself, once; the app never sees or stores a password. With it the app lists a page's reels (views, pinned, median, multiples) using the snippets in `snippets/`, view-only, at the pace limits in the skill. Output is raw numbers marked "ready for agent". This is automated viewing on his account, against Instagram's terms; it is his choice and must stop on the first challenge.
-2. Trends check. Find what is free and allowed today before building (Google Trends has no open public API; unofficial libraries get blocked often; Wikipedia pageviews and YouTube search suggestions are possible extra signals). Verify by search first. Result feeds the "Trends India" check on the India-fit board.
-3. Scheduler. A scheduled Claude task that works the queue and the India-fit checks in small bounded runs, and writes progress (pages scouted, reels listed, reels heard, ideas cleared) that the Home tab already shows. The owner has not yet said how often.
-4. Every finding shown on the dashboard carries its checks: trends, seen on Indian pages, independent reviewer. Nothing is shown as verified until those are done.
+Owner's decisions, 20 Nov 2026 (these replace the earlier list):
+
+## Who does what
+
+Script (the desktop app, no tokens): fetch a reel's sound, transcript, audio numbers and public counters; fetch trend numbers once a free, allowed source is confirmed; keep the queue; sync with GitHub; count progress; build the dashboard.
+
+Agent (a Claude session, inference only): look at pages in the built-in browser; decide which reels are worth reading and whether another batch is needed; name concepts; write findings; run the India-fit checks; ask for the independent review. An agent never does by hand what the script can do: it puts reels in the queue and reads the script's output.
+
+The desktop app does NOT get its own Instagram browser. Looking at pages needs judgement, so it stays with the agent.
+
+## Batches, not a cap
+
+No fixed limit on how many reels or pages are studied. Work goes in batches (about 10 reels). After each batch the agent reads the results and decides from the data whether another batch is needed and which reels go in it. The pace inside a batch stays slow, and everything stops at the first refusal from Instagram, with the 24 hour wait. Those two rules protect the account and are not a research limit.
+
+## To build
+
+1. Trends check as a script step. Verify by search what is free and allowed today before building (Google Trends has no open public API as far as known; unofficial libraries get blocked; Wikipedia pageviews and YouTube search suggestions are possible extra signals). It feeds the "Trends India" check on the India-fit board.
+2. Scheduler: a scheduled Claude task that works "ready for agent" items in batches as above and writes what it did. Frequency not yet given by the owner.
+3. Every finding on the dashboard carries its checks (trends, seen on Indian pages, independent reviewer). Nothing shows as verified until they are done.
