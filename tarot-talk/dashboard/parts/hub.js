@@ -16,7 +16,9 @@ function sheet(label, ...kids) {
   const esc = e => { if (e.key === "Escape") close(); };
   const closeBtn = h("button", { class: "close", onclick: close }, "Close");
   $("#sheetroot").replaceChildren(h("div", { class: "scrim", onclick: e => { if (e.target.classList.contains("scrim")) close(); } }, h("div", { class: "sheet", role: "dialog", "aria-modal": "true", "aria-label": label }, closeBtn, h("div", { class: "bar" }), ...kids.flat().filter(Boolean))));
-  addEventListener("keydown", esc); closeBtn.focus(); return close;
+  addEventListener("keydown", esc); closeBtn.focus();
+  $("#sheetroot .sheet").addEventListener("keydown", e => { if (e.key !== "Tab") return; const f = [...e.currentTarget.querySelectorAll("a[href],button,summary,input,select,textarea,iframe")].filter(x => !x.disabled); if (!f.length) return; const first = f[0], last = f[f.length - 1]; if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); } });
+  return close;
 }
 const chipsRow = (items, cls) => h("div", { class: "tags" }, items.map(t => h("span", { class: "tag2 " + (cls || "") }, t)));
 const seg = (opts, cur, on) => h("div", { class: "seg", role: "tablist" }, opts.map(([k, t, n]) => h("button", { type: "button", role: "tab", "data-k": k, "aria-selected": String(k === cur), onclick: () => on(k) }, t, n != null ? h("span", { class: "cnt" }, String(n)) : null)));
@@ -90,7 +92,7 @@ function vResearch() {
     h("h2", {}, "Profiles scouted"),
     h("div", { class: "pgrid" }, allProfiles().map(profileCard), h("a", { class: "pcard card add", href: "#research", onclick: e => { e.preventDefault(); state.rtab = "forward"; render(); } }, h("b", {}, "+"), h("span", {}, "Forward a page or reel"))),
     ...(D.plan ? [h("h2", {}, "Research agent"), card("", h("div", { class: "qrow" }, h("div", { class: "sub" }, D.plan.note), pill(D.plan.agent, D.plan.agent === "working" ? "acc" : D.plan.agent === "not started" ? "wait" : "good")),
-      ...D.plan.doing.map(t => h("div", { class: "planrow now" }, h("b", {}, "Now: " + t.what), h("span", { class: "sub" }, t.why))), ...D.plan.next.slice(0, 5).map((t, n) => h("div", { class: "planrow" }, h("b", {}, (n + 1) + ". " + t.what), h("span", { class: "sub" }, t.why))),
+      ...D.plan.doing.map(t => h("div", { class: "planrow now" }, h("b", {}, "Now: " + t.what), h("span", { class: "sub" }, t.why))), ...D.plan.next.map((t, n) => h("div", { class: "planrow" }, h("b", {}, (n + 1) + ". " + t.what), h("span", { class: "sub" }, t.why))),
       D.plan.done.length ? fold("Done (" + D.plan.done.length + ")", D.plan.done.slice(0, 20).map(t => h("div", { class: "planrow" }, h("b", {}, t.what), h("span", { class: "sub" }, t.result || "")))) : null, h("div", { class: "sub", style: "margin-top:8px" }, "Updated " + D.plan.updated))] : []),
     h("h2", {}, "Potentials"),
     h("div", { class: "tgrid" }, pots.sort((a, b) => b.ok - a.ok).map(s => h("button", { class: "tcard" + (s.ok ? "" : " no"), onclick: () => shapeSheet(s) }, h("b", {}, s.name), h("span", { class: "sub" }, "@" + s.handle), pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"))))
@@ -142,7 +144,7 @@ function vHome() {
 /* ---------- strategies: one funnel, one card per strategy ---------- */
 const SSTAGE = { discovered: "wait", "early-review": "warn", optimising: "acc", ready: "good", testing: "good", adopted: "good", parked: "wait", rejected: "bad" };
 const stageName = k => (D.strategies.stages.find(s => s[0] === k) || [k, k === "parked" ? "Parked" : k === "rejected" ? "Rejected" : k])[1];
-const ring = n => h("span", { class: "ring2", style: "--p:" + n, role: "img", "aria-label": "Score " + n + " of 100" }, h("b", {}, String(n)));
+const ring = n => n == null ? h("span", { class: "ring2", style: "--p:0", role: "img", "aria-label": "No score" }, h("b", {}, "\u2013")) : h("span", { class: "ring2", style: "--p:" + n, role: "img", "aria-label": "Score " + n + " of 100" }, h("b", {}, String(n)));
 const fold = (title, kids, open) => { const k = "f:" + title; if (state[k] === undefined) state[k] = !!open; const d = h("details", { class: "fold" }, h("summary", {}, title), ...kids); d.open = state[k]; d.addEventListener("toggle", () => { state[k] = d.open; }); return d; };
 function stratSheet(x) {
   const TS = { planned: "acc", running: "warn", done: "good", "not planned": "wait" };
@@ -160,7 +162,7 @@ function vStrategy() {
   const S = D.strategies, all = S.strategies, live = all.filter(x => !["parked", "rejected"].includes(x.stage)), n = k => all.filter(x => x.stage === k).length;
   const shown = live.filter(x => state.sstage === "all" || x.stage === state.sstage).sort((a, b) => b.score - a.score);
   return [
-    h("div", { class: "funnel", style: "margin-top:16px" }, S.stages.map(([k, t, d], i) => h("button", { class: "fstep", style: "--w:" + (100 - i * 9) + "%;--k:" + i, "aria-pressed": String(state.sstage === k), title: d, onclick: () => { state.sstage = state.sstage === k ? "all" : k; render(); } }, h("span", {}, t), h("b", {}, String(n(k)))))),
+    h("div", { class: "funnel", style: "margin-top:16px" }, S.stages.map(([k, t, d], i) => h("button", { class: "fstep", style: "--w:" + (100 - i * 9) + "%;--k:" + i, "aria-pressed": String(state.sstage === k), title: d, onclick: () => { state.sstage = state.sstage === k ? "all" : k; render(); const b = document.querySelectorAll(".fstep")[i]; if (b) b.focus(); } }, h("span", {}, t), h("b", {}, String(n(k)))))),
     h("p", { class: "sub" }, state.sstage === "all" ? "Tap a step to see only that stage. Tap a card for its research, reviews, score and history." : stageName(state.sstage) + ": " + S.stages.find(s => s[0] === state.sstage)[2]),
     shown.length ? h("div", { class: "sgrid" }, shown.map(stratCard)) : h("p", { class: "sub" }, "Nothing at this stage yet."),
     fold("Parked and rejected (" + (n("parked") + n("rejected")) + ")", [h("div", { class: "sgrid" }, all.filter(x => ["parked", "rejected"].includes(x.stage)).map(stratCard))]),
@@ -187,8 +189,8 @@ function vProduction() {
   const Pn = W.production, L = D.styles, pk = picks();
   const list = L.items.filter(s => state.sfilter === "all" || (state.sfilter === "suits" && s.suits) || (state.sfilter === "picked" && pk.includes(s.slug)));
   return [
-    h("h2", { style: "margin-top:16px" }, "Strategies being tested"),
-    h("p", { class: "sub" }, "Each strategy is tried along four directions. Grey means nothing is planned yet."),
+    h("h2", { style: "margin-top:16px" }, "Planned tests"),
+    h("p", { class: "sub" }, "Each strategy will be tried along four directions. These are plans; no test is running yet. Grey means nothing is planned."),
     h("div", { class: "stack" }, D.strategies.strategies.filter(x => x.tests.length).sort((a, b) => b.score - a.score).map(x => card("", h("div", { class: "qrow" }, h("button", { class: "linkbtn", onclick: () => stratSheet(x) }, x.name), pill(stageName(x.stage), SSTAGE[x.stage])),
       h("div", { class: "dirs" }, D.strategies.directions.map(dn => { const t = x.tests.find(y => y.direction === dn); return h("div", { class: "dir " + (t ? t.status.replace(" ", "-") : "none") }, h("b", {}, dn), h("span", {}, t ? t.plan + (t.result ? " Result: " + t.result : "") : "Nothing planned"), t ? h("i", {}, t.status) : null); }))))),
     h("h2", { style: "margin-top:16px" }, Pn.series),

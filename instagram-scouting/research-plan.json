@@ -1,12 +1,12 @@
 {
  "note": "Kept by the research agent. It decides what to study next from the data; nobody has to press a button.",
  "agent": "idle",
- "updated": "2026-11-20 21:43 IST",
+ "updated": "2026-11-20 22:20 IST",
  "doing": [],
  "next": [
   {
-   "what": "Independent review of today's transcript findings and funnel changes",
-   "why": "The evidence for the top borrowed idea was changed without a second pair of eyes. Until a reviewer has read it, treat the new notes as one agent's reading. Needs a session that can start a reviewer agent; save it as instagram-scouting/reviews/2026-11-20-transcript-findings-review.md.",
+   "what": "Re-review of today's corrections",
+   "why": "A strategy only earns a review cycle when its fixes have been checked again.",
    "for": "return-date"
   },
   {
@@ -38,7 +38,7 @@
  "done": [
   {
    "what": "Studied the 7 transcripts of @pagetkagy",
-   "result": "All 7 state the premise within 3.5 seconds with no intro. All 3 task hits tell the viewer aloud to comment, so the comment advantage cannot be credited to the return date. Findings corrected in 9 places.",
+   "result": "No greeting in any of the 7; premise by 3.5 seconds in 4 of them. All 3 task hits tell the viewer aloud to comment, so the comment advantage cannot be credited to the return date. Findings corrected.",
    "for": "return-date"
   },
   {
@@ -48,17 +48,12 @@
   },
   {
    "what": "Trends India for 'manifestation' (built-in browser, geo IN, 12 months)",
-   "result": "Flat, 47 to 68 of 100, with spikes at New Year week (100) and 11/11 week (94). It is her topic, not ours. https://trends.google.com/trends/explore?geo=IN&q=manifestation, read 2026-11-20.",
+   "result": "Flat, 47 to 68 of 100, with spikes at New Year week (100) and 11/11 week (94). It is her topic, not ours. https://trends.google.com/trends/explore?geo=IN&q=manifestation, read 2026-11-20. Wrong topic for us, so the Trends check stays open.",
    "for": "return-date"
   },
   {
-   "what": "Independent review of the transcript findings",
-   "result": "NOT DONE. This run had no tool to start a separate reviewer agent. No cycles were raised and no review file was written.",
-   "for": "return-date"
-  },
-  {
-   "what": "Indian pages check",
-   "result": "Not checked, on purpose: no Instagram browsing in this run (account pace rules).",
+   "what": "Independent review of the transcript study and the funnel",
+   "result": "Done by a separate reviewer: 11 faults, all corrected. The corrections have not been re-reviewed.",
    "for": "return-date"
   }
  ]

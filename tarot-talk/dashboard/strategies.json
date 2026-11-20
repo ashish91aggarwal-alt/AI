@@ -1,5 +1,5 @@
 {
- "note": "One list of every strategy. Score out of 100: evidence up to 30, each of four checks 10 (checks that do not apply are left out of the total), each optimise-and-review cycle 10 up to 20, and 10 for a result on our own page. The score is counted from what is recorded here, nothing else.",
+ "note": "One list of every strategy. Score out of 100, always: evidence up to 30; four checks at 10 each (a check that does not apply earns nothing); each full cycle of fix and re-review 10, up to 20; and 10 for a result on our own page. Parked and rejected strategies get no score. No strategy has had a full fix-and-re-review cycle yet. The score is counted from what is recorded here, nothing else.",
  "stages": [
   [
    "discovered",
@@ -24,7 +24,7 @@
   [
    "testing",
    "Testing",
-   "Being tried in a real series."
+   "Being tried in a real series. Nothing is here until a series is running."
   ],
   [
    "adopted",
@@ -65,22 +65,16 @@
     },
     {
      "name": "Reviewer",
-     "result": "yes: framework review",
-     "done": true
+     "result": "not assessed in any review yet",
+     "done": false
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-01",
      "event": "Used in the New Year 2026 mulank series.",
      "by": "owner"
-    },
-    {
-     "date": "2026-11-20",
-     "event": "Kept as the base path in the framework; independently reviewed.",
-     "by": "reviewer",
-     "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
     },
     {
      "date": "2026-11-20",
@@ -143,11 +137,11 @@
     },
     {
      "name": "Reviewer",
-     "result": "yes: ideas review",
-     "done": true
+     "result": "the idea list was reviewed, not this rule",
+     "done": false
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-01",
@@ -209,13 +203,13 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
      "event": "Set as a rule in the framework after review.",
      "by": "reviewer",
-     "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
+     "file": "tarot-talk/reviews/2026-11-20-driver-concept-review.md"
     }
    ],
    "research": [],
@@ -228,7 +222,7 @@
    "name": "Pilot before batches",
    "line": "One full episode first, then 3 to 5 at a time.",
    "source": "Owner's rule",
-   "stage": "adopted",
+   "stage": "early-review",
    "evidence_pts": 10,
    "evidence_note": "A working rule, not a measured result.",
    "checks": [
@@ -270,7 +264,7 @@
      "result": ""
     }
    ],
-   "next": "Pilot waits for the look to be chosen.",
+   "next": "In use as the owner's working rule. It has not had an independent review, so it sits here until it does.",
    "own_result": false
   },
   {
@@ -278,7 +272,7 @@
    "name": "Level 2, not a correction",
    "line": "New work builds on last year's report; never says it was wrong.",
    "source": "Driver concept review",
-   "stage": "testing",
+   "stage": "early-review",
    "evidence_pts": 10,
    "evidence_note": "Reasoning from review; no numbers.",
    "checks": [
@@ -303,7 +297,7 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -329,7 +323,7 @@
    "name": "Every episode for every viewer",
    "line": "Nobody waits for their own number's episode.",
    "source": "Reviews",
-   "stage": "testing",
+   "stage": "early-review",
    "evidence_pts": 10,
    "evidence_note": "Reasoning from review; no numbers.",
    "checks": [
@@ -354,13 +348,13 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
-     "date": "2026-11-19",
-     "event": "Raised in the ideas review.",
+     "date": "2026-11-20",
+     "event": "Raised in the framework review.",
      "by": "reviewer",
-     "file": "tarot-talk/reviews/2026-11-19-ideas-review-1.md"
+     "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
     }
    ],
    "research": [],
@@ -405,7 +399,7 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -424,7 +418,7 @@
    "name": "A task with a return date",
    "line": "Give the viewer a small job and a time to come back.",
    "source": "@pagetkagy",
-   "stage": "optimising",
+   "stage": "early-review",
    "evidence_pts": 18,
    "evidence_note": "Lowered from 25 to 18 on 20 Nov after the transcripts. Views stand: 6 reels on one page, 3 of her 4 recent hits. But all 3 hits also tell the viewer aloud to comment (two for a paid keyword, one as a 'seal'), so the comment advantage cannot be credited to the return date; the biggest hit stacks secrecy, 'this is a sign' and a prediction; the two calmer ones carry a paid pitch and one rode a calendar date. The three ordinary task reels are not transcribed. One page only. Not independently reviewed since the change.",
    "checks": [
@@ -435,8 +429,8 @@
     },
     {
      "name": "Trends India",
-     "result": "Read 2026-11-20 (https://trends.google.com/trends/explore?geo=IN&q=manifestation): interest in the topic is flat over 12 months with spikes at New Year week (100) and 11/11 week (94). This is her topic, not ours and not the task-and-date idea itself; 'numerology 2027' and 'tarot' are still to be read.",
-     "done": true
+     "result": "Read 2026-11-20 for the wrong topic, so this check is NOT done (https://trends.google.com/trends/explore?geo=IN&q=manifestation): interest in the topic is flat over 12 months with spikes at New Year week (100) and 11/11 week (94). This is her topic, not ours and not the task-and-date idea itself; 'numerology 2027' and 'tarot' are still to be read.",
+     "done": false
     },
     {
      "name": "Fits our voice",
@@ -445,11 +439,11 @@
     },
     {
      "name": "Reviewer",
-     "result": "findings reviewed once",
+     "result": "reviewed twice; fixes not yet re-reviewed",
      "done": false
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -476,6 +470,12 @@
      "date": "2026-11-20",
      "event": "Trends India read for 'manifestation' (geo IN, 12 months): flat, spikes at New Year week and 11/11 week. Indian pages not checked (no Instagram browsing in this run). Independent review of these changes not done: no reviewer tool in this run; cycles unchanged.",
      "by": "research agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
@@ -531,7 +531,7 @@
    "name": "A named character who answers the viewer",
    "line": "A two-role skit: the viewer asks, a fixed character answers.",
    "source": "@pagetkagy",
-   "stage": "optimising",
+   "stage": "early-review",
    "evidence_pts": 20,
    "evidence_note": "9 of 28 reels, steady at her median, one at 1.3M. One page only. Unchanged by the transcripts: they show how her two biggest skits are built, not that the build is why they were big; no ordinary or low skit is transcribed.",
    "checks": [
@@ -556,7 +556,7 @@
      "done": false
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -573,6 +573,12 @@
      "date": "2026-11-20",
      "event": "Transcripts of 2 skits studied: structure recorded, evidence unchanged at 20. Review of these notes not done; cycles unchanged.",
      "by": "research agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
@@ -734,12 +740,12 @@
   },
   {
    "id": "do-along",
-   "name": "Do it along with the reel",
-   "line": "The reel is a script the viewer carries out while watching: say it, write it, work it out.",
+   "name": "A script to carry out",
+   "line": "The reel gives the viewer lines to say or steps to do, during the reel or later that day.",
    "source": "@pagetkagy",
    "stage": "discovered",
    "evidence_pts": 5,
-   "evidence_note": "4 of the 7 reels transcribed, including the 12.3M pinned one. But those 7 were picked because they were big, so this shows presence, not effect. One page.",
+   "evidence_note": "4 of the 7 reels transcribed, but only 2 are done while watching; the other 2 are done later (at bedtime, on a date). 3 of the 4 are the same reels as 'A task with a return date', so this is not a separate finding yet. Those 7 were picked because they were big. One page.",
    "checks": [
     {
      "name": "Indian pages",
@@ -766,14 +772,20 @@
    "history": [
     {
      "date": "2026-11-20",
-     "event": "Noticed in the @pagetkagy transcripts: four big reels give the viewer lines to say or steps to do during the reel.",
+     "event": "Noticed in the @pagetkagy transcripts: four big reels give the viewer lines to say or steps to do (two during the reel, two later).",
      "by": "research agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
     {
      "what": "Reels using it",
-     "result": "4 of 7 transcribed (12.3M pinned, 1.7M, 1.0M, 923K); 0 of the 2 skits and not the list",
+     "result": "4 of 7 transcribed; 2 during the reel, 2 later; 3 overlap with 'A task with a return date'",
      "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     },
     {
@@ -859,7 +871,7 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -904,7 +916,7 @@
      "done": true
     }
    ],
-   "cycles": 1,
+   "cycles": 0,
    "history": [
     {
      "date": "2026-11-20",
@@ -916,6 +928,12 @@
      "date": "2026-11-20",
      "event": "Transcripts showed the cover labels undercounted money among the hits. Still not supported as a rule (medians level); wording corrected. Not re-reviewed; cycles unchanged.",
      "by": "research agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [

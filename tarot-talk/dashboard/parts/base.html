@@ -295,7 +295,7 @@ function openSheet(r) {
       r.likes ? null : h("div", { class: "sub" }, "Caption and counters not read yet. Only the view count" + (r.cover ? " and the cover are" : " is") + " known."),
       r.ask ? h("div", {}, h("span", { class: "sub" }, "Caption asks: "), r.ask) : null,
       h("div", { class: "stack", style: "gap:6px" }, D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("div", { class: "qrow", style: "font-size:13.5px" }, h("span", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), style: "margin-right:8px" }), s.name), h("span", { class: "sub" }, v ? (typeof v === "string" ? v : "done") : w ? "waiting for the desktop app" : "not done")); })),
-      r.cli && r.cli.transcript && r.cli.transcript.length ? h("div", { class: "reading" }, h("b", {}, "Transcript (" + r.cli.language + ")"), r.cli.transcript.map(t => t.text).join(" ")) : null,
+      r.cli && r.cli.transcript && r.cli.transcript.length ? h("div", { class: "reading" }, h("b", {}, "Transcript heard"), r.cli.transcript.length + " lines (" + r.cli.language + "). Opens: \u201C" + r.cli.transcript.map(t => t.text).join(" ").trim().split(/\s+/).slice(0, 12).join(" ") + " \u2026\u201D The full words are not shown here; play the reel to hear them.") : null,
       h("a", { class: "out", href: "https://www.instagram.com/reel/" + r.id + "/", target: "_blank", rel: "noopener" }, "Open this reel on Instagram"))));
   addEventListener("keydown", esc); closeBtn.focus();
 }

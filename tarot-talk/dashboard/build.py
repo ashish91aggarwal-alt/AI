@@ -23,11 +23,10 @@ def main():
                 desk=rd(d) if (d := SCOUT / "output" / "desk-status.json").exists() else None)
     S = rd(HERE / "strategies.json")
     for x in S["strategies"]:                         # the score is counted here from what is recorded, never typed in by hand
-        live = [c for c in x["checks"] if c["result"] != "does not apply"]
-        parts = [["Evidence", min(30, x["evidence_pts"]), 30], ["Checks", 10 * sum(1 for c in live if c["done"]), 10 * len(live)],
-                 ["Optimise and review cycles", min(20, 10 * x["cycles"]), 20], ["Result on our own page", 10 if x.get("own_result") else 0, 10]]
+        parts = [["Evidence", min(30, x["evidence_pts"]), 30], ["Checks", 10 * sum(1 for c in x["checks"] if c["done"] and c["result"] != "does not apply"), 40],
+                 ["Fix and re-review cycles", min(20, 10 * x["cycles"]), 20], ["Result on our own page", 10 if x.get("own_result") else 0, 10]]
         x["score_parts"] = parts
-        x["score"] = round(100 * sum(p[1] for p in parts) / sum(p[2] for p in parts))
+        x["score"] = None if x["stage"] in ("parked", "rejected") else sum(p[1] for p in parts)
     data["strategies"] = S
     plan = SCOUT / "research-plan.json"
     data["plan"] = rd(plan) if plan.exists() else None

@@ -23,13 +23,13 @@
   {
    "title": "Instagram research",
    "area": "Research",
-   "stage": "waiting for the desktop app",
+   "stage": "7 transcripts studied",
    "tone": "good",
-   "text": "Studying pages abroad for ideas that could work in India. Transcripts arrive once the desktop app has run on the PC.",
-   "next": "Forward more pages or reels from the Research tab.",
+   "text": "One page abroad studied with 7 transcripts. Every borrowed idea still rests on that one page; a second page is next.",
+   "next": "The research agent's plan is on the Research tab.",
    "link": "research",
    "icon": "search",
-   "short": "Studying pages abroad for ideas that could work in India. Transcripts arrive once the desktop app has run on the PC."
+   "short": "One page abroad studied with 7 transcripts. Every borrowed idea still rests on that one page; a second page is next."
   },
   {
    "title": "Tarot Talk framework and skills",
@@ -58,8 +58,7 @@
   "Pick the look for the 2027 series (reviewer's pick: gilded miniature, drawn more cleanly).",
   "Sakshi: which way do you read the personal year, January to December or birthday to birthday?",
   "Is the 2027 yearly report ready, and at what price? The series is not produced before the product exists or has a date.",
-  "Comments and DMs from last year's series, for the audience file.",
-  "Open Tarot Talk Desk on the PC once (after the git pull and install step), so the transcripts arrive."
+  "Comments and DMs from last year's series, for the audience file."
  ],
  "activity": [
   {
@@ -490,7 +489,7 @@
    "name": "Task with a return date",
    "type": "skill",
    "area": "content",
-   "status": "trial",
+   "status": "review",
    "line": "Give the viewer a job and a time to come back.",
    "source": "@pagetkagy",
    "detail": "3 of her 4 recent hits. Planned: find your driver, comment it, come back on 1 January."
@@ -499,7 +498,7 @@
    "name": "Named character",
    "type": "skill",
    "area": "content",
-   "status": "trial",
+   "status": "review",
    "line": "A character answers the viewer's wish.",
    "source": "@pagetkagy + owner's idea",
    "detail": "Her house format. Ours is the saarthi who drives the year."
