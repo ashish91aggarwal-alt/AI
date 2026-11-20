@@ -125,3 +125,7 @@ Owner's standing production rules:
 ## Talking to the owner
 
 Simple, short text. Status first, then what the reviewer said, then the one decision needed. Times in IST.
+
+## Session card
+
+Before starting work, add or update your own card in `tarot-talk/dashboard/sessions.json` (name, link, where, started, last_seen in IST, doing, compactions) and update `last_seen` and `doing` each time you push. `compactions` is how many times this chat's history has been summarised to make room; say it truthfully. At 1, finish the piece in hand and tell the owner to start a new chat with the `handoff` text; at 2 or more, stop and hand over. The desktop app shows these cards.

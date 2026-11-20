@@ -69,3 +69,4 @@ details.reading summary{cursor:pointer;list-style:none;font-weight:700;font-size
 .dnode span:last-child{font-size:13px;opacity:.75}
 .dlog{white-space:pre-wrap;overflow-wrap:anywhere;max-height:320px;overflow:auto;padding:14px;border-radius:14px;background:rgba(0,0,0,.35);font:13px/1.5 Consolas,ui-monospace,monospace}
 @media (max-width:760px){.dflow{grid-template-columns:1fr}.dflow>i{justify-self:center;transform:rotate(90deg)}}
+.meter{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden;margin:10px 0 4px;max-width:340px}.meter>i{display:block;height:100%;border-radius:99px;transition:width .6s}

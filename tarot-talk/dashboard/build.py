@@ -19,7 +19,7 @@ def main():
     ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
     data = dict(built=datetime.datetime.now(ist).strftime("%d %b %Y, %H:%M IST"), workspace=rd(HERE / "workspace.json"), pages=pages, status=status,
                 requests=rd(SCOUT / "input" / "requests.json"), agent=rd(HERE / "agent.json"), styles=rd(HERE / "styles.json"), images=images,
-                repo="ashish91aggarwal-alt/AI", queue=rd(q) if (q := SCOUT / "input" / "queue.json").exists() else [],
+                repo="ashish91aggarwal-alt/AI", sessions=rd(s) if (s := HERE / "sessions.json").exists() else None, queue=rd(q) if (q := SCOUT / "input" / "queue.json").exists() else [],
                 desk=rd(d) if (d := SCOUT / "output" / "desk-status.json").exists() else None)
     tx = lambda n: (HERE / "parts" / n).read_text(encoding="utf-8")
     template = tx("base.html").replace("/*__HUBCSS__*/", tx("hub.css")) + tx("hub.js")   # base: shell + profile views; hub: workspace views

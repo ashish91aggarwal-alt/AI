@@ -219,6 +219,16 @@ async function poll() {
   const sig = JSON.stringify(state.desk || {}) + state.deskDown, a = document.activeElement;
   if (sig !== deskSig && route().tab === "desk" && !(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName))) { deskSig = sig; const y = scrollY; render(); scrollTo(0, y); }
 }
+/* Claude sessions: each one writes its own card to sessions.json. The light is a rule of thumb, not a token meter. */
+function sessionCards() {
+  const S = D.sessions; if (!S) return [];
+  const health = n => n >= 2 ? ["Move to a new chat now", "bad", 100] : n === 1 ? ["Finish this piece, then start a new chat", "warn", 66] : ["Fresh", "good", 20];
+  const copy = h("button", { type: "button", class: "dbtn", onclick: async e => { try { await navigator.clipboard.writeText(S.handoff); e.currentTarget.textContent = "Copied. Paste it into a new chat"; } catch (x) { e.currentTarget.textContent = "Select the text above and copy it"; } } }, "Copy the start-up message for a new chat");
+  return [h("h3", { style: "margin-top:18px" }, "Claude sessions"),
+    h("div", { class: "stack" }, S.sessions.map(x => { const [t, cls, pct] = health(x.compactions || 0); return card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", {}, x.name), h("div", { class: "sub" }, x.where + " · started " + x.started + " · last wrote here " + x.last_seen), h("div", { style: "font-size:14px;margin-top:4px" }, x.doing),
+      h("div", { class: "meter", role: "img", "aria-label": "Session load: " + t }, h("i", { style: "width:" + pct + "%;background:var(--" + cls + ")" })), h("div", { class: "sub" }, "History squeezed " + (x.compactions || 0) + " time(s)"), x.link ? h("a", { class: "out", href: x.link, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open this chat") : null), pill(t, cls))); })),
+    h("p", { class: "sub" }, S.rule), h("pre", { class: "dlog", style: "max-height:none" }, S.handoff), copy];
+}
 function vDesk() {
   const s = state.desk;
   if (state.deskDown) return [card("", h("h3", {}, "This window lost touch with the app"), h("p", { class: "sub" }, "If the app was restarted, reload this window. If it was closed, start it again from the Tarot Talk Desk shortcut on the Desktop."), h("button", { type: "button", class: "dbtn hot", onclick: () => location.reload() }, "Reload"))];
@@ -242,6 +252,7 @@ function vDesk() {
       node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
+    ...sessionCards(),
     h("h3", { style: "margin-top:18px" }, "Add work"), card("", addBox),
     h("div", { class: "tags", style: "margin:10px 0" }, allProfiles().map(([hd]) => btn("Read the top reels of @" + hd, run("hits", { handle: hd })))),
     h("h3", { style: "margin-top:18px" }, "Tools on this computer"),
