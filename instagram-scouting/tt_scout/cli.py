@@ -225,7 +225,8 @@ def cmd_run(a):
 def cmd_push(_):
     repo = ROOT.parent
     paths = [str(p) for p in (OUT, QUEUE) if p.exists()]
-    for c in (["git", "add", "--"] + paths, ["git", "commit", "-m", "Scout: command-line results", "--"] + paths, ["git", "push"]):
+    ident = [] if run(["git", "config", "user.email"], cwd=repo).stdout.strip() else ["-c", "user.name=tarot-talk-desk", "-c", "user.email=tarot-talk-desk@users.noreply.github.com"]
+    for c in (["git", "add", "--"] + paths, ["git", *ident, "commit", "-m", "Scout: command-line results", "--"] + paths, ["git", "push"]):
         r = run(c, cwd=repo)
         last = ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-1:] or ["ok"]
         print(" ".join(c[:2]), "->", last[0])

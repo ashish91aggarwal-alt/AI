@@ -67,6 +67,7 @@ function inbox() {
       const body = ["link: " + (p.url || p.target), "purpose: " + state.purpose, "profile: " + (profile ? "yes" : "no"), "by: " + by, note ? "note: " + note : ""].filter(Boolean).join("\n");
       const url = "https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + (p.url || p.target)) + "&body=" + encodeURIComponent(body);
       if (p.kind === "topic") { msg.textContent = "Topic search is not built yet. Paste a reel or page link."; return; }
+      if (LOCAL) { const r = await api("add", { text: p.url || p.target, purpose: state.purpose, by }); msg.textContent = r.msg + (r.ok ? " Watch it on the Desk tab." : ""); if (r.ok) $("#target").value = ""; return; }
       $("#gobox").hidden = false; $("#golink").href = url; msg.textContent = "One more tap: the button below opens GitHub with the request filled in. Press \"Submit new issue\" there. It is picked up within a few minutes if the PC is on with the Tarot Talk Desk app open, and only when sent from a GitHub account on the app's allowed list.";
     } },
     h("label", { for: "target" }, "Reel link, page link, @handle or topic", h("input", { id: "target", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
@@ -205,8 +206,57 @@ function vProfile() {
   ];
 }
 
+/* ---------- desk: only inside the desktop app. Every command the computer can do, as buttons. ---------- */
+const LOCAL = window.TT_LOCAL || null;
+async function api(name, body) {
+  try { const r = await fetch("/api/" + name, { method: "POST", headers: { "Content-Type": "application/json", "X-TT-Token": LOCAL.token }, body: JSON.stringify(body || {}) }); const j = await r.json(); poll(); return j; }
+  catch (e) { return { ok: false, msg: "The desktop app is not answering. Start it again from the Desktop shortcut." }; }
+}
+let deskSig = "";
+async function poll() {
+  if (!LOCAL) return;
+  try { const r = await fetch("/api/state", { headers: { "X-TT-Token": LOCAL.token } }); state.desk = await r.json(); state.deskDown = false; } catch (e) { state.deskDown = true; }
+  const sig = JSON.stringify(state.desk || {}) + state.deskDown, a = document.activeElement;
+  if (sig !== deskSig && route().tab === "desk" && !(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName))) { deskSig = sig; const y = scrollY; render(); scrollTo(0, y); }
+}
+function vDesk() {
+  const s = state.desk;
+  if (state.deskDown) return [card("", h("h3", {}, "The desktop app has stopped"), h("p", { class: "sub" }, "Start it again from the Tarot Talk Desk shortcut on the Desktop, then reload this window."))];
+  if (!s) return [h("p", { class: "sub" }, "Connecting to the desktop app ...")];
+  const say = h("div", { class: "msg", role: "status" }, state.deskMsg || "");
+  const run = (name, body, wait) => async e => { const b = e.currentTarget; b.disabled = true; if (wait) say.textContent = wait; const r = await api(name, body); state.deskMsg = r.msg; say.textContent = r.msg; b.disabled = false; };
+  const btn = (t, fn, cls) => h("button", { type: "button", class: "dbtn " + (cls || ""), onclick: fn }, t);
+  const waiting = s.queue.filter(x => x.state === "queued" || x.state === "working").length, forAgent = s.queue.filter(x => x.state === "ready-for-agent" || x.state === "needs-agent").length;
+  const light = s.paused ? ["Paused", "wait"] : s.busy ? ["Working", "acc"] : ["Watching the queue", "good"];
+  const gh = s.sync_failed ? ["Not syncing", "bad"] : s.last_ok ? ["Synced " + s.last_ok.slice(11), "good"] : ["Not synced yet", "wait"];
+  const node = (title, st, line) => h("div", { class: "dnode" }, h("b", {}, title), pill(st[0], st[1]), h("span", {}, line));
+  const addBox = h("form", { class: "req", onsubmit: async e => { e.preventDefault(); const r = await api("add", { text: $("#dlink").value, purpose: $("#dpurpose").value }); state.deskMsg = r.msg; say.textContent = r.msg; if (r.ok) $("#dlink").value = ""; } },
+    h("label", { for: "dlink" }, "Reel link, page link or @handle", h("input", { id: "dlink", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
+    h("div", { class: "two" }, h("label", { for: "dpurpose" }, "What is it for?", h("select", { id: "dpurpose" }, h("option", { value: "content" }, "Content: what they post"), h("option", { value: "process" }, "Process: how to do it"))), h("div", { style: "align-self:end" }, h("button", { class: "go", type: "submit" }, "Add to the queue"))));
+  return [
+    s.restart ? card("", h("h3", {}, "An update was downloaded"), h("p", { class: "sub" }, "Quit the app below and start it again from the Desktop shortcut to use the new version.")) : null,
+    s.rev !== LOCAL.rev ? card("", h("div", { class: "qrow" }, h("div", {}, h("h3", {}, "New results are in"), h("div", { class: "sub" }, "Reload to see them on the other tabs.")), btn("Reload", () => location.reload(), "hot"))) : null,
+    s.broken ? card("", h("h3", {}, "The queue file is damaged"), h("p", { class: "sub" }, s.broken)) : null,
+    h("div", { class: "dflow" }, node("Web dashboard", gh, s.sync_failed ? "GitHub did not accept the last sync. See the work log." : "Sakshi's view. Requests sent there arrive here."), h("i", { "aria-hidden": "true" }, "⇄"),
+      node("This desktop app", light, waiting + " waiting here · " + s.reels_today + " of " + s.max_reels + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
+      node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
+    h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
+    h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
+    h("h3", { style: "margin-top:18px" }, "Add work"), card("", addBox),
+    h("div", { class: "tags", style: "margin:10px 0" }, allProfiles().map(([hd]) => btn("Read the top reels of @" + hd, run("hits", { handle: hd })))),
+    h("h3", { style: "margin-top:18px" }, "Tools on this computer"),
+    h("div", { class: "tiles" }, s.tools.map(t => card("", h("div", { class: "qrow" }, h("h3", {}, t.name), pill(t.ok ? "ready" : "missing", t.ok ? "good" : "bad")), h("div", { class: "sub" }, t.used_for), t.ok ? null : t.fixable ? btn("Install it", run("fix", { key: t.key }, "Installing. This can take a few minutes ..."), "hot") : h("div", { class: "sub", style: "margin-top:6px" }, "Install by hand: ", h("code", {}, t.install))))),
+    h("h3", { style: "margin-top:18px" }, "Queue"),
+    s.queue.length ? h("div", { class: "stack" }, s.queue.map(x => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (x.kind === "page" ? "@" : x.kind + " ") + x.target), h("div", { class: "sub" }, (x.purpose || "") + " · from " + (x.by || "?") + " · " + (x.updated || x.asked || "")), x.result ? h("div", { style: "font-size:14px;margin-top:4px" }, x.result) : null,
+      x.state === "failed" ? btn("Try again", run("retry", { n: x.n })) : x.state === "refused" ? btn("Try again now (skips the 24 hour wait)", run("retry", { n: x.n, force: true })) : null), pill((QSTATE[x.state] || [x.state, "wait"])[0], (QSTATE[x.state] || [x.state, "wait"])[1]))))) : h("p", { class: "sub" }, "Nothing in the queue."),
+    h("h3", { style: "margin-top:18px" }, "Work log"), h("pre", { class: "dlog" }, s.logs.length ? s.logs.slice().reverse().join("\n") : "Nothing yet.")
+  ];
+}
+if (LOCAL) { ICON.desk = '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'; setInterval(poll, 3000); poll(); }
+
 /* ---------- shell ---------- */
 const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["playbook", "Playbook", vPlaybook, "book"], ["strategy", "Strategy", vStrategy, "compass"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
+if (LOCAL) TABS.splice(1, 0, ["desk", "Desk", vDesk, "desk"]);
 function route() { const k = (location.hash || "").slice(1); if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
 function render() {
   const r = route();

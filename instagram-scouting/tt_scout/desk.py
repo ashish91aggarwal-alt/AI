@@ -6,9 +6,10 @@ It does everything that needs this computer and no thinking:
   - records every step in input/queue.json and output/desk-status.json, rebuilds the dashboard, commits and pushes
   - leaves anything that needs judgement marked "ready for agent" or "needs agent" for a Claude session
 
-Run:  tt-desk            (window)      tt-desk --once   (one cycle in the console, no window)
+Run:  pythonw -m tt_scout.desk     (the app: its own window, every control, the full dashboard)
+      python -m tt_scout.desk --once   (one round in the console, no window)
 """
-import datetime, json, os, pathlib, queue as pyqueue, re, shutil, socket, subprocess, sys, tempfile, threading, time, urllib.request, webbrowser
+import datetime, json, os, pathlib, re, shutil, socket, subprocess, sys, tempfile, threading, time, urllib.request, webbrowser
 
 from . import cli
 
@@ -80,6 +81,17 @@ class Desk:
         self.model = None
         self.unpushed = False
         self.last_fetch = 0.0
+        self.synced = False
+        # git refuses to commit on a computer where no name was ever set; use the GitHub account's public no-reply address then
+        self.ident, self.ident_note = [], ""
+        try:
+            has = subprocess.run(["git", "config", "user.email"], cwd=self.repo, capture_output=True, text=True, timeout=20, **NOWIN).stdout.strip()
+        except Exception:
+            has = "?"
+        if not has:
+            u = (self.cfg.get("allowed_users") or ["tarot-talk-desk"])[0]
+            self.ident = ["-c", f"user.name={u}", "-c", f"user.email={u}@users.noreply.github.com"]
+            self.ident_note = f"Commits from this computer are signed as {u} (no git name was set here)."
         with LOCK:                                   # anything left "working" by a closed window goes back in line
             q = self.load_queue()
             if any(x.get("state") == "working" for x in q):
@@ -100,7 +112,7 @@ class Desk:
     def git(self, *args):
         env = {**os.environ, "GIT_TERMINAL_PROMPT": "0"}
         try:
-            return subprocess.run(["git", *args], cwd=self.repo, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=120, env=env, **NOWIN)
+            return subprocess.run(["git", *self.ident, *args], cwd=self.repo, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=120, env=env, **NOWIN)
         except subprocess.TimeoutExpired:
             return subprocess.CompletedProcess(args, 1, "", "git did not answer in 2 minutes (is it waiting for a sign-in?)")
 
@@ -186,7 +198,9 @@ class Desk:
             return False
         with LOCK:
             q = self.load_queue()
-            q.append({**r, "n": "L" + datetime.datetime.now().strftime("%m%d%H%M%S"), "purpose": purpose, "scoutProfile": r["kind"] != "page", "by": by, "note": "",
+            if any(x.get("target") == r["target"] and x.get("state") in ("queued", "working") for x in q):
+                return True                          # already waiting: one copy is enough
+            q.append({**r, "n": "L" + datetime.datetime.now().strftime("%m%d%H%M%S") + os.urandom(2).hex(), "purpose": purpose, "scoutProfile": r["kind"] != "page", "by": by, "note": "",
                       "asked": now_ist(), "state": "queued", "result": "", "updated": now_ist()})
             wr(self.qfile, q)
         return True
@@ -227,7 +241,7 @@ class Desk:
         if ref and (datetime.datetime.now() - datetime.datetime.fromisoformat(ref)).total_seconds() < cli.COOL_OFF_H * 3600:
             self.log("Instagram refused recently; waiting out the 24 hours."); return False
         if not all(cli.tools().values()):
-            self.log("A tool is missing; see the Status tab."); return False
+            self.log("A tool is missing; see the Desk tab."); return False
         self.set(n, state="working"); self.log(f"#{n}: reading {item['kind']} {item['target']} ...")
         s = rd(self.sfile, {}); s["reels_today"] = s.get("reels_today", 0) + 1; wr(self.sfile, s)      # every attempt counts toward the daily limit
         try:
@@ -265,7 +279,8 @@ class Desk:
     def cycle(self):
         """One round: sync, take in new requests, do at most one job, publish if anything changed."""
         cli.sweep()
-        if not self.pull():
+        self.synced = self.pull()
+        if not self.synced:
             return False
         before = json.dumps(self.load_queue(), sort_keys=True) + json.dumps([t["ok"] for t in self.tools()])
         if time.time() - self.last_fetch >= max(60, int(self.cfg.get("poll_seconds", 180))):       # stays far under GitHub's hourly limit
@@ -273,112 +288,195 @@ class Desk:
         worked = False if self.paused else self.work_one()
         self.status()
         after = json.dumps(self.load_queue(), sort_keys=True) + json.dumps([t["ok"] for t in self.tools()])
-        if before != after or self.unpushed:
+        loose = bool(self.git("status", "--porcelain", "--", "instagram-scouting/input/queue.json", "instagram-scouting/output/*/cli/*.json").stdout.strip())   # links added here, or results written earlier, that were never sent
+        if before != after or self.unpushed or loose:
             self.publish("Desk: queue and results")
         return worked
 
 
-# ------------------------------------------------------------------ window
-def run_gui(desk):
-    import tkinter as tk
-    from tkinter import ttk, simpledialog, messagebox
-    BG, CARD, INK, MUTED, ACC, GOOD, BAD = "#0b0613", "#1a0f2b", "#fbf7ff", "#b8a8cf", "#ff8a3d", "#3ddc97", "#ff5d73"
-    root = tk.Tk(); root.title("Tarot Talk Desk"); root.geometry("760x560"); root.configure(bg=BG)
-    try:
-        root.iconbitmap(str(pathlib.Path(__file__).with_name("desk.ico")))
-    except Exception:
-        pass
-    st = ttk.Style(); st.theme_use("clam")
-    st.configure(".", background=BG, foreground=INK, fieldbackground=CARD, font=("Segoe UI", 10))
-    st.configure("TNotebook", background=BG, borderwidth=0); st.configure("TNotebook.Tab", background=CARD, foreground=MUTED, padding=(16, 8))
-    st.map("TNotebook.Tab", background=[("selected", ACC)], foreground=[("selected", "#1a0b22")])
-    st.configure("Treeview", background=CARD, foreground=INK, fieldbackground=CARD, rowheight=28, borderwidth=0)
-    st.configure("Treeview.Heading", background=BG, foreground=MUTED, font=("Segoe UI", 9, "bold"))
-    st.configure("TButton", background=CARD, foreground=INK, padding=(12, 6), borderwidth=0); st.map("TButton", background=[("active", ACC)], foreground=[("active", "#1a0b22")])
+# ------------------------------------------------------------------ the app: a local page with every control, plus the background worker
+PORT = 47654
+MODULE_PKG = {"ytdlp": "yt-dlp", "whisper": "faster-whisper"}        # the only things the Fix button may install
 
-    head = tk.Frame(root, bg=BG); head.pack(fill="x", padx=16, pady=(14, 6))
-    tk.Label(head, text="Tarot Talk Desk", bg=BG, fg=ACC, font=("Segoe UI", 18, "bold")).pack(side="left")
-    light = tk.Label(head, text="●  starting", bg=BG, fg=MUTED, font=("Segoe UI", 10)); light.pack(side="right")
-    nb = ttk.Notebook(root); nb.pack(fill="both", expand=True, padx=16, pady=6)
 
-    t_status = tk.Frame(nb, bg=BG); nb.add(t_status, text="Status")
-    tools = ttk.Treeview(t_status, columns=("ok", "name", "use", "fix"), show="headings", height=6)
-    for c, w, tx in (("ok", 70, "State"), ("name", 130, "Tool"), ("use", 290, "Used for"), ("fix", 230, "If missing, run")):
-        tools.heading(c, text=tx); tools.column(c, width=w, anchor="w")
-    tools.pack(fill="x", pady=(10, 8))
-    info = tk.Label(t_status, text="", bg=BG, fg=MUTED, justify="left", anchor="w", font=("Segoe UI", 10)); info.pack(fill="x")
+class App:
+    def __init__(self, desk):
+        import collections, secrets
+        self.desk = desk
+        self.token = secrets.token_urlsafe(24)       # the page gets it when served; every command must send it back
+        self.logs = collections.deque(maxlen=300)
+        self.wake, self.stop = threading.Event(), threading.Event()
+        self.busy = False
+        self.rev = 0                                 # goes up whenever the page's data may have changed
+        self.started = time.time()
+        self.last_ok = None                          # last round that synced with GitHub
+        self.last_sync_failed = False
+        desk.log = self.say
 
-    t_queue = tk.Frame(nb, bg=BG); nb.add(t_queue, text="Queue")
-    qv = ttk.Treeview(t_queue, columns=("n", "what", "for", "by", "state", "result"), show="headings")
-    for c, w, tx in (("n", 60, "#"), ("what", 190, "Link"), ("for", 70, "For"), ("by", 80, "From"), ("state", 130, "State"), ("result", 320, "Result")):
-        qv.heading(c, text=tx); qv.column(c, width=w, anchor="w")
-    qv.pack(fill="both", expand=True, pady=(10, 8))
+    def say(self, m):
+        self.logs.append(datetime.datetime.now(IST).strftime("%H:%M  ") + str(m))
 
-    t_log = tk.Frame(nb, bg=BG); nb.add(t_log, text="Work log")
-    logbox = tk.Text(t_log, bg=CARD, fg=INK, relief="flat", wrap="word", font=("Consolas", 10), state="disabled"); logbox.pack(fill="both", expand=True, pady=10)
+    # ---- the page: the same dashboard GitHub shows, built here from the files on this computer
+    def page(self):
+        dash = self.desk.repo / "tarot-talk" / "dashboard"
+        r = subprocess.run([sys.executable, str(dash / "build.py")], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=120, **NOWIN)
+        f = dash / "index.html"
+        if r.returncode or not f.exists():
+            return "<!doctype html><meta charset=utf-8><title>Tarot Talk Desk</title><pre>The dashboard could not be built on this computer:\n\n" + (r.stderr or r.stdout)[-1500:].replace("<", "&lt;") + "</pre>"
+        boot = "<script>window.TT_LOCAL=" + json.dumps({"token": self.token, "rev": self.rev}) + "</script>"
+        return f.read_text(encoding="utf-8").replace("<head>", "<head>" + boot, 1)
 
-    msgs = pyqueue.Queue(); wake = threading.Event(); stop = threading.Event()
-    desk.log = lambda m: msgs.put(str(m))
-
-    def refresh():
-        for row in tools.get_children(): tools.delete(row)
-        for t in desk.tools():
-            tools.insert("", "end", values=("OK" if t["ok"] else "MISSING", t["name"], t["used_for"], "" if t["ok"] else t["install"]))
-        for row in qv.get_children(): qv.delete(row)
-        q = desk.load_queue()
-        for x in reversed(q[-200:]):
-            qv.insert("", "end", values=(x.get("n"), ("@" if x["kind"] == "page" else x["kind"] + " ") + x["target"], x.get("purpose", ""), x.get("by", ""), STATES.get(x.get("state"), x.get("state")), x.get("result", "")))
-        s = rd(desk.sfile, {})
-        waiting = sum(1 for x in q if x.get("state") == "queued"); ready = sum(1 for x in q if x.get("state") in ("ready-for-agent", "needs-agent"))
-        info.config(text=f"Project folder: {desk.root}\nLast check: {s.get('seen', 'not yet')}     Reels read today: {s.get('reels_today', 0)} of {desk.cfg.get('max_reels_per_day', 20)}\n"
-                         f"Waiting here: {waiting}     Waiting for the agent: {ready}\nChecks GitHub every {int(desk.cfg.get('poll_seconds', 180)) // 60} minutes while this window is open.\n"
-                         f"Requests are accepted from these GitHub accounts: {', '.join(desk.cfg.get('allowed_users', [])) or 'none set'}")
-        light.config(text="●  paused" if desk.paused else "●  watching the queue", fg=MUTED if desk.paused else GOOD)
-
-    def pump():
+    def state(self):
+        d = self.desk
         try:
-            while True:
-                m = msgs.get_nowait()
-                if m == "\x00refresh":
-                    try: refresh()
-                    except QueueBroken as e: msgs.put(str(e))
-                    continue
-                logbox.config(state="normal"); logbox.insert("end", datetime.datetime.now().strftime("%H:%M  ") + m + "\n"); logbox.see("end"); logbox.config(state="disabled")
-        except pyqueue.Empty:
-            pass
-        root.after(500, pump)
+            q = d.load_queue(); broken = ""
+        except QueueBroken as e:
+            q, broken = [], str(e)
+        s = rd(d.sfile, {})
+        code_changed = any(p.stat().st_mtime > self.started for p in pathlib.Path(__file__).parent.glob("*.py"))
+        return {"rev": self.rev, "busy": self.busy, "paused": d.paused, "broken": broken, "logs": list(self.logs)[-150:], "folder": str(d.root),
+                "tools": [{**{k: t[k] for k in ("key", "name", "ok", "used_for", "install")}, "fixable": t["key"] in MODULE_PKG} for t in d.tools()],
+                "queue": list(reversed(q[-200:])), "seen": s.get("seen"), "reels_today": s.get("reels_today", 0), "max_reels": d.cfg.get("max_reels_per_day", 20),
+                "poll_min": max(1, int(d.cfg.get("poll_seconds", 180)) // 60), "allowed": d.cfg.get("allowed_users", []), "unpushed": d.unpushed,
+                "last_ok": self.last_ok, "sync_failed": self.last_sync_failed, "ident": d.ident_note, "restart": code_changed, "public": d.cfg.get("dashboard_url", "")}
 
-    def loop():
-        while not stop.is_set():
+    # ---- commands from the page. Fixed list; nothing typed in the page is ever run as a command.
+    def act(self, name, a):
+        d = self.desk
+        if name == "check":
+            self.wake.set(); return "Checking now."
+        if name == "pause":
+            d.paused = not d.paused; self.say("Paused." if d.paused else "Resumed."); self.wake.set(); return "Paused." if d.paused else "Resumed."
+        if name == "add":
+            ok = d.add_local(str(a.get("text", ""))[:400], purpose="process" if a.get("purpose") == "process" else "content", by=str(a.get("by", "desktop"))[:40])
+            if not ok: return "!That is not an Instagram reel, post or page link."
+            self.say("Added from the desktop."); self.rev += 1; self.wake.set(); return "Added. The desktop starts on it now."
+        if name == "hits":                            # the strongest reels of a scouted page: pinned ones and those at 3x its median
+            handle = cli.safe_handle(a.get("handle"))
+            page = rd(d.root / "output" / handle / "page.json", None)
+            if not page: return "!That profile has not been scouted yet."
+            done = {p.stem for p in (d.root / "output" / handle / "cli").glob("*.json")}
+            with LOCK:
+                inq = {x.get("target") for x in d.load_queue() if x.get("state") in ("queued", "working")}
+            pick = [r["id"] for r in page.get("reels", []) if (r.get("pinned") or (r.get("multiple") or 0) >= 3) and r["id"] not in done and r["id"] not in inq]
+            for rid in pick:
+                d.add_local(f"https://www.instagram.com/reel/{rid}/", by="desktop"); time.sleep(0.01)
+            self.rev += 1; self.wake.set()
+            return f"Added {len(pick)} reel(s) of @{handle}." if pick else f"Nothing new to read for @{handle}: its top reels are already done or waiting."
+        if name == "retry":
+            with LOCK:
+                q = d.load_queue(); hit = [x for x in q if str(x.get("n")) == str(a.get("n")) and x.get("state") in ("failed", "refused")]
+                for x in hit: x.update(state="queued", result="", updated=now_ist())
+                if hit: wr(d.qfile, q)
+            if hit and a.get("force"):                # the owner chose to try again before the 24 hours are over
+                cs = cli.load_status(); cs.pop("refused_at", None); cli.save_status(cs)
+            self.rev += 1; self.wake.set(); return "Back in the queue." if hit else "!Nothing to retry."
+        if name == "fix":
+            pkg = MODULE_PKG.get(str(a.get("key")))
+            if not pkg: return "!This one is installed by hand; the command is shown on its card."
+            self.say(f"Installing {pkg} ...")
+            r = subprocess.run([sys.executable, "-m", "pip", "install", "-U", pkg], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=900, **NOWIN)
+            self.say(f"{pkg}: " + ("installed." if r.returncode == 0 else "install failed: " + (r.stderr or r.stdout).strip()[-200:])); self.rev += 1
+            return "Installed." if r.returncode == 0 else "!Install failed; see the work log."
+        if name == "folder":
+            if hasattr(os, "startfile"): os.startfile(d.root)
+            return "Opened."
+        if name == "quit":
+            self.say("Closing."); self.stop.set(); self.wake.set()
+            threading.Thread(target=lambda: (time.sleep(0.5), self.httpd.shutdown()), daemon=True).start(); return "Closed. You can close this window."
+        return "!Unknown command."
+
+    # ---- the worker: same rounds as before, whether or not a window is open
+    def loop(self):
+        d = self.desk
+        while not self.stop.is_set():
+            again = False; self.busy = True
             try:
-                again = desk.cycle()
+                before = self.sig()
+                again = d.cycle()
+                self.last_sync_failed = not d.synced or d.unpushed
+                if d.synced and not d.unpushed: self.last_ok = now_ist()
+                if self.sig() != before: self.rev += 1
+            except QueueBroken as e:
+                self.say(str(e))
             except Exception as e:
-                msgs.put("Cycle error: " + str(e)[:200]); again = False
-            msgs.put("\x00refresh")
-            wake.wait(cli.PAUSE if again else max(60, int(desk.cfg.get("poll_seconds", 180)))); wake.clear()
+                self.say("Round stopped by an error: " + str(e)[:200])
+            self.busy = False
+            self.wake.wait(cli.PAUSE if again else max(60, int(d.cfg.get("poll_seconds", 180)))); self.wake.clear()
 
-    def add_link():
-        v = simpledialog.askstring("Add a link", "Paste a reel link, a page link or an @handle:", parent=root)
-        if v is None: return
-        try: ok = desk.add_local(v)
-        except QueueBroken as e: messagebox.showerror("Tarot Talk Desk", str(e)); return
-        if ok: desk.log("Added from the desktop."); refresh(); wake.set()
-        else: messagebox.showinfo("Add a link", "That is not an Instagram reel, post or page link.")
+    def sig(self):
+        try:
+            return json.dumps(self.desk.load_queue(), sort_keys=True) + self.desk.git("rev-parse", "HEAD").stdout
+        except Exception:
+            return ""
 
-    def toggle():
-        desk.paused = not desk.paused; pause_btn.config(text="Resume" if desk.paused else "Pause"); refresh()
+    def serve(self):
+        import http.server
+        app = self
 
-    bar = tk.Frame(root, bg=BG); bar.pack(fill="x", padx=16, pady=(4, 14))
-    ttk.Button(bar, text="Check now", command=wake.set).pack(side="left", padx=(0, 8))
-    ttk.Button(bar, text="Add a link", command=add_link).pack(side="left", padx=(0, 8))
-    pause_btn = ttk.Button(bar, text="Pause", command=toggle); pause_btn.pack(side="left", padx=(0, 8))
-    ttk.Button(bar, text="Open dashboard", command=lambda: webbrowser.open(desk.cfg.get("dashboard_url", "https://github.com/" + desk.cfg.get("repo", "")))).pack(side="right")
-    ttk.Button(bar, text="Open project folder", command=lambda: os.startfile(desk.root) if hasattr(os, "startfile") else None).pack(side="right", padx=(0, 8))
+        class H(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *a): pass
 
-    refresh(); pump()
-    threading.Thread(target=loop, daemon=True).start()
-    root.protocol("WM_DELETE_WINDOW", lambda: (stop.set(), wake.set(), root.destroy()))
-    root.mainloop()
+            def send(self, code, body, kind="application/json"):
+                b = body.encode("utf-8") if isinstance(body, str) else body
+                self.send_response(code); self.send_header("Content-Type", kind + "; charset=utf-8"); self.send_header("Content-Length", str(len(b)))
+                self.send_header("Cache-Control", "no-store"); self.send_header("X-Content-Type-Options", "nosniff"); self.end_headers(); self.wfile.write(b)
+
+            def mine(self):                            # only this computer's own page may talk to the app
+                return self.headers.get("Host", "") in (f"127.0.0.1:{PORT}", f"localhost:{PORT}")
+
+            def do_GET(self):
+                if not self.mine(): return self.send(403, "{}")
+                if self.path.split("?")[0] in ("/", "/index.html"):
+                    return self.send(200, app.page(), "text/html")
+                if self.path == "/api/state" and self.headers.get("X-TT-Token") == app.token:
+                    return self.send(200, json.dumps(app.state(), ensure_ascii=False))
+                self.send(404, "{}")
+
+            def do_POST(self):
+                if not self.mine() or self.headers.get("X-TT-Token") != app.token: return self.send(403, "{}")
+                try:
+                    n = min(int(self.headers.get("Content-Length") or 0), 20000)
+                    a = json.loads(self.rfile.read(n).decode("utf-8") or "{}")
+                    if not isinstance(a, dict): a = {}
+                    msg = app.act(self.path.rsplit("/", 1)[-1], a)
+                except QueueBroken as e:
+                    msg = "!" + str(e)
+                except Exception as e:
+                    msg = "!" + str(e)[:200]
+                self.send(200, json.dumps({"ok": not msg.startswith("!"), "msg": msg.lstrip("!")}, ensure_ascii=False))
+
+        self.httpd = http.server.ThreadingHTTPServer(("127.0.0.1", PORT), H)      # reachable from this computer only
+        self.httpd.daemon_threads = True
+        return self.httpd
+
+
+def open_window():
+    """Show the app in its own window (Edge or Chrome in app mode: no address bar). Falls back to the normal browser."""
+    url = f"http://127.0.0.1:{PORT}/"
+    cands = [os.path.join(os.environ.get(v, ""), p) for v in ("ProgramFiles(x86)", "ProgramFiles", "LocalAppData")
+             for p in (r"Microsoft\Edge\Application\msedge.exe", r"Google\Chrome\Application\chrome.exe")]
+    cands += [shutil.which(x) or "" for x in ("msedge", "chrome", "google-chrome", "chromium")]
+    for exe in cands:
+        if exe and os.path.isfile(exe):
+            try:
+                subprocess.Popen([exe, "--app=" + url, "--window-size=1320,900"], **NOWIN); return
+            except Exception:
+                pass
+    webbrowser.open(url)
+
+
+def run_app(desk):
+    app = App(desk)
+    try:
+        httpd = app.serve()
+    except OSError:                                    # already running: just bring up its window
+        open_window(); return 0
+    app.say("Tarot Talk Desk started.")
+    threading.Thread(target=app.loop, daemon=True).start()
+    threading.Timer(0.6, open_window).start()
+    httpd.serve_forever()
+    return 0
 
 
 def main():
@@ -386,10 +484,11 @@ def main():
         logf = open(pathlib.Path(tempfile.gettempdir()) / "tt-desk.log", "a", encoding="utf-8", buffering=1)
         sys.stdout = sys.stdout or logf; sys.stderr = sys.stderr or logf
     if "--once" not in sys.argv:
-        try:                                          # one window only: a second start just exits
-            guard = socket.socket(); guard.bind(("127.0.0.1", 47653)); main._guard = guard
+        try:                                          # already running: show its window and leave
+            probe = socket.create_connection(("127.0.0.1", PORT), timeout=0.5); probe.close()
+            open_window(); return 0
         except OSError:
-            return 0
+            pass
     try:
         desk = Desk()
     except SystemExit as e:
@@ -404,7 +503,7 @@ def main():
         try: desk.cycle()
         except QueueBroken as e: print(e); return 1
         print(json.dumps(rd(desk.sfile, {}), indent=1)); return 0
-    run_gui(desk); return 0
+    return run_app(desk)
 
 
 if __name__ == "__main__":
