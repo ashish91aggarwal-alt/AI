@@ -13,7 +13,7 @@ instagram-scouting/
                         cli/<reel>.json  transcript and audio numbers from the command-line step
   output/status.json    which tool has done what
   output/cli-status.json  written by the command-line script on the PC
-  cli/scout_cli.py      command-line step, run on the owner's PC
+  tt_scout/ + pyproject.toml   the tt-scout command-line package, run on the owner's PC
   dashboard/build.py    builds page.json (the dashboard itself is the Tarot Talk workspace: tarot-talk/dashboard/)
   snippets/             page snippets the skill runs in the built-in browser
   reviews/              independent reviews
@@ -26,16 +26,23 @@ instagram-scouting/
 
 Until step 2 has run and pushed, the dashboard marks transcripts and audio as "waiting for command line".
 
-## Command line
+## Command line (the `tt-scout` package)
+
+Install once on the PC (also installs yt-dlp and faster-whisper):
 
 ```
-cd instagram-scouting
-python -m pip install -U yt-dlp faster-whisper      (once; ffmpeg too: winget install Gyan.FFmpeg)
-python cli/scout_cli.py check
-python cli/scout_cli.py queue pagetkagy
-python cli/scout_cli.py run
-python cli/scout_cli.py push
-python ../tarot-talk/dashboard/build.py             (rebuilds the workspace dashboard with the new results)
+python -m pip install "git+https://github.com/ashish91aggarwal-alt/AI.git#subdirectory=instagram-scouting"
+winget install Gyan.FFmpeg
 ```
 
-The script was written on 20 Nov 2026 and has not yet been run against Instagram.
+Then, from anywhere inside your clone of the AI repo:
+
+```
+tt-scout check
+tt-scout queue pagetkagy
+tt-scout run
+tt-scout push
+python tarot-talk/dashboard/build.py      (rebuilds the workspace dashboard with the new results)
+```
+
+Written on 20 Nov 2026. `check` and `queue` have been run; `run` has not yet been run against Instagram.

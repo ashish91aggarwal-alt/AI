@@ -12,17 +12,46 @@ start again for 24 hours. Fetching reels with a script is against Instagram's te
 this on their own computer by their own choice, at a slow pace.
 The dashboard shows what this step has and has not done, from output/cli-status.json.
 
-  python cli/scout_cli.py check            which tools are installed
-  python cli/scout_cli.py queue pagetkagy  choose reels worth a transcript (pinned and 3x-median reels)
-  python cli/scout_cli.py run              process the queue (at most 10 per run, 20 s apart)
-  python cli/scout_cli.py push             commit and push the results so the dashboard can show them
+  tt-scout check            which tools are installed
+  tt-scout queue pagetkagy  choose reels worth a transcript (pinned and 3x-median reels)
+  tt-scout run              process the queue (at most 10 per run, 20 s apart)
+  tt-scout push             commit and push the results so the dashboard can show them
 
-Install once:  python -m pip install -U yt-dlp faster-whisper     and ffmpeg (winget install Gyan.FFmpeg)
+Install once (this also installs yt-dlp and faster-whisper):
+  python -m pip install "git+https://github.com/ashish91aggarwal-alt/AI.git#subdirectory=instagram-scouting"
+and ffmpeg:  winget install Gyan.FFmpeg
+
+Run it from inside a clone of the AI repo (anywhere under it), or set TT_SCOUT_HOME to the
+instagram-scouting folder.
 """
 import argparse, datetime, json, pathlib, re, shutil, subprocess, sys, tempfile, time
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
-OUT, QUEUE, STATUS = ROOT / "output", ROOT / "input" / "cli-queue.json", ROOT / "output" / "cli-status.json"
+import os
+
+
+def find_root():
+    """The instagram-scouting project folder: TT_SCOUT_HOME, or found by walking up from where the command is run."""
+    env = os.environ.get("TT_SCOUT_HOME")
+    if env:
+        return pathlib.Path(env).resolve()
+    here = pathlib.Path.cwd().resolve()
+    for p in [here, *here.parents]:
+        for cand in (p, p / "instagram-scouting"):
+            if (cand / "input").is_dir() and (cand / "output").is_dir() and (cand / "pyproject.toml").exists():
+                return cand
+    dev = pathlib.Path(__file__).resolve().parent.parent
+    if (dev / "input").is_dir():
+        return dev
+    sys.exit("Could not find the instagram-scouting folder. Run this inside your clone of the AI repo, or set TT_SCOUT_HOME.")
+
+
+ROOT = OUT = QUEUE = STATUS = None
+
+
+def locate():
+    global ROOT, OUT, QUEUE, STATUS
+    ROOT = find_root()
+    OUT, QUEUE, STATUS = ROOT / "output", ROOT / "input" / "cli-queue.json", ROOT / "output" / "cli-status.json"
 MAX_PER_RUN, PAUSE, COOL_OFF_H = 10, 20, 24
 
 
@@ -58,7 +87,8 @@ def cmd_check(_):
     for k, v in s["tools"].items():
         print(f"  {k:8} {'installed ' + (v if isinstance(v, str) else '') if v else 'MISSING'}")
     missing = [k for k, v in s["tools"].items() if not v]
-    print("All tools found." if not missing else "Missing: " + ", ".join(missing) + ". See the install line at the top of this file.")
+    print("Project folder: " + str(ROOT))
+    print("All tools found." if not missing else "Missing: " + ", ".join(missing) + ". yt-dlp and faster-whisper come with the package (reinstall it); ffmpeg: winget install Gyan.FFmpeg")
     return 0 if not missing else 1
 
 
@@ -125,7 +155,7 @@ def sweep():
 def cmd_run(a):
     t = tools()
     if not all(t.values()):
-        print("Tools missing. Run:  python cli/scout_cli.py check"); return 1
+        print("Tools missing. Run:  tt-scout check"); return 1
     s0 = load_status(); ref = s0.get("refused_at")
     if ref and not a.force:
         hours = (datetime.datetime.now() - datetime.datetime.fromisoformat(ref)).total_seconds() / 3600
@@ -134,7 +164,7 @@ def cmd_run(a):
     sweep()
     q = json.loads(QUEUE.read_text(encoding="utf-8")) if QUEUE.exists() else []
     if not q:
-        print("Queue is empty. Run:  python cli/scout_cli.py queue <handle>"); return 0
+        print("Queue is empty. Run:  tt-scout queue <handle>"); return 0
     from yt_dlp.utils import DownloadError
     from faster_whisper import WhisperModel
     print(f"Loading speech model '{a.model}' (first time downloads it) ...")
@@ -166,7 +196,7 @@ def cmd_run(a):
     s["runs"] = (s.get("runs") or [])[-9:] + [runlog]
     save_status(s)
     QUEUE.write_text(json.dumps(left, indent=1), encoding="utf-8")
-    print(f"Done: {len(runlog['done'])}. Left in queue: {len(left)}. Now run:  python cli/scout_cli.py push")
+    print(f"Done: {len(runlog['done'])}. Left in queue: {len(left)}. Now run:  tt-scout push")
     return 0 if not runlog["failed"] else 2
 
 
@@ -183,13 +213,13 @@ def cmd_push(_):
 
 
 def main():
-    p = argparse.ArgumentParser(description="Instagram scout, command-line step")
+    p = argparse.ArgumentParser(prog="tt-scout", description="Tarot Talk Instagram scout, command-line step")
     sub = p.add_subparsers(dest="cmd", required=True)
     sub.add_parser("check").set_defaults(f=cmd_check)
     q = sub.add_parser("queue"); q.add_argument("handle"); q.set_defaults(f=cmd_queue)
     r = sub.add_parser("run"); r.add_argument("--model", default="small"); r.add_argument("--force", action="store_true", help="ignore the 24 h wait after a refusal"); r.set_defaults(f=cmd_run)
     sub.add_parser("push").set_defaults(f=cmd_push)
-    a = p.parse_args(); sys.exit(a.f(a))
+    a = p.parse_args(); locate(); sys.exit(a.f(a))
 
 
 if __name__ == "__main__":

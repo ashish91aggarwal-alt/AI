@@ -181,7 +181,7 @@ In the owner's `AI` repo, folder `instagram-scouting/` (see its README):
 
 ## Command-line step (the owner runs it)
 
-`cli/scout_cli.py` runs on the owner's PC, never from Claude's workspace: `check`, `queue <handle>`, `run`, `push`. It fetches each queued reel's sound, writes a timed transcript and audio numbers, deletes the fetched file, and records what it did in `output/cli-status.json`, which the dashboard reads. It never logs in, stops at the first refusal and will not start again for 24 hours. Fetching with a script is against Instagram's terms; say this to the owner once and leave the choice to them. When results arrive in the repo: pull, read the transcripts, revisit any finding that was waiting on them, rebuild and republish.
+The `tt-scout` package (`instagram-scouting/tt_scout/`, installed with pip from the repo) runs on the owner's PC, never from Claude's workspace: `tt-scout check`, `queue <handle>`, `run`, `push`. It fetches each queued reel's sound, writes a timed transcript and audio numbers, deletes the fetched file, and records what it did in `output/cli-status.json`, which the dashboard reads. It never logs in, stops at the first refusal and will not start again for 24 hours. Fetching with a script is against Instagram's terms; say this to the owner once and leave the choice to them. When results arrive in the repo: pull, read the transcripts, revisit any finding that was waiting on them, rebuild and republish.
 
 ## What to write down
 

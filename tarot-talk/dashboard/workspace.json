@@ -12,7 +12,13 @@
    "tone": "warn",
    "text": "Same mulank, different year: a hidden saarthi drives each person's 2027. Concept and episode plan reviewed. Four style frames drawn; the reviewer said none is ready for a pilot and to develop the gilded miniature look.",
    "next": "Pick a style. Then three single-idea shots are drawn and reviewed before a pilot.",
-   "link": "production"
+   "link": "production",
+   "icon": "film",
+   "progress": [
+    1,
+    8
+   ],
+   "short": "Same mulank, different year. Four style frames drawn; none pilot-ready yet."
   },
   {
    "title": "Instagram research",
@@ -21,7 +27,9 @@
    "tone": "good",
    "text": "@pagetkagy read through the browser: 28 reels listed, 25 covers, 9 reels read closely. Transcripts wait for the command-line step on the PC. Growth needs the page read again on other days.",
    "next": "Forward more pages or reels from the Research tab.",
-   "link": "research"
+   "link": "research",
+   "icon": "search",
+   "short": "@pagetkagy read: 28 reels, 25 covers, 9 closely. Transcripts waiting."
   },
   {
    "title": "Tarot Talk framework and skills",
@@ -30,7 +38,9 @@
    "tone": "acc",
    "text": "The TAROT episode shape, the stop / follow / choose gates and the scouting method are saved as skills and in the repo.",
    "next": "A fresh reviewer pass on the framework's second version.",
-   "link": "strategy"
+   "link": "strategy",
+   "icon": "compass",
+   "short": "TAROT episode shape, three gates and the scouting method are saved as skills."
   },
   {
    "title": "Audience file",
@@ -39,7 +49,9 @@
    "tone": "bad",
    "text": "The framework starts from real comments, DMs and buyer questions. None have been collected yet.",
    "next": "Send screenshots or an export from last year's New Year series.",
-   "link": "strategy"
+   "link": "strategy",
+   "icon": "people",
+   "short": "Needs real comments, DMs and buyer questions. None collected yet."
   }
  ],
  "waiting": [
@@ -50,6 +62,10 @@
   "Run the command-line step on the PC to get transcripts (optional, your choice)."
  ],
  "activity": [
+  {
+   "at": "20 Nov",
+   "text": "Command-line step packaged as tt-scout; playbook board and style library added."
+  },
   {
    "at": "20 Nov",
    "text": "Workspace dashboard rebuilt around Tarot Talk; scouting moved under Research."
@@ -387,5 +403,447 @@
     "tested once; flickers in motion"
    ]
   ]
+ },
+ "process": [
+  {
+   "key": "funnel",
+   "title": "Why people stop, follow and buy",
+   "kind": "Instagram post the owner sent",
+   "diagram": "funnel",
+   "verdict": "Applied as our three gates",
+   "tone": "good",
+   "kept": [
+    "Three stages: stop, follow, choose",
+    "Value before the sale",
+    "Proof must be real"
+   ],
+   "changed": [
+    "Added what Instagram itself ranks on: watch time, likes, sends",
+    "Added sound-off viewing and original content"
+   ],
+   "rejected": [
+    "The 40 / 30 / 20 / 10 percentages: no source found"
+   ],
+   "note": "Checked by an independent reviewer with a web search. The stages hold; the numbers are decoration."
+  },
+  {
+   "key": "hvfo",
+   "title": "The AI script system (HVFO)",
+   "kind": "PDF the owner sent",
+   "diagram": "hvfo",
+   "verdict": "Partly applied",
+   "tone": "acc",
+   "kept": [
+    "Give context before asking for a script",
+    "One clear idea per reel",
+    "Three hooks planned together: screen, spoken, text",
+    "A call to action that says why",
+    "Search words in caption, speech and cover"
+   ],
+   "changed": [
+    "\"Follow me\" ending became our comment keyword and DM",
+    "Written for talking to camera; ours is cartoon, so the visual hook leads"
+   ],
+   "rejected": [
+    "Letting AI guess the audience from the niche name",
+    "\"Act as a world-class expert\" lines"
+   ],
+   "note": "Author's reading, then folded into the framework, which was reviewed once."
+  },
+  {
+   "key": "signals",
+   "title": "What Instagram says it ranks on",
+   "kind": "Reported guidance from Instagram's head",
+   "diagram": "signals",
+   "verdict": "Applied in gates and measuring",
+   "tone": "good",
+   "kept": [
+    "Watch time, likes and sends are the top signals",
+    "Sends matter more for reaching non-followers",
+    "Original reels get more reach than reposts",
+    "About half of video is watched with the sound off"
+   ],
+   "changed": [],
+   "rejected": [],
+   "note": "From two summaries a reviewer read (Social Media Today, Buffer), not from Instagram's own page."
+  },
+  {
+   "key": "director",
+   "title": "Lemo-Opuscar director's method",
+   "kind": "GitHub repo the owner pointed to",
+   "diagram": "clap",
+   "verdict": "To be used at the pilot",
+   "tone": "wait",
+   "kept": [
+    "Write the treatment before drawing",
+    "Hook in the first 3 seconds",
+    "Sound is half the film",
+    "One signature shot; every camera move needs a reason"
+   ],
+   "changed": [
+    "Its workflow asks once and never stops; our gates stop at every step",
+    "Default size is wide; ours is vertical"
+   ],
+   "rejected": [],
+   "note": "Read in full. No film has been made with it yet."
+  }
+ ],
+ "playbook": [
+  {
+   "name": "Stop · Follow · Choose gates",
+   "type": "skill",
+   "area": "process",
+   "status": "applied",
+   "line": "Three pass/fail gates on every script and reel.",
+   "source": "Funnel post + Instagram guidance",
+   "detail": "Four checks per gate, run by a reviewer. A fail sends the work back before the owner sees it."
+  },
+  {
+   "name": "Independent reviewer",
+   "type": "skill",
+   "area": "process",
+   "status": "applied",
+   "line": "Nobody approves their own work.",
+   "source": "Owner's rule",
+   "detail": "Every idea, script, look and film goes to a fresh reviewer. Used ten times so far; it changed the result every time."
+  },
+  {
+   "name": "Cover-sheet scouting",
+   "type": "skill",
+   "area": "content",
+   "status": "applied",
+   "line": "See a whole page's hooks in two pictures.",
+   "source": "Built here",
+   "detail": "Reads every cover line with its views in one screenshot per 12 reels. Used on @pagetkagy."
+  },
+  {
+   "name": "Median and the 3x rule",
+   "type": "skill",
+   "area": "content",
+   "status": "applied",
+   "line": "A hit is 3 times the page's typical reel.",
+   "source": "Built here",
+   "detail": "Median of recent reels, pinned and brand-new ones left out."
+  },
+  {
+   "name": "Claim test",
+   "type": "skill",
+   "area": "content",
+   "status": "applied",
+   "line": "Check a pattern against every reel, not just the hits.",
+   "source": "Reviewer",
+   "detail": "Killed two claims on the first page: \"money does better\" and \"a clock in the hook does better\"."
+  },
+  {
+   "name": "TAROT episode shape",
+   "type": "skill",
+   "area": "process",
+   "status": "review",
+   "line": "Thehro, Apni baat, Reveal, On to the next, Take the step.",
+   "source": "Built here from research",
+   "detail": "Version 2 written after one review; not re-checked. Not yet used in a finished script."
+  },
+  {
+   "name": "Three-hook opening",
+   "type": "skill",
+   "area": "process",
+   "status": "review",
+   "line": "Screen action, first line and short text, planned together.",
+   "source": "AI script system",
+   "detail": "Inside TAROT's first beat. Must work with the sound off."
+  },
+  {
+   "name": "Search words",
+   "type": "skill",
+   "area": "process",
+   "status": "review",
+   "line": "Words people type go in speech, text, caption and cover.",
+   "source": "AI script system",
+   "detail": "Not checked against Instagram's own guidance yet."
+  },
+  {
+   "name": "One idea per shot",
+   "type": "skill",
+   "area": "production",
+   "status": "trial",
+   "line": "One idea, two text items at most, safe areas kept clear.",
+   "source": "Style-frame review",
+   "detail": "Came from the review that failed our first frames. To be proven in the next frames."
+  },
+  {
+   "name": "Lookup card",
+   "type": "skill",
+   "area": "content",
+   "status": "trial",
+   "line": "A small card so viewers find their own number in seconds.",
+   "source": "Driver concept review",
+   "detail": "Mulank + birth month + 2. Planned for every episode."
+  },
+  {
+   "name": "Task with a return date",
+   "type": "skill",
+   "area": "content",
+   "status": "trial",
+   "line": "Give the viewer a job and a time to come back.",
+   "source": "@pagetkagy",
+   "detail": "3 of her 4 recent hits. Planned: find your driver, comment it, come back on 1 January."
+  },
+  {
+   "name": "Named character",
+   "type": "skill",
+   "area": "content",
+   "status": "trial",
+   "line": "A character answers the viewer's wish.",
+   "source": "@pagetkagy + owner's idea",
+   "detail": "Her house format. Ours is the saarthi who drives the year."
+  },
+  {
+   "name": "Do / don't columns",
+   "type": "skill",
+   "area": "content",
+   "status": "review",
+   "line": "Two columns, ticks and crosses, one pair per beat.",
+   "source": "@pagetkagy",
+   "detail": "Two reels only; the sequel did worse. Easy in motion graphics."
+  },
+  {
+   "name": "Timed promise",
+   "type": "skill",
+   "area": "content",
+   "status": "review",
+   "line": "Name a length of time and what you will know after it.",
+   "source": "@pagetkagy",
+   "detail": "Mixed evidence: 12.3M and 1.0M, but also 252K to 311K."
+  },
+  {
+   "name": "Date anchor",
+   "type": "skill",
+   "area": "content",
+   "status": "review",
+   "line": "Tie a practice to one calendar moment.",
+   "source": "@pagetkagy",
+   "detail": "One reel at 1.0M. Ours: 31 December and 1 January, as reflection, not ritual."
+  },
+  {
+   "name": "Real-words audience file",
+   "type": "skill",
+   "area": "process",
+   "status": "parked",
+   "line": "Build the audience from real comments and DMs.",
+   "source": "AI script system, corrected",
+   "detail": "Waiting for last year's comments and DMs."
+  },
+  {
+   "name": "\"This video found you\"",
+   "type": "skill",
+   "area": "content",
+   "status": "rejected",
+   "line": "Telling viewers the reel is a sign.",
+   "source": "@pagetkagy",
+   "detail": "A false prophecy. Second-highest group on her page, so it needs a clear no."
+  },
+  {
+   "name": "\"Send it to yourself\"",
+   "type": "skill",
+   "area": "content",
+   "status": "rejected",
+   "line": "Sharing to your own chat as a ritual.",
+   "source": "@pagetkagy",
+   "detail": "Raises the share counter without anyone recommending the reel."
+  },
+  {
+   "name": "Secrecy and pressure hooks",
+   "type": "skill",
+   "area": "content",
+   "status": "rejected",
+   "line": "\"Don't tell anyone\", \"never be poor again\".",
+   "source": "@pagetkagy",
+   "detail": "Breaks the honesty rules: no fear, no guaranteed outcome."
+  },
+  {
+   "name": "AI-guessed audience",
+   "type": "skill",
+   "area": "process",
+   "status": "rejected",
+   "line": "Asking AI to invent the audience from the niche.",
+   "source": "AI script system",
+   "detail": "Gives the same picture everyone else has."
+  },
+  {
+   "name": "Reel to keyword to DM to report",
+   "type": "strategy",
+   "area": "process",
+   "status": "applied",
+   "line": "The selling path. Proven by the 2026 series.",
+   "source": "Owner's 2026 result",
+   "detail": "Rs 555 report, about Rs 1.5 lakh."
+  },
+  {
+   "name": "Series, not single reels",
+   "type": "strategy",
+   "area": "process",
+   "status": "applied",
+   "line": "10 to 20 episodes, one look, one product.",
+   "source": "Owner's brief",
+   "detail": "Gives a posting schedule and time to build reach."
+  },
+  {
+   "name": "General free, personal paid",
+   "type": "strategy",
+   "area": "process",
+   "status": "applied",
+   "line": "The reel is complete; the report is personal.",
+   "source": "Reviews",
+   "detail": "Hold back quantity, never the punchline."
+  },
+  {
+   "name": "Pilot before batches",
+   "type": "strategy",
+   "area": "production",
+   "status": "applied",
+   "line": "One full episode first, then 3 to 5 at a time.",
+   "source": "Owner's rule",
+   "detail": "No batch before the pilot passes."
+  },
+  {
+   "name": "Level 2, not a correction",
+   "type": "strategy",
+   "area": "content",
+   "status": "trial",
+   "line": "New work builds on last year's report.",
+   "source": "Driver concept review",
+   "detail": "Never say the 2026 report was wrong."
+  },
+  {
+   "name": "Every episode for every viewer",
+   "type": "strategy",
+   "area": "content",
+   "status": "trial",
+   "line": "No waiting for \"my number's\" episode.",
+   "source": "Reviews",
+   "detail": "Each series bible must say how. Themes with all numbers inside is one way."
+  },
+  {
+   "name": "Personal year for 2027",
+   "type": "strategy",
+   "area": "content",
+   "status": "review",
+   "line": "Use day + month + 2027, not mulank alone.",
+   "source": "Reviewers",
+   "detail": "Needs Sakshi's say on how she reads the year."
+  },
+  {
+   "name": "Top reel as sales page",
+   "type": "strategy",
+   "area": "process",
+   "status": "review",
+   "line": "The pinned best reel carries the product pitch.",
+   "source": "@pagetkagy",
+   "detail": "Seen once. Worth trying when the series has a clear winner."
+  },
+  {
+   "name": "Daily snapshot",
+   "type": "strategy",
+   "area": "content",
+   "status": "parked",
+   "line": "Read the reels list daily to see what keeps growing.",
+   "source": "Built here",
+   "detail": "Needs a scheduled agent run."
+  },
+  {
+   "name": "Percent weights from the funnel post",
+   "type": "strategy",
+   "area": "process",
+   "status": "rejected",
+   "line": "40 / 30 / 20 / 10 per factor.",
+   "source": "Funnel post",
+   "detail": "No source found."
+  },
+  {
+   "name": "\"Money topics do better\"",
+   "type": "strategy",
+   "area": "content",
+   "status": "rejected",
+   "line": "Assumed; the numbers did not support it.",
+   "source": "@pagetkagy",
+   "detail": "303K against 328K; 3 of 4 hits were not about money."
+  }
+ ],
+ "gates": {
+  "Stop": [
+   "First 2 seconds show motion and the question, sound off",
+   "A stranger can say the hook after one viewing",
+   "One open question is held to the end",
+   "One idea per shot"
+  ],
+  "Follow": [
+   "The viewer leaves with one usable thing",
+   "Same characters, colours and title card each episode",
+   "The ending names the next episode",
+   "A real reason to send it to someone"
+  ],
+  "Choose": [
+   "What the report gives, in one plain sentence",
+   "The free part is complete without buying",
+   "One comment keyword, shown and spoken",
+   "No fear, no guaranteed outcome, real proof only"
+  ]
+ },
+ "speak": {
+  "do": [
+   "Patterns and tendencies",
+   "Say when the reel simplifies",
+   "\"Hum ise driver kehte hain\"",
+   "Level 2 of last year"
+  ],
+  "dont": [
+   "\"This will happen\"",
+   "Fear, curse, secrecy",
+   "Money, health or ex promises",
+   "\"Last year was wrong\""
+  ]
+ },
+ "tarot": [
+  [
+   "T",
+   "Thehro",
+   "0-3 s",
+   "Stop the scroll, open one question",
+   7
+  ],
+  [
+   "A",
+   "Apni baat",
+   "3-10 s",
+   "The viewer finds themselves",
+   15
+  ],
+  [
+   "R",
+   "Reveal",
+   "10-38 s",
+   "One idea, one usable thing",
+   62
+  ],
+  [
+   "O",
+   "On to the next",
+   "38-41 s",
+   "Name the next episode",
+   7
+  ],
+  [
+   "T",
+   "Take the step",
+   "41-45 s",
+   "One keyword, and what they get",
+   9
+  ]
+ ],
+ "cli": {
+  "name": "tt-scout",
+  "state": "packaged, not yet run on the PC",
+  "install": "python -m pip install \"git+https://github.com/ashish91aggarwal-alt/AI.git#subdirectory=instagram-scouting\"\nwinget install Gyan.FFmpeg",
+  "run": "tt-scout check\ntt-scout queue pagetkagy\ntt-scout run\ntt-scout push"
  }
 }

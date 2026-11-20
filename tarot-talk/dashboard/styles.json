@@ -1,0 +1,627 @@
+{
+ "credit": "Posters: Lemo-Opuscar by Lemomo (LemoLab), github.com/lemomo-ai/lemo-opuscar, CC BY 4.0, resized. Posters with extra third-party terms are left out.",
+ "commit": "00a7f9e",
+ "items": [
+  {
+   "slug": "art-deco",
+   "name": "Art Deco",
+   "blurb": "Black lacquer, engraved gold line and airbrushed geometry: a 1930s poster that moves. Every composition has a centre axis, transitions open or close…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "ascii-crt",
+   "name": "CRT ASCII Terminal: Style Prompt",
+   "blurb": "Everything on screen is a real character on a monospace grid, lit by the phosphor of an old monochrome",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "assembly-line-diagram",
+   "name": "Assembly-Line Diagram",
+   "blurb": "A process explained as a factory cut open in elevation: a silhouette (a body, a machine, a building, a city) is sliced like a doll's house into rooms…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "backrooms",
+   "name": "Liminal Found Footage",
+   "blurb": "Camcorder tapes recovered from empty, endless, fluorescent-lit spaces. Rules instead of",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "bauhaus-shapes",
+   "name": "Bauhaus Shapes",
+   "blurb": "An explainer told only with circles, squares, triangles, arcs and straight lines, set in opaque colour on a light, matte paper. Every shape is a…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "blueprint",
+   "name": "Blueprint",
+   "blurb": "Engineering drawings that come alive on a sheet of cyanotype paper: white technical line work on Prussian blue, drawn in drafting order, with…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "cel-anime-80s",
+   "name": "80s Cel Anime",
+   "blurb": "Hand-painted cel animation from the golden age of Japanese OVAs, re-created in code: flat two-tone cels over airbrushed backgrounds, backlit neon,…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "chalkboard",
+   "name": "Chalkboard",
+   "blurb": "A real classroom blackboard on which chalk writes itself, stroke by stroke in true stroke order, with no hand, no chalk stick and no eraser in sight.…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "circuit-board",
+   "name": "Circuit Board",
+   "blurb": "The subject is drawn as a printed circuit board seen from straight above: the world is copper under green solder mask, routes are traces, places are…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "colored-pencil",
+   "name": "Colored-Pencil Science Illustration",
+   "blurb": "A real 3D cutaway world (ground, soil horizons, stones, buried structures, living things) redrawn every frame as a colored-pencil plate on toothed…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "crayon-book",
+   "name": "Crayon Picture Book",
+   "blurb": "A picture-book page drawn live in wax crayon on toothy paper, with a watercolour wash that reveals what the crayon was",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "dark-documentary",
+   "name": "Radar Sweep Documentary",
+   "blurb": "The world is black until a scan passes. A plane of light sweeps across terrain, machines and rooms; what it has touched lights up, then settles into…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "dark-keynote",
+   "name": "Dark Tech Keynote",
+   "blurb": "A software launch film where the interface itself is the star: near-black gradient, hairline grid, soft light, one brand accent, and UI that moves…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "desktop-flythrough",
+   "name": "Tabletop App Flythrough 桌面卡片穿梭",
+   "blurb": "App screens and tools lie on a sunlit desk as printed paper cards; small pixel characters, popped up into voxel toys, carry the work from card to…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "engraving",
+   "name": "Copperplate Engraving",
+   "blurb": "An intaglio plate that engraves itself: a burin cuts swelling lines into copper, a proof is pulled, and the figure builds up — outline, hatching,…",
+   "suits": "Old almanac feel",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "firefly-pointillism",
+   "name": "Firefly Pointillism",
+   "blurb": "Thousands of soft, breathing points of light on black make up the people, animals, grass, moon, rain and words. The points are never created or…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "flat-space-explainer",
+   "name": "Scale Zoom Explainer",
+   "blurb": "Solid flat shapes on a deep night-blue ground, each with one shade step and hard-edged ring \"glows\", drawn to true scale inside each frame, guided by…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "game-show",
+   "name": "Rhythm Game Show",
+   "blurb": "A rhythm-game variety show in flat vector: toy-like mascots with thick ink outlines on candy-coloured stripes and sunbursts, every hit landing on a…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "gilded-illumination",
+   "name": "Gilded Illumination",
+   "blurb": "The whole frame is one gilded miniature painting, and the story happens inside it: flat mineral pigments inside firm ink outlines, white-lead…",
+   "suits": "Tested as a style frame; reviewer ranked it first",
+   "tried": true,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "glass-product",
+   "name": "Glass Product Render",
+   "blurb": "Launch-film product rendering in transparent and frosted glass: a dark-field studio, strip-light sweeps, dispersion, caustics, light travelling…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "halftone-dossier",
+   "name": "Halftone Dossier",
+   "blurb": "A retro print case file: cream archive paper, overprinted halftone dots in a few flat inks, huge heavy headlines with misregistered shadows, rubber…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "hardcore-info",
+   "name": "Line-Art Cutaway",
+   "blurb": "A real-sized object, modelled in 3D and traced live into a black-line technical drawing on warm white paper: it turns, comes apart, is cut open and…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "hd-2d",
+   "name": "2.5D Pixel Art",
+   "blurb": "Hand-made pixel sprites standing like paper cut-outs inside a lit, fogged, fully 3D diorama, shot from a high three-quarter angle through a…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "hologram-hud",
+   "name": "Sci-fi Hologram HUD",
+   "blurb": "An object is scanned into a glowing wireframe. Target boxes lock onto its parts; each opens in a local exploded view, a leader pulls out, and its…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "impasto",
+   "name": "Impasto · Palette Knife",
+   "blurb": "Thick oil paint laid with a palette knife: big, flat, sharp-edged planes of colour, raked by light so every ridge of paint shows. Clarity first:…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "ink-wash",
+   "name": "Chinese Ink Wash",
+   "blurb": "Xieyi ink painting on rice paper, animated: blank paper is space, one brushstroke is a mountain, a wave, a gesture or a",
+   "suits": "Calm, spiritual feel",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "instruction-manual",
+   "name": "Instruction Manual Art",
+   "blurb": "The film is a printed assembly manual: one sheet of off-white paper, black line art in true isometric (45°), flat white parts, faceless people at…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "ipad-sketch",
+   "name": "Tablet Sketch Explainer",
+   "blurb": "The whole frame is a cream drawing canvas on a tablet, seen while someone draws and explains: grainy pencil lines go down first, flat colour blocks…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "iso-infographic",
+   "name": "Isometric Infographic",
+   "blurb": "A system diagram comes alive: an isometric diorama of flat three-tone blocks, thin ink labels and Isotype numbers, where things open up to show their…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "isometric-picture-book",
+   "name": "Isometric People Scene",
+   "blurb": "A calm explainer of an everyday rule, set in one real place drawn in true isometric with flat colour: small faceless people seen from behind do the…",
+   "suits": "Friendly story world",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "lowpoly-island",
+   "name": "Low-poly Isometric Island",
+   "blurb": "A tiny faceted world seen through an orthographic isometric lens: everything is a geometric block, and everything that appears arrives with a bounce…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "manga-panels",
+   "name": "Manga Panels",
+   "blurb": "A black-and-white Japanese manga page that moves: G-pen ink, screentone dots, one spot colour, panels that open on the beat, sound effects slammed in…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "marker-paper",
+   "name": "Marker on Paper",
+   "blurb": "A pad of matte white paper and one bullet-tip permanent marker in black, with a red and a blue marker for meaning only: blue is what we know, red is…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "microgame",
+   "name": "Microgame Frenzy",
+   "blurb": "A rapid-fire party-game film: one command word, a few seconds, one action. Every microgame is drawn in a completely different art style, and the film…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "midcentury-toon",
+   "name": "Mid-century Cartoon",
+   "blurb": "1950s flat colour and limited animation for \"follow along\" films: colour printed a few pixels off its broken ink line, bodies that hold still while…",
+   "suits": "Tested as a style frame; cleanest to animate",
+   "tried": true,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "neon-tubes",
+   "name": "Neon Tubes",
+   "blurb": "Real neon signs on a rainy night street: bent glass tubes filled with gas on painted boards, striking with a flicker, lighting the wet walls and…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "one-bit-dither",
+   "name": "1-bit Dither",
+   "blurb": "A real 3D world shown with exactly two inks: every grey becomes a pattern of dots that is fixed to the surfaces, outlines come from depth and normal…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "one-line",
+   "name": "One-line Drawing",
+   "blurb": "A single ink line that never leaves the paper. Everything on screen is that one line being drawn; scenes don't cut, they",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "oscilloscope-math",
+   "name": "Oscilloscope Math",
+   "blurb": "Mathematics drawn by an electron beam on a phosphor screen: thin glowing green lines on near-black, a dotted graticule, monospace readouts and TeX…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "paper-lantern",
+   "name": "Paper-cut Lightbox",
+   "blurb": "A layered paper-cut shadow box (纸雕灯) lit from behind: 6–9 sheets of cut card stacked in a shallow box, a warm light glowing through the paper,…",
+   "suits": "Warm, festive light",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "papercut-red",
+   "name": "Red Paper-cut",
+   "blurb": "Chinese window-flower paper-cuts brought to life: jointed red cut-outs on paper grounds, where the cut *is* the drawing and the holes are where the…",
+   "suits": "Festive paper-cut",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "pictogram-motion",
+   "name": "Pictogram Motion",
+   "blurb": "A beat-locked film built from three things only: a **square-grid \"core graphic\"** of circles, half-discs and tiny patterned cells whose rows slide…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "pip-simulation",
+   "name": "Blob Simulation",
+   "blurb": "A crowd of small flocked characters, the Pips, runs a real simulation on a warm paper lab board: evolution, games, epidemics, queues, markets. The…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "pixel-rpg",
+   "name": "16-bit Pixel RPG",
+   "blurb": "A short film that looks, sounds and *behaves* like a mid-90s console role-playing game: 320×180 pixels, a limited indexed palette, text boxes that…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "pop-art",
+   "name": "Pop Art",
+   "blurb": "Sixties screen-print and pop-art poster language used to tell something: Ben-Day dots fixed to the paper, heavy black key lines, flat red, yellow and…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "precise-mechanism",
+   "name": "Color-Coded Mechanism",
+   "blurb": "A real mechanism built in 3D and coloured like an anatomy plate: a pale ground, one flat colour per subsystem, the part being explained in a single…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "printed-long-take",
+   "name": "Scratchboard Long Take",
+   "blurb": "A three-dimensional world rendered as a scratchboard print, ink and paper with one red, crossed by one unbroken camera move. Depth, weather and light…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "risograph",
+   "name": "Risograph Print",
+   "blurb": "Animation that looks printed, frame by frame, on a stencil duplicator: two or three translucent spot inks overprinted on warm paper, halftone dots,…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "rubber-hose",
+   "name": "1930s Rubber Hose Cartoon",
+   "blurb": "Black-and-white hand-inked cartoons where every object is alive and swings to a hot jazz",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "scifi-toon",
+   "name": "Sci-Fi Sitcom Toon",
+   "blurb": "Adult-animation sci-fi sitcom: thick boiling outlines, flat colour, a duo whose reactions don't match, a glowing portal, and one palette per",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "scratch-film",
+   "name": "Scratch Film",
+   "blurb": "Direct animation: every picture looks scratched through black emulsion with a needle and tinted with transparent dye, redrawn by hand fifteen times a…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "security-xray",
+   "name": "Security X-ray",
+   "blurb": "The film is seen through a baggage-screening console: objects are never shown, only their dual-energy X-ray image, where every material has its…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "shadow-puppet",
+   "name": "Shadow Puppetry",
+   "blurb": "Chinese shadow theatre: translucent dyed-hide puppets, carved like lace, pressed against a cotton screen and lit from behind by oil",
+   "suits": "Tested; came out muddy in our first try",
+   "tried": true,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "silent-film",
+   "name": "1920s Silent Film",
+   "blurb": "An engraved-illustration silent film projected in a picture house: ink line and silver wash, a 4:3 print that flickers and weaves between velvet…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "silhouette-rhythm",
+   "name": "Silhouette Rhythm",
+   "blurb": "Pure black silhouettes against a saturated sunset, changing pose on every beat; on the key beat everything freezes and only the sky keeps moving. The…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "silkscreen-poster",
+   "name": "Silkscreen Travel Poster",
+   "blurb": "Opaque, hard-edged flat inks pulled one colour at a time through a screen: 4–6 inks per poster, stepped colour bands instead of gradients, thin…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "sketchnote",
+   "name": "Sketchnote",
+   "blurb": "One page of visual notes on dot-grid paper, drawn while you watch: a black fineliner writes and draws, a grey marker gives volume and shadow, one…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "spreadsheet",
+   "name": "Spreadsheet Film",
+   "blurb": "A whole film inside one spreadsheet window. Cells are the pixels, conditional formatting paints the pictures, the formula bar speaks the lines, and…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "spy-titles",
+   "name": "60s Spy Title Sequence",
+   "blurb": "A cut-paper, four-ink opening title sequence for a film that never existed: silhouettes move through sets built out of the credits themselves, every…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "stained-glass",
+   "name": "Stained Glass",
+   "blurb": "A medieval stained-glass window seen from inside a dark stone hall, alive only where the sun touches it: light is the clock, the camera and the",
+   "suits": "Jewel colours; the library writes it as secular",
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "stick-explainer",
+   "name": "Stick-figure Explainer",
+   "blurb": "Plain stick people on warm paper, one accent colour, and a logic you can watch: people stand on a \"system line\", react to each other, and hold hands.…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "swiss-motion",
+   "name": "Swiss Motion Graphics",
+   "blurb": "International Typographic Style in motion: a modular grid, one typeface, one signal colour, and movement as exact as a printing",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "text-flash-cuts",
+   "name": "Text Flash Cuts",
+   "blurb": "Avant-garde TV anime in the manner of the early-2000s \"text frame\" school: full-screen heavy Mincho title cards cut in for two to nine frames,…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "thermal-camera",
+   "name": "Thermal Camera",
+   "blurb": "The film is seen through a radiometric thermal camera: a low-resolution, slightly noisy picture in an iron palette where brightness means…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "tilt-shift",
+   "name": "Tilt-Shift Miniature",
+   "blurb": "A real-looking place photographed from high above with a tilted lens and a time-lapse camera, so the whole world reads as a tabletop",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "transit-map",
+   "name": "Transit Map",
+   "blurb": "A metro schematic printed on a physical sheet: lines held to eight directions, white stops, black-outlined interchange capsules, water as a flat blue…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "ukiyoe",
+   "name": "Ukiyo-e",
+   "blurb": "Edo-period woodblock prints brought to life: flat colour blocks, carved ink lines, bokashi skies, paper you can feel, and a camera that moves over…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "urban-sketch",
+   "name": "Urban Sketch · Pen & Wash",
+   "blurb": "A sketchbook page drawn on location: fine sepia fineliner lines that wobble, overshoot and never quite close, with loose transparent watercolour…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  },
+  {
+   "slug": "whiteboard",
+   "name": "Whiteboard Explainer",
+   "blurb": "An explainer drawn live on one glossy dry-erase board: single-line handwriting that is actually *written* stroke by stroke, floating markers with no…",
+   "suits": null,
+   "tried": false,
+   "w": 240,
+   "h": 135
+  }
+ ]
+}

@@ -184,7 +184,7 @@ label.check{display:flex!important;grid-template-columns:none;gap:10px;align-ite
 .two{display:grid;grid-template-columns:140px 1fr;gap:12px} form.req input:not([type=checkbox]),form.req select{width:100%}
 @media (max-width:520px){ .two{grid-template-columns:1fr} .beat{grid-template-columns:1fr;gap:2px} }
 @media (prefers-reduced-motion:no-preference){ a.pcard,a.now{transition:border-color .2s,transform .18s} a.pcard:hover,a.now:hover{transform:translateY(-2px)} ol.gates li.now::before{animation:blink 2s ease-in-out infinite} }
-</style>
+/*__HUBCSS__*/</style>
 </head>
 <body>
 <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -208,12 +208,12 @@ let handle = Object.keys(D.pages)[0], P = D.pages[handle];
 const W = D.workspace;
 const cLabel = k => (P.concepts.find(c => c.key === k) || {}).label || k;
 const hue = k => HUE[k] || "#8e86a6";
-const state = { concept: "all", sort: "views", q: "", ptab: "overview", dbReqs: null, dbActs: null };
+const state = { concept: "all", sort: "views", q: "", ptab: "overview", rtab: "content", purpose: "content", ptype: "all", parea: "all", sfilter: "suits", tsel: 0, picks: [], dbReqs: null, dbActs: null };
 const isCli = s => s.tool === "whisper" || s.tool === "ffmpeg";
 
 function pill(text, cls) { return h("span", { class: "pill " + (cls || "") }, text); }
 function card(cls, ...kids) { return h("div", { class: "card " + (cls || "") }, ...kids); }
-function reading(text, label) { return h("div", { class: "reading" }, h("b", {}, label || "Reading"), text); }
+function reading(text, label, open) { return open ? h("div", { class: "reading" }, h("b", {}, label || "Reading"), text) : h("details", { class: "reading" }, h("summary", {}, label || "Reading"), text); }
 function countUp(el, to) { if (matchMedia("(prefers-reduced-motion: reduce)").matches || !isFinite(to)) return; const t0 = performance.now(), dur = 800; const step = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(Math.round(to * e)); if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(to); }; requestAnimationFrame(step); }
 function stageDots(r) { return D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s), t = s.name + ": " + (v ? "done" : w ? "waiting for command line" : "not done"); return h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), title: t, role: "img", "aria-label": t }); }); }
 
@@ -235,7 +235,7 @@ function vOverview() {
     f.notproven ? h("h2", {}, "Checked, and not supported") : null,
     f.notproven ? h("div", { class: "stack" }, f.notproven.map(w => card("evi none", h("h3", {}, w.title), h("div", { class: "numbers" }, w.numbers), reading(w.reading)))) : null,
     h("h2", {}, f.combine.title),
-    card("evi mix", reading(f.combine.text), h("div", { style: "height:10px" }), reading(f.combine.for_us, "For Tarot Talk")),
+    card("evi mix", reading(f.combine.text, "Reading", true), h("div", { style: "height:10px" }), reading(f.combine.for_us, "For Tarot Talk", true)),
     h("h2", {}, "What has hit best"),
     h("div", { class: "wall" }, f.best.map((b, i) => cover(P.reels.find(x => x.id === b.id), i))),
     h("div", { class: "stack", style: "margin-top:12px" }, f.best.map(b => { const r = P.reels.find(x => x.id === b.id); return card("", h("div", { class: "qrow" }, h("h3", {}, r.cover), h("span", { class: "num gt", style: "font-weight:600" }, fmt(r.views) + (r.pinned ? " pinned" : " · " + r.multiple + "x"))), h("div", { style: "height:6px" }), reading(b.why)); }))
@@ -331,8 +331,8 @@ function vPipeline() {
     card("evi " + (cli && last && last.done.length ? "" : "weak"), h("div", { class: "qrow" }, h("h3", {}, cli ? "Checked on " + cli.machine : "Not run on any computer yet"), pill(!cli ? "waiting" : last && last.done.length ? "has run" : last && last.failed ? "stopped" : "checked only", !cli ? "wait" : last && last.done.length ? "good" : last && last.failed ? "bad" : "acc")),
       cli ? h("div", { class: "numbers" }, "Last check " + cli.checked + ". " + (last ? "Last run finished " + last.finished + ": " + last.done.length + " reels done" + (last.failed ? ", stopped at " + last.failed.id + " (" + (last.failed.kind || "error") + ": " + last.failed.why + ")" : "") + "." : "No run yet."))
           : h("div", { class: "numbers" }, "Transcripts and audio stats need the script to be run on your PC. Until it has run and pushed its results, those steps stay marked as waiting everywhere on this page. Fetching reels with a script is against Instagram's terms; it runs only by your choice, slowly, without logging in, and stops at the first refusal."),
-      h("div", { class: "sub" }, "In the AI repo folder, in a terminal:"),
-      h("pre", { class: "cmd" }, "cd instagram-scouting\npython cli/scout_cli.py check\npython cli/scout_cli.py queue " + handle + "\npython cli/scout_cli.py run\npython cli/scout_cli.py push")),
+      h("div", { class: "sub" }, "With the tt-scout package installed (see Production), inside your clone of the AI repo:"),
+      h("pre", { class: "cmd" }, "tt-scout check\ntt-scout queue " + handle + "\ntt-scout run\ntt-scout push")),
     h("h2", {}, "Every reel, every step"),
     card("", h("div", { class: "matrix" }, h("table", {}, h("thead", {}, h("tr", {}, h("th", {}, "Reel"), st.stages.map(s => h("th", { title: s.name }, s.short || s.name)))),
       h("tbody", {}, P.reels.map(r => h("tr", {}, h("td", {}, r.cover || "Cover not read (" + r.id + ")"), st.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("td", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), role: "img", "aria-label": v ? "done" : w ? "waiting for command line" : "not done" })); })))))),
@@ -340,162 +340,3 @@ function vPipeline() {
   ];
 }
 
-/* ---------- research: profiles, promising, potentials, inbox ---------- */
-let db = null;
-const allProfiles = () => Object.entries(D.pages);
-function profileCard([hd, p], i) {
-  const hits = p.reels.filter(r => !r.pinned && r.multiple >= 3).length, top = p.reels.slice().sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 3), total = p.reels.length;
-  return h("a", { class: "pcard card", href: "#p-" + hd, style: "--i:" + i },
-    h("div", { class: "phead" }, h("div", { class: "ring sm", "aria-hidden": "true" }, h("b", {}, hd.slice(0, 2).toUpperCase())), h("div", {}, h("div", { class: "ph" }, "@" + hd), h("div", { class: "sub" }, p.profile.followers + " followers · " + p.profile.niche))),
-    h("div", { class: "pstats" }, h("div", {}, h("b", { class: "num gt" }, fmt(p.median)), h("span", {}, "typical reel")), h("div", {}, h("b", { class: "num gt" }, String(hits)), h("span", {}, "recent hits")), h("div", {}, h("b", { class: "num gt" }, total), h("span", {}, "reels listed"))),
-    h("div", { class: "minis" }, top.map(r => h("div", { class: "mini", style: "--c:" + hue(r.concept) }, h("span", {}, r.cover || "cover not read"), h("b", { class: "num" }, fmt(r.views))))),
-    h("div", { class: "stack", style: "gap:6px" }, D.status.stages.map(s => { const n = p.reels.filter(r => r.stages[s.key]).length, w = n === 0 && isCli(s); return h("div", { class: "prog mini-prog" + (w ? " waiting" : "") }, h("span", {}, s.short || s.name), h("div", { class: "barp" }, h("i", { style: "width:" + (100 * n / total) + "%" })), h("span", { class: "num" }, n + "/" + total)); })),
-    h("div", { class: "qrow" }, h("span", { class: "sub" }, "Looked at " + p.profile.scouted_on), h("span", { class: "openl" }, "Open profile")));
-}
-function potentials() {
-  const out = [];
-  for (const [hd, p] of allProfiles()) for (const s of p.findings.shapes) out.push({ ...s, handle: hd });
-  return out;
-}
-function parseLink(v) {
-  v = v.trim(); let m;
-  if ((m = v.match(/instagram\.com\/(?:[^/]+\/)?(reel|reels|p)\/([A-Za-z0-9_-]+)/))) return { kind: m[1] === "p" ? "post" : "reel", target: m[2], url: "https://www.instagram.com/" + (m[1] === "p" ? "p" : "reel") + "/" + m[2] + "/" };
-  if ((m = v.match(/instagram\.com\/([A-Za-z0-9_.]+)\/?(?:\?|$)/))) return { kind: "page", target: m[1], url: "https://www.instagram.com/" + m[1] + "/" };
-  if ((m = v.match(/^@?([A-Za-z0-9_.]{2,30})$/))) return { kind: "page", target: m[1], url: "https://www.instagram.com/" + m[1] + "/" };
-  return v ? { kind: "topic", target: v, url: null } : null;
-}
-const KIND = { page: "Page", reel: "Reel", post: "Post", topic: "Topic", competitor: "Competitor" };
-function queue() { const dbr = state.dbReqs || []; return [...dbr, ...D.requests.filter(r => !dbr.some(x => x.target === r.target && x.kind === r.kind))]; }
-function inbox() {
-  const msg = h("div", { class: "msg", id: "reqmsg", role: "status" });
-  const form = h("form", { class: "req", onsubmit: async e => {
-      e.preventDefault(); const p = parseLink($("#target").value);
-      if (!p) { msg.textContent = "Paste a reel link, a page link, an @handle or a topic first."; return; }
-      const r = { ...p, scoutProfile: (p.kind === "reel" || p.kind === "post") && $("#alsoprofile").checked, by: $("#by").value, note: $("#note").value.trim(), asked: new Date(Date.now() + 5.5 * 3600e3).toISOString().slice(0, 16).replace("T", " ") + " IST", state: "queued" };
-      const line = "Scout request from " + r.by + ": " + KIND[r.kind].toLowerCase() + " " + (r.url || "\"" + r.target + "\"") + (r.scoutProfile ? " (also scout its profile)" : "") + (r.note ? ". Note: " + r.note : "");
-      if (db) { try { await db.collection("requests").add(r); msg.textContent = "Saved. It waits in the queue until an agent session picks it up; its status will show here."; e.target.reset(); return; } catch (err) { msg.textContent = "Could not save it here (" + (err && err.code || "error") + "). Copy the line below and send it to Claude."; } }
-      else msg.textContent = "This copy of the page cannot save requests. Copy the line below and send it to Claude.";
-      $("#copybox").hidden = false; $("#copytext").value = line;
-    } },
-    h("label", { for: "target" }, "Reel link, page link, @handle or topic", h("input", { id: "target", placeholder: "https://www.instagram.com/reel/...", autocomplete: "off", inputmode: "url" })),
-    h("label", { class: "check", for: "alsoprofile" }, h("input", { id: "alsoprofile", type: "checkbox", checked: true }), h("span", {}, "If it is a reel, scout its whole profile too")),
-    h("div", { class: "two" }, h("label", { for: "by" }, "Sent by", h("select", { id: "by" }, h("option", {}, "Ashish"), h("option", {}, "Sakshi"))), h("label", { for: "note" }, "What you want to know (optional)", h("input", { id: "note", placeholder: "why did this one work?", autocomplete: "off" }))),
-    h("button", { class: "go", type: "submit" }, "Send to the scout queue"), msg,
-    h("div", { id: "copybox", hidden: true, class: "stack" }, h("textarea", { id: "copytext", rows: "3", readonly: true, "aria-label": "Request text" }), h("button", { class: "ghost", type: "button", onclick: async () => { try { await navigator.clipboard.writeText($("#copytext").value); msg.textContent = "Copied."; } catch (e) { $("#copytext").select(); msg.textContent = "Select the text and copy it."; } } }, "Copy")));
-  const q = queue();
-  return [card("", form),
-    h("div", { class: "stack", style: "margin-top:12px" }, q.map(r => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (r.kind === "topic" ? "" : r.kind === "page" || r.kind === "competitor" ? "@" : KIND[r.kind] + " ") + r.target), h("div", { class: "sub" }, (KIND[r.kind] || r.kind) + (r.scoutProfile ? " + its profile" : "") + (r.by ? " · from " + r.by : "") + " · " + r.asked + (r.note ? " · " + r.note : "")), r.result ? h("div", { style: "font-size:14px;margin-top:4px" }, r.result) : null, r.url ? h("a", { class: "out", href: r.url, target: "_blank", rel: "noopener", style: "font-size:13px" }, "Open on Instagram") : null), pill(r.state, { scouted: "good", done: "good", queued: "wait", running: "acc", refused: "bad", "not built": "warn" }[r.state] || "wait")))))];
-}
-function vResearch() {
-  const pots = potentials(), usable = pots.filter(s => s.ok), avoid = pots.filter(s => !s.ok);
-  return [
-    h("p", { class: "sub" }, "Everything studied from outside Tarot Talk. Instagram scouting is the first tool here."),
-    h("h2", {}, "Profiles scouted"),
-    h("div", { class: "pgrid" }, allProfiles().map(profileCard)),
-    h("h2", {}, "Most promising"),
-    h("div", { class: "stack" }, W.promising.map(m => card("evi mix", h("div", { class: "qrow" }, h("div", { style: "display:flex;gap:12px;align-items:baseline" }, h("span", { class: "n gt", style: "font:800 30px/1 var(--display)" }, String(m.rank).padStart(2, "0")), h("h3", {}, m.title)), h("a", { class: "pill plain", href: "#p-" + m.from }, "@" + m.from + " · " + m.evidence)), h("div", { class: "numbers" }, m.why), reading(m.ours, "For Tarot Talk")))),
-    h("div", { class: "sub", style: "margin-top:8px" }, W.promising_note),
-    h("h2", {}, "Potentials"),
-    h("p", { class: "sub" }, "One pool of structures from every page scouted. Usable ones first; the ones ruled out are kept so nobody proposes them again."),
-    h("div", { class: "stack" }, [...usable, ...avoid].map(s => card("evi " + (s.ok ? "" : "weak"), h("div", { class: "qrow" }, h("h3", {}, s.name), h("span", { style: "display:flex;gap:6px;flex-wrap:wrap" }, h("a", { class: "pill plain", href: "#p-" + s.handle }, "@" + s.handle), pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"))), h("div", { class: "sub" }, "Seen in: " + s.from), h("div", { class: "numbers" }, s.structure), reading(s.ours, s.ok ? "Ours could be" : "Why not")))),
-    h("h2", { id: "forward" }, "Forward a link"),
-    h("p", { class: "sub" }, "Paste anything worth a look. A connected agent picks it up when a session runs on the PC with the Claude desktop app open, follows the scouting skill, records what it found and updates the status here. Reading is view-only and slow: about 10 reels a sitting. Topic search is not built yet; topics are kept and flagged."),
-    ...inbox()
-  ];
-}
-
-/* ---------- home ---------- */
-function vHome() {
-  const profs = allProfiles(), reels = profs.reduce((a, [, p]) => a + p.reels.length, 0), q = queue().filter(r => r.state === "queued").length, pots = potentials().filter(s => s.ok).length;
-  const tile = (lab, val, sub, href) => h("a", { class: "card tile", href: "#" + href, style: "text-decoration:none;color:inherit" }, h("div", { class: "lab" }, lab), h("div", { class: "big num gt" }, String(val)), h("div", { class: "sub" }, sub));
-  const acts = [...(state.dbActs || []), ...W.activity];
-  return [
-    h("h2", { style: "margin-top:16px" }, "What we are working on"),
-    h("div", { class: "stack" }, W.now.map(n => h("a", { class: "card now", href: "#" + n.link }, h("div", { class: "qrow" }, h("span", { class: "area" }, n.area), pill(n.stage, n.tone)), h("h3", { style: "font-size:17px;margin-top:6px" }, n.title), h("div", { class: "numbers" }, n.text), h("div", { class: "reading" }, h("b", {}, "Next"), n.next)))),
-    h("h2", {}, "Waiting on you"),
-    card("", h("ul", { class: "todo" }, W.waiting.map(t => h("li", {}, t)))),
-    h("h2", {}, "At a glance"),
-    h("div", { class: "tiles" }, tile("Profiles scouted", profs.length, "open Research", "research"), tile("Reels listed", reels, "across all profiles", "research"), tile("Usable structures", pots, "in the potentials pool", "research"), tile("In the scout queue", q, q ? "waiting for an agent session" : "nothing waiting", "research")),
-    h("h2", {}, "Agent"),
-    card("", h("div", { class: "qrow" }, h("h3", {}, h("span", { class: "led " + (q ? "ready" : "working") }), q ? q + " request" + (q > 1 ? "s" : "") + " waiting" : "Queue is clear"), pill(D.agent.state, D.agent.tone)), h("div", { class: "numbers" }, D.agent.text)),
-    h("h2", {}, "Recent work"),
-    card("", h("ol", { class: "acts" }, acts.slice(0, 10).map(a => h("li", {}, h("span", { class: "num sub" }, a.at), h("span", {}, a.text)))))
-  ];
-}
-
-/* ---------- strategy ---------- */
-function vStrategy() {
-  const S = W.strategy;
-  return [
-    h("h2", { style: "margin-top:16px" }, "Our strategy"),
-    h("div", { class: "sgrid" }, S.ours.map(o => card("", h("h3", {}, o.title), o.text ? h("div", { class: "numbers", style: "margin-bottom:0" }, o.text) : null, o.list ? h("ul", { class: "plain" }, o.list.map(x => h("li", {}, x))) : null))),
-    h("h2", {}, "Series plan"),
-    card("", h("div", { class: "stack", style: "gap:8px" }, S.series.map(s => h("div", { class: "qrow" }, h("span", {}, s.name), pill(s.state, s.state === "active" ? "good" : s.state.startsWith("held") ? "acc" : "wait"))))),
-    h("h2", {}, "Common strategy"),
-    h("p", { class: "sub" }, S.common.note),
-    h("div", { class: "stack" }, S.common.items.map(c => card("", h("div", { class: "qrow" }, h("span", { style: "flex:1;min-width:200px" }, c.text), pill("seen on " + c.seen + " of " + allProfiles().length + " page" + (allProfiles().length > 1 ? "s" : ""), "plain")))))
-  ];
-}
-
-/* ---------- scripts ---------- */
-function vScripts() {
-  return [h("p", { class: "sub" }, "Drafts only. A script is not used until it has passed the stop, follow and choose gates with a reviewer, and you have approved it."),
-    h("div", { class: "stack" }, W.scripts.map(s => card("", h("div", { class: "qrow" }, h("div", {}, h("span", { class: "area" }, s.kind), h("h3", { style: "font-size:17px;margin-top:4px" }, s.title)), pill(s.state, "warn")), h("div", { class: "beats" }, s.beats.map(([k, v]) => h("div", { class: "beat" }, h("b", {}, k), h("span", {}, v)))))))];
-}
-
-/* ---------- production ---------- */
-function vProduction() {
-  const Pn = W.production;
-  return [
-    h("h2", { style: "margin-top:16px" }, Pn.series),
-    card("", h("ol", { class: "gates" }, Pn.gates.map(([n, st, t]) => h("li", { class: st }, h("div", { class: "qrow" }, h("b", {}, n), pill(st === "done" ? "done" : st === "now" ? "in progress" : "not started", st === "done" ? "good" : st === "now" ? "warn" : "wait")), h("div", { class: "sub" }, t))))),
-    h("h2", {}, "Style frames"),
-    h("p", { class: "sub" }, Pn.frames_note),
-    h("div", { class: "gallery" }, Pn.frames.map(([k, name, note]) => h("figure", { class: "card" }, h("img", { src: D.images["frame-" + k], alt: name + " style frame: the 2027 engine and two coaches", loading: "lazy" }), h("figcaption", {}, h("b", {}, name), h("span", { class: "sub" }, note))))),
-    h("h2", {}, "Tools"),
-    h("div", { class: "stack" }, Pn.tools.map(([n, d, s]) => card("", h("div", { class: "qrow" }, h("div", {}, h("h3", {}, n), h("div", { class: "sub" }, d)), pill(s, s === "used" ? "good" : "wait")))))
-  ];
-}
-
-/* ---------- profile page ---------- */
-const PTABS = [["overview", "Overview", vOverview], ["concepts", "Concepts", vConcepts], ["reels", "Reels", vReels], ["shapes", "Usable shapes", vShapes], ["growth", "Growth", vGrowth], ["pipeline", "Pipeline", vPipeline]];
-function vProfile() {
-  const pr = P.profile, tab = PTABS.find(t => t[0] === state.ptab) || PTABS[0];
-  return [
-    h("a", { class: "back", href: "#research" }, "Back to Research"),
-    h("div", { class: "hero" }, h("div", { class: "ring", "aria-hidden": "true" }, h("b", {}, pr.handle.slice(0, 2).toUpperCase())), h("div", { class: "who" }, h("div", { class: "h" }, "@" + pr.handle), h("div", { class: "facts" }, h("span", {}, h("b", {}, pr.followers), " followers"), h("span", {}, h("b", {}, pr.posts.toLocaleString()), " posts"), h("span", { class: "sub" }, pr.niche)), h("div", { class: "sub", style: "margin-top:4px" }, "Looked at " + pr.scouted_on + " · ", h("a", { class: "out", href: "https://www.instagram.com/" + pr.handle + "/", target: "_blank", rel: "noopener" }, "open on Instagram")))),
-    h("div", { class: "subtabs", role: "tablist" }, PTABS.map(([k, t]) => h("button", { class: "chip", role: "tab", "aria-selected": String(k === tab[0]), "aria-pressed": String(k === tab[0]), onclick: () => { state.ptab = k; render(); } }, t))),
-    h("h2", { style: "margin-top:18px" }, tab[1]),
-    ...tab[2]().filter(Boolean)
-  ];
-}
-
-/* ---------- shell ---------- */
-const TABS = [["home", "Home", vHome], ["research", "Research", vResearch], ["strategy", "Strategy", vStrategy], ["scripts", "Scripts", vScripts], ["production", "Production", vProduction]];
-function route() { const k = (location.hash || "").slice(1); if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
-function render() {
-  const r = route();
-  if (r.profile) { handle = r.profile; P = D.pages[handle]; }
-  $("#tabs").replaceChildren(...TABS.map(([k, t]) => h("a", { href: "#" + k, "aria-current": String(k === r.tab) }, t)));
-  const kids = r.profile ? vProfile() : [r.tab === "home" || r.tab === "strategy" || r.tab === "production" ? null : h("h2", { style: "margin-top:16px" }, TABS.find(t => t[0] === r.tab)[1]), ...TABS.find(t => t[0] === r.tab)[2]()];
-  $("#main").replaceChildren(h("section", { class: "view" }, ...kids.filter(Boolean)));
-}
-$("#built").textContent = "Updated " + D.built;
-addEventListener("hashchange", () => { $("#sheetroot").replaceChildren(); const r = route(); if (!r.profile) state.ptab = "overview"; render(); scrollTo(0, 0); });
-render();
-
-/* queue and activity: live only where the page runs as a Claude artifact with the db capability */
-(async () => {
-  try {
-    if (!window.claude || !window.claude.use) return;
-    const d = await window.claude.use("db");
-    if (!d) return;
-    db = d;
-    const rerender = () => { const a = document.activeElement; if (!(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName)) && !$("#sheetroot").firstChild) render(); };
-    d.collection("requests").onSnapshot(snap => { state.dbReqs = snap.docs.map(x => ({ id: x.id, ...x.data() })).sort((a, b) => String(b.asked).localeCompare(String(a.asked))); rerender(); }, () => { db = null; });
-    d.collection("activity").orderBy("at", "desc").limit(10).onSnapshot(snap => { state.dbActs = snap.docs.map(x => x.data()).map(a => ({ at: a.day || a.at, text: a.text })); rerender(); }, () => {});
-  } catch (e) {}
-})();
-</script>
-</body>
-</html>

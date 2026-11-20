@@ -13,11 +13,15 @@ def main():
     status = rd(SCOUT / "output" / "status.json")
     cli = SCOUT / "output" / "cli-status.json"
     status["cli"] = rd(cli) if cli.exists() else None
-    images = {p.stem: "data:image/jpeg;base64," + base64.b64encode(p.read_bytes()).decode() for p in sorted((HERE / "img").glob("*.jpg"))}
+    b64 = lambda p: "data:image/jpeg;base64," + base64.b64encode(p.read_bytes()).decode()
+    images = {p.stem: b64(p) for p in sorted((HERE / "img").glob("*.jpg"))}
+    images.update({"styles/" + p.stem: b64(p) for p in sorted((HERE / "img" / "styles").glob("*.jpg"))})
     ist = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
     data = dict(built=datetime.datetime.now(ist).strftime("%d %b %Y, %H:%M IST"), workspace=rd(HERE / "workspace.json"), pages=pages, status=status,
-                requests=rd(SCOUT / "input" / "requests.json"), agent=rd(HERE / "agent.json"), images=images)
-    html = (HERE / "template.html").read_text(encoding="utf-8").replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
+                requests=rd(SCOUT / "input" / "requests.json"), agent=rd(HERE / "agent.json"), styles=rd(HERE / "styles.json"), images=images)
+    tx = lambda n: (HERE / "parts" / n).read_text(encoding="utf-8")
+    template = tx("base.html").replace("/*__HUBCSS__*/", tx("hub.css")) + tx("hub.js")   # base: shell + profile views; hub: workspace views
+    html = template.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
     (HERE / "index.html").write_text(html, encoding="utf-8")
     print("built", len(html) // 1024, "KB;", len(pages), "profile(s)")
 
