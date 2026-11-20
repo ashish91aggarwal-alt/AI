@@ -23,13 +23,13 @@
   {
    "title": "Instagram research",
    "area": "Research",
-   "stage": "1 page scouted",
+   "stage": "waiting for the desktop app",
    "tone": "good",
-   "text": "@pagetkagy read through the browser: 28 reels listed, 25 covers, 9 reels read closely. Transcripts wait for the command-line step on the PC. Growth needs the page read again on other days.",
+   "text": "Studying pages abroad for ideas that could work in India. Transcripts arrive once the desktop app has run on the PC.",
    "next": "Forward more pages or reels from the Research tab.",
    "link": "research",
    "icon": "search",
-   "short": "@pagetkagy read: 28 reels, 25 covers, 9 closely. Transcripts waiting."
+   "short": "Studying pages abroad for ideas that could work in India. Transcripts arrive once the desktop app has run on the PC."
   },
   {
    "title": "Tarot Talk framework and skills",
@@ -59,7 +59,7 @@
   "Sakshi: which way do you read the personal year, January to December or birthday to birthday?",
   "Is the 2027 yearly report ready, and at what price? The series is not produced before the product exists or has a date.",
   "Comments and DMs from last year's series, for the audience file.",
-  "Run the command-line step on the PC to get transcripts (optional, your choice)."
+  "Open Tarot Talk Desk on the PC once (after the git pull and install step), so the transcripts arrive."
  ],
  "activity": [
   {
@@ -215,12 +215,11 @@
    }
   ],
   "transfer": {
-   "note": "Ideas that worked on a page abroad. Nothing here is used until four checks are done: is it already working on Indian pages, is the topic searched in India (Google Trends), does it fit how Sakshi speaks, and has an independent reviewer agreed. None of the checks has been run yet.",
+   "note": "Ideas that worked on a page abroad. Nothing here is used until four checks are done: is it already working on Indian pages, is the topic searched in India (Google Trends), does it fit how Sakshi speaks, and has an independent reviewer agreed. Only the ticked checks have been done; the rest have not been run.",
    "items": [
     {
      "name": "A task with a return date",
      "from": "@pagetkagy",
-     "proof": "6 reels, 3 of her 4 recent hits",
      "status": "review",
      "checks": [
       {
@@ -249,7 +248,6 @@
     {
      "name": "A named character who answers the viewer",
      "from": "@pagetkagy",
-     "proof": "9 of 28 reels, steady at her median",
      "status": "review",
      "checks": [
       {
@@ -278,7 +276,6 @@
     {
      "name": "Top reel as the sales page",
      "from": "@pagetkagy",
-     "proof": "her most-seen pinned reel sells a paid programme",
      "status": "review",
      "checks": [
       {

@@ -62,9 +62,12 @@ def merge_queues(theirs, mine):
 def parse_request(text):
     """Find what is being asked for in free text. Only Instagram links and plain handles are accepted; nothing is ever run from it."""
     text = text or ""
-    m = re.match(r"\s*(?:scout:\s*)?(similar|topic|verify)\b[:\s]+([^\r\n]{2,200})", text, re.I)
-    if m:                                             # a research request in words: kept as plain text for the agent, never run
-        kind, val = m.group(1).lower(), re.sub(r"[^\w @.,:'&()/+-]", " ", m.group(2)).strip()[:160]
+    first = text.strip().splitlines()[0] if text.strip() else ""
+    m = re.match(r"\s*(?:scout:[ \t]*)?(similar|topic|verify)\b[: \t]+(\S.{1,200})", first, re.I)
+    if m and not REEL.search(first):                  # a research request in words: kept as plain text for the agent, never run
+        kind, val = m.group(1).lower(), re.sub(r"[^\w\u0900-\u097F @.,:'&()/+-]", " ", m.group(2)).strip()[:160]
+        pg = PAGE.search(m.group(2))
+        if kind == "similar" and pg: val = "@" + pg.group(1)          # a page link and its @handle are the same request
         return {"kind": kind, "target": val, "url": ""} if val else None
     m = REEL.search(text)
     if m:

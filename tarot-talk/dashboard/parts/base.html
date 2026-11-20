@@ -215,7 +215,7 @@ function pill(text, cls) { return h("span", { class: "pill " + (cls || "") }, te
 function card(cls, ...kids) { return h("div", { class: "card " + (cls || "") }, ...kids); }
 function reading(text, label, open) { return open ? h("div", { class: "reading" }, h("b", {}, label || "Reading"), text) : h("details", { class: "reading" }, h("summary", {}, label || "Reading"), text); }
 function countUp(el, to) { if (matchMedia("(prefers-reduced-motion: reduce)").matches || !isFinite(to)) return; const t0 = performance.now(), dur = 800; const step = t => { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(Math.round(to * e)); if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(to); }; requestAnimationFrame(step); }
-function stageDots(r) { return D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s), t = s.name + ": " + (v ? "done" : w ? "waiting for command line" : "not done"); return h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), title: t, role: "img", "aria-label": t }); }); }
+function stageDots(r) { return D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s), t = s.name + ": " + (v ? "done" : w ? "waiting for the desktop app" : "not done"); return h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), title: t, role: "img", "aria-label": t }); }); }
 
 /* ---------- overview ---------- */
 function vOverview() {
@@ -226,7 +226,7 @@ function vOverview() {
       tile("Typical reel", P.median, "median views of " + P.counted + " reels, pinned left out"),
       tile("Recent hits", hits.length, "reels at 3 times the median or more"),
       tile("Read closely", read + " / " + P.reels.length, covers + " covers read, " + read + " with caption and counters"),
-      tile("Transcripts", tr + " / " + P.reels.length, tr ? "from the command-line step; the rest are waiting" : "waiting for the command-line step")),
+      tile("Transcripts", tr + " / " + P.reels.length, tr ? "from the desktop app; the rest are waiting" : "waiting for the desktop app")),
     card("", h("div", { class: "sub" }, f.basis)),
     h("h2", {}, "What is working"),
     h("div", { class: "stack" }, f.works.map(w => card("evi", h("h3", {}, w.title), h("div", { class: "numbers" }, w.numbers), reading(w.reading)))),
@@ -269,7 +269,7 @@ function cover(r, i) {
 }
 function player(id, kind) {
   const box = h("div", { class: "player" });
-  box.append(h("button", { type: "button", class: "go", onclick: () => { const f = document.createElement("iframe"); f.src = "https://www.instagram.com/" + (kind === "post" ? "p" : "reel") + "/" + encodeURIComponent(id) + "/embed/"; f.title = "Playing from Instagram"; f.loading = "lazy"; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; box.replaceChildren(f); } }, "Play it here"), h("div", { class: "sub" }, "Plays from Instagram itself. Nothing is copied or stored."));
+  box.append(h("button", { type: "button", class: "go", onclick: () => { const f = document.createElement("iframe"); f.src = "https://www.instagram.com/" + (kind === "post" ? "p" : "reel") + "/" + encodeURIComponent(id) + "/embed/"; f.title = "Playing from Instagram"; f.loading = "lazy"; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.tabIndex = 0; box.replaceChildren(f); f.focus(); } }, "Play it here"), h("div", { class: "sub" }, "Plays from Instagram itself. Nothing is copied or stored."));
   return box;
 }
 /* one-tap research requests: inside the desktop app they go straight to its queue; on the web they open a filled-in GitHub request */
@@ -277,7 +277,7 @@ function ask(kind, target, label) {
   const TXT = { similar: "Find more pages like this", topic: "Search more on this topic", verify: "Get it verified" };
   return h("button", { type: "button", class: "dbtn", onclick: async e => { const bt = e.currentTarget;
     if (window.TT_LOCAL) { const r = await api("ask", { kind, target }); bt.textContent = r.ok ? "Asked. See the Desk tab" : r.msg; bt.disabled = r.ok; }
-    else open("https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + kind + " " + target) + "&body=" + encodeURIComponent("by: Ashish or Sakshi"), "_blank", "noopener"); } }, label || TXT[kind]);
+    else open("https://github.com/" + D.repo + "/issues/new?title=" + encodeURIComponent("scout: " + kind + " " + target) + "&body=" + encodeURIComponent("by: Ashish or Sakshi"), "_blank", "noopener"); } }, (label || TXT[kind]) + (window.TT_LOCAL ? "" : " (opens GitHub)"));
 }
 function openSheet(r) {
   const kv = (k, v, sub) => h("div", {}, h("div", { class: "k" }, k), h("div", { class: "val" }, v), sub ? h("div", { class: "r" }, sub) : null);
@@ -294,7 +294,7 @@ function openSheet(r) {
       h("div", { class: "kv" }, kv("Views", fmt(r.views), r.pinned || r.fresh ? null : r.multiple + "x the median"), ...(r.likes ? [kv("Length", r.seconds + " s"), kv("Likes", fmt(r.likes), r.like_rate + "% of views"), kv("Comments", fmt(r.comments), r.comment_rate + "% of views"), kv("Reposts", fmt(r.reposts)), kv("Shares", fmt(r.shares), r.share_rate + "% of views")] : [])),
       r.likes ? null : h("div", { class: "sub" }, "Caption and counters not read yet. Only the view count" + (r.cover ? " and the cover are" : " is") + " known."),
       r.ask ? h("div", {}, h("span", { class: "sub" }, "Caption asks: "), r.ask) : null,
-      h("div", { class: "stack", style: "gap:6px" }, D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("div", { class: "qrow", style: "font-size:13.5px" }, h("span", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), style: "margin-right:8px" }), s.name), h("span", { class: "sub" }, v ? (typeof v === "string" ? v : "done") : w ? "waiting for command line" : "not done")); })),
+      h("div", { class: "stack", style: "gap:6px" }, D.status.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("div", { class: "qrow", style: "font-size:13.5px" }, h("span", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), style: "margin-right:8px" }), s.name), h("span", { class: "sub" }, v ? (typeof v === "string" ? v : "done") : w ? "waiting for the desktop app" : "not done")); })),
       r.cli && r.cli.transcript && r.cli.transcript.length ? h("div", { class: "reading" }, h("b", {}, "Transcript (" + r.cli.language + ")"), r.cli.transcript.map(t => t.text).join(" ")) : null,
       h("a", { class: "out", href: "https://www.instagram.com/reel/" + r.id + "/", target: "_blank", rel: "noopener" }, "Open this reel on Instagram"))));
   addEventListener("keydown", esc); closeBtn.focus();
@@ -310,7 +310,7 @@ function vReels() {
       h("label", { class: "sub" }, "Sort ", h("select", { id: "sortsel", onchange: e => { state.sort = e.target.value; render(); } }, [["views", "Most views"], ["comment", "Comments per view"], ["share", "Shares per view"], ["order", "Newest first"]].map(([v, t]) => h("option", { value: v, selected: state.sort === v }, t)))),
       h("input", { id: "search", type: "search", placeholder: "Search cover text", value: state.q, "aria-label": "Search cover text", oninput: e => { state.q = e.target.value; const p = e.target.selectionStart; render(); const s = $("#search"); s.focus(); s.setSelectionRange(p, p); } })),
     rs.length ? h("div", { class: "wall" }, rs.map((r, i) => cover(r, i))) : card("", "No reel matches."),
-    h("div", { class: "legend", style: "margin-top:14px" }, h("span", {}, "Dots on each card, left to right: " + D.status.stages.map(s => s.name).join(", ") + "."), h("span", {}, h("i", { class: "s y" }), "done"), h("span", {}, h("i", { class: "s n" }), "not done"), h("span", {}, h("i", { class: "s w" }), "waiting for command line"))
+    h("div", { class: "legend", style: "margin-top:14px" }, h("span", {}, "Dots on each card, left to right: " + D.status.stages.map(s => s.name).join(", ") + "."), h("span", {}, h("i", { class: "s y" }), "done"), h("span", {}, h("i", { class: "s n" }), "not done"), h("span", {}, h("i", { class: "s w" }), "waiting for the desktop app"))
   ];
 }
 
@@ -348,8 +348,8 @@ function vPipeline() {
       h("pre", { class: "cmd" }, "tt-scout check\ntt-scout queue " + handle + "\ntt-scout run\ntt-scout push")),
     h("h2", {}, "Every reel, every step"),
     card("", h("div", { class: "matrix" }, h("table", {}, h("thead", {}, h("tr", {}, h("th", {}, "Reel"), st.stages.map(s => h("th", { title: s.name }, s.short || s.name)))),
-      h("tbody", {}, P.reels.map(r => h("tr", {}, h("td", {}, r.cover || "Cover not read (" + r.id + ")"), st.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("td", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), role: "img", "aria-label": v ? "done" : w ? "waiting for command line" : "not done" })); })))))),
-      h("div", { class: "legend", style: "margin-top:10px" }, h("span", {}, h("i", { class: "s y" }), "done"), h("span", {}, h("i", { class: "s n" }), "not done yet"), h("span", {}, h("i", { class: "s w" }), "waiting for command line")))
+      h("tbody", {}, P.reels.map(r => h("tr", {}, h("td", {}, r.cover || "Cover not read (" + r.id + ")"), st.stages.map(s => { const v = r.stages[s.key], w = !v && isCli(s); return h("td", {}, h("span", { class: "s " + (v ? "y" : w ? "w" : "n"), role: "img", "aria-label": v ? "done" : w ? "waiting for the desktop app" : "not done" })); })))))),
+      h("div", { class: "legend", style: "margin-top:10px" }, h("span", {}, h("i", { class: "s y" }), "done"), h("span", {}, h("i", { class: "s n" }), "not done yet"), h("span", {}, h("i", { class: "s w" }), "waiting for the desktop app")))
   ];
 }
 
