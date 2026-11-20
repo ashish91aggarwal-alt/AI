@@ -171,6 +171,19 @@ function vStrategy() {
   ];
 }
 
+/* ---------- ideas: content suggestions, each tied to a strategy and to what Instagram rewards ---------- */
+function vIdeas() {
+  const I = D.ideas, P2 = D.platform, IS = { new: "acc", picked: "good", made: "good", dropped: "wait" };
+  const sname = id => (D.strategies.strategies.find(x => x.id === id) || { name: id }).name, sobj = id => D.strategies.strategies.find(x => x.id === id);
+  return [
+    h("p", { class: "sub", style: "margin-top:14px" }, I.note),
+    h("div", { class: "sgrid" }, I.ideas.filter(x => x.status !== "dropped").map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why),
+      h("span", { class: "checks" }, h("span", { class: "chk y" }, "Earns: " + x.serves), sobj(x.strategy) ? h("button", { class: "chk", style: "cursor:pointer;background:none;font:inherit;font-size:12.5px", onclick: () => stratSheet(sobj(x.strategy)) }, "Strategy: " + sname(x.strategy)) : null, h("span", { class: "chk" }, "From: " + x.borrowed_from))), pill(x.status, IS[x.status] || "wait")))),
+    P2 ? h("h2", {}, "What Instagram rewards") : null, P2 ? h("p", { class: "sub" }, P2.note) : null,
+    P2 ? h("div", { class: "stack" }, P2.notes.map(n => card("", h("div", { class: "qrow" }, h("b", {}, n.rule), pill(n.kind === "official" ? "said by Instagram" : "claim, not confirmed", n.kind === "official" ? "good" : "warn")), h("div", { style: "font-size:14.5px;margin-top:6px" }, "For us: " + n.for_us), h("div", { class: "sub", style: "margin-top:4px" }, n.said_by + " · read at " + n.read_at + " · " + n.date)))) : null
+  ];
+}
+
 function vScripts() {
   return [h("p", { class: "sub" }, "Drafts only. Nothing is used until it passes the three gates with a reviewer and you approve it."),
     h("div", { class: "stack" }, W.scripts.map(s => card("", h("div", { class: "qrow" }, h("div", {}, h("span", { class: "area" }, s.kind), h("h3", { style: "font-size:17px;margin-top:4px" }, s.title)), pill(s.state, "warn")), h("div", { class: "beats" }, s.beats.map(([k, v]) => h("div", { class: "beat" }, h("b", {}, k), h("span", {}, v)))))))];
@@ -281,7 +294,7 @@ function vDesk() {
 if (LOCAL) { ICON.desk = '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'; setInterval(poll, 3000); poll(); }
 
 /* ---------- shell ---------- */
-const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["strategy", "Strategies", vStrategy, "compass"], ["playbook", "Skills", vPlaybook, "book"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
+const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["ideas", "Ideas", vIdeas, "bolt"], ["strategy", "Strategies", vStrategy, "compass"], ["playbook", "Skills", vPlaybook, "book"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
 if (LOCAL) TABS.splice(1, 0, ["desk", "Desk", vDesk, "desk"]);
 function route() { const k = (location.hash || "").slice(1); if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
 function render() {

@@ -1,0 +1,53 @@
+{
+ "note": "What Instagram itself has said about reach, kept apart from what other people claim. The research agent adds to this on every run and marks each line: 'official' (said by Instagram or its head, with where we read it) or 'claim' (said by others, not confirmed).",
+ "notes": [
+  {
+   "rule": "For reels, three signals count most: watch time, likes per reach, and sends per reach.",
+   "kind": "official",
+   "said_by": "Adam Mosseri, head of Instagram (January 2025)",
+   "read_at": "buffer.com/resources/instagram-algorithms and blog.hootsuite.com/instagram-algorithm",
+   "date": "2026-11-20",
+   "for_us": "Judge every episode on these three, not on raw views."
+  },
+  {
+   "rule": "Comments are not among those three signals.",
+   "kind": "official",
+   "said_by": "Same statement, as tracked by keywordseverywhere.com",
+   "read_at": "keywordseverywhere.com/news/instagram-algorithm-updates",
+   "date": "2026-11-20",
+   "for_us": "Our comment keyword is for the sale, not for reach. Each episode also needs a reason to send it to someone."
+  },
+  {
+   "rule": "Sends (sharing a reel in DM) are the strongest signal for reaching people who do not follow you.",
+   "kind": "official",
+   "said_by": "Reported as Mosseri's position by several guides",
+   "read_at": "buffer.com, eclincher.com",
+   "date": "2026-11-20",
+   "for_us": "Write episodes people forward: 'send this to the person whose number is 7'."
+  },
+  {
+   "rule": "Original content is favoured; accounts that mostly repost others get less reach.",
+   "kind": "official",
+   "said_by": "Mosseri, as reported by Buffer",
+   "read_at": "buffer.com/resources/instagram-algorithms",
+   "date": "2026-11-20",
+   "for_us": "Borrow structures, never footage. Our own drawn series fits this."
+  },
+  {
+   "rule": "At most five hashtags per post since December 2025.",
+   "kind": "official",
+   "said_by": "Product change, tracked by keywordseverywhere.com",
+   "read_at": "keywordseverywhere.com/news/instagram-algorithm-updates",
+   "date": "2026-11-20",
+   "for_us": "Use up to five, chosen for the topic."
+  },
+  {
+   "rule": "\"A send is worth 3 to 5 likes.\"",
+   "kind": "claim",
+   "said_by": "Third-party data (CreatorFlow), not Instagram",
+   "read_at": "contentgrip.com",
+   "date": "2026-11-20",
+   "for_us": "Do not plan around the number. The direction (sends matter) is what counts."
+  }
+ ]
+}

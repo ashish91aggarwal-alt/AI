@@ -234,3 +234,11 @@ Links arrive with purpose "auto" (from the phone shortcut, the web page or the a
 `tarot-talk/dashboard/strategies.json` is the one list of strategies. Stages: discovered, early-review, optimising, ready, testing, adopted (plus parked, rejected). Every change is recorded on the strategy itself: add a `history` line (date, event, by, and the review file if there is one), add `research` rows (what, result, source), update `checks`, raise `cycles` by one only when an independent review of that strategy has actually been done, and set `next`. `evidence_pts` (0 to 30) always comes with an honest `evidence_note`. Never type a score: the build counts it. A strategy moves to `ready` only when all its checks that apply are done. `tests` (direction, plan, status, result) are filled when production tries it.
 
 `instagram-scouting/research-plan.json` is your own work list. Nobody presses buttons: after each piece of work, decide from the data what is worth doing next and rewrite `doing`, `next` (with a reason each) and `done` (with the result), set `agent` to "working" or "idle", and `updated` in IST.
+
+## Content ideas and platform learning (every run)
+
+After the research, do two more things.
+
+1. Ideas. Add up to three new content ideas to `tarot-talk/dashboard/ideas.json`, each with: title, hook (our own words, in Sakshi's Hinglish voice, never a copied line), format, the strategy id it uses, where it was borrowed from (the page or reel studied), which Instagram signal it is meant to earn, and an honest `why` that states how strong the evidence is. Status "new", `by` "research agent". Never change an idea the owner marked picked, made or dropped. No fear, secrecy or guaranteed-result hooks.
+
+2. Platform. Learn how Instagram itself says reach works and keep `instagram-scouting/platform.json` current: search for what Instagram or its head has said recently (official blog, Creators account, Mosseri's own statements), add or correct notes, and mark each "official" (with who said it and where you read it, dated) or "claim" (said by others). Never present a third-party number as Instagram's. Write `for_us` as one plain line on what Tarot Talk should do differently.

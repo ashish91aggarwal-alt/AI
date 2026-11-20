@@ -28,6 +28,8 @@ def main():
         x["score_parts"] = parts
         x["score"] = None if x["stage"] in ("parked", "rejected") else sum(p[1] for p in parts)
     data["strategies"] = S
+    data["ideas"] = rd(HERE / "ideas.json") if (HERE / "ideas.json").exists() else None
+    data["platform"] = rd(SCOUT / "platform.json") if (SCOUT / "platform.json").exists() else None
     plan = SCOUT / "research-plan.json"
     data["plan"] = rd(plan) if plan.exists() else None
     data["progress"] = dict(pages=len(pages), reels=sum(len(p.get("reels", [])) for p in pages.values()), heard=len(list((SCOUT / "output").glob("*/cli/*.json"))),

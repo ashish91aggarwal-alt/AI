@@ -1,0 +1,89 @@
+{
+ "note": "Content ideas for Tarot Talk. Each one says which strategy it uses, where it was borrowed from, and which Instagram signal it is meant to earn. All are untested until one is made and measured. The research agent adds new ones after each run; mark the ones you like as picked.",
+ "statuses": [
+  "new",
+  "picked",
+  "made",
+  "dropped"
+ ],
+ "ideas": [
+  {
+   "id": "i01",
+   "title": "2027 ka driver kaun? (opening episode)",
+   "hook": "Same mulank, alag saal. Aapka 2027 kaun chala raha hai?",
+   "format": "Cartoon: passenger and the saarthi in the train cab",
+   "strategy": "named-character",
+   "borrowed_from": "@pagetkagy: skit where a named character answers the asker",
+   "serves": "Watch time",
+   "why": "Starts inside the scene with no greeting, as all 7 of her big reels do. The question is only answered at the end.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  },
+  {
+   "id": "i02",
+   "title": "Find your driver number in 20 seconds",
+   "hook": "Apna janm din aur mahina jodiye. Abhi. Main rukta hoon.",
+   "format": "Cartoon, numbers drawn on screen step by step",
+   "strategy": "do-along",
+   "borrowed_from": "@pagetkagy: reels that give the viewer steps to do",
+   "serves": "Watch time",
+   "why": "The viewer works it out during the reel, so they stay to the end. Weak evidence so far: one page.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  },
+  {
+   "id": "i03",
+   "title": "Comment your driver, come back on 1 January",
+   "hook": "Apna driver number comment kijiye. 1 January ko wapas aaiye.",
+   "format": "Last 5 seconds of an episode",
+   "strategy": "return-date",
+   "borrowed_from": "@pagetkagy: a task with a date to come back",
+   "serves": "Comments for the sale; a second visit",
+   "why": "Her task reels were where the spikes came from, but they also carried other hooks. Use the plain version only: no secrecy, no 'this is a sign'.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  },
+  {
+   "id": "i04",
+   "title": "Send this to your 7",
+   "hook": "Jiska driver 7 hai, use yeh bhejiye. Unka saal alag chalega.",
+   "format": "One short episode per driver number, made to be forwarded",
+   "strategy": "keyword-dm",
+   "borrowed_from": "Platform rule: sends reach new people",
+   "serves": "Sends per reach",
+   "why": "Instagram says sends are the strongest signal for reaching non-followers. Each number episode gives a reason to forward it to one person.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  },
+  {
+   "id": "i05",
+   "title": "Two friends, same mulank, different year",
+   "hook": "Dono ka mulank 5. Phir bhi ek ka saal bhaag raha hai, ek ka ruka hua. Kyun?",
+   "format": "Cartoon: two friends in coupled coaches, two different drivers",
+   "strategy": "personal-year",
+   "borrowed_from": "Owner's own concept",
+   "serves": "Watch time; sends",
+   "why": "This is the heart of the driver idea, and it is one both friends would send to each other. Waits on how Sakshi reads the year.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  },
+  {
+   "id": "i06",
+   "title": "Driver ka saal: yeh kijiye / yeh mat kijiye",
+   "hook": "Driver 3 ka saal: teen kaam kijiye, teen mat kijiye.",
+   "format": "Two columns on screen",
+   "strategy": "do-dont",
+   "borrowed_from": "@pagetkagy: do / don't columns",
+   "serves": "Saves",
+   "why": "Easy to draw and to save. Thin evidence: two reels on her page and no hits, so try one before making nine.",
+   "status": "new",
+   "added": "2026-11-20",
+   "by": "build chat"
+  }
+ ]
+}
