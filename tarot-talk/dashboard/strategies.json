@@ -81,6 +81,11 @@
      "event": "Kept as the base path in the framework; independently reviewed.",
      "by": "reviewer",
      "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcript study: the same comment-keyword path seen on @pagetkagy. Evidence unchanged (already our own result).",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -88,6 +93,11 @@
      "what": "2026 series result",
      "result": "Rs 555 report, about Rs 1.5 lakh",
      "source": "owner"
+    },
+    {
+     "what": "Same path seen elsewhere",
+     "result": "@pagetkagy uses one comment keyword for a $27 programme: in the caption of her pinned reel and spoken at the end of two recent hits. One page; says nothing about India.",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [
@@ -415,8 +425,8 @@
    "line": "Give the viewer a small job and a time to come back.",
    "source": "@pagetkagy",
    "stage": "optimising",
-   "evidence_pts": 25,
-   "evidence_note": "6 reels on one page, 3 of her 4 recent hits; two plain versions near 1M. One page only.",
+   "evidence_pts": 18,
+   "evidence_note": "Lowered from 25 to 18 on 20 Nov after the transcripts. Views stand: 6 reels on one page, 3 of her 4 recent hits. But all 3 hits also tell the viewer aloud to comment (two for a paid keyword, one as a 'seal'), so the comment advantage cannot be credited to the return date; the biggest hit stacks secrecy, 'this is a sign' and a prediction; the two calmer ones carry a paid pitch and one rode a calendar date. The three ordinary task reels are not transcribed. One page only. Not independently reviewed since the change.",
    "checks": [
     {
      "name": "Indian pages",
@@ -425,8 +435,8 @@
     },
     {
      "name": "Trends India",
-     "result": "not checked",
-     "done": false
+     "result": "Read 2026-11-20 (https://trends.google.com/trends/explore?geo=IN&q=manifestation): interest in the topic is flat over 12 months with spikes at New Year week (100) and 11/11 week (94). This is her topic, not ours and not the task-and-date idea itself; 'numerology 2027' and 'tarot' are still to be read.",
+     "done": true
     },
     {
      "name": "Fits our voice",
@@ -456,6 +466,16 @@
      "date": "2026-11-20",
      "event": "Transcripts of the hit reels arrived from the desktop app; not yet studied.",
      "by": "desktop app"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcripts of the 3 hit task reels studied. Comment advantage found to be confounded by spoken comment instructions; evidence lowered 25 to 18. Details in the page findings.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Trends India read for 'manifestation' (geo IN, 12 months): flat, spikes at New Year week and 11/11 week. Indian pages not checked (no Instagram browsing in this run). Independent review of these changes not done: no reviewer tool in this run; cycles unchanged.",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -468,6 +488,31 @@
      "what": "Hits (3x median or more)",
      "result": "3",
      "source": "@pagetkagy"
+    },
+    {
+     "what": "Spoken return ask in the 3 hits",
+     "result": "1 asks to come back and report (24-hour test); 1 sets a one-year return (11:11); 1 says come back, with 7 days in the caption",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Spoken comment instruction in the 3 hits",
+     "result": "3 of 3: keyword for a paid programme (2), comment the time as a 'seal' (1). Skits: 0 of 2",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Comments per view, hits",
+     "result": "0.4%, 0.8%, 2.5% (script counts over grid views); the 2.5% reel is the one with the 'seal' instruction",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Ordinary task reels (252K, 301K, 311K)",
+     "result": "not transcribed; queued for the next batch",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Google Trends India, 'manifestation', past 12 months",
+     "result": "Flat, mostly 47 to 68 of 100. Two spikes: 100 in the week of 28 Dec 2025 and 94 in the week of 8 Nov 2026 (the 11/11 week). Rising queries: a step-by-step '369 method' and a book on manifesting (how-to interest), but also a pop song and a web series with the word in the title, which may be part of the November spike.",
+     "source": "https://trends.google.com/trends/explore?geo=IN&q=manifestation, read 2026-11-20 in the built-in browser"
     }
    ],
    "tests": [
@@ -478,7 +523,7 @@
      "result": ""
     }
    ],
-   "next": "Research agent: study the transcripts, then check Indian pages and Trends India.",
+   "next": "Research agent: get transcripts of the 3 ordinary task reels to see what differs; read Trends India for 'numerology 2027' and 'tarot'; Indian pages check; independent review of the transcript findings.",
    "own_result": false
   },
   {
@@ -488,7 +533,7 @@
    "source": "@pagetkagy",
    "stage": "optimising",
    "evidence_pts": 20,
-   "evidence_note": "9 of 28 reels, steady at her median, one at 1.3M. One page only.",
+   "evidence_note": "9 of 28 reels, steady at her median, one at 1.3M. One page only. Unchanged by the transcripts: they show how her two biggest skits are built, not that the build is why they were big; no ordinary or low skit is transcribed.",
    "checks": [
     {
      "name": "Indian pages",
@@ -523,6 +568,11 @@
      "event": "Page findings independently reviewed.",
      "by": "reviewer",
      "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcripts of 2 skits studied: structure recorded, evidence unchanged at 20. Review of these notes not done; cycles unchanged.",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -530,6 +580,16 @@
      "what": "Reels using it",
      "result": "9 of 28, median 328K",
      "source": "@pagetkagy"
+    },
+    {
+     "what": "Build of the 2 skits transcribed (8.3M pinned, 1.3M)",
+     "result": "Wish spoken to the character by name in the first 3 seconds; unexpected answer within about 4 seconds; asker protests; character hands responsibility back; last line is a turn. No spoken ask in either.",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Low skits (160K, 177K, 186K)",
+     "result": "not transcribed; queued for the next batch",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [
@@ -546,7 +606,7 @@
      "result": ""
     }
    ],
-   "next": "Research agent: Indian pages check. Owner: pick the look so a pilot can test it.",
+   "next": "Research agent: transcripts of the low skits to compare with the two big ones; Indian pages check. Owner: pick the look so a pilot can test it.",
    "own_result": false
   },
   {
@@ -556,7 +616,7 @@
    "source": "@pagetkagy",
    "stage": "discovered",
    "evidence_pts": 5,
-   "evidence_note": "Seen once, on one page.",
+   "evidence_note": "Still 5. Seen on one page. The transcript corrects the picture: the pinned 12.3M reel does not sell in speech; the offer is in its caption only, most likely added later (reel dated 24 June, caption about a November programme). Her spoken selling is a short pitch at the end of two recent hits.",
    "checks": [
     {
      "name": "Indian pages",
@@ -585,6 +645,11 @@
      "date": "2026-11-20",
      "event": "Noticed on @pagetkagy: her most-seen pinned reel sells a paid programme.",
      "by": "agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcripts studied: the pinned reel carries the offer in its caption, not in speech; a spoken end pitch found on two hits. Evidence unchanged.",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -592,10 +657,20 @@
      "what": "Seen on",
      "result": "1 page",
      "source": "@pagetkagy"
+    },
+    {
+     "what": "Where the offer sits, 7 reels read",
+     "result": "Caption only: 1 (pinned 12.3M). Spoken in the last 7 to 8 seconds plus keyword: 2 (923K, 1.0M). No offer: 4",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Offer",
+     "result": "11-day paid programme at $27, one comment keyword used across reels (from her caption; her claim of 7,000 joined is not checked)",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
-   "next": "Needs more pages before a first review.",
+   "next": "Needs more pages before a first review. Worth asking on the next page: do other sellers rewrite the caption of an old big reel, or pitch at the end of new ones?",
    "own_result": false
   },
   {
@@ -634,6 +709,11 @@
      "date": "2026-11-20",
      "event": "Found on @pagetkagy.",
      "by": "agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcript study did not cover this format. Nothing changed.",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -641,10 +721,69 @@
      "what": "Reels using it",
      "result": "2 of 28, 0 hits",
      "source": "@pagetkagy"
+    },
+    {
+     "what": "Transcripts",
+     "result": "none: neither of the two reels was in the first batch; queued for the next",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
-   "next": "Thin. Look for it on other pages before spending more.",
+   "next": "Thin. Transcripts of Part 1 and Part 2 are in the next batch; look for it on other pages before spending more.",
+   "own_result": false
+  },
+  {
+   "id": "do-along",
+   "name": "Do it along with the reel",
+   "line": "The reel is a script the viewer carries out while watching: say it, write it, work it out.",
+   "source": "@pagetkagy",
+   "stage": "discovered",
+   "evidence_pts": 5,
+   "evidence_note": "4 of the 7 reels transcribed, including the 12.3M pinned one. But those 7 were picked because they were big, so this shows presence, not effect. One page.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "not yet",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Noticed in the @pagetkagy transcripts: four big reels give the viewer lines to say or steps to do during the reel.",
+     "by": "research agent"
+    }
+   ],
+   "research": [
+    {
+     "what": "Reels using it",
+     "result": "4 of 7 transcribed (12.3M pinned, 1.7M, 1.0M, 923K); 0 of the 2 skits and not the list",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Ordinary reels using it",
+     "result": "not known; covers suggest at least 3 more (252K, 301K, 311K), not transcribed",
+     "source": "@pagetkagy covers"
+    }
+   ],
+   "tests": [],
+   "next": "Transcripts of the ordinary instruction reels will show whether it is also in reels that did not spike. Our version would be a calculation (find your number), never a ritual with a promised result.",
    "own_result": false
   },
   {
@@ -742,7 +881,7 @@
    "source": "@pagetkagy",
    "stage": "rejected",
    "evidence_pts": 0,
-   "evidence_note": "303K against 328K; 3 of 4 hits were not about money.",
+   "evidence_note": "Stays rejected as a rule, but one reason given was wrong: after the transcripts 2 of her 4 recent hits are money reels (not 1), and the other two touch money. Medians are still level: 307K (9 money reels) against 301K (15 others).",
    "checks": [
     {
      "name": "Indian pages",
@@ -772,6 +911,11 @@
      "event": "Tested against the 28 reels; not supported. Rejected.",
      "by": "reviewer",
      "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcripts showed the cover labels undercounted money among the hits. Still not supported as a rule (medians level); wording corrected. Not re-reviewed; cycles unchanged.",
+     "by": "research agent"
     }
    ],
    "research": [
@@ -779,11 +923,21 @@
      "what": "Money reels against the rest",
      "result": "303K against 328K median",
      "source": "@pagetkagy"
+    },
+    {
+     "what": "Recent hits re-read from speech",
+     "result": "2 of 4 are money reels (the 11:11 ritual and the income skit); 1 promises money among other things; 1 ends on a money-programme pitch",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+    },
+    {
+     "what": "Medians with the 11:11 reel counted as money",
+     "result": "307K (9) against 301K (15)",
+     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
-   "next": "Kept so nobody proposes it again.",
-   "why_rejected": "Numbers did not support it.",
+   "next": "Kept as not proven. Do not propose it as a rule, and do not cite 'hits avoid money' either.",
+   "why_rejected": "Medians are level. Not proven either way; the earlier 'hits are mostly not about money' did not survive the transcripts.",
    "own_result": false
   }
  ]
