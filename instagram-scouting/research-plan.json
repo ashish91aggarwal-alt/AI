@@ -1,0 +1,29 @@
+{
+ "note": "Kept by the research agent. It decides what to study next from the data; nobody has to press a button.",
+ "agent": "not started",
+ "updated": "2026-11-20 21:40 IST",
+ "doing": [],
+ "next": [
+  {
+   "what": "Study the 7 transcripts of @pagetkagy",
+   "why": "They arrived today and the findings still rest on covers and captions.",
+   "for": "return-date"
+  },
+  {
+   "what": "Indian pages check for 'A task with a return date'",
+   "why": "Highest-scoring borrowed idea; nothing is known about it in India.",
+   "for": "return-date"
+  },
+  {
+   "what": "Trends India check for its topic",
+   "why": "Needed before it can be called ready to test.",
+   "for": "return-date"
+  },
+  {
+   "what": "Scout a second page in the same field",
+   "why": "Every borrowed idea rests on one page.",
+   "for": "named-character"
+  }
+ ],
+ "done": []
+}

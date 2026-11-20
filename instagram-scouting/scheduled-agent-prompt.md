@@ -25,3 +25,9 @@ Run python3 tarot-talk/dashboard/build.py to confirm it builds (do not commit in
 ## What a forwarded link is for
 
 Links arrive with purpose "auto" (from the phone shortcut, the web page or the app). The owner does not sort them. After reading the item, decide yourself whether it is content research (what a page posts and why it works) or process research (a method: funnel, script technique, tool), set `purpose` to "content" or "process" on the queue item, and file the finding in the matching place (a profile's findings, or the Process list and Playbook).
+
+## The strategy funnel and the research plan (the research agent owns both)
+
+`tarot-talk/dashboard/strategies.json` is the one list of strategies. Stages: discovered, early-review, optimising, ready, testing, adopted (plus parked, rejected). Every change is recorded on the strategy itself: add a `history` line (date, event, by, and the review file if there is one), add `research` rows (what, result, source), update `checks`, raise `cycles` by one only when an independent review of that strategy has actually been done, and set `next`. `evidence_pts` (0 to 30) always comes with an honest `evidence_note`. Never type a score: the build counts it. A strategy moves to `ready` only when all its checks that apply are done. `tests` (direction, plan, status, result) are filled when production tries it.
+
+`instagram-scouting/research-plan.json` is your own work list. Nobody presses buttons: after each piece of work, decide from the data what is worth doing next and rewrite `doing`, `next` (with a reason each) and `done` (with the result), set `agent` to "working" or "idle", and `updated` in IST.

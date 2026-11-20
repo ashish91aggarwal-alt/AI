@@ -21,8 +21,18 @@ def main():
                 requests=rd(SCOUT / "input" / "requests.json"), agent=rd(HERE / "agent.json"), styles=rd(HERE / "styles.json"), images=images,
                 repo="ashish91aggarwal-alt/AI", sessions=rd(s) if (s := HERE / "sessions.json").exists() else None, queue=rd(q) if (q := SCOUT / "input" / "queue.json").exists() else [],
                 desk=rd(d) if (d := SCOUT / "output" / "desk-status.json").exists() else None)
+    S = rd(HERE / "strategies.json")
+    for x in S["strategies"]:                         # the score is counted here from what is recorded, never typed in by hand
+        live = [c for c in x["checks"] if c["result"] != "does not apply"]
+        parts = [["Evidence", min(30, x["evidence_pts"]), 30], ["Checks", 10 * sum(1 for c in live if c["done"]), 10 * len(live)],
+                 ["Optimise and review cycles", min(20, 10 * x["cycles"]), 20], ["Result on our own page", 10 if x.get("own_result") else 0, 10]]
+        x["score_parts"] = parts
+        x["score"] = round(100 * sum(p[1] for p in parts) / sum(p[2] for p in parts))
+    data["strategies"] = S
+    plan = SCOUT / "research-plan.json"
+    data["plan"] = rd(plan) if plan.exists() else None
     data["progress"] = dict(pages=len(pages), reels=sum(len(p.get("reels", [])) for p in pages.values()), heard=len(list((SCOUT / "output").glob("*/cli/*.json"))),
-                            reviewed=sum(1 for t in data["workspace"]["strategy"]["transfer"]["items"] if all(c["done"] for c in t["checks"])), ideas=len(data["workspace"]["strategy"]["transfer"]["items"]))
+                            reviewed=sum(1 for x in S["strategies"] if x["stage"] in ("ready", "testing", "adopted")), ideas=sum(1 for x in S["strategies"] if x["stage"] not in ("rejected", "parked")))
     tx = lambda n: (HERE / "parts" / n).read_text(encoding="utf-8")
     template = tx("base.html").replace("/*__HUBCSS__*/", tx("hub.css")) + tx("hub.js")   # base: shell + profile views; hub: workspace views
     for item in data["queue"]:                    # what the desktop app read for a forwarded reel, shown on its queue card

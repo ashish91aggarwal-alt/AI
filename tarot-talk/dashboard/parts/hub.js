@@ -89,8 +89,9 @@ function vResearch() {
     h("p", { class: "sub" }, "What other pages post, and what works for them."),
     h("h2", {}, "Profiles scouted"),
     h("div", { class: "pgrid" }, allProfiles().map(profileCard), h("a", { class: "pcard card add", href: "#research", onclick: e => { e.preventDefault(); state.rtab = "forward"; render(); } }, h("b", {}, "+"), h("span", {}, "Forward a page or reel"))),
-    h("h2", {}, "Most promising"),
-    h("div", { class: "podium" }, W.promising.map(m => h("button", { class: "poster pod", style: "--k:" + m.rank, onclick: () => sheet(m.title, h("h3", {}, m.title), h("a", { class: "pill plain", href: "#p-" + m.from }, "@" + m.from + " · " + m.evidence), h("div", {}, m.why), reading(m.ours, "For Tarot Talk", true), h("div", { class: "sub" }, W.promising_note)) }, h("span", { class: "rank gt" }, "0" + m.rank), h("div", { class: "pt" }, m.title), h("div", { class: "ours" }, m.ours), h("span", { class: "tag2" }, m.evidence)))),
+    ...(D.plan ? [h("h2", {}, "Research agent"), card("", h("div", { class: "qrow" }, h("div", { class: "sub" }, D.plan.note), pill(D.plan.agent, D.plan.agent === "working" ? "acc" : D.plan.agent === "not started" ? "wait" : "good")),
+      ...D.plan.doing.map(t => h("div", { class: "planrow now" }, h("b", {}, "Now: " + t.what), h("span", { class: "sub" }, t.why))), ...D.plan.next.slice(0, 5).map((t, n) => h("div", { class: "planrow" }, h("b", {}, (n + 1) + ". " + t.what), h("span", { class: "sub" }, t.why))),
+      D.plan.done.length ? fold("Done (" + D.plan.done.length + ")", D.plan.done.slice(0, 20).map(t => h("div", { class: "planrow" }, h("b", {}, t.what), h("span", { class: "sub" }, t.result || "")))) : null, h("div", { class: "sub", style: "margin-top:8px" }, "Updated " + D.plan.updated))] : []),
     h("h2", {}, "Potentials"),
     h("div", { class: "tgrid" }, pots.sort((a, b) => b.ok - a.ok).map(s => h("button", { class: "tcard" + (s.ok ? "" : " no"), onclick: () => shapeSheet(s) }, h("b", {}, s.name), h("span", { class: "sub" }, "@" + s.handle), pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"))))
   ];
@@ -102,8 +103,7 @@ function vPlaybook() {
   const all = W.playbook, f = all.filter(x => (state.ptype === "all" || x.type === state.ptype) && (state.parea === "all" || x.area === state.parea));
   const order = ["applied", "trial", "review", "parked", "rejected"], n = k => f.filter(x => x.status === k).length;
   return [
-    h("p", { class: "sub" }, "Everything learned so far, named, and where each one stands. Tap a card for the detail."),
-    seg([["all", "All", all.length], ["skill", "Skills", all.filter(x => x.type === "skill").length], ["strategy", "Strategies", all.filter(x => x.type === "strategy").length]], state.ptype, k => { state.ptype = k; render(); }),
+    h("p", { class: "sub" }, "Working skills learned so far, and where each one stands. Strategies have their own tab."),
     h("div", { class: "chips", style: "margin-top:10px" }, [["all", "All areas"], ["content", "Content"], ["process", "Process"], ["production", "Production"]].map(([k, t]) => h("button", { class: "chip", "aria-pressed": String(state.parea === k), onclick: () => { state.parea = k; render(); } }, t))),
     h("div", { class: "dist", role: "img", "aria-label": order.map(k => STAT[k][0] + " " + n(k)).join(", ") }, order.filter(n).map(k => h("i", { style: "flex:" + n(k) + ";background:" + SCOL[k] }, h("span", {}, String(n(k)))))),
     h("div", { class: "legend" }, order.map(k => h("span", {}, h("i", { class: "s", style: "background:" + SCOL[k] }), STAT[k][0]))),
@@ -125,8 +125,8 @@ function vHome() {
     h("h2", {}, "Waiting on you"),
     h("div", { class: "wgrid" }, W.waiting.map((t, i) => h("div", { class: "wcard" }, h("b", { class: "gt" }, String(i + 1)), h("span", {}, t)))),
     h("h2", {}, "At a glance"),
-    h("div", { class: "goals" }, [["Pages scouted", D.progress.pages, 0, "research"], ["Reels listed", D.progress.reels, 0, "research"], ["Reels heard (transcript)", D.progress.heard, 0, "research"], ["Borrowed ideas cleared for India", D.progress.reviewed, D.progress.ideas, "strategy"]].map(([t, n, of, to]) => { const goal = of || [10, 100, 1000, 10000, 100000].find(g => g > n) || n; return h("a", { class: "goal", href: "#" + to }, h("b", {}, String(n)), h("span", {}, t), h("div", { class: "meter" }, h("i", { style: "width:" + Math.max(3, Math.round(100 * n / goal)) + "%;background:var(--grad)" })), h("span", { class: "sub" }, of ? "of " + of + " on the board" : "next mark: " + goal)); })),
-    h("div", { class: "tiles" }, tile("Skills applied", pb.filter(x => x.status === "applied").length, pb.filter(x => x.status === "trial").length + " in trial, " + pb.filter(x => x.status === "review").length + " under review", "playbook"), tile("Rejected", pb.filter(x => x.status === "rejected").length, "kept so nobody proposes them again", "playbook"), tile("Scout queue", q + qa, q + qa ? q + " for the desktop, " + qa + " for the agent" : "nothing waiting", "research")),
+    h("div", { class: "goals" }, [["Pages scouted", D.progress.pages, 0, "research"], ["Reels listed", D.progress.reels, 0, "research"], ["Reels heard (transcript)", D.progress.heard, 0, "research"], ["Strategies ready, testing or adopted", D.progress.reviewed, D.progress.ideas, "strategy"]].map(([t, n, of, to]) => { const goal = of || [10, 100, 1000, 10000, 100000].find(g => g > n) || n; return h("a", { class: "goal", href: "#" + to }, h("b", {}, String(n)), h("span", {}, t), h("div", { class: "meter" }, h("i", { style: "width:" + Math.max(3, Math.round(100 * n / goal)) + "%;background:var(--grad)" })), h("span", { class: "sub" }, of ? "of " + of + " in the funnel" : "next mark: " + goal)); })),
+    h("a", { class: "ministrip", href: "#strategy", "aria-label": "Strategies by stage" }, D.strategies.stages.map(([k, t]) => h("span", {}, h("b", {}, String(D.strategies.strategies.filter(x => x.stage === k).length)), t))),
     ...(window.TT_LOCAL ? [] : [
     h("h2", {}, "Who is doing what"),
     h("div", { class: "posters g3" },
@@ -139,29 +139,36 @@ function vHome() {
 }
 
 /* ---------- strategy ---------- */
+/* ---------- strategies: one funnel, one card per strategy ---------- */
+const SSTAGE = { discovered: "wait", "early-review": "warn", optimising: "acc", ready: "good", testing: "good", adopted: "good", parked: "wait", rejected: "bad" };
+const stageName = k => (D.strategies.stages.find(s => s[0] === k) || [k, k === "parked" ? "Parked" : k === "rejected" ? "Rejected" : k])[1];
+const ring = n => h("span", { class: "ring2", style: "--p:" + n, role: "img", "aria-label": "Score " + n + " of 100" }, h("b", {}, String(n)));
+const fold = (title, kids, open) => { const k = "f:" + title; if (state[k] === undefined) state[k] = !!open; const d = h("details", { class: "fold" }, h("summary", {}, title), ...kids); d.open = state[k]; d.addEventListener("toggle", () => { state[k] = d.open; }); return d; };
+function stratSheet(x) {
+  const TS = { planned: "acc", running: "warn", done: "good", "not planned": "wait" };
+  sheet(x.name, h("div", { class: "qrow" }, h("h3", {}, x.name), ring(x.score)), h("div", { class: "qrow", style: "justify-content:flex-start" }, pill(stageName(x.stage), SSTAGE[x.stage]), pill("from " + x.source, "plain")), h("div", {}, x.line),
+    reading(x.next, "Next step", true),
+    h("div", { class: "flabel" }, "How the score is counted"), h("div", { class: "stack", style: "gap:6px" }, x.score_parts.map(([t, got, of]) => h("div", { class: "qrow", style: "font-size:14px" }, h("span", {}, t), h("span", { class: "num sub" }, got + " of " + of)))), h("div", { class: "sub" }, "Evidence: " + x.evidence_note),
+    h("div", { class: "flabel" }, "Checks"), h("div", { class: "checks" }, x.checks.map(c => h("span", { class: "chk " + (c.done ? "y" : "") }, c.name + ": " + c.result))),
+    x.research.length ? h("div", { class: "flabel" }, "Research data") : null, ...x.research.map(r => h("div", { class: "qrow", style: "font-size:14px" }, h("span", {}, r.what), h("span", { class: "sub", style: "text-align:right" }, r.result + " · " + r.source))),
+    x.tests.length ? h("div", { class: "flabel" }, "Production tests") : null, ...x.tests.map(t => h("div", { class: "qrow", style: "font-size:14px" }, h("span", {}, h("b", {}, t.direction + ": "), t.plan + (t.result ? " Result: " + t.result : "")), pill(t.status, TS[t.status] || "wait"))),
+    h("div", { class: "flabel" }, "History (" + x.cycles + " review cycle" + (x.cycles === 1 ? "" : "s") + ")"), h("ol", { class: "acts" }, x.history.map(e => h("li", {}, h("span", { class: "num sub" }, e.date), h("span", {}, e.event + " ", e.file ? h("a", { class: "out", target: "_blank", rel: "noopener", href: "https://github.com/" + D.repo + "/blob/main/" + e.file }, "read the review") : null)))),
+    x.why_rejected ? h("div", { class: "sub" }, "Rejected because: " + x.why_rejected) : null);
+}
+const stratCard = (x, i) => h("button", { class: "scard", style: "--i:" + i, onclick: () => stratSheet(x) }, ring(x.score), h("span", { class: "sbody" }, h("b", {}, x.name), h("span", { class: "kl" }, x.line), h("span", { class: "sub" }, "Next: " + x.next)), pill(stageName(x.stage), SSTAGE[x.stage]));
 function vStrategy() {
-  const S = W.strategy, np = allProfiles().length;
+  const S = D.strategies, all = S.strategies, live = all.filter(x => !["parked", "rejected"].includes(x.stage)), n = k => all.filter(x => x.stage === k).length;
+  const shown = live.filter(x => state.sstage === "all" || x.stage === state.sstage).sort((a, b) => b.score - a.score);
   return [
-    h("h2", { style: "margin-top:16px" }, "The path"),
-    h("div", { class: "path" }, ["Reel", "Comment a keyword", "Auto-DM", "Paid report"].map((t, i) => h("span", { style: "--k:" + i }, t))),
-    h("div", { class: "sub", style: "margin-top:8px" }, "Proven once: the New Year 2026 series sold a Rs 555 report, about Rs 1.5 lakh."),
-    h("h2", {}, "Every episode: TAROT"),
-    card("", h("div", { class: "tbar" }, W.tarot.map(([l, n, t, d, w], i) => h("button", { style: "flex:" + w + ";--k:" + i, "aria-pressed": String(state.tsel === i), "aria-label": n + ", " + t, onclick: () => { state.tsel = i; render(); } }, l))),
-      h("div", { class: "tinfo" }, h("b", { class: "gt" }, W.tarot[state.tsel][1]), h("span", { class: "num sub" }, W.tarot[state.tsel][2]), h("div", {}, W.tarot[state.tsel][3])), h("div", { class: "sub" }, "A 45-second reel. Tap a part.")),
-    h("h2", {}, "Three gates"),
-    h("div", { class: "posters g3" }, Object.entries(W.gates).map(([k, list], i) => h("div", { class: "poster gate", style: "--k:" + i }, h("span", { class: "rank gt" }, k), h("ul", {}, list.map(x => h("li", {}, x)))))),
-    h("h2", {}, "How we speak"),
-    h("div", { class: "dd" }, h("div", {}, h("div", { class: "lab2 good" }, "We say"), chipsRow(W.speak.do, "good")), h("div", {}, h("div", { class: "lab2 bad" }, "We never say"), chipsRow(W.speak.dont, "bad"))),
-    h("h2", {}, "Series plan"),
-    h("div", { class: "tgrid" }, S.series.map(s => h("div", { class: "tcard" + (s.state === "active" ? " on" : "") }, h("b", {}, s.name), pill(s.state, s.state === "active" ? "good" : s.state.startsWith("held") ? "acc" : "wait")))),
-    h("h2", {}, "Borrowed from abroad: will it work in India?"),
-    h("p", { class: "sub" }, S.transfer.note),
-    h("div", { class: "stack" }, S.transfer.items.map(t => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", {}, t.name), h("div", { class: "sub" }, "Seen on ", h("a", { class: "out", href: "#p-" + t.from.replace("@", "") }, t.from), ". The numbers are under Research, Most promising.")), pill((STAT[t.status] || [t.status])[0], (STAT[t.status] || [0, "wait"])[1])),
-      h("div", { class: "checks" }, t.checks.map(c => h("span", { class: "chk " + (c.done ? "y" : "") }, c.name + ": " + c.result))), h("div", { class: "dbar" }, ask("verify", "India fit of: " + t.name, "Run the India checks"), h("a", { class: "dbtn", target: "_blank", rel: "noopener", href: "https://trends.google.com/trends/explore?geo=IN&q=" + encodeURIComponent(t.trend_term) }, "Open Google Trends India: " + t.trend_term)))))
+    h("div", { class: "funnel", style: "margin-top:16px" }, S.stages.map(([k, t, d], i) => h("button", { class: "fstep", style: "--w:" + (100 - i * 9) + "%;--k:" + i, "aria-pressed": String(state.sstage === k), title: d, onclick: () => { state.sstage = state.sstage === k ? "all" : k; render(); } }, h("span", {}, t), h("b", {}, String(n(k)))))),
+    h("p", { class: "sub" }, state.sstage === "all" ? "Tap a step to see only that stage. Tap a card for its research, reviews, score and history." : stageName(state.sstage) + ": " + S.stages.find(s => s[0] === state.sstage)[2]),
+    shown.length ? h("div", { class: "sgrid" }, shown.map(stratCard)) : h("p", { class: "sub" }, "Nothing at this stage yet."),
+    fold("Parked and rejected (" + (n("parked") + n("rejected")) + ")", [h("div", { class: "sgrid" }, all.filter(x => ["parked", "rejected"].includes(x.stage)).map(stratCard))]),
+    fold("How the score works", [h("p", { class: "sub" }, S.note)]),
+    fold("Series ideas", [h("div", { class: "tgrid" }, W.strategy.series.map(s => h("div", { class: "tcard" + (s.state === "active" ? " on" : "") }, h("b", {}, s.name), pill(s.state, s.state === "active" ? "good" : s.state.startsWith("held") ? "acc" : "wait"))))])
   ];
 }
 
-/* ---------- scripts ---------- */
 function vScripts() {
   return [h("p", { class: "sub" }, "Drafts only. Nothing is used until it passes the three gates with a reviewer and you approve it."),
     h("div", { class: "stack" }, W.scripts.map(s => card("", h("div", { class: "qrow" }, h("div", {}, h("span", { class: "area" }, s.kind), h("h3", { style: "font-size:17px;margin-top:4px" }, s.title)), pill(s.state, "warn")), h("div", { class: "beats" }, s.beats.map(([k, v]) => h("div", { class: "beat" }, h("b", {}, k), h("span", {}, v)))))))];
@@ -180,6 +187,10 @@ function vProduction() {
   const Pn = W.production, L = D.styles, pk = picks();
   const list = L.items.filter(s => state.sfilter === "all" || (state.sfilter === "suits" && s.suits) || (state.sfilter === "picked" && pk.includes(s.slug)));
   return [
+    h("h2", { style: "margin-top:16px" }, "Strategies being tested"),
+    h("p", { class: "sub" }, "Each strategy is tried along four directions. Grey means nothing is planned yet."),
+    h("div", { class: "stack" }, D.strategies.strategies.filter(x => x.tests.length).sort((a, b) => b.score - a.score).map(x => card("", h("div", { class: "qrow" }, h("button", { class: "linkbtn", onclick: () => stratSheet(x) }, x.name), pill(stageName(x.stage), SSTAGE[x.stage])),
+      h("div", { class: "dirs" }, D.strategies.directions.map(dn => { const t = x.tests.find(y => y.direction === dn); return h("div", { class: "dir " + (t ? t.status.replace(" ", "-") : "none") }, h("b", {}, dn), h("span", {}, t ? t.plan + (t.result ? " Result: " + t.result : "") : "Nothing planned"), t ? h("i", {}, t.status) : null); }))))),
     h("h2", { style: "margin-top:16px" }, Pn.series),
     card("", h("ol", { class: "gates" }, Pn.gates.map(([n, st, t]) => h("li", { class: st }, h("div", { class: "qrow" }, h("b", {}, n), pill(st === "done" ? "done" : st === "now" ? "in progress" : "not started", st === "done" ? "good" : st === "now" ? "warn" : "wait")), h("div", { class: "sub" }, t))))),
     h("h2", {}, "Our style frames"),
@@ -200,7 +211,6 @@ function vProfile() {
   return [
     h("a", { class: "back", href: "#research" }, "Back to Research"),
     h("div", { class: "hero" }, h("div", { class: "ring", "aria-hidden": "true" }, h("b", {}, pr.handle.slice(0, 2).toUpperCase())), h("div", { class: "who" }, h("div", { class: "h" }, "@" + pr.handle), h("div", { class: "facts" }, h("span", {}, h("b", {}, pr.followers), " followers"), h("span", {}, h("b", {}, pr.posts.toLocaleString()), " posts"), h("span", { class: "sub" }, pr.niche)), h("div", { class: "sub", style: "margin-top:4px" }, "Looked at " + pr.scouted_on + " · ", h("a", { class: "out", href: "https://www.instagram.com/" + pr.handle + "/", target: "_blank", rel: "noopener" }, "open on Instagram")))),
-    h("div", { class: "dbar" }, ask("similar", "@" + pr.handle), ask("topic", pr.niche, "Search more in this field"), ask("verify", "findings on @" + pr.handle, "Get these findings verified")),
     seg(PTABS.map(([k, t]) => [k, t]), tab[0], k => { state.ptab = k; render(); }),
     h("h2", { style: "margin-top:18px" }, tab[1]),
     ...tab[2]().filter(Boolean)
@@ -256,21 +266,20 @@ function vDesk() {
     s.busy ? wait("The app is working", (s.logs[s.logs.length - 1] || "").replace(/^\d\d:\d\d\s+/, "") || "Syncing with GitHub and checking the queue.") : null,
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
-    ...sessionCards(),
+    fold("Claude sessions", sessionCards().slice(1), (D.sessions ? D.sessions.sessions : []).some(x => (x.compactions || 0) >= 1)),
     h("h3", { style: "margin-top:18px" }, "Add work"), card("", addBox),
-    h("div", { class: "tags", style: "margin:10px 0" }, allProfiles().map(([hd]) => btn("Read the top reels of @" + hd, run("hits", { handle: hd })))),
-    h("h3", { style: "margin-top:18px" }, "Tools on this computer"),
-    h("div", { class: "tiles" }, s.tools.map(t => card("", h("div", { class: "qrow" }, h("h3", {}, t.name), pill(t.ok ? "ready" : "missing", t.ok ? "good" : "bad")), h("div", { class: "sub" }, t.used_for), t.ok ? null : t.fixable ? btn("Install it", run("fix", { key: t.key }, "Installing. This can take a few minutes ..."), "hot") : h("div", { class: "sub", style: "margin-top:6px" }, "Install by hand: ", h("code", {}, t.install))))),
+    fold("Tools on this computer (" + s.tools.filter(t => t.ok).length + " of " + s.tools.length + " ready)", [
+    h("div", { class: "tiles" }, s.tools.map(t => card("", h("div", { class: "qrow" }, h("h3", {}, t.name), pill(t.ok ? "ready" : "missing", t.ok ? "good" : "bad")), h("div", { class: "sub" }, t.used_for), t.ok ? null : t.fixable ? btn("Install it", run("fix", { key: t.key }, "Installing. This can take a few minutes ..."), "hot") : h("div", { class: "sub", style: "margin-top:6px" }, "Install by hand: ", h("code", {}, t.install)))))], s.tools.some(t => !t.ok)),
     h("h3", { style: "margin-top:18px" }, "Queue"),
     s.queue.length ? h("div", { class: "stack" }, s.queue.map(x => card("", h("div", { class: "qrow" }, h("div", { style: "min-width:0" }, h("h3", { style: "overflow-wrap:anywhere" }, (x.kind === "page" ? "@" : (KIND[x.kind] || x.kind) + ": ") + x.target), h("div", { class: "sub" }, (x.purpose && x.purpose !== "auto" ? x.purpose + " · " : "") + "from " + (x.by || "?") + " · " + (x.updated || x.asked || "")), x.result ? h("div", { style: "font-size:14px;margin-top:4px" }, x.result) : null,
       x.state === "failed" ? btn("Try again", run("retry", { n: x.n })) : x.state === "refused" ? btn("Try again now (skips the 24 hour wait)", run("retry", { n: x.n, force: true })) : null), pill((QSTATE[x.state] || [x.state, "wait"])[0], (QSTATE[x.state] || [x.state, "wait"])[1]))))) : h("p", { class: "sub" }, "Nothing in the queue."),
-    h("h3", { style: "margin-top:18px" }, "Work log"), h("pre", { class: "dlog" }, s.logs.length ? s.logs.slice().reverse().join("\n") : "Nothing yet.")
+    fold("Work log", [h("pre", { class: "dlog" }, s.logs.length ? s.logs.slice().reverse().join("\n") : "Nothing yet.")])
   ];
 }
 if (LOCAL) { ICON.desk = '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'; setInterval(poll, 3000); poll(); }
 
 /* ---------- shell ---------- */
-const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["playbook", "Playbook", vPlaybook, "book"], ["strategy", "Strategy", vStrategy, "compass"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
+const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["strategy", "Strategies", vStrategy, "compass"], ["playbook", "Skills", vPlaybook, "book"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
 if (LOCAL) TABS.splice(1, 0, ["desk", "Desk", vDesk, "desk"]);
 function route() { const k = (location.hash || "").slice(1); if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
 function render() {

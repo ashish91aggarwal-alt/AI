@@ -1,0 +1,790 @@
+{
+ "note": "One list of every strategy. Score out of 100: evidence up to 30, each of four checks 10 (checks that do not apply are left out of the total), each optimise-and-review cycle 10 up to 20, and 10 for a result on our own page. The score is counted from what is recorded here, nothing else.",
+ "stages": [
+  [
+   "discovered",
+   "Discovered",
+   "Noticed; not reviewed yet."
+  ],
+  [
+   "early-review",
+   "Early review",
+   "A first independent review is done or in hand."
+  ],
+  [
+   "optimising",
+   "Optimise and review",
+   "Being sharpened in cycles, with research added each time."
+  ],
+  [
+   "ready",
+   "Ready to test",
+   "All checks done; waiting for a production test."
+  ],
+  [
+   "testing",
+   "Testing",
+   "Being tried in a real series."
+  ],
+  [
+   "adopted",
+   "Adopted",
+   "Proven enough to be a rule."
+  ]
+ ],
+ "directions": [
+  "Script",
+  "Format",
+  "Set of videos",
+  "Posting frequency"
+ ],
+ "strategies": [
+  {
+   "id": "keyword-dm",
+   "name": "Reel to keyword to DM to report",
+   "line": "The selling path: reel, one comment keyword, auto-DM, paid report.",
+   "source": "Owner's 2026 result",
+   "stage": "adopted",
+   "evidence_pts": 30,
+   "evidence_note": "Our own sales: the 2026 series sold a Rs 555 report, about Rs 1.5 lakh.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "yes, used in 2026",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes: framework review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-01",
+     "event": "Used in the New Year 2026 mulank series.",
+     "by": "owner"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Kept as the base path in the framework; independently reviewed.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "2026 series result",
+     "result": "Rs 555 report, about Rs 1.5 lakh",
+     "source": "owner"
+    }
+   ],
+   "tests": [
+    {
+     "direction": "Script",
+     "plan": "One keyword per series, said and shown in the last 4 seconds.",
+     "status": "planned",
+     "result": ""
+    },
+    {
+     "direction": "Posting frequency",
+     "plan": "Not decided.",
+     "status": "not planned",
+     "result": ""
+    }
+   ],
+   "next": "Use again for 2027. Keyword and DM copy still to write.",
+   "own_result": true
+  },
+  {
+   "id": "series",
+   "name": "Series, not single reels",
+   "line": "10 to 20 episodes, one look, one product at the end.",
+   "source": "Owner's brief",
+   "stage": "adopted",
+   "evidence_pts": 20,
+   "evidence_note": "One past series of ours worked; no comparison with single reels.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "yes",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes: ideas review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-01",
+     "event": "2026 series ran as a series.",
+     "by": "owner"
+    },
+    {
+     "date": "2026-11-19",
+     "event": "Idea list reviewed twice.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-19-ideas-and-skill-review-2.md"
+    }
+   ],
+   "research": [],
+   "tests": [
+    {
+     "direction": "Set of videos",
+     "plan": "10 to 20 episodes; count not fixed yet.",
+     "status": "planned",
+     "result": ""
+    },
+    {
+     "direction": "Posting frequency",
+     "plan": "Not worked back from 1 January yet.",
+     "status": "not planned",
+     "result": ""
+    }
+   ],
+   "next": "Fix the episode count and calendar.",
+   "own_result": true
+  },
+  {
+   "id": "free-paid",
+   "name": "General free, personal paid",
+   "line": "The reel is complete; the report is personal.",
+   "source": "Reviews",
+   "stage": "adopted",
+   "evidence_pts": 15,
+   "evidence_note": "Came from review reasoning, not from numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "yes",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Set as a rule in the framework after review.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-20-framework-review.md"
+    }
+   ],
+   "research": [],
+   "tests": [],
+   "next": "Apply in every script: hold back quantity, never the punchline.",
+   "own_result": false
+  },
+  {
+   "id": "pilot-first",
+   "name": "Pilot before batches",
+   "line": "One full episode first, then 3 to 5 at a time.",
+   "source": "Owner's rule",
+   "stage": "adopted",
+   "evidence_pts": 10,
+   "evidence_note": "A working rule, not a measured result.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes",
+     "done": true
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-19",
+     "event": "Owner's rule, written into the skill.",
+     "by": "owner"
+    }
+   ],
+   "research": [],
+   "tests": [
+    {
+     "direction": "Set of videos",
+     "plan": "Pilot, then batches of 3 to 5.",
+     "status": "planned",
+     "result": ""
+    }
+   ],
+   "next": "Pilot waits for the look to be chosen.",
+   "own_result": false
+  },
+  {
+   "id": "level-2",
+   "name": "Level 2, not a correction",
+   "line": "New work builds on last year's report; never says it was wrong.",
+   "source": "Driver concept review",
+   "stage": "testing",
+   "evidence_pts": 10,
+   "evidence_note": "Reasoning from review; no numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes: driver concept review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Raised by the reviewer of the driver concept; adopted for the 2027 scripts.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-20-driver-concept-review.md"
+    }
+   ],
+   "research": [],
+   "tests": [
+    {
+     "direction": "Script",
+     "plan": "Hook line for 2027 written as a second level of the 2026 reading.",
+     "status": "planned",
+     "result": ""
+    }
+   ],
+   "next": "Sakshi to say whether the wording fits her.",
+   "own_result": false
+  },
+  {
+   "id": "every-viewer",
+   "name": "Every episode for every viewer",
+   "line": "Nobody waits for their own number's episode.",
+   "source": "Reviews",
+   "stage": "testing",
+   "evidence_pts": 10,
+   "evidence_note": "Reasoning from review; no numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-19",
+     "event": "Raised in the ideas review.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-19-ideas-review-1.md"
+    }
+   ],
+   "research": [],
+   "tests": [
+    {
+     "direction": "Script",
+     "plan": "Each series bible says how every viewer is addressed in every episode.",
+     "status": "not planned",
+     "result": ""
+    }
+   ],
+   "next": "Decide the method in the 2027 series bible.",
+   "own_result": false
+  },
+  {
+   "id": "personal-year",
+   "name": "Personal year for 2027",
+   "line": "Use day + month + 2027, not mulank alone.",
+   "source": "Reviewers",
+   "stage": "early-review",
+   "evidence_pts": 10,
+   "evidence_note": "Numerology reasoning; no audience numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "waiting for Sakshi",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "yes: driver concept review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Owner's driver concept reviewed; reviewer pointed to the personal year.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-20-driver-concept-review.md"
+    }
+   ],
+   "research": [],
+   "tests": [],
+   "next": "Sakshi: how does she read the year, January to December or birthday to birthday?",
+   "own_result": false
+  },
+  {
+   "id": "return-date",
+   "name": "A task with a return date",
+   "line": "Give the viewer a small job and a time to come back.",
+   "source": "@pagetkagy",
+   "stage": "optimising",
+   "evidence_pts": 25,
+   "evidence_note": "6 reels on one page, 3 of her 4 recent hits; two plain versions near 1M. One page only.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "yes, without secrecy hooks",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "findings reviewed once",
+     "done": false
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Found on @pagetkagy from the numbers on 28 reels.",
+     "by": "agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Page findings independently reviewed; over-claims removed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Transcripts of the hit reels arrived from the desktop app; not yet studied.",
+     "by": "desktop app"
+    }
+   ],
+   "research": [
+    {
+     "what": "Reels using it",
+     "result": "6 of 28, median 617K against a page median of 304K",
+     "source": "@pagetkagy"
+    },
+    {
+     "what": "Hits (3x median or more)",
+     "result": "3",
+     "source": "@pagetkagy"
+    }
+   ],
+   "tests": [
+    {
+     "direction": "Script",
+     "plan": "Find your driver number, comment it, come back on 1 January.",
+     "status": "planned",
+     "result": ""
+    }
+   ],
+   "next": "Research agent: study the transcripts, then check Indian pages and Trends India.",
+   "own_result": false
+  },
+  {
+   "id": "named-character",
+   "name": "A named character who answers the viewer",
+   "line": "A two-role skit: the viewer asks, a fixed character answers.",
+   "source": "@pagetkagy",
+   "stage": "optimising",
+   "evidence_pts": 20,
+   "evidence_note": "9 of 28 reels, steady at her median, one at 1.3M. One page only.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "findings reviewed once",
+     "done": false
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Found on @pagetkagy.",
+     "by": "agent"
+    },
+    {
+     "date": "2026-11-20",
+     "event": "Page findings independently reviewed.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Reels using it",
+     "result": "9 of 28, median 328K",
+     "source": "@pagetkagy"
+    }
+   ],
+   "tests": [
+    {
+     "direction": "Format",
+     "plan": "Motion-graphic cartoon: passenger and the saarthi. Live acting not planned.",
+     "status": "planned",
+     "result": ""
+    },
+    {
+     "direction": "Script",
+     "plan": "Passenger asks why this year feels different; the saarthi answers.",
+     "status": "planned",
+     "result": ""
+    }
+   ],
+   "next": "Research agent: Indian pages check. Owner: pick the look so a pilot can test it.",
+   "own_result": false
+  },
+  {
+   "id": "sales-page-reel",
+   "name": "Top reel as the sales page",
+   "line": "The pinned best reel carries the product pitch.",
+   "source": "@pagetkagy",
+   "stage": "discovered",
+   "evidence_pts": 5,
+   "evidence_note": "Seen once, on one page.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "not yet",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Noticed on @pagetkagy: her most-seen pinned reel sells a paid programme.",
+     "by": "agent"
+    }
+   ],
+   "research": [
+    {
+     "what": "Seen on",
+     "result": "1 page",
+     "source": "@pagetkagy"
+    }
+   ],
+   "tests": [],
+   "next": "Needs more pages before a first review.",
+   "own_result": false
+  },
+  {
+   "id": "do-dont",
+   "name": "Do / don't columns",
+   "line": "Two columns on screen: what to do, what not to do.",
+   "source": "@pagetkagy",
+   "stage": "discovered",
+   "evidence_pts": 5,
+   "evidence_note": "Two reels, no hits, and the second part did worse.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "not yet",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Found on @pagetkagy.",
+     "by": "agent"
+    }
+   ],
+   "research": [
+    {
+     "what": "Reels using it",
+     "result": "2 of 28, 0 hits",
+     "source": "@pagetkagy"
+    }
+   ],
+   "tests": [],
+   "next": "Thin. Look for it on other pages before spending more.",
+   "own_result": false
+  },
+  {
+   "id": "daily-snapshot",
+   "name": "Daily snapshot",
+   "line": "Read a page's reel list daily to see what keeps growing.",
+   "source": "Built here",
+   "stage": "parked",
+   "evidence_pts": 0,
+   "evidence_note": "A method, not yet run.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "not yet",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Parked: needs a scheduled agent run.",
+     "by": "agent"
+    }
+   ],
+   "research": [],
+   "tests": [],
+   "next": "Starts when the daily agent run exists.",
+   "own_result": false
+  },
+  {
+   "id": "percent-weights",
+   "name": "Percent weights from the funnel post",
+   "line": "40 / 30 / 20 / 10 per factor.",
+   "source": "Funnel post",
+   "stage": "rejected",
+   "evidence_pts": 0,
+   "evidence_note": "No source found for the numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "rejected in review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Checked in the funnel review; no source found. Rejected.",
+     "by": "reviewer",
+     "file": "tarot-talk/reviews/2026-11-20-style-frames-and-funnel-review.md"
+    }
+   ],
+   "research": [],
+   "tests": [],
+   "next": "Kept so nobody proposes it again.",
+   "why_rejected": "No source for the weights.",
+   "own_result": false
+  },
+  {
+   "id": "money-topics",
+   "name": "\"Money topics do better\"",
+   "line": "Assumed; the numbers did not support it.",
+   "source": "@pagetkagy",
+   "stage": "rejected",
+   "evidence_pts": 0,
+   "evidence_note": "303K against 328K; 3 of 4 hits were not about money.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Reviewer",
+     "result": "rejected in review",
+     "done": true
+    }
+   ],
+   "cycles": 1,
+   "history": [
+    {
+     "date": "2026-11-20",
+     "event": "Tested against the 28 reels; not supported. Rejected.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Money reels against the rest",
+     "result": "303K against 328K median",
+     "source": "@pagetkagy"
+    }
+   ],
+   "tests": [],
+   "next": "Kept so nobody proposes it again.",
+   "why_rejected": "Numbers did not support it.",
+   "own_result": false
+  }
+ ]
+}
