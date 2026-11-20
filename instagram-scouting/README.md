@@ -14,8 +14,7 @@ instagram-scouting/
   output/status.json    which tool has done what
   output/cli-status.json  written by the command-line script on the PC
   cli/scout_cli.py      command-line step, run on the owner's PC
-  dashboard/build.py    builds page.json and dashboard/index.html
-  dashboard/index.html  the dashboard, one self-contained file
+  dashboard/build.py    builds page.json (the dashboard itself is the Tarot Talk workspace: tarot-talk/dashboard/)
   snippets/             page snippets the skill runs in the built-in browser
   reviews/              independent reviews
 ```
@@ -36,7 +35,7 @@ python cli/scout_cli.py check
 python cli/scout_cli.py queue pagetkagy
 python cli/scout_cli.py run
 python cli/scout_cli.py push
-python dashboard/build.py                           (rebuilds the dashboard with the new results)
+python ../tarot-talk/dashboard/build.py             (rebuilds the workspace dashboard with the new results)
 ```
 
 The script was written on 20 Nov 2026 and has not yet been run against Instagram.

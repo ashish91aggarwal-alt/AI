@@ -1,0 +1,391 @@
+{
+ "brand": {
+  "name": "Tarot Talk",
+  "by": "by Sakshi",
+  "line": "Workspace: research, strategy, scripts and production in one place."
+ },
+ "now": [
+  {
+   "title": "2027 New Year series: \"2027 ka driver kaun?\"",
+   "area": "Production",
+   "stage": "Look: waiting for a style choice",
+   "tone": "warn",
+   "text": "Same mulank, different year: a hidden saarthi drives each person's 2027. Concept and episode plan reviewed. Four style frames drawn; the reviewer said none is ready for a pilot and to develop the gilded miniature look.",
+   "next": "Pick a style. Then three single-idea shots are drawn and reviewed before a pilot.",
+   "link": "production"
+  },
+  {
+   "title": "Instagram research",
+   "area": "Research",
+   "stage": "1 page scouted",
+   "tone": "good",
+   "text": "@pagetkagy read through the browser: 28 reels listed, 25 covers, 9 reels read closely. Transcripts wait for the command-line step on the PC. Growth needs the page read again on other days.",
+   "next": "Forward more pages or reels from the Research tab.",
+   "link": "research"
+  },
+  {
+   "title": "Tarot Talk framework and skills",
+   "area": "Strategy",
+   "stage": "Written, last version not re-checked",
+   "tone": "acc",
+   "text": "The TAROT episode shape, the stop / follow / choose gates and the scouting method are saved as skills and in the repo.",
+   "next": "A fresh reviewer pass on the framework's second version.",
+   "link": "strategy"
+  },
+  {
+   "title": "Audience file",
+   "area": "Strategy",
+   "stage": "Empty",
+   "tone": "bad",
+   "text": "The framework starts from real comments, DMs and buyer questions. None have been collected yet.",
+   "next": "Send screenshots or an export from last year's New Year series.",
+   "link": "strategy"
+  }
+ ],
+ "waiting": [
+  "Pick the look for the 2027 series (reviewer's pick: gilded miniature, drawn more cleanly).",
+  "Sakshi: which way do you read the personal year, January to December or birthday to birthday?",
+  "Is the 2027 yearly report ready, and at what price? The series is not produced before the product exists or has a date.",
+  "Comments and DMs from last year's series, for the audience file.",
+  "Run the command-line step on the PC to get transcripts (optional, your choice)."
+ ],
+ "activity": [
+  {
+   "at": "20 Nov",
+   "text": "Workspace dashboard rebuilt around Tarot Talk; scouting moved under Research."
+  },
+  {
+   "at": "20 Nov",
+   "text": "@pagetkagy scouted and analysed; findings corrected after an independent review."
+  },
+  {
+   "at": "20 Nov",
+   "text": "Instagram scouting skill and command-line script written."
+  },
+  {
+   "at": "20 Nov",
+   "text": "Tarot Talk framework (TAROT episode shape) written and reviewed once."
+  },
+  {
+   "at": "20 Nov",
+   "text": "Four style frames for the 2027 driver series drawn and reviewed."
+  },
+  {
+   "at": "20 Nov",
+   "text": "2027 \"driver\" concept shaped from the owner's idea and reviewed."
+  },
+  {
+   "at": "19 Nov",
+   "text": "Series idea list written and reviewed twice; tarot-motion-series skill saved."
+  }
+ ],
+ "promising": [
+  {
+   "rank": 1,
+   "title": "A task with a return date",
+   "from": "pagetkagy",
+   "why": "3 of her 4 recent hits give the viewer a job and a time to come back. Two plain versions, without secrecy hooks, reached about 1M.",
+   "ours": "Find your driver number, comment it, come back on 1 January.",
+   "evidence": "6 reels, 3 hits"
+  },
+  {
+   "rank": 2,
+   "title": "A named character who answers the viewer",
+   "from": "pagetkagy",
+   "why": "Her house format: 9 of 28 reels, steady at the page median, one at 1.3M. It is already the heart of our series: the saarthi.",
+   "ours": "Passenger asks why this year feels different; the saarthi answers.",
+   "evidence": "9 reels, 1 hit, 1 pinned"
+  },
+  {
+   "rank": 3,
+   "title": "Do / don't columns",
+   "from": "pagetkagy",
+   "why": "Simple to draw in motion graphics and easy to save. Thin evidence: two reels, and the second part did worse.",
+   "ours": "Driver 7 ka saal: yeh kijiye / yeh mat kijiye.",
+   "evidence": "2 reels, 0 hits"
+  }
+ ],
+ "promising_note": "The ranking is a reading of one page and has not been reviewed. It will change as more pages are scouted.",
+ "strategy": {
+  "ours": [
+   {
+    "title": "The path",
+    "text": "Reel, then one comment keyword, then an auto-DM, then the paid report or reading. The reel gives the general reading, complete in itself. The paid product gives the personal one."
+   },
+   {
+    "title": "Proof it works",
+    "text": "The New Year 2026 mulank series sold a yearly report at Rs 555 and made about Rs 1.5 lakh."
+   },
+   {
+    "title": "Series, not single reels",
+    "text": "10 to 20 episodes, one look, one story, one product at the end. Pilot first; batches of 3 to 5 after it passes."
+   },
+   {
+    "title": "Every episode follows TAROT",
+    "list": [
+     "Thehro (0-3 s): stop the scroll, open one question",
+     "Apni baat (3-10 s): the viewer finds themselves",
+     "Reveal (10-38 s): one idea, one usable thing",
+     "On to the next (38-41 s): name the next episode",
+     "Take the step (41-45 s): one keyword, and what they get"
+    ]
+   },
+   {
+    "title": "Three gates before anything is shown as ready",
+    "list": [
+     "Stop: will a stranger stay?",
+     "Follow: will they come back and send it on?",
+     "Choose: will they buy?"
+    ]
+   },
+   {
+    "title": "How we speak",
+    "list": [
+     "Patterns and tendencies, never \"this will happen\"",
+     "No fear, no curse, no secrecy hooks",
+     "No promise on money, health or a person returning",
+     "Say when the reel simplifies the method"
+    ]
+   },
+   {
+    "title": "Nobody approves their own work",
+    "text": "Every idea, script, look and film goes to an independent reviewer. Only the owner approves."
+   }
+  ],
+  "series": [
+   {
+    "name": "2027: Aapka Personal Year, as \"2027 ka driver kaun?\"",
+    "state": "active"
+   },
+   {
+    "name": "2026 Jaane se Pehle",
+    "state": "idea, time-bound: December"
+   },
+   {
+    "name": "Aapka Janm Tarot Card",
+    "state": "idea"
+   },
+   {
+    "name": "Mulank Jodi",
+    "state": "idea"
+   },
+   {
+    "name": "Yeh Number Baar Baar Kyun Dikhta Hai?",
+    "state": "idea, needs a product"
+   },
+   {
+    "name": "Janm Tareekh Mein Kaunse Number Gayab Hain?",
+    "state": "idea"
+   },
+   {
+    "name": "Mobile Number ka Sach",
+    "state": "idea"
+   },
+   {
+    "name": "Aap Kis Mahine Mein Paida Hue?",
+    "state": "idea"
+   },
+   {
+    "name": "Naam ka Pehla Akshar",
+    "state": "idea"
+   },
+   {
+    "name": "Devi ke 9 Roop",
+    "state": "held for Chaitra Navratri, 7-15 April 2027"
+   }
+  ],
+  "common": {
+   "note": "What repeats across the pages studied. With one page scouted, these are leads, not patterns yet. Each line shows how many pages it was seen on.",
+   "items": [
+    {
+     "text": "Reels that give a task and a time to come back are where the spikes come from.",
+     "seen": 1
+    },
+    {
+     "text": "A two-role skit with a named character is a steady, repeatable format.",
+     "seen": 1
+    },
+    {
+     "text": "One fixed hook line stays on screen for the whole reel, with captions on every spoken line.",
+     "seen": 1
+    },
+    {
+     "text": "The most-seen reel doubles as the sales page for a paid programme.",
+     "seen": 1
+    },
+    {
+     "text": "Topic alone (money) and a clock in the hook did not separate hits from ordinary reels.",
+     "seen": 1
+    }
+   ]
+  }
+ },
+ "scripts": [
+  {
+   "title": "2027 driver series, episode 1",
+   "state": "draft, not reviewed",
+   "kind": "Episode",
+   "beats": [
+    [
+     "Thehro",
+     "Two friends in one coach, both wearing a 5. The coach splits onto two tracks. Text: \"Mulank same. Saal alag?\""
+    ],
+    [
+     "Apni baat",
+     "\"Aapka mulank + janm ka mahina + 2\" on a lookup card."
+    ],
+    [
+     "Reveal",
+     "The engine cab; a saarthi steps out of the steam. \"Hum ise aapke saal ka driver kehte hain.\" One friend's driver is 1, the other's is 7, and what that changes."
+    ],
+    [
+     "On to the next",
+     "\"Kal: ek mulank, teen mahine, teen alag saal.\""
+    ],
+    [
+     "Take the step",
+     "\"Comment DRIVER. DM mein aapka driver number aur 2027 report ki jaankari.\""
+    ]
+   ]
+  },
+  {
+   "title": "2027 driver series, ten-episode outline",
+   "state": "reviewer's version, not approved",
+   "kind": "Outline",
+   "beats": [
+    [
+     "1",
+     "Two friends with the same mulank split onto different tracks. The sum and the lookup grid."
+    ],
+    [
+     "2",
+     "One mulank, three birth months, three different years."
+    ],
+    [
+     "3 to 8",
+     "One theme each, all nine drivers inside: paisa, rishte, career, ghar, and two to decide. \"Sehat\" was flagged by a reviewer as a health-claim risk."
+    ],
+    [
+     "9",
+     "The same driver with mulank 1 and with mulank 7."
+    ],
+    [
+     "10",
+     "The report: what it gives, and the keyword."
+    ]
+   ]
+  },
+  {
+   "title": "Hook lines bank",
+   "state": "first drafts from research, not reviewed",
+   "kind": "Lines",
+   "beats": [
+    [
+     "Fixed line",
+     "Mulank same. Saal alag?"
+    ],
+    [
+     "Timed promise",
+     "60 second mein jaaniye, aapka 2027 kaun chala raha hai."
+    ],
+    [
+     "Test and report",
+     "Aaj apna driver number nikaaliye. Kal bataiye, kya yeh aapke saal jaisa lagta hai?"
+    ],
+    [
+     "Do / don't",
+     "Driver 7 ka saal: yeh kijiye / yeh mat kijiye."
+    ],
+    [
+     "Send",
+     "Apne same-mulank dost ko bhejiye."
+    ]
+   ]
+  }
+ ],
+ "production": {
+  "series": "2027 ka driver kaun?",
+  "gates": [
+   [
+    "Idea",
+    "done",
+    "Reviewed twice. Owner's own concept."
+   ],
+   [
+    "Calendar",
+    "todo",
+    "Not worked back from 1 January yet."
+   ],
+   [
+    "Series bible",
+    "todo",
+    "Episode titles, hook lines, keyword, schedule."
+   ],
+   [
+    "Product and CTA",
+    "todo",
+    "The report must exist or have a date. Keyword and DM copy."
+   ],
+   [
+    "Look",
+    "now",
+    "Four style frames drawn. Reviewer: none pilot-ready; develop the gilded look."
+   ],
+   [
+    "Pilot",
+    "todo",
+    "One full episode, reviewed, then your approval."
+   ],
+   [
+    "Batches",
+    "todo",
+    "3 to 5 episodes at a time."
+   ],
+   [
+    "Post and measure",
+    "todo",
+    "Numbers at 24 hours and 7 days."
+   ]
+  ],
+  "frames": [
+   [
+    "gilded",
+    "Gilded miniature",
+    "Reviewer's rank 1: festive, warm, would stop a scroll. Needs a thinner border and one idea per shot."
+   ],
+   [
+    "toon",
+    "Flat cartoon",
+    "Rank 2: cleanest and easiest to animate, but reads like a kids' explainer."
+   ],
+   [
+    "brush",
+    "Watercolour and pencil",
+    "Rank 3: nicest texture, but would flicker and render slowly."
+   ],
+   [
+    "shadow",
+    "Shadow puppet",
+    "Rank 4: came out muddy. Drop."
+   ]
+  ],
+  "frames_note": "First-pass still frames of one key shot, drawn in code. The reviewer's shared notes: six ideas in one frame, the hidden driver too small, characters need full bodies.",
+  "tools": [
+   [
+    "Lemo-Opuscar",
+    "Film method: code-drawn films, direction and sound rules",
+    "read, not yet used for a film"
+   ],
+   [
+    "Own canvas renderer",
+    "Drew the four style frames",
+    "used"
+   ],
+   [
+    "p5.brush",
+    "Watercolour look",
+    "tested once; flickers in motion"
+   ]
+  ]
+ }
+}

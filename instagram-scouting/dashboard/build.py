@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Builds output/<handle>/page.json from source.py + findings.json + CLI results, and inlines
-everything into dashboard/index.html (one self-contained file).   Usage: python3 dashboard/build.py"""
+"""Builds output/<handle>/page.json from source.py + findings.json + command-line results.
+The dashboard that shows them is built by tarot-talk/dashboard/build.py, which calls this script."""
 import json, importlib.util, pathlib, statistics, datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -66,9 +66,7 @@ def main():
     requests = json.loads((ROOT / "input" / "requests.json").read_text(encoding="utf-8"))
     data = dict(built=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=5, minutes=30))).strftime("%d %b %Y, %H:%M IST"),
                 pages=pages, status=status, requests=requests)
-    tpl = (ROOT / "dashboard" / "template.html").read_text(encoding="utf-8")
-    html = tpl.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False).replace("</", "<\\/"))
-    (ROOT / "dashboard" / "index.html").write_text(html, encoding="utf-8")
+    # The dashboard itself lives in tarot-talk/dashboard/ (the Tarot Talk workspace); this script only builds page.json.
     for h, p in pages.items():
         print(h, "median", p["median"], "counted", p["counted"])
         for c in p["concepts"]: print("  ", c["key"], c["n"], c["counted"], c["median"], "hits", c["hits"])

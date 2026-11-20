@@ -1,10 +1,14 @@
 [
  {
   "id": "r1",
-  "kind": "page",
-  "target": "pagetkagy",
-  "note": "First page. Sent as a reel link by the owner.",
-  "asked": "2026-11-20",
-  "state": "scouted"
+  "kind": "reel",
+  "target": "DfiP2B6Dne-",
+  "url": "https://www.instagram.com/reel/DfiP2B6Dne-/",
+  "scoutProfile": true,
+  "by": "Ashish",
+  "note": "First reel sent.",
+  "asked": "2026-11-20 16:11 IST",
+  "state": "scouted",
+  "result": "Reel read (1.3M views, 4.3x the page median) and its profile @pagetkagy scouted: 28 reels listed."
  }
 ]
