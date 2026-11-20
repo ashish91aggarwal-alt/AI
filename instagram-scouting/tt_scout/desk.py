@@ -506,7 +506,9 @@ class App:
 
             def do_GET(self):
                 if not self.mine(): return self.send(403, "{}")
-                if self.path.split("?")[0] in ("/", "/index.html"):
+                if self.path.split("?")[0] in ("/", "/index.html"):          # shown at once; the real page takes a few seconds to build
+                    return self.send(200, SPLASH, "text/html")
+                if self.path.split("?")[0] == "/app":
                     return self.send(200, app.page(), "text/html")
                 if self.path == "/api/state" and self.headers.get("X-TT-Token") == app.token:
                     return self.send(200, json.dumps(app.state(), ensure_ascii=False))
@@ -531,6 +533,18 @@ class App:
         self.httpd = Server(("127.0.0.1", PORT), H)      # reachable from this computer only
         self.httpd.daemon_threads = True
         return self.httpd
+
+
+SPLASH = """<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Tarot Talk by Sakshi</title><style>
+html,body{height:100%;margin:0;background:#0b0613;color:#fbf7ff;font:16px 'Segoe UI',system-ui,sans-serif}
+body{display:grid;place-items:center;background:radial-gradient(60% 50% at 20% 0%,#6b1a45 0%,transparent 70%),radial-gradient(50% 60% at 100% 60%,#2b2a7a 0%,transparent 70%),#0b0613}
+.w{text-align:center}.o{width:92px;height:92px;margin:0 auto 26px;border-radius:50%;background:conic-gradient(#ffd166,#ff8a3d,#f0357f,#a43cd6,#5661e8,#ffd166);animation:s 1.6s linear infinite;-webkit-mask:radial-gradient(circle 34px,transparent 98%,#000 100%);mask:radial-gradient(circle 34px,transparent 98%,#000 100%)}
+h1{font-size:30px;margin:0 0 8px;background:linear-gradient(100deg,#ffd166,#ff8a3d 28%,#f0357f 58%,#a43cd6 82%,#5661e8);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{margin:0;color:#b8a8cf}.d::after{content:"";animation:d 1.4s steps(4,end) infinite}
+@keyframes s{to{transform:rotate(360deg)}}@keyframes d{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+@media (prefers-reduced-motion:reduce){.o{animation-duration:6s}}
+</style></head><body><div class="w" role="status"><div class="o"></div><h1>Tarot Talk</h1><p class="d">Opening your workspace</p></div>
+<script>location.replace("/app" + location.hash)</script></body></html>"""
 
 
 def open_window():

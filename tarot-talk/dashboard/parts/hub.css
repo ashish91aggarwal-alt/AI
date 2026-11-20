@@ -75,3 +75,8 @@ details.reading summary{cursor:pointer;list-style:none;font-weight:700;font-size
 .goal{display:flex;flex-direction:column;gap:4px;padding:16px;border-radius:18px;background:var(--glass);border:1px solid var(--line);color:inherit;text-decoration:none;transition:transform .2s}.goal:hover{transform:translateY(-3px)}
 .goal b{font:800 34px/1 var(--display);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.goal .meter{max-width:none}
 .checks{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.chk{font-size:12.5px;padding:5px 10px;border-radius:99px;border:1px dashed var(--line);color:var(--muted)}.chk.y{border-style:solid;color:var(--good);border-color:var(--good)}
+.waitbox{display:flex;align-items:center;gap:16px}.waitbox h3{margin:0 0 2px}
+.orb{flex:none;width:44px;height:44px;border-radius:50%;background:conic-gradient(var(--g1),var(--g2),var(--g3),var(--g4),var(--g5),var(--g1));animation:orbspin 1.4s linear infinite;-webkit-mask:radial-gradient(circle 15px,transparent 98%,#000 100%);mask:radial-gradient(circle 15px,transparent 98%,#000 100%)}
+.dbtn.busy{position:relative;color:transparent!important}.dbtn.busy::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;animation:orbspin .8s linear infinite}
+@keyframes orbspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.orb,.dbtn.busy::after{animation-duration:5s}}

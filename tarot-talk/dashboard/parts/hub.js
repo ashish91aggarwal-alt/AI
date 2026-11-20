@@ -233,10 +233,12 @@ function sessionCards() {
 }
 function vDesk() {
   const s = state.desk;
+  const wait = (title, line) => card("", h("div", { class: "waitbox", role: "status" }, h("div", { class: "orb", "aria-hidden": "true" }), h("div", {}, h("h3", {}, title), h("div", { class: "sub" }, line))));
+  if (state.deskQuit) return [card("", h("h3", {}, "The app is closed"), h("p", { class: "sub" }, "Nothing is running now. Close this window. To start again, double-click Tarot Talk Desk on the Desktop."))];
   if (state.deskDown) return [card("", h("h3", {}, "This window lost touch with the app"), h("p", { class: "sub" }, "If the app was restarted, reload this window. If it was closed, start it again from the Tarot Talk Desk shortcut on the Desktop."), h("button", { type: "button", class: "dbtn hot", onclick: () => location.reload() }, "Reload"))];
-  if (!s) return [h("p", { class: "sub" }, "Connecting to the desktop app ...")];
+  if (!s) return [wait("Connecting to the desktop app", "This takes a second or two.")];
   const say = h("div", { class: "msg", role: "status" }, state.deskMsg || "");
-  const run = (name, body, wait) => async e => { const b = e.currentTarget; b.disabled = true; if (wait) say.textContent = wait; const r = await api(name, body); state.deskMsg = r.msg; say.textContent = r.msg; b.disabled = false; };
+  const run = (name, body, waitMsg) => async e => { const b = e.currentTarget; b.disabled = true; b.classList.add("busy"); say.textContent = waitMsg || "Working on it ..."; const r = await api(name, body); if (name === "quit" && r.ok) { state.deskQuit = true; render(); return; } state.deskMsg = r.msg; say.textContent = r.msg; b.disabled = false; b.classList.remove("busy"); };
   const btn = (t, fn, cls) => h("button", { type: "button", class: "dbtn " + (cls || ""), onclick: fn }, t);
   const waiting = s.queue.filter(x => x.state === "queued" || x.state === "working").length, forAgent = s.queue.filter(x => x.state === "ready-for-agent" || x.state === "needs-agent").length;
   const light = s.paused ? ["Paused", "wait"] : s.busy ? ["Working", "acc"] : ["Watching the queue", "good"];
@@ -252,6 +254,7 @@ function vDesk() {
     h("div", { class: "dflow" }, node("Web dashboard", gh, s.sync_failed ? (s.sync_note || "The last round did not sync. See the work log.") : "Sakshi's view. Requests sent there arrive here."), h("i", { "aria-hidden": "true" }, "⇄"),
       node("This desktop app", light, waiting + " waiting here · " + s.reels_today + (s.max_reels ? " of " + s.max_reels : "") + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
       node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
+    s.busy ? wait("The app is working", (s.logs[s.logs.length - 1] || "").replace(/^\d\d:\d\d\s+/, "") || "Syncing with GitHub and checking the queue.") : null,
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
     ...sessionCards(),
