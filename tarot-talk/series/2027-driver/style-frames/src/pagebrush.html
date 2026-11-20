@@ -1,0 +1,43 @@
+<!doctype html><meta charset="utf-8">
+<style>
+@font-face{font-family:"Baloo 2";font-weight:400;src:url(node_modules/@fontsource/baloo-2/files/baloo-2-latin-400-normal.woff2)}
+@font-face{font-family:"Baloo 2";font-weight:800;src:url(node_modules/@fontsource/baloo-2/files/baloo-2-latin-800-normal.woff2)}
+html,body{margin:0;background:#f4ecdc}#wrap{position:relative;width:1080px;height:1920px}
+#wrap canvas{position:absolute;left:0;top:0}
+</style>
+<div id="wrap"><canvas id="t" width="1080" height="1920" style="z-index:2"></canvas></div>
+<script src="scene.js"></script>
+<script src="node_modules/p5.brush/dist/brush.js"></script>
+<script>
+(async()=>{
+ await Promise.all(['400 20px "Baloo 2"','800 20px "Baloo 2"'].map(f=>document.fonts.load(f)));
+ const {shapes,text,W,H,horizon}=SCENE;
+ const B=window.brush||window.p5brush||window.Brush;
+ const cv=B.createCanvas(W,H); const el=(cv&&cv.canvas)||cv||document.querySelector('canvas:not(#t)'); if(el&&el.tagName){document.getElementById('wrap').appendChild(el);el.style.zIndex=1;}
+ B.seed(21); B.noiseSeed(21); B.clear('#f4ecdc'); B.scaleBrushes(6); B.push(); B.translate(-W/2,-H/2);
+ const col={disc:'#f2c14e',hill:'#8fb8a0',steam:'#ffffff',sleeper:'#8a6a4a',rail:'#4a3a32',beam:'#f7dc8a',trim:'#4a4058',frame:'#4a4058',boiler:'#d1503a',gold:'#e6ad3c',plate:'#fbf4e4',cab:'#3f7f86',roof:'#4a4058',window:'#f7c948',saarthi:'#231a17',lamp:'#f7dc8a',wheel:'#4a4058',track:'#6a4f3a',post:'#4a3a32',boardA:'#fbf4e4',boardB:'#fbf4e4',coachA:'#ef8e63',coachB:'#5f93c2',window2:'#fdf8ec',shirtA:'#e6ad3c',shirtB:'#46a59b',skin:'#e9b990',hairA:'#231a17',hairB:'#5a2d1e',ink:'#231a17',badge:'#d1503a'};
+ // washes for sky and ground
+ const wash=(pts,c,o,bleed)=>{B.noStroke();B.noHatch();B.fill(c,o);B.fillBleed(bleed,'out');B.fillTexture(0.55,0.5);B.polygon(pts);};
+ wash([[30,40],[1050,30],[1055,horizon-6],[25,horizon-2]],'#9cc7d6',120,0.25);
+ wash([[25,horizon+10],[1055,horizon+6],[1050,1890],[30,1885]],'#e8c46a',120,0.25);
+ for(const s of shapes){ if(!s.pts) continue;
+   if(s.low){const cy=s.pts.reduce((a,p)=>a+p[1],0)/s.pts.length,cx=s.pts.reduce((a,p)=>a+p[0],0)/s.pts.length; const inR=(x,y,w,h)=>cx>x&&cx<x+w&&cy>y&&cy<y+h; if(inR(30,1270,480,490)||inR(570,1270,480,490)||inR(340,1120,400,165)) continue; }
+   const c=col[s.role]||'#888';
+   if(s.line){B.noFill();B.noHatch();B.set('2B','#231a17',1.4);B.beginShape(0);s.pts.forEach(p=>B.vertex(p[0],p[1]));B.endShape();continue;}
+   const solid=/saarthi|ink|hair|rail|track|post|sleeper/.test(s.role);
+   B.noHatch();
+   if(s.role==='steam'){B.fill('#eef2f4',s.veil?215:240);B.fillBleed(0.1,'out');B.fillTexture(0.25,0.6);}
+   else {B.fill(c,solid?235:s.role==='beam'?90:205);B.fillBleed(solid?0.03:0.07,'out');B.fillTexture(0.45,0.55);}
+   if(solid||s.role==='beam') B.noStroke(); else B.set(s.role==='steam'?'HB':'2B','#2b211c',s.role==='steam'?1:1.25);
+   if(/boiler|coach|cab|hill/.test(s.role)){B.hatch(s.role==='hill'?16:20,s.role==='cab'?60:35,{rand:0.15});B.hatchStyle&&B.hatchStyle('HB','#2b211c',0.6);}
+   B.polygon(s.pts);
+ }
+ B.pop(); B.render();
+ // type on a 2D layer above
+ const t=document.getElementById('t').getContext('2d');
+ const lab=(s,cx,cy)=>{t.font=`${s.tsize}px "Baloo 2"`;t.textAlign=s.align||'center';t.textBaseline='middle';t.fillStyle=s.role==='badge'?'#fdf8ec':'#231a17';t.fillText(s.text,cx,cy+s.tsize*.06);};
+ for(const s of shapes) if(s.text){ if(s.tx) lab(s,s.tx,s.ty); else {const xs=s.pts.map(p=>p[0]),ys=s.pts.map(p=>p[1]);lab(s,(Math.min(...xs)+Math.max(...xs))/2,(Math.min(...ys)+Math.max(...ys))/2);} }
+ for(const x of text){t.font=`800 ${x.size}px "Baloo 2"`;t.textAlign=x.align||'left';t.textBaseline='alphabetic';t.fillStyle=x.role==='title2'?'#c2402b':'#231a17';t.fillText(x.text,x.x,x.y);}
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{window.DONE=true;}));
+})().catch(e=>{console.error(String(e&&e.stack||e));window.DONE=true;});
+</script>
