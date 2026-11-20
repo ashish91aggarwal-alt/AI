@@ -4,11 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tt-scout"
-version = "0.2.0"
+version = "0.2.1"
 description = "Tarot Talk Instagram scout: command-line step that writes transcripts and audio numbers for queued reels."
 requires-python = ">=3.10"
 license = { text = "MIT" }
-dependencies = ["yt-dlp", "faster-whisper"]
+dependencies = ["yt-dlp", "faster-whisper", "numpy"]
 
 [project.scripts]
 tt-scout = "tt_scout.cli:main"

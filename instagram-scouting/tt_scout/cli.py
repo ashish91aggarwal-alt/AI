@@ -114,6 +114,16 @@ def safe_handle(v):
     return v if re.fullmatch(r"[A-Za-z0-9_][A-Za-z0-9_.]{0,29}", v) and ".." not in v else "_unknown"
 
 
+def read_wav(path):
+    """The 16 kHz mono WAV that ffmpeg wrote, as float samples between -1 and 1."""
+    import wave
+    import numpy as np
+    with wave.open(str(path), "rb") as w:
+        if w.getframerate() != 16000 or w.getnchannels() != 1 or w.getsampwidth() != 2:
+            raise RuntimeError("unexpected sound format from ffmpeg")
+        return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768.0
+
+
 def audio_stats(wav):
     r = run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(wav), "-af", "volumedetect,silencedetect=noise=-35dB:d=0.4", "-f", "null", "-"])
     t = r.stderr
@@ -139,7 +149,7 @@ def process(item, model):
         r = run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(video), "-vn", "-ac", "1", "-ar", "16000", str(wav)])
         if r.returncode or not wav.exists():
             raise RuntimeError("ffmpeg could not read the audio: " + r.stderr[-200:])
-        segs, meta = model.transcribe(str(wav), vad_filter=True)
+        segs, meta = model.transcribe(read_wav(wav), vad_filter=True)   # samples are passed in directly: the model's own file reader is skipped
         transcript = [{"from": round(s.start, 1), "to": round(s.end, 1), "text": s.text.strip()} for s in segs]
         handle = safe_handle(item.get("handle") or info.get("channel") or info.get("uploader"))
         facts = {k: info.get(k) for k in ("like_count", "comment_count", "view_count", "upload_date", "description") if info.get(k) is not None}
