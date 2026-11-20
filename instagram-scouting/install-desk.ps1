@@ -27,7 +27,8 @@ $ico = Join-Path $proj 'tt_scout\desk.ico'
 function Make-Shortcut($path) {
   $w = New-Object -ComObject WScript.Shell
   $s = $w.CreateShortcut($path)
-  if ($exe) { $s.TargetPath = $exe } else { $s.TargetPath = $pyw; $s.Arguments = '-m tt_scout.desk' }
+  # Always start through Python itself: Windows can block the small tt-desk.exe starter because it is unsigned.
+  $s.TargetPath = $pyw; $s.Arguments = '-m tt_scout.desk'
   $s.WorkingDirectory = $proj
   $s.IconLocation = $ico
   $s.Description = 'Tarot Talk Desk: scout queue, tools and work'
