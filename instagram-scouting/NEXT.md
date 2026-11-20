@@ -21,3 +21,7 @@ No fixed limit on how many reels or pages are studied. Work goes in batches (abo
 1. Trends check as a script step. Verify by search what is free and allowed today before building (Google Trends has no open public API as far as known; unofficial libraries get blocked; Wikipedia pageviews and YouTube search suggestions are possible extra signals). It feeds the "Trends India" check on the India-fit board.
 2. Scheduler: a scheduled Claude task that works "ready for agent" items in batches as above and writes what it did. Frequency not yet given by the owner.
 3. Every finding on the dashboard carries its checks (trends, seen on Indian pages, independent reviewer). Nothing shows as verified until they are done.
+
+## Numbers first (owner, 20 Nov 2026)
+
+Before watching anything, the agent reads the page's own code with the snippets in `snippets/` to get the numbers for every reel on the grid (views, pinned, and where shown likes and comments), with no reading of comments and almost no tokens. From that table it decides: which reels stand out, whether the page is worth more batches at all, and which reels go in the next batch. Watching and reading are spent only on the reels the numbers point to. The decision and its reason are written into the page's findings.
