@@ -10,17 +10,27 @@ for i, s in enumerate(R["shots"]):
     length = max(3.0, math.ceil((dur + 0.4) / BEAT) * BEAT)
     ws, wt = word_times(s["vo"], t + 0.1, dur)
     cues = [dict(k=c[0], a=c[1], b=c[2], at=round(wt[min(c[3], len(wt) - 1)], 3)) for c in s["cues"]]
-    shots.append(dict(id=s["id"], scene=s.get("scene", s["id"]), area=s.get("area"), start=round(t, 3), end=round(t + length, 3), cues=cues)); vos.append((t + 0.1, x)); t += length
+    shots.append(dict(id=s["id"], scene=s.get("scene", s["id"]), area=s.get("area"), pic=s.get("pic"), start=round(t, 3), end=round(t + length, 3), cues=cues)); vos.append((t + 0.1, x)); t += length
 total = t + 0.5
 n = int(total * SR); vo, mus, sfx = np.zeros(n), np.zeros(n), np.zeros(n)
 for st, x in vos: add(vo, x, st)
 vo /= max(np.abs(vo).max(), 1e-6) / 0.9
+def scene_at(tt): return next((s["scene"] for s in shots if s["start"] <= tt < s["end"]), "")
 for b in range(int(total / BEAT)):
     bt = b * BEAT; prog = PROG[(b // 16) % 3]; root, notes = CH[prog[(b // 4) % 4]]
-    hook = bt < shots[0]["end"]
+    hook = bt < shots[0]["end"]; sc = scene_at(bt)
+    if sc in ("tone_sad", "tone_serious"):   # sad: soft minor, no drums; serious: low minor pulse
+        root, notes = CH[("Am" if (b // 4) % 2 == 0 else "F") if sc == "tone_sad" else ("Dm" if (b // 2) % 2 == 0 else "E")]
+        if sc == "tone_serious": add(mus, kick(), bt, 0.8 if b % 2 == 0 else 0.0)
+        for k in range(2):
+            add(mus, lp(pluck(root, 0.5), 500), bt + k * BEAT / 2, 0.45)
+            if sc == "tone_sad" and k == 0: add(mus, bell(notes[b % 3] * 2, 1.2), bt, 0.12)
+        continue
+    bright = sc in ("tone_happy", "tone_fun", "tone_encouraging")
     add(mus, kick(), bt, 0.9)
-    if not hook: add(mus, hat(), bt + BEAT / 2, 0.35)
-    if b % 2 == 1 and not hook: add(mus, clap(), bt, 0.3)
+    if not hook: add(mus, hat(), bt + BEAT / 2, 0.35 if not bright else 0.45)
+    if b % 2 == 1 and not hook: add(mus, clap(), bt, 0.3 if not bright else 0.4)
+    if bright and b % 2 == 0: add(mus, bell(notes[2] * 4, 0.8), bt, 0.07)
     for k in range(2):
         add(mus, lp(pluck(root, 0.22), 600), bt + k * BEAT / 2, 0.5)
         add(mus, pluck(notes[(b * 2 + k) % 3] * (1 if hook else 2), 0.3), bt + k * BEAT / 2, 0.24)
@@ -36,12 +46,23 @@ for s in shots:
         elif c["k"] == "S": add(sfx, impact(), c["at"], 0.75); add(sfx, buzz(), c["at"] + 0.05, 0.4)
         elif c["k"] == "M": add(sfx, pop(), c["at"], 0.5); add(sfx, bell(660 * 2 ** (m / 6), 0.5), c["at"] + 0.3, 0.2 + 0.03 * c["b"]); m += 1
         elif c["k"] == "K": add(sfx, pop(), c["at"], 0.5); add(sfx, bell(1568, 0.5), c["at"] + 0.05, 0.18)
+        elif c["k"] == "D":
+            for q, (_, m) in enumerate(c["a"]): add(sfx, pop(), c["at"] + 0.3 + q * 0.14, 0.45); add(sfx, bell({"good": 1318.5, "care": 880, "stop": 330}[m], 0.4), c["at"] + 0.32 + q * 0.14, 0.12)
         elif c["a"] == "DO":
             for q, f in enumerate([1046.5, 1318.5, 1568]): add(sfx, bell(f, 0.8), c["at"] + q * 0.07, 0.25)
         else: add(sfx, impact(), c["at"], 0.7); add(sfx, buzz(), c["at"] + 0.05, 0.4)
 add(sfx, riser(0.8), shots[0]["end"] - 0.8, 0.3)
 for s in shots:
-    if s["scene"] == "remedy":
+    sc = s["scene"]; t0 = s["start"]
+    if sc == "tone_happy":
+        for q, f in enumerate([1046.5, 1318.5, 1568, 2093, 2637]): add(sfx, bell(f, 0.9), t0 + 0.1 + q * 0.06, 0.22)
+        add(sfx, clap(), t0 + 0.1, 0.5); add(sfx, clap(), t0 + 0.35, 0.4)
+    elif sc == "tone_fun":
+        for q in range(4): add(sfx, pop(), t0 + 0.1 + q * 0.11, 0.5)
+    elif sc == "tone_encouraging": add(sfx, riser(0.9), t0 - 0.7, 0.35); add(sfx, bell(1568, 1.0), t0 + 0.2, 0.25)
+    elif sc == "tone_serious": add(sfx, impact(), t0 + 0.05, 0.9)
+    elif sc == "tone_sad": add(sfx, bell(440, 1.6), t0 + 0.1, 0.25); add(sfx, bell(330, 1.6), t0 + 0.5, 0.2)
+    if sc == "remedy":
         for q, f in enumerate([784, 988, 1175, 1568]): add(sfx, bell(f, 1.2), s["start"] + 0.15 + q * 0.12, 0.2)
 k = int(0.25 * SR); act = np.convolve((np.abs(vo) > 0.03).astype(float), np.ones(k) / k, "same")
 mus = lp(mus, 9000); mus /= np.abs(mus).max(); sfx /= max(np.abs(sfx).max(), 1e-6)
@@ -50,5 +71,5 @@ def save(name, mix):
     w = wave.open(f"{DIR}/{name}", "w"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((mix * 32767).astype(np.int16).tobytes()); w.close()
 save("audio.wav", vo + mus * 0.34 * (1 - 0.5 * np.clip(act * 3, 0, 1)) + sfx * 0.4)
 save("audio_nomusic.wav", vo + sfx * 0.4)      # for adding an Instagram library track when posting
-json.dump(dict(total=round(total, 3), sign=R["sign"], element=R["element"], language=R.get("language", "english"), rashi=R.get("rashi", R["sign"]), date_label=R["date_label"], shots=shots), open(f"{DIR}/timeline.json", "w"), indent=1)
+json.dump(dict(total=round(total, 3), sign=R["sign"], element=R["element"], language=R.get("language", "english"), rashi=R.get("rashi", R["sign"]), period=R.get("period", "daily"), date_label=R["date_label"], shots=shots), open(f"{DIR}/timeline.json", "w"), indent=1)
 print("total", round(total, 2)); [print(s["id"], s["start"], s["end"], [round(c["at"] - s["start"], 2) for c in s["cues"]]) for s in shots]

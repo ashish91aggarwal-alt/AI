@@ -16,6 +16,15 @@ Status (21 Nov 2026): the owner approved v2 of the one-video-per-sign format (Tu
   - `sign_reading.sample.json` - the script for one sign (Aries, 22 Nov 2026).
   - `daily_reading.sample.json` - the script for the combined 12-sign video.
 
+## Weekly run (current format, Sakshi's choice)
+
+Same three steps as below, with a week:
+1. `python3 pipeline/sky.py 2026-11-23 2026-11-29` adds Moon by day and good/care/stop days per rashi (Moon gochar from the rashi: good 1,3,6,7,10,11; stop 4,8,12).
+2. `week.json` (see `samples/week.sample.json`): `date_from`, `date_to`, and per sign the daily fields plus `hooks`: 4 to 5 mood hooks `[after, tone, voice, line1, line2, picture]`; `after` is hook, meters, days, an area key or remedy; `tone` is serious, fun, encouraging, happy or sad; `picture` (optional) is a name from `assets/fe/NAMES.txt`. Lucky third value is the best day.
+3. `XI_API_KEY=... python3 pipeline/make.py week.json out` (`--dry` shows new voice characters; `XI_MAX_CHARS` caps a run, default 1500).
+
+Generated for the week: the days shot (7 coloured day chips, voice naming the good and careful days), "इस हफ्ते" labels, weekly cover (date range, day strip), CTA for next week. About 85 s per rashi, about 950 voice characters (about 380 credits) for a fresh sign.
+
 ## Daily run (current, least tokens)
 
 1. `python3 pipeline/sky.py 2026-11-22` prints about 20 lines: planet signs, Moon change, coming sign changes, and the house of every planet from each rashi. No web search needed.
