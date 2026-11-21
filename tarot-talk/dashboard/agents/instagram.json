@@ -4,13 +4,54 @@
  "job": "Looks at pages on Instagram in the PC browser, numbers first, and picks reels worth hearing.",
  "status": "working",
  "started": "2026-11-21 13:50 IST",
- "updated": "2026-11-21 13:50 IST",
- "step": "Starting.",
- "did": [],
- "findings": [],
+ "updated": "2026-11-21 13:48 IST",
+ "step": "Step 3: @ankitbatraofficial read (1 of 4 Indian pages). Next @tarotbykj.",
+ "did": [
+  "Read @pagetkagy reels grid (21 reels listed) and compared with yesterday's numbers.",
+  "Read candidates file (24 pages). Picked ankitbatraofficial, tarotbykj, prateekbajaj_akashic_records, astroarunpandit.",
+  "Read @ankitbatraofficial reels grid and covers."
+ ],
+ "findings": [
+  {
+   "title": "@pagetkagy: one reel added 200K views in a day",
+   "detail": "Df67I0UGRcS ('Don't tell anyone...' ritual) went 1.7M to 1.9M (+200K, +11.8%). Next: Df7kwnVDGCD (POV, his text) 328K to 440K (+112K, +34.1%). The grid rounds numbers, so small changes are approximate. Opinion: the secrecy-hook ritual is still the page's fastest mover in absolute terms; we do not use secrecy hooks, but the 'do this small thing tonight' body is the usable part.",
+   "source": "https://www.instagram.com/pagetkagy/reels/",
+   "date": "2026-11-21",
+   "kind": "growth"
+  },
+  {
+   "title": "@pagetkagy: yesterday's newest reel went 6.8K to 103K",
+   "detail": "Df9f7khjRfo (POV, ready for a million) 6,792 to 103,000 (+96K, about 15x) in roughly a day. It is still below the page median of 306K. Opinion: first-day speed here is normal for a 2M page, not a hit yet; POV skits on this page usually land near median.",
+   "source": "https://www.instagram.com/reel/Df9f7khjRfo/",
+   "date": "2026-11-21",
+   "kind": "growth"
+  },
+  {
+   "title": "@pagetkagy: two new reels since yesterday",
+   "detail": "Df-kljaibim at 235K and Df-JnLQgrzO at 122K, both under a day old. Median of non-pinned listed reels 306K (yesterday 304K). Opinion: Df-kljaibim reaching 77% of median inside a day is worth a look at its cover tomorrow; too early to call.",
+   "source": "https://www.instagram.com/pagetkagy/reels/",
+   "date": "2026-11-21",
+   "kind": "growth"
+  },
+  {
+   "title": "@pagetkagy: older reels are nearly flat, pinned ones not moving on the grid",
+   "detail": "14 reels older than about 4 days grew 0.8% to 4% in a day (+4K to +14K each). The three pinned reels show the same rounded figures (12.3M, 8.3M, 5.4M). One reel from yesterday's list (Df7_0ZZnACs, 57K, the weakest) was not on the grid today: removed, archived or not loaded, not known. Opinion: on this page a reel's fate looks decided in the first 3 to 4 days; that is one page and two looks, not a rule.",
+   "source": "https://www.instagram.com/pagetkagy/reels/",
+   "date": "2026-11-21",
+   "kind": "growth"
+  }
+ ],
  "ideas": [],
  "strategies": [],
- "pages": [],
+ "pages": [
+  {
+   "handle": "pagetkagy",
+   "why": "Reference page already studied; second daily look for growth.",
+   "followers": "2M",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  }
+ ],
  "queue_reels": [],
  "next": [],
  "problems": []

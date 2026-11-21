@@ -2,16 +2,536 @@
  "id": "similar",
  "name": "Similar pages agent",
  "job": "Finds pages like ours and like the ones we studied, in India and abroad, for the scout to look at.",
- "status": "working",
+ "status": "done",
  "started": "2026-11-21 13:50 IST",
- "updated": "2026-11-21 13:50 IST",
- "step": "Starting.",
- "did": [],
- "findings": [],
- "ideas": [],
+ "updated": "2026-11-21 13:49 IST",
+ "step": "Done: 39 pages (38 sure, 1 unsure), 13 findings, 11 ideas. All second-hand until the scout looks.",
+ "did": [
+  "Searched public rankings, agency lists, press articles and tool-seller case studies (no Instagram opened).",
+  "Listed 39 pages: 38 with the handle shown by at least one source, 1 unsure.",
+  "Wrote 13 findings on prices, buyers, formats and auto-DM rules; seller numbers are marked as claims.",
+  "Wrote 11 content ideas, each tied to a page or source."
+ ],
+ "findings": [
+  {
+   "title": "Small Hindi pages can get reels far bigger than their follower count",
+   "detail": "A creator-tracking site lists a 47K Hindi astrology/numerology page (astro_anubhhvmishra) with top reels of 6.4M, 4.7M and 4.5M, and a 219K numerology page (ankitbatraofficial) with 0.9M to 1.5M. The site does not label the metric (probably views). Not seen by us yet.",
+   "source": "https://motionapp.com/creator/anubhhv-maharaaj/",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "The biggest page in the field mixes astrology with mythology stories and animation",
+   "detail": "Astro Arun Pandit (about 2.4M followers) is listed with topics including mythological stories and Ramayana animation next to zodiac and remedies; listed top reels 2.9M to 4M. Suggests story + animation is used to reach people, astrology to sell. Second-hand.",
+   "source": "https://motionapp.com/creator/astro-arun-pandit/",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Typical paid reading prices in India: Rs 150 to 700 a session",
+   "detail": "A May 2025 explainer puts usual online session prices at Rs 150 to 700, with Astrotalk ranging from Rs 99 quick chats to Rs 1,999 long video sessions. A paid PDF report sits naturally inside or below this band.",
+   "source": "https://upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Most money comes from people who already bought once",
+   "detail": "Astrotalk's founder is quoted saying over 82% of monthly revenue comes from existing customers; consultations were about 91% of FY26 revenue (Rs 1,657 crore of Rs 1,823 crore). For us: a second and third report for past buyers matters as much as new buyers.",
+   "source": "https://openthemagazine.com/business/astrotalks-1823-crore-question-what-are-people-really-paying-for",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Who buys: mostly women aged 25 to 35, relationship and marriage questions first",
+   "detail": "An Astroyogi survey cited in 2025 says most users were 25 to 35 and 60% female, with relationships the top Gen Z topic; Astrotalk's founder names marriage concerns as the most common reason to consult.",
+   "source": "https://upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "What Indian tarot pages sell: consultations first, then products and courses",
+   "detail": "Across two Indian lists, pages sell personal consultations and structured readings, spiritual product shops, booking websites and tarot courses. Almost none is described as selling a low-priced PDF report through a reel series, which may be an open gap for us. No prices were published.",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Formats named again and again for tarot pages",
+   "detail": "Lists describe the same handful: free and yes/no readings, pick-a-card posts, monthly zodiac + tarot readings, remedies and tips, client stories/testimonials, and tarot-learning explainers.",
+   "source": "https://so.city/delhi/article/7-tarot-card-readers-on-insta-that-you-can-follow-right-now",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "CLAIM (vendor): one 'comment for the link' reel brought 28,610 followers",
+   "detail": "SuperProfile's own case study says creator technovert.yogi got 28,610 new followers, 30,217 automatic replies and 31,742 link clicks from one reel. It is the tool seller's marketing, a tech topic, and unverified.",
+   "source": "https://superprofile.bio/blog/how-creator-gained-28k-new-followers",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Auto-DM rules that shape the keyword",
+   "detail": "SuperProfile's guide says: one private reply per comment, only within 7 days of the comment; follow-ups only if the person replies, within 24 hours; the exact full word must be typed unless paid intent matching is on (it says that catches Hinglish and misspellings). So: one short, easy-to-spell keyword.",
+   "source": "https://superprofile.bio/guides/auto-dm-kya-hai",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "CLAIM (vendor): DM open and conversion rates",
+   "detail": "ManyChat's blog claims DMs get 70 to 90% opens in the first hours and qualified DM leads convert at 12 to 20%; it also suggests adding typo versions of the keyword. Seller's numbers, no independent check.",
+   "source": "https://manychat.com/blog/how-course-creators-use-instagram-dm-automation/",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Engagement rate is not tied to size",
+   "detail": "In one agency list, a 22.6K healing/numerology page shows 16.14% engagement and a 192.7K tarot page 9.65%, while a 98.2K page shows 2.27%. Agency-measured, method not given; the scout should look at what the high ones post.",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Astrology brands treat Instagram as the place for short, shareable pieces",
+   "detail": "A trade article says astro apps use Instagram for short reels, testimonials, polls and Q&As, and long explainers on YouTube; Astroyogi describes a 'curious explorer' group that comes for memes and daily horoscopes before the serious buyers.",
+   "source": "https://bestmediainfo.com/special/in-depth/horoscopes-hashtags-and-high-engagement-indias-astro-app-boom-shine-on-social-media-8776408",
+   "date": "2026-11-21",
+   "kind": "similar"
+  },
+  {
+   "title": "Long AI-made mythology series are being built for Instagram",
+   "detail": "Collective Artists Network's Historyverse Mahabharata is reported as 600+ AI-made episodes of 3 to 4 minutes aimed at Instagram; and the 'Mahabharat with Divyansh' page is reported to have gained 100,000 followers in 11 days with one-minute narrated reels. Handles were not printed, so neither is in the page list.",
+   "source": "https://www.newsbytesapp.com/news/entertainment/sudeep-lahiri-s-instagram-mahabharata/story",
+   "date": "2026-11-21",
+   "kind": "similar"
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Mulank ki kahani, cartoon mein",
+   "hook": "Mulank 1 se 9 tak, har number ka ek chhota sa cartoon kirdaar. Aaj milte hain Mulank 3 se.",
+   "format": "9-episode motion-graphic series, one drawn character per mulank, same opening every time",
+   "strategy": "named-character",
+   "borrowed_from": "astroarunpandit (story + animation mix) and sanctuarywrld (drawn sign characters)",
+   "serves": "watch time",
+   "why": "Both pages are only described by third-party sites; we have not seen how their animation looks. Fits our motion-graphic skill, so cheap to test."
+  },
+  {
+   "title": "Ek topic, nau mulank",
+   "hook": "Shaadi ki shopping pe har mulank kya karta hai? Apna number dhoondo.",
+   "format": "One everyday situation, nine quick cards (one per mulank), text-led motion graphic",
+   "strategy": "series",
+   "borrowed_from": "costarastrology (one topic, every sign's take)",
+   "serves": "sends",
+   "why": "Described in a magazine list as a repeatable text format; people tend to send 'their number' to friends, but that is our guess until the scout checks numbers."
+  },
+  {
+   "title": "Mulank ka pie chart",
+   "hook": "Mulank 5 ka dimaag kis cheez mein kitna lagta hai? Yeh raha chart.",
+   "format": "Animated pie chart or Venn diagram per mulank, 10 to 15 seconds, save-able last frame",
+   "strategy": "series",
+   "borrowed_from": "lookupthestarsastro (charts and Venn diagrams of sign traits)",
+   "serves": "saves",
+   "why": "Second-hand description only. Easy for us to render as true motion graphics."
+  },
+  {
+   "title": "Mulank bingo",
+   "hook": "Mulank 7 wale, isme se kitne box tick hote hain? Comment mein number likho.",
+   "format": "Bingo card that fills box by box; viewer counts their ticks",
+   "strategy": "do-along",
+   "borrowed_from": "jakesastrology (astro bingo cards)",
+   "serves": "likes",
+   "why": "The format is named in a magazine list; no numbers seen. Counting along gives a reason to comment without any promise."
+  },
+  {
+   "title": "Do mulank, ek rishta",
+   "hook": "Mulank 2 aur Mulank 8 saath mein kaise chalte hain? Aaj inki jodi dekhte hain.",
+   "format": "Compatibility pair series, two characters on screen, ends with keyword for the paid compatibility report",
+   "strategy": "keyword-dm",
+   "borrowed_from": "ankitbatraofficial (birth-number relationship advice) and sarahmoodyofficial (compatibility guides leading to readings)",
+   "serves": "sends",
+   "why": "Relationship questions are reported as the top reason people pay for readings; the page formats themselves are second-hand until the scout looks."
+  },
+  {
+   "title": "Aaj ka chhota sa kaam",
+   "hook": "Aaj bas ek kaam: apni janm tareekh likho aur dekho aapka personal year number kya banta hai.",
+   "format": "Do-this-task reel: viewer calculates along on screen, then keyword for the full personal-year report",
+   "strategy": "personal-year",
+   "borrowed_from": "tarotbysakshirajput (manifestation techniques, per a Delhi list) plus our study of pagetkagy",
+   "serves": "saves",
+   "why": "The Indian page is only listed in an article; the task format was seen on pagetkagy. Calculation is real and checkable, no result is promised."
+  },
+  {
+   "title": "Card chuno: 1, 2 ya 3",
+   "hook": "Teen card saamne hain. Jo pehle achha lage woh chuno, phir apna message suno.",
+   "format": "Pick-a-card reel with animated card flip; three short messages; free reading, paid report mentioned softly at the end",
+   "strategy": "free-paid",
+   "borrowed_from": "theguidinglight.byiknoor and nirvaandestiny (pick-a-card and yes/no readings)",
+   "serves": "watch time",
+   "why": "Lists name pick-a-card as a standard format for Indian tarot pages; we have no retention numbers for it yet."
+  },
+  {
+   "title": "Mahine ka tarot, mulank ke hisaab se",
+   "hook": "December ka message, Mulank 4 ke liye. Agle mahine phir milenge, isi din.",
+   "format": "Monthly reading per mulank posted on a fixed date each month",
+   "strategy": "return-date",
+   "borrowed_from": "nirvaandestiny (monthly zodiac + tarot readings)",
+   "serves": "saves",
+   "why": "Monthly readings are described in one list only. A fixed date gives a reason to come back; needs the scout to confirm how others time it."
+  },
+  {
+   "title": "Akashic reading kya hoti hai, 5 episodes mein",
+   "hook": "Akashic reading mein hota kya hai? Paanch chhote episodes mein seedhi baat.",
+   "format": "5-part explainer series in motion graphics, each ends with next episode's question",
+   "strategy": "series",
+   "borrowed_from": "prateekbajaj_akashic_records (largest Indian Akashic page on a ranking site)",
+   "serves": "watch time",
+   "why": "We only know the page exists and its size; how it explains Akashic work is unseen. Explaining first should make the paid reading easier to understand."
+  },
+  {
+   "title": "Tarot mein yeh karo, yeh nahi",
+   "hook": "Tarot reading lene se pehle 3 cheezein karo, aur 2 cheezein mat karo.",
+   "format": "Do/don't split-screen motion graphic, 20 seconds",
+   "strategy": "do-dont",
+   "borrowed_from": "mehraneha_ (tarot explained on video) and the myth-busting format named in a vendor blog",
+   "serves": "saves",
+   "why": "The vendor blog is marketing and the page is only listed; honest, useful advice builds trust before a paid offer."
+  },
+  {
+   "title": "Ek shabd likho, report DM mein",
+   "hook": "Apna mulank report chahiye? Comment mein sirf MULANK likho, link DM mein aa jayega.",
+   "format": "Closing card for every series episode: one short keyword, same word all series",
+   "strategy": "keyword-dm",
+   "borrowed_from": "SuperProfile guide and technovert.yogi case study",
+   "serves": "sends",
+   "why": "The numbers are the tool seller's own claims. The guide's rules (exact word, one reply, 7-day window) are practical and worth following."
+  }
+ ],
  "strategies": [],
- "pages": [],
+ "pages": [
+  {
+   "handle": "astroarunpandit",
+   "why": "Largest page in the field found: astrology remedies plus mythology stories and Ramayana animation; listed top reels 2.9M to 4M",
+   "followers": "2.4M",
+   "group": "b",
+   "source": "https://motionapp.com/creator/astro-arun-pandit/",
+   "sure": "yes"
+  },
+  {
+   "handle": "ankitbatraofficial",
+   "why": "Hindi numerology page: birth-number relationship advice and remedies; listed top reels 0.9M to 1.5M; runs his own numerology business",
+   "followers": "219.1K",
+   "group": "a",
+   "source": "https://motionapp.com/creator/ankiit-btra-numerologist/",
+   "sure": "yes"
+  },
+  {
+   "handle": "astro_anubhhvmishra",
+   "why": "Hindi astrology + numerology reels; small page but listed top reels 4.5M to 6.4M, so the hooks travel beyond followers; runs many paid ads",
+   "followers": "47K",
+   "group": "a",
+   "source": "https://motionapp.com/creator/anubhhv-maharaaj/",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarotbykj",
+   "why": "Indian tarot + astrology + numerology reader with a large reel audience; closest mix to ours",
+   "followers": "174.7K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "astro_aaditi",
+   "why": "Vedic astrology and numerology in mixed Hindi-English; check how numerology reels are framed",
+   "followers": "147.6K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "prateekbajaj_akashic_records",
+   "why": "Biggest Indian Akashic Records page on the list; shows how Akashic reading is explained and sold",
+   "followers": "378.5K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarotbysakshirajput",
+   "why": "Indian tarot page built on manifestation techniques and affirmations with an online store; nearest Indian match to the pagetkagy angle (and a similar name to ours, worth knowing)",
+   "followers": "",
+   "group": "a",
+   "source": "https://so.city/delhi/article/7-tarot-card-readers-on-insta-that-you-can-follow-right-now",
+   "sure": "yes"
+  },
+  {
+   "handle": "neharaja1111",
+   "why": "Tarot and intuitive guidance page with a very high listed engagement rate (9.65%)",
+   "followers": "192.7K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarotcardreaderambika2",
+   "why": "Free readings, yes/no readings, remedies and client stories leading to paid consultations",
+   "followers": "98.2K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "saiblessedtarots",
+   "why": "Tarot, astrology and healing with structured readings and testimonials",
+   "followers": "104.6K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarrotsurbhi",
+   "why": "Tarot and reiki page selling services and products through a booking website",
+   "followers": "98.7K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "switchwords_healing",
+   "why": "Small page, highest listed engagement (16.14%); educational switchword, numerology and healing posts",
+   "followers": "22.6K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "bhakti_vibes_tamanna",
+   "why": "Hindi/Hinglish spirituality, dharma and astrology page",
+   "followers": "87.6K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "astroanuragtiwari",
+   "why": "Hindi Vedic astrology page on love, career and marriage questions",
+   "followers": "40.4K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "xotarot.xo",
+   "why": "Tarot page with a personal, casual style (Delhi/Assam)",
+   "followers": "71.5K",
+   "group": "a",
+   "source": "https://www.modash.io/find-influencers/india/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarotbykinjal",
+   "why": "Tarot and numerology with interactive reels; sells spiritual products through a shop",
+   "followers": "",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "storieswithvishal",
+   "why": "Hindi mythology and history storytelling reels (listed top reels up to 5.2M); whether it uses animation is not confirmed",
+   "followers": "136.4K",
+   "group": "b",
+   "source": "https://motionapp.com/creator/storieswithvishal/",
+   "sure": "yes"
+  },
+  {
+   "handle": "xstonedape",
+   "why": "Digitally made cinematic Shiva/Nandi reel reported as hugely viral (article claims 12M likes in 48 hours); visual mythology format",
+   "followers": "",
+   "group": "b",
+   "source": "https://www.altbollywood.com/post/shiva-nandi-kailash-viral-reel-puranic-accuracy-xstonedape",
+   "sure": "yes"
+  },
+  {
+   "handle": "technovert.yogi",
+   "why": "SuperProfile's own case study of one 'comment for the link' reel: 28,610 new followers, 30,217 auto replies, 31,742 clicks (vendor claim)",
+   "followers": "",
+   "group": "d",
+   "source": "https://superprofile.bio/blog/how-creator-gained-28k-new-followers",
+   "sure": "yes"
+  },
+  {
+   "handle": "costarastrology",
+   "why": "Abroad: one repeatable text format, each sign's take on one topic",
+   "followers": "",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "yes"
+  },
+  {
+   "handle": "sanctuarywrld",
+   "why": "Abroad: pastel cartoon illustrations of the signs in themed scenes; a drawn recurring-character format",
+   "followers": "",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "yes"
+  },
+  {
+   "handle": "lookupthestarsastro",
+   "why": "Abroad: charts, Venn diagrams and pie charts summarising sign traits; maps well to mulank graphics",
+   "followers": "",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "yes"
+  },
+  {
+   "handle": "notallgeminis",
+   "why": "Abroad: astrology meme page, over half a million followers; shareable sign humour",
+   "followers": "500K+",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "yes"
+  },
+  {
+   "handle": "jakesastrology",
+   "why": "Abroad: 'astro bingo' card format repeated for every sign",
+   "followers": "",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "yes"
+  },
+  {
+   "handle": "jugglingjokerstarot",
+   "why": "Abroad: short zodiac humour reels, one performer, repeatable skit format (closest to pagetkagy style)",
+   "followers": "81K",
+   "group": "c",
+   "source": "https://www.modash.io/find-influencers/united-states/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "sarahmoodyofficial",
+   "why": "Abroad: compatibility guides that lead into reading offers",
+   "followers": "95.2K",
+   "group": "c",
+   "source": "https://www.modash.io/find-influencers/united-states/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "nirvaandestiny",
+   "why": "Monthly zodiac-plus-tarot readings and yes/no readings, readings sold through DM",
+   "followers": "",
+   "group": "a",
+   "source": "https://so.city/delhi/article/7-tarot-card-readers-on-insta-that-you-can-follow-right-now",
+   "sure": "yes"
+  },
+  {
+   "handle": "mehraneha_",
+   "why": "Explains tarot on video and sells tarot and self-development courses",
+   "followers": "",
+   "group": "a",
+   "source": "https://so.city/delhi/article/7-tarot-card-readers-on-insta-that-you-can-follow-right-now",
+   "sure": "yes"
+  },
+  {
+   "handle": "theguidinglight.byiknoor",
+   "why": "Pick-a-card readings in a designed, aesthetic feed",
+   "followers": "",
+   "group": "a",
+   "source": "https://so.city/delhi/article/7-tarot-card-readers-on-insta-that-you-can-follow-right-now",
+   "sure": "yes"
+  },
+  {
+   "handle": "tarotoverse",
+   "why": "Tarot and healing with educational posts; sells readings and products",
+   "followers": "25.6K",
+   "group": "a",
+   "source": "https://confluencr.com/top-9-vastu-tarot-astro-accounts-to-follow-on-instagram/",
+   "sure": "yes"
+  },
+  {
+   "handle": "osheen_oracle",
+   "why": "Tarot plus energy healing sessions (named in a 2026 press list; that article reads like paid PR)",
+   "followers": "",
+   "group": "a",
+   "source": "https://english.dainikjagranmpcg.com/astrology/indias-most-trusted-tarot-card-readers-you-should-know-in/article-21135",
+   "sure": "yes"
+  },
+  {
+   "handle": "aryavardan666",
+   "why": "Hyderabad numerologist page; language and format not confirmed",
+   "followers": "64.8K",
+   "group": "a",
+   "source": "https://socialveins.com/influencer/instagram/aryavardan666",
+   "sure": "yes"
+  },
+  {
+   "handle": "anuj.mp4",
+   "why": "Outside the field: a named recurring series of mock-wisdom quotes plus split-screen sketches; study how a named series is branded",
+   "followers": "164K",
+   "group": "d",
+   "source": "https://www.hollywoodreporterindia.com/amp/story/features/insight/creator-a-list-2026-15-indian-content-creators-who-made-a-mark-this-year",
+   "sure": "yes"
+  },
+  {
+   "handle": "kushakapila",
+   "why": "Outside the field: recurring named characters across sketches (named-character method)",
+   "followers": "",
+   "group": "d",
+   "source": "https://www.hollywoodreporterindia.com/amp/story/features/insight/creator-a-list-2026-15-indian-content-creators-who-made-a-mark-this-year",
+   "sure": "yes"
+  },
+  {
+   "handle": "reenu_debnath",
+   "why": "Outside the field: recurring characters in short comic plots",
+   "followers": "4M (platform not stated)",
+   "group": "d",
+   "source": "https://www.hollywoodreporterindia.com/amp/story/features/insight/creator-a-list-2026-15-indian-content-creators-who-made-a-mark-this-year",
+   "sure": "yes"
+  },
+  {
+   "handle": "dannyypandit",
+   "why": "Outside the field: one fixed sketch title format repeated with new subjects ('Normal Day with ...')",
+   "followers": "",
+   "group": "d",
+   "source": "https://www.hollywoodreporterindia.com/amp/story/features/insight/creator-a-list-2026-15-indian-content-creators-who-made-a-mark-this-year",
+   "sure": "yes"
+  },
+  {
+   "handle": "viraj_ghelani",
+   "why": "Outside the field: family sketches with one recurring real character (his grandmother)",
+   "followers": "1.5M",
+   "group": "d",
+   "source": "https://www.hollywoodreporterindia.com/amp/story/features/insight/creator-a-list-2026-15-indian-content-creators-who-made-a-mark-this-year",
+   "sure": "yes"
+  },
+  {
+   "handle": "queerstrologyyy",
+   "why": "Abroad: tarot readings plus sign-combination memes",
+   "followers": "72.6K",
+   "group": "c",
+   "source": "https://www.modash.io/find-influencers/united-states/astrology",
+   "sure": "yes"
+  },
+  {
+   "handle": "jessica_lanyado",
+   "why": "Abroad astrologer using podcast snippets and memes; the source link spells the handle without the final 'o', so the exact handle needs checking",
+   "followers": "",
+   "group": "c",
+   "source": "https://nylon.com/life/astrology-instagram-accounts-memes",
+   "sure": "unsure"
+  }
+ ],
  "queue_reels": [],
- "next": [],
- "problems": []
+ "next": [
+  "Scout to look first at: astroarunpandit, ankitbatraofficial, astro_anubhhvmishra, tarotbykj, astro_aaditi, prateekbajaj_akashic_records, tarotbysakshirajput, neharaja1111.",
+  "Scout to check which listed pages actually use a comment keyword and what they sell at what price; no source published prices.",
+  "Find the exact handles (not printed in any source) for: Mahabharat with Divyansh, animator Satya Swagat, Historyverse Mahabharata, Dekh Pagli, Jai Madaan, Monickaa Gupta (numerology).",
+  "Group b is thin: only astroarunpandit is confirmed as using animation; storieswithvishal and xstonedape need a look.",
+  "Follower counts come from ranking sites and may be months old."
+ ],
+ "problems": [
+  "Few sources print handles for Indian animation/mythology pages, so group b has only 3 pages.",
+  "No source gave product prices for any individual tarot page.",
+  "Several source articles are paid PR or tool-seller marketing; marked where used."
+ ]
 }

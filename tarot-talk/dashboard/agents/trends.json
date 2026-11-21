@@ -4,13 +4,25 @@
  "job": "Reads Google Trends for India in the PC browser: our topics, rising searches, what is trending now.",
  "status": "working",
  "started": "2026-11-21 13:50 IST",
- "updated": "2026-11-21 13:50 IST",
- "step": "Starting.",
- "did": [],
+ "updated": "2026-11-21 13:55 IST",
+ "step": "Reading Explore pages (India, 12 months), group 2 of about 7.",
+ "did": [
+  {
+   "what": "Trending now, India, past 7 days (2,236 trends listed), filtered by ~50 keywords",
+   "result": "In our field only daily-horoscope and festival items: 'ekadashi' 100K+, 'tulsi vivah' 100K+, 'scorpio horoscope today' 10K+, 'मीन राशि' 5K+, 'कन्या राशि' 5K+. Nothing for tarot, numerology, kundli, angel, manifest, chakra."
+  },
+  {
+   "what": "Explore: tarot, numerology, rashifal, kundli, mulank (12 months)",
+   "result": "rashifal is by far the biggest (56-100), peak week of 28 Dec 2025; numerology and mulank also peak that week; tarot flat at 16-23."
+  }
+ ],
  "findings": [],
  "ideas": [],
  "strategies": [],
- "pages": [],
+ "pages": [
+  "https://trends.google.com/trending?geo=IN&hours=168",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank"
+ ],
  "queue_reels": [],
  "next": [],
  "problems": []
