@@ -16,14 +16,13 @@ Status (21 Nov 2026): the owner approved v2 of the one-video-per-sign format (Tu
   - `sign_reading.sample.json` - the script for one sign (Aries, 22 Nov 2026).
   - `daily_reading.sample.json` - the script for the combined 12-sign video.
 
-## v2 run (current)
+## Daily run (current, least tokens)
 
-1. Write `<folder>/reading.json` (see `samples/sign_reading_v2_tula_hindi.sample.json`).
-2. `XI_API_KEY=... python3 pipeline/sign_audio.py <folder> eleven:RABOvaPec1ymXz02oDQi` makes the voice through ElevenLabs (word times come from its timestamps; clips are cached and never paid for twice), the music and `audio.wav` / `audio_nomusic.wav`.
-3. `python3 pipeline/sign2_video.py <folder>` makes `sign.html`.
-4. `node pipeline/frames.js <abs folder>/sign.html <folder>/frames 30 1080 1920 <start> <end>` in two or three parallel parts, then ffmpeg with both audio files.
+1. `python3 pipeline/sky.py 2026-11-22` prints about 20 lines: planet signs, Moon change, coming sign changes, and the house of every planet from each rashi. No web search needed.
+2. The agent writes one short `day.json` for all signs (see `samples/day.sample.json`): per sign a hook, 4 scores, 7 life areas (voice line, screen line, stamp, mood), a remedy and lucky colour/number/time. Score, lucky and CTA voice lines, word landing points, date and rashi labels are generated. Force a landing word with `text|3` only if needed.
+3. `XI_API_KEY=... python3 pipeline/make.py day.json out` does everything else per sign: voice (shared cache in `~/.cache/horoscope-voice`, so a repeated sentence is never paid twice), timeline, page, frames in 3 parallel parts, `<date>_<sign>.mp4`, `_voice-only.mp4`, `_cover.jpg` (first frame: date, rashi, caution, scores, good areas), loudness and duration checks, `result.json`. One line printed per sign. `--only=tula,mesh` for some signs, `--sheet` for a contact sheet when the look changes.
 
-Never commit the ElevenLabs key; pass it as `XI_API_KEY`.
+About 150 s per sign on the workspace; 0 credits when every sentence is cached, about 230 credits for a fresh sign.
 
 ## How a run works (v1)
 

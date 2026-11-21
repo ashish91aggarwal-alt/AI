@@ -5,7 +5,7 @@ const fs = require('fs');
 (async () => {
   const [page_, out, fpsS, w, h, a, b] = process.argv.slice(2);
   const fps = +fpsS; fs.mkdirSync(out, { recursive: true });
-  const browser = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', headless: 'new', args: ['--no-sandbox', '--allow-file-access-from-files'] });
+  const browser = await puppeteer.launch({ executablePath: process.env.CHROME || ['/usr/bin/google-chrome','C:/Program Files/Google/Chrome/Application/chrome.exe','C:/Program Files (x86)/Google/Chrome/Application/chrome.exe','/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find(p=>fs.existsSync(p)), headless: 'new', args: ['--no-sandbox', '--allow-file-access-from-files'] });
   const page = await browser.newPage();
   await page.setViewport({ width: +w, height: +h, deviceScaleFactor: 1 });
   page.on('pageerror', e => console.log('PAGEERROR', e.message));

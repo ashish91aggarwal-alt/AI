@@ -50,5 +50,5 @@ def save(name, mix):
     w = wave.open(f"{DIR}/{name}", "w"); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((mix * 32767).astype(np.int16).tobytes()); w.close()
 save("audio.wav", vo + mus * 0.34 * (1 - 0.5 * np.clip(act * 3, 0, 1)) + sfx * 0.4)
 save("audio_nomusic.wav", vo + sfx * 0.4)      # for adding an Instagram library track when posting
-json.dump(dict(total=round(total, 3), sign=R["sign"], element=R["element"], language=R.get("language", "english"), date_label=R["date_label"], shots=shots), open(f"{DIR}/timeline.json", "w"), indent=1)
+json.dump(dict(total=round(total, 3), sign=R["sign"], element=R["element"], language=R.get("language", "english"), rashi=R.get("rashi", R["sign"]), date_label=R["date_label"], shots=shots), open(f"{DIR}/timeline.json", "w"), indent=1)
 print("total", round(total, 2)); [print(s["id"], s["start"], s["end"], [round(c["at"] - s["start"], 2) for c in s["cues"]]) for s in shots]

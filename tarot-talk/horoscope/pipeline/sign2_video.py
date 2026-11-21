@@ -43,6 +43,22 @@ for name, (_, _, items) in SC.items():
         imgs.append(f'<img id="{iid}" class="it" src="file://{FE}/{img}.png" style="left:{x - sz / 2}px;top:{y - sz / 2}px;width:{sz}px;height:{sz}px">')
         if it[4] in GROUND and img not in ("office_building", "house_with_garden", "world_map", "money_with_wings"):
             shadows.append(f'<div id="sh_{iid}" class="sh" style="left:{x - sz * 0.38}px;top:{y + sz * 0.36}px;width:{sz * 0.76}px;height:{sz * 0.16}px"></div>')
+AREA_IC = dict(zip(["work", "friends", "family", "kids", "decide", "love", "travel"], AREAS))
+MC = dict(good="#1f9d6b", care="#e09400", stop="#e63946"); MI = dict(good="check_mark_button", care="warning", stop="stop_sign")
+def cue(s, k): return next((c for c in s["cues"] if c["k"] == k), None)
+sc_ = cue(next(s for s in TL["shots"] if s["id"] == "meters"), "M") and [c for c in next(s for s in TL["shots"] if s["id"] == "meters")["cues"] if c["k"] == "M"]
+ar = [(s, cue(s, "S")) for s in TL["shots"] if s.get("area") is not None]
+good = [x for x in ar if x[1]["b"] == "good"]; rest = [x for x in ar if x[1]["b"] != "good"]
+pick = (good + rest)[:4]
+hook2 = [c for c in TL["shots"][0]["cues"] if c["k"] == "L"][1]["a"]
+cover = (f'<div id="cover"><div class="cdate">{TL["date_label"]}</div><div class="cgl">{GLYPH[TL["sign"].lower()]}︎</div>'
+         f'<div class="cname">{TL.get("rashi", TL["sign"])} राशिफल</div><div class="chook">{hook2}</div><div class="cscores">'
+         + "".join(f'<div class="cs"><img src="file://{FE}/{ic}.png"><b style="color:{MC["good"] if c["b"] >= 4 else (MC["care"] if c["b"] == 3 else MC["stop"])}">{c["b"]}/5</b></div>'
+                   for c, ic in zip(sc_, ["red_heart", "money_bag", "briefcase", "fire"]))
+         + '</div><div class="clist">' + "".join(f'<div class="ci"><img src="file://{FE}/{AREA_IC[s["id"]]}.png"><span class="ct">{cue(s, "T")["a"]}</span>'
+         f'<span class="cv" style="color:{MC[st["b"]]}"><img src="file://{FE}/{MI[st["b"]]}.png">{st["a"]}</span></div>' for s, st in pick)
+         + '</div>' + (f'<div class="cmore">+ ' + ", ".join([cue(s, "T")["a"] for s, _ in (good + rest)[4:]] + ["उपाय"]) + ' → वीडियो में</div>')
+         + '<div class="cbrand">TAROT TALK BY SAKSHI</div></div>')
 areas = "".join(f'<div class="ar"><img src="file://{FE}/{a}.png"><div class="tick">✓</div></div>' for a in AREAS)
 TL.update(glyph=GLYPH[TL["sign"].lower()] + "︎", sc={k: dict(bg=v[0], ac=v[1], items=v[2]) for k, v in SC.items()},
           icons=dict(M=["red_heart", "money_bag", "briefcase", "fire"], K=["", "glowing_star", "alarm_clock"]), sw={"सफेद": "#ffffff", "गुलाबी": "#ff8fb8", "लाल": "#e63946", "पीला": "#ffd23f", "हरा": "#2a9a57", "नीला": "#2a76e0"},
@@ -63,6 +79,7 @@ const LAY={hook:[[330,190,'#fff'],[1500,130,'#fff'],[1690,140,'#ffe066']], meter
 // bokeh blobs
 const blobs=q('.blob').map((el,i)=>({el,x:(i*317)%1080,y:(i*523)%1920,r:260+((i*97)%220),p:i*1.7}));
 window.render=function(t){
+  $('cover').style.opacity=t<0.35?1:1-ramp(t,0.35,0.6);
   const s=TL.shots.find(s=>t<s.end)||TL.shots[TL.shots.length-1], lt=t-s.start, si=TL.shots.indexOf(s), sc=TL.sc[s.scene], AC=sc.ac, hook=s.scene=='hook';
   const S=(s.cues.find(c=>c.k=='S')||{}).at, S2=(s.cues[2]||s.cues[s.cues.length-1]).at-s.start;
   $('bg').style.background=`linear-gradient(${(165+15*Math.sin(t*0.5)).toFixed(1)}deg,${sc.bg[0]},${sc.bg[1]})`;
@@ -141,6 +158,19 @@ html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;heig
 #date{{position:absolute;left:50%;top:130px;translate:-50% 0;padding:6px 44px;border-radius:50px;background:rgba(255,255,255,.2);font:800 60px "Mukta";color:#fff;white-space:nowrap;opacity:0}}
 #brand{{position:absolute;left:0;width:{W}px;top:1760px;text-align:center;font:800 48px Poppins;letter-spacing:8px;color:{INK};opacity:0}}
 #badge{{position:absolute;left:390px;top:780px;width:300px;height:300px;border-radius:50%;background:#fff;border:14px solid {INK};font:200px/300px "DejaVu Sans";text-align:center;color:{INK};opacity:0;display:none}}
+#cover{{position:absolute;inset:0;background:linear-gradient(170deg,#3a1c71,#b24592 60%,#f15f79);display:flex;flex-direction:column;align-items:center;font-family:"Baloo 2";color:#fff}}
+#cover .cdate{{margin-top:150px;padding:8px 50px;border-radius:60px;background:rgba(255,255,255,.18);font:800 66px Mukta}}
+#cover .cgl{{margin-top:34px;width:230px;height:230px;border-radius:50%;background:#fff;color:#2b2140;font:150px/230px "DejaVu Sans";text-align:center;box-shadow:0 0 0 16px rgba(255,255,255,.25)}}
+#cover .cname{{margin-top:22px;font:800 150px/1.2 "Baloo 2";text-shadow:0 10px 24px rgba(0,0,0,.3)}}
+#cover .chook{{margin-top:4px;padding:6px 44px;border-radius:50px;background:#ffe066;color:#2b2140;font:800 72px/1.3 "Baloo 2"}}
+#cover .cscores{{margin-top:44px;display:flex;gap:22px}} #cover .cs{{display:flex;align-items:center;gap:8px;background:#fff;border-radius:40px;padding:10px 26px 4px 14px}}
+#cover .cs img{{width:76px;height:76px}} #cover .cs b{{font:400 72px Anton}}
+#cover .clist{{margin-top:40px;width:940px;display:flex;flex-direction:column;gap:20px}}
+#cover .ci{{display:flex;align-items:center;gap:20px;background:rgba(255,255,255,.95);border-radius:36px;padding:10px 26px;color:#2b2140}}
+#cover .ci>img{{width:96px;height:96px}} #cover .ct{{font:800 68px/1.3 "Baloo 2";flex:1;white-space:nowrap}}
+#cover .cv{{display:flex;align-items:center;gap:10px;font:800 60px/1.3 "Baloo 2";white-space:nowrap}} #cover .cv img{{width:64px;height:64px}}
+#cover .cmore{{margin-top:22px;font:800 58px/1.3 "Baloo 2";color:#ffe066}}
+#cover .cbrand{{position:absolute;bottom:120px;font:800 46px Poppins;letter-spacing:8px}}
 .row{{position:absolute;left:70px;width:940px;height:230px;opacity:0;transform-origin:50% 50%}}
 .row .ri{{position:absolute;left:0;top:0;width:150px;height:150px}}
 .row .lab{{position:absolute;left:175px;top:0;font:800 110px/1.25 "Baloo 2";color:{INK}}} .row .num{{position:absolute;right:0;top:4px;font:400 118px Anton;color:{INK}}}
@@ -152,7 +182,7 @@ html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;heig
 {''.join(shadows)}{''.join(imgs)}
 {'<div class="ln"></div>' * 3}{row * 4}{chip * 3}<div id="title"></div><div id="stamp"><img><span></span></div>
 <div id="date">{TL['date_label']}</div><div id="brand">TAROT TALK BY SAKSHI</div><div id="badge">{TL['glyph']}</div><div id="areas">{areas}</div></div>
-<div id="progw"><div id="prog"></div></div><div id="flash"></div></div>
+{cover}<div id="progw"><div id="prog"></div></div><div id="flash"></div></div>
 <script>{JS.replace('__TL__', json.dumps(TL, ensure_ascii=False))}</script></body></html>"""
 open(f"{DIR}/sign.html", "w").write(html)
 print("ok", TL["total"])

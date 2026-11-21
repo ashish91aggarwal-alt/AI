@@ -16,7 +16,9 @@ ALIGN = {}   # text -> list of word start times (s, relative to trimmed clip), f
 def eleven(text, path):
     """MODEL = 'eleven:<voice_id>'; key in env XI_API_KEY. Cached: a clip already made is never paid for twice."""
     import base64, os, urllib.request
-    cache = path.replace(".wav", ".eleven.json")
+    import hashlib   # shared cache: the same sentence in the same voice is never paid for twice (CTA, meters, across signs and days)
+    cdir = os.environ.get("XI_CACHE", os.path.expanduser("~/.cache/horoscope-voice")); os.makedirs(cdir, exist_ok=True)
+    cache = f"{cdir}/{hashlib.sha1((MODEL + '|' + text).encode()).hexdigest()[:16]}.json"
     if not os.path.exists(cache):
         body = json.dumps(dict(text=text, model_id=os.environ.get("XI_MODEL", "eleven_multilingual_v2"),
                                voice_settings=dict(stability=0.45, similarity_boost=0.8, style=0.35, use_speaker_boost=True))).encode()
