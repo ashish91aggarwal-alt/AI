@@ -1,7 +1,7 @@
 {
  "day": "2026-11-21",
- "reels_today": 5,
- "seen": "2026-11-21 14:21 IST",
+ "reels_today": 6,
+ "seen": "2026-11-21 14:23 IST",
  "tools": [
   {
    "key": "git",
@@ -29,9 +29,9 @@
   }
  ],
  "queue": {
-  "queued": 4,
+  "queued": 3,
   "working": 0,
-  "ready-for-agent": 5,
+  "ready-for-agent": 6,
   "needs-agent": 0,
   "refused": 0,
   "failed": 0,
