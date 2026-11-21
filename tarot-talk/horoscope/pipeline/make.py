@@ -98,7 +98,7 @@ def sh(cmd, **kw): return subprocess.run(cmd, check=True, capture_output=True, t
 
 def build(folder, sheet):
     t0 = time.time(); R = json.load(open(f"{folder}/reading.json")); voice = R["voice"]
-    sh(["python3", f"{HERE}/sign_audio.py", folder, voice]); sh(["python3", f"{HERE}/sign2_video.py", folder])
+    sh(["python3", f"{HERE}/sign_audio.py", folder, voice]); sh(["python3", f"{HERE}/" + ("sign2_video.py" if os.environ.get("HS_LOOK") == "v3" else "sign3_video.py"), folder])
     TL = json.load(open(f"{folder}/timeline.json")); n = round(TL["total"] * 30); page = os.path.abspath(f"{folder}/sign.html")
     parts = [(k * n // 3, (k + 1) * n // 3) for k in range(3)]
     ps = [subprocess.Popen(["node", f"{HERE}/frames.js", page, f"{folder}/frames", "30", "1080", "1920", str(a), str(b)], stdout=subprocess.DEVNULL, stderr=subprocess.PIPE) for a, b in parts]

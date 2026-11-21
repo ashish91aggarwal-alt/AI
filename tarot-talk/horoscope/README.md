@@ -2,7 +2,7 @@
 
 Daily horoscope videos for Tarot Talk By Sakshi, made in code: no GPU, no paid service, and no AI tokens spent on frames. The method lives in the `daily-horoscope-video` skill; this folder holds the scripts and sample files.
 
-Status (21 Nov 2026): the owner approved v2 of the one-video-per-sign format (Tula, Hindi, 21 Nov): everyday Hindi, seven life areas with 3D scenes, a remedy, an ElevenLabs Hindi voice. `sign2_video.py` is the current look; `sign_video.py` is the older v1 look.
+Status (21 Nov 2026): the owner approved v2 of the one-video-per-sign format (Tula, Hindi, 21 Nov): everyday Hindi, seven life areas with 3D scenes, a remedy, an ElevenLabs Hindi voice. Look v4 "deck" (`sign3_video.py`, 21 Nov 2026, chosen by the owner as a mix of the kinetic-type and tarot-card samples) is now the default in `make.py`: every section is a tarot card holding the clip (face-centred crop), bold kinetic text sits below the card so it never covers a face, and each section has its own transition matched to the script (flip, wheel, burst, deal, drop, whip, meet, doors, sink, bounce, coin, jelly, heart, flight, rise, diya, fan, stack). Set `HS_LOOK=v3` to build the older look. `sign2_video.py` is look v3; `sign_video.py` is the older v1 look.
 
 ## Folders
 

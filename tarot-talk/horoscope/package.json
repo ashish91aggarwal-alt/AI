@@ -5,6 +5,13 @@
   "dependencies": {
     "puppeteer-core": "*",
     "@fontsource/baloo-2": "*",
-    "@fontsource/mukta": "*"
+    "@fontsource/mukta": "*",
+    "@fontsource/bebas-neue": "*",
+    "@fontsource/cinzel": "*",
+    "@fontsource/inter": "*",
+    "@fontsource/cormorant-garamond": "*",
+    "@fontsource/playfair-display": "*",
+    "@fontsource/anton": "*",
+    "@fontsource/poppins": "*"
   }
 }
