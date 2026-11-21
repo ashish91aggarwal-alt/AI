@@ -1,0 +1,27 @@
+{
+ "id": "DYNoFG1xSSu",
+ "handle": "sanctuarywrld",
+ "done": "2026-11-21 16:31 +0530",
+ "seconds": null,
+ "facts": {
+  "like_count": 8776,
+  "comment_count": 254,
+  "upload_date": "20260511",
+  "description": "which care bear are you? 🐻💖"
+ },
+ "language": "en",
+ "transcript": [
+  {
+   "from": 0.2,
+   "to": 2.2,
+   "text": "You"
+  }
+ ],
+ "audio": {
+  "mean_db": -18.3,
+  "peak_db": -3.4,
+  "silences": []
+ },
+ "media_deleted": true,
+ "note": "Text and numbers only."
+}
