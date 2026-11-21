@@ -110,3 +110,4 @@ details.reading summary{cursor:pointer;list-style:none;font-weight:700;font-size
 .abar b{color:var(--ink);text-align:right;font-variant-numeric:tabular-nums} .atrack{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden} .atrack i{display:block;height:100%;border-radius:99px}
 .two2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;margin:12px 0}
 .rnote{font-size:13px;color:var(--warn);border-left:3px solid var(--warn);padding-left:8px}
+.card,.planrow,.scard,.sbody,.stack>*{min-width:0;overflow-wrap:anywhere}.sgrid{grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
