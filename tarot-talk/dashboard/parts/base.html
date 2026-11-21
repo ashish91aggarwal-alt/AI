@@ -221,24 +221,27 @@ function stageDots(r) { return D.status.stages.map(s => { const v = r.stages[s.k
 function vOverview() {
   const f = P.findings, hits = P.reels.filter(r => !r.pinned && r.multiple >= 3), read = P.reels.filter(r => r.stages.facts).length, covers = P.reels.filter(r => r.stages.cover).length, tr = P.reels.filter(r => r.stages.transcript).length;
   const tile = (lab, val, sub) => { const b = h("div", { class: "big num gt" }, typeof val === "number" ? fmt(val) : val); if (typeof val === "number") setTimeout(() => countUp(b, val)); return card("tile", h("div", { class: "lab" }, lab), b, h("div", { class: "sub" }, sub)); };
+  const pageBtns = () => [srcBtn("Open @" + handle, "https://www.instagram.com/" + handle + "/"), h("button", { type: "button", class: "srcbtn", onclick: () => { state.ptab = "reels"; render(); scrollTo(0, 0); } }, "See its reels here")];
+  const evi = (w, kind, cls, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip(kind, cls), chip("Seen on @" + handle, "k-src")), h("h3", {}, w.title),
+    lrow("The numbers", h("div", { class: "hookline" }, w.numbers)), lrow("What it means", w.reading, h("div", { class: "kl2" }, "This is a reading of the numbers, not a proven cause.")), lrow("Came from", h("div", { class: "srcrow" }, ...pageBtns())));
   return [
     h("div", { class: "tiles" },
-      tile("Typical reel", P.median, "median views of " + P.counted + " reels, pinned left out"),
-      tile("Recent hits", hits.length, "reels at 3 times the median or more"),
-      tile("Read closely", read + " / " + P.reels.length, covers + " covers read, " + read + " with caption and counters"),
-      tile("Transcripts", tr + " / " + P.reels.length, tr ? "from the desktop app; the rest are waiting" : "waiting for the desktop app")),
-    card("", h("div", { class: "sub" }, f.basis)),
-    h("h2", {}, "What is working"),
-    h("div", { class: "stack" }, f.works.map(w => card("evi", h("h3", {}, w.title), h("div", { class: "numbers" }, w.numbers), reading(w.reading)))),
+      tile("A normal reel gets", P.median, "views. Middle value of " + P.counted + " reels, pinned ones left out"),
+      tile("Recent hits", hits.length, "reels with 3 times the normal views or more"),
+      tile("Opened and read", read + " of " + P.reels.length, covers + " covers read, " + read + " with caption and counts"),
+      tile("Heard (transcript)", tr + " of " + P.reels.length, tr ? "fetched by the desktop app" : "waiting for the desktop app")),
+    fold("How this page was studied (the fine print)", [h("p", { class: "sub" }, f.basis)]),
+    h("h2", {}, "What is working for them"),
+    h("div", { class: "cgrid" }, f.works.map((w, i) => evi(w, "Working", "k-good", i))),
     h("h2", {}, "What is weak"),
-    h("div", { class: "stack" }, f.weak.map(w => card("evi weak", h("h3", {}, w.title), h("div", { class: "numbers" }, w.numbers), reading(w.reading)))),
-    f.notproven ? h("h2", {}, "Checked, and not supported") : null,
-    f.notproven ? h("div", { class: "stack" }, f.notproven.map(w => card("evi none", h("h3", {}, w.title), h("div", { class: "numbers" }, w.numbers), reading(w.reading)))) : null,
+    h("div", { class: "cgrid" }, f.weak.map((w, i) => evi(w, "Weak", "k-try", i))),
+    f.notproven ? h("h2", {}, "We checked these, and they did not hold") : null,
+    f.notproven ? h("div", { class: "cgrid" }, f.notproven.map((w, i) => evi(w, "Did not hold", "k-bad", i))) : null,
     h("h2", {}, f.combine.title),
-    card("evi mix", reading(f.combine.text, "Reading", true), h("div", { style: "height:10px" }), reading(f.combine.for_us, "For Tarot Talk", true)),
-    h("h2", {}, "What has hit best"),
-    h("div", { class: "wall" }, f.best.map((b, i) => cover(P.reels.find(x => x.id === b.id), i))),
-    h("div", { class: "stack", style: "margin-top:12px" }, f.best.map(b => { const r = P.reels.find(x => x.id === b.id); return card("", h("div", { class: "qrow" }, h("h3", {}, r.cover), h("span", { class: "num gt", style: "font-weight:600" }, fmt(r.views) + (r.pinned ? " pinned" : " · " + r.multiple + "x"))), h("div", { style: "height:6px" }), reading(b.why)); }))
+    h("article", { class: "xcard" }, h("div", { class: "chips" }, chip("Putting it together", "k-idea"), chip("Seen on @" + handle, "k-src")), lrow("What they do", f.combine.text), lrow("For Tarot Talk", h("div", { class: "hookline" }, f.combine.for_us))),
+    h("h2", {}, "Their best reels"),
+    h("div", { class: "cgrid" }, f.best.map((b, i) => { const r = P.reels.find(x => x.id === b.id); return h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Top reel", "k-live"), chip(r.pinned ? "Pinned by her" : r.multiple + " times her normal", "k-good"), r.format ? chip(r.format, "k-src") : null), h("h3", {}, r.cover || "Cover not read"),
+      lrow("Views", h("div", { class: "hookline" }, fmt(r.views))), lrow("Why it may have worked", b.why), lrow("Came from", h("div", { class: "srcrow" }, srcBtn("Open the reel", "https://www.instagram.com/reel/" + r.id + "/"), h("button", { type: "button", class: "srcbtn", onclick: () => openSheet(r) }, "Play it here, with its numbers")))); }))
   ];
 }
 
@@ -288,6 +291,7 @@ function openSheet(r) {
   $("#sheetroot").replaceChildren(h("div", { class: "scrim", onclick: e => { if (e.target.classList.contains("scrim")) close(); } },
     h("div", { class: "sheet", role: "dialog", "aria-modal": "true", "aria-label": "Reel details", style: "--c:" + hue(r.concept) },
       closeBtn, h("div", { class: "bar" }),
+      h("div", { class: "chips" }, chip("Reel", "k-live"), chip("@" + handle, "k-src")),
       h("h3", {}, r.cover || "Cover not read yet"),
       player(r.id),
       h("div", { class: "qrow", style: "justify-content:flex-start" }, h("span", { class: "pill plain", style: "color:" + hue(r.concept) + ";border-color:" + hue(r.concept) }, cLabel(r.concept)), r.format ? pill(r.format, "plain") : null, r.pinned ? pill("pinned", "acc") : null, r.fresh ? pill("just posted", "wait") : null),
@@ -316,17 +320,17 @@ function vReels() {
 
 /* ---------- shapes ---------- */
 function vShapes() {
-  return [h("p", { class: "sub" }, "Structures worth borrowing, described in our own words. Her wording, look, music and rituals are not taken. The \"ours\" line is a first draft for Tarot Talk and has not been through script review."),
-    h("div", { class: "stack" }, P.findings.shapes.map((s, i) => card("shape evi " + (s.ok ? "" : "weak"), h("div", { class: "qrow" }, h("div", { style: "display:flex;gap:12px;align-items:baseline" }, h("span", { class: "n " + (s.ok ? "gt" : ""), style: s.ok ? "" : "color:var(--bad)" }, String(i + 1).padStart(2, "0")), h("h3", {}, s.name)), pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad")), h("div", { class: "sub" }, "Seen in: " + s.from), h("div", { class: "numbers" }, s.structure), reading(s.ours, s.ok ? "Ours could be" : "Why not")))) ];
+  return [h("p", { class: "sub" }, "Structures worth borrowing, in our own words. Her wording, look, music and rituals are not taken. The ‘ours’ line is a first draft and has not been through script review."),
+    h("div", { class: "cgrid" }, P.findings.shapes.map((s, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Shape", "k-idea"), chip(s.ok ? "Usable" : "Do not use", s.ok ? "k-good" : "k-bad"), chip("Seen on @" + handle, "k-src")), h("h3", {}, s.name),
+      lrow("How it is built", s.structure), lrow(s.ok ? "Ours could be" : "Why not", h("div", { class: "hookline" }, s.ours)), lrow("Seen in", s.from), lrow("Came from", h("div", { class: "srcrow" }, srcBtn("Open @" + handle, "https://www.instagram.com/" + handle + "/"), h("button", { type: "button", class: "srcbtn", onclick: () => { state.ptab = "reels"; render(); scrollTo(0, 0); } }, "See its reels here")))))) ];
 }
 
 /* ---------- growth ---------- */
 function vGrowth() {
   const g = P.findings.growing;
-  return [card("evi mix", h("h3", {}, "Which reels keep growing?"), h("div", { class: "numbers" }, g.text), reading(g.next, "Next step")),
-    h("h2", {}, "Looks so far"),
-    card("", h("div", { class: "stack" }, P.snapshots.map(s => h("div", { class: "qrow" }, h("span", { class: "num" }, s.at + " IST" + (s.approx ? " (about)" : "")), h("span", { class: "sub" }, s.n + " reels read"))))),
-    h("h2", {}, "Moved between the first and last look"),
+  return [h("article", { class: "xcard" }, h("div", { class: "chips" }, chip("Growth", "k-search"), chip("Seen on @" + handle, "k-src")), h("h3", {}, "Which reels keep growing?"), lrow("What we know", g.text), lrow("Next step", g.next),
+      lrow("Looks so far", ...P.snapshots.map(s => h("div", {}, s.at + " IST" + (s.approx ? " (about)" : "") + ": " + s.n + " reels read")))),
+    h("h2", {}, "Reels that moved between the first and last look"),
     P.growth.length ? card("", h("div", { class: "stack" }, P.growth.map(x => { const r = P.reels.find(y => y.id === x.id); return h("div", { class: "qrow" }, h("span", {}, r ? r.cover : x.id), h("span", { class: "num gt", style: "font-weight:600" }, fmt(x.frm) + " to " + fmt(x.to) + "  +" + (x.to - x.frm).toLocaleString())); })), h("div", { class: "sub", style: "margin-top:8px" }, "Counts on the grid are rounded, so small moves on large reels do not show.")) : card("", "No change seen.")];
 }
 

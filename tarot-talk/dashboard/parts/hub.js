@@ -230,15 +230,18 @@ function stratSheet(x) {
     h("div", { class: "flabel" }, "History (" + x.cycles + " review cycle" + (x.cycles === 1 ? "" : "s") + ")"), h("ol", { class: "acts" }, x.history.map(e => h("li", {}, h("span", { class: "num sub" }, e.date), h("span", {}, e.event + " ", e.file ? h("a", { class: "out", target: "_blank", rel: "noopener", href: "https://github.com/" + D.repo + "/blob/main/" + e.file }, "read the review") : null)))),
     x.why_rejected ? h("div", { class: "sub" }, "Rejected because: " + x.why_rejected) : null);
 }
-const stratCard = (x, i) => h("button", { class: "scard", style: "--i:" + i, onclick: () => stratSheet(x) }, ring(x.score), h("span", { class: "sbody" }, h("b", {}, x.name), h("span", { class: "kl" }, x.line), h("span", { class: "sub" }, "Next: " + x.next)), pill(stageName(x.stage), SSTAGE[x.stage]));
+const SCH = { discovered: "k-src", "early-review": "k-try", optimising: "k-search", ready: "k-good", testing: "k-good", adopted: "k-good", parked: "k-src", rejected: "k-bad" };
+const stratCard = (x, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Strategy", "k-idea"), chip(stageName(x.stage), SCH[x.stage]), chip("From: " + x.source, "k-src"), x.score == null ? null : chip("Score " + x.score + " of 100", x.score >= 40 ? "k-good" : "k-src")),
+  h("h3", {}, x.name), lrow("What it is", x.line), lrow("Next step", h("div", { class: "hookline" }, x.next)), lrow("Evidence", x.evidence_note), lrow("Checks done", x.checks.filter(c => c.result !== "does not apply").map(c => c.name + ": " + c.result).join(" · ") || null),
+  lrow("Full record", h("div", { class: "srcrow" }, h("button", { type: "button", class: "srcbtn", onclick: () => stratSheet(x) }, "Score, research, reviews and history"))));
 function vStrategy() {
   const S = D.strategies, all = S.strategies, live = all.filter(x => !["parked", "rejected"].includes(x.stage)), n = k => all.filter(x => x.stage === k).length;
   const shown = live.filter(x => state.sstage === "all" || x.stage === state.sstage).sort((a, b) => b.score - a.score);
   return [
     h("div", { class: "funnel", style: "margin-top:16px" }, S.stages.map(([k, t, d], i) => h("button", { class: "fstep", style: "--w:" + (100 - i * 9) + "%;--k:" + i, "aria-pressed": String(state.sstage === k), title: d, onclick: () => { state.sstage = state.sstage === k ? "all" : k; render(); const b = document.querySelectorAll(".fstep")[i]; if (b) b.focus(); } }, h("span", {}, t), h("b", {}, String(n(k)))))),
     h("p", { class: "sub" }, state.sstage === "all" ? "Tap a step to see only that stage. Tap a card for its research, reviews, score and history." : stageName(state.sstage) + ": " + S.stages.find(s => s[0] === state.sstage)[2]),
-    shown.length ? h("div", { class: "sgrid" }, shown.map(stratCard)) : h("p", { class: "sub" }, "Nothing at this stage yet."),
-    fold("Parked and rejected (" + (n("parked") + n("rejected")) + ")", [h("div", { class: "sgrid" }, all.filter(x => ["parked", "rejected"].includes(x.stage)).map(stratCard))]),
+    shown.length ? h("div", { class: "cgrid" }, shown.map(stratCard)) : h("p", { class: "sub" }, "Nothing at this stage yet."),
+    fold("Parked and rejected (" + (n("parked") + n("rejected")) + ")", [h("div", { class: "cgrid" }, all.filter(x => ["parked", "rejected"].includes(x.stage)).map(stratCard))]),
     fold("How the score works", [h("p", { class: "sub" }, S.note)]),
     fold("Series ideas", [h("div", { class: "tgrid" }, W.strategy.series.map(s => h("div", { class: "tcard" + (s.state === "active" ? " on" : "") }, h("b", {}, s.name), pill(s.state, s.state === "active" ? "good" : s.state.startsWith("held") ? "acc" : "wait"))))])
   ];
@@ -424,11 +427,11 @@ function vProduction() {
 }
 
 /* ---------- profile page ---------- */
-const PTABS = [["overview", "Overview", vOverview], ["concepts", "Concepts", vConcepts], ["reels", "Reels", vReels], ["shapes", "Usable shapes", vShapes], ["growth", "Growth", vGrowth], ["pipeline", "Pipeline", vPipeline]];
+const PTABS = [["overview", "What works", vOverview], ["shapes", "What we can borrow", vShapes], ["reels", "All reels", vReels], ["concepts", "Reels by type", vConcepts], ["growth", "Growth", vGrowth], ["pipeline", "How far we have read", vPipeline]];
 function vProfile() {
   const pr = P.profile, tab = PTABS.find(t => t[0] === state.ptab) || PTABS[0];
   return [
-    h("a", { class: "back", href: "#research" }, "Back to Research"),
+    h("a", { class: "back", href: "#research" }, "\u2190 Back to all pages"),
     h("div", { class: "hero" }, h("div", { class: "ring", "aria-hidden": "true" }, h("b", {}, pr.handle.slice(0, 2).toUpperCase())), h("div", { class: "who" }, h("div", { class: "h" }, "@" + pr.handle), h("div", { class: "facts" }, h("span", {}, h("b", {}, pr.followers), " followers"), h("span", {}, h("b", {}, pr.posts.toLocaleString()), " posts"), h("span", { class: "sub" }, pr.niche)), h("div", { class: "sub", style: "margin-top:4px" }, "Looked at " + pr.scouted_on + " · ", h("a", { class: "out", href: "https://www.instagram.com/" + pr.handle + "/", target: "_blank", rel: "noopener" }, "open on Instagram")))),
     seg(PTABS.map(([k, t]) => [k, t]), tab[0], k => { state.ptab = k; render(); }),
     h("h2", { style: "margin-top:18px" }, tab[1]),
