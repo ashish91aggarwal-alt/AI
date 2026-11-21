@@ -278,16 +278,41 @@ function trendBlock() {
     h("p", { class: "sub" }, "Checked " + T.checked + " by the desktop app, from Google's own Trending now feed and a calendar it works out itself. Moon dates are right to within about a day.")];
 }
 function trendsEvidence() { return D.trends ? trendBlock().slice(2) : trendBlock().slice(0, 2); }
+/* cards: every part has a label, and every card links straight to where it came from */
+const lrow = (label, ...kids) => { kids = kids.filter(Boolean); return kids.length ? h("div", { class: "lrow" }, h("span", { class: "llab" }, label), h("div", { class: "lval" }, ...kids)) : null; };
+const chip = (t, cls) => h("span", { class: "tchip " + (cls || "") }, t);
+const srcBtn = (t, href) => h("a", { class: "srcbtn", href, target: "_blank", rel: "noopener" }, t, " ↗");
+const SERVE = { saves: "Saves: people keep it for later", sends: "Sends: people forward it to someone", "watch time": "Watch time: people watch to the end", likes: "Likes", comments: "Comments" };
+const serveText = s => String(s || "").split(/[,;/]| and /).map(x => x.trim().toLowerCase()).filter(Boolean).map(x => SERVE[x] || x).join(" · ");
+function sourceLinks(x) {
+  const t = String(x.borrowed_from || ""), out = [];
+  const reel = t.match(/@([\w.]{2,30}),\s*([A-Za-z0-9_-]{8,14})\b/), at = t.match(/@([\w.]{2,30})/), bare = !at && /page/.test(x.src || "") ? t.match(/^([a-z0-9_.]{3,30})\b/) : null;
+  if (reel) out.push(srcBtn("Open the reel", "https://www.instagram.com/reel/" + reel[2] + "/"));
+  const hd = (reel && reel[1]) || (at && at[1]) || (bare && bare[1]);
+  if (hd) out.push(D.pages[hd] ? h("a", { class: "srcbtn", href: "#p-" + hd }, "Our notes on @" + hd) : null, srcBtn("Open @" + hd, "https://www.instagram.com/" + hd + "/"));
+  if (x.src === "search") (t.match(/'([^']{3,60})'/g) || []).slice(0, 2).forEach(q => out.push(srcBtn("Trends: " + q.slice(1, -1), "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=" + encodeURIComponent(q.slice(1, -1)))));
+  const url = t.match(/\(((?:https?:\/\/)?[a-z0-9.-]+\.[a-z]{2,}\/[^\s)]*)\)/i); if (url) out.push(srcBtn("Open the source", /^http/.test(url[1]) ? url[1] : "https://" + url[1]));
+  if (x.agent) out.push(h("button", { type: "button", class: "srcbtn", onclick: () => agentSheet(x.agent) }, "All research by the " + x.agent.name));
+  return out.filter(Boolean);
+}
 function vIdeas() {
-  const I = D.ideas, IS = { new: "acc", picked: "good", made: "good", dropped: "wait" };
-  const sname = id => (D.strategies.strategies.find(x => x.id === id) || { name: id }).name, sobj = id => D.strategies.strategies.find(x => x.id === id);
-  const SRC = { trends: "search", instagram: "page", similar: "page", methods: "method", outside: "page" };
-  const all = I.ideas.map(x => ({ src: /@|page/i.test(x.borrowed_from || "") ? "page" : "method", ...x })).concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ src: SRC[a.id] || "method", added: (a.started || "").slice(0, 10), ...x })))).filter(x => x.status !== "dropped"), top = all.filter(x => x.pick).length;
+  const I = D.ideas, SRC = { trends: "search", instagram: "page", similar: "page", methods: "method", outside: "page" }, SN = { page: "From another page", search: "From a search trend", method: "From a method" }, ABROAD = ["outside"];
+  const sobj = id => D.strategies.strategies.find(x => x.id === id);
+  const all = I.ideas.map(x => ({ src: /@|page/i.test(x.borrowed_from || "") ? "page" : "method", ...x })).concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ src: SRC[a.id] || "method", added: (a.started || "").slice(0, 10), agent: a, abroad: ABROAD.includes(a.id), ...x })))).filter(x => x.status !== "dropped"), top = all.filter(x => x.pick).length;
   return [
-    h("p", { class: "sub", style: "margin-top:14px" }, "What to post. Each card has the opening line, how to make it, and when to post it. All are untested until made."),
+    h("p", { class: "sub", style: "margin-top:14px" }, "What to post. Every card is laid out the same way: what to say first, how to make it, when to post, why, and where it came from."),
     seg([["top", "Best " + top], ["all", "All " + all.length], ["page", "From other pages", all.filter(x => x.src === "page").length], ["search", "From searches", all.filter(x => x.src === "search").length], ["method", "From methods", all.filter(x => x.src === "method").length]], state.ifilter, k => { state.ifilter = k; render(); }),
-    h("div", { class: "sgrid" }, all.filter(x => state.ifilter === "all" || (state.ifilter === "top" ? x.pick : x.src === state.ifilter)).sort((a, b) => (a.pick || 99) - (b.pick || 99)).map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, x.pick ? h("span", { class: "pill good", style: "align-self:flex-start" }, "Reviewer's pick " + x.pick) : newPill(x.added), h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why), x.post_by ? h("span", { class: "sub" }, "Post by: " + x.post_by) : null, x.review_note ? h("span", { class: "rnote" }, "Reviewer: " + x.review_note) : null,
-      h("span", { class: "checks" }, h("span", { class: "chk y" }, "Earns: " + x.serves), sobj(x.strategy) ? h("button", { class: "chk", style: "cursor:pointer;background:none;font:inherit;font-size:12.5px", onclick: () => stratSheet(sobj(x.strategy)) }, "Strategy: " + sname(x.strategy)) : null, h("span", { class: "chk" }, "From: " + x.borrowed_from))), pill(x.status, IS[x.status] || "wait")))),
+    h("div", { class: "cgrid" }, all.filter(x => state.ifilter === "all" || (state.ifilter === "top" ? x.pick : x.src === state.ifilter)).sort((a, b) => (a.pick || 99) - (b.pick || 99)).map((x, i) => h("article", { class: "xcard idea", style: "--i:" + i },
+      h("div", { class: "chips" }, chip("Idea", "k-idea"), chip(SN[x.src] + (x.abroad ? ", abroad" : ""), "k-src"), x.pick ? chip("Best pick " + x.pick, "k-good") : null, isNew(x.added) ? chip("New", "k-new") : null),
+      h("h3", {}, x.title),
+      lrow("Say first", h("div", { class: "hookline" }, "“" + x.hook + "”")),
+      lrow("How to make", x.format),
+      lrow("When to post", x.post_by || null),
+      lrow("Why it may work", x.why),
+      lrow("Aims for", serveText(x.serves) || null),
+      lrow("Strategy", sobj(x.strategy) ? h("button", { type: "button", class: "srcbtn", onclick: () => stratSheet(sobj(x.strategy)) }, sobj(x.strategy).name) : null),
+      lrow("Reviewer says", x.review_note || null),
+      lrow("Came from", h("div", { class: "kl2" }, x.borrowed_from), h("div", { class: "srcrow" }, ...sourceLinks(x)))))),
     (() => { const dr = (D.agents || []).flatMap(a => (a.ideas || []).filter(x => x.status === "dropped").map(x => [x.title, x.review_note || "", a.name])); return dr.length ? fold("Dropped by the reviewer (" + dr.length + ")", dr.map(([t, w, n]) => h("div", { class: "planrow" }, h("b", {}, t), h("span", { class: "sub" }, w + " · " + n)))) : null; })()
   ];
 }
@@ -319,27 +344,36 @@ const isNew = d => { if (!d) return false; const t = Date.parse(String(d).slice(
 const newPill = d => isNew(d) ? h("span", { class: "pill acc", style: "align-self:flex-start" }, "new") : null;
 function vSearches() {
   const T = D.trends, ta = (D.agents || []).find(a => a.id === "trends"), fs = ta ? ta.findings : [];
+  const turl = q => "https://trends.google.com/trends/explore?geo=IN&date=now%207-d&q=" + encodeURIComponent(q);
   return [
-    h("p", { class: "sub", style: "margin-top:14px" }, "What India is searching for in our field. The live part is read by the desktop app every 6 hours; the deeper readings come from Google Trends."),
+    h("p", { class: "sub", style: "margin-top:14px" }, "What India is searching for in our field. Every card says what was seen, what it means for us, and opens the same search in Google Trends."),
     h("h2", {}, "Trending right now"),
     !T ? h("p", { class: "sub" }, "The desktop app has not read the feed yet.") : T.feed_error ? h("p", { class: "sub" }, "Google's trending feed could not be read at the last try (" + T.checked + ").") :
-      T.matches.length ? h("div", { class: "sgrid" }, T.matches.map((m, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("span", { class: "pill acc", style: "align-self:flex-start" }, m.traffic ? m.traffic + " searches" : "trending"), h("b", {}, m.title), m.news[0] ? h("span", { class: "sub" }, m.news[0]) : null)))) : h("p", { class: "sub" }, "Nothing in our field among India's " + T.feed_count + " trending searches right now."),
+      T.matches.length ? h("div", { class: "cgrid" }, T.matches.map((m, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Trending now", "k-live"), chip("India", "k-src"), m.traffic ? chip(m.traffic + " searches", "k-good") : null), h("h3", {}, m.title),
+        lrow("In the news", m.news[0] || null), lrow("Why it is here", "It matched our word ‘" + m.matched + "’."), lrow("Read at", T.checked + ", by the desktop app"), lrow("Came from", h("div", { class: "srcrow" }, srcBtn("Open in Google Trends", turl(m.title)), srcBtn("Search it on Google", "https://www.google.com/search?q=" + encodeURIComponent(m.title))))))) : h("p", { class: "sub" }, "Nothing in our field among India's " + T.feed_count + " trending searches right now."),
     T && T.matches_log && T.matches_log.length ? fold("Caught in the last days (" + T.matches_log.length + ")", T.matches_log.map(m => h("div", { class: "planrow" }, h("b", {}, m.title), h("span", { class: "sub" }, "first seen " + (m.first_seen || "") + " · " + (m.traffic || ""))))) : null,
     h("h2", {}, "What people search through the year"),
-    fs.length ? h("div", { class: "sgrid" }, fs.map((f, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" }, newPill(f.date), h("b", {}, f.title), h("span", { class: "kl" }, f.detail), f.correction ? h("span", { class: "rnote" }, "Corrected: " + f.correction) : null, f.source ? h("a", { class: "out", href: f.source, target: "_blank", rel: "noopener", style: "font-size:12.5px" }, "Open in Google Trends") : null)))) : h("p", { class: "sub" }, "No readings yet."),
-    T ? h("p", { class: "sub" }, "Live feed last read " + T.checked + ". Trends numbers are relative, not search counts.") : null
+    fs.length ? h("div", { class: "cgrid" }, fs.map((f, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Search pattern", "k-search"), chip("Google Trends, India", "k-src"), isNew(f.date) ? chip("New", "k-new") : null), h("h3", {}, f.title),
+      lrow("What it means for us", f.for_us ? h("div", { class: "hookline" }, f.for_us) : null), lrow("What was seen", f.detail), lrow("Corrected", f.correction || null), lrow("Read on", f.date || null), lrow("Came from", h("div", { class: "srcrow" }, f.source ? srcBtn("Open this reading in Google Trends", f.source) : null))))) : h("p", { class: "sub" }, "No readings yet."),
+    h("p", { class: "sub" }, "Trends numbers are relative (0 to 100), not search counts. One reading on one day.")
   ];
 }
 function vInsta() {
   const F = D.formats; if (!F) return [h("p", { class: "sub" }, "Nothing recorded yet.")];
-  const V = { use: ["Use", "good"], "try": ["Try once", "acc"], later: ["Later", "wait"], "not for us": ["Not for us", "bad"] }, K = { format: "Format", hook: "Hook", selling: "Selling" };
+  const V = { use: ["Use it", "k-good"], "try": ["Try once", "k-try"], later: ["Later", "k-src"], "not for us": ["Not for us", "k-bad"] }, K = { format: ["Format", "k-idea"], hook: ["Hook", "k-search"], selling: ["Selling habit", "k-live"] };
   const list = F.items.filter(x => state.fkind === "all" || x.kind === state.fkind), order = ["use", "try", "later", "not for us"];
   return [
-    h("p", { class: "sub", style: "margin-top:14px" }, F.note),
+    h("p", { class: "sub", style: "margin-top:14px" }, "What other pages are doing that works. Every card says what it is, the numbers, what we can do with it, and opens the page and the reel it was seen on."),
     seg([["all", "All", F.items.length], ["format", "Formats", F.items.filter(x => x.kind === "format").length], ["hook", "Hooks", F.items.filter(x => x.kind === "hook").length], ["selling", "Selling", F.items.filter(x => x.kind === "selling").length]], state.fkind, k => { state.fkind = k; render(); }),
-    h("div", { class: "sgrid" }, list.slice().sort((a, b) => order.indexOf(a.verdict) - order.indexOf(b.verdict)).map((x, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" },
-      h("span", { class: "qrow" }, h("span", { style: "display:flex;gap:6px;flex-wrap:wrap" }, h("span", { class: "tag2" }, K[x.kind] || x.kind), x.abroad ? h("span", { class: "tag2" }, "abroad") : null, isNew(x.added) ? h("span", { class: "pill acc" }, "new") : null), pill((V[x.verdict] || [x.verdict, "wait"])[0], (V[x.verdict] || [0, "wait"])[1])), h("b", {}, x.name), h("span", { class: "kl" }, x.what), h("span", { class: "chk y", style: "align-self:flex-start" }, x.numbers),
-      reading(x.for_us, "For us", true), x.review_note ? h("span", { class: "rnote" }, "Reviewer: " + x.review_note) : null, h("span", { class: "checks" }, x.seen_on.map(p => D.pages[p] ? h("a", { class: "chk", href: "#p-" + p, style: "text-decoration:none" }, "@" + p) : h("a", { class: "chk", href: "https://www.instagram.com/" + p + "/", target: "_blank", rel: "noopener", style: "text-decoration:none" }, "@" + p))), h("span", { class: "sub" }, x.by)))))
+    h("div", { class: "cgrid" }, list.slice().sort((a, b) => order.indexOf(a.verdict) - order.indexOf(b.verdict)).map((x, i) => h("article", { class: "xcard", style: "--i:" + i },
+      h("div", { class: "chips" }, chip((K[x.kind] || [x.kind])[0], (K[x.kind] || [0, "k-src"])[1]), chip(x.abroad ? "Page abroad" : "Indian page", "k-src"), chip((V[x.verdict] || [x.verdict])[0], (V[x.verdict] || [0, "k-src"])[1]), isNew(x.added) ? chip("New", "k-new") : null),
+      h("h3", {}, x.name),
+      lrow("What it is", x.what),
+      lrow("The numbers", h("div", { class: "hookline" }, x.numbers), h("div", { class: "kl2" }, "‘Usual’ means the views a normal reel on that page gets.")),
+      lrow("What we can do", x.for_us),
+      lrow("Reviewer says", x.review_note || null),
+      lrow("Seen by", x.by),
+      lrow("Came from", h("div", { class: "srcrow" }, ...(x.reels || []).map((r, n) => srcBtn("Open the reel" + (x.reels.length > 1 ? " " + (n + 1) : ""), "https://www.instagram.com/reel/" + r + "/")), ...x.seen_on.flatMap(p => [D.pages[p] ? h("a", { class: "srcbtn", href: "#p-" + p }, "Our notes on @" + p) : null, srcBtn("Open @" + p, "https://www.instagram.com/" + p + "/")]).filter(Boolean))))))
   ];
 }
 function vMore() {
