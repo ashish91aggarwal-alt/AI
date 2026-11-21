@@ -2,28 +2,438 @@
  "id": "trends",
  "name": "Trends agent",
  "job": "Reads Google Trends for India in the PC browser: our topics, rising searches, what is trending now.",
- "status": "working",
+ "status": "done",
  "started": "2026-11-21 13:50 IST",
- "updated": "2026-11-21 13:55 IST",
- "step": "Reading Explore pages (India, 12 months), group 2 of about 7.",
+ "updated": "2026-11-21 13:56 IST",
+ "step": "Done: 23 findings, 17 ideas, 3 strategies from 1 trending page and 10 Explore pages (India).",
  "did": [
   {
-   "what": "Trending now, India, past 7 days (2,236 trends listed), filtered by ~50 keywords",
-   "result": "In our field only daily-horoscope and festival items: 'ekadashi' 100K+, 'tulsi vivah' 100K+, 'scorpio horoscope today' 10K+, 'मीन राशि' 5K+, 'कन्या राशि' 5K+. Nothing for tarot, numerology, kundli, angel, manifest, chakra."
+   "what": "Trending now, India, past 7 days (2,236 trends), filtered by about 50 keywords in English and Hindi",
+   "result": "Only daily horoscope-by-sign and festival items (ekadashi, tulsi vivah). Nothing for tarot, numerology, kundli, manifestation."
   },
   {
-   "what": "Explore: tarot, numerology, rashifal, kundli, mulank (12 months)",
-   "result": "rashifal is by far the biggest (56-100), peak week of 28 Dec 2025; numerology and mulank also peak that week; tarot flat at 16-23."
+   "what": "Explore 12 months: tarot, numerology, rashifal, kundli, mulank",
+   "result": "Rashifal is the giant; rashifal, numerology and mulank all peak in the week of 28 Dec; tarot is flat."
+  },
+  {
+   "what": "Explore 12 months: numerology 2027, horoscope 2027, rashifal 2027, personal year number, mulank",
+   "result": "horoscope 2027 and rashifal 2027 are already climbing; numerology 2027 has not started; personal year number is tiny."
+  },
+  {
+   "what": "Explore 12 months: angel number, 1111, manifestation, lucky number, twin flame",
+   "result": "Angel number biggest but falling, 777 is the rising number; manifestation and 1111 spiked in the week of 11 November."
+  },
+  {
+   "what": "Explore 12 months: tarot card reading, love tarot, career tarot, yes or no tarot, akashic records",
+   "result": "Yes/no is the big tarot intent; love tarot lifts in Valentine's week; career tarot is negligible; akashic records is mostly an anime."
+  },
+  {
+   "what": "Explore 12 months: healing, chakra, zodiac sign, moolank, mulank",
+   "result": "Healing and chakra are mostly other meanings; 'mulank' spelling beats 'moolank' about 15 to 1."
+  },
+  {
+   "what": "Explore 5 years: numerology, tarot, mulank, with and without rashifal",
+   "result": "Numerology bumps at New Year in the last three winters only; tarot never does; mulank has grown about 13 times; rashifal has more than halved since 2022."
+  },
+  {
+   "what": "Explore daily, 1 Sep 2025 - 28 Feb 2026: rashifal 2026, numerology 2026, horoscope 2026, mulank 2026, personal year",
+   "result": "All start late October and peak 31 Dec / 1 Jan; rashifal and horoscope stay high to end of February, numerology and mulank fade in two weeks."
+  },
+  {
+   "what": "Explore 12 months: bhagyank, name numerology, mobile number numerology, lo shu grid, mulank",
+   "result": "Name numerology and bhagyank are each about a fifth of mulank; mobile-number numerology and lo shu grid are small."
+  },
+  {
+   "what": "Explore 12 months: numerology, mulank, angel number, horoscope, manifestation (size bridge)",
+   "result": "Horoscope about three times the others; numerology, mulank and angel number are level; manifestation is under half of them."
+  },
+  {
+   "what": "Closed my browser tab; wrote 23 findings, 17 ideas, 3 strategies",
+   "result": "Done. No 429 or error pages met."
   }
  ],
- "findings": [],
- "ideas": [],
- "strategies": [],
+ "findings": [
+  {
+   "title": "Trending now has only daily horoscope and festival items from our field",
+   "detail": "Past 7 days, India, 2,236 trends listed. Filtering by about 50 keywords found: 'ekadashi' 100K+ (active), 'tulsi vivah' 100K+ (active), 'kartiki ekadashi 2026' 2K+, 'scorpio horoscope today' 10K+, 'मीन राशि' 5K+, 'कन्या राशि' 5K+, 'virgo horoscope today' 2K+, 'आज का राशिफल मेष' 2K+. Zero results for tarot, numerology, astrology, kundli, zodiac, lucky, manifest, chakra, healing. The page's search filter behaved inconsistently (one phrase matched under one keyword and not another), so small items may have been missed.",
+   "source": "https://trends.google.com/trending?geo=IN&hours=168",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Rashifal is far bigger than tarot, numerology, kundli or mulank",
+   "detail": "12-month averages on one chart: rashifal about 72 (range 56-100), kundli about 43, numerology about 26, mulank about 26, tarot about 18. Rashifal peaked in the week of 28 Dec 2025 (100) and has drifted down to 56 by mid-November 2026. (Trends values are relative 0-100 within one page, not search counts.)",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "The week of 28 December was the peak week for rashifal, numerology, mulank, horoscope and manifestation",
+   "detail": "Week of 28 Dec 2025: rashifal 100 (vs 79-81 in the weeks before), numerology 39 (vs 34-36), mulank 32 (vs 26-27), horoscope 100 (vs 78-90), manifestation 65 on its chart (vs 40-45). All fell back by the week of 11 Jan 2026 (numerology 27, mulank 23).",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Tarot shows no New Year bump at all",
+   "detail": "'tarot' stayed between 16 and 23 all year; the week of 28 Dec 2025 was 19, same as the weeks around it. Its highest weeks were 8-15 Feb 2026 (22-23). In the 5-year view tarot is flat to slightly falling (yearly average 45 in 2022-23, 51 in 2024, 40 in 2025, 38 in 2026 on that chart) with no late-December rise in any of the five winters.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Numerology's New Year bump is real but modest, and only in the last three winters",
+   "detail": "5-year chart (numerology, tarot, mulank): numerology in late Dec/early Jan vs the following Feb-Nov average: 2021-22 peak 40 vs 35; 2022-23 peak 42 vs 41 (no bump); 2023-24 peak 56 vs 66 (no bump, 2024 rose later, peak 100 in the week of 25 Feb 2024); 2024-25 peak 96 (week of 12 Jan 2025) vs 65; 2025-26 peak 82 (week of 28 Dec 2025) vs 52. So roughly +25% to +55% over the base in the last two winters, not a multiple.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "'Mulank' searches have grown about 13 times in five years",
+   "detail": "On the 5-year chart mulank's yearly average went 4 (2021), 4 (2022), 6 (2023), 25 (2024), 36 (2025), 54 (2026). Its highest week in five years was the week of 28 Dec 2025 (67). On the 12-month chart with 'numerology', mulank passed numerology around mid-2026 (latest full weeks: mulank 23-25, numerology 18-20).",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Year-stamped searches start in late October, peak on 31 Dec / 1 Jan",
+   "detail": "Daily chart 1 Sep 2025 - 28 Feb 2026. Weekly averages for 'rashifal 2026': 0 in September, 1-2 in October, 4-5 in November, 6-15 through December, 41 in the week of 29 Dec, then 28-33 for all of January and February. 'horoscope 2026': 8 by late Nov, 22 in the week of 22 Dec, 55 in the week of 29 Dec, 23-35 through February. Peak day for both: 1 Jan 2026 (70 and 100).",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=2025-09-01%202026-02-28&q=rashifal%202026,numerology%202026,horoscope%202026,mulank%202026,personal%20year",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Numerology and mulank year-searches are a short spike, not a long tail",
+   "detail": "Same daily chart: 'numerology 2026' weekly averages 1 through November, 3-5 in December, 11 in the week of 29 Dec, 7 the next week, then 3. 'mulank 2026': 1-3 in November, 3-6 in December, 11 in the week of 29 Dec, 6 the next week, then 3. Peak days 1 Jan 2026 (18) and 31 Dec 2025 (17). They are about one-sixth the size of 'horoscope 2026' on this chart.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=2025-09-01%202026-02-28&q=rashifal%202026,numerology%202026,horoscope%202026,mulank%202026,personal%20year",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "2027 searches have already begun",
+   "detail": "On the 12-month chart 'horoscope 2027' rose from 1-2 through September to 5, 5, 6, 7, 8 in the last five weeks (highest so far, week of 15 Nov 2026); 'rashifal 2027' rose from 1-2 to 4, 4, 4, 5, 5. 'numerology 2027' is still 0-1 and has no related queries yet. These are measured against 'mulank' at about 85 on the same chart, so they are still small.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology%202027,horoscope%202027,rashifal%202027,personal%20year%20number,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "People search their own number: 'mulank N 2026', 'personal year N in 2026'",
+   "detail": "Rising queries for mulank: 'mulank 1 2026 prediction' +700%, 'mulank 2 2026 prediction' +600%, 'mulank 3 2026' +500%, 'mulank 3 2026 kaisa rahega' +250%, 'mulank 8 2026 kaisa rahega' +250%. In the New Year window, 'personal year' related queries included 'personal year 1 in 2026' (Breakout), 'personal year 5 in 2026' +1,750%, 'personal year 8 in 2026' +750%, and 'personal year 3/4/6/7 in 2026'. Top query for 'mulank 2026' was '2026 for mulank 5'.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=2025-09-01%202026-02-28&q=rashifal%202026,numerology%202026,horoscope%202026,mulank%202026,personal%20year",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "'Personal year number' is tiny and people mostly ask what it is and how to calculate it",
+   "detail": "'personal year number' sat at 0-3 all year next to mulank at 66-100. Its top related queries: 'what is personal year number' 100, 'calculate personal year number' 25, 'how to calculate personal year number' 16, 'how to find personal year number' 11, 'personal year number calculator' 10. Under 'numerology', one of only four rising queries was 'how to calculate personal year in numerology' +40%. The plain phrase 'personal year' is polluted by 'personal loan' searches. Top states: Delhi 100, Haryana 72, Telangana 72.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology%202027,horoscope%202027,rashifal%202027,personal%20year%20number,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Mulank searchers want the basics and 'what are people of number N like'",
+   "detail": "Top related queries for mulank: 'bhagyank' 100, 'mulank bhagyank' 96, 'mulank and bhagyank' 42, 'what is mulank' 28, 'mulank meaning' 17, 'mulank kya hota hai' 14, 'which mulank is best' 7, '3 mulank wale log' 7, '4 mulank wale log' 7, plus 'mulank calculator' and 'how to calculate mulank' (6 each). The spelling 'moolank' is about one-fifteenth of 'mulank' (average 2 vs 31). Top states for mulank: Himachal Pradesh 100, Delhi 98, Uttarakhand 97, Sikkim 88, Chhattisgarh 87.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=healing,chakra,zodiac%20sign,moolank,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Numerology searches are calculator-led: name, mobile number, date of birth",
+   "detail": "Top queries for numerology: 'numerology number' 100, 'numerology name' 70, 'numerology calculator' 45, 'name numerology calculator' 25, 'mobile numerology' 16, 'date of birth numerology' 13, 'chaldean numerology' 12. On a separate chart 'name numerology' (average 19) is about the size of 'bhagyank' (17); 'mobile number numerology' and 'lo shu grid' are small (3 each). Rising: 'lo shu grid calculator by date of birth' +250%. Top states for numerology: Delhi 100, Maharashtra 89, Chandigarh 78, Punjab 76, Haryana 73.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=bhagyank,name%20numerology,mobile%20number%20numerology,lo%20shu%20grid,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Tarot searches are about free, online, yes/no readings and AI apps",
+   "detail": "Top queries for tarot: 'tarot card' 100, 'tarot reading' 69, 'tarot card reading' 43, 'yes no tarot' 38, 'tarot yes or no' 29, 'tarot meaning' 26, 'free tarot' 21, 'online tarot' 16. Rising: 'tarot 99 app' and 'tarot 99 ai' (Breakout), 'random tarot card generator' +140%, 'instant tarot' +130%, 'what is tarot' +130%, 'tarot ai' +60%. Under 'tarot card reading', rising: 'birth tarot card calculator' (Breakout), 'how does tarot card reading work' +400%. Top states for tarot: Manipur 100, Delhi 95, Sikkim 88, Goa 83, Chandigarh 82.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Within tarot, yes/no is big, love peaks in Valentine's week, career is almost nothing",
+   "detail": "Averages on one chart: 'tarot card reading' 80, 'yes or no tarot' 54, 'akashic records' 18, 'love tarot' 17, 'career tarot' 3. 'love tarot' peaked at 27 in the week of 8 Feb 2026 (25 and 24 in the two weeks after) against a usual 14-19. 'tarot card reading' peaked at 100 in the weeks of 27 Sep and 18 Oct 2026; the page does not show why. 'yes or no tarot' slid from about 60 to about 48 over the year.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot%20card%20reading,love%20tarot,career%20tarot,yes%20or%20no%20tarot,akashic%20records",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "'Akashic records' searches in India are mostly an anime",
+   "detail": "Top related queries: 'akashic records of bastard magic' 100, 'akashic records bastard magic instructor' 95, then 'akashic records reading' 50, 'akashic reading' 50, 'what is akashic records' 21, 'akashic records meaning' 16, 'akashic records course' 14. The line is flat-to-falling (about 20 early in the year, 8-15 in recent weeks). Top states: Karnataka 100, Delhi 100, Goa 94, Maharashtra 88.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot%20card%20reading,love%20tarot,career%20tarot,yes%20or%20no%20tarot,akashic%20records",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Angel numbers are the biggest term in the 'signs' group but sliding; 777 is the rising one",
+   "detail": "Averages: 'angel number' 81, 'lucky number' 52, 'manifestation' 38, '1111' 22, 'twin flame' 8. 'angel number' fell from 99-100 in November 2025 to 65-72 in the latest weeks. Top queries are meanings of 444, 777, 333, 222, 555. Rising queries are almost all 777: '777 angel number meaning manifestation' +180%, '... twin flame' +150%, '... love' +140%, '... career' +130%, plus Tamil-language meanings (+150-200%). Top states: Chandigarh 100, Assam 77, Delhi 74, Punjab 71.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=angel%20number,1111,manifestation,lucky%20number,twin%20flame",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Manifestation spiked in New Year week and again in the week of 11 November",
+   "detail": "'manifestation' ran at 32-45 most weeks, hit 65 in the week of 28 Dec 2025 and 62 in the week of 8 Nov 2026. '1111' also had its only clear peak (31 vs usual 19-25) in the week of 8 Nov 2026, the week containing 11/11. Top queries: 'manifestation meaning' 100, 'manifestation in hindi' 30, 'what is manifestation' 27, '369 manifestation' 12; rising: '369 manifestation method step by step' (Breakout). Top states: Kerala 100, Puducherry 88, Karnataka 78. Note '1111' is mixed with VPN-app and amount-in-words searches.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=angel%20number,1111,manifestation,lucky%20number,twin%20flame",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "'Lucky number' is a daily habit search tied to rashi and lottery",
+   "detail": "Top queries: 'lucky number today' 100, 'lottery lucky number' 35, 'aaj ka lucky number' 31, 'kumbh rashi lucky number' 19, 'lucky mobile number' 16, 'my lucky number' 16. Rising: 'aaj ke lucky number' +170%, 'aaj ka lucky number kya hai' +130%. The line was 55-66 until March 2026 (peak 66, week of 15 Mar) and 42-51 since June. Top states: Meghalaya 100, Assam 63, Goa 52.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=angel%20number,1111,manifestation,lucky%20number,twin%20flame",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "'Healing' and 'chakra' as bare words are not our audience",
+   "detail": "Top queries for healing: 'wound healing' 100, 'healing thailand' 57, 'healing template' 51 (a CapCut video template), 'healing meaning' 53; only 'pranic healing' and 'self healing' (22 each) are in our field. Top queries for chakra: 'ghatna chakra' (an exam book) 100, 'ashok chakra' 93, 'vir chakra' 46, 'sudarshan chakra' 41. Chakra's peak of 100 in the week of 9 Aug 2026 is not explained on the page.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=healing,chakra,zodiac%20sign,moolank,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Kundli searchers are moving to AI tools",
+   "detail": "Rising queries for kundli: 'kundli ai' +150%, 'ai kundli' +150%, 'astrosage kundli ai' +130%, 'ai kundli free' +110%, 'date of birth se kundli' +110%. Tarot shows the same pull ('tarot 99 ai', 'tarot ai' +60%) and numerology has 'numerology app' +70%. Kundli itself is flat at 37-48 all year. Top states: Haryana 100, Himachal Pradesh 94, Delhi 73.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "North India searches rashifal/kundli/mulank; the South searches numerology, tarot and manifestation",
+   "detail": "Share of the five terms inside each state: Bihar rashifal 61%, tarot 3%; Uttar Pradesh rashifal 46%, kundli 28%, tarot 5%; Delhi kundli 33%, rashifal 27%, numerology 15%, mulank 14%, tarot 11%; Maharashtra roughly even (tarot 14%, numerology 23%, rashifal 22%, kundli 20%, mulank 21%); Tamil Nadu numerology 55%, tarot 26%; Kerala tarot 39%, numerology 30%. Delhi is in the top five states for tarot, numerology, mulank, kundli, yes/no tarot, akashic records and personal year number.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+   "date": "2026-11-21",
+   "kind": "trend"
+  },
+  {
+   "title": "Daily horoscope by sign is the standing demand; yearly horoscope by sign is the seasonal one",
+   "detail": "Top queries for horoscope: 'today horoscope' 100, 'horoscope 2026' 43, then individual signs at 11-16. Rising: every sign with '2026' at +1,850% to +2,400%, and 'horoscope 2026 by date of birth' +1,200%. For rashifal: 'aaj rashifal' 100, 'rashifal aaj ka' 94, 'rashifal 2026' 75; rising 'kumbh rashifal 2026' +4,350%, 'tula rashifal 2026' +3,500%, 'varshik rashifal 2026' +650%. For 'horoscope 2027' the top sign queries so far are scorpio, cancer, taurus, pisces.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology,mulank,angel%20number,horoscope,manifestation",
+   "date": "2026-11-21",
+   "kind": "trend"
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Personal year number: 20-second do-along",
+   "hook": "Apni birth date aur birth month likho, main bataungi 2027 mein aapka number kaun sa hai.",
+   "format": "Motion-graphic cartoon with the sum shown step by step; viewer adds along; ends on 'comment your number'",
+   "strategy": "do-along",
+   "borrowed_from": "'how to calculate personal year number', 'personal year number calculator', 'how to calculate personal year in numerology' (+40%)",
+   "serves": "saves",
+   "why": "The top searches for personal year number are all 'what is it' and 'how to calculate'. The term itself is very small on Trends, so this is strong on intent, weak on volume.",
+   "post_by": "1-10 December, before the 2027 searches climb"
+  },
+  {
+   "title": "One reel per number: 'Personal Year 1 in 2027' to '9 in 2027'",
+   "hook": "Agar 2027 mein aapka personal year 5 hai, to yeh saal aapke liye kis cheez ka hai?",
+   "format": "Nine short motion-graphic episodes, same character as the 'driver', number on screen in the first second",
+   "strategy": "personal-year",
+   "borrowed_from": "'personal year 1 in 2026' (Breakout), 'personal year 5 in 2026' +1,750%, 'personal year 8 in 2026' +750%",
+   "serves": "sends",
+   "why": "Last New Year people searched their own personal year number with the year attached, for seven of the nine numbers. Good evidence for the shape; volume was small.",
+   "post_by": "One a day, 22-30 December, so all nine are live by 31 Dec"
+  },
+  {
+   "title": "Mulank-wise 2027: 'Mulank 3 ka 2027 kaisa rahega?'",
+   "hook": "Mulank 3 wale, 2027 ke liye ek cheez yaad rakhna.",
+   "format": "Text-on-screen list, one reel per mulank (1-9), caption written exactly like the search phrase",
+   "strategy": "series",
+   "borrowed_from": "'mulank 3 2026 kaisa rahega' +250%, 'mulank 1 2026 prediction' +700%, '2026 for mulank 5' (top query)",
+   "serves": "sends",
+   "why": "Strong: mulank is the fastest-growing term we checked (about 13 times in five years) and its only rising queries are 'mulank N + year'.",
+   "post_by": "15 December - 5 January; the spike was gone by mid-January last time"
+  },
+  {
+   "title": "'Mulank aur bhagyank mein farak' explainer",
+   "hook": "Mulank aur bhagyank ek nahi hote. 15 second mein farak samjho.",
+   "format": "Motion-graphic cartoon, two characters (Mulank and Bhagyank), one example date worked on screen",
+   "strategy": "named-character",
+   "borrowed_from": "'mulank bhagyank' 96, 'mulank and bhagyank' 42, 'what is mulank' 28, 'mulank kya hota hai' 14",
+   "serves": "saves",
+   "why": "Strong and steady all year: 'bhagyank' is the number one related query for mulank. Evergreen, not tied to New Year.",
+   "post_by": "Any time; use it in late November as the warm-up before the 2027 series"
+  },
+  {
+   "title": "'Mulank 4 wale log' personality reels",
+   "hook": "Mulank 4 wale log: yeh 3 baatein aapko apne jaisi lagengi.",
+   "format": "Text-on-screen list with a cartoon face per number; 'tag your mulank 4 friend' close",
+   "strategy": "series",
+   "borrowed_from": "'3 mulank wale log', '4 mulank wale log', 'mulank 8 wale log kaise hote hain', 'which mulank is best'",
+   "serves": "sends",
+   "why": "Medium: these sit in the Top list at 6-7 each for every number, steady but not rising. Describe traits, not fate.",
+   "post_by": "Evergreen filler, two a week from now"
+  },
+  {
+   "title": "Driver reveal day: the 31 Dec / 1 Jan reel",
+   "hook": "Naya saal shuru. Aapke 2027 ki driving seat par kaun baitha hai?",
+   "format": "Motion-graphic cartoon finale of the series; keyword in comments opens the DM with the paid report",
+   "strategy": "keyword-dm",
+   "borrowed_from": "Peak day for 'numerology 2026', 'horoscope 2026', 'rashifal 2026' was 1 Jan 2026; 'mulank 2026' and 'personal year' peaked 31 Dec 2025",
+   "serves": "sends",
+   "why": "Strong on timing: every year-stamped term peaked on 31 Dec or 1 Jan last time, about four times the level two weeks earlier.",
+   "post_by": "Post on 31 December evening, repost story on 1 January"
+  },
+  {
+   "title": "Free calculation, paid deep report",
+   "hook": "Number nikalna free hai, yahin sikha deti hoon. Poora saal samajhna ho to report hai.",
+   "format": "Sakshi to camera, 25 seconds: does the free sum, then shows one page of the report",
+   "strategy": "free-paid",
+   "borrowed_from": "'numerology calculator' 45, 'name numerology calculator' 25, 'personal year number calculator', 'lo shu grid calculator by date of birth' +250%",
+   "serves": "saves",
+   "why": "Strong: numerology demand in India is calculator-led, people want to work out a number themselves first. The free step should be complete, not a teaser.",
+   "post_by": "Mid December, and again 2-5 January"
+  },
+  {
+   "title": "Rashi-wise companion: 'Kumbh rashi, 2027 mein aapka number bhi dekho'",
+   "hook": "Kumbh rashi wale, rashifal to sab dekhte hain. 2027 ka apna number dekha?",
+   "format": "Carousel, one per rashi, slide 1 uses the rashi name, slide 2 teaches the personal year sum",
+   "strategy": "personal-year",
+   "borrowed_from": "'kumbh rashifal 2026' +4,350%, 'tula rashifal 2026' +3,500%, 'rashifal 2026' (Breakout); 'rashifal 2027' already rising",
+   "serves": "saves",
+   "why": "Rashifal is about three times numerology in search size and its year-stamped searches stay high through February. Medium: we borrow the rashi name, the content is still numerology. Start with Kumbh and Tula, the two that rose most.",
+   "post_by": "January and February, after the main series, to ride the long tail"
+  },
+  {
+   "title": "Angel number 777: what it is taken to mean",
+   "hook": "777 baar baar dikh raha hai? Log iska kya matlab maante hain, simple mein.",
+   "format": "Text-on-screen list: love, career, manifestation, three lines each",
+   "strategy": "series",
+   "borrowed_from": "'777 angel number meaning manifestation' +180%, '... love' +140%, '... career' +130%; top list also has 444, 333, 222, 555",
+   "serves": "saves",
+   "why": "Strong for 777 specifically, it is nearly the whole Rising list. The overall 'angel number' line is falling (about 99 to 68 in a year), so do 777 first and do not build a long series on it.",
+   "post_by": "Now, then test 444 and 333"
+  },
+  {
+   "title": "11/11 portal do-along",
+   "hook": "Aaj 11/11 hai. Ek line likhni hai, bas. Saath mein likhte hain.",
+   "format": "Sakshi to camera with pen and paper; viewer writes along; honest framing as a reflection exercise",
+   "strategy": "return-date",
+   "borrowed_from": "'1111' peak (31 vs usual 19-25) and 'manifestation' peak (62) both in the week of 8 Nov 2026",
+   "serves": "saves",
+   "why": "Medium: one year's reading, and '1111' is mixed with VPN searches. The manifestation spike in the same week supports it. This year's date has passed.",
+   "post_by": "Prepare for 11 November 2027; reuse the format on 1/1 (1 January)"
+  },
+  {
+   "title": "369 method, step by step",
+   "hook": "369 method sab bolte hain. Step by step kaise likhte hain, yeh dekho.",
+   "format": "Text-on-screen steps over a notebook shot; no promise of results, framed as a journaling habit",
+   "strategy": "do-along",
+   "borrowed_from": "'369 manifestation method step by step' (Breakout), '369 manifestation' 12, 'manifestation in hindi' 30",
+   "serves": "saves",
+   "why": "Medium: a Breakout query, and manifestation peaks in New Year week. Kerala, Karnataka and Tamil Nadu lead, so add English text on screen.",
+   "post_by": "26 December - 2 January"
+  },
+  {
+   "title": "Yes/No tarot: do and don't",
+   "hook": "Yes/No tarot se yeh sawaal pooch sakte ho, aur yeh nahi.",
+   "format": "Carousel: left side 'aise poocho', right side 'aise mat poocho', five pairs",
+   "strategy": "do-dont",
+   "borrowed_from": "'yes no tarot' 38, 'tarot yes or no' 29, 'yes or no tarot accurate' 17",
+   "serves": "saves",
+   "why": "Strong on size: yes/no is the second biggest tarot search after 'tarot card reading'. It is slowly falling, and searchers want a free instant answer, so teach the question, do not promise accuracy.",
+   "post_by": "Evergreen; any week"
+  },
+  {
+   "title": "Birth tarot card from your date of birth",
+   "hook": "Aapki date of birth se ek tarot card nikalta hai. Apna nikaalo.",
+   "format": "Motion-graphic do-along: add the date, land on a Major Arcana card; follow-up reels per card",
+   "strategy": "do-along",
+   "borrowed_from": "'birth tarot card calculator' (Breakout), 'random tarot card' +120%",
+   "serves": "sends",
+   "why": "Medium: one Breakout query, but it links tarot to date-of-birth sums, which is exactly the bridge to the personal year series.",
+   "post_by": "Late November or early December as the bridge into the 2027 series"
+  },
+  {
+   "title": "Love tarot week",
+   "hook": "Valentine's week: ek card, ek sawaal. Aaj ka sawaal yeh hai.",
+   "format": "Seven daily pick-a-card reels (pile 1/2/3), same opening shot each day",
+   "strategy": "return-date",
+   "borrowed_from": "'love tarot' peak 27 in the week of 8 Feb 2026 vs usual 14-19; 'tarot reading for love' +50%",
+   "serves": "watch time",
+   "why": "Medium: tarot's only seasonal lift is the three weeks around Valentine's Day, and 'tarot' overall also had its best weeks then. One year's reading.",
+   "post_by": "7-14 February 2027"
+  },
+  {
+   "title": "'Tarot kaise kaam karta hai?' honest explainer",
+   "hook": "Tarot bhavishya nahi batata. To phir karta kya hai?",
+   "format": "Sakshi to camera, 30 seconds, one card in hand",
+   "strategy": "",
+   "borrowed_from": "'how does tarot card reading work' +400%, 'what is tarot' +130%, 'what is tarot card' +70%",
+   "serves": "watch time",
+   "why": "Medium: beginner questions are rising while AI tarot apps break out; a human explaining what a reading is and is not is the thing an app cannot do.",
+   "post_by": "Evergreen; pin it"
+  },
+  {
+   "title": "'Aaj ka lucky number' daily story",
+   "hook": "Aaj ki date ka number yeh hai. Iske saath din kaise plan karein?",
+   "format": "Daily story or 7-second reel: date sum on screen plus one small practical suggestion",
+   "strategy": "return-date",
+   "borrowed_from": "'lucky number today' 100, 'aaj ka lucky number' +110%, 'aaj ke lucky number' +170%",
+   "serves": "likes",
+   "why": "Medium: a real daily-habit search, but it is tied to lottery searches. Keep it as 'number of the day' and never as a number to bet on.",
+   "post_by": "Daily, as a habit slot; test for two weeks first"
+  },
+  {
+   "title": "'Akashic records kya hote hain?' one clear reel",
+   "hook": "Akashic records ka naam suna hai, par yeh hota kya hai? Seedha jawab.",
+   "format": "Motion-graphic cartoon, library metaphor, 20 seconds",
+   "strategy": "",
+   "borrowed_from": "'what is akashic records' 21, 'akashic records meaning' 16, 'akashic records reading' 50",
+   "serves": "watch time",
+   "why": "Weak on volume: most Indian searches for the phrase are an anime title, and the line is falling. Worth one explainer for people who already follow, not a series.",
+   "post_by": "Any time; low priority"
+  }
+ ],
+ "strategies": [
+  {
+   "name": "New Year window: start in the last week of November, peak content 28 Dec - 3 Jan",
+   "line": "Year-stamped searches begin in late October, climb through December, and peak on 31 Dec / 1 Jan; put the pitch episodes in the peak week and the teaching episodes before it.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=2025-09-01%202026-02-28&q=rashifal%202026,numerology%202026,horoscope%202026,mulank%202026,personal%20year",
+   "evidence_note": "Seen in the daily chart for the 2025-26 New Year for all five year-stamped terms, and the week of 28 Dec was the 12-month peak for rashifal, numerology, mulank, horoscope and manifestation. In the 5-year chart numerology bumped in the last three winters only, by roughly 25-55%, so it is a lift, not a flood. One reading on one day."
+  },
+  {
+   "name": "Say the viewer's number and the year in the first second",
+   "line": "Title each episode the way people type it: 'Mulank 3 2027', 'Personal year 5 in 2027'.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology%202027,horoscope%202027,rashifal%202027,personal%20year%20number,mulank",
+   "evidence_note": "Rising queries for mulank are all 'mulank N 2026 ...' and last winter's personal-year queries were 'personal year N in 2026'. Search phrasing, not proof of what works on Instagram; test it."
+  },
+  {
+   "name": "Use the word 'mulank', teach 'personal year' through it",
+   "line": "Mulank is the word the Hindi-belt audience already searches; 'personal year number' is not yet known, so introduce it as the next step after mulank.",
+   "source": "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank",
+   "evidence_note": "Mulank grew from a yearly average of about 4 to 54 over five years and is now level with 'numerology'; 'personal year number' is 0-3 on the same scale as mulank at 66-100."
+  }
+ ],
  "pages": [
   "https://trends.google.com/trending?geo=IN&hours=168",
-  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank"
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot,numerology,rashifal,kundli,mulank",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology%202027,horoscope%202027,rashifal%202027,personal%20year%20number,mulank",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=angel%20number,1111,manifestation,lucky%20number,twin%20flame",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=tarot%20card%20reading,love%20tarot,career%20tarot,yes%20or%20no%20tarot,akashic%20records",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=healing,chakra,zodiac%20sign,moolank,mulank",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank,rashifal",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%205-y&q=numerology,tarot,mulank",
+  "https://trends.google.com/trends/explore?geo=IN&date=2025-09-01%202026-02-28&q=rashifal%202026,numerology%202026,horoscope%202026,mulank%202026,personal%20year",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=bhagyank,name%20numerology,mobile%20number%20numerology,lo%20shu%20grid,mulank",
+  "https://trends.google.com/trends/explore?geo=IN&date=today%2012-m&q=numerology,mulank,angel%20number,horoscope,manifestation"
  ],
  "queue_reels": [],
- "next": [],
- "problems": []
+ "next": [
+  "Re-read 'numerology 2027', 'mulank 2027', 'personal year 2027' weekly from 1 December: last year these only moved in the final two weeks, so the related queries for 2027 do not exist yet.",
+  "Check Hindi-script terms (मूलांक, अंक ज्योतिष, राशिफल 2027, टैरो): trending-now showed राशि searches in Devanagari that the Roman-script pages do not count.",
+  "Check YouTube search (Explore with property=youtube) for mulank and tarot: Instagram viewers behave more like video searchers than web searchers.",
+  "Check the 90-day view for 'tarot card reading' to find what caused the 100 peaks in the weeks of 27 Sep and 18 Oct 2026, which the 12-month page does not explain.",
+  "Check 'pick a card', 'tarot reading 2027', 'december tarot', 'new year tarot': not covered today and they are the natural tarot titles for the same window.",
+  "Look at Delhi, Maharashtra, Himachal, Uttarakhand separately for mulank and numerology, since Delhi was in the top five for seven of our terms."
+ ],
+ "problems": [
+  "Explore charts only load after scrolling on the narrow browser pane; one page had to be reloaded once because of this. No 429 or 'unusual traffic' page appeared.",
+  "The Trending-now search filter is unreliable (for example 'scorpio horoscope today' appeared under 'horoscope' but not under 'scorpio'), so the trending list for our field may be incomplete.",
+  "All Trends figures are relative (0-100 within each page), not search counts, and numbers from different pages cannot be compared directly. One reading taken on 21 Nov 2026; the latest week (15 Nov) is partial.",
+  "Reasons for peaks (what a spike coincided with) are my reading of the calendar; the Trends page itself does not state causes.",
+  "Several terms are polluted by other meanings: 'personal year' (personal loan), '1111' (VPN app), 'healing' (wound healing, a CapCut template), 'chakra' (Ashok Chakra, an exam book), 'akashic records' (anime)."
+ ]
 }
