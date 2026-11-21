@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-22",
+  "date_label": "SUNDAY 22 NOV",
+  "language": "english",
+  "target_country": "Global",
+  "sky": "Sun enters Sagittarius. Moon in Aries until about 4:30 pm IST, then Taurus. Moon trine Mars and Jupiter in Leo. Moon opposite Venus in Libra. Mars in Leo square the Sun at the end of Scorpio. Mercury in Scorpio.",
+  "hook": {
+    "vo": "Three signs get good news today. One sign should stay quiet. Which one are you?",
+    "lines": [["3 SIGNS", 0], ["GOOD NEWS", 3], ["1 SIGN", 6], ["STAY QUIET", 9]]
+  },
+  "signs": [
+    {"sign": "Aries", "element": "fire", "tag": "GOOD NEWS", "icon": "star", "vo": "Aries. Your confidence is back. Make the first move before evening.", "l1": "CONFIDENCE IS BACK", "l2": "Make the first move before evening"},
+    {"sign": "Taurus", "element": "earth", "tag": "REST", "icon": "moon", "vo": "Taurus. Slow morning, strong evening. After sunset, the day is yours.", "l1": "SLOW MORNING", "l2": "After sunset, the day is yours"},
+    {"sign": "Gemini", "element": "air", "tag": "FRIENDS", "icon": "chat", "vo": "Gemini. Reply to that old friend. One message opens a door.", "l1": "REPLY TO THEM", "l2": "One message opens a door"},
+    {"sign": "Cancer", "element": "water", "tag": "WORK", "icon": "case", "vo": "Cancer. Your work gets noticed today. Leave the stress at the office.", "l1": "YOU GET NOTICED", "l2": "Leave the stress at the office"},
+    {"sign": "Leo", "element": "fire", "tag": "GOOD NEWS", "icon": "star", "vo": "Leo. Luck is loud for you today. Say yes, but skip the argument.", "l1": "LUCK IS LOUD", "l2": "Say yes. Skip the argument"},
+    {"sign": "Virgo", "element": "earth", "tag": "MONEY", "icon": "coin", "vo": "Virgo. Check the numbers before you pay. Someone owes you an answer.", "l1": "CHECK THE NUMBERS", "l2": "Someone owes you an answer"},
+    {"sign": "Libra", "element": "air", "tag": "LOVE", "icon": "heart", "vo": "Libra. Everyone wants your yes today. Choose yourself first.", "l1": "THEY WANT YOUR YES", "l2": "Choose yourself first"},
+    {"sign": "Scorpio", "element": "water", "tag": "STAY QUIET", "icon": "mute", "vo": "Scorpio. This one is you. Stay quiet today. Do not send that text.", "l1": "THIS ONE IS YOU", "l2": "Stay quiet. Do not send that text"},
+    {"sign": "Sagittarius", "element": "fire", "tag": "GOOD NEWS", "icon": "star", "vo": "Sagittarius. Your season starts today. Begin the thing you kept delaying.", "l1": "YOUR SEASON STARTS", "l2": "Begin what you kept delaying"},
+    {"sign": "Capricorn", "element": "earth", "tag": "FAMILY", "icon": "house", "vo": "Capricorn. Slow down today. Home needs one full hour of you.", "l1": "SLOW DOWN", "l2": "Home needs one hour of you"},
+    {"sign": "Aquarius", "element": "air", "tag": "VOICE", "icon": "chat", "vo": "Aquarius. Speak up in the group. Your idea is the one that lands.", "l1": "SPEAK UP", "l2": "Your idea is the one that lands"},
+    {"sign": "Pisces", "element": "water", "tag": "MONEY", "icon": "coin", "vo": "Pisces. Ask for what you are worth. The money talk goes your way.", "l1": "ASK FOR MORE", "l2": "The money talk goes your way"}
+  ],
+  "cta": {
+    "vo": "Comment your sign. Follow for tomorrow's reading.",
+    "lines": [["COMMENT", 0], ["YOUR SIGN", 1], ["FOLLOW FOR TOMORROW", 3]]
+  }
+}

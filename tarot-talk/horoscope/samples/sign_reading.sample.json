@@ -1,0 +1,12 @@
+{
+  "sign": "Aries", "element": "fire", "date_label": "SUNDAY 22 NOV", "language": "english", "target_country": "Global",
+  "sky": "Moon in Aries until about 4:30 pm IST, trine Mars and Jupiter in Leo, opposite Venus in Libra. Sun enters Sagittarius.",
+  "shots": [
+    {"id": "hook", "vo": "Aries. Do not reply before four P M today.", "cues": [["L", "ARIES", "", 0], ["L", "DO NOT REPLY", "", 1], ["L", "BEFORE 4 PM", "", 4]]},
+    {"id": "why", "vo": "The Moon is in your sign. You feel bold, and someone will test it.", "cues": [["L", "MOON IN ARIES", "", 1], ["L", "YOU FEEL BOLD", "", 6], ["L", "SOMEONE TESTS IT", "", 10]]},
+    {"id": "meters", "vo": "Your day. Love, three out of five. Money, four. Work, five. Energy, five.", "cues": [["L", "YOUR DAY", "", 0], ["M", "LOVE", 3, 2], ["M", "MONEY", 4, 7], ["M", "WORK", 5, 9], ["M", "ENERGY", 5, 11]]},
+    {"id": "do", "vo": "Do make the first move at work. Do not argue at home.", "cues": [["C", "DO", "Make the first move at work", 0], ["C", "DON'T", "Argue at home tonight", 7]]},
+    {"id": "lucky", "vo": "Lucky colour, red. Lucky number, nine. Best time, after four P M.", "cues": [["L", "LUCKY TODAY", "", 0], ["K", "COLOUR", "RED", 1], ["K", "NUMBER", "9", 4], ["K", "BEST TIME", "AFTER 4 PM", 6]]},
+    {"id": "cta", "vo": "Send this to an Aries. Follow for tomorrow.", "cues": [["L", "SEND THIS TO", "", 0], ["L", "AN ARIES", "", 3], ["L", "FOLLOW FOR TOMORROW", "", 5]]}
+  ]
+}

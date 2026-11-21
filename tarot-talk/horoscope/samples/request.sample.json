@@ -1,0 +1,22 @@
+{
+  "format_version": "1.2",
+  "request_id": "hs-2026-11-22-001",
+  "called_by": "scheduler",
+  "requested_at_ist": "2026-11-21T14:00:00+05:30",
+  "time_limit_minutes": 45,
+
+  "horoscope": {
+    "period": "daily",
+    "date_from": "2026-11-22",
+    "date_to": "2026-11-22"
+  },
+
+  "audience": {
+    "target_country": "India",
+    "language": "hinglish"
+  },
+
+  "output": {
+    "type": "reel"
+  }
+}

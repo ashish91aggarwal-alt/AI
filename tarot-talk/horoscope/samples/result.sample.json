@@ -1,0 +1,21 @@
+{
+  "format_version": "1.0",
+  "request_id": "hs-2026-11-22-001",
+  "status": "done",
+  "started_at_ist": "2026-11-21T14:01:00+05:30",
+  "finished_at_ist": "2026-11-21T14:32:00+05:30",
+  "within_time_limit": true,
+  "files": [
+    { "kind": "reel", "path": "horoscope/output/hs-2026-11-22-001/aries_daily.mp4" },
+    { "kind": "cover", "path": "horoscope/output/hs-2026-11-22-001/aries_cover.png" },
+    { "kind": "caption", "path": "horoscope/output/hs-2026-11-22-001/caption.txt" }
+  ],
+  "checks": {
+    "text_matches_input": true,
+    "text_readable_on_phone": true,
+    "duration_ok": true,
+    "independent_review": "passed"
+  },
+  "notes": "",
+  "error": ""
+}
