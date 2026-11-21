@@ -159,9 +159,10 @@
   "by": "Outside-pages scout",
   "note": "7.4 s one-line reel at 3.9x with 22.5K shares; check the sound used.",
   "asked": "2026-11-21 16:28 IST",
-  "state": "queued",
-  "result": "",
-  "updated": "2026-11-21 16:28 IST"
+  "state": "ready-for-agent",
+  "result": "Read on the desktop: @costarastrology, no speech found, 115,441 likes, 176 comments.",
+  "updated": "2026-11-21 16:31 IST",
+  "handle": "costarastrology"
  },
  {
   "kind": "reel",
