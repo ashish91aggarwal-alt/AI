@@ -1,0 +1,17 @@
+{
+ "id": "instagram",
+ "name": "Instagram scout",
+ "job": "Looks at pages on Instagram in the PC browser, numbers first, and picks reels worth hearing.",
+ "status": "working",
+ "started": "2026-11-21 13:50 IST",
+ "updated": "2026-11-21 13:50 IST",
+ "step": "Starting.",
+ "did": [],
+ "findings": [],
+ "ideas": [],
+ "strategies": [],
+ "pages": [],
+ "queue_reels": [],
+ "next": [],
+ "problems": []
+}

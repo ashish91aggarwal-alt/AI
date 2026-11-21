@@ -1,0 +1,17 @@
+{
+ "id": "trends",
+ "name": "Trends agent",
+ "job": "Reads Google Trends for India in the PC browser: our topics, rising searches, what is trending now.",
+ "status": "working",
+ "started": "2026-11-21 13:50 IST",
+ "updated": "2026-11-21 13:50 IST",
+ "step": "Starting.",
+ "did": [],
+ "findings": [],
+ "ideas": [],
+ "strategies": [],
+ "pages": [],
+ "queue_reels": [],
+ "next": [],
+ "problems": []
+}

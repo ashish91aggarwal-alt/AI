@@ -91,7 +91,8 @@ function vResearch() {
     h("p", { class: "sub" }, "What other pages post, and what works for them."),
     h("h2", {}, "Profiles scouted"),
     h("div", { class: "pgrid" }, allProfiles().map(profileCard), h("a", { class: "pcard card add", href: "#research", onclick: e => { e.preventDefault(); state.rtab = "forward"; render(); } }, h("b", {}, "+"), h("span", {}, "Forward a page or reel"))),
-    ...(D.plan ? [h("h2", {}, "Research agent"), card("", h("div", { class: "qrow" }, h("div", { class: "sub" }, D.plan.note), pill(D.plan.agent, D.plan.agent === "working" ? "acc" : D.plan.agent === "not started" ? "wait" : "good")),
+    ...agentsBlock(),
+    ...(D.plan ? [h("h2", {}, "Research plan"), card("", h("div", { class: "qrow" }, h("div", { class: "sub" }, D.plan.note), pill(D.plan.agent, D.plan.agent === "working" ? "acc" : D.plan.agent === "not started" ? "wait" : "good")),
       ...D.plan.doing.map(t => h("div", { class: "planrow now" }, h("b", {}, "Now: " + t.what), h("span", { class: "sub" }, t.why))), ...D.plan.next.map((t, n) => h("div", { class: "planrow" }, h("b", {}, (n + 1) + ". " + t.what), h("span", { class: "sub" }, t.why))),
       D.plan.done.length ? fold("Done (" + D.plan.done.length + ")", D.plan.done.slice(0, 20).map(t => h("div", { class: "planrow" }, h("b", {}, t.what), h("span", { class: "sub" }, t.result || "")))) : null, h("div", { class: "sub", style: "margin-top:8px" }, "Updated " + D.plan.updated))] : []),
     h("h2", {}, "Potentials"),
@@ -173,6 +174,23 @@ function vStrategy() {
 
 /* ---------- ideas: content suggestions, each tied to a strategy and to what Instagram rewards ---------- */
 /* trends: written by the desktop app on a timer (no AI). Matching is by word only; what a trend is worth is the agent's call. */
+/* research agents: each writes its own file; this page only shows what they wrote */
+const AST = { working: ["working", "acc"], done: ["finished", "good"], stopped: ["stopped", "bad"] };
+function agentSheet(a) {
+  const rows = (t, list, f) => list && list.length ? [h("div", { class: "flabel" }, t + " (" + list.length + ")"), ...list.map(f)] : [];
+  sheet(a.name, h("div", { class: "qrow" }, h("h3", {}, a.name), pill((AST[a.status] || [a.status, "wait"])[0], (AST[a.status] || [0, "wait"])[1])), h("div", { class: "sub" }, a.job), reading(a.step, a.status === "working" ? "Doing now" : "Last step", true),
+    ...rows("What it did", a.did, d => h("div", { class: "planrow" }, h("b", {}, d.what), h("span", { class: "sub" }, d.result))),
+    ...rows("Findings", a.findings, f => h("div", { class: "planrow" }, h("b", {}, f.title), h("span", {}, f.detail), h("span", { class: "sub" }, (f.source || "") + (f.date ? " · " + f.date : "")))),
+    ...rows("Pages found", a.pages, p => h("div", { class: "planrow" }, h("b", {}, "@" + p.handle + (p.followers ? " · " + p.followers : "")), h("span", {}, p.why), h("span", { class: "sub" }, p.source || ""))),
+    ...rows("Strategies it proposes (not in the funnel until reviewed)", a.strategies, s => h("div", { class: "planrow" }, h("b", {}, s.name), h("span", {}, s.line), h("span", { class: "sub" }, s.evidence_note || ""))),
+    ...rows("Problems", a.problems, p => h("div", { class: "planrow" }, h("span", {}, typeof p === "string" ? p : p.what))),
+    ...rows("Wants to do next", a.next, n => h("div", { class: "planrow" }, h("b", {}, n.what), h("span", { class: "sub" }, n.why || ""))),
+    h("div", { class: "sub" }, "Started " + a.started + " · last wrote " + a.updated));
+}
+function agentsBlock() {
+  const A = D.agents || []; if (!A.length) return [];
+  return [h("h2", {}, "Research agents"), h("div", { class: "sgrid" }, A.map((a, i) => h("button", { class: "scard", style: "--i:" + i, onclick: () => agentSheet(a) }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("b", {}, a.name), h("span", { class: "kl" }, a.step), h("span", { class: "checks" }, [["findings", a.findings], ["ideas", a.ideas], ["pages", a.pages], ["strategies", a.strategies]].filter(x => x[1] && x[1].length).map(([t, l]) => h("span", { class: "chk y" }, l.length + " " + t))), h("span", { class: "sub" }, "last wrote " + a.updated)), pill((AST[a.status] || [a.status, "wait"])[0], (AST[a.status] || [0, "wait"])[1]))))];
+}
 function trendBlock() {
   const T = D.trends;
   if (!T) return [h("h2", { style: "margin-top:16px" }, "Trends"), h("p", { class: "sub" }, "The trend catcher has not run yet. It runs inside Tarot Talk Desk on the PC, a few times a day.")];
@@ -182,6 +200,7 @@ function trendBlock() {
     T.feed_error ? h("p", { class: "sub" }, "Google's trending feed could not be read at the last try (" + T.checked + "). The dates above are still right.") :
       T.matches.length ? h("div", { class: "stack" }, T.matches.map(m => card("", h("div", { class: "qrow" }, h("b", {}, m.title), pill(m.traffic ? m.traffic + " searches" : "trending", "acc")), m.news[0] ? h("div", { class: "sub" }, m.news[0]) : null, h("div", { class: "sub" }, "matched our word: " + m.matched)))) :
       h("p", { class: "sub" }, "Nothing in India's " + T.feed_count + " trending searches matches our " + T.words + " words right now. That is normal on most days."),
+    ...(() => { const ta = (D.agents || []).find(a => a.id === "trends"); return ta && ta.findings.length ? [h("h2", {}, "What India searches for in our field"), h("div", { class: "stack" }, ta.findings.map(f => card("", h("b", {}, f.title), h("div", { style: "font-size:14.5px;margin-top:4px" }, f.detail), h("div", { class: "sub", style: "margin-top:4px" }, (f.source || "") + (f.date ? " · read " + f.date : ""))))) ] : []; })(),
     T.matches_log && T.matches_log.length ? fold("Caught earlier (" + T.matches_log.length + ")", T.matches_log.map(m => h("div", { class: "planrow" }, h("b", {}, m.title), h("span", { class: "sub" }, "first seen " + (m.first_seen || "") + " · " + (m.traffic || ""))))) : null,
     T.top && T.top.length ? fold("Everything trending in India now", [h("div", { class: "checks" }, T.top.map(t => h("span", { class: "chk" }, t.title + (t.traffic ? " · " + t.traffic : ""))))]) : null,
     h("p", { class: "sub" }, "Checked " + T.checked + " by the desktop app, from Google's own Trending now feed and a calendar it works out itself. Moon dates are right to within about a day.")];
@@ -193,7 +212,7 @@ function vIdeas() {
     ...trendBlock(),
     h("h2", {}, "Content ideas"),
     h("p", { class: "sub" }, I.note),
-    h("div", { class: "sgrid" }, I.ideas.filter(x => x.status !== "dropped").map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why),
+    h("div", { class: "sgrid" }, I.ideas.concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ status: "new", borrowed_from: a.name, serves: "not stated", ...x, by: a.name })))).filter(x => x.status !== "dropped").map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why), x.post_by ? h("span", { class: "sub" }, "Post by: " + x.post_by) : null,
       h("span", { class: "checks" }, h("span", { class: "chk y" }, "Earns: " + x.serves), sobj(x.strategy) ? h("button", { class: "chk", style: "cursor:pointer;background:none;font:inherit;font-size:12.5px", onclick: () => stratSheet(sobj(x.strategy)) }, "Strategy: " + sname(x.strategy)) : null, h("span", { class: "chk" }, "From: " + x.borrowed_from))), pill(x.status, IS[x.status] || "wait")))),
     P2 ? h("h2", {}, "What Instagram rewards") : null, P2 ? h("p", { class: "sub" }, P2.note) : null,
     P2 ? h("div", { class: "stack" }, P2.notes.map(n => card("", h("div", { class: "qrow" }, h("b", {}, n.rule), pill(n.kind === "official" ? "said by Instagram" : "claim, not confirmed", n.kind === "official" ? "good" : "warn")), h("div", { style: "font-size:14.5px;margin-top:6px" }, "For us: " + n.for_us), h("div", { class: "sub", style: "margin-top:4px" }, n.said_by + " · read at " + n.read_at + " · " + n.date)))) : null

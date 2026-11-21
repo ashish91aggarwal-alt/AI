@@ -1,0 +1,17 @@
+{
+ "id": "similar",
+ "name": "Similar pages agent",
+ "job": "Finds pages like ours and like the ones we studied, in India and abroad, for the scout to look at.",
+ "status": "working",
+ "started": "2026-11-21 13:50 IST",
+ "updated": "2026-11-21 13:50 IST",
+ "step": "Starting.",
+ "did": [],
+ "findings": [],
+ "ideas": [],
+ "strategies": [],
+ "pages": [],
+ "queue_reels": [],
+ "next": [],
+ "problems": []
+}
