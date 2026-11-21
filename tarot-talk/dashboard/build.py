@@ -28,6 +28,7 @@ def main():
         x["score_parts"] = parts
         x["score"] = None if x["stage"] in ("parked", "rejected") else sum(p[1] for p in parts)
     data["strategies"] = S
+    data["trends"] = rd(SCOUT / "output" / "trends.json") if (SCOUT / "output" / "trends.json").exists() else None
     data["ideas"] = rd(HERE / "ideas.json") if (HERE / "ideas.json").exists() else None
     data["platform"] = rd(SCOUT / "platform.json") if (SCOUT / "platform.json").exists() else None
     plan = SCOUT / "research-plan.json"

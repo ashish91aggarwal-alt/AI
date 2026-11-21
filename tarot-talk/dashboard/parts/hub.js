@@ -172,11 +172,27 @@ function vStrategy() {
 }
 
 /* ---------- ideas: content suggestions, each tied to a strategy and to what Instagram rewards ---------- */
+/* trends: written by the desktop app on a timer (no AI). Matching is by word only; what a trend is worth is the agent's call. */
+function trendBlock() {
+  const T = D.trends;
+  if (!T) return [h("h2", { style: "margin-top:16px" }, "Trends"), h("p", { class: "sub" }, "The trend catcher has not run yet. It runs inside Tarot Talk Desk on the PC, a few times a day.")];
+  return [h("h2", { style: "margin-top:16px" }, "Coming up"),
+    h("div", { class: "upcoming" }, T.calendar.map(c => h("div", { class: "upc", title: c.source }, h("b", {}, c.in_days === 0 ? "today" : c.in_days === 1 ? "tomorrow" : "in " + c.in_days + " days"), h("span", {}, c.what), h("span", { class: "sub" }, c.date)))),
+    h("h2", {}, "Trending in India that touches our field"),
+    T.feed_error ? h("p", { class: "sub" }, "Google's trending feed could not be read at the last try (" + T.checked + "). The dates above are still right.") :
+      T.matches.length ? h("div", { class: "stack" }, T.matches.map(m => card("", h("div", { class: "qrow" }, h("b", {}, m.title), pill(m.traffic ? m.traffic + " searches" : "trending", "acc")), m.news[0] ? h("div", { class: "sub" }, m.news[0]) : null, h("div", { class: "sub" }, "matched our word: " + m.matched)))) :
+      h("p", { class: "sub" }, "Nothing in India's " + T.feed_count + " trending searches matches our " + T.words + " words right now. That is normal on most days."),
+    T.matches_log && T.matches_log.length ? fold("Caught earlier (" + T.matches_log.length + ")", T.matches_log.map(m => h("div", { class: "planrow" }, h("b", {}, m.title), h("span", { class: "sub" }, "first seen " + (m.first_seen || "") + " · " + (m.traffic || ""))))) : null,
+    T.top && T.top.length ? fold("Everything trending in India now", [h("div", { class: "checks" }, T.top.map(t => h("span", { class: "chk" }, t.title + (t.traffic ? " · " + t.traffic : ""))))]) : null,
+    h("p", { class: "sub" }, "Checked " + T.checked + " by the desktop app, from Google's own Trending now feed and a calendar it works out itself. Moon dates are right to within about a day.")];
+}
 function vIdeas() {
   const I = D.ideas, P2 = D.platform, IS = { new: "acc", picked: "good", made: "good", dropped: "wait" };
   const sname = id => (D.strategies.strategies.find(x => x.id === id) || { name: id }).name, sobj = id => D.strategies.strategies.find(x => x.id === id);
   return [
-    h("p", { class: "sub", style: "margin-top:14px" }, I.note),
+    ...trendBlock(),
+    h("h2", {}, "Content ideas"),
+    h("p", { class: "sub" }, I.note),
     h("div", { class: "sgrid" }, I.ideas.filter(x => x.status !== "dropped").map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why),
       h("span", { class: "checks" }, h("span", { class: "chk y" }, "Earns: " + x.serves), sobj(x.strategy) ? h("button", { class: "chk", style: "cursor:pointer;background:none;font:inherit;font-size:12.5px", onclick: () => stratSheet(sobj(x.strategy)) }, "Strategy: " + sname(x.strategy)) : null, h("span", { class: "chk" }, "From: " + x.borrowed_from))), pill(x.status, IS[x.status] || "wait")))),
     P2 ? h("h2", {}, "What Instagram rewards") : null, P2 ? h("p", { class: "sub" }, P2.note) : null,
@@ -279,7 +295,7 @@ function vDesk() {
       node("This desktop app", light, waiting + " waiting here · " + s.reels_today + (s.max_reels ? " of " + s.max_reels : "") + " reels read today"), h("i", { "aria-hidden": "true" }, "⇄"),
       node("Claude agent", forAgent ? [forAgent + " waiting", "warn"] : ["Nothing waiting", "wait"], "Starts only when a Claude session is asked. No schedule is set.")),
     s.busy ? wait("The app is working", (s.logs[s.logs.length - 1] || "").replace(/^\d\d:\d\d\s+/, "") || "Syncing with GitHub and checking the queue.") : null,
-    h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
+    h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Read trends now", run("trends")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
     fold("Claude sessions", sessionCards().slice(1), (D.sessions ? D.sessions.sessions : []).some(x => (x.compactions || 0) >= 1)),
     h("h3", { style: "margin-top:18px" }, "Add work"), card("", addBox),

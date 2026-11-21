@@ -11,7 +11,7 @@ Run:  pythonw -m tt_scout.desk     (the app: its own window, every control, the 
 """
 import datetime, json, os, pathlib, re, shutil, socket, subprocess, sys, tempfile, threading, time, urllib.request, webbrowser
 
-from . import cli
+from . import cli, trends
 
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 REEL = re.compile(r"https?://(?:www\.)?instagram\.com/(?:[A-Za-z0-9_.]+/)?(reel|reels|p)/([A-Za-z0-9_-]{5,40})")
@@ -136,7 +136,7 @@ class Desk:
         except subprocess.TimeoutExpired:
             return subprocess.CompletedProcess(args, 1, "", "git did not answer in 2 minutes (is it waiting for a sign-in?)")
 
-    OWN = ["instagram-scouting/input/queue.json", "instagram-scouting/output/desk-status.json", "instagram-scouting/output/cli-status.json", "instagram-scouting/input/cli-queue.json"]
+    OWN = ["instagram-scouting/input/queue.json", "instagram-scouting/output/desk-status.json", "instagram-scouting/output/cli-status.json", "instagram-scouting/input/cli-queue.json", "instagram-scouting/output/trends.json"]
 
     def own_paths(self):
         # page.json is rebuilt on this computer every time the dashboard is built (new transcripts change it), so it counts as this app's file too
@@ -340,9 +340,22 @@ class Desk:
             except Exception:
                 pass
 
+    def trend_round(self, force=False):
+        """The trend catcher: a few times a day, no AI. Its file is published like the app's other results."""
+        s = rd(self.sfile, {})
+        every = max(1, int(self.cfg.get("trend_hours", 6))) * 3600
+        if not force and time.time() - float(s.get("trend_at", 0)) < every:
+            return
+        try:
+            self.log(trends.run(self.root))
+        except Exception as e:
+            self.log("Trends: stopped by an error: " + str(e)[:160])
+        s = rd(self.sfile, {}); s["trend_at"] = time.time(); wr(self.sfile, s)
+
     def cycle(self):
         """One round: sync, take in new requests, do at most one job, publish if anything changed."""
         cli.sweep()
+        self.trend_round()                            # first, so trends are caught even when GitHub cannot be reached
         self.synced = self.pull()
         if not self.synced:
             return False
@@ -352,7 +365,7 @@ class Desk:
         worked = False if self.paused else self.work_one()
         self.status()
         after = json.dumps(self.load_queue(), sort_keys=True) + json.dumps([t["ok"] for t in self.tools()])
-        loose = bool(self.git("status", "--porcelain", "--", "instagram-scouting/input/queue.json", "instagram-scouting/output/*/cli/*.json").stdout.strip())   # links added here, or results written earlier, that were never sent
+        loose = bool(self.git("status", "--porcelain", "--", "instagram-scouting/input/queue.json", "instagram-scouting/output/trends.json", "instagram-scouting/output/*/cli/*.json").stdout.strip())   # links added here, or results written earlier, that were never sent
         if before != after or self.unpushed or loose:
             self.publish("Desk: queue and results")
         return worked
@@ -413,6 +426,8 @@ class App:
         d = self.desk
         if name == "check":
             self.wake.set(); return "Checking now."
+        if name == "trends":
+            threading.Thread(target=lambda: (d.trend_round(force=True), setattr(self, "rev", self.rev + 1), self.wake.set()), daemon=True).start(); return "Reading trends now."
         if name == "pause":
             d.paused = not d.paused; self.say("Paused." if d.paused else "Resumed."); self.wake.set(); return "Paused." if d.paused else "Resumed."
         if name == "add":
