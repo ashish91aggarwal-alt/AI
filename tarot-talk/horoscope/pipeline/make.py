@@ -117,14 +117,14 @@ def build(folder, sheet):
     if voice.startswith("chatterbox:"):   # free voice: make all lines in one model load (CPU, no credits)
         sh([os.environ.get("CB_PY", os.path.abspath(f"{HERE}/../cb/bin/python")), f"{HERE}/cb_tts.py", voice.split(":", 1)[1], f"{folder}/reading.json"])
     sh(["python3", f"{HERE}/sign_audio.py", folder, voice]); sh(["python3", f"{HERE}/" + ("sign2_video.py" if os.environ.get("HS_LOOK") == "v3" else "sign3_video.py"), folder])
-    TL = json.load(open(f"{folder}/timeline.json")); n = round(TL["total"] * 30); page = os.path.abspath(f"{folder}/sign.html")
-    parts = [(k * n // 3, (k + 1) * n // 3) for k in range(3)]
-    ps = [subprocess.Popen(["node", f"{HERE}/frames.js", page, f"{folder}/frames", "30", "1080", "1920", str(a), str(b)], stdout=subprocess.DEVNULL, stderr=subprocess.PIPE) for a, b in parts]
+    TL = json.load(open(f"{folder}/timeline.json")); FPS = os.environ.get("HS_FPS", "24"); n = round(TL["total"] * int(FPS)); page = os.path.abspath(f"{folder}/sign.html")
+    NP = max(2, os.cpu_count() or 2); parts = [(k * n // NP, (k + 1) * n // NP) for k in range(NP)]
+    ps = [subprocess.Popen(["node", f"{HERE}/frames.js", page, f"{folder}/frames", FPS, "1080", "1920", str(a), str(b)], stdout=subprocess.DEVNULL, stderr=subprocess.PIPE) for a, b in parts]
     for p in ps:
         if p.wait(): raise RuntimeError(p.stderr.read().decode()[-400:])
     base = f"{folder}/{R['date']}{'_week' if R.get('period') == 'weekly' else ''}_{R['sign'].lower()}"
     for wav, out in (("audio.wav", f"{base}.mp4"), ("audio_nomusic.wav", f"{base}_voice-only.mp4")):
-        sh(["ffmpeg", "-loglevel", "error", "-y", "-framerate", "30", "-i", f"{folder}/frames/f_%05d.jpg", "-i", f"{folder}/{wav}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+        sh(["ffmpeg", "-loglevel", "error", "-y", "-framerate", FPS, "-i", f"{folder}/frames/f_%05d.jpg", "-i", f"{folder}/{wav}", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-shortest", "-movflags", "+faststart", out])
     sh(["ffmpeg", "-loglevel", "error", "-y", "-i", f"{folder}/frames/f_00000.jpg", "-q:v", "2", f"{base}_cover.jpg"])
     ln = sh(["ffmpeg", "-hide_banner", "-i", f"{base}.mp4", "-af", "loudnorm=print_format=json", "-f", "null", "-"]).stderr
@@ -132,7 +132,7 @@ def build(folder, sheet):
     ok = abs(dur - TL["total"]) < 0.2 and -18 <= float(ln["input_i"]) <= -14 and float(ln["input_tp"]) <= -1 and all(s["cues"] for s in TL["shots"])
     if sheet:
         ts = [s["start"] + 0.8 * (s["end"] - s["start"]) for s in TL["shots"]]
-        sh(["ffmpeg", "-loglevel", "error", "-y", *sum([["-i", f"{folder}/frames/f_{min(round(t * 30), n - 1):05d}.jpg"] for t in ts], []), "-filter_complex",
+        sh(["ffmpeg", "-loglevel", "error", "-y", *sum([["-i", f"{folder}/frames/f_{min(round(t * int(FPS)), n - 1):05d}.jpg"] for t in ts], []), "-filter_complex",
             "".join(f"[{i}]scale=180:320[s{i}];" for i in range(len(ts))) + "".join(f"[s{i}]" for i in range(len(ts))) + f"hstack={len(ts)}", f"{folder}/sheet.jpg"])
     sh(["rm", "-rf", f"{folder}/frames"])
     res = dict(status="done" if ok else "check", sign=R["sign"], rashi=R["rashi"], date=R["date"], files=[os.path.basename(x) for x in (f"{base}.mp4", f"{base}_voice-only.mp4", f"{base}_cover.jpg")],

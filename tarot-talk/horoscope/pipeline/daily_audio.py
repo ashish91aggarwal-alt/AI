@@ -41,7 +41,8 @@ def tts(text, path):
     elif MODEL.startswith("chatterbox:"):   # free voice: lines are pre-made by cb_tts.py into the shared cache
         c = os.path.expanduser(f"~/.cache/horoscope-voice/{hashlib.sha1((MODEL + '|' + text).encode()).hexdigest()[:16]}.wav")
         if not os.path.exists(c): raise SystemExit("voice line not made yet (run cb_tts.py): " + text[:40])
-        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", c, "-ac", "1", "-ar", "24000", "-sample_fmt", "s16", path], check=True)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", c, "-af", f"silenceremove=stop_periods=-1:stop_duration=0.25:stop_threshold=-40dB,atempo={os.environ.get('HS_TEMPO', '1.12')}",
+                        "-ac", "1", "-ar", "24000", "-sample_fmt", "s16", path], check=True)   # cut long pauses, speak a little faster
     else:
         subprocess.run(["python3", "-m", "piper", "--model", MODEL, "--output_file", path, "--length-scale", "0.9"],
                        input=text.encode(), check=True, capture_output=True)
