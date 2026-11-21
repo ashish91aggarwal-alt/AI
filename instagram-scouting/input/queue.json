@@ -174,9 +174,9 @@
   "by": "Outside-pages scout",
   "note": "43.9M pinned list reel; need the spoken opening and the exact follow ask.",
   "asked": "2026-11-21 16:28 IST",
-  "state": "queued",
-  "result": "",
-  "updated": "2026-11-21 16:28 IST"
+  "state": "failed",
+  "result": "Tool error on this computer: ERROR: [Instagram] DJRjZt7zOuT: This content isn't available to everyone: It can't be seen by certain audiences.",
+  "updated": "2026-11-21 16:31 IST"
  },
  {
   "kind": "reel",

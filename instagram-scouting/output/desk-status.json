@@ -1,6 +1,6 @@
 {
  "day": "2026-11-21",
- "reels_today": 11,
+ "reels_today": 12,
  "seen": "2026-11-21 16:31 IST",
  "tools": [
   {
@@ -29,12 +29,12 @@
   }
  ],
  "queue": {
-  "queued": 4,
+  "queued": 3,
   "working": 0,
   "ready-for-agent": 11,
   "needs-agent": 0,
   "refused": 0,
-  "failed": 0,
+  "failed": 1,
   "done": 0
  },
  "note": "",
