@@ -676,5 +676,8 @@
    "One keyword, and what they get",
    9
   ]
- ]
+ ],
+ "schedule": {
+  "research": "Every day at 9:04 pm IST, by a scheduled task in Claude (created 21 Nov 2026)"
+ }
 }

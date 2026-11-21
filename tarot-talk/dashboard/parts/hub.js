@@ -299,7 +299,7 @@ function jobsBlock() {
     row("Dates coming up", "Worked out every time this page is built", "automatic", "good"),
     row("Trend catcher", "Every 6 hours, while the PC is on", T ? "last ran " + T.checked.slice(5, 16) : "not run yet", T && !T.feed_error ? "good" : "warn", T ? (T.feed_error ? "Google's feed could not be read at the last try." : T.feed_count + " trending searches read, " + T.matches.length + " in our field.") : "Starts when Tarot Talk Desk runs on the PC."),
     row("Reel fetch and sync", "Every 3 minutes, while the PC is on", dk ? "last seen " + String(dk.seen || "").slice(5, 16) : "not seen", dk ? "good" : "wait"),
-    row("Research helpers", "Only when started from a Claude chat", last ? "last ran " + last.slice(5, 16) : "never", "warn", "Not automatic yet. A daily scheduled task in Claude has to be created once by you; the chat that built this is not allowed to create it. The text to paste is in instagram-scouting/scheduled-agent-prompt.md."))];
+    W.schedule && W.schedule.research ? row("Research helpers", W.schedule.research, last ? "last ran " + last.slice(5, 16) : "not run yet", "good", "Research, new ideas and Instagram notes. The parts that look at Instagram and Google Trends need the laptop on with the Claude app open.") : row("Research helpers", "Only when started from a Claude chat", last ? "last ran " + last.slice(5, 16) : "never", "warn", "Not automatic yet. A daily scheduled task in Claude has to be created once."))];
 }
 function vCalendar() {
   const C = D.calendar || [], withDate = (D.ideas.ideas.concat((D.agents || []).flatMap(a => a.ideas || []))).filter(x => x.status !== "dropped" && x.post_by);
