@@ -2,6 +2,7 @@
 """Builds the Tarot Talk workspace dashboard (one self-contained file).
 Reads workspace.json here and the scouting results in ../../instagram-scouting/.   Usage: python3 tarot-talk/dashboard/build.py"""
 import base64, datetime, json, pathlib, subprocess, sys
+IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 HERE = pathlib.Path(__file__).resolve().parent
 SCOUT = HERE.parent.parent / "instagram-scouting"
@@ -28,6 +29,16 @@ def main():
         x["score_parts"] = parts
         x["score"] = None if x["stage"] in ("parked", "rejected") else sum(p[1] for p in parts)
     data["strategies"] = S
+    try:                                              # dates coming up, worked out here so the web page has them even when the PC is off
+        sys.path.insert(0, str(SCOUT)); from tt_scout import trends as _tr
+        _today = datetime.datetime.now(IST).date()
+        cal = _tr.moons(_today, 60) + _tr.number_dates(_today, 60)
+        for x in (rd(SCOUT / "trend-words.json").get("dates", []) if (SCOUT / "trend-words.json").exists() else []):
+            t = datetime.date.fromisoformat(str(x["date"]))
+            if 0 <= (t - _today).days <= 60: cal.append({"date": t.isoformat(), "in_days": (t - _today).days, "what": str(x["what"])[:120], "source": str(x.get("source", ""))[:160]})
+        data["calendar"] = sorted(cal, key=lambda c: c["date"])
+    except Exception as e:
+        data["calendar"] = []
     data["agents"] = [rd(p) for p in sorted((HERE / "agents").glob("*.json"))]
     data["trends"] = rd(SCOUT / "output" / "trends.json") if (SCOUT / "output" / "trends.json").exists() else None
     data["ideas"] = rd(HERE / "ideas.json") if (HERE / "ideas.json").exists() else None
