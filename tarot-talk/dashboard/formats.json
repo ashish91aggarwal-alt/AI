@@ -162,6 +162,139 @@
    "verdict": "not for us",
    "added": "2026-11-21",
    "by": "Instagram scout, one look on 21 Nov"
+  },
+  {
+   "name": "Two-second flash: pause on yours",
+   "kind": "format",
+   "seen_on": [
+    "sanctuarywrld"
+   ],
+   "numbers": "510K against a usual 79.6K (6.4x); 2.4 s; 1,844 shares",
+   "what": "A reel only two or three seconds long that flashes every sign in turn, each matched to a small picture. To find your own you must pause or let it loop.",
+   "for_us": "Flash mulank 1 to 9, each matched to a mithai, a chai or a festival, in our own drawn style; the caption says the full list so nobody is cheated.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "A meme format from abroad; it may not carry to a Hindi audience. Test one.",
+   "abroad": true
+  },
+  {
+   "name": "One relatable line over a calm clip, seven seconds",
+   "kind": "format",
+   "seen_on": [
+    "costarastrology",
+    "sanctuarywrld"
+   ],
+   "numbers": "costarastrology 1.3M against a usual 333.5K (3.9x), 22.5K shares; sanctuarywrld's versions sit near its usual 79.6K",
+   "what": "A single sentence about how one group feels in one situation, set over a few seconds of quiet footage. Nothing else happens.",
+   "for_us": "One Hinglish line per mulank over our own animated loop from the 2027 series (no stock clips of others). Cheap to make in batches of nine. Humour of this kind may not carry to a Hindi audience; test three first.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "abroad": true
+  },
+  {
+   "name": "One question, strangers answer on a mic",
+   "kind": "format",
+   "seen_on": [
+    "costarastrology"
+   ],
+   "numbers": "Top example is a paid brand trip",
+   "what": "The team asks passers-by one question about love and cuts the answers together; the subtitle of the best answer is the cover.",
+   "for_us": "Needs filming people outdoors. An animated version using answers followers send to a story question box is possible, grouped by mulank.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "The top example is a paid brand trip, so the numbers prove nothing.",
+   "abroad": true
+  },
+  {
+   "name": "Three-day planner card",
+   "kind": "format",
+   "seen_on": [
+    "sanctuarywrld"
+   ],
+   "numbers": "78.9K, right at the page's usual 79.6K (no lift seen)",
+   "what": "One still card listing Friday, Saturday and Sunday, each with the sky event and one line of advice.",
+   "for_us": "A Thursday-evening card: three days, one tarot card and one do-this line each. Made for saves; numbers abroad were ordinary, so judge it on our own saves.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "Only the cover was seen, and it showed no lift.",
+   "abroad": true
+  },
+  {
+   "name": "Tribute reel at the start of a group's month, with a part two",
+   "kind": "hook",
+   "seen_on": [
+    "notallgeminis"
+   ],
+   "numbers": "489K against a usual 191K (2.6x); part two 198K",
+   "what": "At the start of a sign's season, a long run of famous people of that sign, titled as that sign's 'history', with a second part promised.",
+   "for_us": "On the 1st, 10th, 19th and 28th style dates or at month start: famous Indians of one mulank, as names and our own drawings only, birth dates checked first. No celebrity footage.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "2.6 times usual, shares not measured, and mulank has no season.",
+   "abroad": true
+  },
+  {
+   "name": "Each group as a song",
+   "kind": "hook",
+   "seen_on": [
+    "notallgeminis"
+   ],
+   "numbers": "168K and 288K against a usual 191K (ordinary to 1.5x)",
+   "what": "A list reel that gives every sign one song by a popular singer.",
+   "for_us": "Each mulank as an old Hindi film song, named in text only, with our own music underneath. A sends idea; song titles as text, never the recordings.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "Only covers were seen. A meme format that may not carry.",
+   "abroad": true
+  },
+  {
+   "name": "Cover shows half the list, hides the rest",
+   "kind": "hook",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "pinned 43.9M against a usual 15.2K; 1.8M shares. Pinned, so the creator chose it; cause not proven",
+   "what": "A numbered list on the cover where the first two items are named and the last two are question marks.",
+   "for_us": "Cover: '2027 ke 4 din', two shown and two hidden, all four given inside the reel and again in the caption. Honest only if the hidden ones are really delivered.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "review_note": "Rests on one pinned reel that also opens on a secrecy tease, which we do not use.",
+   "abroad": false
+  },
+  {
+   "name": "'Secret' or 'adults only' tease to open a list",
+   "kind": "hook",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "43.9M (pinned); usual 15.2K",
+   "what": "The reel opens by hinting the list is secret or not for everyone, then shows ordinary items.",
+   "for_us": "Built on secrecy bait. Do not use.",
+   "verdict": "not for us",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "abroad": false
+  },
+  {
+   "name": "Joke about one community's surnames",
+   "kind": "hook",
+   "seen_on": [
+    "anuj.mp4"
+   ],
+   "numbers": "9.7M (pinned); usual 133.5K",
+   "what": "A sketch whose cover says a named community's surnames are out of hand.",
+   "for_us": "Mocks a group. Do not use, and do not make a 'mulank X log aise hote hain' joke that insults.",
+   "verdict": "not for us",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "abroad": false
   }
  ]
 }

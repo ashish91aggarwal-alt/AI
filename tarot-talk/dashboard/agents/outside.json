@@ -2,17 +2,591 @@
  "id": "outside",
  "name": "Outside-pages scout",
  "job": "Looks at pages outside our home ground: pages abroad in our field, and Indian pages outside it known for series and selling.",
- "status": "working",
+ "status": "done",
  "started": "2026-11-21 16:15 IST",
- "updated": "2026-11-21 16:15 IST",
- "step": "Starting.",
- "did": [],
- "findings": [],
- "ideas": [],
+ "updated": "2026-11-21 16:24 IST",
+ "step": "Finished: 6 pages and 12 reels looked at, no Instagram warning; formats, ideas and findings written.",
+ "did": [
+  "Read SKILL.md, the snippets, similar.json (groups c and d) and formats.json (12 formats already recorded).",
+  "Listed 6 reels tabs with the profile-list snippet and one cover sheet each: costarastrology, sanctuarywrld, notallgeminis, jakesastrology, technovert.yogi, anuj.mp4. All six handles exist.",
+  "Opened 12 reels (2 costarastrology, 3 sanctuarywrld, 1 notallgeminis, 1 jakesastrology, 3 technovert.yogi, 2 anuj.mp4): length, counters, caption ask, format; six with a strip of stills.",
+  "View only: no like, follow, comment, save or message. Nothing downloaded; no pictures stored.",
+  "Wrote 6 pages, 18 findings, 15 formats (3 marked not for us), 11 ideas, 6 reels for transcript.",
+  "Not done: sound, speech, comments, posting dates, photo posts. Cover sheets showed the newest 12 reels of each page only."
+ ],
+ "findings": [
+  {
+   "title": "costarastrology: 17 reels, usual 333.5K, two at 3x or more",
+   "detail": "1.9M followers. 17 reels listed, none pinned, median 333.5K. At 3x or more: DM_UBxkRexQ 1.3M (3.9x, one line of text over a clip of running horses) and C2QSEO0SF_e 1.2M (3.6x, interview on a train). About 9 of the 12 covers seen are street-mic interviews. Opinion: the page's repeated reel format is the interview, not the text posts it is known for.",
+   "source": "https://www.instagram.com/costarastrology/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "costarastrology meme reel: 7.4 seconds, shares far above comments",
+   "detail": "DM_UBxkRexQ: 1.3M views, 7.4 s, 115K likes, 176 comments, 3,891 reposts, 22.5K shares (about 1.7 shares per 100 views). Caption is three words naming one sign placement; no ask. Opinion: a relatable one-line feeling is sent, not discussed; good for sends, not for comments. One reel only.",
+   "source": "https://www.instagram.com/reel/DM_UBxkRexQ/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "costarastrology interview reel: 45.8 seconds, a brand trip",
+   "detail": "C2QSEO0SF_e: 1.2M views, 45.8 s, 61.7K likes, 1,453 comments (other two counters read 1 and 38; labels uncertain). Caption names a rail company and says they rode for five days. No ask. Opinion: strangers answering one question on camera holds attention; needs outdoor filming, so it is a later idea for us.",
+   "source": "https://www.instagram.com/reel/C2QSEO0SF_e/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "sanctuarywrld: 21 reels, usual 79.6K, one unpaid reel at 3x or more",
+   "detail": "1.4M followers. 21 reels listed, none pinned, median 79.6K. At 3x or more: DeAn0vZtoNU 681K (8.6x) and DYNoFG1xSSu 510K (6.4x). Most covers are a line of text over calm footage with the brand mark in one corner. Opinion: with 1.4M followers a usual 79.6K is low; follower count here says little about reel reach.",
+   "source": "https://www.instagram.com/sanctuarywrld/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "sanctuarywrld top reel is a sponsored one with almost no reactions",
+   "detail": "DeAn0vZtoNU: 681K views, 47.1 s, but only 632 likes and 8 comments. To-camera presenter listing signs as friendship 'green flags'; the caption promotes a streaming series with a link. Opinion: views this far above reactions look like paid reach, so this reel is not proof the format pulls on its own.",
+   "source": "https://www.instagram.com/reel/DeAn0vZtoNU/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "sanctuarywrld 2.4-second flash reel: 510K against a usual 79.6K",
+   "detail": "DYNoFG1xSSu: 510K views (6.4x), 2.4 s long, 8,776 likes, 254 comments, 181 reposts, 1,844 shares. Each sign flashes by matched to a cartoon bear; the caption only asks which one you are. Opinion: the viewer has to replay or pause to catch their own sign, which may be what lifts the view count; one reel, not proven.",
+   "source": "https://www.instagram.com/reel/DYNoFG1xSSu/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "sanctuarywrld pick-one reel: more comments than likes",
+   "detail": "DZqw_w2tFV1: 134K views (1.7x usual), 6.2 s, 1,530 likes, 2,159 comments, 6 reposts, 60 shares. Cover: pick a drink, get an affirmation; caption asks for a comment to receive one. Opinion: a promised personal reply draws comments even on a modest reel; views were not exceptional.",
+   "source": "https://www.instagram.com/reel/DZqw_w2tFV1/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "notallgeminis: 21 reels, usual 191K, nothing at 3x",
+   "detail": "508K followers. 21 reels listed, 1 pinned (C0fKon0yYLr, 429K), median of the rest 191K, best unpinned 489K (2.6x). Listed reels span several years, so reels are rare here. Covers repeat fixed titles: 'characters with [sign] energy' (4 of 12 seen), 'the signs as [singer] songs' (2). Opinion: steady views with no spikes; a fixed title gives a floor, not hits.",
+   "source": "https://www.instagram.com/notallgeminis/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "notallgeminis best reel: a 90-second tribute at the start of a sign's month",
+   "detail": "ClUpZ4kDBL6: 489K views (2.6x), 90 s, 26.2K likes, 290 comments (third counter 9, label uncertain). A run of famous people of one sign, posted as that sign's season began; caption promises a part two (which is also on the grid at 198K). Opinion: timing a tribute to the group's own month gives those viewers a reason to send it; it is built on celebrity footage we cannot reuse.",
+   "source": "https://www.instagram.com/reel/ClUpZ4kDBL6/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "jakesastrology: a weak page for reels",
+   "detail": "106K followers. 21 reels listed, mostly several years old, median 13.7K. At 3x or more: CiIYp2FpaHx 65.4K, CiIfbplvn9D 64.2K, ChfMHFUl8cI 62.1K, CnSD1VaoA9c 48.5K. CiIYp2FpaHx is 61.2 s of a TV clip labelled as the 'definition' of one sign (3,129 likes, 66 comments). Opinion: his bingo cards are photo posts and were not seen in this run; nothing here to borrow except the 'this person is exactly sign X' label, which relies on other people's footage.",
+   "source": "https://www.instagram.com/jakesastrology/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "technovert.yogi: three pinned reels carry the page",
+   "detail": "152K followers. 21 reels listed; 3 pinned at 2.9M, 9.2M and 43.9M; median of the other 18 is 15.2K. Unpinned at 3x or more: Dfe9UdwzdH3 298K, DfRrix2zuFM 139K, DfcVdNMMfLn 96.2K, DfW1HxmzF35 50.8K, DeoqfuKsV7t 46K. Opinion: the usual reel does about a tenth of the follower count; the pinned ones are old winners kept on top as a shop window.",
+   "source": "https://www.instagram.com/technovert.yogi/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "technovert.yogi 43.9M reel: 1.8M shares on a four-item list",
+   "detail": "DJRjZt7zOuT (pinned): 43.9M views, 23 s, 514K likes, 4,880 comments, 1.8M shares (about 4 per 100 views). Cover shows items 1 and 2 and hides 3 and 4 behind question marks. The reel opens on a 'secret / adults only' tease, shows the list as text, and ends asking for a follow; the caption writes out all four items, no keyword needed. Opinion: the list is given free and people forward it; the tease opening is bait and not something we should copy.",
+   "source": "https://www.instagram.com/reel/DJRjZt7zOuT/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "technovert.yogi 9.2M reel: a safety scare with a product",
+   "detail": "C7B3B54Sw6V (pinned): 9.2M views, 34.8 s, 125K likes, 575 comments (other counters unclear). Poster-style cover listing what is inside, with a comment-keyword box; caption warns about hidden cameras and names a gadget sold on a shopping site. Opinion: it works on worry. The poster cover is neutral; the fear angle is not for us.",
+   "source": "https://www.instagram.com/reel/C7B3B54Sw6V/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "technovert.yogi recent hit: shares above likes",
+   "detail": "Dfe9UdwzdH3: 298K views (about 20x the usual 15.2K), 13.9 s, 8,396 likes, 522 comments, 137 reposts, 8,786 shares. A quick 'this new tool is getting out of hand' demo. No comment keyword in the caption. Opinion: in the three reels opened, comment-to-DM selling was visible only as a box on one cover; this run does not confirm how he uses it.",
+   "source": "https://www.instagram.com/reel/Dfe9UdwzdH3/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "anuj.mp4: the two biggest unpinned reels are paid brand reels",
+   "detail": "162K followers. 21 reels listed; 3 pinned (9.7M, 2.7M, 2.6M); median of the rest 133.5K. Dfwv7JUMwy0: 27.4M views, 35 s, marked paid partnership, 15.4K likes, 131 comments. Dfr6Ky5OQbd: 4.8M views, 86.6 s, a brand's 'Episode 1', 3,275 likes, 25 comments. Opinion: millions of views with a few thousand likes point to paid reach; these two are not evidence of what the audience chose.",
+   "source": "https://www.instagram.com/anuj.mp4/reels/",
+   "date": "2026-11-21",
+   "kind": "page",
+   "correction": "Only one reel carries a paid-partnership label. The other two are judged paid from the caption and very low likes."
+  },
+  {
+   "title": "anuj.mp4 paid reel uses two characters with rhyming trait names",
+   "detail": "Dfwv7JUMwy0: split screen, the same actor as two named characters whose names carry their trait, doing a pose and then a phone demo. Opinion: the device (a trait turned into a named person, two of them side by side) is clear in two seconds and fits numbers as characters; the view count itself is bought.",
+   "source": "https://www.instagram.com/reel/Dfwv7JUMwy0/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "anuj.mp4 biggest pinned reel jokes about one community's surnames",
+   "detail": "DEU0V0kNrWf (pinned): 9.7M views; cover text says one community's surnames are 'getting out of hand'. Not opened. Opinion: jokes aimed at a named community travel, but that is mocking a group and is not for Tarot Talk.",
+   "source": "https://www.instagram.com/anuj.mp4/reels/",
+   "date": "2026-11-21",
+   "kind": "page"
+  },
+  {
+   "title": "Checked and not supported: big follower count means big reel views",
+   "detail": "Usual reel views as a share of followers: costarastrology 18%, sanctuarywrld 6%, notallgeminis 38%, jakesastrology 13%, technovert.yogi 10%, anuj.mp4 82%. Opinion: the two app-owned pages abroad are the weakest per follower; the meme page and the comedy page do best. Views are not adjusted for age and each list is only the latest 17 to 21 reels.",
+   "source": "https://www.instagram.com/sanctuarywrld/reels/",
+   "date": "2026-11-21",
+   "kind": "page",
+   "correction": "Only sanctuarywrld is the weakest; costarastrology does better than jakesastrology."
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Mulank flash: aap kaunsi mithai ho",
+   "hook": "Screen wahin roko jahan aapka mulank aaye, aur dekho 2027 mein aap kaunsi mithai ho.",
+   "format": "Two-to-three second flash reel, nine drawn cards, full list in the caption",
+   "strategy": "",
+   "borrowed_from": "@sanctuarywrld, DYNoFG1xSSu",
+   "serves": "watch time",
+   "why": "Their 2.4 s flash reel did 6.4x the page's usual. One reel on one page; the replay effect is my reading, not measured.",
+   "post_by": "Before New Year, by 28 Dec 2026",
+   "review_note": "Best evidence of this batch: an unpaid reel at 6.4 times that page's usual. A meme format from abroad, so test one before making nine."
+  },
+  {
+   "title": "Teen cup chai, ek message",
+   "hook": "Teen cup chai rakhe hain. Jo pehli nazar mein apna laga, usi mein aapka aaj ka card chhupa hai.",
+   "format": "Pick-one reel: three cups, each reveals a tarot card on screen; caption asks for one full line on what the card meant to you",
+   "strategy": "keyword-dm",
+   "borrowed_from": "@sanctuarywrld, DZqw_w2tFV1",
+   "serves": "likes",
+   "why": "Their pick-one reel got more comments than likes (2,159 against 1,530) on ordinary views. One reel; we ask for a sentence, not a single word.",
+   "post_by": "",
+   "status": "dropped",
+   "review_note": "Duplicate of the pick-a-card idea, and its evidence came from a one-word comment ask."
+  },
+  {
+   "title": "Ek line, ek mulank",
+   "hook": "Aaj Mulank 2 ne sabki fikr chhodi aur apni chai garam pi.",
+   "format": "Seven-second reel: one line over a calm animated loop from our own series; nine versions, one per mulank",
+   "strategy": "series",
+   "borrowed_from": "@costarastrology, DM_UBxkRexQ",
+   "serves": "sends",
+   "why": "Their one-line reel did 3.9x with 22.5K shares. One reel; this kind of dry humour is English-internet humour and may not land in Hinglish, so test three before making nine.",
+   "post_by": "",
+   "review_note": "Hook rewritten after review so it is ours, not a translation."
+  },
+  {
+   "title": "Har mulank ek purana gaana",
+   "hook": "Agar har mulank ek purana Hindi gaana hota, toh aapka gaana kaunsa hota? Apna number dekho.",
+   "format": "List reel, song titles as text only, our own music",
+   "strategy": "",
+   "borrowed_from": "@notallgeminis, DP4NBhnCVk9 and DGj0lzoJ8Lx",
+   "serves": "sends",
+   "why": "Seen twice on one page at ordinary views (168K and 288K against 191K). A floor, not a hit; the Bollywood swap is untested.",
+   "post_by": "",
+   "status": "dropped",
+   "review_note": "The reel behind it was not opened; only the cover was seen."
+  },
+  {
+   "title": "Mulank 5 energy",
+   "hook": "Shaadi mein jo sabse pehle dance floor pe pahunch jaaye, woh pakka mulank 5 energy hai.",
+   "format": "Weekly fixed-title reel with our own animated everyday characters, one mulank per week",
+   "strategy": "named-character",
+   "borrowed_from": "@notallgeminis, C0fKon0yYLr",
+   "serves": "sends",
+   "why": "Four of twelve covers on that page use this title and hold 166K to 429K. Steady, not spiking; their version leans on film clips, ours cannot.",
+   "post_by": "",
+   "status": "dropped",
+   "review_note": "Overlaps 'Mulank 4 wale log', and only the cover was seen."
+  },
+  {
+   "title": "Ek ji aur Aath ji: 2027 ka plan",
+   "hook": "Mulank 1 bola 'aaj hi shuru karte hain', mulank 8 bola 'pehle hisaab laga lo'. 2027 mein aap kiske saath ho?",
+   "format": "Split-screen skit with two named animated mulank characters; last line points to the personal-year report",
+   "strategy": "named-character",
+   "borrowed_from": "@anuj.mp4, Dfwv7JUMwy0",
+   "serves": "watch time",
+   "why": "The reel it comes from is a paid ad (27.4M views, 15.4K likes), so the views prove nothing. Borrowed for the device only.",
+   "post_by": "Dec 2026, inside the 2027 series",
+   "status": "dropped",
+   "review_note": "Duplicate of an idea already on the list."
+  },
+  {
+   "title": "2027 ke 4 din, do abhi do andar",
+   "hook": "2027 mein naya kaam shuru karne ke liye ank-shastra mein 4 din shubh maane jaate hain. Do cover pe hain, do reel ke andar.",
+   "format": "Half-hidden list cover; all four dates in the reel and in the caption; report offered for a personal list",
+   "strategy": "free-paid",
+   "borrowed_from": "@technovert.yogi, DJRjZt7zOuT",
+   "serves": "sends",
+   "why": "That reel is pinned at 43.9M with 1.8M shares against a usual 15.2K. A pinned winner on a tech page; the cover is one of several things it did. Say 'maane jaate hain', never promise results.",
+   "post_by": "By 25 Dec 2026",
+   "review_note": "Reworded after review: 'are considered auspicious', not a promise. The format behind it rests on one pinned reel."
+  },
+  {
+   "title": "Weekend card: teen din, teen line",
+   "hook": "Shukravaar, Shanivaar, Ravivaar: teen din, teen card, har din ke liye ek chhoti si salah.",
+   "format": "One still planner card as a short reel, posted every Thursday evening",
+   "strategy": "return-date",
+   "borrowed_from": "@sanctuarywrld, DaEgD7Nt7Sy",
+   "serves": "saves",
+   "why": "Their card did exactly the page's usual (78.9K), so there is no proof of lift. Worth one month's trial because it gives a weekly reason to return.",
+   "post_by": "Thursdays, 7 to 9 pm IST",
+   "status": "dropped",
+   "review_note": "Only the cover was seen, and the posting time has no basis."
+  },
+  {
+   "title": "Nau mulank, ek sawaal",
+   "hook": "Ek hi sawaal nau mulank walon se poocha: 2026 ne aapko kya sikhaya? Jawab sunke hairaan ho jaoge.",
+   "format": "Animated vox pop: answers collected through a story question box, voiced and drawn by us, grouped by mulank",
+   "strategy": "",
+   "borrowed_from": "@costarastrology, C2QSEO0SF_e",
+   "serves": "likes",
+   "why": "Interviews are that page's main reel type and the top one did 3.6x. Ours would be animated, not filmed, which is a different thing; untested.",
+   "post_by": "26 to 31 Dec 2026",
+   "status": "dropped",
+   "review_note": "Its evidence is a paid brand reel, and it promises a survey that has not been run."
+  },
+  {
+   "title": "Mulank ke mashhoor log, part 1",
+   "hook": "Is mulank ke itne mashhoor Bharatiya hain ki naam sunke aap kahoge, 'achha, yeh bhi!'",
+   "format": "Tribute reel with names and our own drawings, posted at the start of a month; part two promised and delivered",
+   "strategy": "series",
+   "borrowed_from": "@notallgeminis, ClUpZ4kDBL6",
+   "serves": "sends",
+   "why": "Best unpinned reel on that page (2.6x), with a part two at 1x. One page; every birth date must be checked from a reliable source before it goes out, and no celebrity photos or clips.",
+   "post_by": "1st of the month",
+   "review_note": "Weak evidence: 2.6 times the page's usual, shares not measured, and mulank has no 'month' like a zodiac sign."
+  },
+  {
+   "title": "Poori list caption mein",
+   "hook": "Mulank 1 se 9 tak 2027 ka ek ek shabd. Poori list neeche caption mein hai, save kar lo.",
+   "format": "Short list reel; the free list is complete in the caption; only the detailed report goes through the comment-to-DM",
+   "strategy": "free-paid",
+   "borrowed_from": "@technovert.yogi, DJRjZt7zOuT",
+   "serves": "saves",
+   "why": "Their biggest reel gives the whole list in the caption and still got 514K likes. One reel; it shows giving the free part away did not hurt it, not that it caused the reach.",
+   "post_by": "By 31 Dec 2026",
+   "status": "dropped",
+   "review_note": "Duplicate of the 'reel as cover' idea."
+  }
+ ],
  "strategies": [],
- "pages": [],
- "queue_reels": [],
- "formats": [],
- "next": [],
- "problems": []
+ "pages": [
+  {
+   "handle": "costarastrology",
+   "why": "Abroad, astrology app page. Reels are mostly street-mic interviews on love; one text-over-clip meme is its second-biggest reel. 17 reels listed, median 333.5K.",
+   "followers": "1.9M",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  },
+  {
+   "handle": "sanctuarywrld",
+   "why": "Abroad, astrology app page. Short text-over-calm-footage reels, pick-one reels and a 2-second flash reel. 21 reels listed, median 79.6K.",
+   "followers": "1.4M",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  },
+  {
+   "handle": "notallgeminis",
+   "why": "Abroad, astrology meme page. Fixed-title reels ('characters with X energy', 'signs as songs'). Posts reels rarely. 21 listed, median 191K.",
+   "followers": "508K",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  },
+  {
+   "handle": "jakesastrology",
+   "why": "Abroad, one astrologer. Reels are old reposted clips; the bingo cards he is known for are photo posts, not reels, and were not read. 21 listed, median 13.7K. Weak page for reel lessons.",
+   "followers": "106K",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  },
+  {
+   "handle": "technovert.yogi",
+   "why": "Indian tech page outside our field. Three pinned list reels (2.9M, 9.2M, 43.9M) against a usual 15.2K; half-hidden list covers; full list given free in the caption.",
+   "followers": "152K",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  },
+  {
+   "handle": "anuj.mp4",
+   "why": "Indian comedy page outside our field. POV sketches and two-character split screens; its two biggest unpinned reels are paid brand reels. 21 listed, median 133.5K.",
+   "followers": "162K",
+   "source": "seen on Instagram 2026-11-21",
+   "sure": "yes"
+  }
+ ],
+ "queue_reels": [
+  {
+   "id": "DYNoFG1xSSu",
+   "handle": "sanctuarywrld",
+   "url": "https://www.instagram.com/reel/DYNoFG1xSSu/",
+   "why": "2.4 s flash reel at 6.4x; need the sound to know whether audio or the flash carries it."
+  },
+  {
+   "id": "DM_UBxkRexQ",
+   "handle": "costarastrology",
+   "url": "https://www.instagram.com/reel/DM_UBxkRexQ/",
+   "why": "7.4 s one-line reel at 3.9x with 22.5K shares; check the sound used."
+  },
+  {
+   "id": "DJRjZt7zOuT",
+   "handle": "technovert.yogi",
+   "url": "https://www.instagram.com/reel/DJRjZt7zOuT/",
+   "why": "43.9M pinned list reel; need the spoken opening and the exact follow ask."
+  },
+  {
+   "id": "C2QSEO0SF_e",
+   "handle": "costarastrology",
+   "url": "https://www.instagram.com/reel/C2QSEO0SF_e/",
+   "why": "Top interview reel; need the question asked and how answers are cut."
+  },
+  {
+   "id": "ClUpZ4kDBL6",
+   "handle": "notallgeminis",
+   "url": "https://www.instagram.com/reel/ClUpZ4kDBL6/",
+   "why": "90 s tribute, best unpinned on the page; how it holds for 90 seconds is not known."
+  },
+  {
+   "id": "Dfwv7JUMwy0",
+   "handle": "anuj.mp4",
+   "url": "https://www.instagram.com/reel/Dfwv7JUMwy0/",
+   "why": "Two-character split-screen script; paid reel, wanted for structure only."
+  }
+ ],
+ "formats": [
+  {
+   "name": "Two-second flash: pause on yours",
+   "kind": "format",
+   "seen_on": [
+    "sanctuarywrld"
+   ],
+   "numbers": "510K against a usual 79.6K (6.4x); 2.4 s; 1,844 shares",
+   "what": "A reel only two or three seconds long that flashes every sign in turn, each matched to a small picture. To find your own you must pause or let it loop.",
+   "for_us": "Flash mulank 1 to 9, each matched to a mithai, a chai or a festival, in our own drawn style; the caption says the full list so nobody is cheated.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Pick one, get a personal line back",
+   "kind": "selling",
+   "seen_on": [
+    "sanctuarywrld"
+   ],
+   "numbers": "134K against a usual 79.6K (1.7x); 2,159 comments against 1,530 likes",
+   "what": "The cover shows three or four objects; the viewer names one and the page answers with a short affirmation.",
+   "for_us": "Three chai cups or three diyas, each tied to a tarot card; ask for a full sentence (which one and why), and let the auto-DM send the message plus the report link. Not a bare one-word comment.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "One relatable line over a calm clip, seven seconds",
+   "kind": "format",
+   "seen_on": [
+    "costarastrology",
+    "sanctuarywrld"
+   ],
+   "numbers": "costarastrology 1.3M against a usual 333.5K (3.9x), 22.5K shares; sanctuarywrld's versions sit near its usual 79.6K",
+   "what": "A single sentence about how one group feels in one situation, set over a few seconds of quiet footage. Nothing else happens.",
+   "for_us": "One Hinglish line per mulank over our own animated loop from the 2027 series (no stock clips of others). Cheap to make in batches of nine. Humour of this kind may not carry to a Hindi audience; test three first.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "One question, strangers answer on a mic",
+   "kind": "format",
+   "seen_on": [
+    "costarastrology"
+   ],
+   "numbers": "about 9 of 12 covers seen; top one 1.2M against a usual 333.5K (3.6x)",
+   "what": "The team asks passers-by one question about love and cuts the answers together; the subtitle of the best answer is the cover.",
+   "for_us": "Needs filming people outdoors. An animated version using answers followers send to a story question box is possible, grouped by mulank.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Three-day planner card",
+   "kind": "format",
+   "seen_on": [
+    "sanctuarywrld"
+   ],
+   "numbers": "78.9K, right at the page's usual 79.6K (no lift seen)",
+   "what": "One still card listing Friday, Saturday and Sunday, each with the sky event and one line of advice.",
+   "for_us": "A Thursday-evening card: three days, one tarot card and one do-this line each. Made for saves; numbers abroad were ordinary, so judge it on our own saves.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Tribute reel at the start of a group's month, with a part two",
+   "kind": "hook",
+   "seen_on": [
+    "notallgeminis"
+   ],
+   "numbers": "489K against a usual 191K (2.6x); part two 198K",
+   "what": "At the start of a sign's season, a long run of famous people of that sign, titled as that sign's 'history', with a second part promised.",
+   "for_us": "On the 1st, 10th, 19th and 28th style dates or at month start: famous Indians of one mulank, as names and our own drawings only, birth dates checked first. No celebrity footage.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Fixed title: 'characters with X energy'",
+   "kind": "format",
+   "seen_on": [
+    "notallgeminis"
+   ],
+   "numbers": "pinned one 429K, others 166K to 285K against a usual 191K (steady, no spike)",
+   "what": "The same title card every time, with only the sign changed, over film characters who behave like that sign.",
+   "for_us": "Same title every week, 'Mulank 5 energy', over our own animated everyday Indian characters (the cousin first on the dance floor, the aunt who plans everything). Their version uses film clips; ours must not.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "Each group as a song",
+   "kind": "hook",
+   "seen_on": [
+    "notallgeminis"
+   ],
+   "numbers": "168K and 288K against a usual 191K (ordinary to 1.5x)",
+   "what": "A list reel that gives every sign one song by a popular singer.",
+   "for_us": "Each mulank as an old Hindi film song, named in text only, with our own music underneath. A sends idea; song titles as text, never the recordings.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Cover shows half the list, hides the rest",
+   "kind": "hook",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "pinned 43.9M against a usual 15.2K; 1.8M shares. Pinned, so the creator chose it; cause not proven",
+   "what": "A numbered list on the cover where the first two items are named and the last two are question marks.",
+   "for_us": "Cover: '2027 ke 4 din', two shown and two hidden, all four given inside the reel and again in the caption. Honest only if the hidden ones are really delivered.",
+   "verdict": "use",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Whole list free in the caption, follow asked at the end",
+   "kind": "selling",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "43.9M reel: caption writes out all four items; 514K likes, 1.8M shares",
+   "what": "Nothing is held back behind a keyword: the caption carries the full list, and the last seconds ask for a follow with the profile shown on screen.",
+   "for_us": "Give the free part whole in the caption, and keep the comment-to-DM only for the paid report. Fits our free-then-paid plan and avoids asking for a comment just to get basics.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "Two traits as two named characters, side by side",
+   "kind": "format",
+   "seen_on": [
+    "anuj.mp4"
+   ],
+   "numbers": "27.4M against a usual 133.5K, but a paid partnership with 15.4K likes, so reach is bought",
+   "what": "One actor plays two characters on a split screen; each character's name says its trait, and they do the same task in different ways.",
+   "for_us": "Two mulank as two named animated characters (for example a hasty 1 and a careful 8) handling the same 2027 situation. Fits the animated series; judge it on our numbers, not theirs.",
+   "verdict": "try",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "Brand-style numbered mini show",
+   "kind": "format",
+   "seen_on": [
+    "anuj.mp4"
+   ],
+   "numbers": "4.8M against a usual 133.5K, but a brand reel with 3,275 likes and 25 comments",
+   "what": "A titled show with 'Episode 1' in the caption and a named lead character, made with a sponsor.",
+   "for_us": "Our 2027 series already has this shape; the only thing to take is naming the episode number in the first caption line.",
+   "verdict": "later",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "'Secret' or 'adults only' tease to open a list",
+   "kind": "hook",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "43.9M (pinned); usual 15.2K",
+   "what": "The reel opens by hinting the list is secret or not for everyone, then shows ordinary items.",
+   "for_us": "Built on secrecy bait. Do not use.",
+   "verdict": "not for us",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  },
+  {
+   "name": "Safety scare that ends in a product",
+   "kind": "selling",
+   "seen_on": [
+    "technovert.yogi"
+   ],
+   "numbers": "9.2M (pinned); usual 15.2K",
+   "what": "A warning about a hidden danger, then a gadget to buy and a comment keyword.",
+   "for_us": "Built on fear. Do not use; our reports are sold on curiosity and planning, not worry.",
+   "verdict": "not for us",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": false,
+   "review_note": "Not added: the reviewer found it is the same as a format already recorded, or it rests on a paid reel."
+  },
+  {
+   "name": "Joke about one community's surnames",
+   "kind": "hook",
+   "seen_on": [
+    "anuj.mp4"
+   ],
+   "numbers": "9.7M (pinned); usual 133.5K",
+   "what": "A sketch whose cover says a named community's surnames are out of hand.",
+   "for_us": "Mocks a group. Do not use, and do not make a 'mulank X log aise hote hain' joke that insults.",
+   "verdict": "not for us",
+   "added": "2026-11-21",
+   "by": "Outside-pages scout, one look on 21 Nov",
+   "in_list": true
+  }
+ ],
+ "next": [
+  "Look at jakesastrology's bingo cards and costarastrology's text posts: they are photo posts, which this run's tools do not read.",
+  "Second look at the same six reels tabs on another day to see which reels are still growing.",
+  "Check whether the flash reel and the pick-one reel exist on at least three Indian pages before either is called verified.",
+  "Open one unpaid anuj.mp4 hit (DfgzLcXMRQZ, 825K) and dannyypandit for a fixed-title series; not done, the profile and reel limits were reached.",
+  "Independent review of the formats list before any of it shapes the 2027 series."
+ ],
+ "problems": [
+  "No login wall, challenge or warning from Instagram in this run.",
+  "Single-reel links opened in the Reels viewer, which loads other reels underneath; counters were read from the first reel only, and where fewer than four numbers showed the labels are uncertain.",
+  "sanctuarywrld's and anuj.mp4's biggest reels are sponsored, so their view counts are not a guide to what viewers chose."
+ ],
+ "reviewed": "2026-11-21: independently reviewed; corrections applied, not re-reviewed"
 }

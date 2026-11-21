@@ -281,7 +281,7 @@ function trendsEvidence() { return D.trends ? trendBlock().slice(2) : trendBlock
 function vIdeas() {
   const I = D.ideas, IS = { new: "acc", picked: "good", made: "good", dropped: "wait" };
   const sname = id => (D.strategies.strategies.find(x => x.id === id) || { name: id }).name, sobj = id => D.strategies.strategies.find(x => x.id === id);
-  const SRC = { trends: "search", instagram: "page", similar: "page", methods: "method" };
+  const SRC = { trends: "search", instagram: "page", similar: "page", methods: "method", outside: "page" };
   const all = I.ideas.map(x => ({ src: /@|page/i.test(x.borrowed_from || "") ? "page" : "method", ...x })).concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ src: SRC[a.id] || "method", added: (a.started || "").slice(0, 10), ...x })))).filter(x => x.status !== "dropped"), top = all.filter(x => x.pick).length;
   return [
     h("p", { class: "sub", style: "margin-top:14px" }, "What to post. Each card has the opening line, how to make it, and when to post it. All are untested until made."),
@@ -338,8 +338,8 @@ function vInsta() {
     h("p", { class: "sub", style: "margin-top:14px" }, F.note),
     seg([["all", "All", F.items.length], ["format", "Formats", F.items.filter(x => x.kind === "format").length], ["hook", "Hooks", F.items.filter(x => x.kind === "hook").length], ["selling", "Selling", F.items.filter(x => x.kind === "selling").length]], state.fkind, k => { state.fkind = k; render(); }),
     h("div", { class: "sgrid" }, list.slice().sort((a, b) => order.indexOf(a.verdict) - order.indexOf(b.verdict)).map((x, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" },
-      h("span", { class: "qrow" }, h("span", { class: "tag2" }, K[x.kind] || x.kind), pill((V[x.verdict] || [x.verdict, "wait"])[0], (V[x.verdict] || [0, "wait"])[1])), h("b", {}, x.name), h("span", { class: "kl" }, x.what), h("span", { class: "chk y", style: "align-self:flex-start" }, x.numbers),
-      reading(x.for_us, "For us", true), h("span", { class: "checks" }, x.seen_on.map(p => D.pages[p] ? h("a", { class: "chk", href: "#p-" + p, style: "text-decoration:none" }, "@" + p) : h("a", { class: "chk", href: "https://www.instagram.com/" + p + "/", target: "_blank", rel: "noopener", style: "text-decoration:none" }, "@" + p))), h("span", { class: "sub" }, x.by)))))
+      h("span", { class: "qrow" }, h("span", { style: "display:flex;gap:6px;flex-wrap:wrap" }, h("span", { class: "tag2" }, K[x.kind] || x.kind), x.abroad ? h("span", { class: "tag2" }, "abroad") : null, isNew(x.added) ? h("span", { class: "pill acc" }, "new") : null), pill((V[x.verdict] || [x.verdict, "wait"])[0], (V[x.verdict] || [0, "wait"])[1])), h("b", {}, x.name), h("span", { class: "kl" }, x.what), h("span", { class: "chk y", style: "align-self:flex-start" }, x.numbers),
+      reading(x.for_us, "For us", true), x.review_note ? h("span", { class: "rnote" }, "Reviewer: " + x.review_note) : null, h("span", { class: "checks" }, x.seen_on.map(p => D.pages[p] ? h("a", { class: "chk", href: "#p-" + p, style: "text-decoration:none" }, "@" + p) : h("a", { class: "chk", href: "https://www.instagram.com/" + p + "/", target: "_blank", rel: "noopener", style: "text-decoration:none" }, "@" + p))), h("span", { class: "sub" }, x.by)))))
   ];
 }
 function vMore() {
