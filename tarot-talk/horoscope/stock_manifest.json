@@ -1,12 +1,68 @@
-{"note": "Approved clip library (all 15 passed the independent review, 21 Nov 2026). Files live outside the public repo; keep them as stock/hs_stock_<slot>_<id>.mp4 and pass HS_STOCK=<folder>. Pexels files: videos.pexels.com/video-files/<id>/<file>. AI scenes were made with ElevenLabs gpt-image-2.5-sunburst (flow 'Tarot Talk horoscope scenes') and turned into 8 s slow-push clips.",
+{
+ "note": "Approved clip library (all 15 passed the independent review, 21 Nov 2026). Files live outside the public repo; keep them as stock/hs_stock_<slot>_<id>.mp4 and pass HS_STOCK=<folder>. Pexels files: videos.pexels.com/video-files/<id>/<file>. AI scenes were made with ElevenLabs gpt-image-2.5-sunburst (flow 'Tarot Talk horoscope scenes') and turned into 8 s slow-push clips.",
  "rules": "CLIP_RULES.md",
- "slots": {"hook": {"source": "AI", "what": "smiling Indian woman laying tarot cards by a diya and candles"},
-  "work": {"pexels": 8061668, "file": "8061668-hd_720_1280_25fps.mp4"}, "friends": {"pexels": 8098143, "file": "8098143-hd_720_1280_25fps.mp4"},
-  "family": {"source": "AI", "what": "Indian couple doing the household budget at home (diary, calculator, rupees)"},
-  "kids": {"pexels": 9346238, "file": "9346238-hd_720_1280_24fps.mp4"}, "decide": {"pexels": 9198720, "file": "9198720-hd_720_1280_25fps.mp4"},
-  "love": {"pexels": 40120426, "file": "17130028_720_1280_30fps.mp4"}, "travel": {"source": "AI", "what": "happy Indian woman at a sunny plane window"},
-  "remedy": {"pexels": 9346262, "file": "9346262-hd_720_1280_24fps.mp4"}, "happy": {"pexels": 9346286, "file": "9346286-hd_720_1280_24fps.mp4"},
-  "sad": {"pexels": 6961732, "file": "6961732-hd_720_1280_24fps.mp4"}, "fun": {"pexels": 40120936, "file": "17130395_720_1280_60fps.mp4"},
-  "serious": {"pexels": 7581308, "file": "7581308-hd_720_1280_30fps.mp4"}, "encouraging": {"pexels": 9198655, "file": "9198655-hd_720_1280_25fps.mp4"},
-  "money": {"pexels": 40079993, "file": "17109935_720_1280_30fps.mp4"}},
- "lessons": "Pexels has little Indian footage for specific situations (family money, Indian travel, tarot). When 2 rounds of stock fail review, make the scene with AI image + slow push instead of rewording the line to fit a weak clip."}
+ "slots": {
+  "hook": {
+   "source": "AI",
+   "what": "smiling Indian woman laying tarot cards by a diya and candles"
+  },
+  "work": {
+   "pexels": 8061668,
+   "file": "8061668-hd_720_1280_25fps.mp4"
+  },
+  "friends": {
+   "pexels": 8098143,
+   "file": "8098143-hd_720_1280_25fps.mp4"
+  },
+  "family": {
+   "source": "AI",
+   "what": "Indian couple doing the household budget at home (diary, calculator, rupees)"
+  },
+  "kids": {
+   "source": "AI",
+   "what": "Indian mother gently taking the phone from her smiling son at home"
+  },
+  "decide": {
+   "source": "AI",
+   "what": "Indian woman at her desk with a diary, smiling as she decides"
+  },
+  "love": {
+   "pexels": 40120426,
+   "file": "17130028_720_1280_30fps.mp4"
+  },
+  "travel": {
+   "source": "AI",
+   "what": "happy Indian woman at a sunny plane window"
+  },
+  "remedy": {
+   "pexels": 9346262,
+   "file": "9346262-hd_720_1280_24fps.mp4"
+  },
+  "happy": {
+   "pexels": 9346286,
+   "file": "9346286-hd_720_1280_24fps.mp4"
+  },
+  "sad": {
+   "pexels": 6961732,
+   "file": "6961732-hd_720_1280_24fps.mp4"
+  },
+  "fun": {
+   "pexels": 40120936,
+   "file": "17130395_720_1280_60fps.mp4"
+  },
+  "serious": {
+   "pexels": 7581308,
+   "file": "7581308-hd_720_1280_30fps.mp4"
+  },
+  "encouraging": {
+   "pexels": 9198655,
+   "file": "9198655-hd_720_1280_25fps.mp4"
+  },
+  "money": {
+   "pexels": 40079993,
+   "file": "17109935_720_1280_30fps.mp4"
+  }
+ },
+ "lessons": "Pexels has little Indian footage for specific situations (family money, Indian travel, tarot). When 2 rounds of stock fail review, make the scene with AI image + slow push instead of rewording the line to fit a weak clip.",
+ "look_v3": "Full-screen scenes (vertical clips scaled, landscape shown whole over a blurred copy), one colour grade, face check moves text away from faces, English on-screen text, black galaxy with gold accents (Sakshi, 21 Nov 2026)."
+}

@@ -24,9 +24,14 @@ def at(vo, text, start, fallback):
         if len(p) >= 2 and (ws[i].startswith(p) or (len(ws[i]) >= 2 and p.startswith(ws[i]))): return text, i
     return text, min(max(fallback, start), len(ws) - 1)
 
+EN_AREA = dict(work="WORK", friends="FRIENDS", family="FAMILY", kids="KIDS", decide="BIG DECISIONS", love="LOVE", travel="TRAVEL")
+EN_DAY = "MON TUE WED THU FRI SAT SUN".split(); EN_MON = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split()
+EN_COL = {"सफेद": "WHITE", "गुलाबी": "PINK", "लाल": "RED", "पीला": "YELLOW", "हरा": "GREEN", "नीला": "BLUE", "नारंगी": "ORANGE", "बैंगनी": "PURPLE", "सुनहरा": "GOLD"}
+EN_WDAY = dict(zip("सोमवार मंगलवार बुधवार गुरुवार शुक्रवार शनिवार रविवार".split(), "MONDAY TUESDAY WEDNESDAY THURSDAY FRIDAY SATURDAY SUNDAY".split()))
+def en_time(t): return re.sub(r"शाम (\d+) के बाद", lambda m: f"AFTER {m.group(1)} PM", re.sub(r"सुबह (\d+) से पहले", lambda m: f"BEFORE {m.group(1)} AM", t))
 def joinh(xs): return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " और " + xs[-1]
 
-def reading(key, e, date, voice, date_to=None):
+def reading(key, e, date, voice, date_to=None, en=True):
     sign, rashi, elem = RASHI[key]; shots = []; wk = bool(date_to)
     hooks = {}
     for h in e.get("hooks", []): hooks.setdefault(h[0], []).append(h[1:])   # [after, tone, voice, line1, (line2)]
@@ -39,7 +44,7 @@ def reading(key, e, date, voice, date_to=None):
     vo, *ls = e["hook"]; n = len(vo.split()); c = [["L", ls[0], "", 0]]
     t, i = at(vo, ls[1], 1, n // 3); c.append(["L", t, "", i]); t, j = at(vo, ls[2], i + 1, 2 * n // 3); c.append(["L", t, "", j])
     shots.append(dict(id="hook", scene="hook", vo=vo, cues=c)); tone_shots("hook")
-    sc = e["scores"]; lab = ["लव", "पैसा", "काम", "एनर्जी"]; head = "इस हफ्ते" if wk else "आपका दिन"
+    sc = e["scores"]; lab = ["LOVE", "MONEY", "WORK", "ENERGY"] if en else ["लव", "पैसा", "काम", "एनर्जी"]; head = ("THIS WEEK" if wk else "YOUR DAY") if en else ("इस हफ्ते" if wk else "आपका दिन")
     shots.append(dict(id="meters", scene="meters", vo=f"{'इस हफ्ते' if wk else 'आपका दिन'}। लव, पाँच में {NUM[sc[0]]}। पैसा, {NUM[sc[1]]}। काम, {NUM[sc[2]]}। एनर्जी, {NUM[sc[3]]}।",
                       cues=[["L", head, "", 0]] + [["M", lab[k], sc[k], [2, 6, 8, 10][k]] for k in range(4)]))
     tone_shots("meters")
@@ -49,32 +54,41 @@ def reading(key, e, date, voice, date_to=None):
         bad = [DAYS[x.weekday()] for x, m, _ in mk if m == "stop"] or [DAYS[x.weekday()] for x, m, _ in mk if m == "care"]
         vo = f"इस हफ्ते बढ़िया दिन, {joinh(g)}।" + (f" संभल के रहना, {joinh(bad)}।" if bad else "")
         n1 = len(f"इस हफ्ते बढ़िया दिन,".split())
-        c = [["T", "हफ्ते के दिन", "", 0], ["D", [[SDAY[x.weekday()], m] for x, m, _ in mk], "", 0],
-             ["L", "बढ़िया: " + " · ".join(x[:-3] if x.endswith("वार") else x for x in g), "", n1]]
-        if bad: c.append(["L", "संभलें: " + " · ".join(x[:-3] if x.endswith("वार") else x for x in bad), "", n1 + len(joinh(g).split()) + 3])
+        sd = (lambda x: EN_DAY[x.weekday()]) if en else (lambda x: SDAY[x.weekday()])
+        gd = [sd(x) for x, m, _ in mk if m == "good"]; bd = [sd(x) for x, m, _ in mk if m == "stop"] or [sd(x) for x, m, _ in mk if m == "care"]
+        c = [["T", "THIS WEEK'S DAYS" if en else "हफ्ते के दिन", "", 0], ["D", [[sd(x), m] for x, m, _ in mk], "", 0],
+             ["L", ("BEST: " if en else "बढ़िया: ") + " · ".join(gd), "", n1]]
+        if bad: c.append(["L", ("CAREFUL: " if en else "संभलें: ") + " · ".join(bd), "", n1 + len(joinh(g).split()) + 3])
         shots.append(dict(id="days", scene="days", vo=vo, cues=c)); tone_shots("days")
     for a, (ak, title) in enumerate(AREAS):
         if ak not in e: continue
         vo, line, stamp, mood = e[ak]; n = len(vo.split())
         t1, i = at(vo, line, 1, max(1, n // 4)); i = min(i, max(1, int(n * 0.6)))
         t2, j = at(vo, stamp, i + 1, max(i + 1, 2 * n // 3))
-        shots.append(dict(id=ak, scene=ak, area=a, vo=vo, cues=[["T", title, "", 0], ["L", t1, "", i], ["S", t2, mood, min(j, n - 1)]]))
+        shots.append(dict(id=ak, scene=ak, area=a, vo=vo, cues=[["T", EN_AREA[ak] if en else title, "", 0], ["L", t1, "", i], ["S", t2, mood, min(j, n - 1)]]))
         tone_shots(ak)
     if "remedy" in e:
         vo, l1, l2 = e["remedy"]; n = len(vo.split()); t1, i = at(vo, l1, 1, 1); t2, j = at(vo, l2, i + 1, n // 2)
-        shots.append(dict(id="remedy", scene="remedy", vo=vo, cues=[["T", "उपाय", "", 0], ["L", t1, "", i], ["L", t2, "", j]]))
+        shots.append(dict(id="remedy", scene="remedy", vo=vo, cues=[["T", "REMEDY" if en else "उपाय", "", 0], ["L", t1, "", i], ["L", t2, "", j]]))
         tone_shots("remedy")
     col, num, tm = e["lucky"]; bl = "बेस्ट डे" if wk else "बेस्ट टाइम"
+    kl = (["LUCKY COLOUR", "LUCKY NUMBER", "BEST DAY" if wk else "BEST TIME"] if en else ["लकी कलर", "लकी नंबर", bl])
+    kv = ([EN_COL.get(col, col), str(num), EN_WDAY.get(tm, en_time(tm))] if en else [col, str(num), tm])
     shots.append(dict(id="lucky", scene="lucky", vo=f"लकी कलर, {col}। लकी नंबर, {NUM[int(num)]}। {bl}, {spoken(tm)}।",
-                      cues=[["K", "लकी कलर", col, 0], ["K", "लकी नंबर", str(num), 3], ["K", bl, tm, 6]]))
+                      cues=[["K", kl[0], kv[0], 0], ["K", kl[1], kv[1], 3], ["K", kl[2], kv[2], 6]]))
     shots.append(dict(id="cta", scene="cta", vo=f"ये वीडियो किसी {rashi} वाले को भेजो। {'अगले हफ्ते' if wk else 'कल'} के लिए फॉलो करो।",
-                      cues=[["L", "ये वीडियो भेजो", "", 0], ["L", f"{rashi} वाले को", "", 3], ["L", "अगले हफ्ते के लिए फॉलो करो" if wk else "कल के लिए फॉलो करो", "", 7]]))
+                      cues=[["L", "SEND THIS TO" if en else "ये वीडियो भेजो", "", 0], ["L", f"A {sign.upper()}" if en else f"{rashi} वाले को", "", 3],
+                            ["L", ("FOLLOW FOR NEXT WEEK" if wk else "FOLLOW FOR TOMORROW") if en else ("अगले हफ्ते के लिए फॉलो करो" if wk else "कल के लिए फॉलो करो"), "", 7]]))
     d = dt.date.fromisoformat(date)
-    if wk:
+    if wk and en:
+        d1 = dt.date.fromisoformat(date_to); label = f"WEEKLY · {d.day}–{d1.day} {EN_MON[d1.month - 1]}" if d.month == d1.month else f"WEEKLY · {d.day} {EN_MON[d.month - 1]} – {d1.day} {EN_MON[d1.month - 1]}"
+    elif en: label = f"{EN_DAY[d.weekday()]} · {d.day} {EN_MON[d.month - 1]}"
+    elif wk:
         d1 = dt.date.fromisoformat(date_to)
         label = f"साप्ताहिक · {d.day}–{d1.day} {MON[d1.month - 1]}" if d.month == d1.month else f"साप्ताहिक · {d.day} {MON[d.month - 1]} – {d1.day} {MON[d1.month - 1]}"
     else: label = f"{DAYS[d.weekday()]} · {d.day} {MON[d.month - 1]}"
-    return dict(sign=sign, rashi=rashi, element=elem, language="hindi", target_country="India", date=date, period="weekly" if wk else "daily",
+    ui = dict(lucky="THIS WEEK'S LUCK" if wk else "TODAY'S LUCK", name=f"{sign.upper()}", sub=f"{key.upper()} · HOROSCOPE", more="MORE IN THE VIDEO", best="BEST DAY") if en else {}
+    return dict(ui=ui, sign=sign, rashi=rashi, element=elem, language="hindi", target_country="India", date=date, period="weekly" if wk else "daily",
                 date_label=label, sky=e.get("sky", ""), voice=voice, shots=shots)
 
 def sh(cmd, **kw): return subprocess.run(cmd, check=True, capture_output=True, text=True, **kw)
@@ -112,7 +126,7 @@ if __name__ == "__main__":
     for key, e in D["signs"].items():
         if only and key not in only: continue
         date = D.get("date") or D["date_from"]; f = f"{out}/{date}{'_week' if D.get('date_to') else ''}/{key}"; os.makedirs(f, exist_ok=True)
-        json.dump(reading(key, e, date, voice, D.get("date_to")), open(f"{f}/reading.json", "w"), ensure_ascii=False, indent=1)
+        json.dump(reading(key, e, date, voice, D.get("date_to"), D.get("screen", "en") == "en"), open(f"{f}/reading.json", "w"), ensure_ascii=False, indent=1)
         import hashlib   # credit guard: count characters not yet in the shared voice cache
         cdir = os.environ.get("XI_CACHE", os.path.expanduser("~/.cache/horoscope-voice")); R = json.load(open(f"{f}/reading.json"))
         new = sum(len(x["vo"]) for x in R["shots"] if not os.path.exists(f"{cdir}/{hashlib.sha1((voice + '|' + x['vo']).encode()).hexdigest()[:16]}.json"))
