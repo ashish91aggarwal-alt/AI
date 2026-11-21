@@ -1,51 +1,73 @@
 {
- "checked": "2026-11-21 18:48 IST",
+ "checked": "2026-11-22 00:49 IST",
  "feed_error": "",
  "feed_count": 10,
  "top": [
   {
-   "title": "ishan pandey",
+   "title": "napoli vs torino",
    "traffic": "200+"
   },
   {
-   "title": "चक्रीवादळ",
-   "traffic": "200+"
-  },
-  {
-   "title": "ind a vs pak a",
-   "traffic": "10000+"
-  },
-  {
-   "title": "tulsi vivah katha",
-   "traffic": "2000+"
-  },
-  {
-   "title": "rishabh pant wicketkeeper wtc record",
-   "traffic": "200+"
-  },
-  {
-   "title": "जैकब ओरम",
-   "traffic": "200+"
-  },
-  {
-   "title": "galatasaray vs samsunspor",
-   "traffic": "500+"
-  },
-  {
-   "title": "liverpool vs chelsea",
-   "traffic": "500+"
-  },
-  {
-   "title": "anirudh reception",
+   "title": "xbox series s gta vi",
    "traffic": "1000+"
   },
   {
-   "title": "southampton vs derby county",
+   "title": "new england vs philadelphia",
    "traffic": "200+"
+  },
+  {
+   "title": "पारस म्हाम्ब्रे",
+   "traffic": "200+"
+  },
+  {
+   "title": "donyell malen",
+   "traffic": "200+"
+  },
+  {
+   "title": "ferran torres",
+   "traffic": "200+"
+  },
+  {
+   "title": "mckenna grace",
+   "traffic": "200+"
+  },
+  {
+   "title": "ogc nice vs psg standings",
+   "traffic": "10000+"
+  },
+  {
+   "title": "ligue 1",
+   "traffic": "2000+"
+  },
+  {
+   "title": "asu almabayev",
+   "traffic": "1000+"
   }
  ],
- "matches": [],
+ "matches": [
+  {
+   "title": "पारस म्हाम्ब्रे",
+   "when": "Sat, 21 Nov 2026 10:50:00 -0800",
+   "traffic": "200+",
+   "news": [
+    "पूर्व भारतीय कोच का पंजाब किंग्स ने थामा हाथ, आईपीएल 2027 से पहले सौंपी बड़ी जिम्मेदारी",
+    "आईपीएल 2027 से पहले पंजाब किंग्स से जुड़ सकते हैं पारस म्हांम्ब्रे"
+   ],
+   "matched": "2027"
+  }
+ ],
  "matches_log": [
+  {
+   "title": "पारस म्हाम्ब्रे",
+   "when": "Sat, 21 Nov 2026 10:50:00 -0800",
+   "traffic": "200+",
+   "news": [
+    "पूर्व भारतीय कोच का पंजाब किंग्स ने थामा हाथ, आईपीएल 2027 से पहले सौंपी बड़ी जिम्मेदारी",
+    "आईपीएल 2027 से पहले पंजाब किंग्स से जुड़ सकते हैं पारस म्हांम्ब्रे"
+   ],
+   "matched": "2027",
+   "first_seen": "2026-11-22 00:49 IST"
+  },
   {
    "title": "virgo horoscope today",
    "when": "Fri, 20 Nov 2026 22:20:00 -0800",
@@ -72,79 +94,79 @@
  "calendar": [
   {
    "date": "2026-11-24",
-   "in_days": 3,
+   "in_days": 2,
    "what": "Full moon (Purnima)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
    "date": "2026-12-09",
-   "in_days": 18,
+   "in_days": 17,
    "what": "New moon (Amavasya)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
    "date": "2026-12-12",
-   "in_days": 21,
+   "in_days": 20,
    "what": "12/12: a repeating-number date",
    "source": "calendar"
   },
   {
    "date": "2026-12-15",
-   "in_days": 24,
+   "in_days": 23,
    "what": "Start the mulank 2027 teaching reels: these searches begin to climb about now",
    "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   },
   {
    "date": "2026-12-24",
-   "in_days": 33,
+   "in_days": 32,
    "what": "Full moon (Purnima)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
    "date": "2026-12-28",
-   "in_days": 37,
+   "in_days": 36,
    "what": "Peak week for 'mulank / rashifal / numerology + 2027' searches begins",
    "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   },
   {
    "date": "2027-01-01",
-   "in_days": 41,
+   "in_days": 40,
    "what": "New Year 2027",
    "source": "calendar"
   },
   {
    "date": "2027-01-01",
-   "in_days": 41,
+   "in_days": 40,
    "what": "Search peak day (31 Dec to 1 Jan). The driver reveal belongs here",
    "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   },
   {
    "date": "2027-01-08",
-   "in_days": 48,
+   "in_days": 47,
    "what": "New moon (Amavasya)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
    "date": "2027-01-14",
-   "in_days": 54,
+   "in_days": 53,
    "what": "Mulank and numerology year-searches fade about now. Rashifal stays high till February",
    "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   },
   {
    "date": "2027-01-22",
-   "in_days": 62,
+   "in_days": 61,
    "what": "Full moon (Purnima)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
    "date": "2027-02-02",
-   "in_days": 73,
+   "in_days": 72,
    "what": "2/2: a repeating-number date",
    "source": "calendar"
   },
   {
    "date": "2027-02-08",
-   "in_days": 79,
+   "in_days": 78,
    "what": "Valentine's week: the one time love tarot searches rise",
    "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   }
