@@ -24,6 +24,8 @@ def at(vo, text, start, fallback):
         if len(p) >= 2 and (ws[i].startswith(p) or (len(ws[i]) >= 2 and p.startswith(ws[i]))): return text, i
     return text, min(max(fallback, start), len(ws) - 1)
 
+NUM_EN = "zero one two three four five six seven eight nine ten eleven twelve".split()
+DAY_EN = "Monday Tuesday Wednesday Thursday Friday Saturday Sunday".split()
 EN_AREA = dict(work="WORK", friends="FRIENDS", family="FAMILY", kids="KIDS", decide="BIG DECISIONS", love="LOVE", travel="TRAVEL")
 EN_DAY = "MON TUE WED THU FRI SAT SUN".split(); EN_MON = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split()
 EN_COL = {"सफेद": "WHITE", "गुलाबी": "PINK", "लाल": "RED", "पीला": "YELLOW", "हरा": "GREEN", "नीला": "BLUE", "नारंगी": "ORANGE", "बैंगनी": "PURPLE", "सुनहरा": "GOLD"}
@@ -45,13 +47,14 @@ def reading(key, e, date, voice, date_to=None, en=True):
     t, i = at(vo, ls[1], 1, n // 3); c.append(["L", t, "", i]); t, j = at(vo, ls[2], i + 1, 2 * n // 3); c.append(["L", t, "", j])
     shots.append(dict(id="hook", scene="hook", vo=vo, cues=c)); tone_shots("hook")
     sc = e["scores"]; lab = ["LOVE", "MONEY", "WORK", "ENERGY"] if en else ["लव", "पैसा", "काम", "एनर्जी"]; head = ("THIS WEEK" if wk else "YOUR DAY") if en else ("इस हफ्ते" if wk else "आपका दिन")
-    shots.append(dict(id="meters", scene="meters", vo=f"{'इस हफ्ते' if wk else 'आपका दिन'}। लव, पाँच में {NUM[sc[0]]}। पैसा, {NUM[sc[1]]}। काम, {NUM[sc[2]]}। एनर्जी, {NUM[sc[3]]}।",
-                      cues=[["L", head, "", 0]] + [["M", lab[k], sc[k], [2, 6, 8, 10][k]] for k in range(4)]))
+    hv = "इस हफ्ते" if wk else "आज"; b0 = len(hv.split())
+    shots.append(dict(id="meters", scene="meters", vo=f"{hv}। Love, {NUM_EN[sc[0]]} out of five। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।",
+                      cues=[["L", head, "", 0]] + [["M", lab[k], sc[k], [b0, b0 + 5, b0 + 7, b0 + 9][k]] for k in range(4)]))
     tone_shots("meters")
     if wk:   # days of the week, all from the Moon (no tokens): voice, chips and lines are generated
         import sky; d0, d1 = dt.date.fromisoformat(date), dt.date.fromisoformat(date_to)
-        mk = sky.day_marks(KEYS.index(key), d0, d1); g = [DAYS[x.weekday()] for x, m, _ in mk if m == "good"]
-        bad = [DAYS[x.weekday()] for x, m, _ in mk if m == "stop"] or [DAYS[x.weekday()] for x, m, _ in mk if m == "care"]
+        mk = sky.day_marks(KEYS.index(key), d0, d1); g = [DAY_EN[x.weekday()] for x, m, _ in mk if m == "good"]
+        bad = [DAY_EN[x.weekday()] for x, m, _ in mk if m == "stop"] or [DAY_EN[x.weekday()] for x, m, _ in mk if m == "care"]
         vo = f"इस हफ्ते बढ़िया दिन, {joinh(g)}।" + (f" संभल के रहना, {joinh(bad)}।" if bad else "")
         n1 = len(f"इस हफ्ते बढ़िया दिन,".split())
         sd = (lambda x: EN_DAY[x.weekday()]) if en else (lambda x: SDAY[x.weekday()])
@@ -74,7 +77,7 @@ def reading(key, e, date, voice, date_to=None, en=True):
     col, num, tm = e["lucky"]; bl = "बेस्ट डे" if wk else "बेस्ट टाइम"
     kl = (["LUCKY COLOUR", "LUCKY NUMBER", "BEST DAY" if wk else "BEST TIME"] if en else ["लकी कलर", "लकी नंबर", bl])
     kv = ([EN_COL.get(col, col), str(num), EN_WDAY.get(tm, en_time(tm))] if en else [col, str(num), tm])
-    shots.append(dict(id="lucky", scene="lucky", vo=f"लकी कलर, {col}। लकी नंबर, {NUM[int(num)]}। {bl}, {spoken(tm)}।",
+    shots.append(dict(id="lucky", scene="lucky", vo=f"लकी कलर, {EN_COL.get(col, col).lower()}। लकी नंबर, {NUM_EN[int(num)]}। {bl}, {EN_WDAY.get(tm, tm).title() if tm in EN_WDAY else spoken(tm)}।",
                       cues=[["K", kl[0], kv[0], 0], ["K", kl[1], kv[1], 3], ["K", kl[2], kv[2], 6]]))
     shots.append(dict(id="cta", scene="cta", vo=f"ये वीडियो किसी {rashi} वाले को भेजो। {'अगले हफ्ते' if wk else 'कल'} के लिए फॉलो करो।",
                       cues=[["L", "SEND THIS TO" if en else "ये वीडियो भेजो", "", 0], ["L", f"A {sign.upper()}" if en else f"{rashi} वाले को", "", 3],
