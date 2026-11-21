@@ -1,0 +1,216 @@
+{
+ "date_from": "2026-11-23",
+ "date_to": "2026-11-29",
+ "voice": "eleven:RABOvaPec1ymXz02oDQi",
+ "signs": {
+  "tula": {
+   "sky": "Ve lord H1 (own sign from 22 Nov); Ma+Ju H11; Sa(R) H6; Su H2; Ra H5; Moon H8 Tue-Wed",
+   "hook": [
+    "तुला वालों, इस हफ्ते आपका चार्म और किस्मत दोनों साथ हैं। बस Tuesday-Wednesday संभलना।",
+    "LIBRA",
+    "CHARM + LUCK THIS WEEK|5",
+    "CAREFUL TUE–WED|11"
+   ],
+   "scores": [
+    4,
+    4,
+    3,
+    4
+   ],
+   "work": [
+    "ऑफिस में काम भारी रहेगा, पर Saturday तक जीत आपकी।",
+    "HEAVY WORKLOAD|2",
+    "WIN BY SATURDAY|6",
+    "good"
+   ],
+   "friends": [
+    "पुराने दोस्त से बड़ा फायदा मिल सकता है।",
+    "AN OLD FRIEND|1",
+    "BIG GAIN|3",
+    "good"
+   ],
+   "family": [
+    "घर में पैसों का हिसाब आराम से करना।",
+    "MONEY TALK AT HOME|2",
+    "STAY CALM|5",
+    "care"
+   ],
+   "kids": [
+    "बच्चों के स्क्रीन टाइम पे नज़र रखना।",
+    "SCREEN TIME|2",
+    "KEEP AN EYE|5",
+    "care"
+   ],
+   "decide": [
+    "बड़ा फैसला Saturday या Sunday को लेना।",
+    "THE BIG DECISION|1",
+    "SAT OR SUN|2",
+    "good"
+   ],
+   "love": [
+    "इस हफ्ते आपका चार्म बढ़ेगा, दिल की बात कह दो।",
+    "YOUR CHARM GROWS|3",
+    "SPEAK YOUR HEART|5",
+    "good"
+   ],
+   "travel": [
+    "वीकेंड पे छोटी ट्रिप बनेगी, मज़ा आएगा।",
+    "A SHORT TRIP|2",
+    "WEEKEND FUN|5",
+    "good"
+   ],
+   "remedy": [
+    "अगर बीच के दिनों में बहस हो जाए, तो Friday को सफेद मिठाई बांटना।",
+    "IF AN ARGUMENT HAPPENS|5",
+    "WHITE SWEETS ON FRIDAY|9"
+   ],
+   "lucky": [
+    "गुलाबी",
+    6,
+    "शनिवार"
+   ],
+   "hooks": [
+    [
+     "meters",
+     "happy",
+     "लव लाइफ में इस हफ्ते मिठास लौटेगी। कोई आपकी तारीफ करेगा।",
+     "SWEETNESS RETURNS",
+     "SOMEONE WILL PRAISE YOU|7"
+    ],
+    [
+     "days",
+     "serious",
+     "Tuesday और Wednesday, गुस्से में कोई मैसेज मत भेजना।",
+     "NO ANGRY TEXTS",
+     "TUE–WED|0"
+    ],
+    [
+     "family",
+     "sad",
+     "किसी अपने की कमी महसूस होगी। एक कॉल करके देखो, दिल हल्का होगा।",
+     "MISSING SOMEONE?",
+     "MAKE ONE CALL|6"
+    ],
+    [
+     "decide",
+     "fun",
+     "और हाँ, शॉपिंग कार्ट भर जाएगा। पेमेंट से पहले दो बार सोचना!",
+     "CART FULL!",
+     "THINK TWICE|6"
+    ],
+    [
+     "travel",
+     "encouraging",
+     "मेहनत आपकी है, नतीजा भी आपका होगा। बस हिम्मत मत छोड़ना।",
+     "YOUR EFFORT, YOUR RESULT",
+     "DON'T GIVE UP|7"
+    ]
+   ]
+  },
+  "vrishchik": {
+   "sky": "Ma lord + Ju + Ke H10 (career); Su H1; Me+Ve H12 (spending, far places, private love); Sa(R) H5; Ra H4; Moon H8-H9 Thu-Fri",
+   "hook": [
+    "वृश्चिक वालों, इस हफ्ते करियर में बड़ा मौका है। बस Thursday-Friday बोलने से पहले सोचना।",
+    "SCORPIO",
+    "BIG CAREER CHANCE|4",
+    "CAREFUL THU–FRI|10"
+   ],
+   "scores": [
+    3,
+    3,
+    5,
+    4
+   ],
+   "work": [
+    "बॉस की नज़र आप पर है, Tuesday तक अच्छी खबर मिल सकती है।",
+    "THE BOSS NOTICES|0",
+    "GOOD NEWS BY TUESDAY|8",
+    "good"
+   ],
+   "friends": [
+    "कोई दोस्त दूर-दूर रहेगा, आप पहले मैसेज कर देना।",
+    "A FRIEND FEELS DISTANT|1",
+    "TEXT FIRST|5",
+    "care"
+   ],
+   "family": [
+    "घर के खर्च या रिपेयर पे ध्यान देना, लिस्ट बना लो।",
+    "HOME EXPENSES|1",
+    "MAKE A LIST|8",
+    "care"
+   ],
+   "kids": [
+    "बच्चों की पढ़ाई में धीरे-धीरे सुधार होगा, डांटना नहीं।",
+    "SLOW BUT STEADY|4",
+    "DON'T SCOLD|7",
+    "care"
+   ],
+   "decide": [
+    "बड़ा फैसला Monday से Wednesday के बीच ले लो।",
+    "THE BIG DECISION|1",
+    "MON TO WED|2",
+    "good"
+   ],
+   "love": [
+    "प्यार में प्राइवेट टाइम चाहिए, कहीं बाहर डिनर प्लान करो।",
+    "LOVE NEEDS PRIVACY|2",
+    "PLAN A DINNER OUT|7",
+    "good"
+   ],
+   "travel": [
+    "विदेश या दूर की ट्रिप का प्लान बन सकता है।",
+    "A FAR TRIP|2",
+    "PLANS START|6",
+    "good"
+   ],
+   "remedy": [
+    "अगर Thursday-Friday गुस्सा आए, तो Saturday को मिठाई बांटना।",
+    "IF ANGER RISES|2",
+    "SHARE SWEETS ON SATURDAY|7"
+   ],
+   "lucky": [
+    "लाल",
+    9,
+    "मंगलवार"
+   ],
+   "hooks": [
+    [
+     "meters",
+     "happy",
+     "घर में कोई खुशखबरी या फंक्शन का न्योता आ सकता है।",
+     "GOOD NEWS AT HOME",
+     "AN INVITE COMES|5"
+    ],
+    [
+     "days",
+     "serious",
+     "Thursday और Friday, ऑफिस की बहस में मत पड़ना।",
+     "STAY OUT OF OFFICE FIGHTS",
+     "THU–FRI|0"
+    ],
+    [
+     "family",
+     "sad",
+     "मन थोड़ा भारी रहेगा। किसी अपने को कॉल कर लो, अच्छा लगेगा।",
+     "FEELING LOW?",
+     "CALL SOMEONE CLOSE|7"
+    ],
+    [
+     "decide",
+     "fun",
+     "और हाँ, ऑनलाइन सेल देखकर दिल मचलेगा। पर्स को थोड़ा आराम देना!",
+     "SALE ALERT!",
+     "GIVE YOUR WALLET A BREAK|7"
+    ],
+    [
+     "travel",
+     "encouraging",
+     "आपकी मेहनत अब दिखने लगी है। रुकना मत, ऊपर ही जाना है।",
+     "YOUR HARD WORK SHOWS",
+     "KEEP CLIMBING|6"
+    ]
+   ]
+  }
+ },
+ "screen": "en"
+}
