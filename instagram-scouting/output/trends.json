@@ -1,71 +1,50 @@
 {
- "checked": "2026-11-21 12:47 IST",
+ "checked": "2026-11-21 18:48 IST",
  "feed_error": "",
  "feed_count": 10,
  "top": [
   {
-   "title": "सिंधु जल समझौता",
-   "traffic": "2000+"
-  },
-  {
-   "title": "jamal musiala",
+   "title": "ishan pandey",
    "traffic": "200+"
   },
   {
-   "title": "કેરેટ",
+   "title": "चक्रीवादळ",
+   "traffic": "200+"
+  },
+  {
+   "title": "ind a vs pak a",
+   "traffic": "10000+"
+  },
+  {
+   "title": "tulsi vivah katha",
+   "traffic": "2000+"
+  },
+  {
+   "title": "rishabh pant wicketkeeper wtc record",
+   "traffic": "200+"
+  },
+  {
+   "title": "जैकब ओरम",
+   "traffic": "200+"
+  },
+  {
+   "title": "galatasaray vs samsunspor",
+   "traffic": "500+"
+  },
+  {
+   "title": "liverpool vs chelsea",
+   "traffic": "500+"
+  },
+  {
+   "title": "anirudh reception",
    "traffic": "1000+"
   },
   {
-   "title": "സോണിയ",
-   "traffic": "500+"
-  },
-  {
-   "title": "সংবাদ",
-   "traffic": "500+"
-  },
-  {
-   "title": "virgo horoscope today",
-   "traffic": "2000+"
-  },
-  {
-   "title": "ਪੈਨਸ਼ਨ",
+   "title": "southampton vs derby county",
    "traffic": "200+"
-  },
-  {
-   "title": "ভারতীয় বিমানবাহিনী",
-   "traffic": "200+"
-  },
-  {
-   "title": "self enumeration",
-   "traffic": "200+"
-  },
-  {
-   "title": "dadar",
-   "traffic": "500+"
   }
  ],
- "matches": [
-  {
-   "title": "virgo horoscope today",
-   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
-   "traffic": "2000+",
-   "news": [
-    "Virgo Horoscope Today: November 21, 2026",
-    "Virgo Shani Horoscope Today, 20 November 2026: Tulsi Vivah Begins, and Shani Puts a Shared Account Under"
-   ],
-   "matched": "horoscope"
-  },
-  {
-   "title": "self enumeration",
-   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
-   "traffic": "200+",
-   "news": [
-    "2nd phase census 2027 population enumeration training held in Meluri",
-    "CM appeals to all to enumerate for Census 2027"
-   ],
-   "matched": "2027"
-  }
- ],
+ "matches": [],
  "matches_log": [
   {
    "title": "virgo horoscope today",
@@ -110,16 +89,64 @@
    "source": "calendar"
   },
   {
+   "date": "2026-12-15",
+   "in_days": 24,
+   "what": "Start the mulank 2027 teaching reels: these searches begin to climb about now",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
    "date": "2026-12-24",
    "in_days": 33,
    "what": "Full moon (Purnima)",
    "source": "worked out from the moon's average cycle; about a day either way"
   },
   {
+   "date": "2026-12-28",
+   "in_days": 37,
+   "what": "Peak week for 'mulank / rashifal / numerology + 2027' searches begins",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
    "date": "2027-01-01",
    "in_days": 41,
    "what": "New Year 2027",
    "source": "calendar"
+  },
+  {
+   "date": "2027-01-01",
+   "in_days": 41,
+   "what": "Search peak day (31 Dec to 1 Jan). The driver reveal belongs here",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2027-01-08",
+   "in_days": 48,
+   "what": "New moon (Amavasya)",
+   "source": "worked out from the moon's average cycle; about a day either way"
+  },
+  {
+   "date": "2027-01-14",
+   "in_days": 54,
+   "what": "Mulank and numerology year-searches fade about now. Rashifal stays high till February",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2027-01-22",
+   "in_days": 62,
+   "what": "Full moon (Purnima)",
+   "source": "worked out from the moon's average cycle; about a day either way"
+  },
+  {
+   "date": "2027-02-02",
+   "in_days": 73,
+   "what": "2/2: a repeating-number date",
+   "source": "calendar"
+  },
+  {
+   "date": "2027-02-08",
+   "in_days": 79,
+   "what": "Valentine's week: the one time love tarot searches rise",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
   }
  ],
  "words": 37
