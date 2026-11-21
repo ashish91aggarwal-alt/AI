@@ -1,0 +1,126 @@
+{
+ "checked": "2026-11-21 12:47 IST",
+ "feed_error": "",
+ "feed_count": 10,
+ "top": [
+  {
+   "title": "सिंधु जल समझौता",
+   "traffic": "2000+"
+  },
+  {
+   "title": "jamal musiala",
+   "traffic": "200+"
+  },
+  {
+   "title": "કેરેટ",
+   "traffic": "1000+"
+  },
+  {
+   "title": "സോണിയ",
+   "traffic": "500+"
+  },
+  {
+   "title": "সংবাদ",
+   "traffic": "500+"
+  },
+  {
+   "title": "virgo horoscope today",
+   "traffic": "2000+"
+  },
+  {
+   "title": "ਪੈਨਸ਼ਨ",
+   "traffic": "200+"
+  },
+  {
+   "title": "ভারতীয় বিমানবাহিনী",
+   "traffic": "200+"
+  },
+  {
+   "title": "self enumeration",
+   "traffic": "200+"
+  },
+  {
+   "title": "dadar",
+   "traffic": "500+"
+  }
+ ],
+ "matches": [
+  {
+   "title": "virgo horoscope today",
+   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
+   "traffic": "2000+",
+   "news": [
+    "Virgo Horoscope Today: November 21, 2026",
+    "Virgo Shani Horoscope Today, 20 November 2026: Tulsi Vivah Begins, and Shani Puts a Shared Account Under"
+   ],
+   "matched": "horoscope"
+  },
+  {
+   "title": "self enumeration",
+   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
+   "traffic": "200+",
+   "news": [
+    "2nd phase census 2027 population enumeration training held in Meluri",
+    "CM appeals to all to enumerate for Census 2027"
+   ],
+   "matched": "2027"
+  }
+ ],
+ "matches_log": [
+  {
+   "title": "virgo horoscope today",
+   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
+   "traffic": "2000+",
+   "news": [
+    "Virgo Horoscope Today: November 21, 2026",
+    "Virgo Shani Horoscope Today, 20 November 2026: Tulsi Vivah Begins, and Shani Puts a Shared Account Under"
+   ],
+   "matched": "horoscope",
+   "first_seen": "2026-11-21 12:47 IST"
+  },
+  {
+   "title": "self enumeration",
+   "when": "Fri, 20 Nov 2026 22:20:00 -0800",
+   "traffic": "200+",
+   "news": [
+    "2nd phase census 2027 population enumeration training held in Meluri",
+    "CM appeals to all to enumerate for Census 2027"
+   ],
+   "matched": "2027",
+   "first_seen": "2026-11-21 12:47 IST"
+  }
+ ],
+ "calendar": [
+  {
+   "date": "2026-11-24",
+   "in_days": 3,
+   "what": "Full moon (Purnima)",
+   "source": "worked out from the moon's average cycle; about a day either way"
+  },
+  {
+   "date": "2026-12-09",
+   "in_days": 18,
+   "what": "New moon (Amavasya)",
+   "source": "worked out from the moon's average cycle; about a day either way"
+  },
+  {
+   "date": "2026-12-12",
+   "in_days": 21,
+   "what": "12/12: a repeating-number date",
+   "source": "calendar"
+  },
+  {
+   "date": "2026-12-24",
+   "in_days": 33,
+   "what": "Full moon (Purnima)",
+   "source": "worked out from the moon's average cycle; about a day either way"
+  },
+  {
+   "date": "2027-01-01",
+   "in_days": 41,
+   "what": "New Year 2027",
+   "source": "calendar"
+  }
+ ],
+ "words": 37
+}
