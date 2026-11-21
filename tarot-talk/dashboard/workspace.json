@@ -23,13 +23,13 @@
   {
    "title": "New channel for viewers abroad",
    "area": "Research",
-   "stage": "Reviewed once, payments open",
+   "stage": "Plan reviewed once",
    "tone": "warn",
-   "text": "A separate English channel for high-paying countries. Research says: if it is for Western viewers, aim at the United States first; the same reels reach Canada, the UK and Australia; do not aim at the UAE. An independent reviewer checked it and the fixes are in.",
-   "next": "Two things first: how buyers abroad will pay (PayPal and Stripe restrict this kind of business), and which audience, Western seekers or Indians living abroad.",
+   "text": "A separate English channel for high-paying countries. The plan: start with Indians living abroad, as a judgement to be tested; the evidence is better there, though it is about big apps, not a single reader. Test Western seekers later against a pass mark. Run it from India openly: no VPN, no borrowed number.",
+   "next": "Step 1: test purchases from two countries through the present link, and ask SuperProfile in writing if readings sold abroad are allowed.",
    "link": "abroad",
    "icon": "globe",
-   "short": "US first; Canada, UK, Australia come with it. Payments and audience choice are open."
+   "short": "Indians abroad first; Western lane later as a test. First step: prove a buyer abroad can pay."
   },
   {
    "title": "Instagram research",
@@ -66,13 +66,23 @@
   }
  ],
  "waiting": [
-  "New channel abroad: choose the audience, Western seekers or Indians living abroad, and say how you take payments from abroad today, if at all (Research, Abroad).",
+  "New channel abroad: get test purchases made from two countries through the present SuperProfile link, and ask SuperProfile if readings sold abroad are allowed (Research, Abroad, Plan).",
+  "New channel abroad: say yes or no to scouting Indian readers' pages that have an audience abroad.",
+  "New channel abroad, Sakshi: are you comfortable speaking English on camera?",
   "Pick the look for the 2027 series (reviewer's pick: gilded miniature, drawn more cleanly).",
   "Sakshi: which way do you read the personal year, January to December or birthday to birthday?",
   "Is the 2027 yearly report ready, and at what price? The series is not produced before the product exists or has a date.",
   "Comments and DMs from last year's series, for the audience file."
  ],
  "activity": [
+  {
+   "at": "21 Nov",
+   "text": "Abroad plan checked by an independent reviewer; 25 points and 8 gaps raised, must-fix ones corrected."
+  },
+  {
+   "at": "21 Nov",
+   "text": "Abroad plan added: which lane first, how to reach viewers abroad from India, where they live, and a seven-step start order."
+  },
   {
    "at": "21 Nov",
    "text": "Abroad research checked by an independent reviewer; 30 points raised, the must-fix ones corrected."

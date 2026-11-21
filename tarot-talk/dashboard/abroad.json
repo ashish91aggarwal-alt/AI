@@ -773,5 +773,409 @@
    "Worldwide",
    "United States"
   ]
+ },
+ "plan": {
+  "looked": "21 Nov 2026",
+  "review": {
+   "state": "reviewed",
+   "verdict": "Mostly sound. 'Indians abroad first' and 'no VPN, no borrowed number' are reasonable choices, but both were stated more firmly than the evidence allows.",
+   "notes": [
+    "25 points and 8 gaps raised; the must-fix ones are corrected on this page.",
+    "Corrected: 'the only lane with proof' was too strong. The proof is about big apps that buy customers with ads, not a single reader.",
+    "Corrected: the VPN answer is now a recommendation, not a fact. Only one Meta page was read and it lists some signals.",
+    "Corrected: Canada's province numbers mixed South Asian and Indian counts; payment and legal risks apply to both lanes, not only the Western one.",
+    "Corrected: the gates had no numbers. Pass marks are now set in step 2, and the Western test is counted by hand because Instagram shows country, not origin.",
+    "Added on the reviewer's advice: keep the new account apart from the Indian page; a step for language, first product, tax and refunds before the account opens.",
+    "Still open: the fixes have not had a second review. The reviewer could not open Instagram's Help pages and read the two Meta extracts as supplied."
+   ]
+  },
+  "verdict": "Start with Indians living abroad, but as a judgement to be tested, not a proven fact. The evidence is stronger there and the cultural fit is closer; neither lane has proof for a single reader selling from India. Treat Western seekers as a later test with a pass mark. What step 2 finds is allowed to change this choice.",
+  "lanes": [
+   {
+    "key": "nri",
+    "name": "Indians living abroad",
+    "call": "First",
+    "tone": "good",
+    "line": "Fewer people, better evidence that they pay Indian providers, closer fit to what Sakshi already does.",
+    "for": [
+     [
+      "Astrotalk earned Rs 621 crore abroad in FY26, 34% of operating revenue, up from 20% a year before; the US gives more than 60% of it. Its founder named the Indian diaspora as the main source in an interview a year earlier; the FY26 figure itself is not split by customer group.",
+      "Inc42, 28 Oct 2026 and Inc42 feature; Open magazine. The founder is also quoted at 37% in one piece."
+     ],
+     [
+      "InstaAstro, which also sells tarot and numerology, reportedly gets about 25% of revenue from abroad, largely the diaspora.",
+      "Open magazine, 2026"
+     ],
+     [
+      "They can afford it: Indian-headed households in the US earn a median 151,200 dollars a year, against about 83,700 for the US overall. This shows ability to pay, not willingness to pay a single reader.",
+      "Pew Research, 2023 data; US figure from an agency report"
+     ],
+     [
+      "Sakshi's present product, a numerology report, and her way of speaking already fit this audience.",
+      "Our judgement"
+     ],
+     [
+      "Some of them can pay the way Indian buyers do: NRIs in 12 countries, including the USA, UK, Canada and Australia, can use UPI with a foreign number, but only if they hold an NRE or NRO account at a bank that supports it, and only in rupees.",
+      "RBL Bank page (names the 12); NPCI page (no country list)"
+     ]
+    ],
+    "against": [
+     [
+      "The proof is two venture-funded apps that buy customers with ads: Astrotalk spent Rs 823 crore on marketing in FY26 across India and abroad, about 45% of revenue. It does not show that one reader posting reels can do the same.",
+      "Inc42 figures; Open magazine"
+     ],
+     [
+      "About 5.2 million in the US, 1.9 million in the UK, 1.3 to 1.9 million in Canada and 0.7 to 0.8 million in Australia: roughly 9 to 10 million. Each country counts differently (identity, ethnic group, origin, birthplace).",
+      "US Census via Pew; UK censuses 2021-22; Canada census as reported; Australian census"
+     ],
+     [
+      "Hindi is the home language of under a fifth of Indian Americans (18%; Telugu 11%, Gujarati 10%, Tamil 7%). English is the only language that reaches nearly all: 84% are proficient. Many more may follow Hindi than speak it at home; that was not measured.",
+      "Pew Research"
+     ],
+     [
+      "If this lane has to be in English, its reels overlap a lot with the Western lane. The two lanes are less separate than they look.",
+      "Reviewer's point"
+     ]
+    ]
+   },
+   {
+    "key": "west",
+    "name": "Western seekers",
+    "call": "Later, only if it passes a test",
+    "tone": "warn",
+    "line": "Far more people, weaker evidence that an India-run page can sell to them, and less overlap with what Sakshi sells now.",
+    "for": [
+     [
+      "30% of US adults consult astrology, tarot or a fortune teller in a year: tens of millions of people. The US psychic services industry is about 2.3 billion dollars.",
+      "Pew, Oct 2024; IBISWorld"
+     ],
+     [
+      "Readings abroad are listed at 60 to 395 dollars an hour.",
+      "Public listings, not a survey"
+     ],
+     [
+      "Indian Akashic readers on Fiverr show buyers from the US, UK, Ireland and the Netherlands at 25 to 100 dollars. Weak, but it is the only evidence here about a single reader in India, which is Sakshi's case.",
+      "Fiverr listings: a hint, not proof of scale"
+     ]
+    ],
+    "against": [
+     [
+      "Most Americans who do this say it is for fun: 20% for fun, 10% for insight.",
+      "Pew, Oct 2024"
+     ],
+     [
+      "Akashic is searched about a fifth as much as tarot. Mulank is, in our reading, unknown to this audience.",
+      "Google Trends, 21 Nov 2026; our reading"
+     ],
+     [
+      "No source was found showing an India-based tarot or Akashic page earning from Western buyers at scale. Competition from local readers was not measured.",
+      "Gap in this research"
+     ]
+    ]
+   }
+  ],
+  "second": "Should the second lane be done at all? Not decided, and it should not be decided on opinion. Run it only after the first lane has made sales, as ten reels in plain Western English. Instagram's numbers show a viewer's country, not whether they are of Indian origin, so the test has to be counted by hand: paying enquiries from people who are plainly not of Indian origin. Write the pass number down before posting. If it is not reached, drop the lane.",
+  "reach": {
+   "title": "Reaching them from an India-run account",
+   "answer": "Our advice: no VPN and no friend's phone number. Run the account from India, openly. This is a recommendation from what was read, not a proven fact.",
+   "why": [
+    [
+     "No evidence that the creator's connection decides who sees a reel",
+     "On the one Meta page read, the card for the reels shown after you open a reel, no listed signal is about the creator's location, SIM or number. The signals are about the viewer and the reel, such as how well it matches what the viewer watches. The card lists only some signals, and the cards for the Reels tab, Explore and Feed were not read. So this is 'no evidence it helps', not 'proved it does nothing'.",
+     "Meta Transparency Center, Instagram Reels chaining card, read 21 Nov 2026"
+    ],
+    [
+     "The one country signal points at a different risk",
+     "The card lists 'how much time viewers from your country have spent on this reel'. Early watching by Indian viewers would then help a reel with Indian viewers, not foreign ones. That argues for keeping the new account away from the present Indian followers and phone contacts: no cross-promotion, contact syncing off.",
+     "Same card; the conclusion is the reviewer's and ours"
+    ],
+    [
+     "Instagram may show where an account is run from",
+     "Instagram says it shows a country label on posts of 'certain accounts' based outside the place most of their audience is from, and that it works the country out from things including stated location, devices and connection. We cannot say whether a VPN would change that label. Hiding the country is pretending, on a feature made to show it.",
+     "Instagram Help Centre, read 21 Nov 2026"
+    ],
+    [
+     "A borrowed number has a plain cost",
+     "Whoever holds the number holds the account's recovery. And in our view, for a reader in India speaking to Indians abroad, being in India is part of the appeal, not something to hide.",
+     "Our judgement"
+    ]
+   ],
+   "levers": [
+    [
+     "Language",
+     "English as Indians speak it, with Hindi words where natural, if Sakshi is comfortable on camera in English. If not: voice-over, text reels, or Hindi with subtitles for the Hindi-speaking part."
+    ],
+    [
+     "What the reel is about",
+     "Life abroad: visa and job worry, family far away, marriage pressure from home, festivals alone. Our assumption; untested."
+    ],
+    [
+     "Keep it apart from the Indian page",
+     "No cross-promotion, contact syncing off, a separate store or price page so buyers abroad do not see the Rs 555 price."
+    ],
+    [
+     "When it goes up",
+     "In winter 8:30 am IST is the previous evening in the US: 10 pm East, 9 pm Central, 7 pm West. From March to November it is an hour later there, so post an hour earlier. Whether the hour changes who sees a reel was not found in anything read."
+    ],
+    [
+     "Trial reels",
+     "Instagram's tool that shows a reel to non-followers first. Not for day one: a guide citing Instagram Help says a creator account needs 200 followers. Confirm in the Help Centre."
+    ],
+    [
+     "Paid ads, later",
+     "The only way to choose a country, state or city directly. Meta's ad tools accept countries, regions and cities. Costly in the US and subject to Meta's ad rules."
+    ]
+   ],
+   "note": "Which of these matter most is our judgement, not a tested result. The first batch of reels is the test."
+  },
+  "where": {
+   "note": "For the first lane the question is where Indians abroad live. You still cannot pick states when posting; this sets the clock, the references and any later ads.",
+   "groups": [
+    {
+     "name": "United States",
+     "unit": "thousand people",
+     "source": "Pew Research, 2021-23 data",
+     "rows": [
+      [
+       "California",
+       960
+      ],
+      [
+       "Texas",
+       570
+      ],
+      [
+       "New Jersey",
+       440
+      ],
+      [
+       "New York",
+       390
+      ],
+      [
+       "Illinois",
+       270
+      ]
+     ],
+     "extra": "Metro areas: New York 710, Dallas 270, San Francisco 260 thousand."
+    },
+    {
+     "name": "Canada",
+     "unit": "thousand people of Indian origin",
+     "source": "2021 census as reported by OnTheMoveCanada. A second report, CIC News, counts 1.3 million Indians in Canada against this source's 1.86 million; definitions differ.",
+     "rows": [
+      [
+       "Ontario",
+       774
+      ],
+      [
+       "British Columbia",
+       309
+      ],
+      [
+       "Alberta",
+       175
+      ]
+     ],
+     "extra": "Brampton is 52% South Asian. Toronto, Vancouver, Calgary and Edmonton are the centres."
+    },
+    {
+     "name": "Australia",
+     "unit": "thousand people born in India",
+     "source": "Australian census 2021; Australian foreign ministry snapshot",
+     "rows": [
+      [
+       "Victoria",
+       258
+      ],
+      [
+       "New South Wales",
+       209
+      ]
+     ],
+     "extra": "About 673 thousand people born in India live in Australia; 784 thousand report Indian ancestry."
+    },
+    {
+     "name": "United Kingdom",
+     "unit": "",
+     "source": "UK censuses 2021-22 as compiled on Wikipedia's British Indians page; ONS for Leicester",
+     "rows": [],
+     "extra": "1.84 million in England, 53 thousand in Scotland, 21 thousand in Wales. Leicester has the highest share of India-born residents of any council area (16.2%). Regional split not read in this pass."
+    }
+   ]
+  },
+  "steps": [
+   {
+    "n": 1,
+    "what": "Find out if a buyer abroad can pay, and if the business is allowed",
+    "how": "Ask people in two countries (say the US and the UK or Canada) to buy through the present SuperProfile link by foreign card: the Rs 555 report, and one product priced in dollars. Ask SuperProfile in writing whether tarot, Akashic and healing sessions sold to buyers abroad are allowed. Cost: the price of the test purchases.",
+    "gate": "Money arrives from both countries and SuperProfile says yes in writing. If not, find another payment route before anything else. One friend's card is not proof that strangers' cards will work."
+   },
+   {
+    "n": 2,
+    "what": "Look at who already wins, and set the pass marks",
+    "how": "Scout 5 to 10 pages of single Indian readers and astrologers with an audience abroad, not apps. This is the only step that can show one reader earning from the diaspora. Needs the go-ahead for Instagram browsing at the agreed slow pace.",
+    "gate": "At least three pages named with what works for them, and the pass marks for step 4 written down from their numbers. If no single reader is found doing this, the lane choice is looked at again."
+   },
+   {
+    "n": 3,
+    "what": "Decide language, product and paperwork",
+    "how": "Sakshi's call on English on camera. Choose what to sell first: a report needs no night hours, live readings for the US mean early mornings in India. Set a provisional price for abroad. Ask a CA about GST, export of services and bank paperwork. Write a refund policy.",
+    "gate": "Language, first product, provisional price and the CA's answer are written down."
+   },
+   {
+    "n": 4,
+    "what": "Open the new account, honestly and apart",
+    "how": "A creator account made in India on Sakshi's own phone and number. English bio that says who she is and where. Contact syncing off; nothing posted about it on the Indian page.",
+    "gate": "Account open. No VPN, no foreign number."
+   },
+   {
+    "n": 5,
+    "what": "First batch: 10 to 12 reels",
+    "how": "About life abroad, with a clear offer and price, posted on the US evening over three weeks. Independent review before posting, as for all Tarot Talk work.",
+    "gate": "The step 2 pass marks: share of viewers abroad, and a counted number of enquiries from abroad. A new account may not show viewer countries until it has enough followers; if so, count from who comments and messages."
+   },
+   {
+    "n": 6,
+    "what": "Sell",
+    "how": "Confirm the price for abroad from what the enquiries say. Indian sellers abroad list 25 to 100 dollars.",
+    "gate": "A set number of paid orders from abroad by a set date, both fixed in step 2."
+   },
+   {
+    "n": 7,
+    "what": "Places and paid tests",
+    "how": "Only now use the state lists: small paid tests to California, Texas, New Jersey and Ontario, with a spending cap fixed first, if Meta approves the ads and the local rules for those places have been checked.",
+    "gate": "Cost per buyer is below what is left from a sale after fees, tax and Sakshi's time."
+   },
+   {
+    "n": 8,
+    "what": "Then test the Western lane",
+    "how": "Ten reels in plain Western English.",
+    "gate": "The hand-counted pass number of non-Indian paying enquiries is reached, or the lane is dropped."
+   }
+  ],
+  "open": [
+   "Whether SuperProfile accepts readings sold abroad, and whether strangers' foreign cards go through. SuperProfile's own comparison page says buyers abroad can pay in 16 currencies while Indian creators are paid in rupees; its about page says only 'their own currency'. Not tested.",
+   "No single Indian reader's page with an audience abroad has been scouted. This is the biggest gap in the lane choice.",
+   "Why a new account and not an English series on the present page was not weighed with numbers. The country signal above is one reason for a new account; it is not proof.",
+   "Tax, GST and bank paperwork for money from abroad. Local consumer and advertising rules outside New York and the UK.",
+   "Meta's cards for the Reels tab, Explore and Feed, and Instagram's Help page on who can use trial reels, were not read.",
+   "Gulf countries stay out for both lanes until a lawyer says otherwise."
+  ],
+  "sources": [
+   [
+    "Inc42: Astrotalk FY26 results",
+    "https://inc42.com/buzz/astrotalks-fy26-profit-jumps-10x-to-₹222-cr-revenue-zooms-55-yoy/"
+   ],
+   [
+    "Inc42: Can Astrotalk chart a future beyond astrology?",
+    "https://inc42.com/features/can-astrotalk-chart-a-future-beyond-astrology/"
+   ],
+   [
+    "Open magazine: Astrotalk's 1,823-crore question",
+    "https://openthemagazine.com/business/astrotalks-1823-crore-question-what-are-people-really-paying-for"
+   ],
+   [
+    "Open magazine: InstaAstro",
+    "https://openthemagazine.com/business/kundli-meets-code-instaastros-12-million-bet-on-ai-reading-the-customer"
+   ],
+   [
+    "Pew Research: facts about Indians in the US",
+    "https://www.pewresearch.org/race-and-ethnicity/fact-sheet/asian-americans-indians-in-the-u-s/"
+   ],
+   [
+    "Times of Oman: Indian American and US median incomes (Pew figures)",
+    "https://timesofoman.com/article/169566-indian-americans-top-us-earnings"
+   ],
+   [
+    "NPCI: UPI for NRIs",
+    "https://npci.org.in/what-we-do/upi-global/upi-for-nris/product-overview"
+   ],
+   [
+    "RBL Bank: UPI access for NRIs, 12 countries",
+    "https://www.rbl.bank.in/nri-banking/money-transfer/upi-access-for-nris"
+   ],
+   [
+    "SuperProfile: buyers abroad",
+    "https://superprofile.bio/about"
+   ],
+   [
+    "Stripe: accepting international payments from India",
+    "https://docs.stripe.com/india-exports"
+   ],
+   [
+    "Meta Transparency Center: Instagram Reels system card",
+    "https://transparency.meta.com/features/explaining-ranking/ig-reels-chaining/"
+   ],
+   [
+    "Instagram Help: country location shown on some accounts",
+    "https://help.instagram.com/998434327197383"
+   ],
+   [
+    "Meta: trial reels",
+    "https://about.fb.com/news/2024/12/trial-reels-try-content-non-followers/"
+   ],
+   [
+    "Meta developers: ad targeting by country, region and city",
+    "https://developers.facebook.com/docs/marketing-api/audiences/reference/basic-targeting"
+   ],
+   [
+    "CIC News: where South Asians live in Canada",
+    "https://www.cicnews.com/2024/03/where-do-most-south-asians-live-in-canada-0343352.html"
+   ],
+   [
+    "OnTheMoveCanada: provinces with most Indian population",
+    "https://onthemovecanada.com/immigration/from/provinces-with-most-indian-population/"
+   ],
+   [
+    "Australian census 2021: India-born in Victoria",
+    "https://www.abs.gov.au/census/find-census-data/quickstats/2021/7103_2"
+   ],
+   [
+    "Australian census 2021: India-born in New South Wales",
+    "https://www.abs.gov.au/census/find-census-data/quickstats/2021/7103_1"
+   ],
+   [
+    "ONS: small populations, Census 2021",
+    "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/bulletins/smallpopulationsenglandandwales/census2021"
+   ],
+   [
+    "SuperProfile: Gumroad alternatives for Indian creators (16 currencies claim)",
+    "https://superprofile.bio/compare/gumroad-alternatives-india"
+   ],
+   [
+    "SuperProfile guide on trial reels (200 followers, citing Instagram Help)",
+    "https://superprofile.bio/guides/instagram-trial-reels.md"
+   ],
+   [
+    "Wikipedia: British Indians (census figures)",
+    "https://wikipedia.com/wiki/Indian-British"
+   ],
+   [
+    "Australian census 2021: India-born in Australia",
+    "https://www.abs.gov.au/census/find-census-data/quickstats/2021/7103_AUS"
+   ],
+   [
+    "Australian foreign ministry: Indian communities snapshot",
+    "https://www.dfat.gov.au/sites/default/files/understanding-australia-indian-communities-statistical-snapshot.pdf"
+   ]
+  ],
+  "both": {
+   "title": "Risks that sit on both lanes",
+   "rows": [
+    [
+     "Payment companies restrict this business: PayPal's Braintree bars fortune tellers and Stripe's restricted list names psychic services. Stripe in India is invite-only and not open to individuals. Whether SuperProfile allows readings sold abroad is not known.",
+     "Braintree policy; Stripe pages"
+    ],
+    [
+     "New York requires paid fortune telling to be presented as entertainment, and New York is the largest Indian metro area in the US. Rules in other US states, the UK, Canada and Australia were not checked.",
+     "New York Penal Law 165.35"
+    ],
+    [
+     "Tax, GST and bank paperwork for money from abroad were not checked. Refunds and card disputes need a written policy.",
+     "Not checked"
+    ]
+   ]
+  }
  }
 }

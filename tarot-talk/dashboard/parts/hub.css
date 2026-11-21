@@ -111,3 +111,7 @@ details.reading summary{cursor:pointer;list-style:none;font-weight:700;font-size
 .two2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;margin:12px 0}
 .rnote{font-size:13px;color:var(--warn);border-left:3px solid var(--warn);padding-left:8px}
 .card,.planrow,.scard,.sbody,.stack>*{min-width:0;overflow-wrap:anywhere}.sgrid{grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr))}
+.lanecard{border-top:3px solid var(--warn)} .lanecard.t-good{border-top-color:var(--good)}
+.evrow{display:flex;flex-direction:column;gap:2px;padding:8px 0 8px 12px;border-left:3px solid var(--c);margin:6px 0;font-size:14.5px}
+.stepsv{display:grid;gap:10px} .stepv{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:14px 16px;border-radius:16px;background:var(--glass);border:1px solid var(--line)} .stepv>b{font:800 30px/1 var(--display)}
+.gate{margin-top:8px;font-size:13.5px;padding:8px 10px;border-radius:10px;border:1px dashed var(--line)} .gate span{display:block;font-weight:700;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--g1)}

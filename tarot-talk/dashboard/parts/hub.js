@@ -105,7 +105,7 @@ function vResearch() {
 /* ---------- abroad: which countries and states to aim a new English channel at ---------- */
 const TIER = { start: ["Start here", "good", "var(--good)"], same: ["Same reels reach it", "acc", "var(--g1)"], small: ["Small but keen", "acc", "var(--g4)"], later: ["Later, other languages", "wait", "var(--wait)"], avoid: ["Do not target", "bad", "var(--bad)"] };
 const TWORD = [["tarot", "Tarot"], ["akashic", "Akashic"], ["healing", "Healing"]];
-const abar = (label, v, col) => h("div", { class: "abar" }, h("span", {}, label), h("div", { class: "atrack" }, v == null ? null : h("i", { style: "width:" + v + "%;background:" + (col || "var(--grad)") })), h("b", {}, v == null ? "n/a" : String(v)));
+const abar = (label, v, col, shown) => h("div", { class: "abar" }, h("span", {}, label), h("div", { class: "atrack" }, v == null ? null : h("i", { style: "width:" + v + "%;background:" + (col || "var(--grad)") })), h("b", {}, v == null ? "n/a" : (shown || String(v))));
 const srcRows = rows => rows.map(([t, s]) => h("div", { class: "planrow" }, h("span", {}, t), h("span", { class: "sub" }, s)));
 function countrySheet(c) {
   const T = TIER[c.tier];
@@ -116,12 +116,35 @@ function countrySheet(c) {
     c.facts.length ? h("div", { class: "flabel" }, "What the surveys and reports say") : null, ...srcRows(c.facts),
     c.care ? reading(c.care, "Take care", true) : null);
 }
+
+function vAbroadPlan() {
+  const P = D.abroad.plan, R = P.review, rev = R.state === "reviewed";
+  const ev = (rows, col) => rows.map(([x, s]) => h("div", { class: "evrow", style: "--c:" + col }, h("span", {}, x), h("span", { class: "sub" }, s)));
+  const lane = L => h("div", { class: "card lanecard t-" + L.tone }, h("div", { class: "qrow" }, h("h3", { style: "font-size:19px" }, L.name), pill(L.call, L.tone)), h("div", { style: "font-size:15px;margin:4px 0 8px" }, L.line),
+    h("div", { class: "flabel" }, "For"), ...ev(L.for, "var(--good)"), h("div", { class: "flabel" }, "Against"), ...ev(L.against, "var(--bad)"));
+  const max = g => Math.max(...g.rows.map(r => r[1]), 1);
+  return [
+    h("div", { class: "card hero2" }, h("div", { class: "qrow" }, h("div", { class: "area" }, "Plan · looked " + P.looked), pill(rev ? "Reviewed once, fixes not re-checked" : "First pass, not yet reviewed", rev ? "acc" : "warn")), h("h3", { style: "font-size:20px;margin:8px 0 6px" }, P.verdict),
+      R.verdict ? reading(R.verdict, "Reviewer", true) : null, R.notes.length ? fold("What the reviewer said (" + R.notes.length + ")", R.notes.map(n => h("div", { class: "planrow" }, h("span", {}, n)))) : null),
+    h("h2", {}, "Which lane first"), h("div", { class: "two2" }, P.lanes.map(lane)), P.both ? card("", h("div", { class: "flabel", style: "margin-top:0" }, P.both.title), ...ev(P.both.rows, "var(--warn)")) : null, h("div", { class: "card", style: "margin-top:12px" }, h("div", { class: "flabel", style: "margin-top:0" }, "Should the second lane be done at all?"), h("div", { style: "font-size:14.5px" }, P.second)),
+    h("h2", {}, P.reach.title), h("div", { class: "card", style: "border-left:4px solid var(--good)" }, h("h3", {}, P.reach.answer)),
+    h("div", { class: "stack", style: "margin-top:12px" }, P.reach.why.map(([t, x, s]) => card("", h("b", {}, t), h("div", { style: "font-size:14.5px;margin-top:4px" }, x), h("div", { class: "sub", style: "margin-top:4px" }, s)))),
+    h("div", { class: "flabel" }, "What does steer who sees it"), h("div", { class: "tgrid" }, P.reach.levers.map(([t, x]) => h("div", { class: "tcard" }, h("b", {}, t), h("span", { class: "sub" }, x)))), h("p", { class: "sub" }, P.reach.note),
+    h("h2", {}, "Where they live"), h("p", { class: "sub" }, P.where.note),
+    h("div", { class: "two2" }, P.where.groups.map(g => card("", h("div", { class: "qrow" }, h("b", {}, g.name), g.unit ? h("span", { class: "sub" }, g.unit) : null), g.rows.length ? h("div", { class: "abars wide", style: "margin-top:8px" }, g.rows.map(([n, v]) => abar(n, Math.round(100 * v / max(g)), "var(--grad)", String(v)))) : null, h("div", { style: "font-size:14px;margin-top:8px" }, g.extra), h("div", { class: "sub", style: "margin-top:4px" }, g.source)))),
+    h("h2", {}, "The order to start in"), h("div", { class: "stepsv" }, P.steps.map(s => h("div", { class: "stepv" }, h("b", { class: "gt" }, String(s.n)), h("div", {}, h("h3", {}, s.what), h("div", { style: "font-size:14.5px" }, s.how), h("div", { class: "gate" }, h("span", {}, "Go on when"), s.gate))))),
+    h("h2", {}, "Not checked yet"), card("", ...P.open.map((x, i) => h("div", { class: "planrow" }, h("span", {}, (i + 1) + ". " + x)))),
+    fold("Sources for the plan (" + P.sources.length + ")", P.sources.map(([x, u]) => h("div", { class: "planrow" }, h("a", { class: "out", href: u, target: "_blank", rel: "noopener" }, x))))
+  ];
+}
 function vAbroad() {
   const A = D.abroad, S = A.states, R = A.review, rev = R.state === "reviewed";
   const cc = c => { const T = TIER[c.tier]; return h("button", { class: "ccard t-" + c.tier, style: "--c:" + T[2], onclick: () => countrySheet(c) }, h("span", { class: "cflag" }, c.code), h("b", {}, c.name), h("span", { class: "sub" }, c.people), pill(T[0], T[1]), h("span", { class: "kl" }, c.line),
     c.tier === "later" ? null : h("div", { class: "abars" }, ...TWORD.map(([k, t]) => abar(t, c.trends[k], T[2]))), h("span", { class: "sub" }, "Cost to advertise $" + c.ad[0] + " to $" + c.ad[1])); };
   const sbars = (rows, col) => h("div", { class: "abars wide" }, rows.map(([n, v]) => abar(n, v, col)));
-  return [
+  const sub = A.plan ? seg([["plan", "Plan"], ["market", "Countries and states"]], state.atab || "plan", k => { state.atab = k; render(); }) : null;
+  if (A.plan && (state.atab || "plan") === "plan") return [sub, ...vAbroadPlan()];
+  return [sub,
     h("div", { class: "card hero2" }, h("div", { class: "qrow" }, h("div", { class: "area" }, "Looked " + A.looked), pill(rev ? "Reviewed once, fixes not re-checked" : "First pass, not yet reviewed", rev ? "acc" : "warn")), h("h3", { style: "font-size:20px;margin:8px 0 6px" }, A.verdict), h("div", { class: "sub" }, A.how), R.verdict ? reading(R.verdict, "Reviewer, " + R.at, true) : null,
       R.notes.length ? fold("What the reviewer said (" + R.notes.length + ")", R.notes.map(n => h("div", { class: "planrow" }, h("span", {}, n)))) : null),
     h("h2", {}, "Countries"), h("p", { class: "sub" }, "Bars: interest per person in tarot, Akashic and healing. Tap a card for the surveys behind it."),
