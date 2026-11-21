@@ -1,0 +1,777 @@
+{
+ "title": "Abroad: where a new English channel should aim",
+ "looked": "21 Nov 2026",
+ "review": {
+  "state": "reviewed",
+  "by": "an independent reviewer",
+  "at": "21 Nov 2026",
+  "verdict": "Mostly sound. 'US first, UAE out' holds, mainly on population.",
+  "notes": [
+   "30 points raised; the ones marked must-fix are corrected on this page.",
+   "Corrected: the claim that Canada, the UK and Australia are keener than the US. True for tarot only.",
+   "Corrected: two UK survey lines and the UAE law wording, to match what the sources say.",
+   "Corrected: ad price is a cost for this page, not a benefit.",
+   "Corrected: state groups now match the numbers; Florida is about the middle, not above it.",
+   "Added on the reviewer's advice: payment companies' rules, New York's fortune-telling law, and the three search words on one scale.",
+   "Still open: the fixes themselves have not had a second review. The reviewer could not open the Tarotoo article or Meta's full policy text."
+  ]
+ },
+ "verdict": "If the new channel is in English for Western viewers, aim it at the United States first: it has by far the most people, and the strongest interest in Akashic and healing among large countries. The same reels also reach Canada, the United Kingdom and Australia, which are keener than the US on tarot and less keen on Akashic and healing. Do not aim at the UAE. Two things must be settled before this is final: how buyers abroad will pay, and which audience the channel is for.",
+ "how": "Interest numbers are Google Trends, read on 21 Nov 2026 in the built-in browser: past 12 months, web search, English search terms 'tarot reading', 'akashic records' and 'energy healing'. Each number is interest per person inside that place, on a 0 to 100 scale where 100 is the top place for that word. It is not the number of searches, it only counts people who search in English, and each word is scaled by itself, so a 59 for tarot cannot be compared with a 94 for Akashic.",
+ "countries": [
+  {
+   "code": "US",
+   "name": "United States",
+   "tier": "start",
+   "people": "about 340 million",
+   "trends": {
+    "tarot": 59,
+    "akashic": 94,
+    "healing": 69
+   },
+   "ad": [
+    10.5,
+    16.8
+   ],
+   "line": "By far the most people, and the strongest large country for Akashic.",
+   "facts": [
+    [
+     "30% of US adults consult astrology, tarot or a fortune teller at least once a year; tarot alone is 11%",
+     "Pew Research, survey of 9,593 adults, Oct 2024"
+    ],
+    [
+     "Nearly a quarter of adults aged 18 to 29 use tarot at least yearly; 3% of those 65 and over",
+     "Pew Research, Oct 2024"
+    ],
+    [
+     "Psychic services industry: 2.3 billion dollars a year, about 105,000 people working in it",
+     "IBISWorld figures, as carried in an AP news report, May 2025"
+    ],
+    [
+     "55.8% of tarot.com's desktop visits came from the US; Canada 4.8%, UK 4.7%, India 4.2%, Australia 3.3%. One US website's traffic, not a market share.",
+     "Similarweb, Dec 2025"
+    ],
+    [
+     "New York makes fortune telling for a fee a class B misdemeanour unless it is a show 'solely for the purpose of entertainment or amusement'. Bills to repeal it were filed in 2025. Other states and towns have their own rules.",
+     "New York Penal Law 165.35, NY Senate site"
+    ]
+   ],
+   "care": "Most Americans who do this say it is for fun. Some states restrict paid fortune telling. See 'Who is serious' and 'Take care' below."
+  },
+  {
+   "code": "CA",
+   "name": "Canada",
+   "tier": "same",
+   "people": "about 41 million",
+   "trends": {
+    "tarot": 67,
+    "akashic": 83,
+    "healing": 52
+   },
+   "ad": [
+    9.2,
+    14.5
+   ],
+   "line": "Second large country for Akashic, after the US. Shares the US clocks.",
+   "facts": [
+    [
+     "20% of Canadians have consulted a psychic and 11% a medium. The survey asked this as ways people had tried to contact the dead.",
+     "Ipsos for Blue Ant Media, 1,001 adults, May 2021"
+    ],
+    [
+     "Nearly half of Canadians, and a majority of women, believe some people have psychic powers",
+     "Angus Reid Institute, 1,515 adults, 2016 (old)"
+    ],
+    [
+     "Inside Canada: British Columbia 100, Alberta 98, Manitoba 97, Ontario 92, Quebec 45",
+     "Google Trends 'tarot reading', 21 Nov 2026"
+    ]
+   ],
+   "care": "Quebec reads low on the English word, most likely because it searches in French (not measured)."
+  },
+  {
+   "code": "GB",
+   "name": "United Kingdom",
+   "tier": "same",
+   "people": "about 69 million",
+   "trends": {
+    "tarot": 75,
+    "akashic": 55,
+    "healing": 41
+   },
+   "ad": [
+    8.4,
+    13.6
+   ],
+   "line": "Tarot is strong. Akashic and healing are weaker here than in North America.",
+   "facts": [
+    [
+     "23% of Britons have consulted a psychic or medium: 12% with serious intent, 11% only for fun. 57% of those who went thought the psychic was truthful.",
+     "YouGov, 2,500 adults, Sept 2011 (old), as summarised by British Religion in Numbers"
+    ],
+    [
+     "30% of Britons see telepathy as plausible, 30% reiki, 17% crystal healing",
+     "YouGov, July 2025"
+    ],
+    [
+     "Inside the UK: England 100, Wales 89, Scotland 84, Northern Ireland 76",
+     "Google Trends 'tarot reading', 21 Nov 2026"
+    ]
+   ],
+   "care": "UK advertising rules: the seller must be able to prove a claim. No claims about how accurate a reading is, no promises to improve health or wealth or break curses, and healing only as spiritual, never physical."
+  },
+  {
+   "code": "AU",
+   "name": "Australia",
+   "tier": "same",
+   "people": "about 27 million",
+   "trends": {
+    "tarot": 75,
+    "akashic": 72,
+    "healing": 61
+   },
+   "ad": [
+    8.8,
+    14.2
+   ],
+   "line": "High on all three words. Small country.",
+   "facts": [
+    [
+     "37% of Australians have had a mystical or supernatural experience or know someone who has",
+     "Australian Community Survey 2019, as reported by Australian Women's Weekly"
+    ],
+    [
+     "38% of Gen Z Australians call themselves spiritual",
+     "ANU Gen Z study, reported May 2024"
+    ],
+    [
+     "Inside Australia the states are close: Western Australia 55, Queensland 53, Victoria 50, South Australia 50, New South Wales 46, Tasmania 42. Northern Territory read 100 and is left out: about 250,000 people, the same small-place quirk as Wyoming.",
+     "Google Trends 'tarot reading', 21 Nov 2026"
+    ]
+   ],
+   "care": "Its evening is early afternoon in India, the opposite end of the day from the US."
+  },
+  {
+   "code": "NZ",
+   "name": "New Zealand",
+   "tier": "small",
+   "people": "about 5 million",
+   "trends": {
+    "tarot": 70,
+    "akashic": 72,
+    "healing": 52
+   },
+   "ad": [
+    7.4,
+    12.0
+   ],
+   "line": "Keen but tiny. Comes along with Australia.",
+   "facts": [],
+   "care": ""
+  },
+  {
+   "code": "IE",
+   "name": "Ireland",
+   "tier": "small",
+   "people": "about 5 million",
+   "trends": {
+    "tarot": 70,
+    "akashic": null,
+    "healing": 81
+   },
+   "ad": [
+    7.4,
+    12.0
+   ],
+   "line": "Highest real country for 'energy healing'. Comes along with the UK.",
+   "facts": [],
+   "care": "Akashic read 44 or lower here, or had no data: it was outside the top 22 places."
+  },
+  {
+   "code": "SG",
+   "name": "Singapore",
+   "tier": "small",
+   "people": "about 6 million",
+   "trends": {
+    "tarot": 93,
+    "akashic": 100,
+    "healing": 55
+   },
+   "ad": [
+    6.8,
+    11.4
+   ],
+   "line": "Read 100 for 'akashic records', level with the US within the noise. English, small.",
+   "facts": [
+    [
+     "About 4.6 lakh overseas Indians live in Singapore",
+     "MEA figures as reported by NewsX, 2025"
+    ]
+   ],
+   "care": ""
+  },
+  {
+   "code": "AE",
+   "name": "United Arab Emirates",
+   "tier": "avoid",
+   "people": "about 10 million, of whom about 39 lakh are Indians",
+   "trends": {
+    "tarot": 30,
+    "akashic": null,
+    "healing": 30
+   },
+   "ad": [
+    5.4,
+    9.8
+   ],
+   "line": "Do not target. UAE law punishes sorcery and quackery, and local guides say that covers fortune-telling and promoting it online.",
+   "facts": [
+    [
+     "Article 366 of Federal Decree-Law 31 of 2021 punishes illusion, sorcery or quackery done to exploit or harm others, and promoting it by any means",
+     "Khaleej Times report of the public prosecution's notice"
+    ],
+    [
+     "Seven people were jailed and fined AED 50,000 for sorcery",
+     "Khaleej Times; Arabian Business"
+    ],
+    [
+     "A UAE law firm's guide says claiming to see the future and promoting fortune-telling, in person or online, are covered",
+     "askthelaw.ae (a guide, not the law text; it does not name tarot)"
+    ]
+   ],
+   "care": "This is a precaution, not legal advice. Other Gulf countries probably carry similar risk; they were not checked. Followers from the Gulf may arrive by themselves; do not sell readings there or run ads there without a lawyer's view. Interest numbers: Akashic was outside the top 22 places."
+  },
+  {
+   "code": "··",
+   "name": "Europe and Latin America in other languages",
+   "tier": "later",
+   "people": "France, Spain, Germany, Brazil, Mexico, Argentina",
+   "trends": {
+    "tarot": null,
+    "akashic": null,
+    "healing": null
+   },
+   "ad": [
+    1.4,
+    12.4
+   ],
+   "line": "Tarot is big, but in Spanish, French, German and Portuguese. A later channel, not this one.",
+   "facts": [
+    [
+     "A tarot trade report puts Germany at 7% and Brazil at 6% of world tarot card sales, after the US (38%) and UK (12%)",
+     "Deckaura 2026 report (a seller's own estimate)"
+    ],
+    [
+     "Ad prices in Brazil, Mexico and Argentina are 1.4 to 4.8 dollars per thousand views, against 10.5 to 16.8 in the US",
+     "Stackmatix 2026 table (no source named)"
+    ]
+   ],
+   "care": "Our English search words cannot measure these places, so no interest number is shown."
+  }
+ ],
+ "ad_note": "Ad price = what it costs an advertiser to buy 1,000 ad views in that country, in US dollars. For this page it is a cost: reaching Americans with paid ads is the dearest of all. It is only a loose sign of spending power, and it is not money Instagram pays the page. Figures are for Facebook, from Stackmatix's 2026 table, which names no data source and says Instagram runs 15 to 25% higher. India on the same table is 0.8 to 2.4.",
+ "who_pays": {
+  "note": "The catch in the US numbers: most people do this for fun. Pew did not ask who pays. Our reading is that buyers come from the smaller group who do it for insight.",
+  "tiles": [
+   [
+    "20%",
+    "do it mainly for fun"
+   ],
+   [
+    "10%",
+    "do it mainly for helpful insight"
+   ],
+   [
+    "7%",
+    "lean on it at least a little for big life decisions (Pew's chart; its text gives 1% a lot and 5% a little)"
+   ]
+  ],
+  "groups": [
+   [
+    "Women 18 to 49",
+    "43% believe in astrology, against 27% of women 50 and over"
+   ],
+   [
+    "Adults under 30",
+    "17% come for insight; nearly a quarter use tarot yearly"
+   ],
+   [
+    "LGBT adults",
+    "33% use tarot yearly (9% of others); 29% come for insight"
+   ],
+   [
+    "Asian Americans",
+    "15% see a fortune teller yearly (3% of White Americans)"
+   ],
+   [
+    "Asian, Black and Hispanic Americans",
+    "12%, 11% and 9% lean on these practices for big decisions (4% of White Americans)"
+   ]
+  ],
+  "source": "Pew Research Center, survey of 9,593 US adults, Oct 2024, published May 2025"
+ },
+ "price": {
+  "note": "A handful of public listings found by search on 21 Nov 2026. Not a price survey.",
+  "rows": [
+   [
+    "Sakshi's yearly report",
+    "Rs 555",
+    "about 6 US dollars"
+   ],
+   [
+    "Indian readers selling abroad on Fiverr",
+    "25 to 100 dollars",
+    "Akashic reading, written or call"
+   ],
+   [
+    "Indian reader selling to Canada",
+    "CAD 31 or Rs 2,100",
+    "30 minute tarot audio call, prices as listed"
+   ],
+   [
+    "US and Canada readers, lower end",
+    "60 to 125 dollars",
+    "Akashic, 30 to 60 minutes"
+   ],
+   [
+    "US readers, upper end",
+    "225 to 395 dollars",
+    "Akashic, 60 minutes"
+   ]
+  ]
+ },
+ "states": {
+  "note": "You cannot choose states when you post a reel. States matter for three things: which US clock to post on, what life the reels should picture, and where to point paid tests later. Small states jump around in these numbers, so read this as a rough picture, not a ranking.",
+  "big": {
+   "title": "Where the most people are",
+   "items": [
+    "California",
+    "Texas",
+    "Florida",
+    "New York"
+   ],
+   "source": "The four most populous states. A tarot app's own study (Tarotoo, April 2026, reported by CW33) also names California, New York and Texas as the top three for tarot interest; its headline counts looked too high to trust and are not used here."
+  },
+  "tarot": [
+   [
+    "Vermont",
+    55
+   ],
+   [
+    "Maine",
+    52
+   ],
+   [
+    "New Mexico",
+    51
+   ],
+   [
+    "Rhode Island",
+    49
+   ],
+   [
+    "Hawaii",
+    49
+   ],
+   [
+    "Oregon",
+    48
+   ],
+   [
+    "New York",
+    46
+   ],
+   [
+    "California",
+    45
+   ],
+   [
+    "Nevada",
+    45
+   ],
+   [
+    "Massachusetts",
+    45
+   ],
+   [
+    "Connecticut",
+    42
+   ],
+   [
+    "Kansas",
+    42
+   ],
+   [
+    "Colorado",
+    41
+   ],
+   [
+    "Louisiana",
+    41
+   ],
+   [
+    "District of Columbia",
+    40
+   ]
+  ],
+  "tarot_low": [
+   [
+    "North Dakota",
+    20
+   ],
+   [
+    "South Dakota",
+    24
+   ],
+   [
+    "South Carolina",
+    27
+   ],
+   [
+    "Nebraska",
+    27
+   ],
+   [
+    "Mississippi",
+    28
+   ]
+  ],
+  "akashic": [
+   [
+    "Idaho",
+    100
+   ],
+   [
+    "Vermont",
+    71
+   ],
+   [
+    "Alaska",
+    55
+   ],
+   [
+    "Hawaii",
+    50
+   ],
+   [
+    "Maine",
+    46
+   ],
+   [
+    "Montana",
+    44
+   ],
+   [
+    "Arizona",
+    42
+   ],
+   [
+    "New Mexico",
+    40
+   ],
+   [
+    "Nevada",
+    40
+   ],
+   [
+    "Oregon",
+    38
+   ],
+   [
+    "Utah",
+    38
+   ],
+   [
+    "Colorado",
+    38
+   ]
+  ],
+  "glitch": "Wyoming read 100 for tarot, 82 for Akashic and 100 for energy healing, with under 600,000 people. On healing the next state reads 26, which cannot be real, so Wyoming is left out and no healing ranking is shown. The same weakness touches other small states: Idaho at 100, Vermont and Alaska lead the Akashic list on very few searches. Treat the Akashic list as weak.",
+  "clusters": [
+   [
+    "Big and above the middle",
+    "California, New York",
+    "45 and 46 for tarot, where the middle state reads about 35. Akashic 34, about the middle."
+   ],
+   [
+    "The West",
+    "Oregon, Nevada, New Mexico, Hawaii, Colorado",
+    "41 to 51 for tarot, and the same states sit high on the Akashic list. Pacific and Mountain clocks."
+   ],
+   [
+    "The North-East",
+    "Vermont, Maine, Rhode Island, Massachusetts, Connecticut",
+    "42 to 55 for tarot only. Eastern clock. Vermont and Maine are small, so their lead is shaky."
+   ],
+   [
+    "Big but about the middle",
+    "Florida, Illinois, Texas",
+    "37, 35 and 32 for tarot. Huge numbers of people, ordinary interest per person."
+   ]
+  ],
+  "agree": [
+   [
+    "Most new-age states overall: Arizona, Nevada, Oregon, Utah, Colorado. Reiki is strongest in New England.",
+    "Cultural Currents Institute, 16 search words, Dec 2022 to Jan 2023"
+   ],
+   [
+    "New York has the most 'psychic' searches per person; Rhode Island, New York and Massachusetts top the list overall",
+    "Duel.com study, as reported by Film Daily"
+   ]
+  ],
+  "tarot_big": [
+   [
+    "Florida",
+    37
+   ],
+   [
+    "Illinois",
+    35
+   ],
+   [
+    "Texas",
+    32
+   ]
+  ],
+  "akashic_big": [
+   [
+    "California",
+    34
+   ],
+   [
+    "New York",
+    34
+   ],
+   [
+    "Florida",
+    34
+   ]
+  ],
+  "akashic_warn": "Weak: few searches, small states on top"
+ },
+ "clock": {
+  "note": "Evening (7 to 10 pm) in each place, shown in India time. Plain clock arithmetic for winter; whether evening is the best hour for this audience is not measured. From March to October the US, Canada, UK and Ireland rows fall one hour earlier in India time, and Sydney one hour later.",
+  "rows": [
+   [
+    "US East (New York, Florida)",
+    "5:30 to 8:30 am IST"
+   ],
+   [
+    "US Central (Texas, Illinois)",
+    "7:30 to 10:30 am IST"
+   ],
+   [
+    "US West (California, Oregon)",
+    "8:30 to 11:30 am IST"
+   ],
+   [
+    "United Kingdom, Ireland",
+    "12:30 to 3:30 am IST"
+   ],
+   [
+    "Australia East (Sydney)",
+    "1:30 to 4:30 pm IST"
+   ]
+  ]
+ },
+ "choice": {
+  "title": "The decision that comes before the country",
+  "a": [
+   "Western seekers",
+   "The big audience above. English only. Our assumption, not measured: they know tarot well, Akashic a little, mulank not at all, and want reflection and clarity more than prediction."
+  ],
+  "b": [
+   "Indians living abroad",
+   "About 57 lakh in the US, 36 lakh in Canada, 13 to 18 lakh in the UK, 10 lakh in Australia. Our assumption, not measured: they already trust tarot, numerology and Akashic, and Hinglish works. They earn in dollars and pounds."
+  ],
+  "note": "The two need different reels, language and prices, and the second makes the Gulf matter, where the legal risk is. Diaspora counts: Ministry of External Affairs, January 2025, as reported by Deccan Herald; the ministry's own table lists 17.6 lakh for the UK."
+ },
+ "care": [
+  [
+   "Check payments before anything else",
+   "PayPal's Braintree lists fortune tellers among businesses it will not serve, and Stripe's restricted list names psychic services and fortune tellers. How an Indian seller gets paid from abroad for readings is not solved yet, and it can block the whole plan.",
+   "bad"
+  ],
+  [
+   "Do not sell into the UAE",
+   "UAE law punishes sorcery and quackery, and local guides say that covers fortune-telling and promoting it online. Other Gulf countries not checked.",
+   "bad"
+  ],
+  [
+   "US: 'for entertainment' rules",
+   "New York makes paid fortune telling a misdemeanour unless it is presented as entertainment, and other states and towns have their own rules. Not checked state by state.",
+   "warn"
+  ],
+  [
+   "No promised outcomes",
+   "UK rules make the seller prove a claim: no accuracy claims, no promises on health, wealth or curses. Say guidance and reflection. This matches the page's own honesty rules.",
+   "warn"
+  ],
+  [
+   "Paid ads cannot say 'you are...'",
+   "Meta rejects ads that state or imply something personal about the viewer, such as health or money trouble. Hooks that work in reels may be refused as ads. The full list on Meta's page was not read in this pass.",
+   "warn"
+  ],
+  [
+   "Healing is never a medical claim",
+   "Readers abroad state on their booking pages that a session is not medical, legal or financial advice. Seen on listings; not a legal check.",
+   "warn"
+  ]
+ ],
+ "open": [
+  "How people abroad would pay, and which payment company will accept this kind of business from India. Must be answered first.",
+  "Which foreign pages already win with this content. No foreign tarot, Akashic or healing page has been scouted yet; that needs the Instagram browsing go-ahead.",
+  "Whether a new account posted from India gets shown to viewers abroad, and what helps. Not checked; no source read.",
+  "US rules state by state, and other Gulf countries. Only New York and the UAE were read.",
+  "How many searches these words get in each country (real volumes, not the 0 to 100 index). Not available free.",
+  "Whether Sakshi wants to speak on camera in English, Hinglish, or use voice-over. Her call.",
+  "The psychic-belief surveys for the UK (2011) and Canada (2016, 2021) are old. Nothing newer was found in this pass.",
+  "Not opened by the reviewer: IBISWorld, Similarweb, Angus Reid, the Australian sources, Duel.com, the diaspora counts, the Tarotoo article and the price listings."
+ ],
+ "sources": [
+  [
+   "Pew Research: 30% of Americans consult astrology, tarot cards or fortune tellers",
+   "https://www.pewresearch.org/religion/2025/05/21/3-in-10-americans-consult-astrology-tarot-cards-or-fortune-tellers/"
+  ],
+  [
+   "IBISWorld: Psychic Services in the US",
+   "https://www.ibisworld.com/united-states/industry/psychic-services-in-the-us/4413/"
+  ],
+  [
+   "Similarweb: tarot.com traffic by country",
+   "https://www.similarweb.com/website/tarot.com/"
+  ],
+  [
+   "Google Trends: tarot reading, worldwide, 12 months",
+   "https://trends.google.com/trends/explore?date=today%2012-m&q=tarot%20reading&hl=en"
+  ],
+  [
+   "Google Trends: akashic records, worldwide, 12 months",
+   "https://trends.google.com/trends/explore?date=today%2012-m&q=akashic%20records&hl=en"
+  ],
+  [
+   "Google Trends: energy healing, worldwide, 12 months",
+   "https://trends.google.com/trends/explore?date=today%2012-m&q=energy%20healing&hl=en"
+  ],
+  [
+   "Google Trends: tarot reading, United States by state",
+   "https://trends.google.com/trends/explore?date=today%2012-m&geo=US&q=tarot%20reading&hl=en"
+  ],
+  [
+   "Ipsos Canada 2021: ghosts, psychics and mediums",
+   "https://www.ipsos.com/en-ca/node/790766"
+  ],
+  [
+   "Angus Reid 2016: Canadians and the unexplained",
+   "https://angusreid.org/extra-terrestrials-stranger-things/"
+  ],
+  [
+   "YouGov UK 2011: do you believe in psychics",
+   "https://yougov.com/en-gb/articles/2271-do-you-believe-psychics"
+  ],
+  [
+   "YouGov UK: do Britons believe in the supernatural",
+   "https://yougov.com/en-gb/articles/52619-ghosts-magic-do-britons-believe-in-the-supernatural"
+  ],
+  [
+   "Australian Women's Weekly: why people see psychics",
+   "https://www.womensweekly.com.au/lifestyle/why-do-people-see-psychics/"
+  ],
+  [
+   "Cultural Currents Institute: new age trends by state",
+   "https://www.culturalcurrents.institute/insights/new-age-trends-report"
+  ],
+  [
+   "Tarotoo study as reported by CW33",
+   "https://cw33.com/news/texas/tarot-and-astrology-trends-surge-across-california-new-york-texas/"
+  ],
+  [
+   "Duel.com study as reported by Film Daily",
+   "https://filmdaily.co/?p=7405604"
+  ],
+  [
+   "Stackmatix: Facebook ads CPM by country 2026",
+   "https://stackmatix.com/blog/facebook-ads-cpm-by-country-2026"
+  ],
+  [
+   "Khaleej Times: UAE law on sorcery",
+   "https://www.khaleejtimes.com/uae/crime/uae-laws-dh50000-fine-jail-term-for-those-engaging-in-witchcraft-and-sorcery?amp=1"
+  ],
+  [
+   "askthelaw.ae: sorcery laws in the UAE",
+   "https://askthelaw.ae/?p=17459"
+  ],
+  [
+   "UK ASA guidance on psychics and mediums",
+   "https://www.asa.org.uk/asset/32FC4F60-ADF8-4019-AA7F7F4258117CFF"
+  ],
+  [
+   "Meta ad rules: personal attributes",
+   "https://transparency.meta.com/policies/ad-standards/objectionable-content/privacy-violations-personal-attributes/"
+  ],
+  [
+   "Deccan Herald: overseas Indians by country, Jan 2025",
+   "https://www.deccanherald.com/amp/story/world%2Faround-261-elected-representatives-in-foreign-countries-have-their-roots-in-india-3709840"
+  ],
+  [
+   "Deckaura: tarot industry report 2026",
+   "https://deckaura.com/pages/tarot-industry-report-2026"
+  ],
+  [
+   "British Religion in Numbers: YouGov 2011 psychics poll",
+   "https://www.brin.ac.uk/psychics/"
+  ],
+  [
+   "AP report on the Pew survey, with industry figures (Yahoo News)",
+   "https://www.yahoo.com/news/many-americans-believe-astrology-rely-140507606.html"
+  ],
+  [
+   "Khaleej Times: seven jailed for sorcery",
+   "https://khaleejtimes.com/uae/crime/uae-7-jailed-fined-dh50000-for-practising-sorcery?amp=1"
+  ],
+  [
+   "Arabian Business: UAE jails seven for sorcery",
+   "https://www.arabianbusiness.com/abnews/uae-jails-7-for-sorcery-issues-13600-fine"
+  ],
+  [
+   "New York Penal Law 165.35, fortune telling",
+   "https://nysenate.gov/legislation/laws/PEN/165.35"
+  ],
+  [
+   "Braintree (PayPal) acceptable use policy",
+   "https://www.paypal.com/legalhub/braintree/acceptable-use-policy"
+  ],
+  [
+   "Stripe: prohibited and restricted businesses",
+   "https://stripe.com/legal/restricted-businesses"
+  ],
+  [
+   "Google Trends: the three words compared, worldwide",
+   "https://trends.google.com/trends/explore?date=today%2012-m&q=tarot%20reading,akashic%20records,energy%20healing&hl=en"
+  ]
+ ],
+ "volume": {
+  "note": "The three words side by side on one scale (average over 12 months). Akashic is searched about a fifth as much as tarot, so its country and state numbers move in big steps and small gaps mean nothing.",
+  "rows": [
+   [
+    "Tarot reading",
+    74,
+    81
+   ],
+   [
+    "Energy healing",
+    36,
+    33
+   ],
+   [
+    "Akashic records",
+    14,
+    14
+   ]
+  ],
+  "cols": [
+   "Worldwide",
+   "United States"
+  ]
+ }
+}

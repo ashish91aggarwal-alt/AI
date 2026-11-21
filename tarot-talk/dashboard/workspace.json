@@ -21,6 +21,17 @@
    "short": "Same mulank, different year. Four style frames drawn; none pilot-ready yet."
   },
   {
+   "title": "New channel for viewers abroad",
+   "area": "Research",
+   "stage": "Reviewed once, payments open",
+   "tone": "warn",
+   "text": "A separate English channel for high-paying countries. Research says: if it is for Western viewers, aim at the United States first; the same reels reach Canada, the UK and Australia; do not aim at the UAE. An independent reviewer checked it and the fixes are in.",
+   "next": "Two things first: how buyers abroad will pay (PayPal and Stripe restrict this kind of business), and which audience, Western seekers or Indians living abroad.",
+   "link": "abroad",
+   "icon": "globe",
+   "short": "US first; Canada, UK, Australia come with it. Payments and audience choice are open."
+  },
+  {
    "title": "Instagram research",
    "area": "Research",
    "stage": "7 transcripts studied",
@@ -55,12 +66,21 @@
   }
  ],
  "waiting": [
+  "New channel abroad: choose the audience, Western seekers or Indians living abroad, and say how you take payments from abroad today, if at all (Research, Abroad).",
   "Pick the look for the 2027 series (reviewer's pick: gilded miniature, drawn more cleanly).",
   "Sakshi: which way do you read the personal year, January to December or birthday to birthday?",
   "Is the 2027 yearly report ready, and at what price? The series is not produced before the product exists or has a date.",
   "Comments and DMs from last year's series, for the audience file."
  ],
  "activity": [
+  {
+   "at": "21 Nov",
+   "text": "Abroad research checked by an independent reviewer; 30 points raised, the must-fix ones corrected."
+  },
+  {
+   "at": "21 Nov",
+   "text": "Abroad research added: countries and US states ranked for tarot, Akashic and healing from Google Trends, surveys and ad prices."
+  },
   {
    "at": "20 Nov",
    "text": "Desktop app (Tarot Talk Desk) written; the scout queue moved to GitHub so it works without an agent."

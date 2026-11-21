@@ -7,6 +7,7 @@ const ICON = {
   bolt: '<path d="M13 2 5 13.500h6L10 22l8-11.500h-6z"/>',
   pen: '<path d="m4 20 1-5L16.500 3.500l4 4L9 19zM14 6l4 4"/>',
   book: '<path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5M8.500 7.500h7"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.800 0 18M12 3c-3 3.2-3 14.800 0 18"/>',
   home: '<path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>'
 };
 const icon = (k, size) => { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("width", size || 22); s.setAttribute("height", size || 22); s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", "1.8"); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.setAttribute("aria-hidden", "true"); s.innerHTML = ICON[k] || ICON.bolt; return s; };
@@ -84,7 +85,8 @@ function inbox() {
 function shapeSheet(s) { sheet(s.name, h("h3", {}, s.name), h("div", { class: "qrow", style: "justify-content:flex-start" }, pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"), h("a", { class: "pill plain", href: "#p-" + s.handle }, "@" + s.handle)), h("div", { class: "sub" }, "Seen in: " + s.from), h("div", {}, s.structure), reading(s.ours, s.ok ? "Ours could be" : "Why not", true)); }
 function vResearch() {
   const pots = potentials(), q = waitingDesk() + waitingAgent();
-  const head = seg([["content", "Content", allProfiles().length], ["process", "Process", W.process.length], ["forward", "Forward a link", q || null]], state.rtab, k => { state.rtab = k; render(); });
+  const head = seg([["content", "Content", allProfiles().length], ["process", "Process", W.process.length], ...(D.abroad ? [["abroad", "Abroad", D.abroad.countries.filter(c => c.tier !== "avoid" && c.tier !== "later").length]] : []), ["forward", "Forward a link", q || null]], state.rtab, k => { state.rtab = k; render(); });
+  if (state.rtab === "abroad" && D.abroad) return [head, ...vAbroad()];
   if (state.rtab === "process") return [head, h("p", { class: "sub" }, "How to do it: funnels, script technique, ranking, film method. Tap a card for what we kept, changed and rejected."), h("div", { class: "posters" }, W.process.map(processCard))];
   if (state.rtab === "forward") return window.TT_LOCAL ? [head, ...inbox().slice(0, 3)] : [head, ...inbox()];
   return [head,
@@ -97,6 +99,52 @@ function vResearch() {
       D.plan.done.length ? fold("Done (" + D.plan.done.length + ")", D.plan.done.slice(0, 20).map(t => h("div", { class: "planrow" }, h("b", {}, t.what), h("span", { class: "sub" }, t.result || "")))) : null, h("div", { class: "sub", style: "margin-top:8px" }, "Updated " + D.plan.updated))] : []),
     h("h2", {}, "Potentials"),
     h("div", { class: "tgrid" }, pots.sort((a, b) => b.ok - a.ok).map(s => h("button", { class: "tcard" + (s.ok ? "" : " no"), onclick: () => shapeSheet(s) }, h("b", {}, s.name), h("span", { class: "sub" }, "@" + s.handle), pill(s.ok ? "usable" : "do not use", s.ok ? "good" : "bad"))))
+  ];
+}
+
+/* ---------- abroad: which countries and states to aim a new English channel at ---------- */
+const TIER = { start: ["Start here", "good", "var(--good)"], same: ["Same reels reach it", "acc", "var(--g1)"], small: ["Small but keen", "acc", "var(--g4)"], later: ["Later, other languages", "wait", "var(--wait)"], avoid: ["Do not target", "bad", "var(--bad)"] };
+const TWORD = [["tarot", "Tarot"], ["akashic", "Akashic"], ["healing", "Healing"]];
+const abar = (label, v, col) => h("div", { class: "abar" }, h("span", {}, label), h("div", { class: "atrack" }, v == null ? null : h("i", { style: "width:" + v + "%;background:" + (col || "var(--grad)") })), h("b", {}, v == null ? "n/a" : String(v)));
+const srcRows = rows => rows.map(([t, s]) => h("div", { class: "planrow" }, h("span", {}, t), h("span", { class: "sub" }, s)));
+function countrySheet(c) {
+  const T = TIER[c.tier];
+  sheet(c.name, h("div", { class: "area" }, "Abroad"), h("h3", {}, c.name), h("div", { class: "qrow", style: "justify-content:flex-start" }, pill(T[0], T[1]), h("span", { class: "tag2" }, c.people)),
+    h("div", { style: "font-size:16px" }, c.line),
+    h("div", { class: "flabel" }, "Interest per person (Google, 0 to 100)"), ...TWORD.map(([k, t]) => abar(t, c.trends[k])),
+    h("div", { class: "flabel" }, "Cost to advertise, per 1,000 views"), h("div", {}, "$" + c.ad[0] + " to $" + c.ad[1] + " (India: $0.8 to $2.4)"),
+    c.facts.length ? h("div", { class: "flabel" }, "What the surveys and reports say") : null, ...srcRows(c.facts),
+    c.care ? reading(c.care, "Take care", true) : null);
+}
+function vAbroad() {
+  const A = D.abroad, S = A.states, R = A.review, rev = R.state === "reviewed";
+  const cc = c => { const T = TIER[c.tier]; return h("button", { class: "ccard t-" + c.tier, style: "--c:" + T[2], onclick: () => countrySheet(c) }, h("span", { class: "cflag" }, c.code), h("b", {}, c.name), h("span", { class: "sub" }, c.people), pill(T[0], T[1]), h("span", { class: "kl" }, c.line),
+    c.tier === "later" ? null : h("div", { class: "abars" }, ...TWORD.map(([k, t]) => abar(t, c.trends[k], T[2]))), h("span", { class: "sub" }, "Cost to advertise $" + c.ad[0] + " to $" + c.ad[1])); };
+  const sbars = (rows, col) => h("div", { class: "abars wide" }, rows.map(([n, v]) => abar(n, v, col)));
+  return [
+    h("div", { class: "card hero2" }, h("div", { class: "qrow" }, h("div", { class: "area" }, "Looked " + A.looked), pill(rev ? "Reviewed once, fixes not re-checked" : "First pass, not yet reviewed", rev ? "acc" : "warn")), h("h3", { style: "font-size:20px;margin:8px 0 6px" }, A.verdict), h("div", { class: "sub" }, A.how), R.verdict ? reading(R.verdict, "Reviewer, " + R.at, true) : null,
+      R.notes.length ? fold("What the reviewer said (" + R.notes.length + ")", R.notes.map(n => h("div", { class: "planrow" }, h("span", {}, n)))) : null),
+    h("h2", {}, "Countries"), h("p", { class: "sub" }, "Bars: interest per person in tarot, Akashic and healing. Tap a card for the surveys behind it."),
+    h("div", { class: "cgrid" }, A.countries.map(cc)), h("p", { class: "sub" }, A.ad_note),
+    A.volume ? card("", h("div", { class: "flabel", style: "margin-top:0" }, "How big each word is"), h("div", { class: "two2", style: "margin:6px 0" }, A.volume.cols.map((cn, ci) => h("div", {}, h("div", { class: "sub" }, cn), sbars(A.volume.rows.map(r => [r[0], r[ci + 1]]))))), h("div", { class: "sub" }, A.volume.note)) : null,
+    h("h2", {}, "Who is serious about it (US)"), h("p", { class: "sub" }, A.who_pays.note),
+    h("div", { class: "tiles" }, A.who_pays.tiles.map(([n, t]) => card("tile", h("div", { class: "big num gt" }, n), h("div", { class: "sub" }, t)))),
+    h("div", { class: "card", style: "margin-top:12px" }, h("div", { class: "flabel", style: "margin-top:0" }, "Groups that lean in most"), ...srcRows(A.who_pays.groups.map(([g, t]) => [g, t])), h("div", { class: "sub", style: "margin-top:8px" }, A.who_pays.source)),
+    h("h2", {}, "US states"), h("p", { class: "sub" }, S.note),
+    h("div", { class: "tgrid" }, S.clusters.map(([t, st, why]) => h("div", { class: "tcard" }, h("b", {}, t), h("span", {}, st), h("span", { class: "sub" }, why)))),
+    h("div", { class: "two2" }, card("", h("div", { class: "flabel", style: "margin-top:0" }, "Tarot reading: interest per person"), sbars(S.tarot), h("div", { class: "flabel" }, "Big states, further down the list"), sbars(S.tarot_big), fold("Least interested", [sbars(S.tarot_low, "var(--wait)")])),
+      card("", h("div", { class: "flabel", style: "margin-top:0" }, "Akashic records: interest per person"), S.akashic_warn ? pill(S.akashic_warn, "warn") : null, sbars(S.akashic, "var(--g4)"), h("div", { class: "flabel" }, "Big states, further down the list"), sbars(S.akashic_big, "var(--g4)"))),
+    card("", h("div", { class: "flabel", style: "margin-top:0" }, S.big.title), chipsRow(S.big.items), h("div", { class: "sub", style: "margin-top:6px" }, S.big.source), h("div", { class: "flabel" }, "Other studies that agree"), ...srcRows(S.agree), reading(S.glitch, "Left out: Wyoming", true)),
+    h("h2", {}, "What a reading costs abroad"), h("p", { class: "sub" }, A.price.note),
+    card("", ...A.price.rows.map(([w, p, n]) => h("div", { class: "qrow", style: "padding:9px 0;border-top:1px solid var(--line)" }, h("div", {}, h("div", {}, w), h("div", { class: "sub" }, n)), h("b", { class: "gt", style: "font-size:18px" }, p)))),
+    h("h2", {}, "Their evening, in India time"), h("p", { class: "sub" }, A.clock.note),
+    h("div", { class: "upcoming" }, A.clock.rows.map(([w, t]) => h("div", { class: "upc" }, h("b", {}, t), h("span", {}, w)))),
+    h("h2", {}, A.choice.title),
+    h("div", { class: "two2" }, [A.choice.a, A.choice.b].map(([t, x], i) => card("", h("div", { class: "area" }, "Option " + "AB"[i]), h("h3", {}, t), h("div", { style: "font-size:14.5px" }, x)))), h("p", { class: "sub" }, A.choice.note),
+    h("h2", {}, "Take care"),
+    h("div", { class: "tgrid" }, A.care.map(([t, x, tone]) => h("div", { class: "tcard", style: "border-left:4px solid var(--" + tone + ")" }, h("b", {}, t), h("span", { class: "sub" }, x)))),
+    h("h2", {}, "Not checked yet"), card("", ...A.open.map((t, i) => h("div", { class: "planrow" }, h("span", {}, (i + 1) + ". " + t)))),
+    fold("Sources (" + A.sources.length + ")", A.sources.map(([t, u]) => h("div", { class: "planrow" }, h("a", { class: "out", href: u, target: "_blank", rel: "noopener" }, t))))
   ];
 }
 
@@ -331,7 +379,7 @@ if (LOCAL) { ICON.desk = '<rect x="3" y="4" width="18" height="12" rx="2"/><path
 /* ---------- shell ---------- */
 const TABS = [["home", "Home", vHome, "home"], ["research", "Research", vResearch, "search"], ["ideas", "Ideas", vIdeas, "bolt"], ["strategy", "Strategies", vStrategy, "compass"], ["playbook", "Skills", vPlaybook, "book"], ["scripts", "Scripts", vScripts, "pen"], ["production", "Production", vProduction, "film"]];
 if (LOCAL) TABS.splice(1, 0, ["desk", "Desk", vDesk, "desk"]);
-function route() { const k = (location.hash || "").slice(1); if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
+function route() { const k = (location.hash || "").slice(1); if (k === "abroad" && D.abroad) { state.rtab = "abroad"; return { tab: "research" }; } if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
 function render() {
   const r = route();
   if (r.profile) { handle = r.profile; P = D.pages[handle]; }

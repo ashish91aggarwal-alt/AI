@@ -98,3 +98,14 @@ details.reading summary{cursor:pointer;list-style:none;font-weight:700;font-size
 .planrow{display:flex;flex-direction:column;gap:2px;padding:9px 0;border-top:1px solid var(--line);font-size:14.5px}.planrow.now b{color:var(--g1)}
 .ministrip{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px;text-decoration:none;color:var(--muted);font-size:13px}.ministrip span{display:flex;gap:6px;align-items:baseline;padding:8px 12px;border-radius:12px;border:1px solid var(--line)}.ministrip b{color:var(--ink);font:800 17px/1 var(--display)}
 .upcoming{display:flex;gap:10px;overflow-x:auto;padding:4px 0 10px}.upc{flex:none;display:flex;flex-direction:column;gap:3px;min-width:170px;padding:14px;border-radius:16px;background:var(--glass);border:1px solid var(--line)}.upc b{font:800 18px/1.1 var(--display);background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* abroad */
+.hero2{border:1px solid transparent;background:linear-gradient(var(--card,#1a1226),var(--card,#1a1226)) padding-box,var(--grad) border-box}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(250px,100%),1fr));gap:12px;margin:10px 0}
+.ccard{position:relative;display:grid;gap:7px;align-content:start;justify-items:start;text-align:left;padding:16px;border-radius:18px;background:var(--glass);border:1px solid var(--line);border-top:3px solid var(--c);color:var(--ink);font:inherit;font-size:14px;cursor:pointer;transition:transform .2s,border-color .2s}
+.ccard:hover{transform:translateY(-3px)} .ccard>b{font:800 19px/1.15 var(--display)} .ccard.t-avoid,.ccard.t-later{opacity:.82}
+.cflag{font:800 12px/1 var(--display);letter-spacing:.12em;padding:6px 9px;border-radius:9px;background:var(--c);color:#1a0b22}
+.abars{display:grid;gap:5px;width:100%;margin-top:2px} .abars.wide{gap:7px}
+.abar{display:grid;grid-template-columns:64px 1fr 30px;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);width:100%} .abars.wide .abar{grid-template-columns:112px 1fr 30px;font-size:13.5px}
+.abar b{color:var(--ink);text-align:right;font-variant-numeric:tabular-nums} .atrack{height:8px;border-radius:99px;background:rgba(255,255,255,.1);overflow:hidden} .atrack i{display:block;height:100%;border-radius:99px}
+.two2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;margin:12px 0}

@@ -32,6 +32,7 @@ def main():
     data["trends"] = rd(SCOUT / "output" / "trends.json") if (SCOUT / "output" / "trends.json").exists() else None
     data["ideas"] = rd(HERE / "ideas.json") if (HERE / "ideas.json").exists() else None
     data["platform"] = rd(SCOUT / "platform.json") if (SCOUT / "platform.json").exists() else None
+    data["abroad"] = rd(HERE / "abroad.json") if (HERE / "abroad.json").exists() else None
     plan = SCOUT / "research-plan.json"
     data["plan"] = rd(plan) if plan.exists() else None
     data["progress"] = dict(pages=len(pages), reels=sum(len(p.get("reels", [])) for p in pages.values()), heard=len(list((SCOUT / "output").glob("*/cli/*.json"))),
