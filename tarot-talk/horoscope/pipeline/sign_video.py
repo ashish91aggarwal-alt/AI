@@ -8,12 +8,15 @@ INK = "#2b2140"
 ELEM = {"fire": ("#fff3e8", "#ffd2bd", "#ff4f33"), "earth": ("#f3fbec", "#cfeac0", "#2a9a57"), "air": ("#fffbe3", "#ffe9a6", "#e09400"), "water": ("#eef7ff", "#c6e2ff", "#2a76e0")}
 SIGNS = "aries taurus gemini cancer leo virgo libra scorpio sagittarius capricorn aquarius pisces".split()
 GLYPH = dict(zip(SIGNS, "♈♉♊♋♌♍♎♏♐♑♒♓"))
-CONST = {"aries": [(-310, 90), (-70, -40), (120, -20), (240, 70)]}
+CONST = {"aries": [(-310, 90), (-70, -40), (120, -20), (240, 70)], "libra": [(-300, 110), (-90, 40), (60, -120), (250, -20), (200, 120)]}
+HI = {"DO": "करें", "DON'T": "न करें", "COLOUR": "शुभ रंग", "NUMBER": "शुभ अंक", "BEST TIME": "सबसे अच्छा समय"}
+SW = {"सफेद": "#ffffff", "गुलाबी": "#ff8fb8", "लाल": "#e63946", "पीला": "#ffd23f", "हरा": "#2a9a57", "नीला": "#2a76e0", "नारंगी": "#ff8a3d", "बैंगनी": "#7b4bd6"}
+FD = __import__("os").path.abspath(f"{__import__("os").path.dirname(__file__)}/../node_modules/@fontsource")
 sign = TL["sign"].lower()
 bg0, bg1, AC = ELEM[TL["element"]]
 random.seed(sum(map(ord, sign)))
 pts = CONST.get(sign) or [(random.randint(-320, 320), random.randint(-120, 120)) for _ in range(5)]
-TL.update(glyph=GLYPH[sign] + "︎", ac=AC, const=pts)
+TL.update(glyph=GLYPH[sign] + "︎", ac=AC, const=pts, lbl=HI if TL.get("language") == "hindi" else {}, sw=SW)
 random.seed(4)
 stars = "".join(f'<path class="tw" data-p="{random.random()*6.28:.2f}" transform="translate({random.randint(30, W-30)},{random.randint(40, H-60)}) scale({random.choice([0.5, 0.7, 1, 1.3])})" d="M0,-16 L4,-4 L16,0 L4,4 L0,16 L-4,4 L-16,0 L-4,-4Z" fill="{AC}"/>' for _ in range(46))
 
@@ -35,9 +38,9 @@ const back=x=>{x=clamp(x,0,1);const c=2.2;return 1+(c+1)*Math.pow(x-1,3)+c*Math.
 const $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg', q=s=>document.querySelectorAll(s);
 ['wm','bt','ot'].forEach(id=>$(id).textContent=TL.glyph);
 TL.const.forEach((p,i)=>{const c=document.createElementNS(NS,'path');c.id='cs'+i;c.setAttribute('d','M0,-30 L8,-8 L30,0 L8,8 L0,30 L-8,8 L-30,0 L-8,-8Z');c.setAttribute('fill','#fff');$('cst').appendChild(c);});
-const fit=(txt,px,maxw)=>Math.min(px,Math.floor(maxw/(Math.max(txt.length,1)*0.56)));
+const fit=(txt,px,maxw)=>Math.min(px,Math.floor(maxw/(Math.max(txt.replace(/[\u0900-\u0903\u093A-\u094F\u0962\u0963]/g,'').length,1)*0.6)));
 const Ls=[...q('.ln')], rows=[...q('.row')], cards=[...q('.card')], chips=[...q('.chip')];
-function line(i,txt,y,px,color,t,at){const el=Ls[i],f=fit(txt,px,980);el.textContent=txt;el.style.fontSize=f+'px';el.style.color=color;el.style.top=(y-f*0.62)+'px';
+function line(i,txt,y,px,color,t,at){const el=Ls[i];let f=fit(txt,px,980);el.textContent=txt;el.style.fontSize=f+'px';el.style.transform='none';const sw=el.scrollWidth;if(sw>960){f=Math.floor(f*960/sw);el.style.fontSize=f+'px';}el.style.color=color;el.style.top=(y-f*0.62)+'px';
   const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${(1.7-0.7*back((t-at)/0.16)).toFixed(3)})`;}
 const pop=(el,t,at,d)=>{const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${back((t-at)/(d||0.2)).toFixed(3)})`;};
 const LAY={hook:[[660,320,'#fff'],[1000,200,INK],[1270,240,'#fff']], why:[[1090,170,INK],[1290,160,AC],[1470,130,INK]], meters:[[330,190,INK]], lucky:[[330,180,INK]], cta:[[520,170,INK],[830,330,AC],[1260,125,INK]]};
@@ -78,12 +81,12 @@ window.render=function(t){
   }
   if(s.id=='do'){
     s.cues.forEach((c,i)=>{const el=cards[i], good=c.a=='DO'; pop(el,t,c.at,0.22); el.style.top=(380+i*590)+'px'; el.style.borderColor=good?'#1f9d6b':'#e63946';
-      el.querySelector('.hd').textContent=(good?'✓ ':'✗ ')+c.a; el.querySelector('.hd').style.background=good?'#1f9d6b':'#e63946'; el.querySelector('.tx').textContent=c.b;});
+      el.querySelector('.hd').textContent=(good?'✓ ':'✗ ')+(TL.lbl[c.a]||c.a); el.querySelector('.hd').style.background=good?'#1f9d6b':'#e63946'; el.querySelector('.tx').textContent=c.b;});
   }
   if(s.id=='lucky'){
-    s.cues.filter(c=>c.k=='K').forEach((c,i)=>{const el=chips[i]; pop(el,t,c.at); el.style.top=(560+i*320)+'px'; el.querySelector('.kl').textContent=c.a;
+    s.cues.filter(c=>c.k=='K').forEach((c,i)=>{const el=chips[i]; pop(el,t,c.at); el.style.top=(560+i*320)+'px'; el.querySelector('.kl').textContent=TL.lbl[c.a]||c.a;
       const v=el.querySelector('.kv'); v.textContent=c.b; v.style.fontSize=fit(c.b,190,620)+'px';
-      const sw=el.querySelector('.sw'); sw.style.display=c.a=='COLOUR'?'block':'none'; sw.style.background=c.b.toLowerCase();});
+      const sw=el.querySelector('.sw'); sw.style.display=c.a=='COLOUR'?'block':'none'; sw.style.background=TL.sw[c.b]||c.b.toLowerCase();});
   }
   if(s.id=='cta'){ $('brand').style.opacity=ramp(t,s.cues[2].at,s.cues[2].at+0.3);
     $('badge').setAttribute('opacity',1); $('badge').setAttribute('transform',`translate(540,1560) scale(${(0.6*back(lt/0.25)*(1+0.06*Math.sin(t*8))).toFixed(3)})`); }
@@ -94,20 +97,22 @@ row = '<div class="row"><div class="lab"></div><div class="num"></div><div class
 card = '<div class="card"><div class="hd"></div><div class="tx"></div></div>'
 chip = '<div class="chip"><div class="kl"></div><div class="kvw"><div class="sw"></div><div class="kv"></div></div></div>'
 html = f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:"Baloo 2";font-weight:800;src:url("file://{FD}/baloo-2/files/baloo-2-devanagari-800-normal.woff2")}}
+@font-face{{font-family:"Mukta";font-weight:700 800;src:url("file://{FD}/mukta/files/mukta-devanagari-800-normal.woff2")}}
 html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;height:{H}px;overflow:hidden}}
 #bg,#shake,#flash{{position:absolute;inset:0}} #flash{{background:#fff;opacity:0}} #shake>svg{{position:absolute;left:0;top:0}}
 #progw{{position:absolute;left:60px;right:60px;top:70px;height:14px;border-radius:8px;background:rgba(43,33,64,.18)}} #prog{{height:100%;border-radius:8px;width:0}}
-.ln{{position:absolute;left:50px;width:980px;text-align:center;font-family:Anton;line-height:1.22;letter-spacing:3px;opacity:0;transform-origin:50% 55%;white-space:nowrap}}
-#date{{position:absolute;left:0;width:{W}px;top:120px;text-align:center;font:800 46px Poppins;letter-spacing:8px;color:#fff;opacity:0}}
+.ln{{position:absolute;left:50px;width:980px;text-align:center;font-family:Anton,"Baloo 2";font-weight:800;line-height:1.22;letter-spacing:3px;opacity:0;transform-origin:50% 55%;white-space:nowrap}}
+#date{{position:absolute;left:0;width:{W}px;top:120px;text-align:center;font:800 50px Poppins,Mukta;letter-spacing:8px;color:#fff;opacity:0}}
 #brand{{position:absolute;left:0;width:{W}px;top:1380px;text-align:center;font:800 46px Poppins;letter-spacing:8px;color:{INK};opacity:0}}
 .row{{position:absolute;left:80px;width:920px;height:220px;opacity:0;transform-origin:50% 50%}}
-.row .lab{{position:absolute;left:0;top:0;font:400 120px Anton;color:{INK};letter-spacing:3px}} .row .num{{position:absolute;right:0;top:0;font:400 120px Anton;color:{INK}}}
+.row .lab{{position:absolute;left:0;top:0;font:800 120px Anton,"Baloo 2";color:{INK};letter-spacing:3px}} .row .num{{position:absolute;right:0;top:0;font:400 120px Anton;color:{INK}}}
 .row .track{{position:absolute;left:0;right:0;top:150px;height:60px;border-radius:30px;background:#fff;border:8px solid {INK};overflow:hidden}} .row .fill{{height:100%;width:0;border-radius:22px}}
 .card{{position:absolute;left:70px;width:900px;height:500px;border:14px solid;border-radius:60px;background:#fff;opacity:0;transform-origin:50% 50%;box-shadow:0 18px 0 rgba(43,33,64,.18)}}
-.card .hd{{position:absolute;left:40px;top:-60px;font:400 110px Anton;color:#fff;padding:6px 44px;border-radius:50px;letter-spacing:4px}}
-.card .tx{{position:absolute;left:50px;right:50px;top:120px;font:800 108px/1.1 Poppins;color:{INK}}}
+.card .hd{{position:absolute;left:40px;top:-60px;font:800 110px Anton,"Baloo 2";color:#fff;padding:6px 44px;border-radius:50px;letter-spacing:4px}}
+.card .tx{{position:absolute;left:50px;right:50px;top:160px;font:800 104px/1.15 Poppins,Mukta;color:{INK}}}
 .chip{{position:absolute;left:80px;width:920px;height:280px;opacity:0;transform-origin:50% 50%}}
-.chip .kl{{font:800 58px Poppins;letter-spacing:8px;color:{AC}}} .chip .kvw{{display:flex;align-items:center;gap:36px}} .chip .kv{{font-family:Anton;color:{INK};letter-spacing:3px;line-height:1.1;white-space:nowrap}}
+.chip .kl{{font:800 78px Poppins,Mukta;letter-spacing:3px;color:{AC}}} .chip .kvw{{display:flex;align-items:center;gap:36px}} .chip .kv{{font-family:Anton,"Baloo 2";font-weight:800;color:{INK};letter-spacing:3px;line-height:1.1;white-space:nowrap}}
 .chip .sw{{width:150px;height:150px;border-radius:50%;border:12px solid {INK};flex:none}}
 </style></head><body><div id="stage"><div id="bg"></div><div id="shake">{svg}
 {'<div class="ln"></div>' * 4}{row * 4}{card * 2}{chip * 3}

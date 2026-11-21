@@ -11,17 +11,45 @@ R = json.load(open(f"{DIR}/reading.json"))
 rng = np.random.default_rng(3)
 
 
+ALIGN = {}   # text -> list of word start times (s, relative to trimmed clip), from ElevenLabs timestamps
+
+def eleven(text, path):
+    """MODEL = 'eleven:<voice_id>'; key in env XI_API_KEY. Cached: a clip already made is never paid for twice."""
+    import base64, os, urllib.request
+    cache = path.replace(".wav", ".eleven.json")
+    if not os.path.exists(cache):
+        body = json.dumps(dict(text=text, model_id=os.environ.get("XI_MODEL", "eleven_multilingual_v2"),
+                               voice_settings=dict(stability=0.45, similarity_boost=0.8, style=0.35, use_speaker_boost=True))).encode()
+        req = urllib.request.Request(f"https://api.elevenlabs.io/v1/text-to-speech/{MODEL.split(':', 1)[1]}/with-timestamps?output_format=mp3_44100_128",
+                                     data=body, headers={"xi-api-key": os.environ["XI_API_KEY"], "Content-Type": "application/json"})
+        open(cache, "w").write(urllib.request.urlopen(req, timeout=120).read().decode())
+    d = json.load(open(cache)); mp3 = path.replace(".wav", ".mp3")
+    open(mp3, "wb").write(base64.b64decode(d["audio_base64"]))
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", mp3, "-ac", "1", "-ar", str(SR), path], check=True)
+    a = d.get("alignment") or {}; ch, st = a.get("characters", []), a.get("character_start_times_seconds", [])
+    starts, prev = [], " "
+    for c, s in zip(ch, st):
+        if not c.isspace() and prev.isspace(): starts.append(s)
+        prev = c
+    return starts
+
 def tts(text, path):
-    subprocess.run(["python3", "-m", "piper", "--model", MODEL, "--output_file", path, "--length-scale", "0.9"],
-                   input=text.encode(), check=True, capture_output=True)
+    starts = None
+    if MODEL.startswith("eleven:"): starts = eleven(text, path)
+    else:
+        subprocess.run(["python3", "-m", "piper", "--model", MODEL, "--output_file", path, "--length-scale", "0.9"],
+                       input=text.encode(), check=True, capture_output=True)
     w = wave.open(path); sr = w.getframerate()
     x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32) / 32768
     if sr != SR: x = np.interp(np.arange(0, len(x), sr / SR), np.arange(len(x)), x)
-    nz = np.where(np.abs(x) > 0.02)[0]
-    return x[max(nz[0] - 400, 0): nz[-1] + 2000]
+    nz = np.where(np.abs(x) > 0.02)[0]; a = max(nz[0] - 400, 0)
+    if starts and len(starts) == len(text.split()): ALIGN[text] = [max(s - a / SR, 0) for s in starts]
+    return x[a: nz[-1] + 2000]
 
 def word_times(text, t0, dur):
-    ws = text.split(); tot = sum(len(w) + 1 for w in ws); out, acc = [], 0
+    ws = text.split()
+    if text in ALIGN: return ws, [t0 + s for s in ALIGN[text]]
+    tot = sum(len(w) + 1 for w in ws); out, acc = [], 0
     for w in ws: out.append(t0 + dur * 0.95 * acc / tot); acc += len(w) + 1
     return ws, out
 

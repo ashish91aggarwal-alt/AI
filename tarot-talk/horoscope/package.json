@@ -1,0 +1,10 @@
+{
+  "name": "tarot-talk-horoscope",
+  "private": true,
+  "description": "Frame capture and fonts for the horoscope videos. Run `npm install` in this folder once.",
+  "dependencies": {
+    "puppeteer-core": "*",
+    "@fontsource/baloo-2": "*",
+    "@fontsource/mukta": "*"
+  }
+}

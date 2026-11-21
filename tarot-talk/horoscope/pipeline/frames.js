@@ -1,6 +1,6 @@
 // Captures frames of a page that exposes window.render(t) and window.DUR.
 // usage: node frames.js <page.html> <outDir> <fps> <width> <height> [startFrame endFrame] | [t=1.5,3.0,...]
-const puppeteer = require('/home/claude/brush/node_modules/puppeteer-core');
+const puppeteer = require(require('path').join(__dirname,'../node_modules/puppeteer-core'));
 const fs = require('fs');
 (async () => {
   const [page_, out, fpsS, w, h, a, b] = process.argv.slice(2);

@@ -1,0 +1,8 @@
+node_modules/
+work/
+*.mp4
+*.wav
+*.mp3
+*.eleven.json
+.xi_key
+.env
