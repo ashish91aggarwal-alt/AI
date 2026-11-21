@@ -2,23 +2,406 @@
  "id": "methods",
  "name": "Skills and methods agent",
  "job": "Finds working methods: hooks, series, comment-to-DM selling, and what Instagram itself says.",
- "status": "working",
+ "status": "done",
  "started": "2026-11-21 13:50 IST",
- "updated": "2026-11-21 13:47 IST",
- "step": "Steps 1-5 of 7 done: Instagram rules, DM rules, ad policy, India selling data, series features, hooks. Now motion graphics, India law, then writing up.",
+ "updated": "2026-11-21 13:50 IST",
+ "step": "Done: 28 findings, 9 proposed methods, 10 ideas. Main flag: word the comment keyword as an offer and keep the auto-DM to one message plus a tap.",
  "did": [
   "Read our platform notes and strategy list so nothing is repeated.",
   "Read Instagram's creator pages on originality, recommendation eligibility, and its 2024 statement on single-word comment prompts.",
   "Read Meta's developer pages on private replies and the messaging window; checked a 2026 tracker of confirmed Instagram changes.",
   "Read Meta's ad rules on unrealistic outcomes and personal attributes.",
   "Read Topmate, SuperProfile and Razorpay pages on selling digital products in India (no source gave a real conversion rate).",
-  "Read coverage of linked reels and the Series test, and Instagram's 2026 reel-making tips."
+  "Read coverage of linked reels and the Series test, and Instagram's 2026 reel-making tips.",
+  "Read third-party data on faceless reels, speech in the first seconds, and DM funnels; marked all of it as claims.",
+  "Wrote 28 findings, 9 proposed methods and 10 content ideas."
  ],
- "findings": [],
- "ideas": [],
- "strategies": [],
+ "findings": [
+  {
+   "title": "Asking for a one-word comment can cost a reel its recommendations",
+   "detail": "In mid-2024 Instagram put out a video saying content that explicitly asks people to comment a specific word, number or emoji is treated as an attempt to game engagement and may not be recommended to non-followers. After creators objected, Instagram clarified that tools like ManyChat are fine and were not the target; the issue is content built to farm interactions. No newer official statement was found, so this is still the last word.",
+   "source": "https://www.socialmediatoday.com/news/instagram-clarifies-advice-single-word-ctas-longer-reels/718151/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Keep the keyword, but make it a real offer ('report chahiye toh 2027 likho, DM mein bhej denge'), said once at the end. Never 'comment karo' with nothing behind it, and never ask everyone to comment their number just to raise comments."
+  },
+  {
+   "title": "Engagement bait and clickbait are on Instagram's 'not recommended' list",
+   "detail": "Instagram's creator page lists clickbait or engagement bait, exaggerated health claims ('miracle cures'), misleading business models and false content among things that stay on the app but are not shown to non-followers. Repeat cases can make the whole account ineligible for a while.",
+   "source": "https://creators.instagram.com/recommendations-and-originality",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Check Account Status before the series starts and once a week during it. If any reel is flagged, edit or remove it at once."
+  },
+  {
+   "title": "A comment gets exactly one automatic DM; more only after the person replies",
+   "detail": "Meta's developer page for private replies: one message per comment, sent within 7 days of the comment. The conversation can continue only after the person responds, and then inside a 24-hour window.",
+   "source": "https://developers.facebook.com/docs/messenger-platform/instagram/features/private-replies/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "The first DM must carry a button or question the person taps. Put the payment link in the message that follows the tap, so the 24-hour window is open."
+  },
+  {
+   "title": "Promotion is allowed inside the 24-hour window, not outside it",
+   "detail": "Meta's messaging policy allows promotional content within 24 hours of the person's last action. Sponsored messages and one-time notifications, which reach people later, are not available on Instagram. The human-agent tag is for manual replies only.",
+   "source": "https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy.md",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "No automatic 'last day' reminder DMs days later to people who only commented once. Reminders go in stories and reels; a DM reminder only to people who message again."
+  },
+  {
+   "title": "Meta recommends telling people a DM is automated",
+   "detail": "The same policy requires disclosure of automation where the law demands it and recommends it everywhere as good practice, at the start of the chat.",
+   "source": "https://developers.facebook.com/documentation/business-messaging/messenger-platform/policy.md",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Open the auto-DM with one honest line, for example 'Yeh auto message hai, Sakshi ki team se'."
+  },
+  {
+   "title": "Automation limits and what vendors say gets accounts restricted",
+   "detail": "Planoly, quoting Meta's pages, gives a limit of 750 private replies per hour per account and says contact needs the person to have started it (a comment, story reply or DM counts). Its own list of risks: cold DMs, identical public replies under every comment, promising one thing and sending another, and tools that ask for the Instagram password. The risk list is the vendor's view, not Meta's text.",
+   "source": "https://www.planoly.com/blog/is-comment-to-dm-allowed-on-instagram",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Rotate three or four public replies, or switch public replies off on a hit reel. The DM must deliver exactly what the reel promised."
+  },
+  {
+   "title": "Reels up to 3 minutes can be recommended (the old 90-second line is out of date)",
+   "detail": "Instagram's eligibility tips page now says reels must be 3 minutes or less to be recommended. In 2024 Instagram had said over 90 seconds would not be recommended; older blog posts still repeat that. The same page asks for 9:16, no borders, and text that does not cover most of the screen.",
+   "source": "https://creators.instagram.com/blog/instagram-recommendations-eligibility-tips-creators",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Length is not the limit; watch time is. Keep episodes short by choice. In motion graphics, never fill the whole frame with text."
+  },
+  {
+   "title": "Instagram's own length guide: 15 to 60 seconds for most formats",
+   "detail": "A September 2026 Instagram guide (reported by Social Media Today) says 15 to 60 seconds suits tutorials and most creative formats, and 60 seconds to 3 minutes suits storytelling and detailed how-tos. It also says text overlays can work as the hook and that captions should be added even when there is on-screen text.",
+   "source": "https://www.socialmediatoday.com/news/instagram-shares-reels-creation-tips-in-new-guide/831551/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Plan each mulank episode inside 60 seconds, with the hook as on-screen text in the first frame and captions on."
+  },
+  {
+   "title": "Instagram: the first few seconds decide; measure it with skip rate",
+   "detail": "Instagram's August 2026 editing tips say to open with a bold statement, a surprising visual or a question, cut anything slow at the start, add on-screen text for people watching without sound, and read Insights for where viewers drop.",
+   "source": "https://www.socialmediatoday.com/news/instagram-shares-tips-on-video-creation/827172/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "No logo sting or title card at the start. Episode opens on the number and the line. After each batch, look at the drop-off point and fix the next batch."
+  },
+  {
+   "title": "Keywords belong in the caption, bio and name; not in comments",
+   "detail": "Instagram's tips page says to use a handle or profile name tied to the topic, keywords in the bio, and keywords and hashtags in the caption rather than the comments. The tracker found no new 2026 statement on captions or hashtags; the five-hashtag cap from December 2025 stands.",
+   "source": "https://creators.instagram.com/blog/instagram-recommendations-eligibility-tips-creators",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Write captions with the words people search: 'mulank 7 2027', 'numerology 2027 in Hindi'. Add 'Numerology / Tarot' to the profile name field."
+  },
+  {
+   "title": "Originality is judged over a month, and credits or watermarks do not make a repost original",
+   "detail": "On 30 April 2026 Mosseri said accounts that mostly post other people's content stop being recommended, now for photos and carousels as well as reels. Instagram looks at about a month of posts. The creator page puts the line at 10 or more unoriginal posts in 30 days, with eligibility back 30 days after the last one.",
+   "source": "https://petapixel.com/2026/04/30/new-instagram-policies-target-reposted-content/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Our drawn series is safe. Avoid reposting meme clips or other readers' videos as filler during the series month."
+  },
+  {
+   "title": "Watermarks and reused clips reduce recommendation chances",
+   "detail": "Instagram's eligibility tips name watermarks, blurry footage and visibly recycled content as things to avoid, and say to post content not shared on Instagram before.",
+   "source": "https://creators.instagram.com/blog/instagram-recommendations-eligibility-tips-creators",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Export without any editing-app watermark. Do not re-upload last year's episodes as they are; remake them."
+  },
+  {
+   "title": "Trial reels: shown to non-followers first, ranked separately",
+   "detail": "Instagram's page says trial reels go to non-followers, stay off the grid until shared, show results after about 24 hours, and can auto-share if they do well within 72 hours. Planoly quotes Instagram's help page saying trials are judged separately and should not affect regular reels, and that a trial may get limited reach if the same content was shared before. No daily limit was found.",
+   "source": "https://creators.instagram.com/blog/instagram-trial-reels",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Use trials to test two or three hook versions of the pilot episode before the series starts. Each trial must be a fresh export, not a copy of a posted reel."
+  },
+  {
+   "title": "Reels can be linked so viewers tap to the next part",
+   "detail": "Since August 2025 creators can link reels from the caption screen or from the menu of a posted reel; a button at the bottom left takes the viewer to the next one. No limit on the number was stated.",
+   "source": "https://techcrunch.com/2025/08/21/instagram-now-lets-creators-link-multiple-reels-in-a-series/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Link every episode to the next as it goes up, and link the last few to the offer episode."
+  },
+  {
+   "title": "A fuller 'Series' feature is in test, not confirmed for everyone",
+   "detail": "In June 2026 a Series option was reported in test on Instagram and Facebook: shortcuts inside playback and series collections on the profile. A tracker notes a trade-press report of a US launch around year end, which Instagram has not confirmed. Nothing was found about India.",
+   "source": "https://www.socialmediatoday.com/news/meta-tests-connected-series-reels-option-for-video-creators/821811/",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Do not plan around it. If it appears in the account before 1 January, use it; otherwise linked reels plus a pinned first episode."
+  },
+  {
+   "title": "Series basics from practitioners: same title, episode number, same cover",
+   "detail": "Buffer's guide: one series title on every post with 'ep. 1, ep. 2', one cover style so followers spot it, tease the series before it starts, batch-produce, and post at least two or three before judging. It gives no numbers.",
+   "source": "https://buffer.com/resources/social-media-series/",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Fix one series name and one cover template now. Post a teaser reel and a story countdown two or three days before episode 1."
+  },
+  {
+   "title": "Posting frequency: no magic number from Instagram",
+   "detail": "Mosseri's last direct answer (December 2024) was that there is no single right number, that more posts generally bring more reach, and that a pace you can keep matters. The 2026 tracker found no newer guidance. Meta also said in October 2026 that almost 45% of recommended reels are under a day old.",
+   "source": "https://routenote.com/blog/how-often-you-should-post-on-instagram/",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Pick a daily or alternate-day slot the team can hold for the whole series and keep it. Freshness favours steady new episodes over one big dump."
+  },
+  {
+   "title": "Carousels: Mosseri calls them a richer format, and they get a second showing",
+   "detail": "In a 2026 interview Mosseri said carousels draw more likes and sends because people swipe; a carousel someone scrolled past can return showing its second slide; and a carousel with music can appear in the reels viewer. He again named sends per reach as a key number for reaching new people.",
+   "source": "https://uppbeat.io/blog/creator-news/whats-working-on-instagram-right-now-carousels-and-sends-says-adam-mosseri",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Give each episode a carousel twin with music: slide 1 the hook, slide 2 strong enough to stand alone, last slide the keyword."
+  },
+  {
+   "title": "Face or no face: third-party data shows little difference on reels",
+   "detail": "Virlo, an analytics vendor, compared about 32,000 reels from October 2026: faceless reels 1.00 times typical views, on-camera 0.97; 'avatar or animation' 1.17 but mostly cartoons and AI characters. It is the vendor's own sample and shows correlation only.",
+   "source": "https://virlo.ai/data/faceless-content",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Motion graphics are not a handicap by this data. No need to force a face into every episode."
+  },
+  {
+   "title": "A human voice early helps retention; a looping end helps very short clips",
+   "detail": "Emplifi (third party; 10,110 Facebook reels from brand pages) reported speech in the first three seconds lifted 10-second retention by almost 25% against music only, a person on screen early lifted it about 10%, and looping raised replays on clips up to 7 seconds. This is Facebook brand data, not Instagram creators.",
+   "source": "https://www.socialmediatoday.com/news/human-speech-and-presence-help-drive-reels-engagement/815381/",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Start every animated episode with Sakshi's voice in the first second, not music alone. Test one episode with her face for one second at the start."
+  },
+  {
+   "title": "Most auto-DM clicks in India land where nobody can pay",
+   "detail": "Topmate's own data (September 2026): about 80% of Instagram auto-DM link clicks went to places with no payment, such as Drive folders and Google Forms; about 12% went to a page where someone could buy. It gives no conversion rate.",
+   "source": "https://topmate.io/blog/how-to-sell-digital-products-in-india",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "The DM link must open the payment page directly. No form, no 'details bhejo' step before paying."
+  },
+  {
+   "title": "India price bands: most sales are small, most money is not",
+   "detail": "Topmate's October 2026 figures (30,700 sales): 72% of sales were under Rs 300; Rs 500 to 999 was 11% of sales and 14% of revenue; Rs 3,000 and above was 2% of sales but 46% of revenue. Its advice is an entry product that leads to a higher-priced one. One platform, mostly career products.",
+   "source": "https://topmate.io/blog/how-to-sell-digital-products-in-india",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Rs 555 sits in a band that sells. Add a next step for buyers (a personal reading) on the thank-you page and inside the PDF."
+  },
+  {
+   "title": "DM funnel shape: short first message, one button, link in the second message",
+   "detail": "Inro, a DM tool vendor, reports from about 798,000 conversations: link in the second message converted better than in the first (42% against 29%), first messages under 120 characters beat long ones (39% against 22%), and one button beat three (32% against 2%). Vendor data, its own definition of conversion, not a controlled test.",
+   "source": "https://www.planoly.com/blog/do-automated-instagram-dms-work",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "First DM: under 120 characters, one button ('Haan, bhejo'). Second DM: what the report is, the price, the link. This also fits Meta's reply rule."
+  },
+  {
+   "title": "Clicks without sales: the usual causes practitioners name",
+   "detail": "In a ManyChat community thread (May 2026) a seller had 280 DMs sent, 140 clicks and no sales. Replies pointed to a cold audience, a DM that did not match what the reel promised, and a bare 'here is the link' message; they advised one qualifying question first and tracking where people drop.",
+   "source": "https://community.manychat.com/creator-conversations-72/auto-dm-links-from-ig-comments-are-not-converting-into-sales-10113",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Say the price in the reel or the first DM so the click is from someone who already knows it. Track DMs sent, link clicks and payments per episode."
+  },
+  {
+   "title": "Checkout basics on Indian creator pages",
+   "detail": "SuperProfile's guide lists UPI, cards and netbanking, automatic private delivery of the PDF after payment, coupons with expiry, limits per buyer, optional FAQ and testimonial blocks, bump offers and GST on invoices. Razorpay's guide adds: the product name on the page must match the name in the DM, show the final price clearly, and preview on a phone. Neither gives a conversion number.",
+   "source": "https://superprofile.bio/guides/sell-digital-products-india.md",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Same report name in reel, DM and payment page. One price, shown before the tap. Test the whole path on a phone with a real Rs 555 payment before episode 1."
+  },
+  {
+   "title": "If ads are run: no promised outcomes",
+   "detail": "Meta's ad standard on unrealistic outcomes bars promises of results in set timeframes, guaranteed financial gain and cure claims. The policy does not mention astrology by name.",
+   "source": "https://transparency.meta.com/policies/ad-standards/deceptive-content/unrealistic-outcomes",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "If any episode is boosted: no '2027 mein paisa pakka', no dates for results. Describe what the report contains."
+  },
+  {
+   "title": "If ads are run: do not tell the viewer what they are or what they suffer",
+   "detail": "Meta's personal attributes rule bars ads that state or imply the viewer's religion or beliefs, health, financial difficulty, age or name. 'Are you bankrupt?' style lines fail; describing the product passes.",
+   "source": "https://transparency.meta.com/policies/ad-standards/objectionable-content/personal-attributes",
+   "date": "2026-11-21",
+   "kind": "official",
+   "for_us": "Boosted reels should say 'Mulank 7 ke liye 2027' (about the number), not 'aap paise ki tangi mein ho' or 'aapki health kharab hai'."
+  },
+  {
+   "title": "Indian law: no remedy that claims to cure illness",
+   "detail": "The Drugs and Magic Remedies Act, 1954 bans advertising talismans, mantras or charms as cures or prevention for listed diseases and for fertility or sexual matters, with jail possible. This is a summary from Wikipedia, not legal advice.",
+   "source": "https://en.wikipedia.org/wiki/Drugs_and_Magic_Remedies_(Objectionable_Advertisements)_Act,_1954",
+   "date": "2026-11-21",
+   "kind": "claim",
+   "for_us": "Healing and Akashic content must never name a disease, pregnancy or a cure. Keep it to reflection, habits and guidance."
+  }
+ ],
+ "ideas": [
+  {
+   "title": "Pilot hook test: Mulank 1 in three openings",
+   "hook": "Mulank 1 walon, 2027 mein ek kaam pehle karna, ek kaam baad mein.",
+   "format": "Three trial reels, same episode, different first 3 seconds",
+   "strategy": "personal-year",
+   "borrowed_from": "Trial reels (creators.instagram.com/blog/instagram-trial-reels)",
+   "serves": "watch time",
+   "why": "Lets non-followers pick the opening before the whole series is made."
+  },
+  {
+   "title": "Series teaser",
+   "hook": "1 January se pehle 9 din, 9 mulank. Aapka number kis din aayega?",
+   "format": "15-second motion reel plus story countdown",
+   "strategy": "return-date",
+   "borrowed_from": "Tease the series before it starts (Buffer series guide)",
+   "serves": "sends",
+   "why": "Gives a date to come back for and a reason to forward to family."
+  },
+  {
+   "title": "Mulank episode with voice-first open",
+   "hook": "Mulank 7: 2027 mein aapki sabse badi taqat aapki shanti hai.",
+   "format": "45 to 60 second motion graphic, Sakshi's voice from second one, captions on",
+   "strategy": "series",
+   "borrowed_from": "Open with the hook, text for sound-off (Instagram editing tips, Aug 2026)",
+   "serves": "watch time",
+   "why": "Follows Instagram's own advice on the first seconds and length."
+  },
+  {
+   "title": "Send-it episode",
+   "hook": "Yeh reel us dost ko bhejo jiska janam 4, 13, 22 ya 31 ko hua hai.",
+   "format": "30-second motion reel, one number, one line of advice",
+   "strategy": "personal-year",
+   "borrowed_from": "Sends per reach as the key number (Mosseri via Uppbeat)",
+   "serves": "sends",
+   "why": "A birth date gives a clear person to forward it to."
+  },
+  {
+   "title": "Carousel twin of each episode",
+   "hook": "Mulank 3 ka 2027, 5 slides mein.",
+   "format": "Carousel with music; slide 2 carries the main point; last slide the keyword",
+   "strategy": "free-paid",
+   "borrowed_from": "Carousel second-slide return (Mosseri via Uppbeat)",
+   "serves": "saves",
+   "why": "Gets a second showing in feed and is easy to save."
+  },
+  {
+   "title": "Do-along: find your mulank in 10 seconds",
+   "hook": "Apni janam tareekh ke ank jodo. Chalo saath mein karte hain.",
+   "format": "20-second animated do-along, pinned and linked as episode 0",
+   "strategy": "do-along",
+   "borrowed_from": "Linked reels and a pinned start (TechCrunch on linked reels)",
+   "serves": "watch time",
+   "why": "Every new viewer needs their number first; linking sends them on to their episode."
+  },
+  {
+   "title": "Offer episode with a clear, honest ask",
+   "hook": "Poori personal 2027 report chahiye? '2027' likhiye, link DM mein aayega. Rs 555.",
+   "format": "30-second reel: what is inside the report, price shown, keyword once at the end",
+   "strategy": "keyword-dm",
+   "borrowed_from": "Instagram's comment-prompt statement; price before the click (ManyChat community thread)",
+   "serves": "likes",
+   "why": "States the offer and price openly, so comments are from people who want it."
+  },
+  {
+   "title": "What the report has: page flip",
+   "hook": "Report ke andar kya hai? 3 page dekh lijiye.",
+   "format": "Carousel showing two or three real pages",
+   "strategy": "free-paid",
+   "borrowed_from": "Show product pages as a carousel (Topmate guide)",
+   "serves": "saves",
+   "why": "Shows quality without promising results."
+  },
+  {
+   "title": "2027 do and don't by number",
+   "hook": "Mulank 5: 2027 mein yeh karo, yeh mat karo. Bas do baatein.",
+   "format": "Split-screen motion reel, two points only",
+   "strategy": "do-dont",
+   "borrowed_from": "15 to 60 seconds for most formats (Instagram guide, Sep 2026)",
+   "serves": "saves",
+   "why": "Short, complete and easy to save."
+  },
+  {
+   "title": "Month card: your January",
+   "hook": "Mulank 9, January 2027 ka ek chhota sa focus.",
+   "format": "20-second looping motion card, voice first",
+   "strategy": "return-date",
+   "borrowed_from": "Loop on very short clips (Emplifi study)",
+   "serves": "watch time",
+   "why": "Very short clips can loop; a monthly card gives a reason to return."
+  }
+ ],
+ "strategies": [
+  {
+   "name": "Two-step DM",
+   "line": "First auto-DM is short with one button; price and payment link come in the second message.",
+   "source": "Meta private replies page; Inro data via Planoly",
+   "evidence_note": "The rule (one reply, then a 24-hour window after a tap) is Meta's. The conversion gain is one vendor's uncontrolled data. Not tested by us."
+  },
+  {
+   "name": "Offer-worded keyword",
+   "line": "The keyword is asked for as a real offer, once, at the end; never as a bare 'comment this word'.",
+   "source": "Instagram's 2024 statement on comment prompts",
+   "evidence_note": "Instagram said explicit comment prompts may lose recommendations and later said DM tools are fine. Where the line sits is not defined, so this is a cautious reading."
+  },
+  {
+   "name": "Trial-reel hook test",
+   "line": "Before the series, post two or three hook versions of the pilot as trial reels and keep the one non-followers watch most.",
+   "source": "creators.instagram.com/blog/instagram-trial-reels",
+   "evidence_note": "The feature is official and ranked separately. That it predicts the series result is our assumption."
+  },
+  {
+   "name": "Linked chain to the offer",
+   "line": "Every episode is linked to the next, and the last ones to the offer episode; episode 1 is pinned.",
+   "source": "TechCrunch on linked reels (Instagram's feature)",
+   "evidence_note": "The feature exists. No source gives numbers for how many viewers use the link."
+  },
+  {
+   "name": "Carousel twin",
+   "line": "Each episode also goes out as a carousel with music, with a second slide that works on its own.",
+   "source": "Mosseri interview reported by Uppbeat",
+   "evidence_note": "Mosseri described the second-slide return and music carousels in the reels viewer. No numbers for our niche."
+  },
+  {
+   "name": "Voice in the first second",
+   "line": "Animated episodes open with Sakshi's voice and the hook as text in the first frame; no intro card.",
+   "source": "Instagram's 2026 editing tips; Emplifi study",
+   "evidence_note": "The hook advice is Instagram's. The speech figure is third-party Facebook brand data."
+  },
+  {
+   "name": "Straight-to-pay link",
+   "line": "The DM link opens the payment page itself, with the same report name and price as the reel.",
+   "source": "Topmate data; Razorpay and SuperProfile guides",
+   "evidence_note": "Topmate shows most auto-DM clicks go to non-paying pages; it does not prove the fix lifts sales. Vendors' advice."
+  },
+  {
+   "name": "Claims check before posting",
+   "line": "Each script is checked for cure, money or guaranteed-result lines, and for lines that tell viewers what they suffer.",
+   "source": "Meta ad standards; Instagram recommendation guidelines; DMR Act",
+   "evidence_note": "The rules are official. The ad rules apply only if reels are boosted; the recommendation list applies to all reels."
+  },
+  {
+   "name": "One template, many episodes",
+   "line": "Build one coded motion template and render all mulank episodes from a data file.",
+   "source": "remotion.dev/docs/dataset-render",
+   "evidence_note": "A documented production method; says nothing about reach. Fits the rule that frames are made by code, not by hand."
+  }
+ ],
  "pages": [],
  "queue_reels": [],
- "next": [],
- "problems": []
+ "next": [
+  "Ask SuperProfile how its auto-DM is sent: one message then a button, or link in the first message; and whether it sends any follow-up later.",
+  "Check Account Status on the page before the series.",
+  "Decide the keyword wording and write the two DM messages.",
+  "Run the pilot as two or three trial reels.",
+  "Do one real Rs 555 test payment on a phone.",
+  "Not found this run: Instagram's full recommendation guidelines text and Meta's fraud standard (pages did not load); any India-specific conversion rate; whether 'follow first to get the link' is allowed."
+ ],
+ "problems": [
+  "Some Meta pages returned no text (Instagram help recommendation guidelines, fraud standard, ManyChat rules page). Findings rely on the creator pages and developer pages that did load.",
+  "No source gave a real conversion rate for a Rs 199 to 999 PDF in India. Numbers quoted are vendor data."
+ ]
 }
