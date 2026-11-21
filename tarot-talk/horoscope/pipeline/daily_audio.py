@@ -1,7 +1,7 @@
 """Daily horoscope audio: reads reading.json, makes the voice (Piper), a beat-timed timeline.json,
 synthesized music and sound effects, and mixes audio.wav. No GPU, no paid service.
 usage: python3 daily_audio.py <folder with reading.json> <piper model .onnx>"""
-import json, math, subprocess, sys, wave
+import os, hashlib, json, math, subprocess, sys, wave
 import numpy as np
 from scipy.signal import butter, lfilter
 
@@ -38,6 +38,10 @@ def eleven(text, path):
 def tts(text, path):
     starts = None
     if MODEL.startswith("eleven:"): starts = eleven(text, path)
+    elif MODEL.startswith("chatterbox:"):   # free voice: lines are pre-made by cb_tts.py into the shared cache
+        c = os.path.expanduser(f"~/.cache/horoscope-voice/{hashlib.sha1((MODEL + '|' + text).encode()).hexdigest()[:16]}.wav")
+        if not os.path.exists(c): raise SystemExit("voice line not made yet (run cb_tts.py): " + text[:40])
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", c, "-ac", "1", "-ar", "24000", "-sample_fmt", "s16", path], check=True)
     else:
         subprocess.run(["python3", "-m", "piper", "--model", MODEL, "--output_file", path, "--length-scale", "0.9"],
                        input=text.encode(), check=True, capture_output=True)

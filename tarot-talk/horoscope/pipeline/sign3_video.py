@@ -31,12 +31,13 @@ CONST = dict(libra=[[[.12, .30], [.42, .10], [.86, .26], [.66, .52], [.30, .48],
              capricorn=[[[.10, .20], [.50, .86], [.90, .24], [.10, .20]]], aquarius=[[[.08, .40], [.26, .30], [.44, .40], [.62, .30], [.80, .40], [.94, .30]], [[.08, .66], [.26, .56], [.44, .66], [.62, .56], [.80, .66]]],
              pisces=[[[.14, .14], [.40, .50], [.86, .86]], [[.40, .50], [.90, .30]]])
 
+SGN = TL["sign"].lower()
 def card_frames(key):
     """728x900 frames for the card window. The crop is centred on the faces found in the clip; if the faces
     are wider than the window the clip is flagged 'cut' (reject it at review)."""
-    src = sorted(glob.glob(f"{STOCK}/hs_stock_{key}_*.mp4"))
-    if not src: return None
-    out = f"{STOCK}/frames3/{key}"
+    src = sorted(glob.glob(f"{STOCK}/signs/{SGN}/hs_stock_{key}_*.mp4")); out = f"{STOCK}/frames3/{SGN}/{key}"
+    if not src and os.environ.get("HS_ALLOW_SHARED") == "1": src = sorted(glob.glob(f"{STOCK}/hs_stock_{key}_*.mp4")); out = f"{STOCK}/frames3/{key}"
+    if not src: raise SystemExit(f"missing picture for {SGN}/{key}: every sign needs its own (put it in {STOCK}/signs/{SGN}/)")
     if not os.path.exists(f"{out}/meta.json"):
         import cv2
         os.makedirs(out, exist_ok=True)
@@ -65,6 +66,7 @@ def card_frames(key):
 sign = TL["sign"].lower(); CLIPS = {}
 for sh in TL["shots"]:
     k = sh["scene"].replace("tone_", "")
+    if k in ("meters", "days", "lucky", "cta"): continue
     if k not in CLIPS: CLIPS[k] = card_frames(k)
     if CLIPS[k]: sh["clip"] = CLIPS[k]
 card = {**CARD, "hook": (SIGN_CARD[sign][0], TL["ui"]["name"] if TL.get("ui") else TL["sign"].upper())}
@@ -80,15 +82,21 @@ msh = next((s for s in TL["shots"] if s["id"] == "meters"), None); dsh = next((s
 ar = [(s, cue(s, "S")) for s in TL["shots"] if s.get("area") is not None and cue(s, "S")]
 pick = ([x for x in ar if x[1]["b"] == "good"] + [x for x in ar if x[1]["b"] != "good"])[:3]
 hook_l = [c for c in TL["shots"][0]["cues"] if c["k"] == "L"]
-cov = (f'<div id="cover"><div class="cdate">{TL["date_label"]}</div><div class="cname">{TL["ui"]["name"] if TL.get("ui") else TL["sign"].upper()}</div>'
-       f'<div class="csub">{TL["ui"]["sub"] if TL.get("ui") else ""}</div>'
-       + "".join(f'<div class="chook"><span>{c["a"]}</span></div>' for c in hook_l[1:3])
-       + ('<div class="cscores">' + "".join(f'<div class="cs"><b>{c["a"]}</b><span>' + "".join(f'<i class="{"on" if j < c["b"] else ""}"></i>' for j in range(5)) + '</span></div>'
-                                           for c in msh["cues"] if c["k"] == "M") + '</div>' if msh else "")
-       + ('<div class="cdays">' + "".join(f'<div class="cd {m}">{n}</div>' for n, m in cue(dsh, "D")["a"]) + '</div>' if dsh else "")
-       + '<div class="clist">' + "".join(f'<div class="ci"><b>{cue(s, "T")["a"]}</b><span style="color:{MC[st["b"]]}">{st["a"]}</span></div>' for s, st in pick) + '</div>'
-       + f'<div class="cmore">+ {TL["ui"]["more"] if TL.get("ui") else "MORE IN THE VIDEO"}</div><div class="cbrand">TAROT TALK BY SAKSHI</div></div>')
-
+# cover "H" (owner's choice, 22 Nov 2026): WEEKLY HOROSCOPE + dates, the sign's gold zodiac medallion, English sign + rashi name equally big.
+EMB = sorted(glob.glob(f"{STOCK}/signs/{SGN}/emblem.*"))
+rname = (TL["ui"]["sub"].split(" ·")[0] if TL.get("ui") else TL.get("rashi", "")).upper()
+d0 = TL["date_label"].replace("WEEKLY · ", "").replace("WEEKLY", "").strip()
+emb = (f'<img src="file://{EMB[0]}" style="position:absolute;left:170px;top:620px;width:740px;height:700px;object-fit:contain;mix-blend-mode:lighten;'
+       f'-webkit-mask-image:radial-gradient(ellipse 48% 48% at 50% 50%,#000 75%,transparent 100%)">' if EMB else
+       f'<div style="position:absolute;left:290px;top:670px;width:500px;height:500px;border-radius:50%;border:4px solid #d8b65c;color:#f0cf74;font:330px/500px \'DejaVu Sans\';text-align:center">{TL["glyph"]}</div>')
+nm = TL["ui"]["name"] if TL.get("ui") else TL["sign"].upper()
+cov = (f'<div id="cover" style="background:#040404">{emb}'
+       f'<div class="cv" style="top:285px;font-size:150px;line-height:.9;letter-spacing:6px;color:#f3e3b8">WEEKLY</div>'
+       f'<div class="cv" style="top:413px;font-size:150px;line-height:.9;letter-spacing:6px;color:#f3e3b8">HOROSCOPE</div>'
+       f'<div class="cv" style="top:560px;font:600 44px Cinzel;letter-spacing:10px;color:#e2c06a">{d0}</div>'
+       f'<div class="cv fitw" style="top:1335px;font-size:170px;line-height:.9;letter-spacing:4px">{nm}</div>'
+       f'<div class="cv fitw" style="top:1495px;font-size:170px;line-height:.9;letter-spacing:4px;color:#e2c06a">{rname}</div>'
+       f'<div class="cv" style="top:1820px;font:700 34px Cinzel;letter-spacing:8px;color:#d8b65c">TAROT TALK BY SAKSHI</div></div>')
 FONTS = "".join(f'@font-face{{font-family:"{n}";font-weight:{w};src:url("file://{FD}/{d}/files/{d}-latin-{w}-normal.woff2")}}'
                 for n, d, w in [("Bebas", "bebas-neue", 400), ("Cinzel", "cinzel", 600), ("Cinzel", "cinzel", 700), ("Inter", "inter", 500)])
 CSS = FONTS + """html,body{margin:0;background:#000}#st{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:Bebas}
@@ -122,7 +130,7 @@ canvas.full{position:absolute;left:0;top:0;width:1080px;height:1920px}.ab{positi
 .lc .mf b{font-size:120px;white-space:nowrap}.lc .mf i{font-size:30px;color:#e2c06a}.sw{width:150px;height:150px;border-radius:50%;border:8px solid #d8b65c;box-sizing:border-box;margin-bottom:16px}
 .sk{position:absolute;left:330px;top:420px;width:420px;height:560px;border-radius:20px;border:4px solid #d8b65c;box-sizing:border-box;object-fit:cover;opacity:0;box-shadow:0 20px 50px rgba(0,0,0,.6)}
 #prog{position:absolute;left:0;top:1912px;height:8px;background:#d8b65c}
-#cover{position:absolute;inset:0;background:rgba(0,0,0,.72);display:flex;flex-direction:column;align-items:center;color:#fff}
+#cover{position:absolute;inset:0;display:block;color:#fff}#cover .cv{position:absolute;left:0;width:1080px;text-align:center;white-space:nowrap;font-family:Bebas}
 #cover .cdate{margin-top:120px;padding:10px 40px;border:3px solid #d8b65c;border-radius:60px;font:600 46px Cinzel;letter-spacing:6px;color:#e2c06a}
 #cover .cname{margin-top:20px;font:400 330px/0.9 Bebas;letter-spacing:8px}#cover .csub{font:600 44px Cinzel;letter-spacing:10px;color:#e2c06a}
 #cover .chook{margin-top:22px;font:400 108px/1 Bebas}#cover .chook span{background:#e2b84a;color:#0b0906;padding:2px 18px}
@@ -201,7 +209,7 @@ window.render=async function(t){const rid=++RID; try{await document.fonts.ready}
   if(rid!==RID)return;
   sky(t); FB.clearRect(0,0,1080,1920); FF.clearRect(0,0,1080,1920);
   $('grain').style.backgroundPosition=`${(t*977)%256}px ${(t*613)%256}px`; $('prog').style.width=(1080*t/DUR).toFixed(1)+'px';
-  $('cover').style.opacity=t<0.35?1:1-io((t-0.35)/0.25); $('cover').style.display=t>0.62?'none':'flex';
+  $('cover').style.opacity=t<0.35?1:1-io((t-0.35)/0.25); $('cover').style.display=t>0.62?'none':'block'; if(t<0.62)Q('#cover .fitw').forEach(e=>{e.style.fontSize='170px'; const w=e.scrollWidth; if(w>1000)e.style.fontSize=Math.floor(170*1000/w)+'px';});
   const big=!['days','lucky','cta'].includes(sc); $('cw').style.display=big?'block':'none';
   // header
   const T=s.cues.find(c=>c.k=='T'); let hd=''; if(sc=='hook')hd=TL.date_label; else if(T)hd=T.a; else if(sc=='meters')(s.cues.find(c=>c.k=='L')||{a:''}).a&&(hd=s.cues.find(c=>c.k=='L').a); else if(sc=='lucky')hd=(TL.ui&&TL.ui.lucky)||'LUCKY'; else if(sc=='cta')hd='TAROT TALK BY SAKSHI';

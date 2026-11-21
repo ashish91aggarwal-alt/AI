@@ -42,44 +42,60 @@ def reading(key, e, date, voice, date_to=None, en=True):
             pic = ls.pop() if len(ls) > 1 and re.fullmatch(r"[a-z_\-]+", ls[-1]) else None   # optional picture from assets/fe
             c = [["L", ls[0], "", 0]]
             if len(ls) > 1: t, i = at(vo, ls[1], 1, len(vo.split()) // 2); c.append(["L", t, "", i])
-            shots.append(dict(id=f"tone_{tone}_{len(shots)}", scene=f"tone_{tone}", vo=vo, cues=c, **({"pic": pic} if pic else {})))
+            shots.append(dict(id=f"tone_{tone}_{after}", scene=f"tone_{tone}", vo=vo, cues=c, **({"pic": pic} if pic else {})))
     vo, *ls = e["hook"]; n = len(vo.split()); c = [["L", ls[0], "", 0]]
     t, i = at(vo, ls[1], 1, n // 3); c.append(["L", t, "", i]); t, j = at(vo, ls[2], i + 1, 2 * n // 3); c.append(["L", t, "", j])
     shots.append(dict(id="hook", scene="hook", vo=vo, cues=c)); tone_shots("hook")
+    head_n = len(shots); blocks = {}; mark = [len(shots)]
+    def close(name): blocks[name] = shots[mark[0]:]; del shots[mark[0]:]
+    import random as _r; V = _r.Random(f"v{date}-{key}").randrange(12)   # variant index: fixed lines are worded differently per sign and week
     sc = e["scores"]; lab = ["LOVE", "MONEY", "WORK", "ENERGY"] if en else ["लव", "पैसा", "काम", "एनर्जी"]; head = ("THIS WEEK" if wk else "YOUR DAY") if en else ("इस हफ्ते" if wk else "आपका दिन")
     hv = "इस हफ्ते" if wk else "आज"; b0 = len(hv.split())
-    shots.append(dict(id="meters", scene="meters", vo=f"{hv}। Love, {NUM_EN[sc[0]]} out of five। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।",
-                      cues=[["L", head, "", 0]] + [["M", lab[k], sc[k], [b0, b0 + 5, b0 + 7, b0 + 9][k]] for k in range(4)]))
-    tone_shots("meters")
+    MV = [f"{hv}। Love, {NUM_EN[sc[0]]} out of five। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।",
+          f"{hv} स्कोर। Love को {NUM_EN[sc[0]]}। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।",
+          f"नंबर देखो। Love, {NUM_EN[sc[0]]} out of five। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।",
+          f"{hv} का रिपोर्ट कार्ड। Love, {NUM_EN[sc[0]]}। Money, {NUM_EN[sc[1]]}। Work, {NUM_EN[sc[2]]}। Energy, {NUM_EN[sc[3]]}।"]
+    mvo = MV[V % 4]; ws = mvo.split(); idx = [k for k, w in enumerate(ws) if w.rstrip(",।") in ("Love", "Money", "Work", "Energy")]
+    shots.append(dict(id="meters", scene="meters", vo=mvo,
+                      cues=[["L", head, "", 0]] + [["M", lab[k], sc[k], idx[k]] for k in range(4)]))
+    tone_shots("meters"); close("meters")
     if wk:   # days of the week, all from the Moon (no tokens): voice, chips and lines are generated
         import sky; d0, d1 = dt.date.fromisoformat(date), dt.date.fromisoformat(date_to)
         mk = sky.day_marks(KEYS.index(key), d0, d1); g = [DAY_EN[x.weekday()] for x, m, _ in mk if m == "good"]
         bad = [DAY_EN[x.weekday()] for x, m, _ in mk if m == "stop"] or [DAY_EN[x.weekday()] for x, m, _ in mk if m == "care"]
-        vo = f"इस हफ्ते बढ़िया दिन, {joinh(g)}।" + (f" संभल के रहना, {joinh(bad)}।" if bad else "")
-        n1 = len(f"इस हफ्ते बढ़िया दिन,".split())
+        DV = [("इस हफ्ते बढ़िया दिन,", "संभल के रहना,"), ("आपके लकी दिन,", "और ध्यान से,"), ("सबसे अच्छे दिन,", "थोड़ा रुक के चलना,"), ("काम निपटाने के लिए बेस्ट,", "बचके रहना,")][V % 4]
+        vo = f"{DV[0]} {joinh(g)}।" + (f" {DV[1]} {joinh(bad)}।" if bad else "")
+        n1 = len(DV[0].split())
         sd = (lambda x: EN_DAY[x.weekday()]) if en else (lambda x: SDAY[x.weekday()])
         gd = [sd(x) for x, m, _ in mk if m == "good"]; bd = [sd(x) for x, m, _ in mk if m == "stop"] or [sd(x) for x, m, _ in mk if m == "care"]
         c = [["T", "THIS WEEK'S DAYS" if en else "हफ्ते के दिन", "", 0], ["D", [[sd(x), m] for x, m, _ in mk], "", 0],
              ["L", ("BEST: " if en else "बढ़िया: ") + " · ".join(gd), "", n1]]
-        if bad: c.append(["L", ("CAREFUL: " if en else "संभलें: ") + " · ".join(bd), "", n1 + len(joinh(g).split()) + 3])
-        shots.append(dict(id="days", scene="days", vo=vo, cues=c)); tone_shots("days")
+        if bad: c.append(["L", ("CAREFUL: " if en else "संभलें: ") + " · ".join(bd), "", n1 + len(joinh(g).split()) + len(DV[1].split()) + 1])
+        shots.append(dict(id="days", scene="days", vo=vo, cues=c)); tone_shots("days"); close("days")
     for a, (ak, title) in enumerate(AREAS):
         if ak not in e: continue
         vo, line, stamp, mood = e[ak]; n = len(vo.split())
         t1, i = at(vo, line, 1, max(1, n // 4)); i = min(i, max(1, int(n * 0.6)))
         t2, j = at(vo, stamp, i + 1, max(i + 1, 2 * n // 3))
         shots.append(dict(id=ak, scene=ak, area=a, vo=vo, cues=[["T", EN_AREA[ak] if en else title, "", 0], ["L", t1, "", i], ["S", t2, mood, min(j, n - 1)]]))
-        tone_shots(ak)
+        tone_shots(ak); close(ak)
     if "remedy" in e:
         vo, l1, l2 = e["remedy"]; n = len(vo.split()); t1, i = at(vo, l1, 1, 1); t2, j = at(vo, l2, i + 1, n // 2)
         shots.append(dict(id="remedy", scene="remedy", vo=vo, cues=[["T", "REMEDY" if en else "उपाय", "", 0], ["L", t1, "", i], ["L", t2, "", j]]))
-        tone_shots("remedy")
+        tone_shots("remedy"); close("remedy")
+    import random
+    names = list(blocks); order = [b for b in e.get("order", []) if b in blocks]
+    if not order: order = names[:]; random.Random(f"{date}-{key}").shuffle(order)
+    order += [b for b in names if b not in order]
+    for b in order: shots.extend(blocks[b])
     col, num, tm = e["lucky"]; bl = "बेस्ट डे" if wk else "बेस्ट टाइम"
     kl = (["LUCKY COLOUR", "LUCKY NUMBER", "BEST DAY" if wk else "BEST TIME"] if en else ["लकी कलर", "लकी नंबर", bl])
     kv = ([EN_COL.get(col, col), str(num), EN_WDAY.get(tm, en_time(tm))] if en else [col, str(num), tm])
     shots.append(dict(id="lucky", scene="lucky", vo=f"लकी कलर, {EN_COL.get(col, col).lower()}। लकी नंबर, {NUM_EN[int(num)]}। {bl}, {EN_WDAY.get(tm, tm).title() if tm in EN_WDAY else spoken(tm)}।",
                       cues=[["K", kl[0], kv[0], 0], ["K", kl[1], kv[1], 3], ["K", kl[2], kv[2], 6]]))
-    shots.append(dict(id="cta", scene="cta", vo=f"ये वीडियो किसी {rashi} वाले को भेजो। {'अगले हफ्ते' if wk else 'कल'} के लिए फॉलो करो।",
+    CV = [f"ये वीडियो किसी {rashi} वाले को भेजो। {'अगले हफ्ते' if wk else 'कल'} के लिए फॉलो करो।", f"किसी {rashi} दोस्त को टैग करो। {'अगले हफ्ते' if wk else 'कल'} फिर मिलते हैं, फॉलो कर लो।",
+          f"अपने {rashi} वाले को ये भेज दो। {'अगले हफ्ते' if wk else 'कल'} का हाल जानने के लिए फॉलो करो।"]
+    shots.append(dict(id="cta", scene="cta", vo=CV[V % 3],
                       cues=[["L", "SEND THIS TO" if en else "ये वीडियो भेजो", "", 0], ["L", f"A {sign.upper()}" if en else f"{rashi} वाले को", "", 3],
                             ["L", ("FOLLOW FOR NEXT WEEK" if wk else "FOLLOW FOR TOMORROW") if en else ("अगले हफ्ते के लिए फॉलो करो" if wk else "कल के लिए फॉलो करो"), "", 7]]))
     d = dt.date.fromisoformat(date)
@@ -98,6 +114,8 @@ def sh(cmd, **kw): return subprocess.run(cmd, check=True, capture_output=True, t
 
 def build(folder, sheet):
     t0 = time.time(); R = json.load(open(f"{folder}/reading.json")); voice = R["voice"]
+    if voice.startswith("chatterbox:"):   # free voice: make all lines in one model load (CPU, no credits)
+        sh([os.environ.get("CB_PY", os.path.abspath(f"{HERE}/../cb/bin/python")), f"{HERE}/cb_tts.py", voice.split(":", 1)[1], f"{folder}/reading.json"])
     sh(["python3", f"{HERE}/sign_audio.py", folder, voice]); sh(["python3", f"{HERE}/" + ("sign2_video.py" if os.environ.get("HS_LOOK") == "v3" else "sign3_video.py"), folder])
     TL = json.load(open(f"{folder}/timeline.json")); n = round(TL["total"] * 30); page = os.path.abspath(f"{folder}/sign.html")
     parts = [(k * n // 3, (k + 1) * n // 3) for k in range(3)]
@@ -125,14 +143,14 @@ def build(folder, sheet):
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]; D = json.load(open(args[0])); out = args[1] if len(args) > 1 else "out"
     only = next((a.split("=", 1)[1].split(",") for a in sys.argv if a.startswith("--only=")), None)
-    voice = D.get("voice", "eleven:RABOvaPec1ymXz02oDQi")
+    voice = os.environ.get("HS_VOICE") or D.get("voice", "eleven:RABOvaPec1ymXz02oDQi")   # HS_VOICE=chatterbox:<ref.wav> = free voice
     for key, e in D["signs"].items():
         if only and key not in only: continue
         date = D.get("date") or D["date_from"]; f = f"{out}/{date}{'_week' if D.get('date_to') else ''}/{key}"; os.makedirs(f, exist_ok=True)
         json.dump(reading(key, e, date, voice, D.get("date_to"), D.get("screen", "en") == "en"), open(f"{f}/reading.json", "w"), ensure_ascii=False, indent=1)
         import hashlib   # credit guard: count characters not yet in the shared voice cache
         cdir = os.environ.get("XI_CACHE", os.path.expanduser("~/.cache/horoscope-voice")); R = json.load(open(f"{f}/reading.json"))
-        new = sum(len(x["vo"]) for x in R["shots"] if not os.path.exists(f"{cdir}/{hashlib.sha1((voice + '|' + x['vo']).encode()).hexdigest()[:16]}.json"))
+        new = 0 if not voice.startswith("eleven:") else sum(len(x["vo"]) for x in R["shots"] if not os.path.exists(f"{cdir}/{hashlib.sha1((voice + '|' + x['vo']).encode()).hexdigest()[:16]}.json"))
         spent = globals().get("SPENT", 0)
         if spent + new > int(os.environ.get("XI_MAX_CHARS", "1500")): print(key, "SKIPPED: would need", new, "new voice characters; raise XI_MAX_CHARS"); continue
         globals()["SPENT"] = spent + new

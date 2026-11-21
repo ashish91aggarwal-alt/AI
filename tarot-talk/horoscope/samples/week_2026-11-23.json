@@ -210,6 +210,122 @@
      "KEEP CLIMBING|6"
     ]
    ]
+  },
+  "dhanu": {
+   "sky": "Ju lord H9 with Ma+Ke (luck, mentors, long trips, faith); Me+Ve H11 (friends, gains, love via friends); Su H12 (spending, rest); Sa(R) H4 (home/property slow); Ra H3; Moon H8-9 Sat-Sun",
+   "order": [
+    "friends",
+    "meters",
+    "work",
+    "days",
+    "love",
+    "family",
+    "travel",
+    "decide",
+    "kids",
+    "remedy"
+   ],
+   "hook": [
+    "धनु वालों, इस हफ्ते किस्मत खुद दरवाज़ा खटखटाएगी। बस Saturday-Sunday जेब संभालना।",
+    "SAGITTARIUS",
+    "LUCK KNOCKS|4",
+    "GUARD YOUR WALLET SAT–SUN|9"
+   ],
+   "scores": [
+    4,
+    3,
+    4,
+    3
+   ],
+   "friends": [
+    "दोस्तों के ग्रुप से कोई नया मौका या रिश्ता आ सकता है।",
+    "FRIENDS BRING LUCK|0",
+    "A NEW OPENING|5",
+    "good"
+   ],
+   "work": [
+    "सीनियर या गुरु जैसा कोई सही रास्ता दिखाएगा।",
+    "A MENTOR STEPS IN|0",
+    "FOLLOW THE ADVICE|5",
+    "good"
+   ],
+   "family": [
+    "घर या प्रॉपर्टी का काम थोड़ा अटकेगा, कागज़ दो बार पढ़ना।",
+    "PROPERTY WORK SLOWS|1",
+    "READ PAPERS TWICE|7",
+    "care"
+   ],
+   "kids": [
+    "बच्चे कुछ नया सीखना चाहेंगे, उनका साथ देना।",
+    "THEY WANT TO LEARN|2",
+    "BACK THEM UP|5",
+    "good"
+   ],
+   "decide": [
+    "बड़ा फैसला Wednesday या Thursday को लेना, Monday नहीं।",
+    "THE BIG DECISION|1",
+    "WED OR THU|2",
+    "good"
+   ],
+   "love": [
+    "सिंगल हो तो दोस्त के ज़रिए कोई खास मिलेगा, कपल हो तो डेट प्लान करो।",
+    "SOMEONE VIA FRIENDS|3",
+    "COUPLES: DATE NIGHT|9",
+    "good"
+   ],
+   "travel": [
+    "लंबी यात्रा या तीर्थ का प्लान बनेगा।",
+    "A LONG JOURNEY|0",
+    "MAYBE A PILGRIMAGE|3",
+    "good"
+   ],
+   "remedy": [
+    "अगर weekend पे खर्चा बढ़े, तो Thursday को पीली चीज़ दान करना।",
+    "IF SPENDING RISES|3",
+    "DONATE SOMETHING YELLOW|8"
+   ],
+   "lucky": [
+    "पीला",
+    3,
+    "गुरुवार"
+   ],
+   "hooks": [
+    [
+     "friends",
+     "fun",
+     "और हाँ, ग्रुप चैट में इस हफ्ते आप ही हीरो रहोगे। मीम्स तैयार रखना!",
+     "GROUP CHAT HERO",
+     "KEEP THE MEMES READY|11"
+    ],
+    [
+     "work",
+     "happy",
+     "इस हफ्ते कोई आपकी पीठ थपथपाएगा, और आप डिज़र्व करते हो।",
+     "A PAT ON THE BACK",
+     "YOU DESERVE IT|7"
+    ],
+    [
+     "days",
+     "serious",
+     "Saturday-Sunday, उधार देना या लेना, दोनों से बचना।",
+     "NO LENDING, NO BORROWING",
+     "SAT–SUN|0"
+    ],
+    [
+     "family",
+     "sad",
+     "पुराने घर की याद आएगी। एक फोटो निकाल के देखना, अच्छा लगेगा।",
+     "MISSING THE OLD HOME",
+     "LOOK AT AN OLD PHOTO|6"
+    ],
+    [
+     "travel",
+     "encouraging",
+     "जो सपना पोस्टपोन किया था, उसका टाइम आ रहा है। पहला कदम उठाओ।",
+     "THAT POSTPONED DREAM",
+     "TAKE THE FIRST STEP|10"
+    ]
+   ]
   }
  },
  "screen": "en"
