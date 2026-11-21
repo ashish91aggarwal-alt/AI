@@ -281,11 +281,12 @@ function trendsEvidence() { return D.trends ? trendBlock().slice(2) : trendBlock
 function vIdeas() {
   const I = D.ideas, IS = { new: "acc", picked: "good", made: "good", dropped: "wait" };
   const sname = id => (D.strategies.strategies.find(x => x.id === id) || { name: id }).name, sobj = id => D.strategies.strategies.find(x => x.id === id);
-  const all = I.ideas.concat((D.agents || []).flatMap(a => a.ideas || [])).filter(x => x.status !== "dropped"), top = all.filter(x => x.pick).length;
+  const SRC = { trends: "search", instagram: "page", similar: "page", methods: "method" };
+  const all = I.ideas.map(x => ({ src: /@|page/i.test(x.borrowed_from || "") ? "page" : "method", ...x })).concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ src: SRC[a.id] || "method", added: (a.started || "").slice(0, 10), ...x })))).filter(x => x.status !== "dropped"), top = all.filter(x => x.pick).length;
   return [
     h("p", { class: "sub", style: "margin-top:14px" }, "What to post. Each card has the opening line, how to make it, and when to post it. All are untested until made."),
-    seg([["top", "Best " + top], ["all", "All " + all.length]], state.ifilter, k => { state.ifilter = k; render(); }),
-    h("div", { class: "sgrid" }, I.ideas.concat((D.agents || []).flatMap(a => (a.ideas || []).map(x => ({ status: "new", borrowed_from: a.name, serves: "not stated", ...x, by: a.name })))).filter(x => x.status !== "dropped" && (state.ifilter === "all" || x.pick)).sort((a, b) => (a.pick || 99) - (b.pick || 99)).map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, x.pick ? h("span", { class: "pill good", style: "align-self:flex-start" }, "Reviewer's pick " + x.pick) : null, h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why), x.post_by ? h("span", { class: "sub" }, "Post by: " + x.post_by) : null, x.review_note ? h("span", { class: "rnote" }, "Reviewer: " + x.review_note) : null,
+    seg([["top", "Best " + top], ["all", "All " + all.length], ["page", "From other pages", all.filter(x => x.src === "page").length], ["search", "From searches", all.filter(x => x.src === "search").length], ["method", "From methods", all.filter(x => x.src === "method").length]], state.ifilter, k => { state.ifilter = k; render(); }),
+    h("div", { class: "sgrid" }, all.filter(x => state.ifilter === "all" || (state.ifilter === "top" ? x.pick : x.src === state.ifilter)).sort((a, b) => (a.pick || 99) - (b.pick || 99)).map((x, i) => h("div", { class: "scard idea", style: "--i:" + i }, h("span", { class: "sbody", style: "grid-column:1/-1" }, x.pick ? h("span", { class: "pill good", style: "align-self:flex-start" }, "Reviewer's pick " + x.pick) : newPill(x.added), h("b", {}, x.title), reading(x.hook, "Hook", true), h("span", { class: "kl" }, x.format), h("span", { class: "sub" }, x.why), x.post_by ? h("span", { class: "sub" }, "Post by: " + x.post_by) : null, x.review_note ? h("span", { class: "rnote" }, "Reviewer: " + x.review_note) : null,
       h("span", { class: "checks" }, h("span", { class: "chk y" }, "Earns: " + x.serves), sobj(x.strategy) ? h("button", { class: "chk", style: "cursor:pointer;background:none;font:inherit;font-size:12.5px", onclick: () => stratSheet(sobj(x.strategy)) }, "Strategy: " + sname(x.strategy)) : null, h("span", { class: "chk" }, "From: " + x.borrowed_from))), pill(x.status, IS[x.status] || "wait")))),
     (() => { const dr = (D.agents || []).flatMap(a => (a.ideas || []).filter(x => x.status === "dropped").map(x => [x.title, x.review_note || "", a.name])); return dr.length ? fold("Dropped by the reviewer (" + dr.length + ")", dr.map(([t, w, n]) => h("div", { class: "planrow" }, h("b", {}, t), h("span", { class: "sub" }, w + " · " + n)))) : null; })()
   ];
@@ -311,6 +312,40 @@ function vCalendar() {
     Object.keys(groups).length ? h("div", { class: "stack" }, Object.entries(groups).sort((a, b) => b[1].length - a[1].length).map(([w, list]) => card("", h("b", {}, w), h("div", { class: "checks" }, list.map(x => h("span", { class: "chk" + (x.pick ? " y" : "") }, x.title)))))) : h("p", { class: "sub" }, "No idea has a posting date yet."),
     h("h2", {}, "What runs by itself"), ...jobsBlock()
   ];
+}
+
+/* ---------- the four screens the owner asked for: Ideas, Searches, Instagram, Timeline ---------- */
+const isNew = d => { if (!d) return false; const t = Date.parse(String(d).slice(0, 10)); return !isNaN(t) && (Date.now() - t) < 3 * 864e5; };
+const newPill = d => isNew(d) ? h("span", { class: "pill acc", style: "align-self:flex-start" }, "new") : null;
+function vSearches() {
+  const T = D.trends, ta = (D.agents || []).find(a => a.id === "trends"), fs = ta ? ta.findings : [];
+  return [
+    h("p", { class: "sub", style: "margin-top:14px" }, "What India is searching for in our field. The live part is read by the desktop app every 6 hours; the deeper readings come from Google Trends."),
+    h("h2", {}, "Trending right now"),
+    !T ? h("p", { class: "sub" }, "The desktop app has not read the feed yet.") : T.feed_error ? h("p", { class: "sub" }, "Google's trending feed could not be read at the last try (" + T.checked + ").") :
+      T.matches.length ? h("div", { class: "sgrid" }, T.matches.map((m, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" }, h("span", { class: "pill acc", style: "align-self:flex-start" }, m.traffic ? m.traffic + " searches" : "trending"), h("b", {}, m.title), m.news[0] ? h("span", { class: "sub" }, m.news[0]) : null)))) : h("p", { class: "sub" }, "Nothing in our field among India's " + T.feed_count + " trending searches right now."),
+    T && T.matches_log && T.matches_log.length ? fold("Caught in the last days (" + T.matches_log.length + ")", T.matches_log.map(m => h("div", { class: "planrow" }, h("b", {}, m.title), h("span", { class: "sub" }, "first seen " + (m.first_seen || "") + " · " + (m.traffic || ""))))) : null,
+    h("h2", {}, "What people search through the year"),
+    fs.length ? h("div", { class: "sgrid" }, fs.map((f, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" }, newPill(f.date), h("b", {}, f.title), h("span", { class: "kl" }, f.detail), f.correction ? h("span", { class: "rnote" }, "Corrected: " + f.correction) : null, f.source ? h("a", { class: "out", href: f.source, target: "_blank", rel: "noopener", style: "font-size:12.5px" }, "Open in Google Trends") : null)))) : h("p", { class: "sub" }, "No readings yet."),
+    T ? h("p", { class: "sub" }, "Live feed last read " + T.checked + ". Trends numbers are relative, not search counts.") : null
+  ];
+}
+function vInsta() {
+  const F = D.formats; if (!F) return [h("p", { class: "sub" }, "Nothing recorded yet.")];
+  const V = { use: ["Use", "good"], "try": ["Try once", "acc"], later: ["Later", "wait"], "not for us": ["Not for us", "bad"] }, K = { format: "Format", hook: "Hook", selling: "Selling" };
+  const list = F.items.filter(x => state.fkind === "all" || x.kind === state.fkind), order = ["use", "try", "later", "not for us"];
+  return [
+    h("p", { class: "sub", style: "margin-top:14px" }, F.note),
+    seg([["all", "All", F.items.length], ["format", "Formats", F.items.filter(x => x.kind === "format").length], ["hook", "Hooks", F.items.filter(x => x.kind === "hook").length], ["selling", "Selling", F.items.filter(x => x.kind === "selling").length]], state.fkind, k => { state.fkind = k; render(); }),
+    h("div", { class: "sgrid" }, list.slice().sort((a, b) => order.indexOf(a.verdict) - order.indexOf(b.verdict)).map((x, i) => h("div", { class: "scard", style: "--i:" + i + ";cursor:default" }, h("span", { class: "sbody", style: "grid-column:1/-1" },
+      h("span", { class: "qrow" }, h("span", { class: "tag2" }, K[x.kind] || x.kind), pill((V[x.verdict] || [x.verdict, "wait"])[0], (V[x.verdict] || [0, "wait"])[1])), h("b", {}, x.name), h("span", { class: "kl" }, x.what), h("span", { class: "chk y", style: "align-self:flex-start" }, x.numbers),
+      reading(x.for_us, "For us", true), h("span", { class: "checks" }, x.seen_on.map(p => D.pages[p] ? h("a", { class: "chk", href: "#p-" + p, style: "text-decoration:none" }, "@" + p) : h("a", { class: "chk", href: "https://www.instagram.com/" + p + "/", target: "_blank", rel: "noopener", style: "text-decoration:none" }, "@" + p))), h("span", { class: "sub" }, x.by)))))
+  ];
+}
+function vMore() {
+  const items = [["home", "Overview", vHome], ["strategy", "Strategies", vStrategy], ["research", "Research", vResearch], ["make", "Make", vMake]];
+  const cur = items.find(x => x[0] === state.more) || items[0];
+  return [seg(items.map(([k, t]) => [k, t]), cur[0], k => { state.more = k; render(); }), ...cur[2]()];
 }
 
 /* ---------- make: production, scripts and skills in one place ---------- */
@@ -429,14 +464,14 @@ function vDesk() {
 if (LOCAL) { ICON.desk = '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'; setInterval(poll, 3000); poll(); }
 
 /* ---------- shell ---------- */
-const TABS = [["home", "Today", vHome, "home", "Decide"], ["ideas", "Ideas", vIdeas, "bolt", "Decide"], ["calendar", "Calendar", vCalendar, "film", "Decide"], ["strategy", "Strategies", vStrategy, "compass", "Decide"], ["research", "Research", vResearch, "search", "Evidence"], ["make", "Make", vMake, "pen", "Work"]];
-if (LOCAL) TABS.push(["desk", "Desk", vDesk, "desk", "Work"]);
-function route() { let k = (location.hash || "").slice(1); if (["production", "scripts", "playbook"].includes(k)) { state.mtab = k; k = "make"; } if (k === "abroad" && D.abroad) { state.rtab = "abroad"; return { tab: "research" }; } if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "research", profile: k.slice(2) }; return { tab: TABS.some(t => t[0] === k) ? k : "home" }; }
+const TABS = [["ideas", "Ideas", vIdeas, "bolt", ""], ["searches", "Searches", vSearches, "search", ""], ["insta", "Instagram trends", vInsta, "film", ""], ["calendar", "Timeline", vCalendar, "compass", ""], ["more", "More", vMore, "book", ""]];
+if (LOCAL) TABS.push(["desk", "Desk", vDesk, "desk", ""]);
+function route() { let k = (location.hash || "").slice(1); if (["production", "scripts", "playbook"].includes(k)) { state.mtab = k; k = "make"; } if (k === "abroad" && D.abroad) { state.rtab = "abroad"; k = "research"; } if (k.startsWith("p-") && D.pages[k.slice(2)]) return { tab: "more", profile: k.slice(2) }; if (["home", "strategy", "research", "make"].includes(k)) { state.more = k; k = "more"; } return { tab: TABS.some(t => t[0] === k) ? k : "ideas" }; }
 function render() {
   const r = route();
   if (r.profile) { handle = r.profile; P = D.pages[handle]; }
-  $("#tabs").replaceChildren(...TABS.flatMap(([k, t, , ic, g], n) => [n === 0 || TABS[n - 1][4] !== g ? h("span", { class: "navgrp" }, g) : null, h("a", { href: "#" + k, "aria-current": String(k === r.tab) }, icon(ic, 16), t)]).filter(Boolean));
-  const t = TABS.find(x => x[0] === r.tab), noHead = ["home", "strategy", "make"].includes(r.tab);
+  $("#tabs").replaceChildren(...TABS.map(([k, t, , ic]) => h("a", { href: "#" + k, "aria-current": String(k === r.tab) }, icon(ic, 16), t)));
+  const t = TABS.find(x => x[0] === r.tab), noHead = ["more"].includes(r.tab);
   const kids = r.profile ? vProfile() : [noHead ? null : h("h2", { style: "margin-top:16px" }, t[1]), ...t[2]()];
   $("#main").replaceChildren(h("section", { class: "view" }, ...kids.filter(Boolean)));
 }

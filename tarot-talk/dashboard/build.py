@@ -32,13 +32,14 @@ def main():
     try:                                              # dates coming up, worked out here so the web page has them even when the PC is off
         sys.path.insert(0, str(SCOUT)); from tt_scout import trends as _tr
         _today = datetime.datetime.now(IST).date()
-        cal = _tr.moons(_today, 60) + _tr.number_dates(_today, 60)
+        cal = _tr.moons(_today, 90) + _tr.number_dates(_today, 90)
         for x in (rd(SCOUT / "trend-words.json").get("dates", []) if (SCOUT / "trend-words.json").exists() else []):
             t = datetime.date.fromisoformat(str(x["date"]))
-            if 0 <= (t - _today).days <= 60: cal.append({"date": t.isoformat(), "in_days": (t - _today).days, "what": str(x["what"])[:120], "source": str(x.get("source", ""))[:160]})
+            if 0 <= (t - _today).days <= 90: cal.append({"date": t.isoformat(), "in_days": (t - _today).days, "what": str(x["what"])[:120], "source": str(x.get("source", ""))[:160]})
         data["calendar"] = sorted(cal, key=lambda c: c["date"])
     except Exception as e:
         data["calendar"] = []
+    data["formats"] = rd(HERE / "formats.json") if (HERE / "formats.json").exists() else None
     data["agents"] = [rd(p) for p in sorted((HERE / "agents").glob("*.json"))]
     data["trends"] = rd(SCOUT / "output" / "trends.json") if (SCOUT / "output" / "trends.json").exists() else None
     data["ideas"] = rd(HERE / "ideas.json") if (HERE / "ideas.json").exists() else None

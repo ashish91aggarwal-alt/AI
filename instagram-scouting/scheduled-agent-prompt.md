@@ -43,3 +43,10 @@ After the research, do two more things.
 ## Trends (the desktop app catches, you judge)
 
 The desktop app writes `instagram-scouting/output/trends.json` a few times a day with no AI: India's trending searches from Google's own Trending now feed that match the words in `instagram-scouting/trend-words.json`, plus dates coming up (moons, number dates, New Year, and dates you add). On every run: read it; for each match or date within 14 days that truly fits Tarot Talk, add one content idea to ideas.json (say which trend or date it rides and by when it must be posted) and, if it suggests a lasting pattern, a strategy at "discovered". Ignore matches that are only a shared word. Keep trend-words.json useful: add words that were missed, remove words that only catch noise, and add festival or sky dates to `dates` only with the source you read them from.
+
+## The four screens the owner reads (keep them fresh on every run)
+
+1. Ideas (`tarot-talk/dashboard/ideas.json`): new content ideas, preferably borrowed from pages outside our own. Always say where each came from.
+2. Searches: the desktop app fills the live part. You add deeper Google Trends readings to your agent file's `findings` when something changed.
+3. Instagram trends (`tarot-talk/dashboard/formats.json`): every format, hook or selling habit you see working on another page, with the page, the numbers on that day, what it is, what we could do with it (`for_us`), a `verdict` ("use", "try", "later", "not for us"), `kind` ("format", "hook", "selling"), `added` date and `by`. Update numbers when you look again; add new items; never delete, change the verdict instead.
+4. Timeline (`instagram-scouting/trend-words.json`, `dates`): important dates up to 90 days ahead, each with the source you read it from (festivals, sky events, search peaks).

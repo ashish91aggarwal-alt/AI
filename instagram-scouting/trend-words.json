@@ -1,6 +1,6 @@
 {
  "note": "Words the trend catcher looks for in India's trending searches, and extra dates. The research agent keeps this list; add a date only with where it was read.",
- "days_ahead": 45,
+ "days_ahead": 90,
  "words": [
   "tarot",
   "numerology",
@@ -40,5 +40,31 @@
   "muhurat",
   "ekadashi"
  ],
- "dates": []
+ "dates": [
+  {
+   "date": "2026-12-15",
+   "what": "Start the mulank 2027 teaching reels: these searches begin to climb about now",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2026-12-28",
+   "what": "Peak week for 'mulank / rashifal / numerology + 2027' searches begins",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2027-01-01",
+   "what": "Search peak day (31 Dec to 1 Jan). The driver reveal belongs here",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2027-01-14",
+   "what": "Mulank and numerology year-searches fade about now. Rashifal stays high till February",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  },
+  {
+   "date": "2027-02-08",
+   "what": "Valentine's week: the one time love tarot searches rise",
+   "source": "Google Trends India, read 21 Nov 2026 (relative data, one reading)"
+  }
+ ]
 }

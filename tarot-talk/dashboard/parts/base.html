@@ -208,7 +208,7 @@ let handle = Object.keys(D.pages)[0], P = D.pages[handle];
 const W = D.workspace;
 const cLabel = k => (P.concepts.find(c => c.key === k) || {}).label || k;
 const hue = k => HUE[k] || "#8e86a6";
-const state = { ifilter: "top", mtab: "production", sstage: "all", concept: "all", sort: "views", q: "", ptab: "overview", rtab: "content", purpose: "content", ptype: "all", parea: "all", sfilter: "suits", tsel: 0, picks: [], dbReqs: null, dbActs: null };
+const state = { more: "home", fkind: "all", ifilter: "top", mtab: "production", sstage: "all", concept: "all", sort: "views", q: "", ptab: "overview", rtab: "content", purpose: "content", ptype: "all", parea: "all", sfilter: "suits", tsel: 0, picks: [], dbReqs: null, dbActs: null };
 const isCli = s => s.tool === "whisper" || s.tool === "ffmpeg";
 
 function pill(text, cls) { return h("span", { class: "pill " + (cls || "") }, text); }
