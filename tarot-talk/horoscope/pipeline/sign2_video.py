@@ -70,6 +70,22 @@ cover = (f'<div id="cover"><div class="cdate">{TL["date_label"]}</div><div class
          f'<span class="cv" style="color:{MC[st["b"]]}"><img src="file://{FE}/{MI[st["b"]]}.png">{st["a"]}</span></div>' for s, st in pick)
          + '</div>' + (f'<div class="cmore">+ ' + ", ".join([cue(s, "T")["a"] for s, _ in (good + rest)[len(pick):]][:3]) + ' और भी → वीडियो में</div>')
          + '<div class="cbrand">TAROT TALK BY SAKSHI</div></div>')
+STOCK = os.environ.get("HS_STOCK", os.path.abspath(f"{HERE}/../stock"))
+def clip_frames(key):
+    import glob, subprocess
+    src = sorted(glob.glob(f"{STOCK}/hs_stock_{key}_*.mp4"))
+    if not src: return None
+    out = f"{STOCK}/frames/{key}"
+    if not os.path.exists(f"{out}/done"):
+        os.makedirs(out, exist_ok=True)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src[0], "-t", "10", "-vf", "fps=30,scale=900:960:force_original_aspect_ratio=increase,crop=900:960,eq=saturation=1.08:contrast=1.04",
+                        "-q:v", "3", f"{out}/c_%04d.jpg"], check=True); open(f"{out}/done", "w").write("1")
+    return dict(dir=out, n=len(glob.glob(f"{out}/c_*.jpg")))
+CLIPS = {}
+for sh in TL["shots"]:
+    k = sh["scene"].replace("tone_", "")
+    if k not in CLIPS: CLIPS[k] = clip_frames(k)
+    if CLIPS[k]: sh["clip"] = CLIPS[k]
 areas = "".join(f'<div class="ar"><img src="file://{FE}/{a}.png"><div class="tick">✓</div></div>' for a in AREAS)
 TL.update(glyph=GLYPH[TL["sign"].lower()] + "︎", sc={k: dict(bg=v[0], ac=v[1], items=v[2]) for k, v in SC.items()},
           icons=dict(M=["red_heart", "money_bag", "briefcase", "fire"], K=["", "glowing_star", "alarm_clock"], KD=["", "glowing_star", "tear-off_calendar"]), sw={"सफेद": "#ffffff", "गुलाबी": "#ff8fb8", "लाल": "#e63946", "पीला": "#ffd23f", "हरा": "#2a9a57", "नीला": "#2a76e0"},
@@ -83,16 +99,33 @@ const bounce=x=>{x=clamp(x,0,1);const n=7.5625,d=2.75;if(x<1/d)return n*x*x;if(x
 const $=id=>document.getElementById(id), q=s=>[...document.querySelectorAll(s)];
 const Ls=q('.ln'), rows=q('.row'), chips=q('.chip'), ars=q('.ar');
 function fitEl(el,px){el.style.fontSize=px+'px';el.style.transform='none';const sw=el.scrollWidth;if(sw>960){el.style.fontSize=Math.floor(px*960/sw)+'px';}}
-function line(i,txt,y,px,color,t,at){const el=Ls[i];el.textContent=txt;fitEl(el,px);const f=parseFloat(el.style.fontSize);el.style.color=color;el.style.top=(y-f*0.62)+'px';
-  el.classList.toggle('dark',color=='#fff'||color=='#ffe066'||color=='#bcd4ff');const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${(1.6-0.6*back((t-at)/0.16)).toFixed(3)})`;}
+function line(i,txt,y,px,color,t,at){const el=Ls[i];el.textContent=txt;fitEl(el,px);const f=parseFloat(el.style.fontSize);if(color==INK)color='#fff'; el.style.color=color;el.style.top=(y-f*0.62)+'px';
+  el.classList.toggle('dark',true);const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${(1.6-0.6*back((t-at)/0.16)).toFixed(3)})`;}
 const pop=(el,t,at,d)=>{const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${back((t-at)/(d||0.22)).toFixed(3)})`;};
-const DARK={tone_serious:1,tone_sad:1}; const LAY={tone_serious:[[1360,130,'#fff'],[1540,110,'#ffe066']],tone_sad:[[1360,130,'#fff'],[1540,110,'#bcd4ff']],tone_fun:[[1360,130,INK],[1540,110,'AC']],tone_happy:[[1360,130,INK],[1540,110,'AC']],tone_encouraging:[[1360,130,INK],[1540,110,'#fff']],days:[[1340,110,INK],[1500,100,'#e63946']],hook:[[330,190,'#fff'],[1500,130,'#fff'],[1690,140,'#ffe066']], meters:[[330,170,INK]], remedy:[[1330,118,INK],[1520,118,'AC']], cta:[[330,150,INK],[560,190,'AC'],[1600,110,INK]]};
+const DARK={}; const LAY={tone_serious:[[1400,130,'#fff'],[1575,110,'#ffe066']],tone_sad:[[1400,130,'#fff'],[1575,110,'#bcd4ff']],tone_fun:[[1400,130,INK],[1575,110,'AC']],tone_happy:[[1400,130,INK],[1575,110,'AC']],tone_encouraging:[[1400,130,INK],[1575,110,'#ffe066']],days:[[1340,110,INK],[1500,100,'#e63946']],hook:[[330,190,'#fff'],[1500,130,'#fff'],[1690,140,'#ffe066']], meters:[[330,170,INK]], remedy:[[1400,118,INK],[1575,118,'#ffe066']], cta:[[330,150,INK],[560,190,'AC'],[1600,110,INK]]};
 // bokeh blobs
+// galaxy: seeded stars on log-spiral arms that turn slowly, drifting nebulae, twinkling field stars (all drawn in code)
+const G=document.getElementById('gal').getContext('2d'); let sd=7; const rnd=()=>{sd=(sd*16807)%2147483647; return sd/2147483647;};
+const ARM=[...Array(2600)].map((_,i)=>{const arm=i%3, r=40+Math.pow(rnd(),0.9)*640, th=arm*2.094+r*0.012+(rnd()-0.5)*0.32*(1-r/1000); return {r,th,s:rnd()*2.6+0.9,b:0.55+rnd()*0.45,h:[260,300,200,330][i%4],p:rnd()*6.28};});
+const FIELD=[...Array(260)].map(()=>({x:rnd()*1080,y:rnd()*1920,s:rnd()*2.4+0.5,p:rnd()*6.28,f:1+rnd()*2}));
+const NEB=[[300,600,520,'rgba(150,70,255,'],[820,1250,600,'rgba(255,70,170,'],[520,1650,480,'rgba(60,140,255,'],[700,400,420,'rgba(255,140,90,']];
+function galaxy(t){G.globalCompositeOperation='source-over'; const g=G.createLinearGradient(0,0,0,1920); g.addColorStop(0,'#070418'); g.addColorStop(0.5,'#140a33'); g.addColorStop(1,'#0a0620'); G.fillStyle=g; G.fillRect(0,0,1080,1920);
+  G.globalCompositeOperation='lighter';
+  NEB.forEach((n,i)=>{const x=n[0]+60*Math.sin(t*0.07+i), y=n[1]+50*Math.cos(t*0.05+i*2), rg=G.createRadialGradient(x,y,0,x,y,n[2]); rg.addColorStop(0,n[3]+'0.30)'); rg.addColorStop(1,n[3]+'0)'); G.fillStyle=rg; G.fillRect(0,0,1080,1920);});
+  const cx=540, cy=960, rot=t*0.05, tilt=0.55;
+  const core=G.createRadialGradient(cx,cy,0,cx,cy,230); core.addColorStop(0,'rgba(255,240,220,0.75)'); core.addColorStop(0.35,'rgba(255,170,230,0.25)'); core.addColorStop(1,'rgba(120,80,255,0)'); G.fillStyle=core; G.beginPath(); G.ellipse(cx,cy,230,230*0.75,0,0,6.283); G.fill();
+  ARM.forEach(a=>{const th=a.th+rot*(1.2-a.r/1500), x=cx+a.r*Math.cos(th), y=cy+a.r*Math.sin(th)*tilt+a.r*0.25*Math.cos(th)*0.3;
+    const tw=0.6+0.4*Math.sin(t*2+a.p); G.fillStyle=`hsla(${a.h},90%,${72+20*(1-a.r/660)}%,${Math.min(1,a.b*tw*1.25*(1-a.r/820)).toFixed(3)})`; G.fillRect(x,y,a.s,a.s);});
+  FIELD.forEach(f=>{const tw=0.35+0.65*Math.pow(0.5+0.5*Math.sin(t*f.f+f.p),3); G.fillStyle=`rgba(255,255,255,${tw.toFixed(3)})`; G.beginPath(); G.arc(f.x,f.y,f.s*(0.6+0.4*tw),0,6.283); G.fill();
+    if(f.s>2.3){G.fillStyle=`rgba(255,255,255,${(tw*0.35).toFixed(3)})`; G.fillRect(f.x-9*tw,f.y-0.6,18*tw,1.2); G.fillRect(f.x-0.6,f.y-9*tw,1.2,18*tw);}});
+  G.globalCompositeOperation='source-over';}
 const blobs=q('.blob').map((el,i)=>({el,x:(i*317)%1080,y:(i*523)%1920,r:260+((i*97)%220),p:i*1.7}));
 window.render=function(t){
   $('cover').style.opacity=t<0.35?1:1-ramp(t,0.35,0.6);
+  const coverOn=t<0.45;
   const s=TL.shots.find(s=>t<s.end)||TL.shots[TL.shots.length-1], lt=t-s.start, si=TL.shots.indexOf(s), sc=TL.sc[s.scene], AC=sc.ac, hook=s.scene=='hook';
   const S=(s.cues.find(c=>c.k=='S')||{}).at, S2=(s.cues[2]||s.cues[s.cues.length-1]).at-s.start;
+  galaxy(t); $('tint').style.background=`radial-gradient(circle at 50% 45%, ${sc.bg[1]}40, transparent 70%)`;
   $('bg').style.background=`linear-gradient(${(165+15*Math.sin(t*0.5)).toFixed(1)}deg,${sc.bg[0]},${sc.bg[1]})`;
   blobs.forEach(b=>{b.el.style.transform=`translate(${(b.x+60*Math.sin(t*0.35+b.p)-b.r).toFixed(1)}px,${(b.y+80*Math.cos(t*0.28+b.p)-b.r).toFixed(1)}px)`;b.el.style.width=b.el.style.height=(2*b.r)+'px';b.el.style.opacity=hook?0.10:0.45;});
   $('flash').style.opacity=si>0?0.75*(1-ramp(lt,0,0.14)):0;
@@ -127,7 +160,7 @@ window.render=function(t){
     el.style.transform=`scale(${cur?(1.35*back(lt/0.25)).toFixed(3):1})`; el.style.background=cur?'#fff':'rgba(255,255,255,.45)'; el.style.borderColor=cur?AC:'transparent';
     el.querySelector('img').style.opacity=cur||done?1:0.45; el.querySelector('.tick').style.opacity=done?1:0;});}
   // text
-  const L=s.cues.filter(c=>c.k=='L'); const lay=LAY[s.scene]||[[1330,140,INK]];
+  const L=s.cues.filter(c=>c.k=='L'); const lay=s.clip&&!LAY[s.scene]?[[1400,140,INK]]:(LAY[s.scene]||[[1330,140,INK]]);
   lay.forEach((a,i)=>{if(L[i])line(i,L[i].a,a[0],a[1],a[2]=='AC'?AC:a[2],t,L[i].at);});
   const T=s.cues.find(c=>c.k=='T'); if(T){const el=$('title');el.textContent=T.a;el.style.background=AC;pop(el,t,T.at,0.2);}
   if(s.scene=='lucky'){const el=$('title');el.textContent=TL.period=='weekly'?'इस हफ्ते का लकी':'आज का लकी';el.style.background=AC;pop(el,t,s.start,0.2);}
@@ -151,6 +184,13 @@ window.render=function(t){
       el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) rotate(${sad?12:(lt*300+i*40)%360}deg)`;});}
   if(s.scene=='cta'){const c=s.cues[2]; $('brand').style.opacity=ramp(t,c.at,c.at+0.3); $('badge').style.opacity=1; $('badge').style.transform=`scale(${(back(lt/0.3)*(1+0.05*Math.sin(t*6))).toFixed(3)})`;}
 };
+const _r=window.render; window.render=async function(t){_r(t);
+  const s=TL.shots.find(s=>t<s.end)||TL.shots[TL.shots.length-1], lt=t-s.start, cw=$('clipw'), ci=$('clip');
+  if(s.clip){q('.it,.sh').forEach(e=>{e.style.opacity=0;}); const fi=1+Math.floor(lt*30)%s.clip.n;
+    ci.src='file://'+s.clip.dir+'/c_'+String(fi).padStart(4,'0')+'.jpg'; try{await ci.decode();}catch(e){}
+    cw.style.opacity=ramp(lt,0,0.18); ci.style.transform=`scale(${(1.12-0.08*ease(lt/(s.end-s.start))).toFixed(4)})`;}
+  else cw.style.opacity=0;
+  if(t<0.45){q('.ln,.it,#date,#title,#stamp').forEach(e=>e.style.opacity=0); cw.style.opacity=0;}};
 window.DUR=DUR; render(0);
 """
 row = '<div class="row"><img class="ri"><div class="lab"></div><div class="num"></div><div class="track"><div class="fill"></div></div></div>'
@@ -166,19 +206,19 @@ html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;heig
 .it{{position:absolute;opacity:0;transform-origin:50% 60%;filter:drop-shadow(0 18px 22px rgba(43,33,64,.22))}}
 .sh{{position:absolute;opacity:0;border-radius:50%;background:radial-gradient(ellipse,rgba(43,33,64,.28),rgba(43,33,64,0) 70%)}}
 #glow{{position:absolute;left:140px;top:610px;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(255,240,180,.75),rgba(255,240,180,0) 65%);opacity:0}}
-#progw{{position:absolute;left:60px;right:60px;top:56px;height:12px;border-radius:8px;background:rgba(43,33,64,.15)}} #prog{{height:100%;border-radius:8px;width:0}}
+#progw{{position:absolute;left:60px;right:60px;top:56px;height:12px;border-radius:8px;background:rgba(255,255,255,.18)}} #prog{{height:100%;border-radius:8px;width:0}}
 #areas{{position:absolute;left:0;width:{W}px;top:100px;display:flex;justify-content:center;gap:22px;opacity:0}}
 .ar{{position:relative;width:104px;height:104px;border-radius:50%;border:6px solid transparent;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(43,33,64,.15)}}
 .ar img{{width:78px;height:78px}} .ar .tick{{position:absolute;right:-8px;bottom:-8px;width:44px;height:44px;border-radius:50%;background:#1f9d6b;color:#fff;font:800 30px/44px Poppins;text-align:center}}
 .ln{{position:absolute;left:50px;width:980px;text-align:center;font-family:"Baloo 2";font-weight:800;line-height:1.25;opacity:0;transform-origin:50% 55%;white-space:nowrap;text-shadow:{OUT}}}
 .ln.dark{{text-shadow:{OUTD}}}
 #title{{position:absolute;left:50%;top:250px;translate:-50% 0;padding:0 70px;border-radius:90px;font:800 130px/1.35 "Baloo 2";color:#fff;opacity:0;white-space:nowrap;box-shadow:0 14px 0 rgba(43,33,64,.18)}}
-#stamp{{position:absolute;left:50%;top:1500px;translate:-50% 0;display:flex;align-items:center;gap:26px;padding:18px 54px 10px 34px;border:14px solid;border-radius:46px;background:rgba(255,255,255,.95);
+#stamp{{position:absolute;left:50%;top:1540px;translate:-50% 0;display:flex;align-items:center;gap:26px;padding:18px 54px 10px 34px;border:14px solid;border-radius:46px;background:rgba(255,255,255,.95);
   font:800 112px/1.2 "Baloo 2";white-space:nowrap;opacity:0;box-shadow:0 16px 30px rgba(43,33,64,.2)}} #stamp img{{width:130px;height:130px;margin-top:-8px}}
 #date{{position:absolute;left:50%;top:130px;translate:-50% 0;padding:6px 44px;border-radius:50px;background:rgba(255,255,255,.2);font:800 60px "Mukta";color:#fff;white-space:nowrap;opacity:0}}
-#brand{{position:absolute;left:0;width:{W}px;top:1760px;text-align:center;font:800 48px Poppins;letter-spacing:8px;color:{INK};opacity:0}}
+#brand{{position:absolute;left:0;width:{W}px;top:1760px;text-align:center;font:800 48px Poppins;letter-spacing:8px;color:#fff;opacity:0}}
 #badge{{position:absolute;left:390px;top:780px;width:300px;height:300px;border-radius:50%;background:#fff;border:14px solid {INK};font:200px/300px "DejaVu Sans";text-align:center;color:{INK};opacity:0;display:none}}
-#cover{{position:absolute;inset:0;background:linear-gradient(170deg,#3a1c71,#b24592 60%,#f15f79);display:flex;flex-direction:column;align-items:center;font-family:"Baloo 2";color:#fff}}
+#cover{{position:absolute;inset:0;background:linear-gradient(170deg,rgba(40,15,90,.55),rgba(120,30,110,.45) 60%,rgba(200,60,110,.35));display:flex;flex-direction:column;align-items:center;font-family:"Baloo 2";color:#fff}}
 #cover .cdate{{margin-top:150px;padding:8px 50px;border-radius:60px;background:rgba(255,255,255,.18);font:800 66px Mukta}}
 #cover .cgl{{margin-top:34px;width:230px;height:230px;border-radius:50%;background:#fff;color:#2b2140;font:150px/230px "DejaVu Sans";text-align:center;box-shadow:0 0 0 16px rgba(255,255,255,.25)}}
 #cover .cname{{margin-top:22px;font:800 150px/1.2 "Baloo 2";text-shadow:0 10px 24px rgba(0,0,0,.3)}}
@@ -195,14 +235,16 @@ html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;heig
 .dc{{position:absolute;width:220px;height:230px;border-radius:44px;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 12px 0 rgba(43,33,64,.15)}}
 .dc b{{font:800 78px/1.2 "Baloo 2";color:#fff}} .dc img{{width:80px;height:80px}}
 .pt{{position:absolute;left:0;top:0;opacity:0;border-radius:3px}}
+#clipw{{position:absolute;left:90px;top:300px;width:900px;height:960px;border-radius:56px;overflow:hidden;opacity:0;border:8px solid rgba(255,255,255,.9);box-shadow:0 0 60px rgba(190,140,255,.55),0 30px 60px rgba(0,0,0,.5)}}
+#clip{{width:100%;height:100%;object-fit:cover;transform-origin:50% 50%}}
 .row{{position:absolute;left:80px;width:900px;height:230px;opacity:0;transform-origin:50% 50%}}
 .row .ri{{position:absolute;left:0;top:0;width:150px;height:150px}}
-.row .lab{{position:absolute;left:175px;top:0;font:800 110px/1.25 "Baloo 2";color:{INK}}} .row .num{{position:absolute;right:0;top:4px;font:400 118px Anton;color:{INK}}}
+.row .lab{{position:absolute;left:175px;top:0;font:800 110px/1.25 "Baloo 2";color:#fff}} .row .num{{position:absolute;right:0;top:4px;font:400 118px Anton;color:#fff}}
 .row .track{{position:absolute;left:175px;right:0;top:160px;height:56px;border-radius:30px;background:#fff;border:8px solid {INK};overflow:hidden}} .row .fill{{height:100%;width:0;border-radius:22px}}
 .chip{{position:absolute;left:70px;width:940px;height:300px;opacity:0;display:flex;align-items:center;gap:40px;background:rgba(255,255,255,.85);border-radius:60px;padding:0 40px;box-sizing:border-box;box-shadow:0 14px 0 rgba(43,33,64,.12)}}
 .chip .sw{{width:170px;height:170px;border-radius:50%;border:12px solid {INK};flex:none;box-sizing:border-box}} .chip .ic{{width:180px;height:180px;flex:none}}
 .chip .kt{{min-width:0;flex:1}} .chip .kl{{font:800 66px/1.2 Mukta;color:#c27c00}} .chip .kv{{font:800 150px/1.1 "Baloo 2";color:{INK};white-space:nowrap}}
-</style></head><body><div id="stage"><div id="bg">{'<div class="blob"></div>' * 7}</div><div id="shake"><div id="glow"></div><img id="xpic" class="it" style="left:690px;top:1010px;width:300px;height:300px">
+</style></head><body><div id="stage"><canvas id="gal" width="1080" height="1920" style="position:absolute;inset:0"></canvas><div id="tint" style="position:absolute;inset:0"></div><div id="bg" style="display:none">{'<div class="blob"></div>' * 7}</div><div id="shake"><div id="glow"></div><div id="clipw"><img id="clip"></div><img id="xpic" class="it" style="left:690px;top:1010px;width:300px;height:300px">
 {''.join(shadows)}{''.join(imgs)}
 {'<div class="ln"></div>' * 3}{'<div class="dc"><b></b><img></div>' * 7}{'<div class="pt"></div>' * 60}{row * 4}{chip * 3}<div id="title"></div><div id="stamp"><img><span></span></div>
 <div id="date">{TL['date_label']}</div><div id="brand">TAROT TALK BY SAKSHI</div><div id="badge">{TL['glyph']}</div><div id="areas">{areas}</div></div>

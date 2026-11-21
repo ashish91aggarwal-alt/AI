@@ -1,0 +1,9 @@
+{"note": "Clip library lives outside the repo (Pexels licence forbids re-sharing the files). Keep files as stock/hs_stock_<slot>_<pexelsId>.mp4 and pass HS_STOCK=<folder>. Status from the independent review of 21 Nov 2026.",
+ "rules": "CLIP_RULES.md",
+ "slots": {"money": {"pexels": 19498134, "review": "PASS"},
+  "hook": {"pexels": 7221445, "review": "FAIL: not Indian"}, "work": {"pexels": 7591937, "review": "FAIL: not Indian, mood"},
+  "friends": {"pexels": 9187875, "review": "FAIL"}, "family": {"pexels": 9346258, "review": "FAIL: no money shown"},
+  "kids": {"pexels": 9785870, "review": "FAIL"}, "decide": {"pexels": 8555701, "review": "FAIL"}, "love": {"pexels": 18286342, "review": "FAIL"},
+  "travel": {"pexels": 34859848, "review": "FAIL: crowded train"}, "remedy": {"pexels": 8844431, "review": "FAIL: not white sweets"},
+  "happy": {"pexels": 7866924, "review": "FAIL"}, "sad": {"pexels": 6381014, "review": "FAIL"}, "fun": {"pexels": 6565725, "review": "FAIL"},
+  "serious": {"pexels": 6024733, "review": "FAIL"}, "encouraging": {"pexels": 5201401, "review": "FAIL"}}}
