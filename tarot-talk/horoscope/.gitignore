@@ -6,3 +6,6 @@ work/
 *.eleven.json
 .xi_key
 .env
+# Local secrets written by `elevenlabs onboard`
+/.env.local
+.env.local
