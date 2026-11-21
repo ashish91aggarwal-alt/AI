@@ -957,6 +957,776 @@
    "next": "Kept as not proven. Do not propose it as a rule, and do not cite 'hits avoid money' either.",
    "why_rejected": "Medians are level. Not proven either way; the earlier 'hits are mostly not about money' did not survive the transcripts.",
    "own_result": false
+  },
+  {
+   "id": "new-year-window",
+   "name": "New Year window: start in the last week of November, peak content 28 Dec - 3 Jan",
+   "line": "Year-stamped searches begin in late October, climb through December, and peak on 31 Dec / 1 Jan; put the pitch episodes in the peak week and the teaching episodes before it.",
+   "source": "Trends agent",
+   "stage": "discovered",
+   "evidence_pts": 10,
+   "evidence_note": "One winter of relative search data.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "read 21 Nov in Google Trends India; relative data, one reading",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Trends agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Seen in the daily chart for the 2025-26 New Year for all five year-stamped terms, and the week of 28 Dec was the 12-month peak for rashifal, numerology, mulank, horoscope and manifestation. In the 5-year chart numerology bumped in the last three winters only, by roughly 25-55%, so it is a lift, not ",
+     "source": "Trends agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "number-year-first",
+   "name": "Say the viewer's number and the year in the first second",
+   "line": "Title each episode the way people type it: 'Mulank 3 2027', 'Personal year 5 in 2027'.",
+   "source": "Trends agent",
+   "stage": "discovered",
+   "evidence_pts": 12,
+   "evidence_note": "Search phrasing in India plus one page's covers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "read 21 Nov in Google Trends India; relative data, one reading",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Trends agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Rising queries for mulank are all 'mulank N 2026 ...' and last winter's personal-year queries were 'personal year N in 2026'. Search phrasing, not proof of what works on Instagram; test it.",
+     "source": "Trends agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "mulank-word",
+   "name": "Use the word 'mulank', teach 'personal year' through it",
+   "line": "Mulank is the word the Hindi-belt audience already searches; 'personal year number' is not yet known, so introduce it as the next step after mulank.",
+   "source": "Trends agent",
+   "stage": "discovered",
+   "evidence_pts": 8,
+   "evidence_note": "One spelling compared in Trends.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "read 21 Nov in Google Trends India; relative data, one reading",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Trends agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Mulank grew from a yearly average of about 4 to 54 over five years and is now level with 'numerology'; 'personal year number' is 0-3 on the same scale as mulank at 66-100.",
+     "source": "Trends agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "mulank-forecast-series",
+   "name": "Mulank-wise year forecast series",
+   "line": "One reel per mulank for the coming year, same cover template, posted as a run.",
+   "source": "Instagram scout",
+   "stage": "discovered",
+   "evidence_pts": 12,
+   "evidence_note": "One Indian page, three reels at 3.5 to 22 times his usual views. One look.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "seen on 1 Indian page, one look",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Instagram scout.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Seen on 1 Indian page, 3 reels (186K, 117K, 29.6K against an 8.4K median). One look; cause not proven; the wording inside the reels not yet heard.",
+     "source": "Instagram scout"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "fixed-frame",
+   "name": "One fixed frame for every reel",
+   "line": "Same layout every time: speaker below, one picture above, one white label line as the hook.",
+   "source": "Instagram scout",
+   "stage": "discovered",
+   "evidence_pts": 8,
+   "evidence_note": "Seen on covers only.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "seen on 1 Indian page, one look",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Instagram scout.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Seen on 1 page across 18 covers (median 196.5K on 378K followers); the other 3 pages also keep one look each. A reading of covers, not a number.",
+     "source": "Instagram scout"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "forward-to-one",
+   "name": "Forward-to-one-person topics",
+   "line": "Build the reel around someone the viewer can name (a mulank, a spouse, a parent) so sending it is the obvious act.",
+   "source": "Instagram scout",
+   "stage": "discovered",
+   "evidence_pts": 8,
+   "evidence_note": "Four reels; the biggest hit contradicts it.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "seen on 1 Indian page, one look",
+     "done": false
+    },
+    {
+     "name": "Trends India",
+     "result": "not checked",
+     "done": false
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Instagram scout.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Shares at 1.3% to 3.5% of views on 5 hit reels across 3 Indian pages. Opinion drawn from counters; no control group.",
+     "source": "Instagram scout"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "two-step-dm",
+   "name": "Two-step DM",
+   "line": "First auto-DM is short with one button; price and payment link come in the second message.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 12,
+   "evidence_note": "Meta's rule is official; the gain claimed comes from a tool seller.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "The rule (one reply, then a 24-hour window after a tap) is Meta's. The conversion gain is one vendor's uncontrolled data. Not tested by us.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "offer-keyword",
+   "name": "Offer-worded keyword",
+   "line": "The keyword is asked for as a real offer, once, at the end; never as a bare 'comment this word'.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 10,
+   "evidence_note": "Instagram's 2024 statement, read second-hand.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Instagram said explicit comment prompts may lose recommendations and later said DM tools are fine. Where the line sits is not defined, so this is a cautious reading.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "trial-reel-test",
+   "name": "Trial-reel hook test",
+   "line": "Before the series, post two or three hook versions of the pilot as trial reels and keep the one non-followers watch most.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 8,
+   "evidence_note": "The feature is official; that it predicts a full post is assumed.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "The feature is official and ranked separately. That it predicts the series result is our assumption.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "linked-chain",
+   "name": "Linked chain to the offer",
+   "line": "Every episode is linked to the next, and the last ones to the offer episode; episode 1 is pinned.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 6,
+   "evidence_note": "No numbers.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "The feature exists. No source gives numbers for how many viewers use the link.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "carousel-twin",
+   "name": "Carousel twin",
+   "line": "Each episode also goes out as a carousel with music, with a second slide that works on its own.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 7,
+   "evidence_note": "Mosseri paraphrased by a third party.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Mosseri described the second-slide return and music carousels in the reels viewer. No numbers for our niche.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "voice-first",
+   "name": "Voice in the first second",
+   "line": "Animated episodes open with Sakshi's voice and the hook as text in the first frame; no intro card.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 8,
+   "evidence_note": "Brand data from Facebook, not from reels in our field.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "The hook advice is Instagram's. The speech figure is third-party Facebook brand data.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "straight-to-pay",
+   "name": "Straight-to-pay link",
+   "line": "The DM link opens the payment page itself, with the same report name and price as the reel.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 6,
+   "evidence_note": "A tool seller's data.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "Topmate shows most auto-DM clicks go to non-paying pages; it does not prove the fix lifts sales. Vendors' advice.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
+  },
+  {
+   "id": "claims-check",
+   "name": "Claims check before posting",
+   "line": "Each script is checked for cure, money or guaranteed-result lines, and for lines that tell viewers what they suffer.",
+   "source": "Skills and methods agent",
+   "stage": "discovered",
+   "evidence_pts": 13,
+   "evidence_note": "Meta's own rules.",
+   "checks": [
+    {
+     "name": "Indian pages",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Trends India",
+     "result": "does not apply",
+     "done": true
+    },
+    {
+     "name": "Fits our voice",
+     "result": "not decided",
+     "done": false
+    },
+    {
+     "name": "Reviewer",
+     "result": "reviewed once as a proposal; not re-reviewed",
+     "done": false
+    }
+   ],
+   "cycles": 0,
+   "history": [
+    {
+     "date": "2026-11-21",
+     "event": "Proposed by the Skills and methods agent.",
+     "by": "research agent"
+    },
+    {
+     "date": "2026-11-21",
+     "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
+     "by": "reviewer",
+     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+    }
+   ],
+   "research": [
+    {
+     "what": "Source",
+     "result": "The rules are official. The ad rules apply only if reels are boosted; the recommendation list applies to all reels.",
+     "source": "Skills and methods agent"
+    }
+   ],
+   "tests": [],
+   "next": "Needs a second look and a production test before it moves on.",
+   "own_result": false
   }
  ]
 }

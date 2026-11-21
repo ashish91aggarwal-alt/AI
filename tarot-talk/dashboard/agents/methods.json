@@ -23,7 +23,8 @@
    "source": "https://www.socialmediatoday.com/news/instagram-clarifies-advice-single-word-ctas-longer-reels/718151/",
    "date": "2026-11-21",
    "kind": "official",
-   "for_us": "Keep the keyword, but make it a real offer ('report chahiye toh 2027 likho, DM mein bhej denge'), said once at the end. Never 'comment karo' with nothing behind it, and never ask everyone to comment their number just to raise comments."
+   "for_us": "Keep the keyword, but make it a real offer ('report chahiye toh 2027 likho, DM mein bhej denge'), said once at the end. Never 'comment karo' with nothing behind it, and never ask everyone to comment their number just to raise comments.",
+   "correction": "This is a trade site's report of Instagram's statement, not Instagram's own page."
   },
   {
    "title": "Engagement bait and clickbait are on Instagram's 'not recommended' list",
@@ -94,8 +95,9 @@
    "detail": "Instagram's tips page says to use a handle or profile name tied to the topic, keywords in the bio, and keywords and hashtags in the caption rather than the comments. The tracker found no new 2026 statement on captions or hashtags; the five-hashtag cap from December 2025 stands.",
    "source": "https://creators.instagram.com/blog/instagram-recommendations-eligibility-tips-creators",
    "date": "2026-11-21",
-   "kind": "official",
-   "for_us": "Write captions with the words people search: 'mulank 7 2027', 'numerology 2027 in Hindi'. Add 'Numerology / Tarot' to the profile name field."
+   "kind": "claim",
+   "for_us": "Write captions with the words people search: 'mulank 7 2027', 'numerology 2027 in Hindi'. Add 'Numerology / Tarot' to the profile name field.",
+   "correction": "The five-hashtag cap is not on the source page given."
   },
   {
    "title": "Originality is judged over a month, and credits or watermarks do not make a repost original",
@@ -150,16 +152,18 @@
    "detail": "Mosseri's last direct answer (December 2024) was that there is no single right number, that more posts generally bring more reach, and that a pace you can keep matters. The 2026 tracker found no newer guidance. Meta also said in October 2026 that almost 45% of recommended reels are under a day old.",
    "source": "https://routenote.com/blog/how-often-you-should-post-on-instagram/",
    "date": "2026-11-21",
-   "kind": "official",
-   "for_us": "Pick a daily or alternate-day slot the team can hold for the whole series and keep it. Freshness favours steady new episodes over one big dump."
+   "kind": "claim",
+   "for_us": "Pick a daily or alternate-day slot the team can hold for the whole series and keep it. Freshness favours steady new episodes over one big dump.",
+   "correction": "The '45 percent' line could not be confirmed in the source."
   },
   {
    "title": "Carousels: Mosseri calls them a richer format, and they get a second showing",
    "detail": "In a 2026 interview Mosseri said carousels draw more likes and sends because people swipe; a carousel someone scrolled past can return showing its second slide; and a carousel with music can appear in the reels viewer. He again named sends per reach as a key number for reaching new people.",
    "source": "https://uppbeat.io/blog/creator-news/whats-working-on-instagram-right-now-carousels-and-sends-says-adam-mosseri",
    "date": "2026-11-21",
-   "kind": "official",
-   "for_us": "Give each episode a carousel twin with music: slide 1 the hook, slide 2 strong enough to stand alone, last slide the keyword."
+   "kind": "claim",
+   "for_us": "Give each episode a carousel twin with music: slide 1 the hook, slide 2 strong enough to stand alone, last slide the keyword.",
+   "correction": "'More likes and sends' is the article writer's reasoning, not Mosseri's words."
   },
   {
    "title": "Face or no face: third-party data shows little difference on reels",
@@ -247,10 +251,11 @@
    "title": "Pilot hook test: Mulank 1 in three openings",
    "hook": "Mulank 1 walon, 2027 mein ek kaam pehle karna, ek kaam baad mein.",
    "format": "Three trial reels, same episode, different first 3 seconds",
-   "strategy": "personal-year",
+   "strategy": "",
    "borrowed_from": "Trial reels (creators.instagram.com/blog/instagram-trial-reels)",
    "serves": "watch time",
-   "why": "Lets non-followers pick the opening before the whole series is made."
+   "why": "Lets non-followers pick the opening before the whole series is made.",
+   "pick": 5
   },
   {
    "title": "Series teaser",
@@ -259,7 +264,8 @@
    "strategy": "return-date",
    "borrowed_from": "Tease the series before it starts (Buffer series guide)",
    "serves": "sends",
-   "why": "Gives a date to come back for and a reason to forward to family."
+   "why": "Gives a date to come back for and a reason to forward to family.",
+   "pick": 4
   },
   {
    "title": "Mulank episode with voice-first open",
@@ -268,7 +274,9 @@
    "strategy": "series",
    "borrowed_from": "Open with the hook, text for sound-off (Instagram editing tips, Aug 2026)",
    "serves": "watch time",
-   "why": "Follows Instagram's own advice on the first seconds and length."
+   "why": "Follows Instagram's own advice on the first seconds and length.",
+   "status": "dropped",
+   "review_note": "Duplicate of the mulank-wise 2027 idea."
   },
   {
    "title": "Send-it episode",
@@ -277,7 +285,9 @@
    "strategy": "personal-year",
    "borrowed_from": "Sends per reach as the key number (Mosseri via Uppbeat)",
    "serves": "sends",
-   "why": "A birth date gives a clear person to forward it to."
+   "why": "A birth date gives a clear person to forward it to.",
+   "status": "dropped",
+   "review_note": "Duplicate of the send idea, and its number grouping follows another creator's."
   },
   {
    "title": "Carousel twin of each episode",
@@ -286,7 +296,8 @@
    "strategy": "free-paid",
    "borrowed_from": "Carousel second-slide return (Mosseri via Uppbeat)",
    "serves": "saves",
-   "why": "Gets a second showing in feed and is easy to save."
+   "why": "Gets a second showing in feed and is easy to save.",
+   "review_note": "The evidence is weaker than the card says."
   },
   {
    "title": "Do-along: find your mulank in 10 seconds",
@@ -295,7 +306,8 @@
    "strategy": "do-along",
    "borrowed_from": "Linked reels and a pinned start (TechCrunch on linked reels)",
    "serves": "watch time",
-   "why": "Every new viewer needs their number first; linking sends them on to their episode."
+   "why": "Every new viewer needs their number first; linking sends them on to their episode.",
+   "pick": 2
   },
   {
    "title": "Offer episode with a clear, honest ask",
@@ -304,7 +316,8 @@
    "strategy": "keyword-dm",
    "borrowed_from": "Instagram's comment-prompt statement; price before the click (ManyChat community thread)",
    "serves": "likes",
-   "why": "States the offer and price openly, so comments are from people who want it."
+   "why": "States the offer and price openly, so comments are from people who want it.",
+   "pick": 9
   },
   {
    "title": "What the report has: page flip",
@@ -313,7 +326,8 @@
    "strategy": "free-paid",
    "borrowed_from": "Show product pages as a carousel (Topmate guide)",
    "serves": "saves",
-   "why": "Shows quality without promising results."
+   "why": "Shows quality without promising results.",
+   "pick": 10
   },
   {
    "title": "2027 do and don't by number",
@@ -322,7 +336,9 @@
    "strategy": "do-dont",
    "borrowed_from": "15 to 60 seconds for most formats (Instagram guide, Sep 2026)",
    "serves": "saves",
-   "why": "Short, complete and easy to save."
+   "why": "Short, complete and easy to save.",
+   "status": "dropped",
+   "review_note": "Duplicate of the mulank-wise 2027 idea."
   },
   {
    "title": "Month card: your January",
@@ -331,7 +347,8 @@
    "strategy": "return-date",
    "borrowed_from": "Loop on very short clips (Emplifi study)",
    "serves": "watch time",
-   "why": "Very short clips can loop; a monthly card gives a reason to return."
+   "why": "Very short clips can loop; a monthly card gives a reason to return.",
+   "review_note": "The evidence is weaker than the card says."
   }
  ],
  "strategies": [
@@ -339,55 +356,64 @@
    "name": "Two-step DM",
    "line": "First auto-DM is short with one button; price and payment link come in the second message.",
    "source": "Meta private replies page; Inro data via Planoly",
-   "evidence_note": "The rule (one reply, then a 24-hour window after a tap) is Meta's. The conversion gain is one vendor's uncontrolled data. Not tested by us."
+   "evidence_note": "The rule (one reply, then a 24-hour window after a tap) is Meta's. The conversion gain is one vendor's uncontrolled data. Not tested by us.",
+   "in_funnel": "two-step-dm"
   },
   {
    "name": "Offer-worded keyword",
    "line": "The keyword is asked for as a real offer, once, at the end; never as a bare 'comment this word'.",
    "source": "Instagram's 2024 statement on comment prompts",
-   "evidence_note": "Instagram said explicit comment prompts may lose recommendations and later said DM tools are fine. Where the line sits is not defined, so this is a cautious reading."
+   "evidence_note": "Instagram said explicit comment prompts may lose recommendations and later said DM tools are fine. Where the line sits is not defined, so this is a cautious reading.",
+   "in_funnel": "offer-keyword"
   },
   {
    "name": "Trial-reel hook test",
    "line": "Before the series, post two or three hook versions of the pilot as trial reels and keep the one non-followers watch most.",
    "source": "creators.instagram.com/blog/instagram-trial-reels",
-   "evidence_note": "The feature is official and ranked separately. That it predicts the series result is our assumption."
+   "evidence_note": "The feature is official and ranked separately. That it predicts the series result is our assumption.",
+   "in_funnel": "trial-reel-test"
   },
   {
    "name": "Linked chain to the offer",
    "line": "Every episode is linked to the next, and the last ones to the offer episode; episode 1 is pinned.",
    "source": "TechCrunch on linked reels (Instagram's feature)",
-   "evidence_note": "The feature exists. No source gives numbers for how many viewers use the link."
+   "evidence_note": "The feature exists. No source gives numbers for how many viewers use the link.",
+   "in_funnel": "linked-chain"
   },
   {
    "name": "Carousel twin",
    "line": "Each episode also goes out as a carousel with music, with a second slide that works on its own.",
    "source": "Mosseri interview reported by Uppbeat",
-   "evidence_note": "Mosseri described the second-slide return and music carousels in the reels viewer. No numbers for our niche."
+   "evidence_note": "Mosseri described the second-slide return and music carousels in the reels viewer. No numbers for our niche.",
+   "in_funnel": "carousel-twin"
   },
   {
    "name": "Voice in the first second",
    "line": "Animated episodes open with Sakshi's voice and the hook as text in the first frame; no intro card.",
    "source": "Instagram's 2026 editing tips; Emplifi study",
-   "evidence_note": "The hook advice is Instagram's. The speech figure is third-party Facebook brand data."
+   "evidence_note": "The hook advice is Instagram's. The speech figure is third-party Facebook brand data.",
+   "in_funnel": "voice-first"
   },
   {
    "name": "Straight-to-pay link",
    "line": "The DM link opens the payment page itself, with the same report name and price as the reel.",
    "source": "Topmate data; Razorpay and SuperProfile guides",
-   "evidence_note": "Topmate shows most auto-DM clicks go to non-paying pages; it does not prove the fix lifts sales. Vendors' advice."
+   "evidence_note": "Topmate shows most auto-DM clicks go to non-paying pages; it does not prove the fix lifts sales. Vendors' advice.",
+   "in_funnel": "straight-to-pay"
   },
   {
    "name": "Claims check before posting",
    "line": "Each script is checked for cure, money or guaranteed-result lines, and for lines that tell viewers what they suffer.",
    "source": "Meta ad standards; Instagram recommendation guidelines; DMR Act",
-   "evidence_note": "The rules are official. The ad rules apply only if reels are boosted; the recommendation list applies to all reels."
+   "evidence_note": "The rules are official. The ad rules apply only if reels are boosted; the recommendation list applies to all reels.",
+   "in_funnel": "claims-check"
   },
   {
    "name": "One template, many episodes",
    "line": "Build one coded motion template and render all mulank episodes from a data file.",
    "source": "remotion.dev/docs/dataset-render",
-   "evidence_note": "A documented production method; says nothing about reach. Fits the rule that frames are made by code, not by hand."
+   "evidence_note": "A documented production method; says nothing about reach. Fits the rule that frames are made by code, not by hand.",
+   "in_funnel": "no: the reviewer found too little evidence"
   }
  ],
  "pages": [],
@@ -403,5 +429,6 @@
  "problems": [
   "Some Meta pages returned no text (Instagram help recommendation guidelines, fraud standard, ManyChat rules page). Findings rely on the creator pages and developer pages that did load.",
   "No source gave a real conversion rate for a Rs 199 to 999 PDF in India. Numbers quoted are vendor data."
- ]
+ ],
+ "reviewed": "2026-11-21: independently reviewed; corrections applied, not re-reviewed"
 }

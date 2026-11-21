@@ -14,20 +14,6 @@
  ],
  "findings": [
   {
-   "title": "Small Hindi pages can get reels far bigger than their follower count",
-   "detail": "A creator-tracking site lists a 47K Hindi astrology/numerology page (astro_anubhhvmishra) with top reels of 6.4M, 4.7M and 4.5M, and a 219K numerology page (ankitbatraofficial) with 0.9M to 1.5M. The site does not label the metric (probably views). Not seen by us yet.",
-   "source": "https://motionapp.com/creator/anubhhv-maharaaj/",
-   "date": "2026-11-21",
-   "kind": "similar"
-  },
-  {
-   "title": "The biggest page in the field mixes astrology with mythology stories and animation",
-   "detail": "Astro Arun Pandit (about 2.4M followers) is listed with topics including mythological stories and Ramayana animation next to zodiac and remedies; listed top reels 2.9M to 4M. Suggests story + animation is used to reach people, astrology to sell. Second-hand.",
-   "source": "https://motionapp.com/creator/astro-arun-pandit/",
-   "date": "2026-11-21",
-   "kind": "similar"
-  },
-  {
    "title": "Typical paid reading prices in India: Rs 150 to 700 a session",
    "detail": "A May 2025 explainer puts usual online session prices at Rs 150 to 700, with Astrotalk ranging from Rs 99 quick chats to Rs 1,999 long video sessions. A paid PDF report sits naturally inside or below this band.",
    "source": "https://upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792",
@@ -113,7 +99,9 @@
    "strategy": "named-character",
    "borrowed_from": "astroarunpandit (story + animation mix) and sanctuarywrld (drawn sign characters)",
    "serves": "watch time",
-   "why": "Both pages are only described by third-party sites; we have not seen how their animation looks. Fits our motion-graphic skill, so cheap to test."
+   "why": "Both pages are only described by third-party sites; we have not seen how their animation looks. Fits our motion-graphic skill, so cheap to test.",
+   "status": "dropped",
+   "review_note": "Duplicate of the mulank-wise 2027 idea."
   },
   {
    "title": "Ek topic, nau mulank",
@@ -140,7 +128,8 @@
    "strategy": "do-along",
    "borrowed_from": "jakesastrology (astro bingo cards)",
    "serves": "likes",
-   "why": "The format is named in a magazine list; no numbers seen. Counting along gives a reason to comment without any promise."
+   "why": "The format is named in a magazine list; no numbers seen. Counting along gives a reason to comment without any promise.",
+   "review_note": "Do not ask for a bare one-word comment. One keyword, '2027', worded as an offer."
   },
   {
    "title": "Do mulank, ek rishta",
@@ -149,7 +138,9 @@
    "strategy": "keyword-dm",
    "borrowed_from": "ankitbatraofficial (birth-number relationship advice) and sarahmoodyofficial (compatibility guides leading to readings)",
    "serves": "sends",
-   "why": "Relationship questions are reported as the top reason people pay for readings; the page formats themselves are second-hand until the scout looks."
+   "why": "Relationship questions are reported as the top reason people pay for readings; the page formats themselves are second-hand until the scout looks.",
+   "status": "dropped",
+   "review_note": "A relationship promise, and no such report exists."
   },
   {
    "title": "Aaj ka chhota sa kaam",
@@ -158,7 +149,9 @@
    "strategy": "personal-year",
    "borrowed_from": "tarotbysakshirajput (manifestation techniques, per a Delhi list) plus our study of pagetkagy",
    "serves": "saves",
-   "why": "The Indian page is only listed in an article; the task format was seen on pagetkagy. Calculation is real and checkable, no result is promised."
+   "why": "The Indian page is only listed in an article; the task format was seen on pagetkagy. Calculation is real and checkable, no result is promised.",
+   "status": "dropped",
+   "review_note": "Duplicate of the calculate-along idea."
   },
   {
    "title": "Card chuno: 1, 2 ya 3",
@@ -167,7 +160,9 @@
    "strategy": "free-paid",
    "borrowed_from": "theguidinglight.byiknoor and nirvaandestiny (pick-a-card and yes/no readings)",
    "serves": "watch time",
-   "why": "Lists name pick-a-card as a standard format for Indian tarot pages; we have no retention numbers for it yet."
+   "why": "Lists name pick-a-card as a standard format for Indian tarot pages; we have no retention numbers for it yet.",
+   "status": "dropped",
+   "review_note": "Duplicate of the pick-a-card idea."
   },
   {
    "title": "Mahine ka tarot, mulank ke hisaab se",
@@ -176,7 +171,9 @@
    "strategy": "return-date",
    "borrowed_from": "nirvaandestiny (monthly zodiac + tarot readings)",
    "serves": "saves",
-   "why": "Monthly readings are described in one list only. A fixed date gives a reason to come back; needs the scout to confirm how others time it."
+   "why": "Monthly readings are described in one list only. A fixed date gives a reason to come back; needs the scout to confirm how others time it.",
+   "status": "dropped",
+   "review_note": "Duplicate of the month card idea."
   },
   {
    "title": "Akashic reading kya hoti hai, 5 episodes mein",
@@ -185,7 +182,8 @@
    "strategy": "series",
    "borrowed_from": "prateekbajaj_akashic_records (largest Indian Akashic page on a ranking site)",
    "serves": "watch time",
-   "why": "We only know the page exists and its size; how it explains Akashic work is unseen. Explaining first should make the paid reading easier to understand."
+   "why": "We only know the page exists and its size; how it explains Akashic work is unseen. Explaining first should make the paid reading easier to understand.",
+   "review_note": "Another idea proposes one explainer for the same topic. Decide one form."
   },
   {
    "title": "Tarot mein yeh karo, yeh nahi",
@@ -194,7 +192,9 @@
    "strategy": "do-dont",
    "borrowed_from": "mehraneha_ (tarot explained on video) and the myth-busting format named in a vendor blog",
    "serves": "saves",
-   "why": "The vendor blog is marketing and the page is only listed; honest, useful advice builds trust before a paid offer."
+   "why": "The vendor blog is marketing and the page is only listed; honest, useful advice builds trust before a paid offer.",
+   "status": "dropped",
+   "review_note": "Duplicate of the do and don't idea."
   },
   {
    "title": "Ek shabd likho, report DM mein",
@@ -203,7 +203,9 @@
    "strategy": "keyword-dm",
    "borrowed_from": "SuperProfile guide and technovert.yogi case study",
    "serves": "sends",
-   "why": "The numbers are the tool seller's own claims. The guide's rules (exact word, one reply, 7-day window) are practical and worth following."
+   "why": "The numbers are the tool seller's own claims. The guide's rules (exact word, one reply, 7-day window) are practical and worth following.",
+   "status": "dropped",
+   "review_note": "Duplicate of the offer idea, and it asks for a bare one-word comment, which Instagram may limit."
   }
  ],
  "strategies": [],
@@ -533,5 +535,6 @@
   "Few sources print handles for Indian animation/mythology pages, so group b has only 3 pages.",
   "No source gave product prices for any individual tarot page.",
   "Several source articles are paid PR or tool-seller marketing; marked where used."
- ]
+ ],
+ "reviewed": "2026-11-21: independently reviewed; corrections applied, not re-reviewed"
 }

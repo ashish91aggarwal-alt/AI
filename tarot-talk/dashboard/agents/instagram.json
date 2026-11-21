@@ -20,7 +20,8 @@
    "detail": "Df67I0UGRcS ('Don't tell anyone...' ritual) went 1.7M to 1.9M (+200K, +11.8%). Next: Df7kwnVDGCD (POV, his text) 328K to 440K (+112K, +34.1%). The grid rounds numbers, so small changes are approximate. Opinion: the secrecy-hook ritual is still the page's fastest mover in absolute terms; we do not use secrecy hooks, but the 'do this small thing tonight' body is the usable part.",
    "source": "https://www.instagram.com/pagetkagy/reels/",
    "date": "2026-11-21",
-   "kind": "growth"
+   "kind": "growth",
+   "correction": "The +200K is an estimate: the grid rounds views to 0.1M."
   },
   {
    "title": "@pagetkagy: yesterday's newest reel went 6.8K to 103K",
@@ -132,21 +133,24 @@
    "detail": "Dd09NDzT7MS (Soul Purpose report, pinned), 28.5 s: 173K views against a 212K median, 1,541 likes, 100 comments, 14 reposts, 189 shares. Caption asks viewers to comment birth details and also says link in bio. The other two pinned reels sell an event on 13 Dec (226K) and a personalised kundli (235K). Opinion: even at 2.3M followers a direct product reel gets about a tenth of the likes of a topic clip; the selling is carried by pinning, not by reach. Asking for birth details in public comments is a privacy problem we should not copy.",
    "source": "https://www.instagram.com/reel/Dd09NDzT7MS/",
    "date": "2026-11-21",
-   "kind": "page"
+   "kind": "page",
+   "correction": "The pinned pitch is at about 82 percent of his usual views, not low; his other two pinned reels are above it."
   },
   {
    "title": "Across the 4 Indian pages: no comment-keyword auto-DM seen in 8 reels read",
    "detail": "Of 8 reels opened on 4 pages, 0 asked for a comment keyword; 1 asked for birth details in comments plus bio link; 2 pointed to a link (event, app); 1 asked for a follow. Selling routes seen: bio link (3 pages), WhatsApp link (1), phone number (1), pinned product reels (2 pages). Opinion: keyword-to-DM is not what these big Hindi pages use on their hits, so our keyword series is not copied from them and stays unproven here; 8 reels is a small sample.",
    "source": "https://www.instagram.com/astroarunpandit/reels/",
    "date": "2026-11-21",
-   "kind": "page"
+   "kind": "page",
+   "correction": "9 reels had counters, not 8."
   },
   {
    "title": "Across the 4 Indian pages: the hits are sends-heavy, and every page keeps one fixed look",
    "detail": "Shares as a share of views on hits read: 3.5% and 2.9% (@prateekbajaj_akashic_records), 2.4% (@ankitbatraofficial Mulank 3), 1.3% (@astroarunpandit). Each page repeats one layout on most covers (poster, text on picture, split talk, podcast clip). Opinion: a reel a viewer can forward to one specific person (a mulank, a married couple, a parent) is the common thread; this is a reading of 6 reels, not a measured cause.",
    "source": "https://www.instagram.com/prateekbajaj_akashic_records/reels/",
    "date": "2026-11-21",
-   "kind": "page"
+   "kind": "page",
+   "correction": "Mixed, not a rule: the biggest hit (Mulank 2) had few shares, 0.44 percent."
   }
  ],
  "ideas": [
@@ -154,10 +158,12 @@
    "title": "2027 mulank series, one reel per number",
    "hook": "Mulank 4 wale ruk jao, 2027 aapke liye kaisa energy la raha hai, ek minute mein samjhte hain.",
    "format": "9 reels, same cover template, about 60 s each, Sakshi to camera or motion graphic",
-   "strategy": "personal-year",
+   "strategy": "",
    "borrowed_from": "@ankitbatraofficial, Df6-ktOh4BY",
    "serves": "sends",
-   "why": "Best evidence of the day: 3 reels at 3.5x to 22x median, but on one page and one look. Must go out before New Year."
+   "why": "Best evidence of the day: 3 reels at 3.5x to 22x median, but on one page and one look. Must go out before New Year.",
+   "status": "dropped",
+   "review_note": "Duplicate of the mulank-wise 2027 idea."
   },
   {
    "title": "Mulank forecast in three plain parts",
@@ -166,16 +172,20 @@
    "strategy": "series",
    "borrowed_from": "@ankitbatraofficial, Df9jU2wBQTk",
    "serves": "saves",
-   "why": "Borrowed topic, our own structure; his version opens on worry, ours does not. Structure untested."
+   "why": "Borrowed topic, our own structure; his version opens on worry, ours does not. Structure untested.",
+   "status": "dropped",
+   "review_note": "Duplicate of the mulank-wise 2027 idea."
   },
   {
    "title": "Tag the mulank you know",
    "hook": "Aapke ghar mein Mulank 3 kaun hai? Yeh reel unke liye hai, unhe bhej do.",
    "format": "30 s add-on cut from each series episode",
-   "strategy": "personal-year",
+   "strategy": "",
    "borrowed_from": "@ankitbatraofficial, Df9jU2wBQTk",
    "serves": "sends",
-   "why": "Shares were 2.4% of views on that reel; whether a spoken ask adds to it is not known."
+   "why": "Shares were 2.4% of views on that reel; whether a spoken ask adds to it is not known.",
+   "status": "dropped",
+   "review_note": "Duplicate of the send idea, and it asks for tags."
   },
   {
    "title": "Rishton ka karmic angle, explained simply",
@@ -202,7 +212,9 @@
    "strategy": "return-date",
    "borrowed_from": "@astroarunpandit, Df6AwAJEo19",
    "serves": "watch time",
-   "why": "782K on a 212K median for a 21 s clip; one reel read. Dates must be checked from a proper panchang before posting."
+   "why": "782K on a 212K median for a 21 s clip; one reel read. Dates must be checked from a proper panchang before posting.",
+   "status": "dropped",
+   "review_note": "The sky claim it rests on is wrong for this month."
   },
   {
    "title": "Ek sawaal, ek chhota upay",
@@ -211,7 +223,9 @@
    "strategy": "do-along",
    "borrowed_from": "@astroarunpandit, Df3b_iYDlYL",
    "serves": "saves",
-   "why": "733K by the grid, reel not opened, so the inside is unknown; idea is from the cover only."
+   "why": "733K by the grid, reel not opened, so the inside is unknown; idea is from the cover only.",
+   "status": "dropped",
+   "review_note": "The hook names the viewer's problem; evidence was a cover only."
   },
   {
    "title": "Pick your birth date group",
@@ -220,7 +234,9 @@
    "strategy": "series",
    "borrowed_from": "@tarotbykj, Db-G5clT7Zy",
    "serves": "watch time",
-   "why": "Honest: 1.2x and 1.5x median on that page, so an easy filler, not a hit format."
+   "why": "Honest: 1.2x and 1.5x median on that page, so an easy filler, not a hit format.",
+   "status": "dropped",
+   "review_note": "Duplicate of the pick-a-card idea."
   },
   {
    "title": "Reel as cover, reading in caption",
@@ -238,7 +254,9 @@
    "strategy": "keyword-dm",
    "borrowed_from": "@astroarunpandit, Dd09NDzT7MS",
    "serves": "likes",
-   "why": "Their pinned report pitch got low reach (173K, 1.5K likes) and asked for birth details in public; ours asks only a word. Keyword-DM itself was not seen on any of the 4 pages today, so this is our own test."
+   "why": "Their pinned report pitch got low reach (173K, 1.5K likes) and asked for birth details in public; ours asks only a word. Keyword-DM itself was not seen on any of the 4 pages today, so this is our own test.",
+   "status": "dropped",
+   "review_note": "Duplicate of the offer idea, and it asks for a bare one-word comment, which Instagram may limit."
   }
  ],
  "strategies": [
@@ -246,31 +264,36 @@
    "name": "Mulank-wise year forecast series",
    "line": "One reel per mulank for the coming year, same cover template, posted as a run.",
    "source": "https://www.instagram.com/ankitbatraofficial/reels/",
-   "evidence_note": "Seen on 1 Indian page, 3 reels (186K, 117K, 29.6K against an 8.4K median). One look; cause not proven; the wording inside the reels not yet heard."
+   "evidence_note": "Seen on 1 Indian page, 3 reels (186K, 117K, 29.6K against an 8.4K median). One look; cause not proven; the wording inside the reels not yet heard.",
+   "in_funnel": "mulank-forecast-series"
   },
   {
    "name": "Short clip tied to a dated sky window",
    "line": "A 20 to 30 second single point, with the date window in the caption so it has a reason to be posted now.",
    "source": "https://www.instagram.com/reel/Df6AwAJEo19/",
-   "evidence_note": "Seen on 1 Indian page; 1 reel read (782K, 3.7x), 1 more by cover (733K). Two reels do not make a rule."
+   "evidence_note": "Seen on 1 Indian page; 1 reel read (782K, 3.7x), 1 more by cover (733K). Two reels do not make a rule.",
+   "in_funnel": "no: the reviewer found too little evidence"
   },
   {
    "name": "One fixed frame for every reel",
    "line": "Same layout every time: speaker below, one picture above, one white label line as the hook.",
    "source": "https://www.instagram.com/prateekbajaj_akashic_records/reels/",
-   "evidence_note": "Seen on 1 page across 18 covers (median 196.5K on 378K followers); the other 3 pages also keep one look each. A reading of covers, not a number."
+   "evidence_note": "Seen on 1 page across 18 covers (median 196.5K on 378K followers); the other 3 pages also keep one look each. A reading of covers, not a number.",
+   "in_funnel": "fixed-frame"
   },
   {
    "name": "Forward-to-one-person topics",
    "line": "Build the reel around someone the viewer can name (a mulank, a spouse, a parent) so sending it is the obvious act.",
    "source": "https://www.instagram.com/reel/Dd84vgMvcQo/",
-   "evidence_note": "Shares at 1.3% to 3.5% of views on 5 hit reels across 3 Indian pages. Opinion drawn from counters; no control group."
+   "evidence_note": "Shares at 1.3% to 3.5% of views on 5 hit reels across 3 Indian pages. Opinion drawn from counters; no control group.",
+   "in_funnel": "forward-to-one"
   },
   {
    "name": "Caption carries the reading",
    "line": "A very short faceless reel as the cover, the full reading in a long caption.",
    "source": "https://www.instagram.com/reel/Db2bc7ozrYW/",
-   "evidence_note": "Seen on 1 Indian page, 2 reels (129K and 96.9K on a 31.4K median). Low ceiling on that page; weak evidence."
+   "evidence_note": "Seen on 1 Indian page, 2 reels (129K and 96.9K on a 31.4K median). Low ceiling on that page; weak evidence.",
+   "in_funnel": "no: the reviewer found too little evidence"
   }
  ],
  "pages": [
@@ -372,5 +395,6 @@
   "Look at 3 pages not opened today: neharaja1111, tarotcardreaderambika2, astro_aaditi, to see whether any Indian tarot page uses a comment keyword.",
   "Send the mulank-series finding to an independent reviewer before it shapes a series."
  ],
- "problems": []
+ "problems": [],
+ "reviewed": "2026-11-21: independently reviewed; corrections applied, not re-reviewed"
 }
