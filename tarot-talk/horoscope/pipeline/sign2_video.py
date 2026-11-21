@@ -33,6 +33,15 @@ SC = {
  "remedy": (("#f7f1ff", "#e0d0ff"), "#7b4bd6", [["bowl_with_spoon", 540, 900, 440, "pop", 0.2], ["sparkles", 540, 860, 330, "burst", 0.7], ["sparkles", 540, 860, 330, "burst", 2.4],
             ["folded_hands", 860, 620, 170, "float", 0.8], ["glowing_star", 220, 640, 150, "float", 1.0]]),
  "lucky":  (("#fffbe6", "#fff0b0"), "#e09400", [["four_leaf_clover", 870, 330, 150, "float", 0.1]]),
+ "days":   (("#f0f7ff", "#cfe3ff"), "#2a76e0", []),
+ "tone_serious":     (("#1d1b3a", "#43305f"), "#ffe066", [["face_with_monocle", 540, 880, 430, "pop", 0.05], ["exclamation_question_mark", 840, 600, 190, "float", 0.4]]),
+ "tone_fun":         (("#fff1c1", "#ffb3d9"), "#ff4fa0", [["grinning_squinting_face", 540, 880, 430, "tilt", 0.05], ["face_with_tears_of_joy", 230, 620, 190, "float", 0.3],
+                      ["smiling_face_with_sunglasses", 850, 620, 200, "float", 0.5]]),
+ "tone_encouraging": (("#ffd194", "#ff7e5f"), "#c2410c", [["sunrise", 540, 820, 600, "fade", 0], ["flexed_biceps", 540, 1060, 300, "pop", 0.25],
+                      ["rocket", 860, 560, 200, "fly", 0.4, [200, 1300]], ["hundred_points", 230, 620, 170, "pop", 0.7]]),
+ "tone_happy":       (("#fff6b7", "#ff9a8b"), "#e63977", [["partying_face", 540, 880, 430, "pop", 0.05], ["party_popper", 220, 640, 220, "pop", 0.25],
+                      ["confetti_ball", 860, 640, 220, "pop", 0.4], ["sparkles", 540, 880, 420, "burst", 0.2]]),
+ "tone_sad":         (("#5b74b8", "#1c2a4a"), "#bcd4ff", [["cloud_with_rain", 540, 560, 320, "float", 0.1], ["face_holding_back_tears", 540, 960, 400, "fade", 0.2]]),
  "cta":    (("#fff3ea", "#ffd3bf"), "#ff5a36", [["mobile_phone_with_arrow", 540, 1120, 380, "float", 0.3], ["sparkles", 540, 1100, 360, "burst", "S2"]]),
 }
 GROUND = {"fade", "rain", "pop", "ring", "tilt", "popout"}
@@ -49,19 +58,21 @@ def cue(s, k): return next((c for c in s["cues"] if c["k"] == k), None)
 sc_ = cue(next(s for s in TL["shots"] if s["id"] == "meters"), "M") and [c for c in next(s for s in TL["shots"] if s["id"] == "meters")["cues"] if c["k"] == "M"]
 ar = [(s, cue(s, "S")) for s in TL["shots"] if s.get("area") is not None]
 good = [x for x in ar if x[1]["b"] == "good"]; rest = [x for x in ar if x[1]["b"] != "good"]
-pick = (good + rest)[:4]
+WK = TL.get("period") == "weekly"; pick = (good + rest)[:3 if WK else 4]
+dsh = next((s for s in TL["shots"] if s["id"] == "days"), None)
+dstrip = ('<div class="cdays">' + "".join(f'<div class="cd" style="background:{MC[m]}">{n}</div>' for n, m in cue(dsh, "D")["a"]) + '</div>') if dsh else ""
 hook2 = [c for c in TL["shots"][0]["cues"] if c["k"] == "L"][1]["a"]
 cover = (f'<div id="cover"><div class="cdate">{TL["date_label"]}</div><div class="cgl">{GLYPH[TL["sign"].lower()]}︎</div>'
          f'<div class="cname">{TL.get("rashi", TL["sign"])} राशिफल</div><div class="chook">{hook2}</div><div class="cscores">'
          + "".join(f'<div class="cs"><img src="file://{FE}/{ic}.png"><b style="color:{MC["good"] if c["b"] >= 4 else (MC["care"] if c["b"] == 3 else MC["stop"])}">{c["b"]}/5</b></div>'
                    for c, ic in zip(sc_, ["red_heart", "money_bag", "briefcase", "fire"]))
-         + '</div><div class="clist">' + "".join(f'<div class="ci"><img src="file://{FE}/{AREA_IC[s["id"]]}.png"><span class="ct">{cue(s, "T")["a"]}</span>'
+         + '</div>' + dstrip + '<div class="clist">' + "".join(f'<div class="ci"><img src="file://{FE}/{AREA_IC[s["id"]]}.png"><span class="ct">{cue(s, "T")["a"]}</span>'
          f'<span class="cv" style="color:{MC[st["b"]]}"><img src="file://{FE}/{MI[st["b"]]}.png">{st["a"]}</span></div>' for s, st in pick)
-         + '</div>' + (f'<div class="cmore">+ ' + ", ".join([cue(s, "T")["a"] for s, _ in (good + rest)[4:]] + ["उपाय"]) + ' → वीडियो में</div>')
+         + '</div>' + (f'<div class="cmore">+ ' + ", ".join([cue(s, "T")["a"] for s, _ in (good + rest)[len(pick):]][:3]) + ' और भी → वीडियो में</div>')
          + '<div class="cbrand">TAROT TALK BY SAKSHI</div></div>')
 areas = "".join(f'<div class="ar"><img src="file://{FE}/{a}.png"><div class="tick">✓</div></div>' for a in AREAS)
 TL.update(glyph=GLYPH[TL["sign"].lower()] + "︎", sc={k: dict(bg=v[0], ac=v[1], items=v[2]) for k, v in SC.items()},
-          icons=dict(M=["red_heart", "money_bag", "briefcase", "fire"], K=["", "glowing_star", "alarm_clock"]), sw={"सफेद": "#ffffff", "गुलाबी": "#ff8fb8", "लाल": "#e63946", "पीला": "#ffd23f", "हरा": "#2a9a57", "नीला": "#2a76e0"},
+          icons=dict(M=["red_heart", "money_bag", "briefcase", "fire"], K=["", "glowing_star", "alarm_clock"], KD=["", "glowing_star", "tear-off_calendar"]), sw={"सफेद": "#ffffff", "गुलाबी": "#ff8fb8", "लाल": "#e63946", "पीला": "#ffd23f", "हरा": "#2a9a57", "नीला": "#2a76e0"},
           fe=FE, stampic=dict(good="check_mark_button", care="warning", stop="stop_sign"), stampc=dict(good="#1f9d6b", care="#e09400", stop="#e63946"))
 
 JS = r"""
@@ -73,9 +84,9 @@ const $=id=>document.getElementById(id), q=s=>[...document.querySelectorAll(s)];
 const Ls=q('.ln'), rows=q('.row'), chips=q('.chip'), ars=q('.ar');
 function fitEl(el,px){el.style.fontSize=px+'px';el.style.transform='none';const sw=el.scrollWidth;if(sw>960){el.style.fontSize=Math.floor(px*960/sw)+'px';}}
 function line(i,txt,y,px,color,t,at){const el=Ls[i];el.textContent=txt;fitEl(el,px);const f=parseFloat(el.style.fontSize);el.style.color=color;el.style.top=(y-f*0.62)+'px';
-  el.classList.toggle('dark',color=='#fff'||color=='#ffe066');const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${(1.6-0.6*back((t-at)/0.16)).toFixed(3)})`;}
+  el.classList.toggle('dark',color=='#fff'||color=='#ffe066'||color=='#bcd4ff');const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${(1.6-0.6*back((t-at)/0.16)).toFixed(3)})`;}
 const pop=(el,t,at,d)=>{const on=t>=at;el.style.opacity=on?1:0;if(on)el.style.transform=`scale(${back((t-at)/(d||0.22)).toFixed(3)})`;};
-const LAY={hook:[[330,190,'#fff'],[1500,130,'#fff'],[1690,140,'#ffe066']], meters:[[330,170,INK]], remedy:[[1330,118,INK],[1520,118,'AC']], cta:[[330,150,INK],[560,190,'AC'],[1600,110,INK]]};
+const DARK={tone_serious:1,tone_sad:1}; const LAY={tone_serious:[[1360,130,'#fff'],[1540,110,'#ffe066']],tone_sad:[[1360,130,'#fff'],[1540,110,'#bcd4ff']],tone_fun:[[1360,130,INK],[1540,110,'AC']],tone_happy:[[1360,130,INK],[1540,110,'AC']],tone_encouraging:[[1360,130,INK],[1540,110,'#fff']],days:[[1340,110,INK],[1500,100,'#e63946']],hook:[[330,190,'#fff'],[1500,130,'#fff'],[1690,140,'#ffe066']], meters:[[330,170,INK]], remedy:[[1330,118,INK],[1520,118,'AC']], cta:[[330,150,INK],[560,190,'AC'],[1600,110,INK]]};
 // bokeh blobs
 const blobs=q('.blob').map((el,i)=>({el,x:(i*317)%1080,y:(i*523)%1920,r:260+((i*97)%220),p:i*1.7}));
 window.render=function(t){
@@ -90,15 +101,16 @@ window.render=function(t){
   $('shake').style.transform=`translate(${(amp*Math.sin(t*97)).toFixed(1)}px,${(amp*Math.cos(t*131)).toFixed(1)}px) scale(${zoom.toFixed(4)})`;
   $('prog').style.width=(100*t/(DUR-0.5)).toFixed(2)+'%'; $('prog').style.background=hook?'#fff':AC;
   q('.it,.sh').forEach(el=>el.style.opacity=0);
-  [...Ls,...rows,...chips].forEach(el=>el.style.opacity=0); ['title','stamp','date','brand','badge','areas'].forEach(id=>$(id).style.opacity=0);
+  [...Ls,...rows,...chips,...q('.dc'),...q('.pt')].forEach(el=>el.style.opacity=0); ['title','stamp','date','brand','badge','areas'].forEach(id=>$(id).style.opacity=0);
   // scene items
-  sc.items.forEach((it,k)=>{const el=$(s.scene+'_'+k), sh=$('sh_'+s.scene+'_'+k), an=it[4];
+  sc.items.forEach((it,k)=>{const el=$(s.scene+'_'+k), sh=$('sh_'+s.scene+'_'+k); let an=it[4];
+    const md=(s.cues.find(c=>c.k=='S')||{}).b; if(it[0]=='broken_heart'&&md!='stop')return; if(an=='popout'&&it[0]=='red_heart'&&md!='stop'){an='pulse';}
     let d=it[5]=='S'?(S!==undefined?S-s.start:1):(it[5]=='S2'?S2:it[5]), a=lt-d; if(a<0)return;
     let o=1, tr='', so=1;
     if(an=='fade'){o=ramp(a,0,0.3)*(it[6]||1);}
     else if(an=='pop'){tr=`scale(${back(a/0.28).toFixed(3)})`;so=clamp(a/0.28,0,1);}
     else if(an=='popout'){const e=S!==undefined?S-s.start:99;o=1-ramp(lt,e-0.05,e+0.08);tr=`scale(${back(a/0.28).toFixed(3)})`;}
-    else if(an=='pulse'){tr=`scale(${(back(a/0.35)*(1+0.04*Math.sin(t*4))).toFixed(3)})`;$('glow').style.opacity=0.85;}
+    else if(an=='pulse'){tr=`scale(${(back(a/0.35)*(1+0.04*Math.sin(t*4))).toFixed(3)})`;if(hook)$('glow').style.opacity=0.85;}
     else if(an=='float'){tr=`translateY(${(18*Math.sin(t*3+k)).toFixed(1)}px) scale(${back(a/0.28).toFixed(3)})`;}
     else if(an=='ring'){const r=(Math.floor(a/0.9)%2==0)?Math.sin(a*48)*9*Math.min(1,a*4):0;tr=`rotate(${r.toFixed(1)}deg) scale(${back(a/0.25).toFixed(3)})`;}
     else if(an=='tilt'){tr=`rotate(${(9*Math.sin(a*2.6)).toFixed(1)}deg) scale(${back(a/0.3).toFixed(3)})`;}
@@ -109,6 +121,7 @@ window.render=function(t){
     el.style.opacity=o.toFixed(3); el.style.transform=tr; if(sh)sh.style.opacity=(o*so).toFixed(3);
   });
   if(!hook)$('glow').style.opacity=0;
+  const xp=$('xpic'); xp.style.opacity=0; if(s.pic){xp.src='file://'+TL.fe+'/'+s.pic+'.png'; const a=lt-0.35; if(a>0){xp.style.opacity=1; xp.style.transform=`translateY(${(14*Math.sin(t*3)).toFixed(1)}px) scale(${back(a/0.28).toFixed(3)})`;}}
   // area progress icons
   if(s.area!==null&&s.area!==undefined){$('areas').style.opacity=1; ars.forEach((el,i)=>{const cur=i==s.area, done=i<s.area;
     el.style.transform=`scale(${cur?(1.35*back(lt/0.25)).toFixed(3):1})`; el.style.background=cur?'#fff':'rgba(255,255,255,.45)'; el.style.borderColor=cur?AC:'transparent';
@@ -117,7 +130,7 @@ window.render=function(t){
   const L=s.cues.filter(c=>c.k=='L'); const lay=LAY[s.scene]||[[1330,140,INK]];
   lay.forEach((a,i)=>{if(L[i])line(i,L[i].a,a[0],a[1],a[2]=='AC'?AC:a[2],t,L[i].at);});
   const T=s.cues.find(c=>c.k=='T'); if(T){const el=$('title');el.textContent=T.a;el.style.background=AC;pop(el,t,T.at,0.2);}
-  if(s.scene=='lucky'){const el=$('title');el.textContent='आज का लकी';el.style.background=AC;pop(el,t,s.start,0.2);}
+  if(s.scene=='lucky'){const el=$('title');el.textContent=TL.period=='weekly'?'इस हफ्ते का लकी':'आज का लकी';el.style.background=AC;pop(el,t,s.start,0.2);}
   const St=s.cues.find(c=>c.k=='S'); if(St){const el=$('stamp'),on=t>=St.at; el.querySelector('span').textContent=St.a; el.style.borderColor=el.style.color=TL.stampc[St.b];
     el.querySelector('img').src='file://'+TL.fe+'/'+TL.stampic[St.b]+'.png'; const sp=el.querySelector('span'); sp.style.fontSize='112px'; if(sp.scrollWidth>720)sp.style.fontSize=Math.floor(112*720/sp.scrollWidth)+'px'; el.style.opacity=on?1:0; if(on)el.style.transform=`rotate(-6deg) scale(${(2.2-1.2*ease((t-St.at)/0.16)).toFixed(3)})`;}
   if(hook){$('date').style.opacity=1;}
@@ -128,7 +141,14 @@ window.render=function(t){
   if(s.scene=='lucky'){s.cues.filter(c=>c.k=='K').forEach((c,i)=>{const el=chips[i]; pop(el,t,c.at); el.style.top=(600+i*360)+'px';
       el.querySelector('.kl').textContent=c.a; const v=el.querySelector('.kv'); v.textContent=c.b; v.style.fontSize='150px'; const mw=640; if(v.scrollWidth>mw)v.style.fontSize=Math.floor(150*mw/v.scrollWidth)+'px';
       const sw=el.querySelector('.sw'), ic=el.querySelector('.ic'); if(i==0){sw.style.display='block';ic.style.display='none';sw.style.background=TL.sw[c.b]||c.b;}
-      else{sw.style.display='none';ic.style.display='block';ic.src='file://'+TL.fe+'/'+TL.icons.K[i]+'.png';}});}
+      else{sw.style.display='none';ic.style.display='block';ic.src='file://'+TL.fe+'/'+(c.a=='बेस्ट डे'?TL.icons.KD:TL.icons.K)[i]+'.png';}});}
+  if(s.scene=='days'){const D=s.cues.find(c=>c.k=='D'), col={good:'#1f9d6b',care:'#e09400',stop:'#e63946'}, ic={good:'check_mark_button',care:'warning',stop:'stop_sign'};
+    q('.dc').forEach((el,i)=>{const d=D.a[i]; if(!d)return; const r=i<4?0:1, k=i<4?i:i-4, n=r?3:4; el.style.left=(540-(n*220+(n-1)*24)/2+k*244)+'px'; el.style.top=(520+r*270)+'px';
+      el.style.background=col[d[1]]; el.querySelector('b').textContent=d[0]; el.querySelector('img').src='file://'+TL.fe+'/'+ic[d[1]]+'.png'; pop(el,t,D.at+0.3+i*0.14,0.22);});}
+  if(s.scene=='tone_happy'||s.scene=='tone_sad'){const sad=s.scene=='tone_sad', C=['#ff4f6d','#ffd23f','#2ec4b6','#7b4bd6','#ff8a3d','#3a86ff'];
+    q('.pt').forEach((el,i)=>{const sp=sad?1300:420+(i*37)%300, x=(i*173)%1080+(sad?0:60*Math.sin(t*2+i)), y=((lt*sp+(i*263)%1920)%2100)-120;
+      el.style.opacity=sad?0.45:0.95; el.style.width=(sad?5:22)+'px'; el.style.height=(sad?70:14)+'px'; el.style.background=sad?'#cfe0ff':C[i%6];
+      el.style.transform=`translate(${x.toFixed(1)}px,${y.toFixed(1)}px) rotate(${sad?12:(lt*300+i*40)%360}deg)`;});}
   if(s.scene=='cta'){const c=s.cues[2]; $('brand').style.opacity=ramp(t,c.at,c.at+0.3); $('badge').style.opacity=1; $('badge').style.transform=`scale(${(back(lt/0.3)*(1+0.05*Math.sin(t*6))).toFixed(3)})`;}
 };
 window.DUR=DUR; render(0);
@@ -169,18 +189,22 @@ html,body{{margin:0;background:#000}} #stage{{position:relative;width:{W}px;heig
 #cover .ci{{display:flex;align-items:center;gap:20px;background:rgba(255,255,255,.95);border-radius:36px;padding:10px 26px;color:#2b2140}}
 #cover .ci>img{{width:96px;height:96px}} #cover .ct{{font:800 68px/1.3 "Baloo 2";flex:1;white-space:nowrap}}
 #cover .cv{{display:flex;align-items:center;gap:10px;font:800 60px/1.3 "Baloo 2";white-space:nowrap}} #cover .cv img{{width:64px;height:64px}}
-#cover .cmore{{margin-top:22px;font:800 58px/1.3 "Baloo 2";color:#ffe066}}
+#cover .cdays{{margin-top:30px;display:flex;gap:12px}} #cover .cd{{width:128px;height:118px;border-radius:28px;color:#fff;font:800 60px/118px "Baloo 2";text-align:center}}
+#cover .cmore{{margin-top:22px;white-space:nowrap;font:800 62px/1.3 "Baloo 2";color:#ffe066}}
 #cover .cbrand{{position:absolute;bottom:120px;font:800 46px Poppins;letter-spacing:8px}}
-.row{{position:absolute;left:70px;width:940px;height:230px;opacity:0;transform-origin:50% 50%}}
+.dc{{position:absolute;width:220px;height:230px;border-radius:44px;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 12px 0 rgba(43,33,64,.15)}}
+.dc b{{font:800 78px/1.2 "Baloo 2";color:#fff}} .dc img{{width:80px;height:80px}}
+.pt{{position:absolute;left:0;top:0;opacity:0;border-radius:3px}}
+.row{{position:absolute;left:80px;width:900px;height:230px;opacity:0;transform-origin:50% 50%}}
 .row .ri{{position:absolute;left:0;top:0;width:150px;height:150px}}
 .row .lab{{position:absolute;left:175px;top:0;font:800 110px/1.25 "Baloo 2";color:{INK}}} .row .num{{position:absolute;right:0;top:4px;font:400 118px Anton;color:{INK}}}
 .row .track{{position:absolute;left:175px;right:0;top:160px;height:56px;border-radius:30px;background:#fff;border:8px solid {INK};overflow:hidden}} .row .fill{{height:100%;width:0;border-radius:22px}}
 .chip{{position:absolute;left:70px;width:940px;height:300px;opacity:0;display:flex;align-items:center;gap:40px;background:rgba(255,255,255,.85);border-radius:60px;padding:0 40px;box-sizing:border-box;box-shadow:0 14px 0 rgba(43,33,64,.12)}}
 .chip .sw{{width:170px;height:170px;border-radius:50%;border:12px solid {INK};flex:none;box-sizing:border-box}} .chip .ic{{width:180px;height:180px;flex:none}}
 .chip .kt{{min-width:0;flex:1}} .chip .kl{{font:800 66px/1.2 Mukta;color:#c27c00}} .chip .kv{{font:800 150px/1.1 "Baloo 2";color:{INK};white-space:nowrap}}
-</style></head><body><div id="stage"><div id="bg">{'<div class="blob"></div>' * 7}</div><div id="shake"><div id="glow"></div>
+</style></head><body><div id="stage"><div id="bg">{'<div class="blob"></div>' * 7}</div><div id="shake"><div id="glow"></div><img id="xpic" class="it" style="left:690px;top:1010px;width:300px;height:300px">
 {''.join(shadows)}{''.join(imgs)}
-{'<div class="ln"></div>' * 3}{row * 4}{chip * 3}<div id="title"></div><div id="stamp"><img><span></span></div>
+{'<div class="ln"></div>' * 3}{'<div class="dc"><b></b><img></div>' * 7}{'<div class="pt"></div>' * 60}{row * 4}{chip * 3}<div id="title"></div><div id="stamp"><img><span></span></div>
 <div id="date">{TL['date_label']}</div><div id="brand">TAROT TALK BY SAKSHI</div><div id="badge">{TL['glyph']}</div><div id="areas">{areas}</div></div>
 {cover}<div id="progw"><div id="prog"></div></div><div id="flash"></div></div>
 <script>{JS.replace('__TL__', json.dumps(TL, ensure_ascii=False))}</script></body></html>"""
