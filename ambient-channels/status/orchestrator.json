@@ -1,24 +1,12 @@
 {
   "role": "orchestrator",
   "session": null,
-  "updated_at": "2026-11-22T09:56:02Z",
+  "updated_at": "2026-11-22T10:00:00Z",
   "doing": "moved ambient-channels into AI/ambient-channels",
   "next": "owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker",
   "blocked": "",
   "files_last_commit": [
-    ".githooks/commit-msg",
-    ".githooks/pre-commit",
-    ".github/workflows/fetch_overlays.yml",
-    ".github/workflows/lookup.yml",
-    ".github/workflows/status-guard.yml",
-    ".github/workflows/track.yml",
-    "AGENTS.md",
-    "README.md",
-    "docs/apis.md",
-    "production/HANDOFF_paws_nooks.md",
-    "scripts/agent.py",
-    "scripts/setup.sh",
-    "scripts/video_lookup.py"
+    "production/HANDOFF_paws_nooks.md"
   ],
   "sessions": [],
   "outbox": [

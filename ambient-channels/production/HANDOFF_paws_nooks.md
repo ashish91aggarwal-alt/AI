@@ -47,5 +47,5 @@ Analytics OAuth (docs/apis.md, Level 3) - needs a one-time Google sign-in by the
 3. Optional: set up YouTube Analytics OAuth so watch time fills the dashboard daily.
 
 ## Starter prompt for a new chat (in the "PawsNook - YT" project)
-"Read the project doc 'Paws & Nooks - handoff' and the session log, then clone AI and work in ambient-channels/ (role:
+"Read the project docs, then clone github.com/ashish91aggarwal-alt/AI and work in ambient-channels/ (role:
 orchestrator) and read production/HANDOFF_paws_nooks.md. Then: <what you want next>."
