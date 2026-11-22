@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T16:11:26Z",
+  "generated_at": "2026-11-22T17:01:26Z",
   "cards": [
     {
       "id": "F1",
@@ -857,13 +857,13 @@
   },
   "last_commits": {
     "channel-pets": {
-      "hash": "deb32aa",
-      "at": "2026-11-22T21:41:11+05:30",
-      "subject": "[channel-pets] update rainy cottage photorealistic V3 checkpoint"
+      "hash": "b0b01c6",
+      "at": "2026-11-22T22:31:16+05:30",
+      "subject": "[channel-pets] log V3 QA failure and V4 rejected render"
     },
     "bot": {
-      "hash": "497f9a6",
-      "at": "2026-11-22T15:59:50Z",
+      "hash": "1fec343",
+      "at": "2026-11-22T16:11:26Z",
       "subject": "[bot] rebuild STATUS.md"
     },
     "tracker": {
