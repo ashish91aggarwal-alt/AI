@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T15:59:50Z",
+  "generated_at": "2026-11-22T16:11:26Z",
   "cards": [
     {
       "id": "F1",
@@ -857,13 +857,13 @@
   },
   "last_commits": {
     "channel-pets": {
-      "hash": "7ccd53e",
-      "at": "2026-11-22T21:29:41+05:30",
-      "subject": "[channel-pets] checkpoint rainy cottage Catnap QA failure"
+      "hash": "deb32aa",
+      "at": "2026-11-22T21:41:11+05:30",
+      "subject": "[channel-pets] update rainy cottage photorealistic V3 checkpoint"
     },
     "bot": {
-      "hash": "657f903",
-      "at": "2026-11-22T14:40:45Z",
+      "hash": "497f9a6",
+      "at": "2026-11-22T15:59:50Z",
       "subject": "[bot] rebuild STATUS.md"
     },
     "tracker": {
