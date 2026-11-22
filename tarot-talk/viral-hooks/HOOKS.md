@@ -59,3 +59,27 @@ These clips are not stored in this repo, because the repo is public and the clip
 **Check before use:** transcribe each download (faster-whisper "small", Hindi). Many buttons are mislabelled: myinstants "Ruko Zara" (56090) is a different clip, and "Dhurandhar_2" is music only.
 
 **Mulank 8 v2:** both clips are spliced in by `build_voice.py` in the cartoon project. Everything after 18.55 s moves 0.46 s later; the cue sheet is `mulank8_sfx_cues_v2.json`.
+
+## Trending meme sounds (myinstants, free direct mp3; checked 23 Nov 2026)
+
+| Sound | Direct file | Length | Mulank 8 v4 use |
+|---|---|---|---|
+| FAAAH | https://www.myinstants.com/media/sounds/faaah.mp3 | 2.0 s | 27.12 (lights cut, off to Shani's court), 79.25 (bomb goes off) |
+| Vine boom | https://www.myinstants.com/media/sounds/vine-boom.mp3 | 1.3 s | punchlines 0.95, 14.52, 46.04 (after Baccha hai tu mera), 70.28 |
+| Aayein (original) | https://www.myinstants.com/media/sounds/aayein-meme.mp3 | 0.65 s | replaces Monty's M02 at 3.38 |
+| Moye moye | https://www.myinstants.com/media/sounds/moye-moye.mp3 | 16 s (use first 3 s) | low under Monty's "Ye dukh…" at 57.0 (replaces our sad trombone) |
+| Anime wow | https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3 | 4.2 s | Sakshi's TOPPER ENTRY 59.93 |
+| Oh no no no laugh | https://www.myinstants.com/media/sounds/oh-no-no-no-no-laugh.mp3 | 10.9 s (use 2.5 s) | tail after "Ab tu gaya beta" 83.58 |
+| Emotional damage | https://www.myinstants.com/media/sounds/emotional-damage-meme.mp3 | 3.4 s | spare (no gap for it in this script) |
+| Bruh | https://www.myinstants.com/media/sounds/movie_1.mp3 | short | spare |
+| Sad violin | https://www.myinstants.com/media/sounds/meme-violin-sad-violin.mp3 | | spare |
+| Spiderman meme song | https://www.myinstants.com/media/sounds/spiderman-meme-song.mp3 | | spare |
+| Oh no no no (TikTok song) | https://www.myinstants.com/media/sounds/oh-no-no-no-tik-tok-song-sound-effect.mp3 | | spare |
+| Aree bas kar bhai | https://www.myinstants.com/media/sounds/aree-bas-kar-bhai.mp3 | | spare |
+
+**Placement rules:**
+- Put meme sounds in the gaps between lines, or low under a reaction.
+- Never put one on Shani dev or Vishnu ji as mockery; they land on Monty's moments.
+- At most one meme sound every 6–8 seconds, so each one still lands.
+
+Search for more with `curl https://www.myinstants.com/en/search/?name=<words>` (the workspace can reach myinstants), then transcribe each clip before use.
