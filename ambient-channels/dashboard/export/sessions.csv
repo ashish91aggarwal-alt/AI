@@ -1,5 +1,5 @@
 role,updated_utc,doing,next,blocked,session
-orchestrator,2026-11-22 09:56,moved ambient-channels into AI/ambient-channels,owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker,,
+orchestrator,2026-11-22 10:00,moved ambient-channels into AI/ambient-channels,owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker,,
 reviewer,2026-11-17 12:36,"brand gate: avatars + banners (fantasy, worship)",write reviews/brand/*-art-2026-11-17.md,,064fbb08
 channel-fantasy,2026-11-17 09:30,not started,Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1,waiting for G0 sign-off on F1,
 channel-worship,2026-11-17 09:30,not started,Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement,waiting for G0 sign-off on W3,
