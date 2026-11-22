@@ -4,11 +4,11 @@
  "next": "",
  "blocked": "",
  "outbox": [],
- "read_at": null,
+ "read_at": "2026-11-22T23:00:19Z",
  "compactions": 0,
  "session": {
   "link": null,
   "started": "2026-11-22T23:00:10Z"
  },
- "updated_at": "2026-11-22T23:00:10Z"
+ "updated_at": "2026-11-22T23:00:19Z"
 }
