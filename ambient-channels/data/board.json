@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T09:51:08Z",
+  "generated_at": "2026-11-22T09:56:45Z",
   "cards": [
     {
       "id": "F1",
@@ -695,18 +695,24 @@
     "orchestrator": {
       "role": "orchestrator",
       "session": null,
-      "updated_at": "2026-11-22T09:50:53Z",
-      "doing": "Paws & Nooks live; added channel-pets role + session messaging (agent.py msg/inbox)",
-      "next": "Tue 24 Nov: first 48 h read of nEMfFKdtlnc (or let channel-pets do it)",
+      "updated_at": "2026-11-22T09:56:02Z",
+      "doing": "moved ambient-channels into AI/ambient-channels",
+      "next": "owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker",
       "blocked": "",
       "files_last_commit": [
+        ".githooks/commit-msg",
+        ".githooks/pre-commit",
+        ".github/workflows/fetch_overlays.yml",
+        ".github/workflows/lookup.yml",
+        ".github/workflows/status-guard.yml",
+        ".github/workflows/track.yml",
         "AGENTS.md",
-        "CLAUDE.md",
-        "agents/channel-pets.md",
-        "channels/pets/CHANNEL.md",
-        "config/channels.json",
-        "production/cards/P1.json",
-        "scripts/agent.py"
+        "README.md",
+        "docs/apis.md",
+        "production/HANDOFF_paws_nooks.md",
+        "scripts/agent.py",
+        "scripts/setup.sh",
+        "scripts/video_lookup.py"
       ],
       "sessions": [],
       "outbox": [
@@ -768,19 +774,9 @@
   },
   "last_commits": {
     "orchestrator": {
-      "hash": "f8c6fc6",
-      "at": "2026-11-22T09:50:54Z",
-      "subject": "[orchestrator] channel-pets role + session messaging (agent.py msg / inbox)"
-    },
-    "bot": {
-      "hash": "4f7caea",
-      "at": "2026-11-22T09:49:08Z",
-      "subject": "[bot] rebuild STATUS.md"
-    },
-    "tracker": {
-      "hash": "ea67291",
-      "at": "2026-11-22T09:42:33Z",
-      "subject": "[tracker] data 2026-11-22T09:42Z"
+      "hash": "3b903ae",
+      "at": "2026-11-22T09:56:02Z",
+      "subject": "[orchestrator] ambient-channels: work from inside the AI repo"
     }
   }
 }
