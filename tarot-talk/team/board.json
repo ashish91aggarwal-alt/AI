@@ -1,0 +1,162 @@
+{
+ "built": "2026-11-22T14:43:56Z",
+ "roles": {
+  "lead": {
+   "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
+   "owns": [
+    "tarot-talk/dashboard/",
+    "tarot-talk/scouting/tt_scout/",
+    "tarot-talk/AGENTS.md"
+   ],
+   "created": "2026-11-22T14:50:00Z"
+  },
+  "research": {
+   "about": "All research: Instagram scouting, Google Trends, similar pages, methods, India checks. Writes findings, formats, ideas and the timeline. The daily 9:04 pm scheduled run uses this role.",
+   "owns": [
+    "tarot-talk/scouting/",
+    "tarot-talk/dashboard/agents/",
+    "tarot-talk/dashboard/formats.json",
+    "tarot-talk/dashboard/ideas.json",
+    "tarot-talk/dashboard/strategies.json"
+   ],
+   "created": "2026-11-22T14:50:00Z"
+  },
+  "production": {
+   "about": "Makes the reels: scripts, the 2027 driver series, the script-to-video and cartoon pipelines, the horoscope videos.",
+   "owns": [
+    "tarot-talk/series/",
+    "tarot-talk/horoscope/",
+    "tarot-talk/ideas/"
+   ],
+   "created": "2026-11-22T14:50:00Z"
+  },
+  "abroad": {
+   "about": "Plans the separate channel for viewers abroad (tarot, Akashic, healing in English).",
+   "owns": [
+    "tarot-talk/abroad/"
+   ],
+   "created": "2026-11-22T14:50:00Z"
+  },
+  "reviewer": {
+   "about": "Independent check of anything that will be shown or posted. Never reviews its own work. Writes reports in tarot-talk/reviews/ or tarot-talk/scouting/reviews/.",
+   "owns": [
+    "tarot-talk/reviews/"
+   ],
+   "created": "2026-11-22T14:50:00Z"
+  }
+ },
+ "sessions": [
+  {
+   "role": "abroad",
+   "doing": "Abroad plan: lane choice, reach path from India, where the audience lives",
+   "next": "Waiting for the owner's answers on the abroad plan",
+   "blocked": "",
+   "updated_at": "2026-11-22T14:50:00Z",
+   "compactions": 0,
+   "session": {
+    "link": "https://claude.ai/code/session_01CNnzjruxXTdWNT3NoLZ3pU",
+    "started": null
+   }
+  },
+  {
+   "role": "lead",
+   "doing": "Moved all Tarot Talk work into one folder and set up the team system",
+   "next": "Owner: git pull, reinstall the desktop app, and update the scheduled task's text",
+   "blocked": "",
+   "updated_at": "2026-11-22T14:50:00Z",
+   "compactions": 1,
+   "session": {
+    "link": "https://claude.ai/code/session_01CNnzjus3VFacLen2FZUq3Y",
+    "started": null
+   }
+  },
+  {
+   "role": "research",
+   "doing": "Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard",
+   "next": "Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad",
+   "blocked": "",
+   "updated_at": "2026-11-22T14:50:00Z",
+   "compactions": 0,
+   "session": {
+    "link": null,
+    "started": null
+   }
+  }
+ ],
+ "tasks": [
+  {
+   "id": "T1",
+   "title": "Study the 15 queued reel transcripts and update formats and findings",
+   "detail": "9 Indian, 6 abroad. Only text and numbers; no copied lines.",
+   "lane": "research",
+   "state": "open",
+   "owner": null,
+   "lease_until": null,
+   "result": null,
+   "by": "lead",
+   "held": false
+  },
+  {
+   "id": "T2",
+   "title": "India checks for 'A task with a return date' (Indian pages, Trends India)",
+   "detail": "See strategies.json, id return-date.",
+   "lane": "research",
+   "state": "open",
+   "owner": null,
+   "lease_until": null,
+   "result": null,
+   "by": "lead",
+   "held": false
+  },
+  {
+   "id": "T5",
+   "title": "Review the new card layout and the 23 'what it means for us' lines",
+   "detail": "tarot-talk/dashboard: Ideas, Searches, Instagram trends tabs; agents/trends.json for_us lines.",
+   "lane": "reviewer",
+   "state": "open",
+   "owner": null,
+   "lease_until": null,
+   "result": null,
+   "by": "lead",
+   "held": false
+  },
+  {
+   "id": "T3",
+   "title": "Scout 4 more pages abroad, numbers first",
+   "detail": "Pick from agents/similar.json group c; follow the scouting pace rules.",
+   "lane": "research",
+   "state": "open",
+   "owner": null,
+   "lease_until": null,
+   "result": null,
+   "by": "lead",
+   "held": false
+  },
+  {
+   "id": "T4",
+   "title": "Write the 2027 series bible (episodes, keyword, posting days)",
+   "detail": "Waiting on the owner's choice of look and keyword. Use the Timeline dates: start 15 Dec, peak 28 Dec to 1 Jan.",
+   "lane": "production",
+   "state": "open",
+   "owner": null,
+   "lease_until": null,
+   "result": null,
+   "by": "lead",
+   "held": false
+  }
+ ],
+ "messages": [
+  {
+   "to": "research",
+   "text": "On your next run: 15 reels have transcripts or are queued (9 from Indian pages, 6 from pages abroad). Study them and update formats.json with what the spoken words show.",
+   "at": "2026-11-22T14:51:00Z",
+   "from": "lead"
+  },
+  {
+   "to": "all",
+   "text": "Tarot Talk now lives in one folder: tarot-talk/. Scouting moved from instagram-scouting/ to tarot-talk/scouting/. Every session: read tarot-talk/AGENTS.md and run team.py start --role <yours> before working.",
+   "at": "2026-11-22T14:50:00Z",
+   "from": "lead"
+  }
+ ]
+}

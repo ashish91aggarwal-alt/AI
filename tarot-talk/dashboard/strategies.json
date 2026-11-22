@@ -91,7 +91,7 @@
     {
      "what": "Same path seen elsewhere",
      "result": "@pagetkagy uses one comment keyword for a $27 programme: in the caption of her pinned reel and spoken at the end of two recent hits. One page; says nothing about India.",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [
@@ -454,7 +454,7 @@
      "date": "2026-11-20",
      "event": "Page findings independently reviewed; over-claims removed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
     },
     {
      "date": "2026-11-20",
@@ -475,7 +475,7 @@
      "date": "2026-11-20",
      "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
@@ -492,22 +492,22 @@
     {
      "what": "Spoken return ask in the 3 hits",
      "result": "1 asks to come back and report (24-hour test); 1 sets a one-year return (11:11); 1 says come back, with 7 days in the caption",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Spoken comment instruction in the 3 hits",
      "result": "3 of 3: keyword for a paid programme (2), comment the time as a 'seal' (1). Skits: 0 of 2",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Comments per view, hits",
      "result": "0.4%, 0.8%, 2.5% (script counts over grid views); the 2.5% reel is the one with the 'seal' instruction",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Ordinary task reels (252K, 301K, 311K)",
      "result": "not transcribed; queued for the next batch",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Google Trends India, 'manifestation', past 12 months",
@@ -567,7 +567,7 @@
      "date": "2026-11-20",
      "event": "Page findings independently reviewed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
     },
     {
      "date": "2026-11-20",
@@ -578,7 +578,7 @@
      "date": "2026-11-20",
      "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
@@ -590,12 +590,12 @@
     {
      "what": "Build of the 2 skits transcribed (8.3M pinned, 1.3M)",
      "result": "Wish spoken to the character by name in the first 3 seconds; unexpected answer within about 4 seconds; asker protests; character hands responsibility back; last line is a turn. No spoken ask in either.",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Low skits (160K, 177K, 186K)",
      "result": "not transcribed; queued for the next batch",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [
@@ -667,12 +667,12 @@
     {
      "what": "Where the offer sits, 7 reels read",
      "result": "Caption only: 1 (pinned 12.3M). Spoken in the last 7 to 8 seconds plus keyword: 2 (923K, 1.0M). No offer: 4",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Offer",
      "result": "11-day paid programme at $27, one comment keyword used across reels (from her caption; her claim of 7,000 joined is not checked)",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
@@ -731,7 +731,7 @@
     {
      "what": "Transcripts",
      "result": "none: neither of the two reels was in the first batch; queued for the next",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
@@ -779,14 +779,14 @@
      "date": "2026-11-20",
      "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
     {
      "what": "Reels using it",
      "result": "4 of 7 transcribed; 2 during the reel, 2 later; 3 overlap with 'A task with a return date'",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Ordinary reels using it",
@@ -922,7 +922,7 @@
      "date": "2026-11-20",
      "event": "Tested against the 28 reels; not supported. Rejected.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-analysis-dashboard-cli-review.md"
     },
     {
      "date": "2026-11-20",
@@ -933,7 +933,7 @@
      "date": "2026-11-20",
      "event": "Independent review of the transcript study: over-claims found and corrected; the corrections have not been re-reviewed.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-20-transcript-findings-and-funnel-review.md"
     }
    ],
    "research": [
@@ -945,12 +945,12 @@
     {
      "what": "Recent hits re-read from speech",
      "result": "2 of 4 are money reels (the 11:11 ritual and the income skit); 1 promises money among other things; 1 ends on a money-programme pitch",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     },
     {
      "what": "Medians with the 11:11 reel counted as money",
      "result": "307K (9) against 301K (15)",
-     "source": "@pagetkagy transcripts, instagram-scouting/output/pagetkagy/cli/"
+     "source": "@pagetkagy transcripts, tarot-talk/scouting/output/pagetkagy/cli/"
     }
    ],
    "tests": [],
@@ -999,7 +999,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1054,7 +1054,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1109,7 +1109,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1164,7 +1164,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1219,7 +1219,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1274,7 +1274,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1329,7 +1329,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1384,7 +1384,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1439,7 +1439,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1494,7 +1494,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1549,7 +1549,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1604,7 +1604,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1659,7 +1659,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [
@@ -1714,7 +1714,7 @@
      "date": "2026-11-21",
      "event": "Independent review: accepted into the funnel at 'discovered'; evidence points and note set by the reviewer.",
      "by": "reviewer",
-     "file": "instagram-scouting/reviews/2026-11-21-four-agents-review.md"
+     "file": "tarot-talk/scouting/reviews/2026-11-21-four-agents-review.md"
     }
    ],
    "research": [

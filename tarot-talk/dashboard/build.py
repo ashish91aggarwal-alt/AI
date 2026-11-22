@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """Builds the Tarot Talk workspace dashboard (one self-contained file).
-Reads workspace.json here and the scouting results in ../../instagram-scouting/.   Usage: python3 tarot-talk/dashboard/build.py"""
+Reads workspace.json here and the scouting results in ../scouting/.   Usage: python3 tarot-talk/dashboard/build.py"""
 import base64, datetime, json, pathlib, subprocess, sys
 IST = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
 
 HERE = pathlib.Path(__file__).resolve().parent
-SCOUT = HERE.parent.parent / "instagram-scouting"
+SCOUT = HERE.parent / "scouting"
 
 def main():
     subprocess.run([sys.executable, str(SCOUT / "dashboard" / "build.py")], check=True, capture_output=True)
@@ -39,6 +39,7 @@ def main():
         data["calendar"] = sorted(cal, key=lambda c: c["date"])
     except Exception as e:
         data["calendar"] = []
+    data["team"] = rd(HERE.parent / "team" / "board.json") if (HERE.parent / "team" / "board.json").exists() else None
     data["formats"] = rd(HERE / "formats.json") if (HERE / "formats.json").exists() else None
     data["agents"] = [rd(p) for p in sorted((HERE / "agents").glob("*.json"))]
     data["trends"] = rd(SCOUT / "output" / "trends.json") if (SCOUT / "output" / "trends.json").exists() else None

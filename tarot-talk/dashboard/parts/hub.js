@@ -380,7 +380,7 @@ function vInsta() {
   ];
 }
 function vMore() {
-  const items = [["home", "Overview", vHome], ["strategy", "Strategies", vStrategy], ["research", "Research", vResearch], ["make", "Make", vMake]];
+  const items = [["home", "Overview", vHome], ["team", "AI team", () => teamBlock()], ["strategy", "Strategies", vStrategy], ["research", "Research", vResearch], ["make", "Make", vMake]];
   const cur = items.find(x => x[0] === state.more) || items[0];
   return [seg(items.map(([k, t]) => [k, t]), cur[0], k => { state.more = k; render(); }), ...cur[2]()];
 }
@@ -453,6 +453,16 @@ async function poll() {
   if (sig !== deskSig && route().tab === "desk" && !(a && /INPUT|TEXTAREA|SELECT/.test(a.tagName))) { deskSig = sig; const y = scrollY; render(); scrollTo(0, y); }
 }
 /* Claude sessions: each one writes its own card to sessions.json. The light is a rule of thumb, not a token meter. */
+function teamBlock() {
+  const T = D.team; if (!T) return [];
+  const IST = s => s ? new Date(s).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) + " IST" : "never";
+  return [h("h2", {}, "AI sessions working on Tarot Talk"), h("p", { class: "sub" }, "Each session registers itself, says what it is doing, and leaves messages and tasks for the others in the repo. New sessions join by reading tarot-talk/AGENTS.md."),
+    h("div", { class: "cgrid" }, T.sessions.map((s, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip("Session", "k-idea"), chip("Role: " + s.role, "k-src"), (s.compactions || 0) >= 2 ? chip("Move to a new chat", "k-bad") : (s.compactions || 0) === 1 ? chip("Hand over soon", "k-try") : null), h("h3", {}, (T.roles[s.role] || {}).about || s.role),
+      lrow("Doing", s.doing || null), lrow("Next", s.next || null), lrow("Blocked", s.blocked || null), lrow("Last update", IST(s.updated_at)), s.session && s.session.link ? lrow("Chat", h("div", { class: "srcrow" }, srcBtn("Open this chat", s.session.link))) : null))),
+    h("h2", {}, "Shared task board"),
+    h("div", { class: "cgrid" }, T.tasks.filter(t => t.state !== "done").map((t, i) => h("article", { class: "xcard", style: "--i:" + i }, h("div", { class: "chips" }, chip(t.id, "k-search"), chip("Lane: " + t.lane, "k-src"), chip(t.held ? "Taken by " + t.owner : "Free", t.held ? "k-try" : "k-good")), h("h3", {}, t.title), lrow("Detail", t.detail || null)))),
+    fold("Messages between sessions (" + T.messages.length + ")", T.messages.map(m => h("div", { class: "planrow" }, h("b", {}, m.from + " to " + m.to), h("span", {}, m.text), h("span", { class: "sub" }, IST(m.at)))))];
+}
 function sessionCards() {
   const S = D.sessions; if (!S) return [];
   const health = n => n >= 2 ? ["Move to a new chat now", "bad", 100] : n === 1 ? ["Finish this piece, then start a new chat", "warn", 66] : ["Fresh", "good", 20];
@@ -488,7 +498,7 @@ function vDesk() {
     s.busy ? wait("The app is working", (s.logs[s.logs.length - 1] || "").replace(/^\d\d:\d\d\s+/, "") || "Syncing with GitHub and checking the queue.") : null,
     h("div", { class: "dbar" }, btn("Check now", run("check"), "hot"), btn(s.paused ? "Resume" : "Pause", run("pause")), btn("Read trends now", run("trends")), btn("Open project folder", run("folder")), s.public ? h("a", { class: "dbtn", href: s.public, target: "_blank", rel: "noopener" }, "Open web dashboard") : null, btn("Quit the app", run("quit"))), say,
     h("p", { class: "sub" }, "The app keeps working in the background after this window is closed, and checks GitHub every " + s.poll_min + " minutes. Quit stops it. " + (s.ident || "")),
-    fold("Claude sessions", sessionCards().slice(1), (D.sessions ? D.sessions.sessions : []).some(x => (x.compactions || 0) >= 1)),
+    ...teamBlock(),
     h("h3", { style: "margin-top:18px" }, "Add work"), card("", addBox),
     fold("Tools on this computer (" + s.tools.filter(t => t.ok).length + " of " + s.tools.length + " ready)", [
     h("div", { class: "tiles" }, s.tools.map(t => card("", h("div", { class: "qrow" }, h("h3", {}, t.name), pill(t.ok ? "ready" : "missing", t.ok ? "good" : "bad")), h("div", { class: "sub" }, t.used_for), t.ok ? null : t.fixable ? btn("Install it", run("fix", { key: t.key }, "Installing. This can take a few minutes ..."), "hot") : h("div", { class: "sub", style: "margin-top:6px" }, "Install by hand: ", h("code", {}, t.install)))))], s.tools.some(t => !t.ok)),

@@ -1,6 +1,6 @@
 # Tarot Talk Desk: install the app and put a shortcut on the Desktop.
 # Run from PowerShell inside your clone of the AI repo:
-#     powershell -ExecutionPolicy Bypass -File .\instagram-scouting\install-desk.ps1
+#     powershell -ExecutionPolicy Bypass -File .\tarot-talk\scouting\install-desk.ps1
 # Add  -Startup  to also start the app when Windows starts.
 param([switch]$Startup)
 $ErrorActionPreference = 'Stop'

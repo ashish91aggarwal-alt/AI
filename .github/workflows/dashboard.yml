@@ -4,7 +4,7 @@ name: Dashboard
 on:
   push:
     branches: [main]
-    paths: ["tarot-talk/dashboard/**", "instagram-scouting/input/**", "instagram-scouting/output/**", ".github/workflows/dashboard.yml"]
+    paths: ["tarot-talk/dashboard/**", "tarot-talk/scouting/input/**", "tarot-talk/scouting/output/**", ".github/workflows/dashboard.yml"]
   workflow_dispatch:
 permissions:
   contents: read

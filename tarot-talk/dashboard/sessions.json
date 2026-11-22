@@ -1,6 +1,6 @@
 {
  "rule": "The app cannot see inside a Claude chat, and a chat cannot read its own token count. Each session writes this card itself when it works on the repo. The health light uses what a session does know: how many times its history was squeezed to make room (compactions). 0 = fresh. 1 = finish the piece in hand, then move to a new chat. 2 or more = move now.",
- "handoff": "Continue the Tarot Talk work. Repo: ashish91aggarwal-alt/AI. First read tarot-talk/dashboard/workspace.json, tarot-talk/dashboard/strategies.json, instagram-scouting/research-plan.json and instagram-scouting/NEXT.md, then use the skills tarot-motion-series and instagram-scouting. Add your own session card to tarot-talk/dashboard/sessions.json before you start.",
+ "handoff": "Continue the Tarot Talk work. Repo: ashish91aggarwal-alt/AI. Read tarot-talk/AGENTS.md first, then run: python3 tarot-talk/team/team.py start --role <lead | research | production | abroad | reviewer>. Reply to me in simple short text, times in IST.",
  "sessions": [
   {
    "id": "session_01CNnzjus3VFacLen2FZUq3Y",

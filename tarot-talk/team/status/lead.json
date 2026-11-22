@@ -1,0 +1,25 @@
+{
+ "role": "lead",
+ "doing": "Moved all Tarot Talk work into one folder and set up the team system",
+ "next": "Owner: git pull, reinstall the desktop app, and update the scheduled task's text",
+ "blocked": "",
+ "outbox": [
+  {
+   "to": "all",
+   "text": "Tarot Talk now lives in one folder: tarot-talk/. Scouting moved from instagram-scouting/ to tarot-talk/scouting/. Every session: read tarot-talk/AGENTS.md and run team.py start --role <yours> before working.",
+   "at": "2026-11-22T14:50:00Z"
+  },
+  {
+   "to": "research",
+   "text": "On your next run: 15 reels have transcripts or are queued (9 from Indian pages, 6 from pages abroad). Study them and update formats.json with what the spoken words show.",
+   "at": "2026-11-22T14:51:00Z"
+  }
+ ],
+ "read_at": null,
+ "compactions": 1,
+ "updated_at": "2026-11-22T14:43:56Z",
+ "session": {
+  "link": "https://claude.ai/code/session_01CNnzjus3VFacLen2FZUq3Y",
+  "started": "2026-11-22T14:43:56Z"
+ }
+}

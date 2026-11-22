@@ -1,0 +1,45 @@
+{
+ "lead": {
+  "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
+  "owns": [
+   "tarot-talk/dashboard/",
+   "tarot-talk/scouting/tt_scout/",
+   "tarot-talk/AGENTS.md"
+  ],
+  "created": "2026-11-22T14:50:00Z"
+ },
+ "research": {
+  "about": "All research: Instagram scouting, Google Trends, similar pages, methods, India checks. Writes findings, formats, ideas and the timeline. The daily 9:04 pm scheduled run uses this role.",
+  "owns": [
+   "tarot-talk/scouting/",
+   "tarot-talk/dashboard/agents/",
+   "tarot-talk/dashboard/formats.json",
+   "tarot-talk/dashboard/ideas.json",
+   "tarot-talk/dashboard/strategies.json"
+  ],
+  "created": "2026-11-22T14:50:00Z"
+ },
+ "production": {
+  "about": "Makes the reels: scripts, the 2027 driver series, the script-to-video and cartoon pipelines, the horoscope videos.",
+  "owns": [
+   "tarot-talk/series/",
+   "tarot-talk/horoscope/",
+   "tarot-talk/ideas/"
+  ],
+  "created": "2026-11-22T14:50:00Z"
+ },
+ "abroad": {
+  "about": "Plans the separate channel for viewers abroad (tarot, Akashic, healing in English).",
+  "owns": [
+   "tarot-talk/abroad/"
+  ],
+  "created": "2026-11-22T14:50:00Z"
+ },
+ "reviewer": {
+  "about": "Independent check of anything that will be shown or posted. Never reviews its own work. Writes reports in tarot-talk/reviews/ or tarot-talk/scouting/reviews/.",
+  "owns": [
+   "tarot-talk/reviews/"
+  ],
+  "created": "2026-11-22T14:50:00Z"
+ }
+}
