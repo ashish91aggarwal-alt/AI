@@ -1,5 +1,5 @@
 {
- "built": "2026-11-22T14:43:56Z",
+ "built": "2026-11-22T23:00:10Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -63,11 +63,23 @@
    "doing": "Moved all Tarot Talk work into one folder and set up the team system",
    "next": "Owner: git pull, reinstall the desktop app, and update the scheduled task's text",
    "blocked": "",
-   "updated_at": "2026-11-22T14:50:00Z",
+   "updated_at": "2026-11-22T14:43:56Z",
    "compactions": 1,
    "session": {
     "link": "https://claude.ai/code/session_01CNnzjus3VFacLen2FZUq3Y",
-    "started": null
+    "started": "2026-11-22T14:43:56Z"
+   }
+  },
+  {
+   "role": "production",
+   "doing": "",
+   "next": "",
+   "blocked": "",
+   "updated_at": "2026-11-22T23:00:10Z",
+   "compactions": 0,
+   "session": {
+    "link": null,
+    "started": "2026-11-22T23:00:10Z"
    }
   },
   {
