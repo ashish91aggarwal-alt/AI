@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T10:00:13Z",
+  "generated_at": "2026-11-22T14:33:49Z",
   "cards": [
     {
       "id": "F1",
@@ -761,19 +761,9 @@
     }
   },
   "last_commits": {
-    "orchestrator": {
-      "hash": "dea8582",
-      "at": "2026-11-22T10:00:00Z",
-      "subject": "[orchestrator] handoff: new repo location"
-    },
-    "tracker": {
-      "hash": "b3fb7c9",
-      "at": "2026-11-22T09:58:43Z",
-      "subject": "[tracker] data 2026-11-22T09:58Z"
-    },
     "bot": {
-      "hash": "d933dd8",
-      "at": "2026-11-22T09:56:45Z",
+      "hash": "9f7af9f",
+      "at": "2026-11-22T10:00:13Z",
       "subject": "[bot] rebuild STATUS.md"
     }
   }
