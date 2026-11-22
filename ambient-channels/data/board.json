@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:40:44Z",
+  "generated_at": "2026-11-22T15:59:50Z",
   "cards": [
     {
       "id": "F1",
@@ -857,19 +857,19 @@
   },
   "last_commits": {
     "channel-pets": {
-      "hash": "8e072e3",
-      "at": "2026-11-22T20:10:31+05:30",
-      "subject": "[channel-pets] P2 plan and card, G0 sent for sign-off"
+      "hash": "7ccd53e",
+      "at": "2026-11-22T21:29:41+05:30",
+      "subject": "[channel-pets] checkpoint rainy cottage Catnap QA failure"
+    },
+    "bot": {
+      "hash": "657f903",
+      "at": "2026-11-22T14:40:45Z",
+      "subject": "[bot] rebuild STATUS.md"
     },
     "tracker": {
       "hash": "c184801",
       "at": "2026-11-22T14:33:49Z",
       "subject": "[tracker] data 2026-11-22T14:33Z"
-    },
-    "bot": {
-      "hash": "9f7af9f",
-      "at": "2026-11-22T10:00:13Z",
-      "subject": "[bot] rebuild STATUS.md"
     },
     "orchestrator": {
       "hash": "dea8582",
