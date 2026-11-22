@@ -1,5 +1,5 @@
 {
- "built": "2026-11-22T23:00:51Z",
+ "built": "2026-11-22T23:11:36Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Mulank 8 cartoon reel: cast, locations, rough cut, meme audio and face acting done (v5, 86.25 s); toolchain + workflow pushed to tarot-talk/cartoon-puppet/, viral-hooks/, videos/2027-warmup-mulank8/",
-   "next": "Batch 3: arm gestures on the beat, Monty knee shiver, Shani trishul thump, music bed with ducking, final independent review, owner sign-off",
+   "doing": "Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied",
+   "next": "Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting",
    "blocked": "",
-   "updated_at": "2026-11-22T23:00:23Z",
+   "updated_at": "2026-11-22T23:11:36Z",
    "compactions": 0,
    "session": {
     "link": null,

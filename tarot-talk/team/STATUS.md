@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 23 Nov 04:30 IST | Mulank 8 cartoon reel: cast, locations, rough cut, meme audio and face acting done (v5, 86.25 s); toolchain + workflow pushed to tarot-talk/cartoon-puppet/, viral-hooks/, videos/2027-warmup-mulank8/ | Batch 3: arm gestures on the beat, Monty knee shiver, Shani trishul thump, music bed with ducking, final independent review, owner sign-off | - |
+| `production` | 23 Nov 04:41 IST | Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied | Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
