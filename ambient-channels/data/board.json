@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T17:01:26Z",
+  "generated_at": "2026-11-22T19:42:35Z",
   "cards": [
     {
       "id": "F1",
@@ -856,25 +856,10 @@
     }
   },
   "last_commits": {
-    "channel-pets": {
-      "hash": "b0b01c6",
-      "at": "2026-11-22T22:31:16+05:30",
-      "subject": "[channel-pets] log V3 QA failure and V4 rejected render"
-    },
     "bot": {
-      "hash": "1fec343",
-      "at": "2026-11-22T16:11:26Z",
+      "hash": "f2bd72a",
+      "at": "2026-11-22T17:01:26Z",
       "subject": "[bot] rebuild STATUS.md"
-    },
-    "tracker": {
-      "hash": "c184801",
-      "at": "2026-11-22T14:33:49Z",
-      "subject": "[tracker] data 2026-11-22T14:33Z"
-    },
-    "orchestrator": {
-      "hash": "dea8582",
-      "at": "2026-11-22T10:00:00Z",
-      "subject": "[orchestrator] handoff: new repo location"
     }
   }
 }

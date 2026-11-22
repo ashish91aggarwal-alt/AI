@@ -1,16 +1,16 @@
 # STATUS
 
-_Generated 2026-11-22T17:01:26Z by `scripts/agent.py build`. Do not edit._
+_Generated 2026-11-22T19:42:35Z by `scripts/agent.py build`. Do not edit._
 
 ## Sessions
 
 | Role | Updated | Doing | Next | Blocked | Last commit |
 |---|---|---|---|---|---|
-| `orchestrator` | 7h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | dea8582 [orchestrator] handoff: new repo location |
+| `orchestrator` | 9h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | - |
 | `reviewer` | 5d ago | brand gate: avatars + banners (fantasy, worship) | write reviews/brand/*-art-2026-11-17.md | - | - |
 | `channel-fantasy` | 5d ago | not started | Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1 | waiting for G0 sign-off on F1 | - |
 | `channel-worship` | 5d ago | not started | Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement | waiting for G0 sign-off on W3 | - |
-| `channel-pets` | 2h ago | P2 planned; G0 sent to orchestrator | After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces) | - | b0b01c6 [channel-pets] log V3 QA failure and V4 rejected r |
+| `channel-pets` | 5h ago | P2 planned; G0 sent to orchestrator | After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces) | - | - |
 
 ## Production board
 
@@ -35,6 +35,6 @@ _Generated 2026-11-22T17:01:26Z by `scripts/agent.py build`. Do not edit._
 
 ## Tracking
 
-- Last tracker run: 2026-11-22T14:32:57Z (2h ago)
+- Last tracker run: 2026-11-22T19:41:45Z (0m ago)
 - Channels tracked: 33
 
