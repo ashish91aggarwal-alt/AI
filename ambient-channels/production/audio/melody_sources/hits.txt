@@ -1,0 +1,82 @@
+Coventry Carol|syntithenai/abc2book|abcresources/folkinfo/abc_tune_folkinfo_1134.abc
+Coventry Carol|avnerdorman/abc-solfege-tool|songs/Coventry_Carol_Am.abc
+Coventry Carol|avnerdorman/abc-solfege-tool|downloaded_abc/Coventry_Carol_Am.abc
+Coventry Carol|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/Coventry_Carol.abc
+Coventry Carol|2U1/NN|Assignment5/notation/C/Coventry_Carol.abc
+Coventry Carol|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/Coventry_Carol_540.abc
+Coventry Carol|SBurrell23/Sheets|songs/christmas/coventry-carol.abc
+Coventry Carol|2U1/NN|Assignment5/notation/C/Coventry_Carol_540.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-22291.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-41334.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-22290.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-41335.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-22293.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-22292.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-41337.abc
+Wexford Carol|ztime/polska|data/original_data/sessions/sessions-41336.abc
+In dulci jubilo|cuthbertLab/music21|music21/corpus/essenFolksong/erk30.abc
+In dulci jubilo|cuthbertLab/music21|music21/corpus/essenFolksong/altdeu20.abc
+In dulci jubilo|Bill-Gray/abc|xmas2026.abc
+In dulci jubilo|ztime/polska|data/original_data/sessions/sessions-1052.abc
+In dulci jubilo|ztime/polska|data/original_data/sessions/sessions-6040.abc
+In dulci jubilo|ztime/polska|data/original_data/sessions/sessions-1051.abc
+In dulci jubilo|ztime/polska|data/original_data/sessions/sessions-6041.abc
+In dulci jubilo|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201290239.abc
+Veni Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318510.abc
+Veni Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318506.abc
+Veni Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318508.abc
+Veni Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318505.abc
+Veni Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318105.abc
+Veni Emmanuel|avnerdorman/abc-solfege-tool|songs/O_Come_O_Come_Emmanuel.abc
+Veni Emmanuel|avnerdorman/abc-solfege-tool|songs/OComeOComeEmmanuel.abc
+Veni Emmanuel|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/Veni_Emmanuel.abc
+O Come O Come Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318105.abc
+O Come O Come Emmanuel|avnerdorman/abc-solfege-tool|songs/OComeOComeEmmanuel.abc
+O Come O Come Emmanuel|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201262121.abc
+O Come O Come Emmanuel|MyatToe/kuic-worship-app|songs/scores/o-come-o-come-emmanuel.abc
+O Come O Come Emmanuel|stretchyboy/cherry-strudel|Christmas_Carols.abc
+O Come O Come Emmanuel|jclements3/HarpHymnal|tablet_app/app/src/main/assets/somerset/abc/174__samba.abc
+O Come O Come Emmanuel|jclements3/HarpHymnal|tablet_app/app/src/main/assets/somerset/abc/174__waltz.abc
+O Come O Come Emmanuel|jclements3/HarpHymnal|tablet_app/app/src/main/assets/tunes/abc/00702.abc
+Cantique de Noel|SBurrell23/Sheets|songs/christmas/o-holy-night.abc
+Cantique de Noel|baobach/abc_search|database/abc/QmPHuh9bzd9C4MRDLgyHezVUMifPs7VNN6DJoWmdMZCDEt.abc
+O Holy Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318533.abc
+O Holy Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318529.abc
+O Holy Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318250.abc
+O Holy Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318532.abc
+O Holy Night|Greonyral/lotro-songs|Frie/xmasoholy7.abc
+O Holy Night|GiowGiow/nes-genetic-arranger|data/catalog/abc/pdmx/QmdugSTyTmTXBZVy.abc
+O Holy Night|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/O_Holy_Night.abc
+O Holy Night|2U1/NN|Assignment5/notation/O/O_Holy_Night.abc
+Stille Nacht|cuthbertLab/music21|music21/corpus/essenFolksong/boehme20.abc
+Stille Nacht|cuthbertLab/music21|music21/corpus/essenFolksong/boehme10.abc
+Stille Nacht|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201280835.abc
+Stille Nacht|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201337243.abc
+Stille Nacht|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201259089.abc
+Stille Nacht|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201337244.abc
+Stille Nacht|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201337229.abc
+Stille Nacht|avnerdorman/abc-solfege-tool|songs/Glade_Jul.abc
+Silent Night|luxx/sbsp|assets/songs/Silent Night.abc
+Silent Night|chimneydotbiz/Bards-Library|Christmas/Silent Night.abc
+Silent Night|willysunny/StarboundTW|user/songs/遊戲/Chrono Trigger/Chrono Trigger - Silent Night.abc
+Silent Night|Bill-Gray/abc|huwsjone.abc
+Silent Night|lewdlime/abc-spec|abcplus_en/sources/stille.abc
+Silent Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201280835.abc
+Silent Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201337243.abc
+Silent Night|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201289375.abc
+St. Louis|ztime/polska|data/original_data/sessions/sessions-25385.abc
+St. Louis|ztime/polska|data/original_data/sessions/sessions-44429.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201238480.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201234224.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201238483.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201355773.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201238481.abc
+St. Louis|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201238478.abc
+O Little Town of Bethlehem|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318536.abc
+O Little Town of Bethlehem|syntithenai/abc2book|abcresources/jc/abc_tune_jc_201318542.abc
+O Little Town of Bethlehem|avnerdorman/abc-solfege-tool|songs/O_Little_Town_of_Bethlehem_J_F.abc
+O Little Town of Bethlehem|avnerdorman/abc-solfege-tool|songs/O_Little_Town_of_Bethlehem_J_G.abc
+O Little Town of Bethlehem|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/O_Little_Town_322.abc
+O Little Town of Bethlehem|AlexKetelaars/SMT-project-C-Christmasify|datasets_original/abc_christmas/O_Little_Town_298.abc
+O Little Town of Bethlehem|2U1/NN|Assignment5/notation/O/O_Little_Town_298.abc
+O Little Town of Bethlehem|2U1/NN|Assignment5/notation/O/O_Little_Town_322.abc

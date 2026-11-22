@@ -1,0 +1,10 @@
+{
+  "role": "channel-fantasy",
+  "session": null,
+  "updated_at": "2026-11-17T09:30:00Z",
+  "doing": "not started",
+  "next": "Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1",
+  "blocked": "waiting for G0 sign-off on F1",
+  "files_last_commit": [],
+  "sessions": []
+}

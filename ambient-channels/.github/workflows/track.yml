@@ -1,0 +1,53 @@
+name: track
+# Competitor + own-channel tracking, every 6 hours. Free on GitHub Actions.
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-writer
+  cancel-in-progress: false
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Track channels (RSS + pages, Data API if key set)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python3 scripts/track.py
+      - name: Mirror our own channels (videos, stats, comments; API reads are not views)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python3 scripts/mirror.py
+      - name: Competitor avatars and banners (weekly, for the brand benchmark)
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python3 scripts/competitor_art.py
+      - name: Own-channel analytics (skips until OAuth secrets exist)
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python3 scripts/analytics.py
+      - name: Rebuild status + dashboard export
+        run: |
+          python3 scripts/agent.py build
+          python3 scripts/export_dashboard.py
+      - name: Commit data
+        run: |
+          git config user.name "tracker-bot"
+          git config user.email "tracker-bot@users.noreply.github.com"
+          git add data STATUS.md dashboard/export
+          git diff --cached --quiet && exit 0
+          git commit -m "[tracker] data $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done
+          exit 1

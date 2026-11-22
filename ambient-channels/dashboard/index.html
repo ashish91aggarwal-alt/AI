@@ -1,0 +1,334 @@
+<meta name="dash-one-writer">
+<style>
+.ac{--ac-ember:#E8743B;--ac-tide:#3F8FD2;--ac-violet:#9A6BE0;--ac-gold:#D9A43A;--ac-teal:#24A495;--ac-rose:#DE5F7E;--ac-moss:#6FA34A;
+  font-family:var(--font-anthropic-sans);color:var(--color-fg);display:flex;flex-direction:column;gap:var(--cds-gap-lg)}
+.ac h2{font-size:var(--cds-font-size-heading);font-weight:var(--cds-font-weight-medium);margin:0}
+.ac h3{font-size:var(--cds-font-size-body);font-weight:var(--cds-font-weight-medium);margin:0}
+.ac-note{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin:4px 0 var(--cds-gap-sm)}
+
+/* ambient hero */
+.ac-hero{position:relative;overflow:hidden;border-radius:calc(var(--cds-radius) * 2);padding:28px 26px 22px;border:1px solid var(--color-border-line);
+  background:
+   radial-gradient(60% 90% at 0% 0%,color-mix(in srgb,var(--ac-ember) 30%,transparent),transparent 70%),
+   radial-gradient(55% 80% at 100% 10%,color-mix(in srgb,var(--ac-tide) 28%,transparent),transparent 70%),
+   radial-gradient(50% 70% at 60% 120%,color-mix(in srgb,var(--ac-violet) 24%,transparent),transparent 70%),
+   var(--color-panel)}
+.ac-hero h1{font-family:var(--font-anthropic-serif);font-weight:400;font-size:calc(var(--cds-font-size-title) * 1.25);margin:6px 0 8px;line-height:1.1;position:relative}
+.ac-hero p{margin:0;max-width:72ch;color:var(--color-fg-muted);position:relative}
+.ac-hero b{color:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.ac-chips{display:flex;gap:6px;flex-wrap:wrap;position:relative}
+.ac-hero .ac-chips{margin-top:14px}
+.ac-ember-fx{position:absolute;inset:0;pointer-events:none}
+.ac-ember-fx i{position:absolute;bottom:-10px;width:6px;height:6px;border-radius:50%;background:var(--ac-ember);opacity:0;filter:blur(.5px);box-shadow:0 0 10px 3px color-mix(in srgb,var(--ac-ember) 60%,transparent)}
+.ac-ember-fx i:nth-child(2){left:18%;background:var(--ac-gold)}.ac-ember-fx i:nth-child(1){left:8%}.ac-ember-fx i:nth-child(3){left:46%;background:var(--ac-tide);box-shadow:0 0 10px 3px color-mix(in srgb,var(--ac-tide) 60%,transparent)}
+.ac-ember-fx i:nth-child(4){left:71%;background:var(--ac-violet);box-shadow:0 0 10px 3px color-mix(in srgb,var(--ac-violet) 60%,transparent)}.ac-ember-fx i:nth-child(5){left:88%;background:var(--ac-gold)}.ac-ember-fx i:nth-child(6){left:33%}
+@media (prefers-reduced-motion: no-preference){
+  .ac-ember-fx i{animation:ac-rise 9s linear infinite}
+  .ac-ember-fx i:nth-child(2){animation-delay:-2s;animation-duration:11s}.ac-ember-fx i:nth-child(3){animation-delay:-5s;animation-duration:13s}
+  .ac-ember-fx i:nth-child(4){animation-delay:-7s}.ac-ember-fx i:nth-child(5){animation-delay:-3.5s;animation-duration:12s}.ac-ember-fx i:nth-child(6){animation-delay:-8s;animation-duration:10s}
+  .ac-live::before{animation:ac-pulse 2s ease-in-out infinite}
+  .ac-card,.ac-job,.ac-vcard{transition:transform var(--cds-dur-slow) var(--cds-ease-out),box-shadow var(--cds-dur-slow) var(--cds-ease-out)}
+  .ac-job:hover,.ac-vcard:hover,.ac-ccard:hover{transform:translateY(-2px);box-shadow:0 8px 24px -12px color-mix(in srgb,var(--c,var(--ac-ember)) 60%,transparent)}
+}
+@keyframes ac-rise{0%{transform:translateY(0);opacity:0}10%{opacity:.85}100%{transform:translateY(-190px) translateX(14px);opacity:0}}
+@keyframes ac-pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* chips */
+.ac-chip{--c:var(--color-fg-muted);display:inline-flex;align-items:center;gap:5px;font-size:var(--cds-font-size-caption);line-height:1;padding:5px 10px;border-radius:999px;
+  background:color-mix(in srgb,var(--c) 15%,transparent);color:color-mix(in srgb,var(--c) 72%,var(--color-fg));border:1px solid color-mix(in srgb,var(--c) 35%,transparent);white-space:nowrap}
+.ac-chip.sm{padding:3px 8px}
+.ac-dot{width:8px;height:8px;border-radius:50%;background:var(--c);display:inline-block;flex:none}
+.ac-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ac-teal)}
+
+/* tabs */
+.ac-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.ac-tab{appearance:none;font:inherit;cursor:pointer;padding:8px 14px;border-radius:999px;border:1px solid var(--color-border-line);background:var(--color-panel);color:var(--color-fg-muted)}
+.ac-tab[aria-selected="true"]{color:var(--color-fg);border-color:transparent;background:linear-gradient(135deg,color-mix(in srgb,var(--ac-ember) 30%,var(--color-panel)),color-mix(in srgb,var(--ac-tide) 30%,var(--color-panel)))}
+
+/* cards */
+.ac-card{--c:var(--ac-tide);position:relative;background:var(--color-panel);border:1px solid var(--color-border-line);border-radius:calc(var(--cds-radius) * 1.5);padding:var(--cds-pad-lg);min-width:0;overflow:hidden}
+.ac-card.tint{background:linear-gradient(160deg,color-mix(in srgb,var(--c) 12%,var(--color-panel)),var(--color-panel) 60%)}
+.ac-card.edge::before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 10%,transparent))}
+.ac-head{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--cds-gap-sm);flex-wrap:wrap}
+.ac-grid{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(165px,1fr))}
+.ac-two{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.ac-kpi .ac-ico{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:17px;background:color-mix(in srgb,var(--c) 20%,transparent)}
+.ac-kpi .ac-lbl{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:10px}
+.ac-kpi .ac-val{font-family:var(--font-anthropic-serif);font-weight:400;font-size:var(--cds-font-size-title);font-variant-numeric:tabular-nums;margin-top:2px;line-height:1.15;color:color-mix(in srgb,var(--c) 55%,var(--color-fg))}
+.ac-kpi .ac-sub{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:6px}
+.ac-prog{height:6px;border-radius:99px;background:color-mix(in srgb,var(--c) 16%,transparent);overflow:hidden;margin-top:8px}
+.ac-prog > span{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--c),color-mix(in srgb,var(--c) 60%,white))}
+
+/* charts */
+.ac-chart{position:relative;width:100%;min-height:240px}
+.ac-chart svg{display:block;width:100%;overflow:visible}
+.ac-chart text{font-size:var(--cds-font-size-caption);fill:var(--cds-text-secondary)}
+.ac-tip{position:absolute;pointer-events:none;background:var(--cds-surface-popover);border:1px solid var(--cds-border);box-shadow:var(--cds-shadow-popover);border-radius:var(--cds-radius);padding:7px 10px;font-size:var(--cds-font-size-caption);max-width:260px;opacity:0;transition:opacity .12s;z-index:5;line-height:1.45}
+.ac-tip strong{display:block;color:var(--color-fg)}
+.ac-tip span{display:block;color:var(--cds-text-secondary)}
+.ac-legend{display:flex;gap:6px;flex-wrap:wrap}
+
+/* hot video cards */
+.ac-vgrid{display:grid;gap:var(--cds-gap-sm);grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.ac-vcard{--c:var(--ac-ember);border-radius:var(--cds-radius);padding:12px;border:1px solid color-mix(in srgb,var(--c) 30%,var(--color-border-line));background:linear-gradient(150deg,color-mix(in srgb,var(--c) 16%,var(--color-bg)),var(--color-bg) 70%);display:flex;flex-direction:column;gap:8px;min-width:0}
+.ac-vcard a{color:var(--color-fg);text-decoration:none;font-weight:var(--cds-font-weight-medium);line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ac-vcard a:hover{text-decoration:underline}
+.ac-vcard .ac-big{font-family:var(--font-anthropic-serif);font-size:var(--cds-font-size-title);color:color-mix(in srgb,var(--c) 60%,var(--color-fg));font-variant-numeric:tabular-nums;line-height:1}
+.ac-vcard .ac-big small{font-family:var(--font-anthropic-sans);font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-left:4px}
+
+/* competitor cards */
+.ac-cgrid{display:grid;gap:var(--cds-gap-sm);grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.ac-ccard{--c:var(--ac-ember);border-radius:var(--cds-radius);padding:12px 12px 8px;border:1px solid var(--color-border-line);background:linear-gradient(170deg,color-mix(in srgb,var(--c) 11%,var(--color-panel)),var(--color-panel) 65%);display:flex;flex-direction:column;gap:6px;min-width:0}
+.ac-ccard .ac-cn{display:flex;justify-content:space-between;gap:6px;align-items:center}
+.ac-ccard .ac-cn a{color:var(--color-fg);text-decoration:none;font-weight:var(--cds-font-weight-medium);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ac-ccard .ac-stats{display:flex;gap:14px;font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.ac-ccard .ac-stats b{display:block;color:var(--color-fg);font-size:var(--cds-font-size-body);font-variant-numeric:tabular-nums;font-weight:var(--cds-font-weight-medium)}
+.ac-spark{height:46px;position:relative}
+
+/* board */
+.ac-board{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:var(--cds-gap-sm);overflow-x:auto;padding-bottom:6px}
+.ac-col{--c:var(--ac-violet);border-radius:calc(var(--cds-radius) * 1.5);padding:10px;min-height:200px;border:1px solid color-mix(in srgb,var(--c) 25%,var(--color-border-line));background:linear-gradient(180deg,color-mix(in srgb,var(--c) 12%,var(--color-panel)),color-mix(in srgb,var(--color-panel) 70%,transparent) 120px)}
+.ac-col h4{margin:2px 2px 10px;font-size:var(--cds-font-size-caption);text-transform:uppercase;letter-spacing:.07em;display:flex;justify-content:space-between;align-items:center;color:color-mix(in srgb,var(--c) 70%,var(--color-fg))}
+.ac-colbody{display:flex;flex-direction:column;gap:8px}
+.ac-job{--c:var(--ac-ember);background:linear-gradient(150deg,color-mix(in srgb,var(--c) 12%,var(--color-bg)),var(--color-bg) 70%);border:1px solid color-mix(in srgb,var(--c) 30%,var(--color-border-line));border-radius:var(--cds-radius);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.ac-job .ac-jt{font-weight:var(--cds-font-weight-medium);line-height:1.3}
+.ac-dots{display:flex;gap:4px}
+.ac-dots i{flex:1;height:6px;border-radius:3px;background:var(--color-border-line);display:block}
+.ac-dots i.p{background:var(--ac-teal)}.ac-dots i.r{background:var(--ac-gold)}
+
+/* tables */
+.ac-scroll{overflow-x:auto}
+.ac table{border-collapse:collapse;width:100%;font-size:var(--cds-font-size-caption);font-variant-numeric:tabular-nums}
+.ac th{text-align:left;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);border-bottom:1px solid var(--color-border-line);padding:7px 8px;white-space:nowrap}
+.ac td{border-bottom:1px solid color-mix(in srgb,var(--color-border-line) 60%,transparent);padding:8px;vertical-align:middle}
+.ac tbody tr:hover td{background:color-mix(in srgb,var(--ac-tide) 6%,transparent)}
+.ac td.n,.ac th.n{text-align:right;white-space:nowrap}
+.ac td a{color:var(--color-fg);text-decoration:none}
+.ac td a:hover{text-decoration:underline}
+
+.ac-bar{display:flex;gap:var(--cds-gap-sm);align-items:center;flex-wrap:wrap}
+.ac-sess{display:grid;gap:var(--cds-gap-md);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.ac-sess dl{margin:10px 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:var(--cds-font-size-caption)}
+.ac-sess dt{color:var(--color-fg-muted)}.ac-sess dd{margin:0}
+.ac-empty{border-style:dashed}
+.ac-ins{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.ac-ins .ac-it{color:var(--color-fg);font-weight:var(--cds-font-weight-medium);line-height:1.3;text-decoration:none}
+.ac-ins a.ac-it:hover{text-decoration:underline}
+.ac-ins .ac-id{font-size:var(--cds-font-size-caption);line-height:1.45;color:var(--color-fg);white-space:pre-wrap}
+.ac-ins .ac-note{margin:0}
+
+/* ---- Our channels: YouTube-style mirror ---- */
+.yt-wrap{display:flex;flex-direction:column;gap:12px}
+.yt-switch{display:flex;gap:6px;flex-wrap:wrap}
+.yt-switch .ac-chip{cursor:pointer;font:inherit;font-size:var(--cds-font-size-caption)}
+.yt-switch .ac-chip[aria-pressed="true"]{background:color-mix(in srgb,var(--c) 34%,transparent);color:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.yt-page{background:var(--color-bg);border:1px solid var(--color-border-line);border-radius:calc(var(--cds-radius) * 2);padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.yt-banner{--c:var(--ac-ember);position:relative;aspect-ratio:6.2/1;border-radius:14px;overflow:hidden;background:linear-gradient(120deg,color-mix(in srgb,var(--c) 55%,#111),color-mix(in srgb,var(--c) 15%,#111))}
+.yt-banner img,.yt-avatar img,.yt-thumb img,.yt-player img,.yt-cav img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yt-fb{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-weight:600;opacity:.85}
+.yt-top{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.yt-avatar{--c:var(--ac-ember);position:relative;flex:none;width:120px;height:120px;border-radius:50%;overflow:hidden;background:var(--c);font-size:44px}
+.yt-info{flex:1;min-width:240px;display:flex;flex-direction:column;gap:6px}
+.yt-title{font-size:30px;line-height:1.15;margin:0;font-weight:700}
+.yt-meta{color:var(--color-fg-muted)}.yt-meta b{color:var(--color-fg);font-weight:var(--cds-font-weight-medium)}
+.yt-desc{color:var(--color-fg-muted);white-space:pre-wrap;max-width:80ch;overflow:hidden;text-overflow:ellipsis}
+.yt-desc:not(.open){white-space:nowrap}
+.yt-more,.yt-back,.yt-replies,.yt-onvid{appearance:none;background:none;border:0;padding:0;font:inherit;cursor:pointer;color:var(--color-fg);font-weight:var(--cds-font-weight-medium);text-align:left}
+.yt-replies{color:var(--ac-tide);margin-top:4px}
+.yt-onvid{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);margin-top:10px}
+.yt-tabs{display:flex;gap:4px;border-bottom:1px solid var(--color-border-line)}
+.yt-tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:10px 14px;font:inherit;font-weight:var(--cds-font-weight-medium);color:var(--color-fg-muted);cursor:pointer}
+.yt-tab[aria-selected="true"]{color:var(--color-fg);border-bottom-color:var(--color-fg)}
+.yt-grid{display:grid;gap:22px 16px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.yt-card,.yt-next{appearance:none;background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:10px;min-width:0}
+.yt-thumb{--c:var(--ac-ember);position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:linear-gradient(140deg,color-mix(in srgb,var(--c) 45%,#111),#111);font-size:28px}
+.yt-card:hover .yt-thumb,.yt-next:hover .yt-thumb{outline:2px solid color-mix(in srgb,var(--c,var(--ac-ember)) 70%,transparent)}
+.yt-dur,.yt-priv{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.8);color:#fff;font-size:12px;font-weight:600;padding:2px 5px;border-radius:4px;line-height:1.3}
+.yt-priv{left:6px;right:auto;background:#b3261e;text-transform:capitalize}
+.yt-ctitle{font-weight:600;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt-cmeta{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted);white-space:pre-wrap}
+.yt-cbody{display:flex;flex-direction:column;gap:3px;min-width:0}
+.yt-empty{text-align:center;padding:40px 12px}.yt-empty-ico{font-size:42px}
+.yt-empty h3{margin:10px 0 4px}
+.yt-watch{display:grid;gap:24px;grid-template-columns:minmax(0,1fr) minmax(260px,360px)}
+@media (max-width:900px){.yt-watch{grid-template-columns:1fr}}
+.yt-main{display:flex;flex-direction:column;gap:12px;min-width:0}
+.yt-player{--c:var(--ac-ember);position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;font-size:48px}
+.yt-ov{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:flex-end;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:13px}
+.yt-ov a{color:#fff;font-weight:600}
+.yt-player .yt-dur{bottom:auto;top:8px}
+.yt-wtitle{font-size:20px;font-weight:700;margin:4px 0 0;line-height:1.3}
+.yt-ownrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.yt-pills{margin-left:auto;display:flex;gap:8px}
+.yt-pill{background:color-mix(in srgb,var(--color-fg) 8%,transparent);border-radius:999px;padding:7px 14px;font-weight:var(--cds-font-weight-medium)}
+.yt-pill.warn{background:#b3261e;color:#fff;text-transform:capitalize}
+.yt-dbox{background:color-mix(in srgb,var(--color-fg) 6%,transparent);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.yt-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45}
+.yt-tags{font-size:var(--cds-font-size-caption);color:var(--ac-tide)}
+.yt-chead{margin:10px 0 0;font-size:18px}
+.yt-com{display:flex;gap:14px;margin-top:16px}.yt-com.reply{gap:10px;margin-top:12px}
+.yt-cav{position:relative;flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden;background:color-mix(in srgb,var(--ac-violet) 60%,#222);font-size:16px}
+.yt-cav.sm{width:24px;height:24px;font-size:11px}
+.yt-cb{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.yt-who{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;font-size:var(--cds-font-size-caption)}
+.yt-author{font-weight:var(--cds-font-weight-medium)}
+.yt-owner{font-weight:var(--cds-font-weight-medium);background:color-mix(in srgb,var(--color-fg) 14%,transparent);border-radius:999px;padding:1px 8px}
+.yt-when{color:var(--color-fg-muted)}
+.yt-act{font-size:var(--cds-font-size-caption);color:var(--color-fg-muted)}
+.yt-side{display:flex;flex-direction:column;gap:10px;min-width:0}
+.yt-next{flex-direction:row;gap:8px}.yt-next .yt-thumb{flex:none;width:168px;border-radius:8px;font-size:18px}
+.yt-next .yt-ctitle{font-size:14px}
+.yt-spark{background:color-mix(in srgb,var(--color-fg) 6%,transparent);border-radius:12px;padding:10px}
+/* colour classes last so they win over component defaults */
+.c-ember{--c:var(--ac-ember)}.c-tide{--c:var(--ac-tide)}.c-violet{--c:var(--ac-violet)}.c-gold{--c:var(--ac-gold)}.c-teal{--c:var(--ac-teal)}.c-rose{--c:var(--ac-rose)}.c-moss{--c:var(--ac-moss)}
+</style>
+
+<div class="ac">
+  <header class="ac-hero" id="top">
+    <div class="ac-ember-fx" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="ac-chips"><span class="ac-chip ac-live c-teal">Tracker snapshot <span data-draw="k-snap" data-source="kpis" data-field="snapshot" data-row="0">—</span> UTC</span><span class="ac-chip c-ember">🏮 Page &amp; Lantern · fantasy</span><span class="ac-chip c-tide">🕊️ Prayer Pastures · worship</span><span class="ac-chip c-rose">🐾 Paws &amp; Nooks · pets</span></div>
+    <h1>Ambient Channels — Command Center</h1>
+    <p data-read lang="en"><b data-draw="k-passed" data-source="kpis" data-field="gates_passed" data-row="0">—</b> of <b data-draw="k-total" data-source="kpis" data-field="gates_total" data-row="0">—</b> pilot gates passed. Next publish: <b data-draw="k-next" data-source="kpis" data-field="next_card" data-row="0">—</b> on <b data-draw="k-nextd" data-source="kpis" data-field="next_target" data-row="0">—</b>. Hottest competitor upload: <b data-draw="k-toptitle" data-source="kpis" data-field="top_title" data-row="0">—</b> at <b data-draw="k-topvpd" data-source="kpis" data-field="top_vpd" data-row="0">—</b> views/day.</p>
+  </header>
+
+  <nav class="ac-tabs" role="tablist" aria-label="Sections">
+    <button class="ac-tab" role="tab" data-tab="overview" aria-selected="true">✨ Overview</button>
+    <button class="ac-tab" role="tab" data-tab="production" aria-selected="false">🎬 Production</button>
+    <button class="ac-tab" role="tab" data-tab="competitors" aria-selected="false">🧭 Competitors</button>
+    <button class="ac-tab" role="tab" data-tab="videos" aria-selected="false">📈 Live videos</button>
+    <button class="ac-tab" role="tab" data-tab="own" aria-selected="false">📺 Our channels</button>
+    <button class="ac-tab" role="tab" data-tab="insights" aria-selected="false">💡 Insights</button>
+    <button class="ac-tab" role="tab" data-tab="sessions" aria-selected="false">🤖 Sessions</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="ac" data-panel="overview">
+    <div class="ac-grid">
+      <div class="ac-card ac-kpi tint c-ember" id="kpi-cards"><div class="ac-ico">🎬</div><div class="ac-lbl">Pilot videos in production</div><div class="ac-val" data-draw="k-cards" data-source="kpis" data-field="cards" data-row="0">—</div><div class="ac-sub">3 fantasy · 3 worship · 1 pets</div></div>
+      <div class="ac-card ac-kpi tint c-teal" id="kpi-gates"><div class="ac-ico">✅</div><div class="ac-lbl">Quality gates passed</div><div class="ac-val" data-draw="k-passed2" data-source="kpis" data-field="gates_passed" data-row="0">—</div><div class="ac-prog"><span data-draw="k-gatebar"></span></div></div>
+      <div class="ac-card ac-kpi tint c-gold" id="kpi-review"><div class="ac-ico">🖋️</div><div class="ac-lbl">Waiting for your sign-off</div><div class="ac-val" data-draw="k-review" data-source="kpis" data-field="in_review" data-row="0">—</div><div class="ac-sub">cards with a gate in review</div></div>
+      <div class="ac-card ac-kpi tint c-rose" id="kpi-next"><div class="ac-ico">🗓️</div><div class="ac-lbl">Next publish</div><div class="ac-val" data-draw="k-nextd2" data-source="kpis" data-field="next_target" data-row="0">—</div><div class="ac-sub">card <span data-draw="k-next2" data-source="kpis" data-field="next_card" data-row="0">—</span></div></div>
+      <div class="ac-card ac-kpi tint c-tide" id="kpi-tracked"><div class="ac-ico">📡</div><div class="ac-lbl">Competitors tracked</div><div class="ac-val" data-draw="k-tracked" data-source="kpis" data-field="tracked" data-row="0">—</div><div class="ac-sub">every 6 hours</div></div>
+      <div class="ac-card ac-kpi tint c-violet" id="kpi-spend"><div class="ac-ico">💸</div><div class="ac-lbl">GPU spend</div><div class="ac-val" data-draw="k-spend" data-source="kpis" data-field="spent_usd" data-row="0">—</div><div class="ac-prog"><span data-draw="k-spendbar"></span></div><div class="ac-sub">of <span data-draw="k-budget" data-source="kpis" data-field="budget_usd" data-row="0">—</span> pilot budget</div></div>
+    </div>
+
+    <div class="ac-card edge c-ember" id="momentum">
+      <div class="ac-head"><div><h3>Upload momentum by lane</h3><p class="ac-note">Median views per day of the videos each lane's competitors uploaded in a week. Higher = that week's uploads are pulling harder.</p></div>
+        <div class="ac-legend"><span class="ac-chip sm c-ember"><span class="ac-dot"></span>Fantasy</span><span class="ac-chip sm c-tide"><span class="ac-dot"></span>Worship</span><span class="ac-chip sm c-rose"><span class="ac-dot"></span>Pets</span><span class="ac-chip sm c-violet"><span class="ac-dot"></span>Watch list</span></div></div>
+      <div class="ac-chart" data-draw="momentum-chart" data-source="momentum" style="min-height:280px"></div>
+    </div>
+
+    <div class="ac-two">
+      <div class="ac-card edge c-teal" id="lane-likes">
+        <h3>Audience quality by lane</h3>
+        <p class="ac-note">Median like-rate of each lane's channels. Real audiences sit at 1–2.5%; the dashed line is our 1% gate.</p>
+        <div class="ac-chart" data-draw="lane-chart" data-source="lanes" style="min-height:170px"></div>
+      </div>
+      <div class="ac-card edge c-gold" id="hot-now">
+        <h3>🔥 Hot right now</h3>
+        <p class="ac-note">Fastest competitor uploads by views per day.</p>
+        <div class="ac-vgrid" data-draw="hot-cards" data-source="videos"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTION -->
+  <section id="production" class="ac" data-panel="production" hidden>
+    <div class="ac-head"><div><h2>Production board</h2><p class="ac-note">Each pilot by stage. The bar under a card is its 8 gates: teal passed, gold waiting for sign-off.</p></div>
+      <div class="ac-legend"><span class="ac-chip sm c-ember"><span class="ac-dot"></span>Fantasy · Page &amp; Lantern</span><span class="ac-chip sm c-tide"><span class="ac-dot"></span>Worship · Prayer Pastures</span><span class="ac-chip sm c-rose"><span class="ac-dot"></span>Pets · Paws &amp; Nooks</span></div></div>
+    <div class="ac-board" data-source="board">
+      <div class="ac-col c-violet"><h4>Concept <span class="ac-chip sm" data-draw="cc" data-stage="concept">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="concept"></div></div>
+      <div class="ac-col c-gold"><h4>Assets <span class="ac-chip sm" data-draw="cc" data-stage="assets">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="assets"></div></div>
+      <div class="ac-col c-ember"><h4>Render <span class="ac-chip sm" data-draw="cc" data-stage="render">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="render"></div></div>
+      <div class="ac-col c-rose"><h4>Package <span class="ac-chip sm" data-draw="cc" data-stage="package">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="package"></div></div>
+      <div class="ac-col c-teal"><h4>Ready <span class="ac-chip sm" data-draw="cc" data-stage="ready">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="ready"></div></div>
+      <div class="ac-col c-tide"><h4>Published <span class="ac-chip sm" data-draw="cc" data-stage="published">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="published"></div></div>
+      <div class="ac-col c-moss"><h4>Measured <span class="ac-chip sm" data-draw="cc" data-stage="measured">—</span></h4><div class="ac-colbody" data-draw="col" data-stage="measured"></div></div>
+    </div>
+  </section>
+
+  <!-- COMPETITORS -->
+  <section id="competitors" class="ac" data-panel="competitors" hidden>
+    <div class="ac-head"><div><h2>Competitors</h2><p class="ac-note">Each card's line is views per day of that channel's recent uploads, oldest to newest.</p></div>
+      <select class="dash-select" id="lane-filter" aria-label="Lane"><option value="">All lanes</option><option value="fantasy">Fantasy</option><option value="worship">Worship</option><option value="pets">Pets</option><option value="watch">Watch list</option></select></div>
+    <div class="ac-cgrid" data-draw="comp-cards" data-source="channels videos"></div>
+    <div class="ac-two">
+      <div class="ac-card edge c-violet" id="comp-scatter">
+        <h3>Size vs momentum</h3>
+        <p class="ac-note">Subscribers (across) against median views per day (up). Small channels high up are the ones to learn from.</p>
+        <div class="ac-chart" data-draw="scatter" data-source="channels" style="min-height:300px"></div>
+      </div>
+      <div class="ac-card edge c-tide" id="growth">
+        <h3>Subscriber growth</h3>
+        <p class="ac-note" id="g-one" hidden>Only one reading so far (<span data-draw="g-date">—</span>). Lines grow as the tracker adds a reading every 6 hours.</p>
+        <p class="ac-note" id="g-many" hidden><span data-draw="g-days">—</span> days of readings, subscribers per channel (log scale).</p>
+        <div class="ac-chart" data-draw="growth-chart" data-source="growth" style="min-height:300px"></div>
+      </div>
+    </div>
+    <div class="ac-card" id="comp-table">
+      <h3>All tracked channels</h3>
+      <div class="ac-scroll" style="margin-top:8px">
+        <table data-source="channels" data-row-key="channel_id">
+          <thead><tr><th data-field="channel">Channel</th><th data-field="lane">Lane</th><th class="n" data-field="subs">Subs</th><th class="n" data-field="videos">Videos</th><th class="n" data-field="median_like_rate">Like-rate</th><th class="n" data-field="median_views_per_day">Views/day</th><th class="n" data-field="uploads_per_week">Uploads/wk</th><th data-field="last_upload">Last upload</th></tr></thead>
+          <tbody data-draw="comp-rows"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos" class="ac" data-panel="videos" hidden>
+    <div class="ac-head"><div><h2>Live videos</h2><p class="ac-note">Recent uploads of every tracked channel (ours too once live). Outlier = views/day ÷ that channel's median.</p></div>
+      <select class="dash-select" id="lane-filter-2" aria-label="Lane"><option value="">All lanes</option><option value="fantasy">Fantasy</option><option value="worship">Worship</option><option value="pets">Pets</option><option value="watch">Watch list</option></select></div>
+    <div class="ac-card edge c-rose" id="views-over-time">
+      <h3>Views over time — the 8 hottest uploads</h3>
+      <p class="ac-note" id="vh-one" hidden>One reading per video so far; each tracker run adds a point, so these become lines within a day.</p>
+      <p class="ac-note" id="vh-many" hidden>Total views at each tracker reading.</p>
+      <div class="ac-chart" data-draw="vh-chart" data-source="video_history" style="min-height:280px"></div>
+    </div>
+    <div class="ac-card ac-scroll">
+      <table data-source="videos" data-row-key="video_id">
+        <thead><tr><th data-field="title">Video</th><th data-field="channel">Channel</th><th data-field="published">Published</th><th class="n" data-field="views">Views</th><th class="n" data-field="views_per_day">Views/day</th><th class="n" data-field="like_rate">Like-rate</th><th class="n" data-field="outlier_x">Outlier</th></tr></thead>
+        <tbody data-draw="video-rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- OWN -->
+  <section id="own" class="ac" data-panel="own" hidden>
+    <div class="ac-head"><div><h2>Our channels</h2><p class="ac-note">A copy of our own YouTube pages, refreshed every 6 hours through the YouTube API. Nothing plays here, so looking never adds a view.</p></div></div>
+    <div class="yt-wrap" data-draw="yt-mirror" data-source="own_channel own_videos own_comments own_video_history"></div>
+    <div class="ac-head" style="margin-top:8px"><div><h3>Private analytics</h3><p class="ac-note" id="own-empty">Watch time, average view duration and subscribers gained fill in daily once YouTube Analytics is approved (docs/apis.md, Level 3).</p></div></div>
+    <div class="ac-two" id="own-analytics">
+      <div class="ac-card edge c-ember" id="own-views"><h3>Daily views</h3><div class="ac-chart" data-draw="own-line" data-metric="views" data-source="own_daily" style="min-height:220px"></div></div>
+      <div class="ac-card edge c-teal" id="own-watch"><h3>Watch time (hours)</h3><div class="ac-chart" data-draw="own-line" data-metric="estimatedMinutesWatched" data-source="own_daily" style="min-height:220px"></div></div>
+      <div class="ac-card edge c-violet" id="own-subs"><h3>Subscribers gained</h3><div class="ac-chart" data-draw="own-line" data-metric="subscribersGained" data-source="own_daily" style="min-height:220px"></div></div>
+      <div class="ac-card edge c-gold" id="own-avd"><h3>Average view duration (min)</h3><div class="ac-chart" data-draw="own-line" data-metric="averageViewDuration" data-source="own_daily" style="min-height:220px"></div></div>
+    </div>
+  </section>
+
+  <!-- INSIGHTS -->
+  <section id="insights" class="ac" data-panel="insights" hidden>
+    <div class="ac-head"><div><h2>Insights</h2><p class="ac-note">Our latest content links and what direct YouTube research (US results, top videos) says works in each niche. Links open on YouTube.</p></div></div>
+    <div class="ac-card edge c-rose" id="ins-content">
+      <h3>📺 Latest content</h3>
+      <p class="ac-note">Channels and uploads, newest first.</p>
+      <div class="ac-vgrid ac-ins" data-draw="insight-cards" data-kinds="content" data-source="insights"></div>
+    </div>
+    <div class="ac-card edge c-violet" id="ins-findings">
+      <h3>🔎 Research findings</h3>
+      <p class="ac-note">Niche norms, keywords, packaging, timing and the plan they lead to.</p>
+      <div class="ac-vgrid ac-ins" data-draw="insight-cards" data-source="insights"></div>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section id="sessions" class="ac" data-panel="sessions" hidden>
+    <div><h2>Sessions</h2><p class="ac-note">One Claude session per role. Each writes only its own status file; every commit stamps it automatically.</p></div>
+    <div class="ac-sess" data-draw="sess" data-source="sessions"></div>
+  </section>
+</div>
+
+<script src="core.js"></script>
+<script src="draw.js"></script>
+<script src="yt.js"></script>

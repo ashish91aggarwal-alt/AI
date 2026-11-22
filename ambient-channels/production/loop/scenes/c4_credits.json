@@ -1,0 +1,4 @@
+{"open": [["Paws & Nooks", 84, false], ["Sleepy Cat by the Cabin Fire", 52, true], ["calm piano  ·  crackling fire  ·  falling snow", 36, false]],
+ "open_start": 1.0, "open_end": 11.0,
+ "close": [["Sleep well", 72, true], ["Thank you for resting with us", 40, false], ["Paws & Nooks", 44, false]],
+ "close_len": 14.0}

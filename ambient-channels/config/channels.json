@@ -1,0 +1,44 @@
+{
+  "channels": [
+    {
+      "slug": "fantasy",
+      "working_name": "Page & Lantern",
+      "role": "channel-fantasy",
+      "channel_id": "UCiMbdDO1u-07S42etpig2ig",
+      "status": "pilot-prep",
+      "launch_target": "2026-11-24",
+      "color": "#C8743A",
+      "handle": "@PageAndLantern",
+      "chaldean": "42 -> 6"
+    },
+    {
+      "slug": "worship",
+      "working_name": "Prayer Pastures",
+      "role": "channel-worship",
+      "channel_id": "UC2ZOI-1Ln4mhMxDaOL8dUJw",
+      "status": "pilot-prep",
+      "launch_target": "2026-11-24",
+      "color": "#5B7FA6",
+      "handle": "@PrayerPastures",
+      "chaldean": "51 -> 6",
+      "created": "2026-11-18"
+    },
+    {
+      "slug": "pets",
+      "working_name": "Paws & Nooks",
+      "role": "channel-pets",
+      "channel_id": "UC8_ssCNad7iM21AJTcHp6Qw",
+      "status": "scheduled",
+      "launch_target": "2026-11-22",
+      "color": "#B9799A",
+      "handle": "@PawsNooks",
+      "created": "2026-11-20",
+      "niche": "dogs and cats napping in cozy places, original calm piano + ambience"
+    }
+  ],
+  "budgets": {
+    "runpod_usd_per_pilot_video": 5,
+    "runpod_usd_monthly_cap": 40,
+    "paid_credits_monthly_cap": 0
+  }
+}

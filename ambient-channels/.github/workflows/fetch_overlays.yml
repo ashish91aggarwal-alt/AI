@@ -1,0 +1,25 @@
+name: fetch-overlays
+on:
+  workflow_dispatch:
+    inputs:
+      tag: {description: "release tag", required: true}
+      urls: {description: "space-separated name=url pairs", required: true}
+permissions: {contents: write}
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download
+        run: |
+          mkdir -p dl; cd dl
+          for pair in ${{ inputs.urls }}; do
+            n="${pair%%=*}"; u="${pair#*=}"
+            curl -fsSL --retry 3 -m 300 -o "$n" "$u" && echo "ok $n $(stat -c %s "$n")" || echo "FAIL $n $u"
+          done
+          ls -la
+      - name: release
+        env: {GH_TOKEN: "${{ github.token }}"}
+        run: |
+          cd dl
+          gh release view "${{ inputs.tag }}" -R "${{ github.repository }}" >/dev/null 2>&1 || gh release create "${{ inputs.tag }}" -R "${{ github.repository }}" -t "${{ inputs.tag }}" -n "Overlay footage (Mixkit Free License)"
+          ls | grep -q . && gh release upload "${{ inputs.tag }}" * --clobber -R "${{ github.repository }}"

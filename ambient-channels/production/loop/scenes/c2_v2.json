@@ -1,0 +1,315 @@
+{
+ "image": "../gpt/img/c2_cat_kitten_tree.png",
+ "seed": 9,
+ "fps": 24,
+ "loop_seconds": 60,
+ "opening_seconds": 40,
+ "timeline": {
+  "fire_cross": [
+   8,
+   30
+  ]
+ },
+ "fire": {
+  "opening": [
+   [
+    150,
+    822
+   ],
+   [
+    150,
+    575
+   ],
+   [
+    185,
+    545
+   ],
+   [
+    290,
+    527
+   ],
+   [
+    390,
+    540
+   ],
+   [
+    440,
+    570
+   ],
+   [
+    440,
+    822
+   ]
+  ],
+  "kill_box": [
+   150,
+   505,
+   445,
+   750
+  ],
+  "grate_box": [
+   130,
+   700,
+   460,
+   860
+  ],
+  "grate_v": 80,
+  "back_wall": 0.5,
+  "clips": [
+   {
+    "file": "mx3759.mp4",
+    "crop": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "width": 300,
+    "center_x": 295,
+    "base_y": 748,
+    "loop": 12,
+    "gain": 1.25,
+    "group": "A"
+   },
+   {
+    "file": "mx3759.mp4",
+    "crop": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "width": 300,
+    "center_x": 255,
+    "base_y": 750,
+    "loop": 12,
+    "gain": 1.25,
+    "group": "B"
+   },
+   {
+    "file": "mx3759.mp4",
+    "crop": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "width": 300,
+    "center_x": 335,
+    "base_y": 748,
+    "loop": 12,
+    "gain": 1.2,
+    "group": "B",
+    "flip": true,
+    "offset": 5.0
+   },
+   {
+    "file": "mx52303.mp4",
+    "crop": [
+     560,
+     0,
+     1360,
+     1080
+    ],
+    "width": 150,
+    "center_x": 300,
+    "base_y": 752,
+    "loop": 15,
+    "gain": 0.9,
+    "group": "B",
+    "feather": [
+     0.3,
+     0.06,
+     0.25
+    ]
+   },
+   {
+    "file": "mx3759.mp4",
+    "crop": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "width": 260,
+    "center_x": 300,
+    "base_y": 752,
+    "loop": 12,
+    "gain": 1.1,
+    "group": "B",
+    "offset": 8.5
+   }
+  ],
+  "light": {
+   "center": [
+    295,
+    650
+   ],
+   "radius": 680,
+   "amount": 0.3
+  }
+ },
+ "window": {
+  "region": [
+   1330,
+   0,
+   1920,
+   470
+  ],
+  "loop": 20,
+  "far": 520,
+  "near": 150
+ },
+ "candles": [
+  {
+   "at": [
+    105,
+    30
+   ],
+   "search": 22,
+   "lit": 0,
+   "halo": 2.6,
+   "glow": 0.14
+  },
+  {
+   "at": [
+    160,
+    75
+   ],
+   "search": 20,
+   "lit": 6,
+   "halo": 2.6,
+   "glow": 0.14,
+   "scale": 0.72
+  },
+  {
+   "at": [
+    430,
+    106
+   ],
+   "search": 18,
+   "lit": 11,
+   "halo": 2.6,
+   "glow": 0.14
+  }
+ ],
+ "glows": [
+  {
+   "at": [
+    515,
+    150
+   ],
+   "radius": 55,
+   "amount": 0.16,
+   "lit": 0
+  },
+  {
+   "at": [
+    550,
+    715
+   ],
+   "radius": 45,
+   "amount": 0.18,
+   "lit": 16
+  },
+  {
+   "at": [
+    1807,
+    790
+   ],
+   "radius": 42,
+   "amount": 0.25,
+   "lit": 21
+  },
+  {
+   "at": [
+    1085,
+    96
+   ],
+   "radius": 30,
+   "amount": 0.1,
+   "lit": 0
+  }
+ ],
+ "bulbs": {
+  "region": [
+   [
+    1085,
+    60
+   ],
+   [
+    880,
+    455
+   ],
+   [
+    1265,
+    455
+   ]
+  ],
+  "v": 225,
+  "max": 70,
+  "radius": 4
+ },
+ "lamps": [
+  {
+   "at": [
+    1255,
+    365
+   ],
+   "radius": 170,
+   "amount": 0.06
+  }
+ ],
+ "steam": {
+  "file": "mx50956.mp4",
+  "crop": [
+   1150,
+   0,
+   1700,
+   1080
+  ],
+  "width": 100,
+  "height": 210,
+  "rim": [
+   1625,
+   702
+  ],
+  "loop": 15,
+  "opacity": 0.9,
+  "kill_box": [
+   1585,
+   572,
+   1700,
+   698
+  ],
+  "kill_delta": 0.04,
+  "gain": 2.8
+ },
+ "breathe": [
+  {
+   "center": [
+    1162,
+    605
+   ],
+   "radius": [
+    163,
+    97
+   ],
+   "amp": 0.004,
+   "breaths": 25
+  },
+  {
+   "center": [
+    1123,
+    697
+   ],
+   "radius": [
+    58,
+    32
+   ],
+   "amp": 0.005,
+   "breaths": 40,
+   "offset": 0.3
+  }
+ ]
+}

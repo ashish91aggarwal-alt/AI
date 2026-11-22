@@ -1,0 +1,110 @@
+{
+ "crops": {
+  "c4_fire": {
+   "box": [
+    236,
+    400,
+    516,
+    752
+   ],
+   "scale": 2.0,
+   "mask": "fire"
+  },
+  "c4_mantel": {
+   "box": [
+    352,
+    72,
+    544,
+    264
+   ],
+   "scale": 2.5,
+   "mask": "mantel"
+  },
+  "c4_shelf": {
+   "box": [
+    904,
+    336,
+    1032,
+    464
+   ],
+   "scale": 3.75,
+   "mask": "shelf"
+  },
+  "c4_window": {
+   "box": [
+    1076,
+    0,
+    1780,
+    448
+   ],
+   "scale": 1.0,
+   "mask": "window"
+  },
+  "c4_mug": {
+   "box": [
+    1424,
+    432,
+    1680,
+    688
+   ],
+   "scale": 2.0,
+   "mask": "steam"
+  },
+  "c4_cat": {
+   "box": [
+    976,
+    448,
+    1296,
+    656
+   ],
+   "scale": 2.0,
+   "mask": "cat"
+  },
+  "c4_candle": {
+   "box": [
+    332,
+    88,
+    460,
+    216
+   ],
+   "scale": 3.75,
+   "mask": "mantel"
+  }
+ },
+ "motion": {
+  "c4_fire": "a cozy stone fireplace with logs burning, bright flames flickering and dancing upward naturally, glowing embers pulsing under the iron grate, the stones, logs, grate and fire tools stay completely still, hand-drawn storybook illustration style",
+  "c4_mantel": "a lit white candle on the mantel flickers gently and the candle inside the old lantern glows and flickers softly, warm light, the mantel, jars and garland stay completely still, hand-drawn storybook illustration style",
+  "c4_shelf": "a small lit candle flame on a wooden bookshelf flickers and dances, the flame stretches taller and shorter and sways from side to side as if in a soft draught, the candle, books and shelf stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_window": "snow falls gently and steadily outside the windows at night, small snowflakes drifting down past the pine trees, the full moon glows softly, the window frames, sofa and lamp stay completely still, hand-drawn storybook illustration style",
+  "c4_mug": "thin wisps of steam rise slowly and curl upward from the hot cocoa mug and fade away, the mug, lamp, books and table stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_breathe": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, its body rises and falls slowly with deep calm sleeping breaths and the quilt over it lifts gently with each breath, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_ear": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, slow calm breathing, one ear gives a small twitch and flicks once, then settles back, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_whisker": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, its nose and whiskers twitch softly as it dreams, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_nuzzle": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, slow calm breathing, it slowly nuzzles its head a little deeper into the pillow and settles comfortably, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_tail": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, slow calm breathing, the striped tail tip curled under its chin flicks softly once and settles, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_knead": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, slow calm breathing, it slowly stretches one front paw out from under its chin and kneads the pillow softly a few times while sleeping, then tucks the paw back in, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_squeeze": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, it squeezes its closed eyes a little tighter for a moment then relaxes them, its whiskers twitch softly, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_lick": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, it opens its mouth a little and its small pink tongue licks its lips once, then the mouth closes softly, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_earonly": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, one ear gives a small twitch, then settles, the sofa, cushions, pillow and background stay completely still, hand-drawn storybook illustration style",
+  "c4_cat_deepbreath": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, its round body clearly rises and falls with slow deep sleeping breaths, the striped back swells up and sinks down and the quilt over it lifts and lowers visibly with every breath, the sofa, cushions, pillow and background stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_cat_earflick": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, its ear flicks sharply backward and twitches two quick times, then springs upright again and settles, like a sleeping cat reacting to a sound, the sofa, cushions, pillow and background stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_cat_whiskers": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, its nose wrinkles and its long white whiskers twitch forward and back clearly several times as it dreams, then relax, the sofa, cushions, pillow and background stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_cat_face": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, as it dreams its ear twitches once, its whiskers twitch and its closed eyes squeeze a little tighter for a moment, then its face relaxes, the sofa, cushions, pillow and background stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_candle": "a single lit candle flame on a stone mantel flickers and dances, the bright flame stretches taller and shorter and sways from side to side as if in a soft draught, the candle, wax, mantel and wall stay completely still, static camera, hand-drawn storybook illustration style",
+  "c4_cat_earquick": "a tabby and white cat fast asleep curled up on a sofa, eyes stay closed the whole time, the cat stays asleep, the head stays resting on the pillow and the paws stay tucked in, slow calm breathing, its ear gives one quick sharp flick, a sudden fast twitch that is over in an instant, then the ear is still again, like a sleeping cat brushing off a tickle, the sofa, cushions, pillow and background stay completely still, static camera, hand-drawn storybook illustration style"
+ },
+ "flf": [
+  "c4_candle",
+  "c4_cat",
+  "c4_fire",
+  "c4_mantel",
+  "c4_mug",
+  "c4_shelf",
+  "c4_window"
+ ],
+ "neg": {
+  "c4_cat": "paw, paws moving, leg, legs, stretching, standing up, waking up, open eyes, head turning, extra limbs, extra paws",
+  "c4_candle": "smoke, extra flames, second flame, melting candle, moving candle, moving books, camera motion, zoom",
+  "c4_shelf": "smoke, extra flames, second flame, melting candle, moving candle, moving books, camera motion, zoom"
+ }
+}

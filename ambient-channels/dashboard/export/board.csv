@@ -1,0 +1,8 @@
+card,channel,title,stage,stage_index,priority,owner,lease_until,next_gate,next_gate_name,gates_passed,in_review,publish_target,budget_usd,spent_usd,youtube_id,keyword,duration_h
+F1,fantasy,The Fox by the Elven Inn Fire (Medieval Christmas),concept,1,1,,,G1,Still image,1,,2026-11-26,5,3.34,,medieval christmas music,3
+F2,fantasy,Rain on the Elven Library (study & focus),concept,1,2,,,G0,Concept,0,G0,2026-11-30,5,0,,fantasy study music,3
+F3,fantasy,Misty Celtic Valley at Dawn (sleep & calm),concept,1,3,,,G0,Concept,0,G0,2026-12-03,5,0,,celtic fantasy music,3
+P1,pets,"This is Mochi. He sleeps for hours (Cozy Winter Cabin, sleeping cat)",ready,5,1,,,G6,Publish,6,,2026-11-22,8.75,7.27,nEMfFKdtlnc,cozy winter cabin sleeping cat,1.64
+W1,worship,BE STILL AND KNOW (morning chapel light),concept,1,2,,,G0,Concept,0,G0,2026-11-29,3,0,,soaking worship instrumental,3
+W2,worship,"REST IN HIS PEACE (rainy night, sleep)",concept,1,3,,,G0,Concept,0,G0,2026-12-02,3,0,,soaking worship with rain,3
+W3,worship,O HOLY NIGHT (The Shepherds' Field by Night),concept,1,1,,,G1,Still image,1,,2026-11-27,3,1.07,,christmas worship instrumental,3

@@ -1,0 +1,137 @@
+{
+  "id": "W3",
+  "channel": "worship",
+  "title": "O HOLY NIGHT (The Shepherds' Field by Night)",
+  "stage": "concept",
+  "priority": 1,
+  "owner": null,
+  "lease_until": null,
+  "gates": {
+    "G0": {
+      "state": "pass",
+      "note": "Round 7 PASS 8.00 (reviews/W3/concept-2026-11-17.md); carry-overs to G1-G5 listed there",
+      "at": "2026-11-17T12:45:00Z",
+      "by": "reviewer"
+    },
+    "G1": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G2": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G3": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G4": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G5": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G6": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G7": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    }
+  },
+  "duration_h": 3,
+  "budget_usd": 3,
+  "spend": [
+    {
+      "date": "2026-11-17",
+      "usd": 0.4,
+      "what": "GPU session 1 (pod gkx67998rd5cyu): W3 plate 8 + sheep 6 images (9.0 min); share by job time of $2.58 total",
+      "source": "runpod $2.69/h x 57.6 min, split per production/gpu/README.md"
+    },
+    {
+      "date": "2026-11-17",
+      "usd": 0.67,
+      "what": "GPU session 2a (pod nhts18hnoeysm2): half of setup + Qwen images (W3 plate 8, sheep 6, PP banner art 6)",
+      "source": "runpod $2.69/h x ~57 min = $2.55; runner cost.json for the image part"
+    }
+  ],
+  "youtube_id": null,
+  "publish_target": "2026-11-27",
+  "plan": "channels/worship/pilots/W3.md",
+  "keyword": "christmas worship instrumental",
+  "notes": "",
+  "licenses": [
+    {
+      "item": "Qwen-Image (plates, elements)",
+      "licence": "Apache-2.0",
+      "source": "huggingface.co/Qwen/Qwen-Image"
+    },
+    {
+      "item": "Wan2.2-I2V-A14B (motion)",
+      "licence": "Apache-2.0",
+      "source": "huggingface.co/Wan-AI/Wan2.2-I2V-A14B"
+    },
+    {
+      "item": "LightX2V Wan2.2 4-step distill",
+      "licence": "Apache-2.0",
+      "source": "huggingface.co/lightx2v/Wan2.2-Distill-Models"
+    },
+    {
+      "item": "BiRefNet (matting)",
+      "licence": "MIT",
+      "source": "github.com/ZhengPeng7/BiRefNet"
+    },
+    {
+      "item": "RIFE (frame interpolation)",
+      "licence": "MIT",
+      "source": "github.com/hzwer/ECCV2022-RIFE"
+    },
+    {
+      "item": "Salamander Grand Piano",
+      "licence": "CC-BY-3.0",
+      "source": "github.com/sfzinstruments/SalamanderGrandPiano",
+      "credit": "Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0, creativecommons.org/licenses/by/3.0/)"
+    },
+    {
+      "item": "VSCO-2 CE strings",
+      "licence": "CC0-1.0",
+      "source": "github.com/sgossner/VSCO-2-CE",
+      "credit": "courtesy: Versilian Studios"
+    },
+    {
+      "item": "Night wind / campfire recordings",
+      "licence": "CC0",
+      "source": "freesound.org",
+      "ids": "to fill at G3"
+    },
+    {
+      "item": "Real-ESRGAN RealESRGAN_x4plus (plate upscale)",
+      "licence": "BSD-3-Clause",
+      "source": "github.com/xinntao/Real-ESRGAN"
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-11-17T09:30:00Z",
+      "by": "orchestrator",
+      "event": "created from pilot plan"
+    }
+  ]
+}

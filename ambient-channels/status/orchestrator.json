@@ -1,0 +1,25 @@
+{
+  "role": "orchestrator",
+  "session": null,
+  "updated_at": "2026-11-22T09:50:53Z",
+  "doing": "Paws & Nooks live; added channel-pets role + session messaging (agent.py msg/inbox)",
+  "next": "Tue 24 Nov: first 48 h read of nEMfFKdtlnc (or let channel-pets do it)",
+  "blocked": "",
+  "files_last_commit": [
+    "AGENTS.md",
+    "CLAUDE.md",
+    "agents/channel-pets.md",
+    "channels/pets/CHANNEL.md",
+    "config/channels.json",
+    "production/cards/P1.json",
+    "scripts/agent.py"
+  ],
+  "sessions": [],
+  "outbox": [
+    {
+      "to": "channel-pets",
+      "text": "Welcome. P1 (Mochi) is live since 22 Nov 05:30 IST; first 48 h read Tue 24 Nov morning IST. Then plan P2 per production/HANDOFF_paws_nooks.md.",
+      "at": "2026-11-22T09:50:47Z"
+    }
+  ]
+}

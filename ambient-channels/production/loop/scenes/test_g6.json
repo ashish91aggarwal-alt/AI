@@ -1,0 +1,5 @@
+{"image": "../gpt/img/gpt06_cabin_formula.png", "seed": 3,
+ "fire": {"box": [0.10, 0.40, 0.24, 0.63], "center": [0.16, 0.56], "warp": 3.0, "flicker": 0.12, "room_glow": 0.08, "light_radius": 0.35, "embers": 10},
+ "window": {"boxes": [[0.57, 0.0, 1.0, 0.63]], "count": 450, "max_wraps": 2, "opacity": 0.8},
+ "steam": {"at": [0.668, 0.775], "height": 0.12, "width": 0.012, "opacity": 0.22, "cycles": 4},
+ "glow": [{"at": [0.067, 0.17], "radius": 0.03, "amount": 0.06}, {"at": [0.095, 0.19], "radius": 0.03, "amount": 0.06}, {"at": [0.27, 0.22], "radius": 0.03, "amount": 0.06}, {"at": [0.535, 0.82], "radius": 0.03, "amount": 0.08}]}

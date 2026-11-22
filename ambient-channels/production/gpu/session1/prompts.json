@@ -1,0 +1,117 @@
+{
+ "note": "GPU session 1 (planned 18 Nov 2026). Images: Qwen-Image (Apache-2.0). Music: ACE-Step 1.5 turbo (MIT). Every output is a CANDIDATE for the quality gate, never public as-is.",
+ "neg": "text, watermark, logo, signature, letters, words, blurry, lowres, deformed, extra limbs, extra legs, duplicate animals, people, person, human, frame, border",
+ "images": [
+  {
+   "id": "pl_avatar",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "prompt": "A small glowing brass lantern standing on an open antique book, warm ember-orange candlelight spilling over the pages, deep midnight-blue background with a soft vignette, painterly oil illustration, one simple bold centred subject that stays readable at very small size, cozy fantasy mood, no text"
+  },
+  {
+   "id": "pl_banner",
+   "w": 1664,
+   "h": 928,
+   "seeds": 6,
+   "prompt": "Wide panoramic view through a tall arched elven window at night: snowy pine forest, a distant castle with warm lit windows, a frozen river under starlight; on the deep stone windowsill in front an open old book and a glowing brass lantern on the far left, the centre of the image calm and uncluttered dark-blue sky, warm amber versus cool blue light, painterly realism, cozy fantasy, no people, no text"
+  },
+  {
+   "id": "pp_avatar",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "prompt": "One white sheep lying peacefully in soft green grass at dawn, golden morning light from behind, cream and gold palette with gentle dusk-blue shadows, painterly oil illustration, one simple centred subject that stays readable at very small size, serene and reverent, no text"
+  },
+  {
+   "id": "pp_banner",
+   "w": 1664,
+   "h": 928,
+   "seeds": 6,
+   "prompt": "A peaceful green pasture beside still waters at sunrise, gentle rolling hills, a few sheep grazing far to the right, soft mist over a calm stream, wide open golden sky in the centre, cream gold and soft blue palette, painterly realism like a classical landscape oil painting, serene and reverent, no people, no text"
+  },
+  {
+   "id": "f1_plate",
+   "w": 1664,
+   "h": 928,
+   "seeds": 8,
+   "prompt": "Interior of a cozy elven inn on a snowy Christmas night, wide 16:9 cinematic view. A large stone hearth slightly left of centre with a strong warm fire, a woven rug in front of it with an empty space for a sleeping animal, carved wooden beams with soft organic elven curves, evergreen garlands with small red berries and tiny warm lanterns, a round table with a pewter mug and a closed leather-bound book, tall arched leaded-glass windows on the right showing a blue night with falling snow and a distant snowy forest. Warm amber firelight versus cool blue window light, painterly realism, rich detail, no people, no text, no logos"
+  },
+  {
+   "id": "f1_fox",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "prompt": "A red fox curled up asleep, legs tucked under its body, nose tucked into its bushy tail, lying on a plain dark brown background, lit by warm firelight from the left, painterly realism matching an oil painting, whole animal in frame, soft shadows, anatomically correct fox, single animal"
+  },
+  {
+   "id": "w3_plate",
+   "w": 1664,
+   "h": 928,
+   "seeds": 8,
+   "prompt": "A quiet hillside pasture at night in ancient Judea, wide 16:9 cinematic view. Gentle rolling hills with low stone walls and a few olive trees, a small flock of sheep resting in the grass in the middle distance with one empty grassy spot in the foreground, a small shepherds' campfire on the left glowing warm orange, a distant small hilltop village with a few warm lamplit windows, a clear deep-blue night sky full of stars with one bright star above the village. Peaceful, reverent, painterly realism like a classical oil painting, no people, no text, no snow"
+  },
+  {
+   "id": "w3_sheep",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "prompt": "A single white sheep lying asleep in grass, legs tucked under the body, head resting, on a plain dark background, lit warm from the left by firelight and faint cool blue starlight from above, painterly realism, whole animal in frame, anatomically correct, single animal"
+  }
+ ],
+ "music": {
+  "base": "medieval fantasy, cozy, winter, christmas, inn by the fireside, instrumental, no vocals, no drums, warm room reverb, gentle, slow",
+  "seeds": 3,
+  "duration": 330,
+  "tracks": [
+   {
+    "id": "f1_m01",
+    "tags": "celtic harp lead, soft strings pad",
+    "bpm": 64,
+    "key": "D dorian"
+   },
+   {
+    "id": "f1_m02",
+    "tags": "lute and recorder duet, light hammered dulcimer",
+    "bpm": 72,
+    "key": "G major"
+   },
+   {
+    "id": "f1_m03",
+    "tags": "low whistle melody, cello drone, harp arpeggios",
+    "bpm": 60,
+    "key": "E minor"
+   },
+   {
+    "id": "f1_m04",
+    "tags": "music box and harp, sleepy, lullaby feel",
+    "bpm": 58,
+    "key": "G major"
+   },
+   {
+    "id": "f1_m05",
+    "tags": "fiddle slow air, nylon guitar",
+    "bpm": 66,
+    "key": "A minor"
+   },
+   {
+    "id": "f1_m06",
+    "tags": "wooden flute, soft bells, harp",
+    "bpm": 70,
+    "key": "D dorian"
+   },
+   {
+    "id": "f1_m07",
+    "tags": "solo lute, intimate, candlelit",
+    "bpm": 62,
+    "key": "A minor"
+   },
+   {
+    "id": "f1_m08",
+    "tags": "strings and soft choir pad ahh, celestial winter",
+    "bpm": 56,
+    "key": "G major"
+   }
+  ]
+ }
+}

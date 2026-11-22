@@ -1,0 +1,593 @@
+[
+ {
+  "f": "f1_m01_s1",
+  "s": 330.0,
+  "lufs": -13.3,
+  "lra": 5.6,
+  "tp": -1.2,
+  "key": "D major",
+  "bal": {
+   "sub <60": 0.1,
+   "bass 60-250": 44.3,
+   "low-mid 250-500": 21.2,
+   "mid 500-2k": 33.9,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.0
+  },
+  "end": -17.4,
+  "jumps": 12,
+  "w": [
+   "bass 60-250 is heavy (44.3%, usual 15-40%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m01_s2",
+  "s": 330.0,
+  "lufs": -14.0,
+  "lra": 3.2,
+  "tp": -1.3,
+  "key": "D minor",
+  "bal": {
+   "sub <60": 7.4,
+   "bass 60-250": 59.5,
+   "low-mid 250-500": 10.5,
+   "mid 500-2k": 22.4,
+   "presence 2-6k": 0.2,
+   "air >6k": 0.0
+  },
+  "end": -44.8,
+  "jumps": 3,
+  "w": [
+   "bass 60-250 is heavy (59.5%, usual 15-40%)",
+   "presence 2-6k is thin (0.2%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [320, 321, 322, 323, 324, 325, 326, 327]"
+  ]
+ },
+ {
+  "f": "f1_m01_s3",
+  "s": 330.0,
+  "lufs": -14.0,
+  "lra": 8.6,
+  "tp": -1.2,
+  "key": "A major",
+  "bal": {
+   "sub <60": 1.9,
+   "bass 60-250": 53.7,
+   "low-mid 250-500": 14.0,
+   "mid 500-2k": 30.0,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.0
+  },
+  "end": -37.0,
+  "jumps": 2,
+  "w": [
+   "bass 60-250 is heavy (53.7%, usual 15-40%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [321, 322, 323, 324, 325, 326, 327, 328]"
+  ]
+ },
+ {
+  "f": "f1_m02_s1",
+  "s": 330.0,
+  "lufs": -14.7,
+  "lra": 7.9,
+  "tp": -1.3,
+  "key": "D major",
+  "bal": {
+   "sub <60": 4.1,
+   "bass 60-250": 57.3,
+   "low-mid 250-500": 19.0,
+   "mid 500-2k": 19.4,
+   "presence 2-6k": 0.2,
+   "air >6k": 0.0
+  },
+  "end": -30.1,
+  "jumps": 16,
+  "w": [
+   "bass 60-250 is heavy (57.3%, usual 15-40%)",
+   "presence 2-6k is thin (0.2%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m02_s2",
+  "s": 330.0,
+  "lufs": -15.2,
+  "lra": 6.0,
+  "tp": -0.9,
+  "key": "D major",
+  "bal": {
+   "sub <60": 5.8,
+   "bass 60-250": 65.0,
+   "low-mid 250-500": 12.5,
+   "mid 500-2k": 16.1,
+   "presence 2-6k": 0.4,
+   "air >6k": 0.3
+  },
+  "end": -40.6,
+  "jumps": 13,
+  "w": [
+   "bass 60-250 is heavy (65.0%, usual 15-40%)",
+   "mid 500-2k is thin (16.1%, usual 18-42%)",
+   "presence 2-6k is thin (0.4%, usual 4-18%)",
+   "air >6k is thin (0.3%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m02_s3",
+  "s": 330.0,
+  "lufs": -13.9,
+  "lra": 7.9,
+  "tp": -1.3,
+  "key": "E minor",
+  "bal": {
+   "sub <60": 3.5,
+   "bass 60-250": 62.4,
+   "low-mid 250-500": 14.1,
+   "mid 500-2k": 19.9,
+   "presence 2-6k": 0.2,
+   "air >6k": 0.0
+  },
+  "end": -25.4,
+  "jumps": 4,
+  "w": [
+   "bass 60-250 is heavy (62.4%, usual 15-40%)",
+   "presence 2-6k is thin (0.2%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m03_s1",
+  "s": 330.0,
+  "lufs": -13.9,
+  "lra": 10.6,
+  "tp": -1.3,
+  "key": "A minor",
+  "bal": {
+   "sub <60": 6.1,
+   "bass 60-250": 66.3,
+   "low-mid 250-500": 9.4,
+   "mid 500-2k": 17.7,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.1
+  },
+  "end": -33.6,
+  "jumps": 9,
+  "w": [
+   "bass 60-250 is heavy (66.3%, usual 15-40%)",
+   "low-mid 250-500 is thin (9.4%, usual 10-28%)",
+   "mid 500-2k is thin (17.7%, usual 18-42%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [7, 15, 47, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m03_s2",
+  "s": 330.0,
+  "lufs": -13.5,
+  "lra": 2.4,
+  "tp": -1.2,
+  "key": "D major",
+  "bal": {
+   "sub <60": 0.7,
+   "bass 60-250": 35.2,
+   "low-mid 250-500": 21.2,
+   "mid 500-2k": 42.6,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.0
+  },
+  "end": -40.3,
+  "jumps": 4,
+  "w": [
+   "mid 500-2k is heavy (42.6%, usual 18-42%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [324, 325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m03_s3",
+  "s": 330.0,
+  "lufs": -16.2,
+  "lra": 4.5,
+  "tp": -1.2,
+  "key": "A major",
+  "bal": {
+   "sub <60": 1.8,
+   "bass 60-250": 49.4,
+   "low-mid 250-500": 11.5,
+   "mid 500-2k": 37.1,
+   "presence 2-6k": 0.2,
+   "air >6k": 0.0
+  },
+  "end": -36.2,
+  "jumps": 35,
+  "w": [
+   "bass 60-250 is heavy (49.4%, usual 15-40%)",
+   "presence 2-6k is thin (0.2%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m04_s1",
+  "s": 330.0,
+  "lufs": -14.1,
+  "lra": 4.6,
+  "tp": -1.3,
+  "key": "G major",
+  "bal": {
+   "sub <60": 2.8,
+   "bass 60-250": 71.8,
+   "low-mid 250-500": 14.0,
+   "mid 500-2k": 10.7,
+   "presence 2-6k": 0.7,
+   "air >6k": 0.1
+  },
+  "end": -41.8,
+  "jumps": 2,
+  "w": [
+   "bass 60-250 is heavy (71.8%, usual 15-40%)",
+   "mid 500-2k is thin (10.7%, usual 18-42%)",
+   "presence 2-6k is thin (0.7%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [324, 325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m04_s2",
+  "s": 330.0,
+  "lufs": -15.4,
+  "lra": 6.0,
+  "tp": -1.3,
+  "key": "A minor",
+  "bal": {
+   "sub <60": 9.9,
+   "bass 60-250": 55.2,
+   "low-mid 250-500": 13.1,
+   "mid 500-2k": 21.0,
+   "presence 2-6k": 0.6,
+   "air >6k": 0.2
+  },
+  "end": -33.7,
+  "jumps": 1,
+  "w": [
+   "sub <60 is heavy (9.9%, usual 0-8%)",
+   "bass 60-250 is heavy (55.2%, usual 15-40%)",
+   "presence 2-6k is thin (0.6%, usual 4-18%)",
+   "air >6k is thin (0.2%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m04_s3",
+  "s": 330.0,
+  "lufs": -13.2,
+  "lra": 3.2,
+  "tp": -1.3,
+  "key": "G major",
+  "bal": {
+   "sub <60": 3.1,
+   "bass 60-250": 71.7,
+   "low-mid 250-500": 16.4,
+   "mid 500-2k": 8.5,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.0
+  },
+  "end": -37.8,
+  "jumps": 4,
+  "w": [
+   "bass 60-250 is heavy (71.7%, usual 15-40%)",
+   "mid 500-2k is thin (8.5%, usual 18-42%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m05_s1",
+  "s": 330.0,
+  "lufs": -16.1,
+  "lra": 6.5,
+  "tp": -0.8,
+  "key": "G major",
+  "bal": {
+   "sub <60": 6.0,
+   "bass 60-250": 57.0,
+   "low-mid 250-500": 26.2,
+   "mid 500-2k": 9.3,
+   "presence 2-6k": 1.4,
+   "air >6k": 0.2
+  },
+  "end": -32.3,
+  "jumps": 6,
+  "w": [
+   "bass 60-250 is heavy (57.0%, usual 15-40%)",
+   "mid 500-2k is thin (9.3%, usual 18-42%)",
+   "presence 2-6k is thin (1.4%, usual 4-18%)",
+   "air >6k is thin (0.2%, usual 0.5-6%)",
+   "near-silence at seconds [326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m05_s2",
+  "s": 330.0,
+  "lufs": -15.6,
+  "lra": 3.1,
+  "tp": -1.6,
+  "key": "A minor",
+  "bal": {
+   "sub <60": 3.8,
+   "bass 60-250": 61.5,
+   "low-mid 250-500": 18.9,
+   "mid 500-2k": 14.9,
+   "presence 2-6k": 0.9,
+   "air >6k": 0.1
+  },
+  "end": -34.0,
+  "jumps": 4,
+  "w": [
+   "bass 60-250 is heavy (61.5%, usual 15-40%)",
+   "mid 500-2k is thin (14.9%, usual 18-42%)",
+   "presence 2-6k is thin (0.9%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m05_s3",
+  "s": 330.0,
+  "lufs": -16.9,
+  "lra": 4.6,
+  "tp": -1.2,
+  "key": "A major",
+  "bal": {
+   "sub <60": 14.3,
+   "bass 60-250": 42.7,
+   "low-mid 250-500": 18.4,
+   "mid 500-2k": 24.3,
+   "presence 2-6k": 0.2,
+   "air >6k": 0.0
+  },
+  "end": -35.9,
+  "jumps": 8,
+  "w": [
+   "sub <60 is heavy (14.3%, usual 0-8%)",
+   "bass 60-250 is heavy (42.7%, usual 15-40%)",
+   "presence 2-6k is thin (0.2%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m06_s1",
+  "s": 330.0,
+  "lufs": -15.1,
+  "lra": 3.1,
+  "tp": -0.9,
+  "key": "A major",
+  "bal": {
+   "sub <60": 5.2,
+   "bass 60-250": 38.4,
+   "low-mid 250-500": 12.1,
+   "mid 500-2k": 43.8,
+   "presence 2-6k": 0.4,
+   "air >6k": 0.1
+  },
+  "end": -16.0,
+  "jumps": 4,
+  "w": [
+   "mid 500-2k is heavy (43.8%, usual 18-42%)",
+   "presence 2-6k is thin (0.4%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m06_s2",
+  "s": 330.0,
+  "lufs": -15.1,
+  "lra": 8.7,
+  "tp": -1.0,
+  "key": "C major",
+  "bal": {
+   "sub <60": 3.9,
+   "bass 60-250": 66.4,
+   "low-mid 250-500": 9.9,
+   "mid 500-2k": 19.4,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.2
+  },
+  "end": -18.3,
+  "jumps": 5,
+  "w": [
+   "bass 60-250 is heavy (66.4%, usual 15-40%)",
+   "low-mid 250-500 is thin (9.9%, usual 10-28%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.2%, usual 0.5-6%)",
+   "near-silence at seconds [328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m06_s3",
+  "s": 330.0,
+  "lufs": -16.4,
+  "lra": 7.2,
+  "tp": -1.1,
+  "key": "D minor",
+  "bal": {
+   "sub <60": 4.2,
+   "bass 60-250": 62.9,
+   "low-mid 250-500": 8.4,
+   "mid 500-2k": 23.8,
+   "presence 2-6k": 0.5,
+   "air >6k": 0.1
+  },
+  "end": -25.4,
+  "jumps": 1,
+  "w": [
+   "bass 60-250 is heavy (62.9%, usual 15-40%)",
+   "low-mid 250-500 is thin (8.4%, usual 10-28%)",
+   "presence 2-6k is thin (0.5%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m07_s1",
+  "s": 330.0,
+  "lufs": -17.7,
+  "lra": 11.1,
+  "tp": -0.8,
+  "key": "C major",
+  "bal": {
+   "sub <60": 11.3,
+   "bass 60-250": 67.3,
+   "low-mid 250-500": 11.4,
+   "mid 500-2k": 8.9,
+   "presence 2-6k": 0.6,
+   "air >6k": 0.5
+  },
+  "end": -35.7,
+  "jumps": 7,
+  "w": [
+   "sub <60 is heavy (11.3%, usual 0-8%)",
+   "bass 60-250 is heavy (67.3%, usual 15-40%)",
+   "mid 500-2k is thin (8.9%, usual 18-42%)",
+   "presence 2-6k is thin (0.6%, usual 4-18%)",
+   "loudness -17.7 LUFS: streaming targets sit around -14",
+   "near-silence at seconds [325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m07_s2",
+  "s": 330.0,
+  "lufs": -13.5,
+  "lra": 5.4,
+  "tp": -1.3,
+  "key": "D major",
+  "bal": {
+   "sub <60": 1.8,
+   "bass 60-250": 70.3,
+   "low-mid 250-500": 16.7,
+   "mid 500-2k": 10.7,
+   "presence 2-6k": 0.5,
+   "air >6k": 0.1
+  },
+  "end": -44.4,
+  "jumps": 18,
+  "w": [
+   "bass 60-250 is heavy (70.3%, usual 15-40%)",
+   "mid 500-2k is thin (10.7%, usual 18-42%)",
+   "presence 2-6k is thin (0.5%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [117, 323, 324, 325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m07_s3",
+  "s": 330.0,
+  "lufs": -14.4,
+  "lra": 7.9,
+  "tp": -1.0,
+  "key": "C major",
+  "bal": {
+   "sub <60": 7.6,
+   "bass 60-250": 67.6,
+   "low-mid 250-500": 17.1,
+   "mid 500-2k": 7.1,
+   "presence 2-6k": 0.4,
+   "air >6k": 0.2
+  },
+  "end": -22.4,
+  "jumps": 8,
+  "w": [
+   "bass 60-250 is heavy (67.6%, usual 15-40%)",
+   "mid 500-2k is thin (7.1%, usual 18-42%)",
+   "presence 2-6k is thin (0.4%, usual 4-18%)",
+   "air >6k is thin (0.2%, usual 0.5-6%)",
+   "near-silence at seconds [328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m08_s1",
+  "s": 330.0,
+  "lufs": -12.9,
+  "lra": 3.2,
+  "tp": -1.2,
+  "key": "D major",
+  "bal": {
+   "sub <60": 2.1,
+   "bass 60-250": 66.0,
+   "low-mid 250-500": 20.7,
+   "mid 500-2k": 10.9,
+   "presence 2-6k": 0.3,
+   "air >6k": 0.1
+  },
+  "end": -40.8,
+  "jumps": 2,
+  "w": [
+   "bass 60-250 is heavy (66.0%, usual 15-40%)",
+   "mid 500-2k is thin (10.9%, usual 18-42%)",
+   "presence 2-6k is thin (0.3%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [323, 324, 325, 326, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m08_s2",
+  "s": 330.0,
+  "lufs": -13.8,
+  "lra": 11.8,
+  "tp": -1.3,
+  "key": "D major",
+  "bal": {
+   "sub <60": 1.4,
+   "bass 60-250": 33.7,
+   "low-mid 250-500": 25.2,
+   "mid 500-2k": 39.3,
+   "presence 2-6k": 0.4,
+   "air >6k": 0.0
+  },
+  "end": -19.2,
+  "jumps": 9,
+  "w": [
+   "presence 2-6k is thin (0.4%, usual 4-18%)",
+   "air >6k is thin (0.0%, usual 0.5-6%)",
+   "near-silence at seconds [289, 290, 327, 328, 329]"
+  ]
+ },
+ {
+  "f": "f1_m08_s3",
+  "s": 330.0,
+  "lufs": -15.4,
+  "lra": 12.1,
+  "tp": -1.4,
+  "key": "D major",
+  "bal": {
+   "sub <60": 2.6,
+   "bass 60-250": 40.5,
+   "low-mid 250-500": 21.3,
+   "mid 500-2k": 35.0,
+   "presence 2-6k": 0.5,
+   "air >6k": 0.1
+  },
+  "end": -38.9,
+  "jumps": 9,
+  "w": [
+   "bass 60-250 is heavy (40.5%, usual 15-40%)",
+   "presence 2-6k is thin (0.5%, usual 4-18%)",
+   "air >6k is thin (0.1%, usual 0.5-6%)",
+   "near-silence at seconds [13, 14, 15, 16, 323, 324, 325, 326]"
+  ]
+ }
+]

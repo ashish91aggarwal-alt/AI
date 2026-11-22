@@ -1,0 +1,47 @@
+name: status-guard
+# Every pushed commit must carry the status trail (AGENTS.md). Then STATUS.md is rebuilt.
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-writer
+  cancel-in-progress: false
+
+jobs:
+  guard:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, '[tracker]') && !startsWith(github.event.head_commit.message, '[bot]')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 50 }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Check commits carry status updates
+        run: |
+          BEFORE="${{ github.event.before }}"
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$BEFORE" 2>/dev/null; then
+            RANGE="HEAD~1..HEAD"; git rev-parse HEAD~1 >/dev/null 2>&1 || RANGE="HEAD"
+          else RANGE="$BEFORE..HEAD"; fi
+          python3 scripts/agent.py check --range "$RANGE"
+      - name: Tracker parser tests
+        run: |
+          python3 scripts/tests/test_track.py
+          python3 -m unittest discover -s scripts/tests -p "test_mirror.py"
+      - name: Validate JSON
+        run: |
+          for f in $(git ls-files '*.json'); do python3 -m json.tool "$f" >/dev/null || { echo "bad json: $f"; exit 1; }; done
+      - name: Rebuild STATUS.md
+        if: always()
+        run: |
+          python3 scripts/agent.py build
+          python3 scripts/export_dashboard.py
+          git config user.name "tracker-bot"
+          git config user.email "tracker-bot@users.noreply.github.com"
+          git add STATUS.md data/board.json dashboard/export
+          git diff --cached --quiet && exit 0
+          git commit -m "[bot] rebuild STATUS.md"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && exit 0; sleep 5; done

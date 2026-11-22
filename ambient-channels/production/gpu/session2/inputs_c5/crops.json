@@ -1,0 +1,145 @@
+{
+ "crops": {
+  "c5_coat": {
+   "box": [
+    195,
+    415,
+    387,
+    703
+   ],
+   "scale": 2.5,
+   "mask": "coat"
+  },
+  "c5_tree": {
+   "box": [
+    0,
+    0,
+    784,
+    448
+   ],
+   "scale": 1.0,
+   "mask": "tree"
+  },
+  "c5_branch": {
+   "box": [
+    368,
+    0,
+    784,
+    352
+   ],
+   "scale": 1.5,
+   "mask": "tree"
+  },
+  "c5_water": {
+   "box": [
+    544,
+    600,
+    1376,
+    888
+   ],
+   "scale": 1.0,
+   "mask": "lake"
+  },
+  "c5_waterl": {
+   "box": [
+    336,
+    600,
+    640,
+    888
+   ],
+   "scale": 2.0,
+   "mask": "lake"
+  },
+  "c5_waterr": {
+   "box": [
+    1320,
+    600,
+    1672,
+    888
+   ],
+   "scale": 1.5,
+   "mask": "lake"
+  },
+  "c5_crown": {
+   "box": [
+    0,
+    0,
+    384,
+    448
+   ],
+   "scale": 1.5,
+   "mask": "tree"
+  },
+  "c5_waterL": {
+   "box": [
+    336,
+    600,
+    1168,
+    888
+   ],
+   "scale": 1.0,
+   "mask": "lake"
+  },
+  "c5_waterR": {
+   "box": [
+    840,
+    600,
+    1672,
+    888
+   ],
+   "scale": 1.0,
+   "mask": "lake"
+  },
+  "c5_pocket": {
+   "box": [
+    1544,
+    632,
+    1672,
+    744
+   ],
+   "scale": 4.0,
+   "mask": "lake"
+  }
+ },
+ "motion": {
+  "c5_coat": "a hooded traveler in a long dark olive coat stands perfectly still on a rock, seen from behind, looking at a lake at night; a gentle steady breeze blows from the right and the long lower skirt of the coat flutters and ripples softly toward the left, the cloth waves naturally in the wind; the traveler's body, hood, shoulders, arms, legs and boots stay completely still, the lake, hills, grass and rock stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_tree": "night sky with a full moon; the leafy branches of a big old tree sway gently in a light breeze blowing from the right, the leaves rustle and flutter softly and the thin twigs bob; the thick trunk and the main limbs stay completely still, the moon, the stars and the clouds stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_branch": "night sky with a full moon; leafy tree branches sway gently in a light breeze blowing from the right, the golden-green leaves rustle and flutter softly and the thin twigs bob; the thick limbs stay completely still, the moon, the stars and the clouds stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_water": "a calm mountain lake at night under moonlight; small gentle ripples travel slowly across the water surface from right to left in a light breeze, the pale reflections of clouds on the water shimmer and waver softly; the far shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterl": "a calm mountain lake at night under moonlight; small ripples keep travelling steadily across the water surface from right to left in a light breeze, never stopping, the reflections on the water shimmer and waver continuously; the shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterr": "a calm mountain lake at night under moonlight; small ripples keep travelling steadily across the water surface from right to left in a light breeze, never stopping, the reflections on the water shimmer and waver continuously; the shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterc": "a calm mountain lake at night under moonlight; small ripples keep travelling steadily across the water surface from right to left in a light breeze, never stopping, the reflections on the water shimmer and waver continuously; the shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_branchw": "night sky; a steady wind blows from the right and the leafy branches of an old tree sway clearly and continuously, the golden-green leaves flutter and shake visibly, the thin twigs bend to the left and spring back again and again; the thick trunk and the main limbs stay completely still, the full moon, the stars and the clouds stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_crown": "night sky; a steady wind blows from the right and the leafy branches of an old tree sway clearly and continuously, the golden-green leaves flutter and shake visibly, the thin twigs bend to the left and spring back again and again; the thick trunk and the main limbs stay completely still, the full moon, the stars and the clouds stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_coatw": "a hooded traveler in a long dark olive coat stands perfectly still on a rock, seen from behind, looking at a lake at night; a steady wind keeps blowing from the right without stopping, and the long lower skirt of the coat flutters and ripples toward the left the whole time, the cloth is always in motion and never comes to rest; the traveler's body, hood, shoulders, arms, legs and boots stay completely still, the lake, hills, grass and rock stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterls": "a mountain lake at night under moonlight, its surface ruffled by a breeze; clearly visible ripples and small wavelets travel steadily across the water from right to left, the reflections on the water waver and break up with the ripples; the shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterrs": "a mountain lake at night under moonlight, its surface ruffled by a breeze; clearly visible ripples and small wavelets travel steadily across the water from right to left, the reflections on the water waver and break up with the ripples; the shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterL": "a calm mountain lake at night under moonlight; small gentle ripples travel slowly across the water surface from right to left in a light breeze, the pale reflections of clouds on the water shimmer and waver softly; the far shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_waterR": "a calm mountain lake at night under moonlight; small gentle ripples travel slowly across the water surface from right to left in a light breeze, the pale reflections of clouds on the water shimmer and waver softly; the far shoreline, the hills, the fir trees, the bushes and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style",
+  "c5_pocket": "a small inlet of a mountain lake at night seen between dark fir trees; the water surface is ruffled by a light breeze, clear ripples travel steadily across the teal water from right to left and the reflections on it waver; the fir trees, the shore and the rocks stay completely still, everything else stays completely still, detailed painterly illustration style"
+ },
+ "flf": [
+  "c5_coat",
+  "c5_tree",
+  "c5_branch",
+  "c5_water",
+  "c5_waterl",
+  "c5_waterr",
+  "c5_crown",
+  "c5_waterL",
+  "c5_waterR",
+  "c5_pocket"
+ ],
+ "neg": {
+  "c5_coat": "walking, stepping, turning around, head turning, arms moving, legs moving, body swaying, bending, face, extra limbs, coat flying off",
+  "c5_tree": "moon moving, clouds moving, clouds drifting, stars moving, falling leaves, birds, tree bending, trunk moving",
+  "c5_branch": "moon moving, clouds moving, clouds drifting, stars moving, falling leaves, birds, trunk bending, still leaves, frozen leaves, static image",
+  "c5_water": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water",
+  "c5_waterl": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water",
+  "c5_waterr": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water",
+  "c5_crown": "moon moving, clouds moving, clouds drifting, stars moving, falling leaves, birds, trunk bending, still leaves, frozen leaves, static image",
+  "c5_waterL": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water",
+  "c5_waterR": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water",
+  "c5_pocket": "waves crashing, splashing, boats, birds, fish, water level rising, trees moving, shoreline moving, fog, rain, still water, frozen water"
+ }
+}

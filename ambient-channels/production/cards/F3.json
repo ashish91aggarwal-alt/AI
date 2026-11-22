@@ -1,0 +1,75 @@
+{
+  "id": "F3",
+  "channel": "fantasy",
+  "title": "Misty Celtic Valley at Dawn (sleep & calm)",
+  "stage": "concept",
+  "priority": 3,
+  "owner": null,
+  "lease_until": null,
+  "gates": {
+    "G0": {
+      "state": "review",
+      "note": "Pilot concept from 2026-11-17 research; awaiting owner/orchestrator sign-off",
+      "at": "2026-11-17T09:30:00Z",
+      "by": "orchestrator"
+    },
+    "G1": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G2": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G3": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G4": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G5": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G6": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G7": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    }
+  },
+  "duration_h": 3,
+  "budget_usd": 5,
+  "spend": [],
+  "youtube_id": null,
+  "publish_target": "2026-12-03",
+  "plan": "channels/fantasy/pilots/F3.md",
+  "keyword": "celtic fantasy music",
+  "notes": "",
+  "licenses": [],
+  "history": [
+    {
+      "at": "2026-11-17T09:30:00Z",
+      "by": "orchestrator",
+      "event": "created from pilot plan"
+    }
+  ]
+}

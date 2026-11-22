@@ -1,0 +1,264 @@
+{
+ "block_seconds": 20,
+ "sources": {
+  "fire": [
+   80,
+   135,
+   170,
+   250
+  ],
+  "lamp": [
+   535,
+   160,
+   552,
+   185
+  ],
+  "candle": [
+   126,
+   43,
+   139,
+   59
+  ],
+  "shelf": [
+   319,
+   125,
+   329,
+   137
+  ]
+ },
+ "lit": {
+  "hearth": {
+   "box": [
+    75,
+    255,
+    140,
+    280
+   ],
+   "source": "fire",
+   "swing": [
+    6,
+    16
+   ]
+  },
+  "armchair": {
+   "box": [
+    77,
+    190,
+    100,
+    235
+   ],
+   "source": "fire",
+   "swing": [
+    5,
+    16
+   ]
+  },
+  "rug near fire": {
+   "box": [
+    190,
+    290,
+    250,
+    320
+   ],
+   "source": "fire",
+   "swing": [
+    3,
+    10
+   ]
+  },
+  "lamp table": {
+   "box": [
+    483,
+    247,
+    567,
+    253
+   ],
+   "source": "lamp",
+   "swing": [
+    3,
+    22
+   ],
+   "min_corr": 0.5
+  },
+  "wall by mantel candle": {
+   "box": [
+    114,
+    32,
+    123,
+    41
+   ],
+   "source": "candle",
+   "swing": [
+    4,
+    35
+   ]
+  },
+  "books by shelf candle": {
+   "box": [
+    303,
+    124,
+    315,
+    136
+   ],
+   "source": "shelf",
+   "swing": [
+    4,
+    35
+   ]
+  },
+  "lamp wall": {
+   "box": [
+    600,
+    150,
+    630,
+    190
+   ],
+   "source": "lamp",
+   "swing": [
+    5,
+    25
+   ]
+  },
+  "lamp table drawer": {
+   "box": [
+    480,
+    253,
+    567,
+    267
+   ],
+   "source": "lamp",
+   "swing": [
+    5,
+    25
+   ]
+  }
+ },
+ "dark": {
+  "far ceiling": {
+   "box": [
+    230,
+    5,
+    330,
+    40
+   ],
+   "max_vs_picture": 85,
+   "max_swing": 3
+  },
+  "top right ceiling": {
+   "box": [
+    600,
+    0,
+    640,
+    20
+   ],
+   "max_vs_picture": 85,
+   "max_swing": 3
+  }
+ },
+ "moving": {
+  "snow": {
+   "box": [
+    365,
+    5,
+    590,
+    140
+   ],
+   "min_motion": 0.8
+  },
+  "fire": {
+   "box": [
+    80,
+    135,
+    170,
+    250
+   ],
+   "min_motion": 1.5
+  },
+  "steam": {
+   "box": [
+    500,
+    160,
+    530,
+    205
+   ],
+   "min_motion": 0.3
+  },
+  "cat": {
+   "box": [
+    345,
+    168,
+    410,
+    205
+   ],
+   "min_motion": 0.35
+  },
+  "candle flame": {
+   "box": [
+    126,
+    43,
+    139,
+    59
+   ],
+   "min_motion": 0.5
+  }
+ },
+ "steady": {
+  "cat body (no head: ear flicks are real motion)": {
+   "box": [
+    388,
+    165,
+    430,
+    212
+   ],
+   "max_jump": 2.0,
+   "ref": [
+    432,
+    205,
+    470,
+    225
+   ]
+  },
+  "pillow": {
+   "box": [
+    306,
+    178,
+    330,
+    200
+   ],
+   "max_jump": 2.0,
+   "ref": [
+    306,
+    160,
+    330,
+    176
+   ]
+  }
+ },
+ "still": [
+  [
+   400,
+   230,
+   460,
+   250
+  ]
+ ],
+ "apart": {
+  "hearth left vs right": {
+   "boxes": [
+    [
+     66,
+     230,
+     93,
+     247
+    ],
+    [
+     153,
+     230,
+     180,
+     247
+    ]
+   ],
+   "max_corr": 0.85
+  }
+ }
+}
