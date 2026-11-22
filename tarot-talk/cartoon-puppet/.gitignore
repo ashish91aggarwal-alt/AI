@@ -1,0 +1,6 @@
+node_modules/
+out/
+cast/
+audio/memes/
+audio/*.wav
+audio/lipsync.json

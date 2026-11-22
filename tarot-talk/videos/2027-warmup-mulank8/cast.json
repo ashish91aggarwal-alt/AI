@@ -1,0 +1,75 @@
+{
+ "note": "Text cast sheet. Colours are hex. Heights are relative (Monty = 1.0). Every character moves only through its own joints.",
+ "style": "2D sci-fi sitcom toon, thick dark ink outline (#1b1422), flat fills, one soft shade on the far side, warm rim light on bodies (no rim rings on limbs). Big heads, readable faces at phone size.",
+ "characters": [
+  {
+   "id": "monty", "name": "Monty", "role": "Mulank 8 guy, comic lead, the butt of the joke",
+   "age_look": "mid-20s Indian man", "height": 1.0, "build": "slim, big head (chibi-ish), short legs",
+   "born": "17 Mar (1+7 = Mulank 8; 2027 personal year 4)",
+   "face": "round face, warm brown skin, huge round white eyes with small pupils, red tilak dot, spiky black hair, small nose, expressive brows",
+   "wardrobe": "maroon kurta with gold buttons and a gold zigzag hem, cream pyjama, brown chappals, steel kada on one wrist",
+   "props": ["phone (incognito screen)", "after the bomb: big black afro"],
+   "personality": "nervous, lazy, wants shortcuts, flatters, dramatic",
+   "expressions": ["worried (default)", "shock: eyes pop, hair spikes up, arms fly up", "cheer: fists up, big smile", "fear: hands clasped at chin, sweat drop, teeth chattering", "sad: tears, slumped, rain cloud", "evil grin (on 'Boss bhi?!')", "afro after the blast"],
+   "movement": "quick, jittery; anticipation dip before big reactions; shiver through neck, shoulders and knees when scared, feet stay planted",
+   "voice": {"source": "ElevenLabs eleven_v4 (comic young male, Hinglish)", "speed": "1.12x", "fx": {"M02": "pitched up (chip)", "M11": "tremolo shiver", "M20": "crying wobble"}}
+  },
+  {
+   "id": "sakshi", "name": "Sakshi", "role": "host / tarot reader; the only one who sells (CTA)",
+   "age_look": "late-20s Indian woman", "height": 1.0,
+   "face": "warm brown skin, long dark braid, red bindi, gold jhumkas, confident half-lidded eyes, one brow that lifts",
+   "wardrobe": "deep plum kurta with small gold stars and gold trim, gold dupatta sash across the chest, cream churidar, gold juttis, bangles",
+   "props": ["fan of purple tarot cards"],
+   "personality": "smart, calm, sassy topper; explains like a teacher, winks at the end",
+   "expressions": ["rest smile", "cards fanned", "explaining (palm open)", "sass / wink"],
+   "movement": "smooth, unhurried; enters with two side-steps; talking hand gestures on the beat",
+   "voice": {"source": "placeholder ElevenLabs voice — Sakshi can record her own lines (K21, K23, K25)", "speed": "1.0x", "fx": "dry"}
+  },
+  {
+   "id": "vishnu", "name": "Vishnu ji", "role": "narrator / troll; amused, fast-talking",
+   "height": 1.05, "pose_default": "seated on a red plastic chair",
+   "face": "blue skin, serene half-closed eyes, gentle smile, white-and-red tilak (urdhva pundra)",
+   "wardrobe": "tall gold crown (kirita mukut) with red gem, yellow pitambar dhoti, gold jewellery, flower garland, gold sash",
+   "arms": "exactly four: back left holds the Sudarshan chakra, back right the conch; front left holds a chai kulhad, front right talks / rests on the knee with a lotus",
+   "personality": "playful, teasing, unbothered; never mocked",
+   "expressions": ["serene smile", "sipping chai (eyes closed)", "motor-mouth talking", "whisper / aside", "hiding behind the kulhad, eyes darting"],
+   "movement": "seated; gestures come from the talking arm on his syllables; chakra flick and fidget spin before the portal",
+   "voice": {"source": "ElevenLabs eleven_v4 (playful sharp male)", "speed": "1.30x", "fx": "dry, close, tiny slap echo on punchlines (V27 punch)"},
+   "sensitivity": "dignified; says 'Arre', never street slang; never the butt of the joke"
+  },
+  {
+   "id": "brahma", "name": "Brahma ji", "role": "cosmic office clerk who routes Monty to Shani dev",
+   "height": 0.95, "setting": "behind a token counter in the clouds (token display shows 8)",
+   "face": "warm skin, long white beard and moustache, kind tired eyes, gold crown (four-faced Brahma shown front-on)",
+   "wardrobe": "red-and-cream robe, gold jewellery",
+   "arms": "exactly four: back pair holds the Vedas and a kamandalu; front pair holds rubber stamps",
+   "personality": "busy, overworked, matter-of-fact; dry humour",
+   "movement": "four-hand stamp rhythm on the beat; a hamsa (swan) sits by the counter",
+   "voice": {"source": "ElevenLabs eleven_v4 (busy clerk male)", "speed": "1.12x", "fx": "small office room"}
+  },
+  {
+   "id": "shani", "name": "Shani dev", "role": "judge of karma; wins every exchange calmly; carries the moral",
+   "height": 1.15, "setting": "dark blue court with Saturn and spotlights",
+   "face": "dark blue skin, calm level heavy brows (stern only on 'haazri'), thick black moustache, steady eyes that look at his register or at Monty — NEVER into the lens",
+   "wardrobe": "black dhoti with a gold band, bare dark-blue torso with a black-and-gold sash, gold crown with a blue neelam (sapphire), gold armlets, sapphire pendant",
+   "props": ["trishul in one fist (butt rests on the floor, thumped on 'haazri')", "brown KARMA register in the other arm (lifted high on 'Hisaab')", "black crow on his shoulder (his vahana) that caws 'KAA!'"],
+   "halo": "gold ring with a warm gold glow that brightens on 'Hisaab'",
+   "personality": "majestic, slow, dry wit, fatherly; not a villain",
+   "expressions": ["calm (default)", "stern on 'haazri'", "half-nod", "deadpan", "warm authority with glowing halo"],
+   "movement": "slow and heavy; trishul lift and thump with a shoulder dip; minimal head motion",
+   "voice": {"source": "ElevenLabs eleven_v4, voice 'Kuber J' (voice_id unEFMOkn1ERDgzALVe2Z), owner's pick", "speed": "1.06x",
+             "fx": "deity chain: pitch down ~3 semitones with formant shift, octave-down double at -19 dB, low boost, temple-hall reverb with short pre-delay, compression; sub hits only on 'haazri' and 'Hisaab'"},
+   "sensitivity": "never mocked, never cries, never points the trishul at anyone, no feet toward camera, never looks into the lens, not in the CTA"
+  }
+ ],
+ "side_cast": [
+  {"id": "bunty", "name": "Cousin Bunty", "use": "Mulank intro card only (bust)", "born": "8 Aug → 8", "look": "young Indian guy, red cap, green t-shirt, holding a phone, cheeky grin"},
+  {"id": "khanna", "name": "Boss Khanna sir", "use": "Mulank intro card only (bust)", "born": "26 Jul → 2+6 = 8", "look": "older Indian man, balding with grey sides, specs, grey moustache, dark suit, red tie, BOSS mug; gets a sweat drop on 'Boss bhi?!'"},
+  {"id": "crow", "name": "Shani's crow", "use": "on Shani's shoulder; one real caw at 'kaa'", "look": "black crow, red eye, grey beak; beak opens on KAA", "sound": "voices/sfx/crow_one_caw.wav (real ElevenLabs SFX, one caw)"}
+ ],
+ "locations": [
+  {"id": "terrace", "desc": "Indian city rooftop at night: brick parapet, string lights, Diwali diyas, fireworks, skyline with lit windows, red plastic chair, an old sutli bomb on the floor", "mood": "festive, comic"},
+  {"id": "office", "desc": "cosmic head office in the clouds: token counter with an 8 on the display, flying files, planets", "mood": "busy, bureaucratic"},
+  {"id": "court", "desc": "Shani dev's court: deep navy, Saturn with rings, spotlight cones, a large clock", "mood": "grave, majestic"}
+ ]
+}

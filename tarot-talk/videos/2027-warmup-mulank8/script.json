@@ -1,0 +1,819 @@
+{
+ "meta": {
+  "title": "Mulank 8 ka Game — 2027 warm-up reel",
+  "channel": "Tarot Talk By Sakshi (Instagram Reels)",
+  "version": "v8 final cut",
+  "runtime_s": 85.67,
+  "format": "1080x1920, 24 fps, 9:16",
+  "language": "Hindi/Hinglish voice, English/Hinglish on-screen text",
+  "cta_keyword": "REPORT",
+  "safe_zones_px": {
+   "top": 250,
+   "bottom": 400,
+   "right": 150
+  },
+  "text_rules": "min 48 px, max 2 text items on screen, captions count",
+  "look": "2D sci-fi sitcom toon (Lemo-Opuscar \"PLUS\" theme): thick dark ink outlines, flat fills with one soft shade, warm rim light. Night city rooftop with Diwali lights; cosmic office in clouds; dark blue court with Saturn.",
+  "audio_target": "-14 LUFS, true peak about -2 dBTP; music ducked under voice"
+ },
+ "beats": [
+  {
+   "id": "hook",
+   "type": "event",
+   "start": 0.0,
+   "end": 0.5,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Close-up of an old Diwali sutli bomb painted \"2026\". Fuse sparks big, then fizzles out. Hook banner from frame 0: \"MULANK 8 WALO, SUNO!\" / \"born on 8 • 17 • 26\".",
+   "camera": "Tight close-up on the bomb, tiny shake.",
+   "sound": "Fuse hiss → \"phusss\" → record scratch.",
+   "voice_file": null,
+   "n": 1
+  },
+  {
+   "id": "V01",
+   "type": "line",
+   "start": 0.55,
+   "end": 3.32,
+   "who": "Vishnu ji",
+   "line": "Ab tu gaya beta! Mulank 8 hai na tu?",
+   "caption_chunks": [
+    {
+     "text": "Ab tu gaya beta!",
+     "from": 0.55,
+     "to": 1.57
+    },
+    {
+     "text": "Mulank 8 hai na tu?",
+     "from": 1.57,
+     "to": 3.32
+    }
+   ],
+   "delivery": "Gleeful, fast, teasing. Meme hook.",
+   "picture": "Vishnu ji on a red plastic chair on a city rooftop at night, chai kulhad in hand, grins.",
+   "camera": "Whip pan, then crash zoom onto his grin.",
+   "sound": "Bass drop + sting on \"Ab tu gaya beta\".",
+   "voice_file": "voices/lines/V01.wav",
+   "n": 2
+  },
+  {
+   "id": "M02",
+   "type": "line",
+   "start": 3.38,
+   "end": 3.93,
+   "who": "Monty",
+   "line": "Aayein?!",
+   "caption_chunks": [
+    {
+     "text": "Aayein?!",
+     "from": 3.38,
+     "to": 3.93
+    }
+   ],
+   "delivery": "Pitched-up squeak of disbelief.",
+   "picture": "Monty: small dip (anticipation), then eyes pop, hair spikes, both arms fly up.",
+   "camera": "Close on Monty.",
+   "sound": "Boing + bass.",
+   "voice_file": "voices/lines/M02.wav",
+   "n": 3
+  },
+  {
+   "id": "V03",
+   "type": "line",
+   "start": 4.01,
+   "end": 11.11,
+   "who": "Vishnu ji",
+   "line": "Arre, teri incognito history seedha Shani dev tak pahunch gayi! \"7 din mein ameer kaise bane\" tak! 2027 mein Mulank 8 ki class Shani dev lenge!",
+   "caption_chunks": [
+    {
+     "text": "Arre, teri incognito history",
+     "from": 4.01,
+     "to": 5.39
+    },
+    {
+     "text": "seedha Shani dev tak pahunch gayi!",
+     "from": 5.39,
+     "to": 7.17
+    },
+    {
+     "text": "\"7 din mein ameer kaise bane\" tak!",
+     "from": 7.17,
+     "to": 8.96
+    },
+    {
+     "text": "2027 mein Mulank 8 ki class",
+     "from": 8.96,
+     "to": 10.28
+    },
+    {
+     "text": "Shani dev lenge!",
+     "from": 10.28,
+     "to": 11.11
+    }
+   ],
+   "delivery": "Rapid-fire, enjoying the gossip.",
+   "picture": "Speed lines. A phone shows the incognito icon; Vishnu ji motor-mouths with hand gestures; cut to Monty caught.",
+   "camera": "Two-shot, slow drift.",
+   "sound": "Ding on the \"ameer kaise bane\" search gag.",
+   "voice_file": "voices/lines/V03.wav",
+   "n": 4
+  },
+  {
+   "id": "V05",
+   "type": "line",
+   "start": 11.15,
+   "end": 14.97,
+   "who": "Vishnu ji",
+   "line": "Tu 17, Bunty 8, Khanna sir 26… teeno Mulank 8!",
+   "caption_chunks": [
+    {
+     "text": "Tu 17, Bunty 8,",
+     "from": 11.15,
+     "to": 12.44
+    },
+    {
+     "text": "Khanna sir 26…",
+     "from": 12.44,
+     "to": 13.63
+    },
+    {
+     "text": "teeno Mulank 8!",
+     "from": 13.63,
+     "to": 14.97
+    }
+   ],
+   "delivery": "Counting off, playful.",
+   "picture": "MULANK INTRO: three cards pop one by one, ~1 s each, each big with name + date sum — \"TU — MONTY 17 MAR → 1+7 = 8\", \"COUSIN BUNTY 8 AUG → 8\", \"BOSS — KHANNA SIR 26 JUL → 2+6 = 8\". Then they park in a row and their 8 coins merge into one big gold 8.",
+   "camera": "Static wide behind dimmed terrace; cards are graphics on top.",
+   "sound": "Tick + boing on each card; ding + bass when the coins merge.",
+   "voice_file": "voices/lines/V05.wav",
+   "n": 5
+  },
+  {
+   "id": "M06",
+   "type": "line",
+   "start": 15.07,
+   "end": 15.95,
+   "who": "Monty",
+   "line": "Boss bhi?!",
+   "caption_chunks": [
+    {
+     "text": "Boss bhi?!",
+     "from": 15.07,
+     "to": 15.95
+    }
+   ],
+   "delivery": "Delighted evil realisation.",
+   "picture": "Monty crash zoom with an evil grin; the boss card gets a sweat drop.",
+   "camera": "Crash zoom.",
+   "sound": "Dhan + bright ding.",
+   "voice_file": "voices/lines/M06.wav",
+   "n": 6
+  },
+  {
+   "id": "M07",
+   "type": "line",
+   "start": 16.07,
+   "end": 18.55,
+   "who": "Monty",
+   "line": "Ruko zara, sabar karo... proof kahan hai?",
+   "caption_chunks": [
+    {
+     "text": "Ruko zara, sabar karo...",
+     "from": 16.07,
+     "to": 17.47
+    },
+    {
+     "text": "proof kahan hai?",
+     "from": 17.47,
+     "to": 18.55
+    }
+   ],
+   "delivery": "Fake-calm meme delivery (\"Ruko zara, sabar karo\"), then suspicious.",
+   "picture": "Monty puts a palm up: stop.",
+   "camera": "Medium two-shot.",
+   "sound": "Record scratch.",
+   "voice_file": "voices/lines/M07.wav",
+   "n": 7
+  },
+  {
+   "id": "V08",
+   "type": "line",
+   "start": 18.6,
+   "end": 20.43,
+   "who": "Vishnu ji",
+   "line": "Proof? Arre chal chal, head office, abhi ke abhi!",
+   "caption_chunks": [
+    {
+     "text": "Proof? Arre chal chal,",
+     "from": 18.6,
+     "to": 19.48
+    },
+    {
+     "text": "head office, abhi ke abhi!",
+     "from": 19.48,
+     "to": 20.43
+    }
+   ],
+   "delivery": "One fast breath.",
+   "picture": "Vishnu ji flicks and fidget-spins the chakra.",
+   "camera": "Push-in on Vishnu ji.",
+   "sound": "Whoosh.",
+   "voice_file": "voices/lines/V08.wav",
+   "n": 8
+  },
+  {
+   "id": "portal1",
+   "type": "event",
+   "start": 20.48,
+   "end": 21.33,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Chakra swirl wipe (iris grows from the centre) into the cosmic head office.",
+   "camera": "—",
+   "sound": "Big whoosh + chime.",
+   "voice_file": null,
+   "n": 9
+  },
+  {
+   "id": "B09",
+   "type": "line",
+   "start": 21.78,
+   "end": 24.26,
+   "who": "Brahma ji",
+   "line": "Ek-ek karke aao! Chaar haath hain, chaar sau nahi!",
+   "caption_chunks": [
+    {
+     "text": "Ek-ek karke aao!",
+     "from": 21.78,
+     "to": 22.48
+    },
+    {
+     "text": "Chaar haath hain, chaar sau nahi!",
+     "from": 22.48,
+     "to": 24.26
+    }
+   ],
+   "delivery": "Busy office clerk, a bit fed up.",
+   "picture": "Brahma ji (four arms) behind a token counter in the clouds, stamping files with two hands in rhythm.",
+   "camera": "Camera slides down from the sky onto the counter.",
+   "sound": "Stamp thunks on the beat.",
+   "voice_file": "voices/lines/B09.wav",
+   "n": 10
+  },
+  {
+   "id": "B10",
+   "type": "line",
+   "start": 24.31,
+   "end": 26.56,
+   "who": "Brahma ji",
+   "line": "Aath? Seedha Shani dev ke paas. Next!",
+   "caption_chunks": [
+    {
+     "text": "Aath? Seedha Shani dev ke paas.",
+     "from": 24.31,
+     "to": 26.24
+    },
+    {
+     "text": "Next!",
+     "from": 26.24,
+     "to": 26.56
+    }
+   ],
+   "delivery": "Matter-of-fact, then \"Next!\" sharp.",
+   "picture": "A slip flies onto Monty's forehead: \"8 = SHANI DEV\".",
+   "camera": "Medium.",
+   "sound": "Big stamp + ding.",
+   "voice_file": "voices/lines/B10.wav",
+   "n": 11
+  },
+  {
+   "id": "dim",
+   "type": "event",
+   "start": 26.66,
+   "end": 27.26,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Lights cut to black; Shani dev's court fades up, halo glow first.",
+   "camera": "—",
+   "sound": "Thunder; music stops; clock ticks start.",
+   "voice_file": null,
+   "n": 12
+  },
+  {
+   "id": "S10",
+   "type": "line",
+   "start": 27.26,
+   "end": 29.65,
+   "who": "Shani dev",
+   "line": "Mulank aath… haazri.",
+   "caption_chunks": [
+    {
+     "text": "Mulank aath…",
+     "from": 27.26,
+     "to": 28.48
+    },
+    {
+     "text": "haazri.",
+     "from": 28.48,
+     "to": 29.65
+    }
+   ],
+   "delivery": "Deep, slow, heavy. Pause after \"aath\".",
+   "picture": "Shani dev: lifts the trishul and thumps it down on \"haazri\". Stern only here; eyes on his register, then on Monty — never the lens.",
+   "camera": "Low angle, slow push-in.",
+   "sound": "Trishul thump + sub on \"haazri\", hall reverb.",
+   "voice_file": "voices/lines/S10.wav",
+   "n": 13
+  },
+  {
+   "id": "M11",
+   "type": "line",
+   "start": 29.77,
+   "end": 31.65,
+   "who": "Monty",
+   "line": "P-p-p-present sir!",
+   "caption_chunks": [
+    {
+     "text": "P-p-p-present sir!",
+     "from": 29.77,
+     "to": 31.65
+    }
+   ],
+   "delivery": "Teeth chattering, trembling (tremolo FX).",
+   "picture": "Monty's fear: hands clasped at his chin, knees buckle and shake on planted feet, shiver through neck and shoulders, sweat drop.",
+   "camera": "Medium close.",
+   "sound": "Teeth-chatter bed.",
+   "voice_file": "voices/lines/M11.wav",
+   "n": 14
+  },
+  {
+   "id": "S13",
+   "type": "line",
+   "start": 31.85,
+   "end": 38.36,
+   "who": "Shani dev",
+   "line": "Resolution mein kaun tha? Diet… Monday se. Savings… zero. Neend… teen baje.",
+   "caption_chunks": [
+    {
+     "text": "Resolution mein kaun tha?",
+     "from": 31.85,
+     "to": 33.93
+    },
+    {
+     "text": "Diet… Monday se.",
+     "from": 33.93,
+     "to": 35.58
+    },
+    {
+     "text": "Savings… zero.",
+     "from": 35.58,
+     "to": 36.74
+    },
+    {
+     "text": "Neend… teen baje.",
+     "from": 36.74,
+     "to": 38.36
+    }
+   ],
+   "delivery": "Calm, dry, each item a verdict. Meme format: triple crash zoom.",
+   "picture": "Three crash zooms with tags: DIET: MONDAY SE / SAVINGS: 0 / NEEND: 3 AM.",
+   "camera": "Triple crash zoom.",
+   "sound": "Dhan! dhan! dhan!",
+   "voice_file": "voices/lines/S13.wav",
+   "n": 15
+  },
+  {
+   "id": "S14",
+   "type": "line",
+   "start": 38.56,
+   "end": 41.53,
+   "who": "Shani dev",
+   "line": "Gym ki yaad nahi aayi tujhe, Monty?",
+   "caption_chunks": [
+    {
+     "text": "Gym ki yaad nahi aayi tujhe, Monty?",
+     "from": 38.56,
+     "to": 41.53
+    }
+   ],
+   "delivery": "Quiet, disappointed, almost fatherly.",
+   "picture": "Shani dev turns his gaze to Monty (side-on, never the lens).",
+   "camera": "Short slow push, side-on.",
+   "sound": "Low sub.",
+   "voice_file": "voices/lines/S14.wav",
+   "n": 16
+  },
+  {
+   "id": "M19",
+   "type": "line",
+   "start": 41.67,
+   "end": 44.15,
+   "who": "Monty",
+   "line": "Prabhu… main toh aapka bada fan hoon…",
+   "caption_chunks": [
+    {
+     "text": "Prabhu… main toh aapka",
+     "from": 41.67,
+     "to": 43.25
+    },
+    {
+     "text": "bada fan hoon…",
+     "from": 43.25,
+     "to": 44.15
+    }
+   ],
+   "delivery": "Nervous flattery.",
+   "picture": "Monty: folded hands, nervous smile.",
+   "camera": "Medium.",
+   "sound": "—",
+   "voice_file": "voices/lines/M19.wav",
+   "n": 17
+  },
+  {
+   "id": "S15",
+   "type": "line",
+   "start": 44.3,
+   "end": 45.78,
+   "who": "Shani dev",
+   "line": "Baccha hai tu mera.",
+   "caption_chunks": [
+    {
+     "text": "Baccha hai tu mera.",
+     "from": 44.3,
+     "to": 45.78
+    }
+   ],
+   "delivery": "Calm elder put-down, half-nod.",
+   "picture": "Shani dev half-nods; the crow tilts its head.",
+   "camera": "Medium close.",
+   "sound": "Bass \"bwom\".",
+   "voice_file": "voices/lines/S15.wav",
+   "n": 18
+  },
+  {
+   "id": "M21",
+   "type": "line",
+   "start": 45.88,
+   "end": 47.16,
+   "who": "Monty",
+   "line": "Koi shortcut?",
+   "caption_chunks": [
+    {
+     "text": "Koi shortcut?",
+     "from": 45.88,
+     "to": 47.16
+    }
+   ],
+   "delivery": "Hopeful, puppy eyes.",
+   "picture": "Monty leans in hopefully.",
+   "camera": "Close.",
+   "sound": "Small ding (sets up the crow).",
+   "voice_file": "voices/lines/M21.wav",
+   "n": 19
+  },
+  {
+   "id": "kaa",
+   "type": "event",
+   "start": 47.21,
+   "end": 47.81,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "The crow on Shani dev's shoulder: \"KAA!\" (beak opens).",
+   "camera": "Snap zoom to the crow.",
+   "sound": "One real crow caw.",
+   "voice_file": "voices/sfx/crow_one_caw.wav",
+   "n": 20
+  },
+  {
+   "id": "S16b",
+   "type": "line",
+   "start": 47.81,
+   "end": 49.81,
+   "who": "Shani dev",
+   "line": "Ye kehta hai… nahi.",
+   "caption_chunks": [
+    {
+     "text": "Ye kehta hai… nahi.",
+     "from": 47.81,
+     "to": 49.81
+    }
+   ],
+   "delivery": "Deadpan translation.",
+   "picture": "Back to Shani dev, deadpan.",
+   "camera": "Medium.",
+   "sound": "—",
+   "voice_file": "voices/lines/S16b.wav",
+   "n": 21
+  },
+  {
+   "id": "S17",
+   "type": "line",
+   "start": 50.06,
+   "end": 55.82,
+   "who": "Shani dev",
+   "line": "Main saza nahi deta. Hisaab deta hoon. Mehnat karo… result main dunga.",
+   "caption_chunks": [
+    {
+     "text": "Main saza nahi deta.",
+     "from": 50.06,
+     "to": 51.29
+    },
+    {
+     "text": "Hisaab deta hoon.",
+     "from": 51.29,
+     "to": 52.79
+    },
+    {
+     "text": "Mehnat karo…",
+     "from": 52.79,
+     "to": 53.92
+    },
+    {
+     "text": "result main dunga.",
+     "from": 53.92,
+     "to": 55.82
+    }
+   ],
+   "delivery": "Most dignified line: slow, warm authority. Lift on \"Hisaab\".",
+   "picture": "Halo glows warm gold and brightens on \"Hisaab\"; he lifts the KARMA register high.",
+   "camera": "Slow push-in.",
+   "sound": "Warm swell under the voice; sub on \"Hisaab\".",
+   "voice_file": "voices/lines/S17.wav",
+   "n": 22
+  },
+  {
+   "id": "portal2",
+   "type": "event",
+   "start": 55.97,
+   "end": 56.57,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Swirl wipe back to the rooftop.",
+   "camera": "—",
+   "sound": "Whoosh.",
+   "voice_file": null,
+   "n": 23
+  },
+  {
+   "id": "M20",
+   "type": "line",
+   "start": 56.62,
+   "end": 59.42,
+   "who": "Monty",
+   "line": "Ye dukh kaahe khatam nahi hota...",
+   "caption_chunks": [
+    {
+     "text": "Ye dukh kaahe",
+     "from": 56.62,
+     "to": 58.02
+    },
+    {
+     "text": "khatam nahi hota...",
+     "from": 58.02,
+     "to": 59.42
+    }
+   ],
+   "delivery": "Over-the-top comic wail (meme).",
+   "picture": "A small rain cloud over only Monty; tears; he slumps.",
+   "camera": "Monty alone, medium.",
+   "sound": "Sad flute.",
+   "voice_file": "voices/lines/M20.wav",
+   "n": 24
+  },
+  {
+   "id": "enter",
+   "type": "event",
+   "start": 59.47,
+   "end": 60.57,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Sakshi walks in (two side-steps), sparkles; tag \"TOPPER ENTRY\".",
+   "camera": "Wide two-shot Sakshi + Monty.",
+   "sound": "Chime; santoor music starts.",
+   "voice_file": null,
+   "n": 25
+  },
+  {
+   "id": "K21",
+   "type": "line",
+   "start": 60.57,
+   "end": 62.47,
+   "who": "Sakshi",
+   "line": "Notes chahiye?",
+   "caption_chunks": [
+    {
+     "text": "Notes chahiye?",
+     "from": 60.57,
+     "to": 62.47
+    }
+   ],
+   "delivery": "Confident, a little sassy.",
+   "picture": "Sakshi fans her tarot cards, one brow up.",
+   "camera": "Two-shot.",
+   "sound": "—",
+   "voice_file": "voices/lines/K21.wav",
+   "n": 26
+  },
+  {
+   "id": "V22",
+   "type": "line",
+   "start": 62.52,
+   "end": 63.59,
+   "who": "Vishnu ji",
+   "line": "Main kuch nahi bola.",
+   "caption_chunks": [
+    {
+     "text": "Main kuch nahi bola.",
+     "from": 62.52,
+     "to": 63.59
+    }
+   ],
+   "delivery": "Mock-innocent mumble.",
+   "picture": "Vishnu ji hides behind his kulhad, eyes darting.",
+   "camera": "Close on Vishnu ji.",
+   "sound": "Record scratch + slurp.",
+   "voice_file": "voices/lines/V22.wav",
+   "n": 27
+  },
+  {
+   "id": "K23",
+   "type": "line",
+   "start": 63.69,
+   "end": 69.48,
+   "who": "Sakshi",
+   "line": "Syllabus sabka alag. Date + month + 2. Single digit. Wahi tera 2027.",
+   "caption_chunks": [
+    {
+     "text": "Syllabus sabka alag.",
+     "from": 63.69,
+     "to": 65.4
+    },
+    {
+     "text": "Date + month + 2.",
+     "from": 65.4,
+     "to": 67.15
+    },
+    {
+     "text": "Single digit.",
+     "from": 67.15,
+     "to": 68.3
+    },
+    {
+     "text": "Wahi tera 2027.",
+     "from": 68.3,
+     "to": 69.48
+    }
+   ],
+   "delivery": "Teacher mode, clear and paced.",
+   "picture": "Formula builds on screen: DATE + MONTH + 2; example \"17 Mar → 1+7+3+2 = 13 → 4\". Monty counts on his fingers.",
+   "camera": "Sakshi close → two-shot → Monty close.",
+   "sound": "Abacus ticks.",
+   "voice_file": "voices/lines/K23.wav",
+   "n": 28
+  },
+  {
+   "id": "M24",
+   "type": "line",
+   "start": 69.58,
+   "end": 71.11,
+   "who": "Monty",
+   "line": "Mera 4! ...accha hai na?",
+   "caption_chunks": [
+    {
+     "text": "Mera 4!",
+     "from": 69.58,
+     "to": 69.99
+    },
+    {
+     "text": "...accha hai na?",
+     "from": 69.99,
+     "to": 71.11
+    }
+   ],
+   "delivery": "Big win, then unsure.",
+   "picture": "Monty fists up, a big \"4\" pops; then scratches his head, sweat.",
+   "camera": "Close on Monty.",
+   "sound": "Ding + bass.",
+   "voice_file": "voices/lines/M24.wav",
+   "n": 29
+  },
+  {
+   "id": "K25",
+   "type": "line",
+   "start": 71.21,
+   "end": 77.47,
+   "who": "Sakshi",
+   "line": "4 = mehnat aur neev ka saal, shortcut nahi. Baaki numbers ka plan? Comment karo REPORT",
+   "caption_chunks": [
+    {
+     "text": "4 = mehnat aur neev ka saal,",
+     "from": 71.21,
+     "to": 73.05
+    },
+    {
+     "text": "shortcut nahi.",
+     "from": 73.05,
+     "to": 74.18
+    },
+    {
+     "text": "Baaki numbers ka plan?",
+     "from": 74.18,
+     "to": 75.83
+    },
+    {
+     "text": "Comment karo REPORT",
+     "from": 75.83,
+     "to": 77.47
+    }
+   ],
+   "delivery": "Reassuring, then CTA clearly: \"Comment karo REPORT\".",
+   "picture": "Bricks stack on the floor (neev = foundation). Comment box types REPORT and holds ~3.5 s. Sakshi winks.",
+   "camera": "Sakshi close → two-shot.",
+   "sound": "Brick thumps, typing keys, send ding.",
+   "voice_file": "voices/lines/K25.wav",
+   "n": 30
+  },
+  {
+   "id": "boom",
+   "type": "event",
+   "start": 78.47,
+   "end": 79.47,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "The old bomb finally explodes; Monty gets an afro; Vishnu ji keeps sipping.",
+   "camera": "Wide, screen shake.",
+   "sound": "Boom.",
+   "voice_file": null,
+   "n": 31
+  },
+  {
+   "id": "S18",
+   "type": "line",
+   "start": 79.52,
+   "end": 81.53,
+   "who": "Shani dev",
+   "line": "Der hai… andher nahi.",
+   "caption_chunks": [
+    {
+     "text": "Der hai…",
+     "from": 79.52,
+     "to": 80.15
+    },
+    {
+     "text": "andher nahi.",
+     "from": 80.15,
+     "to": 81.53
+    }
+   ],
+   "delivery": "Calm final word, slight nod.",
+   "picture": "Shani dev in a big round sky portal with a gold rim; the rooftop dims behind.",
+   "camera": "Cutaway.",
+   "sound": "Sub hit.",
+   "voice_file": "voices/lines/S18.wav",
+   "n": 32
+  },
+  {
+   "id": "V27",
+   "type": "line",
+   "start": 81.68,
+   "end": 83.07,
+   "who": "Vishnu ji",
+   "line": "Ab tu gaya beta.",
+   "caption_chunks": [
+    {
+     "text": "Ab tu gaya beta.",
+     "from": 81.68,
+     "to": 83.07
+    }
+   ],
+   "delivery": "Same meme line, satisfied sip.",
+   "picture": "Vishnu ji sips, same framing as the opening.",
+   "camera": "Close.",
+   "sound": "Slurp + sting.",
+   "voice_file": "voices/lines/V27.wav",
+   "n": 33
+  },
+  {
+   "id": "tail",
+   "type": "event",
+   "start": 83.07,
+   "end": 85.67,
+   "who": null,
+   "line": null,
+   "delivery": "—",
+   "picture": "Bomb close-up again, new fuse sparks; hook banner + \"Comment REPORT\" end card (2.6 s). Loops to frame 0.",
+   "camera": "Tight close-up.",
+   "sound": "Fuse hiss.",
+   "voice_file": null,
+   "n": 34
+  }
+ ]
+}
