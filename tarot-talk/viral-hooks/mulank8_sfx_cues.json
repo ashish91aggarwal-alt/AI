@@ -1,0 +1,16 @@
+{"note": "SFX cue sheet for the Mulank 8 reel (seconds on the voice_track_timed.wav timeline). gain in dB. Meme punches marked meme:true.",
+ "cues": [
+  [0.00, "fuse_hiss", -10], [0.42, "record_scratch", -5, "meme"],
+  [0.95, "boom", -3, "meme"], [3.38, "record_scratch", -7, "meme"], [3.42, "boing", -10],
+  [7.30, "ding", -10], [11.15, "tick", -5], [11.18, "boing", -13], [12.44, "tick", -5], [12.47, "boing", -13], [13.63, "tick", -5], [13.66, "boing", -13],
+  [14.50, "ding", -8], [14.52, "boom", -10, "meme"], [15.07, "dun_dun_dun", -7, "meme"],
+  [16.07, "record_scratch", -8, "meme"], [18.70, "whoosh", -10], [20.48, "magic_swirl", -8], [20.50, "whoosh", -6],
+  [22.00, "bonk", -12], [22.60, "bonk", -12], [23.20, "bonk", -12], [23.80, "bonk", -12], [25.90, "thump", -8], [25.95, "ding", -10],
+  [26.66, "boom", -12], [28.95, "thump", -3], [29.80, "heartbeat", -12],
+  [33.93, "boom", -11, "meme"], [35.58, "boom", -11, "meme"], [36.74, "boom", -11, "meme"],
+  [38.56, "heartbeat", -15], [45.30, "boom", -5, "meme"], [46.90, "ding", -12], [47.21, "CROW", 0],
+  [52.20, "thump", -10], [55.97, "whoosh", -6], [56.90, "sad_trombone", -8, "meme"], [57.00, "rain", -17],
+  [59.47, "sparkle", -8], [59.55, "ding", -14], [62.52, "record_scratch", -8, "meme"], [64.30, "tick", -10], [66.20, "tick", -10],
+  [69.80, "ding", -8], [69.82, "boom", -12, "meme"], [71.60, "bonk", -12], [71.85, "bonk", -12], [72.10, "bonk", -12], [72.35, "bonk", -12],
+  [74.00, "typing", -8], [74.80, "ding", -10], [78.47, "explosion", -2], [79.52, "boom", -8], [81.68, "ding", -12], [83.07, "fuse_hiss", -10]
+ ]}

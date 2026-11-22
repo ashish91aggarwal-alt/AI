@@ -1,0 +1,45 @@
+# Viral vocal hooks and meme sounds for Tarot Talk cartoon reels
+
+Researched 23 Nov 2026 (IST). Re-check the "trending now" list before each reel; meme audio peaks fast.
+
+## How we use them (and how we don't)
+
+1. **Our own voices say the meme line.** The cast re-voices a viral line in the meme's rhythm (ElevenLabs, budget-capped per test). This is how the #MythologyWithHumor pages do it. Viewers recognise the line, and there is no copy-claim on the reel.
+2. **Original meme-style SFX** (`sfx/`, made by `make_sfx.py`, synthesised from scratch). They do the same job as the famous reel sounds (boom thud, record scratch, dun-dun-dun, sad trombone…) without using anyone's recording.
+3. **Real trending audio is added only inside the Instagram app at upload time**, low under our track, from Instagram's own audio library. We never bake film, song or creator clips into the video file: Instagram mutes or claims them, and the workspace cannot download them anyway.
+
+## Viral vocal hooks (India, 2025–2026)
+
+| Hook | Where it comes from | Meme use | Status in the Mulank 8 reel |
+|---|---|---|---|
+| "Baccha hai tu mera" | Jameel Jamali's line in *Dhurandhar: The Revenge* (released 19 Mar 2026). One of 2026's biggest viral dialogues; Haldiram's, India Post and BSNL all reworked it. | Playful, slightly authoritative "I own you" | **Used**: Shani dev S15 (44.30 s). Gets a meme punch: boom + punch-in + meme caption |
+| "Aayein?!" | Long-running Indian reaction meme | Confused shock | **Used**: Monty M02 (3.38 s), with a record scratch |
+| "Ye dukh kaahe khatam nahi hota" | Classic film meme line | Comic self-pity | **Used**: Monty M20 (56.62 s), with a sad trombone + rain |
+| "Ab tu gaya beta" | Evergreen "you're done for" meme | Threat / tease | **Used**: Vishnu ji V01 (open) and V27 (end), boom on the first |
+| "Waah Shampy waah" | Pakistani couple's clips; one of 2025's top Indian meme formats | Sarcastic, for someone being exposed or caught | Candidate: Vishnu ji when Monty's incognito history is exposed (needs a new voice line) |
+| "Kuchu puchu tum kahan ho" | @kuchupuchu_bubu, 29 Jun 2026 | Cute, clingy "where are you" | Candidate: Monty to Vishnu ji before the portal (new line) |
+| "Neeli pari peeli pari kamre mein band hai" | Pakistani TikTok snippet, huge on Indian Reels | Sing-song lip-sync | Not a fit for this script |
+| "Moye moye" | Serbian song "Moje More", 2023–24 | Comic failure | The song is copyrighted: use our `sad_trombone` instead, or Instagram's in-app audio at upload |
+
+## Meme SFX library (`sfx/`, all original)
+
+| File | Job | Used at (Mulank 8) |
+|---|---|---|
+| boom | Vine-boom-style thud on a punchline | 0.95, 14.5, 26.7, 33.9/35.6/37.7 (tags), 45.3 (Baccha hai tu mera), 69.8, 79.5 |
+| record_scratch | "Wait, what?" stop | 0.42 (hook), 3.38 (Aayein), 16.07, 62.52 |
+| dun_dun_dun | Dramatic reveal | 15.07 (Boss bhi?!) |
+| sad_trombone | Comic failure | 56.9 (Ye dukh…) |
+| ding, tick, boing, sparkle, typing | Graphics pops, cards, comment box | throughout |
+| whoosh, magic_swirl | Portals, chakra | 18.7, 20.5, 55.97 |
+| thump, heartbeat | Shani's court | 28.95 (haazri), 29.8, 38.56, 52.2 |
+| bonk | Stamps, bricks | 22–24, 71.6–72.4 |
+| explosion, fuse_hiss, rain | Bomb and rain cloud | 0.0, 78.47, 83.07, 57.0 |
+
+The cue sheet is `mulank8_sfx_cues.json` (time s, sfx, gain dB, meme flag). Mix it with `python3 mix_cues.py mulank8_sfx_cues.json voice.wav out.wav crow.wav`.
+
+## Sources
+- Free Press Journal, "Baccha hai tu mera" brand trend (Dhurandhar 2)
+- ThePrint, memes of 2025 ("Waah Shampy waah")
+- Patrika, "Kuchu puchu tum kahan ho" (Jul 2026)
+- LatestLY, "Neeli pari peeli pari" trend
+- Tribune / Kashmir Monitor, "Moye moye"
