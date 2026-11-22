@@ -1,0 +1,10 @@
+{"image": "../gpt/img/c2_cat_kitten_tree.png", "seed": 21,
+ "fire": {"box": [0.075, 0.47, 0.235, 0.755], "center": [0.155, 0.66], "warp": 3.2, "flicker": 0.12, "room_glow": 0.09, "light_radius": 0.40, "embers": 12, "v_min": 175},
+ "window": {"boxes": [[0.71, 0.0, 1.0, 0.43]], "count": 480, "max_wraps": 2, "opacity": 0.85, "blue_min": 0.03},
+ "steam": {"at": [0.845, 0.652], "height": 0.12, "width": 0.011, "opacity": 0.20, "cycles": 4},
+ "breathe": [{"center": [0.605, 0.56], "radius": [0.085, 0.09], "amp": 0.004, "breaths": 5},
+             {"center": [0.585, 0.645], "radius": [0.03, 0.03], "amp": 0.005, "breaths": 7, "offset": 0.3}],
+ "glow": [{"at": [0.27, 0.13], "radius": 0.035, "amount": 0.06}, {"at": [0.055, 0.07], "radius": 0.02, "amount": 0.06},
+          {"at": [0.085, 0.09], "radius": 0.02, "amount": 0.06}, {"at": [0.225, 0.13], "radius": 0.02, "amount": 0.06},
+          {"at": [0.55, 0.25], "radius": 0.06, "amount": 0.05}, {"at": [0.29, 0.66], "radius": 0.025, "amount": 0.06},
+          {"at": [0.94, 0.72], "radius": 0.025, "amount": 0.07}, {"at": [0.41, 0.38], "radius": 0.02, "amount": 0.05}]}

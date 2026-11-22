@@ -1,0 +1,237 @@
+{
+ "_doc": "Cast shadows (owner 19 Nov: every furniture/stool/sofa shadow must flicker and move with its light, visible on a phone). rect = GrabCut box (full-res x0,y0,x1,y1); source = light; length = shadow length px; soft = blur px (big fire soft, small candle sharp); depth = darkening at full source light; receiver = box where the shadow may land.",
+ "tools": {
+  "rect": [
+   150,
+   480,
+   310,
+   800
+  ],
+  "source": "fire_C",
+  "length": 130,
+  "soft": 9,
+  "depth": 0.5,
+  "receiver": [
+   0,
+   600,
+   420,
+   900
+  ]
+ },
+ "basket": {
+  "rect": [
+   515,
+   530,
+   690,
+   725
+  ],
+  "source": "fire_C",
+  "length": 170,
+  "soft": 9,
+  "depth": 0.5,
+  "receiver": [
+   520,
+   560,
+   1000,
+   820
+  ]
+ },
+ "stool": {
+  "rect": [
+   675,
+   725,
+   915,
+   885
+  ],
+  "source": "fire_C",
+  "length": 230,
+  "soft": 10,
+  "depth": 0.5,
+  "receiver": [
+   680,
+   760,
+   1300,
+   1050
+  ]
+ },
+ "armchair": {
+  "rect": [
+   0,
+   440,
+   215,
+   1080
+  ],
+  "source": "fire_C",
+  "length": 120,
+  "soft": 12,
+  "depth": 0.38,
+  "receiver": [
+   0,
+   700,
+   420,
+   1080
+  ]
+ },
+ "sofa": {
+  "rect": [
+   735,
+   430,
+   1440,
+   930
+  ],
+  "source": "fire_C",
+  "length": 140,
+  "soft": 12,
+  "depth": 0.38,
+  "receiver": [
+   700,
+   800,
+   1500,
+   1000
+  ]
+ },
+ "mug": {
+  "rect": [
+   1470,
+   560,
+   1595,
+   685
+  ],
+  "source": "lamp",
+  "length": 120,
+  "soft": 5,
+  "depth": 0.65,
+  "receiver": [
+   1380,
+   600,
+   1660,
+   720
+  ]
+ },
+ "books": {
+  "rect": [
+   1585,
+   610,
+   1790,
+   695
+  ],
+  "source": "lamp",
+  "length": 80,
+  "soft": 5,
+  "depth": 0.65,
+  "receiver": [
+   1520,
+   640,
+   1900,
+   740
+  ]
+ },
+ "jar": {
+  "rect": [
+   1725,
+   550,
+   1795,
+   680
+  ],
+  "source": "lamp",
+  "length": 100,
+  "soft": 5,
+  "depth": 0.65,
+  "receiver": [
+   1720,
+   450,
+   1920,
+   700
+  ]
+ },
+ "table": {
+  "rect": [
+   1375,
+   655,
+   1905,
+   1000
+  ],
+  "source": "lamp",
+  "length": 150,
+  "soft": 10,
+  "depth": 0.5,
+  "receiver": [
+   1250,
+   850,
+   1920,
+   1080
+  ]
+ },
+ "jars": {
+  "rect": [
+   140,
+   60,
+   382,
+   225
+  ],
+  "source": "candle",
+  "length": 100,
+  "soft": 3,
+  "depth": 0.55,
+  "receiver": [
+   40,
+   40,
+   390,
+   232
+  ]
+ },
+ "lantern": {
+  "rect": [
+   432,
+   80,
+   535,
+   245
+  ],
+  "source": "candle",
+  "length": 80,
+  "soft": 3,
+  "depth": 0.5,
+  "receiver": [
+   420,
+   40,
+   600,
+   246
+  ]
+ },
+ "nicheL": {
+  "rect": [
+   880,
+   368,
+   948,
+   424
+  ],
+  "source": "shelf",
+  "length": 60,
+  "soft": 2,
+  "depth": 0.7,
+  "receiver": [
+   850,
+   340,
+   950,
+   424
+  ]
+ },
+ "nicheR": {
+  "rect": [
+   1000,
+   372,
+   1040,
+   424
+  ],
+  "source": "shelf",
+  "length": 45,
+  "soft": 2,
+  "depth": 0.55,
+  "receiver": [
+   995,
+   340,
+   1080,
+   424
+  ]
+ }
+}

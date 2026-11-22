@@ -1,0 +1,22 @@
+name: lookup
+on:
+  workflow_dispatch:
+    inputs:
+      name: {description: "folder name", required: true}
+      ids: {description: "comma-separated video ids", required: true}
+permissions: {contents: write}
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -q youtube-transcript-api
+      - env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          VIDEO_IDS: ${{ inputs.ids }}
+        run: python3 scripts/video_lookup.py "${{ inputs.name }}"
+      - run: |
+          git config user.name "lookup-bot"; git config user.email "bot@ambient.local"
+          git add data/lookups && git commit -qm "[bot] lookup ${{ inputs.name }}" && git pull -q --rebase && git push -q || true

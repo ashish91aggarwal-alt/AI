@@ -1,0 +1,116 @@
+{
+  "id": "P1",
+  "channel": "pets",
+  "title": "This is Mochi. He sleeps for hours (Cozy Winter Cabin, sleeping cat)",
+  "stage": "ready",
+  "priority": 1,
+  "owner": null,
+  "lease_until": null,
+  "gates": {
+    "G0": {
+      "state": "pass",
+      "note": "owner's own cat-cabin picture (c4)",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G1": {
+      "state": "pass",
+      "note": "owner-approved still",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G2": {
+      "state": "pass",
+      "note": "true-render clips, natural motion; owner checked snow masking at zoom",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G3": {
+      "state": "pass",
+      "note": "8 original pieces, 10-15 min, equal loudness",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G4": {
+      "state": "pass",
+      "note": "98 min 4K master, phone check",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G5": {
+      "state": "pass",
+      "note": "title, description, chapters, 23 tags, thumbnail",
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator"
+    },
+    "G6": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G7": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    }
+  },
+  "duration_h": 1.64,
+  "budget_usd": 8.75,
+  "youtube_id": "nEMfFKdtlnc",
+  "publish_target": "2026-11-22",
+  "plan": "production/HANDOFF_paws_nooks.md",
+  "keyword": "cozy winter cabin sleeping cat",
+  "notes": "Scheduled public 22 Nov 2026 05:30 IST (Sat 7 pm ET).",
+  "spend": [
+    {
+      "date": "2026-11-18",
+      "usd": 2.15,
+      "what": "GPU session 2c: c4 Wan2.2 I2V crops",
+      "source": "production/gpu/README.md"
+    },
+    {
+      "date": "2026-11-18",
+      "usd": 1.78,
+      "what": "GPU session 2d: cat clips",
+      "source": "production/gpu/README.md"
+    },
+    {
+      "date": "2026-11-18",
+      "usd": 2.49,
+      "what": "FLF test pod + full set pod (28 clips)",
+      "source": "production/gpu/README.md"
+    },
+    {
+      "date": "2026-11-19",
+      "usd": 0.85,
+      "what": "GPU session 2d-faces: 12 cat clips",
+      "source": "production/gpu/README.md"
+    }
+  ],
+  "licenses": [
+    {
+      "item": "Wan2.2-I2V-A14B (motion)",
+      "licence": "Apache-2.0",
+      "source": "huggingface.co/Wan-AI/Wan2.2-I2V-A14B"
+    },
+    {
+      "item": "Original music made by code (sleep_suites.py)",
+      "licence": "own",
+      "source": "production/audio/sleep_suites.py"
+    }
+  ],
+  "history": [
+    {
+      "at": "2026-11-21T00:00:00Z",
+      "by": "orchestrator",
+      "event": "card added after upload; scheduled"
+    },
+    {
+      "at": "2026-11-22T09:55:00Z",
+      "by": "orchestrator",
+      "event": "released for channel-pets"
+    }
+  ]
+}

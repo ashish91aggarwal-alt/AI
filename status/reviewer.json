@@ -1,0 +1,18 @@
+{
+  "role": "reviewer",
+  "session": "064fbb08",
+  "updated_at": "2026-11-17T12:36:31Z",
+  "doing": "brand gate: avatars + banners (fantasy, worship)",
+  "next": "write reviews/brand/*-art-2026-11-17.md",
+  "blocked": "",
+  "files_last_commit": [
+    "reviews/brand/fantasy-art-2026-11-17.md",
+    "reviews/brand/worship-art-2026-11-17.md"
+  ],
+  "sessions": [
+    {
+      "id": "064fbb08",
+      "started_at": "2026-11-17T12:29:13Z"
+    }
+  ]
+}

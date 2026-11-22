@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns:yt="http://www.youtube.com/xml/schemas/2015" xmlns:media="http://search.yahoo.com/mrss/" xmlns="http://www.w3.org/2005/Atom">
+ <entry>
+  <id>yt:video:8tuPQxbvyrU</id>
+  <yt:videoId>8tuPQxbvyrU</yt:videoId>
+  <yt:channelId>UCL2pjCRWsaRrLks12WJ3Zxg</yt:channelId>
+  <title>Cozy Vintage Woodland Thanksgiving | Oldies Playing in Another Room &amp; Fireplace Ambience | 4K No AI</title>
+  <published>2026-11-13T15:52:17+00:00</published>
+  <media:group>
+   <media:title>Cozy Vintage Woodland Thanksgiving</media:title>
+   <media:description>long text with <b>tags</b> &amp; 00:00 chapters</media:description>
+   <media:community>
+    <media:starRating count="1284" average="5.00" min="1" max="5"/>
+    <media:statistics views="54191"/>
+   </media:community>
+  </media:group>
+ </entry>
+ <entry>
+  <id>yt:video:CmZu4Kr2AZ0</id>
+  <yt:videoId>CmZu4Kr2AZ0</yt:videoId>
+  <title>Vintage Christmas Manor 🎄 Cozy Christmas Jazz &amp; Crackling Fireplace Ambience | 4K No AI</title>
+  <published>2026-11-10T15:37:30+00:00</published>
+  <media:group><media:community><media:starRating count="5369" average="5.00" min="1" max="5"/><media:statistics views="241660"/></media:community></media:group>
+ </entry>
+</feed>

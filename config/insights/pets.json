@@ -1,0 +1,106 @@
+{
+ "channel": "pets",
+ "updated": "2026-11-21",
+ "insights": [
+  {
+   "kind": "content",
+   "title": "Video 1 is scheduled: This is Mochi. He sleeps for hours 😴 Cozy Winter Cabin, Crackling Fireplace & Soft Piano for Sleep",
+   "detail": "98 min, 4K, Music category, 23 tags, 8 chapters (one per original piece). Goes public Sun 22 Nov 2026 05:30 IST (Sat 7 pm US Eastern).",
+   "metric": "22 Nov 05:30 IST",
+   "link": "https://youtu.be/nEMfFKdtlnc",
+   "source": "YouTube Studio, 21 Nov 2026",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "content",
+   "title": "Channel live: Paws & Nooks (@PawsNooks)",
+   "detail": "Dogs and cats napping in cozy places with calm original music. Banner, profile picture, description and keywords published; phone verified; not made for kids.",
+   "metric": "created 20 Nov",
+   "link": "https://www.youtube.com/channel/UC8_ssCNad7iM21AJTcHp6Qw",
+   "source": "YouTube Studio",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "length",
+   "title": "3 hours is the norm for piano + ambience",
+   "detail": "Cozy Timez 3 h videos have 7.9M and 8.6M views; SnowWhisper Sleep 3 h got 190K in 2 months. Pure sound and purring go 8, 12 or 24 h. Our 98 min is short for the niche.",
+   "metric": "3 h",
+   "link": "https://www.youtube.com/@CozyTimez",
+   "source": "production/research/paws_nooks_youtube_2026-11-20.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "niche",
+   "title": "Purring is its own big sub-niche",
+   "detail": "HomeMe 'Cozy Purring Cat ASMR' 24 h has 3.2M views; Catnap Melodies (35K subs) 3 h cat video 198K. We have no purr layer yet.",
+   "metric": "3.2M views",
+   "link": "https://www.youtube.com/@Home_Me",
+   "source": "production/research/paws_nooks_youtube_2026-11-20.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "niche",
+   "title": "Dog side is open and big",
+   "detail": "Rainy Guy 8 h sleeping-dog fireplace videos reach 1M to 4.2M views; Heal Dogs 8 h 548K. Few cozy dog channels compete, so a dog video is a good second test.",
+   "metric": "4.2M views",
+   "link": "https://www.youtube.com/results?search_query=sleeping+dog+fireplace+ambience",
+   "source": "YouTube search, 21 Nov 2026",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "niche",
+   "title": "Small channels can still break in",
+   "detail": "Cozy Little Studio got 41.8K views in one month on a 1 h cabin video; SnowWhisper Sleep (3.7K subs) 190K in 2 months. New uploads in the niche are 2 hours to 1 month old: demand is live.",
+   "metric": "41.8K in 1 month",
+   "link": "https://www.youtube.com/results?search_query=cozy+cabin+sleeping+cat",
+   "source": "YouTube search, 21 Nov 2026",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "keywords",
+   "title": "Titles are keyword strings",
+   "detail": "Scene + sounds + use + length, with ❄️🔥🐾. Recurring words: cozy (winter) cabin, sleeping cat, crackling fireplace, falling snow, soft piano, deep sleep, relaxing, ambience, 3 hours. '4K' is rare in this niche (0 of 15 top cat/cabin titles); YouTube shows its own 4K badge.",
+   "metric": "0/15 use 4K",
+   "link": "",
+   "source": "production/research/paws_nooks_youtube_2026-11-20.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "packaging",
+   "title": "Thumbnails have no text",
+   "detail": "Dark full room, glowing fire and a snowy or rainy window, the animal small. Descriptions open with a 2-3 line scene story, then uses (sleep, study, reading), then hashtags. Categories: Music, Entertainment, People & Blogs (none use Pets & Animals).",
+   "metric": "",
+   "link": "",
+   "source": "production/research/paws_nooks_youtube_2026-11-20.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "timing",
+   "title": "Publish time matters less than full 4K processing",
+   "detail": "Top videos went live at all hours (00:00-23:33 IST). The biggest (Cozy Timez 7.9M) went live Fri 7 pm US Eastern. Long sleep videos live on search and suggested traffic for years; be fully processed before the first US evening.",
+   "metric": "7 pm ET",
+   "link": "",
+   "source": "production/research/paws_nooks_youtube_2026-11-20.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  },
+  {
+   "kind": "next",
+   "title": "Video 2 plan",
+   "detail": "3 h length with '3 Hours' in the title, optional soft purr layer, story caption + keyword tail, a new animal and a new place (avoid repetitive content), uneven 10-15 min original pieces. Check video 1's first 48 h (impressions, CTR, average view duration) first.",
+   "metric": "after 24 Nov",
+   "link": "",
+   "source": "production/HANDOFF_paws_nooks.md",
+   "channel": "pets",
+   "date": "2026-11-21"
+  }
+ ]
+}

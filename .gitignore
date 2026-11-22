@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+# heavy media never goes in git — keep on the pod / local disk / fable-transfer releases
+*.mp4
+*.mov
+*.wav
+*.flac
+*.m4a
+*.safetensors
+renders/
+work/
+client_secret*.json
+production/loop/out/

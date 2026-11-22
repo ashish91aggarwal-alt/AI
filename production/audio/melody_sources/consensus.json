@@ -1,0 +1,100 @@
+{
+ "coventry": {
+  "best": [
+   "AlexKetelaars/SMT-project-C-Christmasify",
+   "datasets_original/abc_christmas/Coventry_Carol_540.abc"
+  ],
+  "score": 0.37,
+  "agree": [
+   [
+    "2U1/NN",
+    "Assignment5/notation/C/Coventry_Carol_540.abc",
+    1.0
+   ]
+  ],
+  "len": 30
+ },
+ "wexford": {
+  "best": [
+   "ztime/polska",
+   "data/original_data/sessions/sessions-22291.abc"
+  ],
+  "score": 0.99,
+  "agree": [],
+  "len": 73
+ },
+ "dulci": {
+  "best": [
+   "cuthbertLab/music21",
+   "music21/corpus/essenFolksong/erk30.abc"
+  ],
+  "score": 0.75,
+  "agree": [
+   [
+    "syntithenai/abc2book",
+    "abcresources/jc/abc_tune_jc_201290239.abc",
+    0.97
+   ]
+  ],
+  "len": 56
+ },
+ "emmanuel": {
+  "best": [
+   "jclements3/HarpHymnal",
+   "tablet_app/app/src/main/assets/somerset/abc/174__samba.abc"
+  ],
+  "score": 0.66,
+  "agree": [
+   [
+    "syntithenai/abc2book",
+    "abcresources/jc/abc_tune_jc_201262121.abc",
+    0.97
+   ],
+   [
+    "stretchyboy/cherry-strudel",
+    "Christmas_Carols.abc",
+    0.97
+   ]
+  ],
+  "len": 230
+ },
+ "holynight": {
+  "best": [
+   "syntithenai/abc2book",
+   "abcresources/jc/abc_tune_jc_201318250.abc"
+  ],
+  "score": 0.51,
+  "agree": [],
+  "len": 97
+ },
+ "silent": {
+  "best": [
+   "syntithenai/abc2book",
+   "abcresources/jc/abc_tune_jc_201280835.abc"
+  ],
+  "score": 0.4,
+  "agree": [
+   [
+    "avnerdorman/abc-solfege-tool",
+    "songs/Glade_Jul.abc",
+    1.0
+   ]
+  ],
+  "len": 60
+ },
+ "bethlehem": {
+  "best": [
+   "syntithenai/abc2book",
+   "abcresources/jc/abc_tune_jc_201262121.abc"
+  ],
+  "score": 0.38,
+  "agree": [
+   [
+    "stretchyboy/cherry-strudel",
+    "Christmas_Carols.abc",
+    1.0
+   ]
+  ],
+  "len": 57
+ }
+}

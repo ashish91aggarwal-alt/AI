@@ -1,0 +1,121 @@
+{
+ "note": "Session 2a regens (Qwen-Image, 40 steps, true_cfg 4.0). Corrected after the 17 Nov pre-screen of session 1: F1 plates all had a dog on the rug; W3 plates had dirt circles, tents and a person; sheep lay on their side with legs out and flames in frame; painter signatures in corners. Seeds start at 101 so they never repeat session 1. Each item has its own negative prompt (F1 must show snow; W3 must not).",
+ "images": [
+  {
+   "id": "f1_plate",
+   "w": 1664,
+   "h": 928,
+   "seeds": 8,
+   "seed0": 101,
+   "prompt": "Interior of a cozy elven inn on a snowy Christmas night, wide 16:9 cinematic view, classical oil painting on canvas with visible brushstrokes, painterly realism. A large stone hearth slightly left of centre with a strong warm fire, a plain bare woven rug on the wooden floor in front of the hearth with nothing lying on it, carved wooden beams with soft organic elven curves, evergreen garlands with small red berries and tiny warm lanterns, a round table with a pewter mug and a closed leather-bound book, tall arched leaded-glass windows on the right showing a blue night with falling snow and a distant snowy forest. Warm amber firelight versus cool blue window light. The room is empty: no animals, no pets, no people, no text, no logos, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, animals, pets, dog, cat, fox, people, person, figure"
+  },
+  {
+   "id": "w3_plate",
+   "w": 1664,
+   "h": 928,
+   "seeds": 8,
+   "seed0": 101,
+   "prompt": "A quiet hillside pasture at night in ancient Judea, wide 16:9 cinematic view, classical oil painting on canvas with visible brushstrokes, painterly realism. Gentle rolling hills covered in continuous green winter grass, low dry-stone walls and a few olive trees, a small flock of cream sheep resting in the grass in the middle distance, a small open campfire of sticks on the left side of the picture glowing warm orange with a few stones around it, a distant small hilltop village with a few warm lamplit windows, a clear deep-blue night sky full of small natural stars with one brighter star above the village. Peaceful and reverent. No people, no figures, no tents, no buildings in the foreground, no bare dirt patches, no snow, no text, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, snow, people, person, figure, shepherd, tent, building in foreground, bare dirt patch, cartoon"
+  },
+  {
+   "id": "f1_fox",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "seed0": 101,
+   "prompt": "A red fox curled up asleep in a tight round ball, legs folded under its body and hidden, nose tucked into its bushy tail, eyes closed, one tail, two ears, whole animal in frame, centred, on a plain flat dark brown background with nothing else in the picture, warm light from the left, classical oil painting with visible brushstrokes, painterly realism, anatomically correct red fox. No fire, no flames, no props, no text, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, fire, flames, props, extra legs, extra tail, cartoon"
+  },
+  {
+   "id": "w3_sheep",
+   "w": 1328,
+   "h": 1328,
+   "seeds": 6,
+   "seed0": 101,
+   "prompt": "A single cream-coloured sheep resting on the ground in sternal recumbency, lying on its belly with all four legs folded underneath the body and hidden, head up and resting low, eyes half closed, calm, seen from the side, whole animal in frame, centred, on a plain flat dark background with only a little short grass under it, warm light from the left and faint cool blue light from above, classical oil painting with visible brushstrokes, painterly realism, anatomically correct sheep. No fire, no flames, no stars, no text, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, fire, flames, stars, lying on its side, legs stretched out, cartoon, cute, anime"
+  },
+  {
+   "id": "pl_banner2",
+   "w": 1664,
+   "h": 928,
+   "seeds": 6,
+   "seed0": 201,
+   "prompt": "Wide panoramic oil painting for a channel banner, classical oil painting on canvas with visible brushstrokes, painterly realism. A dark, calm, softly textured midnight-blue night scene across the whole width: a deep blue sky with faint stars above a dark stone window ledge that runs straight across the middle of the picture. Standing on the ledge, a little to the right of centre, at the vertical middle of the picture: one antique brass lantern with a warm glowing flame, resting on a closed old leather book. The lantern and book are small, fully visible, nothing cut off. The whole left half and the centre of the picture are calm, dark and empty with no objects, plenty of quiet dark space. Cozy fantasy mood, warm amber glow against deep blue, no castle, no buildings, no people, no text, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, castle, building, tower, people, figure, cluttered, many objects, candle inside lantern"
+  },
+  {
+   "id": "pp_banner2",
+   "w": 1664,
+   "h": 928,
+   "seeds": 6,
+   "seed0": 201,
+   "prompt": "Wide panoramic oil painting for a channel banner, classical pastoral landscape oil painting with visible brushstrokes, painterly realism. A calm green pasture at early dawn with soft golden light and gentle mist, rolling hills far away. Across the middle of the picture, slightly right of centre, three or four cream sheep grazing calmly in the grass, each one whole and clearly separate, fully visible, nothing cut off, small in the frame. The centre and the left side are soft, open and calm with muted darker green meadow tones and no objects. Serene and reverent, cream, gold and soft blue palette, no people, no buildings, no text, no signature.",
+   "neg": "blurry, low quality, text, watermark, signature, logo, 3d render, cgi, plastic, people, figure, building, fence, merged animals, two-headed, extra legs, cartoon"
+  }
+ ],
+ "motion": {
+  "fox": "a red fox asleep and curled up by a fireplace, breathing slowly and calmly, its chest and flank gently rising and falling, the body otherwise completely still, oil painting",
+  "fox_ear": "a red fox asleep and curled up, one ear gives a single small natural twitch, the rest of the body completely still, oil painting",
+  "sheep": "a sheep resting on its belly in grass at night, breathing slowly and calmly, its flank gently rising and falling, head and legs still, oil painting",
+  "hearth": "a warm log fire burning in a stone hearth, flames flickering gently and naturally, soft glowing embers, the stones and logs stay still, oil painting",
+  "campfire": "a small campfire of sticks burning at night in a field, flames flickering gently and naturally, embers glowing, the stones and grass stay still, oil painting"
+ },
+ "music": {
+  "base": "medieval fantasy, cozy, winter, christmas, inn by the fireside, instrumental, no vocals, no drums, warm room reverb, gentle, slow",
+  "seeds": 3,
+  "duration": 330,
+  "tracks": [
+   {
+    "id": "f1_m01",
+    "tags": "celtic harp lead, soft strings pad",
+    "bpm": 64,
+    "key": "D dorian"
+   },
+   {
+    "id": "f1_m02",
+    "tags": "lute and recorder duet, light hammered dulcimer",
+    "bpm": 72,
+    "key": "G major"
+   },
+   {
+    "id": "f1_m03",
+    "tags": "low whistle melody, cello drone, harp arpeggios",
+    "bpm": 60,
+    "key": "E minor"
+   },
+   {
+    "id": "f1_m04",
+    "tags": "music box and harp, sleepy, lullaby feel",
+    "bpm": 58,
+    "key": "G major"
+   },
+   {
+    "id": "f1_m05",
+    "tags": "fiddle slow air, nylon guitar",
+    "bpm": 66,
+    "key": "A minor"
+   },
+   {
+    "id": "f1_m06",
+    "tags": "wooden flute, soft bells, harp",
+    "bpm": 70,
+    "key": "D dorian"
+   },
+   {
+    "id": "f1_m07",
+    "tags": "solo lute, intimate, candlelit",
+    "bpm": 62,
+    "key": "A minor"
+   },
+   {
+    "id": "f1_m08",
+    "tags": "strings and soft choir pad ahh, celestial winter",
+    "bpm": 56,
+    "key": "G major"
+   }
+  ]
+ }
+}
