@@ -1,3 +1,4 @@
 #!/bin/sh
 # Stamps status/<role>.json on every commit and enforces file ownership (AGENTS.md).
-exec python3 "$(git rev-parse --show-toplevel)/scripts/agent.py" hook-pre-commit
+# Only acts on commits that touch ambient-channels/ (the AI repo holds other projects too).
+exec python3 "$(dirname "$0")/../scripts/agent.py" hook-pre-commit

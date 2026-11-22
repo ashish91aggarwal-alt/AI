@@ -16,7 +16,8 @@ Times are IST. Replies to the owner: simple text, short, no heavy formatting.
 - First real read: Tue 24 Nov morning IST (impressions, CTR, average view duration in Studio > Analytics).
 
 ## Where things live
-- Repo: github.com/ashish91aggarwal-alt/ambient-channels (role: orchestrator; commit prefix "[orchestrator]").
+- Repo: github.com/ashish91aggarwal-alt/AI, folder ambient-channels/ (moved there 22 Nov 2026; the old private repo
+  ashish91aggarwal-alt/ambient-channels keeps the full history). Roles per AGENTS.md; Paws & Nooks = channel-pets.
   - production/research/paws_nooks_youtube_2026-11-20.md - niche research + everything applied to video 1.
   - production/loop/LESSONS.md + skill living-picture-ambient - the full making method and every fix.
   - production/cards/P1.json - board card (GPU spend about $7.27 of $8.75 approved).
@@ -27,7 +28,7 @@ Times are IST. Replies to the owner: simple text, short, no heavy formatting.
   numbers, hottest niche upload, usual length, fastest small channel). Refreshed by the scheduled task
   "Ambient dashboard refresh (every 6 h)" - it had not saved anything between 17 and 21 Nov; check its last run.
 - Tracker: GitHub Actions "track" every 6 h (cron 17 */6 UTC; GitHub sometimes skips a run). Run it now with:
-  gh api -X POST repos/ashish91aggarwal-alt/ambient-channels/actions/workflows/track.yml/dispatches -f ref=main
+  gh api -X POST repos/ashish91aggarwal-alt/AI/actions/workflows/ambient-track.yml/dispatches -f ref=main
   then git pull and read data/mirror/pets/videos.json.
 - Master video: owner's laptop Downloads\PawsNooks_4K_v2\PawsNooks_SleepyCat_4K_v2.mp4 (the cloud workspace
   copy does not carry over to a new chat). Art: Downloads\PawsNooks_4K\art\.
@@ -46,5 +47,5 @@ Analytics OAuth (docs/apis.md, Level 3) - needs a one-time Google sign-in by the
 3. Optional: set up YouTube Analytics OAuth so watch time fills the dashboard daily.
 
 ## Starter prompt for a new chat (in the "PawsNook - YT" project)
-"Read the project doc 'Paws & Nooks - handoff' and the session log, then clone ambient-channels (role:
+"Read the project doc 'Paws & Nooks - handoff' and the session log, then clone AI and work in ambient-channels/ (role:
 orchestrator) and read production/HANDOFF_paws_nooks.md. Then: <what you want next>."

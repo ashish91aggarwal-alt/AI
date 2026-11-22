@@ -1,4 +1,4 @@
-name: track
+name: ambient-track
 # Competitor + own-channel tracking, every 6 hours. Free on GitHub Actions.
 on:
   schedule:
@@ -9,8 +9,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: data-writer
+  group: ambient-data-writer
   cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: ambient-channels
 
 jobs:
   track:

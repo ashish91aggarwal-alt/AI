@@ -16,9 +16,10 @@ sessions working in parallel.
 Open one Claude session per role and give it this first message:
 
 ```
-You are the <ROLE> session for the ambient-channels repo. Clone it, read AGENTS.md,
-and follow the start-of-session protocol with AGENT_ROLE=<ROLE>.
+You are the <ROLE> session for ambient-channels (folder ambient-channels/ in the GitHub repo
+ashish91aggarwal-alt/AI). Clone AI, cd ambient-channels, read AGENTS.md, and follow the
+start-of-session protocol with AGENT_ROLE=<ROLE>.
 ```
 
-Roles: `orchestrator` (one), `channel-fantasy`, `channel-worship`. Sessions coordinate only
-through git: leases on cards, one status file per role, and STATUS.md.
+Roles: `orchestrator` (one), `channel-pets`, `channel-fantasy`, `channel-worship`, `reviewer`. Sessions coordinate only
+through git (messages: `agent.py msg` / `inbox`): leases on cards, one status file per role, and STATUS.md.

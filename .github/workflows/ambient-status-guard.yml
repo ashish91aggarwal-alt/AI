@@ -1,15 +1,20 @@
-name: status-guard
+name: ambient-status-guard
 # Every pushed commit must carry the status trail (AGENTS.md). Then STATUS.md is rebuilt.
 on:
   push:
     branches: [main]
+    paths: ["ambient-channels/**", ".github/workflows/ambient-*.yml"]
 
 permissions:
   contents: write
 
 concurrency:
-  group: data-writer
+  group: ambient-data-writer
   cancel-in-progress: false
+
+defaults:
+  run:
+    working-directory: ambient-channels
 
 jobs:
   guard:

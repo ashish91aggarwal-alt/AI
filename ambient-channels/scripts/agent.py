@@ -296,7 +296,7 @@ def cmd_new_card(a):
 
 def last_commit_by_role():
     out = {}
-    raw = git("log", "-n", "300", "--pretty=%H%x09%cI%x09%s", check=False)
+    raw = git("log", "-n", "300", "--pretty=%H%x09%cI%x09%s", "--", ".", check=False)
     for line in raw.splitlines():
         h, t, s = line.split("\t", 2)
         m = re.match(r"\[([\w-]+)\]", s)
@@ -352,7 +352,8 @@ def cmd_report(a):
 
 
 def staged_files():
-    return [f for f in git("diff", "--cached", "--name-only", check=False).splitlines() if f]
+    # --relative: only files inside this folder (the repo may hold other projects), paths relative to ROOT
+    return [f for f in git("diff", "--cached", "--name-only", "--relative", check=False).splitlines() if f]
 
 
 OWNERSHIP = {
@@ -377,8 +378,10 @@ def allowed(role, f):
 
 
 def cmd_hook_pre_commit(a):
-    role = role_of(None)
     files = staged_files()
+    if not files:
+        return  # commit touches nothing in ambient-channels/: not ours to police
+    role = role_of(None)
     bad = []
     for f in files:
         if f.endswith(".json") and (ROOT / f).exists():
@@ -404,6 +407,8 @@ def cmd_hook_pre_commit(a):
 
 
 def cmd_hook_commit_msg(a):
+    if not staged_files():
+        return
     role = role_of(None)
     msg = Path(a.file).read_text()
     if role in BOT_ROLES or msg.startswith("Merge") or msg.startswith("fixup!"):
@@ -415,17 +420,18 @@ def cmd_hook_commit_msg(a):
 def cmd_check(a):
     """CI: every non-bot commit in the range must be prefixed and touch its role's status file."""
     rng = a.range or "HEAD~20..HEAD"
-    raw = git("log", "--no-merges", "--pretty=%H%x09%an%x09%s", rng, check=False)
+    raw = git("log", "--no-merges", "--pretty=%H%x09%an%x09%s", rng, "--", ".", check=False)
     problems = []
     for line in raw.splitlines():
         h, author, subj = line.split("\t", 2)
-        if author in ("github-actions[bot]", "tracker-bot") or subj.startswith("[bot]") or subj.startswith("[tracker]"):
+        if author in ("github-actions[bot]", "tracker-bot") or subj.startswith("[bot]") or subj.startswith("[tracker]") \
+                or subj.startswith("Squashed '"):
             continue
         m = re.match(r"\[([\w-]+)\] ", subj)
         if not m:
             problems.append(f"{h[:7]} missing [role] prefix: {subj}")
             continue
-        files = git("show", "--pretty=", "--name-only", h, check=False).splitlines()
+        files = git("show", "--pretty=", "--name-only", "--relative", h, check=False).splitlines()
         if f"status/{m.group(1)}.json" not in files:
             problems.append(f"{h[:7]} by {m.group(1)} did not update status/{m.group(1)}.json (hooks not installed?)")
     if problems:

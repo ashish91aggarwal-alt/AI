@@ -20,6 +20,9 @@ an entry in `config/channels.json`. The orchestrator creates them.
 
 ## Start-of-session protocol (do these in order)
 
+This project lives in the folder `ambient-channels/` of the GitHub repo `ashish91aggarwal-alt/AI` (the AI repo
+also holds other projects; our hooks and CI only act on this folder). Run everything from `ambient-channels/`.
+
 ```bash
 git pull --rebase
 bash scripts/setup.sh                 # once per clone: installs the commit hooks

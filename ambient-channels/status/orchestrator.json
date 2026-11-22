@@ -1,18 +1,24 @@
 {
   "role": "orchestrator",
   "session": null,
-  "updated_at": "2026-11-22T09:50:53Z",
-  "doing": "Paws & Nooks live; added channel-pets role + session messaging (agent.py msg/inbox)",
-  "next": "Tue 24 Nov: first 48 h read of nEMfFKdtlnc (or let channel-pets do it)",
+  "updated_at": "2026-11-22T09:56:02Z",
+  "doing": "moved ambient-channels into AI/ambient-channels",
+  "next": "owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker",
   "blocked": "",
   "files_last_commit": [
+    ".githooks/commit-msg",
+    ".githooks/pre-commit",
+    ".github/workflows/fetch_overlays.yml",
+    ".github/workflows/lookup.yml",
+    ".github/workflows/status-guard.yml",
+    ".github/workflows/track.yml",
     "AGENTS.md",
-    "CLAUDE.md",
-    "agents/channel-pets.md",
-    "channels/pets/CHANNEL.md",
-    "config/channels.json",
-    "production/cards/P1.json",
-    "scripts/agent.py"
+    "README.md",
+    "docs/apis.md",
+    "production/HANDOFF_paws_nooks.md",
+    "scripts/agent.py",
+    "scripts/setup.sh",
+    "scripts/video_lookup.py"
   ],
   "sessions": [],
   "outbox": [

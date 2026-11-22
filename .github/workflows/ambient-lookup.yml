@@ -1,10 +1,14 @@
-name: lookup
+name: ambient-lookup
 on:
   workflow_dispatch:
     inputs:
       name: {description: "folder name", required: true}
       ids: {description: "comma-separated video ids", required: true}
 permissions: {contents: write}
+defaults:
+  run:
+    working-directory: ambient-channels
+
 jobs:
   lookup:
     runs-on: ubuntu-latest

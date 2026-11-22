@@ -1,6 +1,6 @@
 # Tracking & APIs
 
-Tracking runs on **GitHub Actions** (`.github/workflows/track.yml`) every 6 hours,
+Tracking runs on **GitHub Actions** (`.github/workflows/ambient-track.yml` at the root of the AI repo) every 6 hours,
 free, no machine of yours needs to be on. It works in three levels — each level
 adds data, nothing breaks if a level isn't set up.
 
@@ -21,7 +21,8 @@ Free quota is 10,000 units/day; our run uses ~60 units → ~240/day at 4 runs.
 
 **Status (17 Nov 2026):** key `tracker-youtube-data` created in Google Cloud project
 `ambient-channels-515010`, restricted to YouTube Data API v3. It goes live once the owner adds
-it as the GitHub secret `YOUTUBE_API_KEY`.
+it as the GitHub secret `YOUTUBE_API_KEY` (since 22 Nov 2026 the repo is ashish91aggarwal-alt/AI; the secret must be
+set there too).
 
 ### Own-channel mirror (`scripts/mirror.py`, same key)
 Copies our own channel pages (header, every video, stats, every comment and reply) into

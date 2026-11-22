@@ -1,10 +1,14 @@
-name: fetch-overlays
+name: ambient-fetch-overlays
 on:
   workflow_dispatch:
     inputs:
       tag: {description: "release tag", required: true}
       urls: {description: "space-separated name=url pairs", required: true}
 permissions: {contents: write}
+defaults:
+  run:
+    working-directory: ambient-channels
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
