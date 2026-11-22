@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T09:56:45Z",
+  "generated_at": "2026-11-22T09:58:42Z",
   "cards": [
     {
       "id": "F1",
@@ -773,10 +773,10 @@
     }
   },
   "last_commits": {
-    "orchestrator": {
-      "hash": "3b903ae",
-      "at": "2026-11-22T09:56:02Z",
-      "subject": "[orchestrator] ambient-channels: work from inside the AI repo"
+    "bot": {
+      "hash": "d933dd8",
+      "at": "2026-11-22T09:56:45Z",
+      "subject": "[bot] rebuild STATUS.md"
     }
   }
 }
