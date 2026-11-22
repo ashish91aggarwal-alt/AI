@@ -4,7 +4,7 @@
 const H = { monty: 1339, sakshi: 1210, vishnu: 1212, brahma: 1265, shani: 1460 }, T = { monty: 1, sakshi: 0.9, vishnu: 1.05 * 0.8, brahma: 0.95 * 0.8, shani: 1.15 };
 const SHOTS = [ // [label, [char, scale], ...]  (two-shots in the rough cut; portal/foreground shots get a depth note)
   ['terrace two-shot', ['vishnu', 0.62], ['monty', 0.66]], ['V01 open', ['vishnu', 0.72], ['monty', 0.68]],
-  ['office (Monty in foreground)', ['brahma', 0.95 * 0.95], ['monty', 0.9], 'fg'], ['Sakshi entry', ['sakshi', 0.72], ['monty', 0.7]], ['formula', ['sakshi', 0.72], ['monty', 0.7]],
+  ['office (Monty beside the desk)', ['brahma', 0.95 * 0.95 * 0.84], ['monty', 0.72], 'fg'], ['Sakshi entry', ['sakshi', 0.72], ['monty', 0.7]], ['formula', ['sakshi', 0.72], ['monty', 0.7]],
   ['Shani portal (magic window)', ['shani', 0.62], ['monty', 0.55], 'portal'],
 ];
 let fail = 0;

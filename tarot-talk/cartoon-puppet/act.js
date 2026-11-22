@@ -28,11 +28,31 @@ function viseme(t) {
   const a = amp(t), z = at(L.zcr, t);
   if (a < 0.12) return 'X'; if (z > 0.3 && a < 0.7) return 'E'; if (a < 0.3) return 'B'; if (a < 0.62) return 'C'; return 'D';
 }
+function gestureArm(arm, t, g, side, calm) { // speaker's talking hand rises and opens on stressed syllables (elbow leads, wrist follows)
+  if (!arm || !arm.E || !arm.W) return arm;
+  const k = calm ? 0.6 : 1, sway = Math.sin(t * 3.1 + side) * 0.35 + 0.65;
+  const dE = [side * 6 * g * k, -10 * g * k], dW = [side * 18 * g * k * sway, -34 * g * k];
+  const E = [arm.E[0] + dE[0], arm.E[1] + dE[1]], W = [arm.W[0] + dW[0], arm.W[1] + dW[1]], out = { ...arm, E, W };
+  if (arm.handAng !== undefined) { const a0 = Math.atan2(arm.W[1] - arm.E[1], arm.W[0] - arm.E[0]), a1 = Math.atan2(W[1] - E[1], W[0] - E[0]); out.handAng = arm.handAng + (a1 - a0); }
+  return out;
+}
+function talkGesture(t) { // smooth 0..1: syllable accents plus a slower phrase swell
+  let g = 0; for (let k = 0; k < 35; k++) if (at(L.onset, t - k / FPS)) g = Math.max(g, Math.exp(-k / FPS / 0.16) * (1 - Math.exp(-(k + 1) / FPS / 0.05)));
+  return Math.min(1, g * 1.4 + amp(t) * 0.25);
+}
 function perform(kind, pose, t) {
   const p = { ...pose }, talk = speaking(kind, t), a = talk ? amp(t) : 0, on = talk ? onsetPulse(t) : 0, blink = blinkAt(kind, t);
   const calm = kind === 'shani' || kind === 'vishnu' || kind === 'brahma';
   const [sx, sy] = saccade(kind, t, kind === 'monty' && !talk ? 26 : calm ? 10 : 16);
   p.tilt = (p.tilt || 0) + on * (calm ? 1.5 : 3.5) + Math.sin(t * (calm ? 1.1 : 1.9) + kind.length) * (calm ? 0.8 : 1.6);
+  if (talk) { const g = talkGesture(t), calm2 = kind === 'shani' || kind === 'brahma';
+    if (p.armR && !(kind === 'shani' && (!p.armR || p.armR.hand === 'relax'))) p.armR = gestureArm(p.armR, t, g, 1, calm2);
+    if (kind === 'monty' || kind === 'sakshi') p.armL = gestureArm(p.armL, t + 0.4, g * 0.5, -1, false); }
+  if (kind === 'monty' && p.shiver) { // fear: knees knock and the body trembles through the legs, feet planted
+    const s = Math.sin(t * 2 * Math.PI * 6) * (0.6 + 0.4 * Math.sin(t * 9));
+    if (p.legL) p.legL = { ...p.legL, knee: [p.legL.knee[0] + 7 * s, p.legL.knee[1]] };
+    if (p.legR) p.legR = { ...p.legR, knee: [p.legR.knee[0] - 7 * s, p.legR.knee[1]] };
+    p.shiver = 1 + 0.8 * s; p.tilt = (p.tilt || 0) + 1.2 * s; }
   if (kind === 'monty') {
     p.lookX = (p.lookX || 0) + sx; p.lookY = (p.lookY || 0) + sy;
     p.browUp = (p.browUp || 0) + on * 0.6; p.brow = (p.brow || 0) + (talk ? Math.sin(t * 7) * 0.15 : 0);

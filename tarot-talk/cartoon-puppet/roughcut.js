@@ -16,7 +16,7 @@ const cloudSeat = () => `${L.softCloud(420, 1440, 1.3, '#f7f6f1')}${L.softCloud(
 const vishnu = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1000)">${cloudSeat()}${V.drawSeated(A.perform('vishnu', { ...p, breath: Math.sin(t * 2), t }, TV))}</g>`;
 const monty = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1100)">${M.draw(A.perform('monty', { ...p, t, breath: Math.sin(t * 2.6) }, TV))}</g>`;
 const shani = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1000)">${SH.draw(A.perform('shani', { ...p, breath: Math.sin(t * 1.4) }, TV))}</g>`;
-const brahma = (p, t) => `${B.tokenDisplay(8)}<g transform="translate(540 1000) scale(0.95) translate(-540 -1000)">${B.draw(A.perform('brahma', { ...p, t }, TV))}</g>${B.desk()}`;
+const brahma = (p, t, side) => side ? `${B.tokenDisplay(8)}<g transform="translate(380 950) scale(0.84) translate(-540 -1080)"><g transform="translate(540 1000) scale(0.95) translate(-540 -1000)">${B.draw(A.perform('brahma', { ...p, t }, TV))}</g>${B.desk()}</g>` : `${B.tokenDisplay(8)}<g transform="translate(540 1000) scale(0.95) translate(-540 -1000)">${B.draw(A.perform('brahma', { ...p, t }, TV))}</g>${B.desk()}`;
 const sakshi = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1100)">${SK.draw(A.perform('sakshi', { ...p, t, breath: Math.sin(t * 2.2), braidSwing: Math.sin(t * 2.4) * 0.35 }, TV))}</g>`;
 const cam = (body, cx, cy, z) => `<g transform="translate(${cx} ${cy}) scale(${z}) translate(${-cx} ${-cy})">${body}</g>`;
 
@@ -38,8 +38,8 @@ function mulankCard(t, t0, x, i) {
     i === 1 ? SD.bunty({ x: 0, y: -60, s: 0.42 }) : SD.khanna({ x: 0, y: -60, s: 0.42, t, sweat: t > 15.07 ? 1 : 0, mouth: t > 15.07 ? 'nervous' : 'flat', small: t > 15.07 ? 1 : 0, browUp: t > 15.07 ? 1 : 0, frown: t > 15.07 ? -0.6 : 1 });
   return `<g transform="translate(${x} 900) scale(${k * 0.98})"><rect x="-165" y="-300" width="330" height="520" rx="26" fill="#fff8e8" stroke="#1b1422" stroke-width="9"/>` +
     `<clipPath id="${id}"><rect x="-150" y="-286" width="300" height="300" rx="18"/></clipPath><rect x="-150" y="-286" width="300" height="300" rx="18" fill="#f3d9a8"/><g clip-path="url(#${id})">${face}</g>` +
-    `<text x="0" y="70" font-family="Arial Black,Arial" font-weight="900" font-size="${i === 2 ? 26 : 32}" text-anchor="middle" fill="#1b1422">${H[0]}</text>` +
-    `<text x="0" y="120" font-family="Arial Black,Arial" font-weight="900" font-size="30" text-anchor="middle" fill="#c62b34">${H[1]}</text>` +
+    `<text x="0" y="70" font-family="Arial Black,Arial" font-weight="900" font-size="${i === 2 ? 30 : 36}" text-anchor="middle" fill="#1b1422">${H[0]}</text>` +
+    `<text x="0" y="122" font-family="Arial Black,Arial" font-weight="900" font-size="34" text-anchor="middle" fill="#c62b34">${H[1]}</text>` +
     `<circle cx="0" cy="180" r="34" fill="#efbd3a" stroke="#1b1422" stroke-width="6"/><text x="0" y="194" font-family="Arial Black,Arial" font-weight="900" font-size="40" text-anchor="middle" fill="#1b1422">8</text></g>`;
 }
 function phoneIncognito(t, t0) { if (t < t0) return ''; const k = backOut(clamp((t - t0) / 0.3));
@@ -74,35 +74,39 @@ const SHOTS = [
     return { ...terraceScene(t, twoActors(t, vp(0), mp(0)) + '<rect width="1080" height="1920" fill="#05040c" opacity="0.6"/>'), over: big(11.15, 12.44, 0) + big(12.44, 13.63, 1) + big(13.63, 14.2, 2) + row }; }],
   [15.07, 16.07, t => ({ ...terraceScene(t, cam(monty(mp(3), 540, 1120, 0.95, t), 540, 800, 1.1 + (t - 15.07) * 0.25)), })],
   [16.07, 18.6, t => terraceScene(t, cam(monty(mp(7), 540, 1120, 0.95, t), 540, 900, 1.05))],
-  [18.6, 20.48, t => terraceScene(t, cam(vishnu(vp(4), 540, 1080, 0.9, t), 540, 900, 1.05))],
+  [18.6, 20.48, t => { const p = vp(4), g = backOut(clamp((t - 18.6) / 0.4)); p.chakra = { ...p.chakra, scale: p.chakra.scale * g, spin: t * (4 + 10 * clamp((t - 19.4) / 0.8)) }; return terraceScene(t, cam(vishnu(p, 540, 1080, 0.9, t), 540, 900, 1.05)); }],
   [20.48, 21.78, t => { const u = clamp((t - 20.48) / 1.1), A = terraceScene(t, vishnu(vp(4), 540, 1080, 0.9, t)), Bs = officeScene(t, brahma(bp(0), t));
     const r = 1300 * ease(u); return { defs: A.defs + Bs.defs + `<clipPath id="iris"><circle cx="540" cy="900" r="${r}"/></clipPath>`, body: A.body + `<g clip-path="url(#iris)">${Bs.body}</g>` +
       `<circle cx="540" cy="900" r="${r}" fill="none" stroke="#efbd3a" stroke-width="22" stroke-dasharray="60 30" transform="rotate(${t * 400} 540 900)"/>` }; }],
-  [21.78, 24.31, t => officeScene(t, brahma(bp(1), t) + monty(mp(0), 780, 1540, 0.9, t))],
-  [24.31, 25.6, t => officeScene(t, brahma(bp(2), t) + monty(mp(0), 780, 1540, 0.9, t))],
-  [25.6, 26.66, t => ({ ...officeScene(t, brahma(bp(3), t) + monty(mp(1), 780, 1540, 0.9, t)), over: pill(t, 25.75, '8 = SHANI DEV', 560, 380, '#ff6a5a', 54) })],
+  [21.78, 24.31, t => officeScene(t, brahma(bp(1), t, 1) + monty(mp(0), 790, 1330, 0.72, t))],
+  [24.31, 25.6, t => officeScene(t, brahma(bp(2), t, 1) + monty(mp(0), 790, 1330, 0.72, t))],
+  [25.6, 26.66, t => ({ ...officeScene(t, brahma(bp(3), t, 1) + monty(mp(1), 790, 1330, 0.72, t)), over: pill(t, 25.75, '8 = SHANI DEV', 560, 380, '#ff6a5a', 54) })],
   [26.66, 27.26, t => { const C = courtScene(t, ''); return { defs: C.defs, body: C.body + `<rect width="1080" height="1920" fill="#000" opacity="${1 - clamp((t - 26.66) / 0.6)}"/>` }; }],
-  [27.26, 29.77, t => courtScene(t, shani(sp(1), 540, 1000, 0.98, t), { glow: 0 })],
+  [27.26, 29.77, t => { const p = sp(1), up = 90 * ease(clamp((t - 27.7) / 0.6)) * (t < 28.5 ? 1 : 0), hit = t >= 28.5 ? Math.exp(-(t - 28.5) / 0.18) : 0;
+    p.trishul = { ...p.trishul, y: p.trishul.y - up };
+    const shake = hit * 14 * Math.sin(t * 90), dust = t >= 28.5 && t < 29.3 ? `<g opacity="${(1 - (t - 28.5) / 0.8).toFixed(2)}">${[-1, 1].map(k => `<ellipse cx="${862 + k * (40 + (t - 28.5) * 160)}" cy="1660" rx="${50 + (t - 28.5) * 80}" ry="22" fill="#c9b9a0"/>`).join('')}</g>` : '';
+    const C = courtScene(t, shani(p, 540, 1000, 0.98, t) + dust, { glow: hit }); return { defs: C.defs, body: `<g transform="translate(${shake.toFixed(1)} ${(shake * 0.4).toFixed(1)})">${C.body}</g>` }; }],
   [29.77, 31.85, t => courtScene(t, cam(monty(mp(2), 540, 1180, 0.9, t), 540, 1000, 1))],
   [31.85, 38.56, t => ({ ...courtScene(t, shani(sp(5), 640, 1000, 0.86, t)), over: pill(t, 33.93, 'DIET: MONDAY SE', 236, 560, '#ffd24a', 40) + pill(t, 35.58, 'SAVINGS: 0', 236, 670, '#7dff8a', 40) + pill(t, 36.74, 'NEEND: 3 AM', 236, 780, '#6ae0ff', 40) })],
   [38.56, 41.67, t => courtScene(t, cam(shani(sp(7), 540, 1000, 0.98, t), 540, 700, 1.25))],
   [41.67, 44.3, t => courtScene(t, cam(monty(mp(7), 540, 1180, 0.9, t), 540, 1000, 1))],
-  [44.3, 45.88, t => ({ ...courtScene(t, cam(shani(sp(2), 540, 1000, 0.98, t), 540, 640, 1 + 0.35 * ease(clamp((t - 44.3) / 0.25)))), over: t > 44.55 ? tag(t, 44.6, 'BACCHA HAI TU MERA', 540, 1250, '#ffd24a', 62) : '' })],
+  [44.3, 45.88, t => ({ ...courtScene(t, cam(shani(sp(2), 540, 1000, 0.98, t), 540, 640, 1 + 0.35 * ease(clamp((t - 44.3) / 0.25)))) })],
   [45.88, 47.21, t => courtScene(t, cam(monty(mp(4), 540, 1180, 0.9, t), 540, 900, 1.05))],
-  [47.21, 47.81, t => ({ ...courtScene(t, focus(`<circle cx="268" cy="900" r="150" fill="#8fa6ff" opacity="0.35"/>` + shani(sp(3), 540, 1000, 0.98, t), 290, 960, 2.2)), over: tag(t, 47.25, 'KAA!', 300, 420, '#ffffff', 130) })],
+  [47.21, 47.81, t => ({ ...courtScene(t, focus(`<circle cx="268" cy="900" r="150" fill="#8fa6ff" opacity="0.35"/>` + shani(sp(3), 540, 1000, 0.98, t), 280, 1080, 2.6)), over: tag(t, 47.25, 'KAA!', 300, 420, '#ffffff', 130) })],
   [47.81, 50.06, t => courtScene(t, shani(sp(3), 540, 1000, 0.98, t))],
-  [50.06, 55.97, t => courtScene(t, cam(shani(sp(4), 540, 1000, 0.98, t), 540, 900, 1 + 0.03 * (t - 50)), { glow: 1 })],
+  [50.06, 55.97, t => { const p = sp(4), u = backOut(clamp((t - 51.2) / 0.6)); p.register = { ...p.register, y: 1000 - (1000 - p.register.y) * u, glow: u };
+    return courtScene(t, cam(shani(p, 540, 1000, 0.98, t), 540, 900, 1 + 0.03 * (t - 50)), { glow: 0.3 + 0.7 * u }); }],
   [55.97, 56.62, t => { const u = clamp((t - 55.97) / 0.6), A = courtScene(t, shani(sp(8), 540, 1000, 0.98, t)), Bs = terraceScene(t, monty(mp(6), 540, 1120, 0.95, t)); const r = 1300 * ease(u);
     return { defs: A.defs + Bs.defs + `<clipPath id="iris2"><circle cx="540" cy="900" r="${r}"/></clipPath>`, body: A.body + `<g clip-path="url(#iris2)">${Bs.body}</g>` }; }],
   [56.62, 59.47, t => ({ ...terraceScene(t, monty(mp(6), 540, 1120, 0.95, t)), over: rainCloud(t, 540, 330) })],
   [59.47, 60.57, t => ({ ...terraceScene(t, sakshi(kp(0), 420 + 260 * (1 - ease(clamp((t - 59.47) / 0.6))), 1180, 0.72, t) + monty(mp(6), 790, 1180, 0.7, t)), over: tag(t, 59.7, 'TOPPER ENTRY', 540, 300, '#ff7ae0') })],
   [60.57, 62.52, t => terraceScene(t, sakshi(kp(1), 540, 1150, 0.82, t))],
   [62.52, 63.69, t => terraceScene(t, cam(vishnu(vp(3), 540, 1080, 0.9, t), 540, 800, 1.15))],
-  [63.69, 69.58, t => ({ ...terraceScene(t, sakshi(kp(2), 360, 1180, 0.72, t) + monty(mp(0), 780, 1180, 0.7, t)), over: tag(t, 64.3, 'DATE + MONTH + 2', 540, 320, '#ffd24a', 70) + tag(t, 66.2, '17 Mar → 1+7+3+2 = 13 → 4', 540, 430, '#fff', 50) })],
+  [63.69, 69.58, t => ({ ...terraceScene(t, sakshi(kp(2), 360, 1180, 0.72, t) + monty(mp(0), 780, 1180, 0.7, t)), over: tag(t, 64.3, 'DATE + MONTH + 2', 450, 330, '#ffd24a', 70) + tag(t, 66.2, '17 Mar → 1+7+3+2 = 13 → 4', 500, 440, '#fff', 50) })],
   [69.58, 71.21, t => ({ ...terraceScene(t, cam(monty(mp(5), 540, 1120, 0.95, t), 540, 900, 1)), over: tag(t, 69.8, '4', 860, 420, '#ffd24a', 260) })],
   [71.21, 73.8, t => ({ ...terraceScene(t, sakshi(kp(4), 540, 1150, 0.82, t)), over: tag(t, 71.4, '4 = NEEV KA SAAL', 540, 330, '#ffd24a', 66) + bricks(t, 71.6) })],
   [73.8, 78.47, t => ({ ...terraceScene(t, sakshi(kp(3), 540, 860, 0.66, t)), over: commentBox(t, 74.0) + txt(540, 330, 1, 'Comment karo', '#ffd24a', 92) })],
-  [78.47, 79.52, t => { const u = clamp((t - 78.47) / 0.5), S0 = terraceScene(t, vishnu(vp(5), 300, 1150, 0.62, t) + monty(mp(1), 740, 1180, 0.66, t) + (u < 0.15 ? L.sutliBomb(540, 1560, 1.6, t, 1) : '')); return { ...S0, over: `<circle cx="540" cy="1560" r="${1000 * ease(u)}" fill="#fff4c0" opacity="${(1 - u) * 0.9}"/>` + tag(t, 78.5, 'BOOM!', 540, 380, '#ff4a3a', 170) }; }],
+  [78.47, 79.52, t => { const u = clamp((t - 78.47) / 0.5), S0 = terraceScene(t, vishnu(vp(5), 300, 1150, 0.62, t) + monty(mp(1), 740, 1180, 0.66, t) + (u < 0.3 ? L.sutliBomb(540, 1440, 2.4, t, 1) : '')); return { ...S0, over: `<circle cx="540" cy="1440" r="${1300 * ease(u)}" fill="#fff4c0" opacity="${(1 - u) * 0.95}"/><circle cx="540" cy="1440" r="${500 * ease(u)}" fill="#ff8a2a" opacity="${(1 - u) * 0.7}"/>` + tag(t, 78.5, 'BOOM!', 540, 380, '#ff4a3a', 170) }; }],
   [79.52, 81.68, t => { const T = L.terrace(t, { dim: 0.6 }), C = L.court(t);
     return { defs: T.defs + C.defs + `<clipPath id="port"><circle cx="540" cy="720" r="420"/></clipPath>`, body: T.back + `<g clip-path="url(#port)">${C.back}${shani(sp(6), 540, 860, 0.62, t)}</g><circle cx="540" cy="720" r="420" fill="none" stroke="#efbd3a" stroke-width="26"/>` + monty(mp(2), 800, 1460, 0.55, t) }; }],
   [81.68, 83.07, t => terraceScene(t, cam(vishnu(vp(5), 540, 1080, 0.9, t), 540, 1000, 1))],
