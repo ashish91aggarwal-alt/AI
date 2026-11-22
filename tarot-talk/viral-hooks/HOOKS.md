@@ -43,3 +43,19 @@ The cue sheet is `mulank8_sfx_cues.json` (time s, sfx, gain dB, meme flag). Mix 
 - Patrika, "Kuchu puchu tum kahan ho" (Jul 2026)
 - LatestLY, "Neeli pari peeli pari" trend
 - Tribune / Kashmir Monitor, "Moye moye"
+
+## Original meme clips: free direct sources (found 23 Nov 2026)
+
+These clips are not stored in this repo, because the repo is public and the clips belong to their owners. The links below go straight to the audio files.
+
+| Line | Speaker | Page | Direct audio | Length |
+|---|---|---|---|---|
+| "Baccha hai (yaar) tu mera" | Rakesh Bedi as Jameel Jamali, *Dhurandhar: The Revenge* | https://tuna.voicemod.net/sound/6e81b6ea-e81f-464d-90f3-68d6ff15ced5 | https://content-storage.voicemod.net/2576d9d56a7dc3381563148175ffa6e286396e89d5690719636a48b31dec6071 | 1.56 s |
+| "Ruko zara sabar karo" | Hindustani Bhau | https://tuna.voicemod.net/sound/d9cf0e87-6ba8-4c54-8931-5bf2ea8155f6 | https://content-storage.voicemod.net/7412005effaccbd51db6b1cf51bf955494549212faa3648fa71b3ed4a09c33ff | 1.94 s |
+| "Ruko zara sabar karo… bola dhakka mukki…" (longer) | Hindustani Bhau | https://www.myinstants.com/en/instant/ruko-jara-33002/ | https://www.myinstants.com/media/sounds/tmp_z5b93np.mp3 | 7.0 s |
+
+**Best free sources, in order:** Voicemod Tuna (tuna.voicemod.net), then myinstants.com, then quicksounds.com and soundinstants.com. Search Google for "<line> meme sound", open the Tuna or myinstants result, and take the audio file from the page.
+
+**Check before use:** transcribe each download (faster-whisper "small", Hindi). Many buttons are mislabelled: myinstants "Ruko Zara" (56090) is a different clip, and "Dhurandhar_2" is music only.
+
+**Mulank 8 v2:** both clips are spliced in by `build_voice.py` in the cartoon project. Everything after 18.55 s moves 0.46 s later; the cue sheet is `mulank8_sfx_cues_v2.json`.
