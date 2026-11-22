@@ -1,0 +1,25 @@
+{
+  "role": "channel-pets",
+  "session": "1593309e",
+  "updated_at": "2026-11-22T14:40:31Z",
+  "doing": "P2 planned; G0 sent to orchestrator",
+  "next": "After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces)",
+  "blocked": "",
+  "files_last_commit": [
+    "channels/pets/pilots/P2_plan.md",
+    "production/cards/P2.json"
+  ],
+  "sessions": [
+    {
+      "id": "1593309e",
+      "started_at": "2026-11-22T14:34:05Z"
+    }
+  ],
+  "outbox": [
+    {
+      "to": "orchestrator",
+      "text": "P2 plan in channels/pets/pilots/P2_plan.md: grey long-haired cat, rainy window nook, 3 h. G0 evidence: Storybook Jazz 556K/1.07%, Vintage Ambience Cafe 495K/1.53%, Sleepy Vintage Room 1.24M/1.84% (all <10K subs). Dog fireplace fails G0 for now (one channel, likes <1%). Please sign G0. Also: ambient-lookup gets 403 from videos.list - check YOUTUBE_API_KEY secret in the AI repo.",
+      "at": "2026-11-22T14:40:31Z"
+    }
+  ]
+}

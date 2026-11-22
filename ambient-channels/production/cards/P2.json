@@ -1,0 +1,80 @@
+{
+  "id": "P2",
+  "channel": "pets",
+  "title": "Video 2: grey long-haired cat, rainy window nook, 3 h",
+  "stage": "concept",
+  "priority": 1,
+  "owner": "channel-pets",
+  "lease_until": "2026-11-22T20:40:31Z",
+  "gates": {
+    "G0": {
+      "state": "review",
+      "note": "evidence in channels/pets/pilots/P2_plan.md; awaiting orchestrator",
+      "at": null,
+      "by": "channel-pets"
+    },
+    "G1": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G2": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G3": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G4": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G5": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G6": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    },
+    "G7": {
+      "state": "pending",
+      "note": "",
+      "at": null,
+      "by": null
+    }
+  },
+  "duration_h": 3.0,
+  "budget_usd": 4.5,
+  "spend": [],
+  "youtube_id": null,
+  "publish_target": "2026-12-06",
+  "plan": "channels/pets/pilots/P2_plan.md",
+  "keyword": "cozy rainy window sleeping cat",
+  "notes": "G0 draft in plan: 3 small channels pass on cat + rainy window. GPU cap $4.50 needs owner approval.",
+  "licenses": [],
+  "history": [
+    {
+      "at": "2026-11-22T14:40:31Z",
+      "by": "channel-pets",
+      "event": "created"
+    },
+    {
+      "at": "2026-11-22T14:40:31Z",
+      "by": "channel-pets",
+      "event": "claimed"
+    }
+  ]
+}
