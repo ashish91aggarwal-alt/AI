@@ -3,4 +3,4 @@ orchestrator,2026-11-22 10:00,moved ambient-channels into AI/ambient-channels,ow
 reviewer,2026-11-17 12:36,"brand gate: avatars + banners (fantasy, worship)",write reviews/brand/*-art-2026-11-17.md,,064fbb08
 channel-fantasy,2026-11-17 09:30,not started,Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1,waiting for G0 sign-off on F1,
 channel-worship,2026-11-17 09:30,not started,Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement,waiting for G0 sign-off on W3,
-channel-pets,,,,,
+channel-pets,2026-11-22 14:40,P2 planned; G0 sent to orchestrator,"After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces)",,1593309e

@@ -1,16 +1,16 @@
 # STATUS
 
-_Generated 2026-11-22T14:33:49Z by `scripts/agent.py build`. Do not edit._
+_Generated 2026-11-22T14:40:44Z by `scripts/agent.py build`. Do not edit._
 
 ## Sessions
 
 | Role | Updated | Doing | Next | Blocked | Last commit |
 |---|---|---|---|---|---|
-| `orchestrator` | 4h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | - |
+| `orchestrator` | 4h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | dea8582 [orchestrator] handoff: new repo location |
 | `reviewer` | 5d ago | brand gate: avatars + banners (fantasy, worship) | write reviews/brand/*-art-2026-11-17.md | - | - |
 | `channel-fantasy` | 5d ago | not started | Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1 | waiting for G0 sign-off on F1 | - |
 | `channel-worship` | 5d ago | not started | Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement | waiting for G0 sign-off on W3 | - |
-| `channel-pets` | never | - | - | - | - |
+| `channel-pets` | 0m ago | P2 planned; G0 sent to orchestrator | After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces) | - | 8e072e3 [channel-pets] P2 plan and card, G0 sent for sign- |
 
 ## Production board
 
@@ -18,6 +18,7 @@ _Generated 2026-11-22T14:33:49Z by `scripts/agent.py build`. Do not edit._
 |---|---|---|---|---|---|---|---|
 | F1 | fantasy | concept | 1 | free | G1 Still image | 2026-11-26 | The Fox by the Elven Inn Fire (Medieval Christmas) |
 | P1 | pets | ready | 1 | free | G6 Publish | 2026-11-22 | This is Mochi. He sleeps for hours (Cozy Winter Cabin, sleeping cat) |
+| P2 | pets | concept | 1 | channel-pets (until 11-22 20:40) | G0 Concept | 2026-12-06 | Video 2: grey long-haired cat, rainy window nook, 3 h |
 | W3 | worship | concept | 1 | free | G1 Still image | 2026-11-27 | O HOLY NIGHT (The Shepherds' Field by Night) |
 | F2 | fantasy | concept | 2 | free | G0 Concept | 2026-11-30 | Rain on the Elven Library (study & focus) |
 | W1 | worship | concept | 2 | free | G0 Concept | 2026-11-29 | BE STILL AND KNOW (morning chapel light) |
@@ -26,6 +27,7 @@ _Generated 2026-11-22T14:33:49Z by `scripts/agent.py build`. Do not edit._
 
 ## Waiting for orchestrator
 
+- P2: G0
 - F2: G0
 - W1: G0
 - F3: G0
@@ -33,6 +35,6 @@ _Generated 2026-11-22T14:33:49Z by `scripts/agent.py build`. Do not edit._
 
 ## Tracking
 
-- Last tracker run: 2026-11-22T14:32:57Z (0m ago)
+- Last tracker run: 2026-11-22T14:32:57Z (7m ago)
 - Channels tracked: 33
 

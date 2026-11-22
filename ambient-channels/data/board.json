@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:33:49Z",
+  "generated_at": "2026-11-22T14:40:44Z",
   "cards": [
     {
       "id": "F1",
@@ -250,6 +250,86 @@
           "at": "2026-11-22T09:55:00Z",
           "by": "orchestrator",
           "event": "released for channel-pets"
+        }
+      ]
+    },
+    {
+      "id": "P2",
+      "channel": "pets",
+      "title": "Video 2: grey long-haired cat, rainy window nook, 3 h",
+      "stage": "concept",
+      "priority": 1,
+      "owner": "channel-pets",
+      "lease_until": "2026-11-22T20:40:31Z",
+      "gates": {
+        "G0": {
+          "state": "review",
+          "note": "evidence in channels/pets/pilots/P2_plan.md; awaiting orchestrator",
+          "at": null,
+          "by": "channel-pets"
+        },
+        "G1": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G2": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G3": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G4": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G5": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G6": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        },
+        "G7": {
+          "state": "pending",
+          "note": "",
+          "at": null,
+          "by": null
+        }
+      },
+      "duration_h": 3.0,
+      "budget_usd": 4.5,
+      "spend": [],
+      "youtube_id": null,
+      "publish_target": "2026-12-06",
+      "plan": "channels/pets/pilots/P2_plan.md",
+      "keyword": "cozy rainy window sleeping cat",
+      "notes": "G0 draft in plan: 3 small channels pass on cat + rainy window. GPU cap $4.50 needs owner approval.",
+      "licenses": [],
+      "history": [
+        {
+          "at": "2026-11-22T14:40:31Z",
+          "by": "channel-pets",
+          "event": "created"
+        },
+        {
+          "at": "2026-11-22T14:40:31Z",
+          "by": "channel-pets",
+          "event": "claimed"
         }
       ]
     },
@@ -751,20 +831,50 @@
     },
     "channel-pets": {
       "role": "channel-pets",
-      "session": null,
-      "updated_at": null,
-      "doing": "",
-      "next": "",
+      "session": "1593309e",
+      "updated_at": "2026-11-22T14:40:31Z",
+      "doing": "P2 planned; G0 sent to orchestrator",
+      "next": "After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces)",
       "blocked": "",
-      "files_last_commit": [],
-      "sessions": []
+      "files_last_commit": [
+        "channels/pets/pilots/P2_plan.md",
+        "production/cards/P2.json"
+      ],
+      "sessions": [
+        {
+          "id": "1593309e",
+          "started_at": "2026-11-22T14:34:05Z"
+        }
+      ],
+      "outbox": [
+        {
+          "to": "orchestrator",
+          "text": "P2 plan in channels/pets/pilots/P2_plan.md: grey long-haired cat, rainy window nook, 3 h. G0 evidence: Storybook Jazz 556K/1.07%, Vintage Ambience Cafe 495K/1.53%, Sleepy Vintage Room 1.24M/1.84% (all <10K subs). Dog fireplace fails G0 for now (one channel, likes <1%). Please sign G0. Also: ambient-lookup gets 403 from videos.list - check YOUTUBE_API_KEY secret in the AI repo.",
+          "at": "2026-11-22T14:40:31Z"
+        }
+      ]
     }
   },
   "last_commits": {
+    "channel-pets": {
+      "hash": "8e072e3",
+      "at": "2026-11-22T20:10:31+05:30",
+      "subject": "[channel-pets] P2 plan and card, G0 sent for sign-off"
+    },
+    "tracker": {
+      "hash": "c184801",
+      "at": "2026-11-22T14:33:49Z",
+      "subject": "[tracker] data 2026-11-22T14:33Z"
+    },
     "bot": {
       "hash": "9f7af9f",
       "at": "2026-11-22T10:00:13Z",
       "subject": "[bot] rebuild STATUS.md"
+    },
+    "orchestrator": {
+      "hash": "dea8582",
+      "at": "2026-11-22T10:00:00Z",
+      "subject": "[orchestrator] handoff: new repo location"
     }
   }
 }
