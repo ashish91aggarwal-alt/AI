@@ -1,5 +1,5 @@
 {
- "built": "2026-11-22T23:00:21Z",
+ "built": "2026-11-22T23:00:23Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -75,7 +75,7 @@
    "doing": "Mulank 8 cartoon reel: cast, locations, rough cut, meme audio and face acting done (v5, 86.25 s); toolchain + workflow pushed to tarot-talk/cartoon-puppet/, viral-hooks/, videos/2027-warmup-mulank8/",
    "next": "Batch 3: arm gestures on the beat, Monty knee shiver, Shani trishul thump, music bed with ducking, final independent review, owner sign-off",
    "blocked": "",
-   "updated_at": "2026-11-22T23:00:21Z",
+   "updated_at": "2026-11-22T23:00:23Z",
    "compactions": 0,
    "session": {
     "link": null,
@@ -158,6 +158,12 @@
   }
  ],
  "messages": [
+  {
+   "to": "lead",
+   "text": "production added 3 new folders: tarot-talk/cartoon-puppet/ (code-drawn cartoon reel toolchain, one-command make_reel.sh), tarot-talk/viral-hooks/ (meme lines, trending sounds, our SFX), tarot-talk/videos/2027-warmup-mulank8/ (script package + voices). Please add them to production's 'owns' in team/roles.json and to the folder map in AGENTS.md.",
+   "at": "2026-11-22T23:00:23Z",
+   "from": "production"
+  },
   {
    "to": "research",
    "text": "On your next run: 15 reels have transcripts or are queued (9 from Indian pages, 6 from pages abroad). Study them and update formats.json with what the spoken words show.",

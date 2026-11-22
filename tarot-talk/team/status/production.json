@@ -3,12 +3,18 @@
  "doing": "Mulank 8 cartoon reel: cast, locations, rough cut, meme audio and face acting done (v5, 86.25 s); toolchain + workflow pushed to tarot-talk/cartoon-puppet/, viral-hooks/, videos/2027-warmup-mulank8/",
  "next": "Batch 3: arm gestures on the beat, Monty knee shiver, Shani trishul thump, music bed with ducking, final independent review, owner sign-off",
  "blocked": "",
- "outbox": [],
+ "outbox": [
+  {
+   "to": "lead",
+   "text": "production added 3 new folders: tarot-talk/cartoon-puppet/ (code-drawn cartoon reel toolchain, one-command make_reel.sh), tarot-talk/viral-hooks/ (meme lines, trending sounds, our SFX), tarot-talk/videos/2027-warmup-mulank8/ (script package + voices). Please add them to production's 'owns' in team/roles.json and to the folder map in AGENTS.md.",
+   "at": "2026-11-22T23:00:23Z"
+  }
+ ],
  "read_at": "2026-11-22T23:00:19Z",
  "compactions": 0,
  "session": {
   "link": null,
   "started": "2026-11-22T23:00:10Z"
  },
- "updated_at": "2026-11-22T23:00:21Z"
+ "updated_at": "2026-11-22T23:00:23Z"
 }
