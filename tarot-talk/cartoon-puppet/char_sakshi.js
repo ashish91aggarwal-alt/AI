@@ -28,7 +28,7 @@ function head(p) {
   g.push(fill(hb, C.hair) + inkLoop(hb, WT.sil));
   for (const s of [-1, 1]) g.push(part(catmull([[s * 190, 0], [s * 226, 6], [s * 230, 58], [s * 196, 84]], 6, true), C.skin, { sh: C.skinSh, shPts: [[s * 190, 50], [s * 240, 50], [s * 240, 100], [s * 190, 100]], w: WT.mid }));
   g.push(fill(face, C.skin) + clipped(face, fill(catmull([[110, -240], [176, -60], [170, 100], [80, 240], [300, 260], [300, -240]], 8, true), C.skinSh) +
-    [-1, 1].map(k => `<ellipse cx="${k * 118}" cy="96" rx="34" ry="16" fill="${C.blush}" opacity="0.32"/>`).join('')));
+    [-1, 1].map(k => `<ellipse cx="${k * 118}" cy="96" rx="34" ry="16" fill="${C.blush}" opacity="${(0.32 + 0.4 * (p.blush || 0)).toFixed(2)}"/>`).join('')));
   g.push(ink(face.slice(Math.floor(face.length * 0.04), Math.floor(face.length * 0.66)), WT.sil, { taper: [0.3, 0.2] }));
   const big = catmull([[-40, -244], [80, -246], [180, -190], [216, -70], [204, 30], [182, -40], [150, -120], [80, -160], [-20, -150], [-60, -196]], 7, true);
   const small = catmull([[-60, -240], [-150, -220], [-212, -130], [-214, -10], [-190, -60], [-150, -140], [-84, -176]], 7, true);
@@ -52,13 +52,18 @@ function head(p) {
       g.push(ink(s > 0 ? tl : tl.slice().reverse(), 9, { prof: u => 0.35 + 0.65 * Math.sin(Math.PI * u * 0.9), taper: [0.25, 0.05], amp: 0.4 }));
       g.push(ink([[cx - s * rx * 0.3, cy + ry * 0.8], [cx + s * rx * 0.5, cy + ry * 0.68]], 2.5, { taper: [0.5, 0.5] }));
     }
-    const lift = p.browLift === s ? 1 : 0, by = cy - ry - 30 - lift * 16;
-    g.push(ink(catmull([[cx - s * 34, by + 8], [cx - s * 4, by - 4 - lift * 8], [cx + s * 34, by + 2]], 6, false), 6.5, { taper: [0.5, 0.3], amp: 0.4 }));
+    // expression extras (optional, default = approved look): browUp lifts both brows, browSad raises the inner ends
+    const lift = (p.browLift === s ? (p.browLiftAmt || 1) : 0) + (p.browUp || 0), sad = p.browSad || 0, by = cy - ry - 30 - lift * 16;
+    g.push(ink(catmull([[cx - s * 34, by + 8 - sad * 16], [cx - s * 4, by - 4 - lift * 8 - sad * 6], [cx + s * 34, by + 2 + sad * 8]], 6, false), 6.5, { taper: [0.5, 0.3], amp: 0.4 }));
   }
   g.push(ink(catmull([[-4, 52], [-16, 86], [2, 92]], 5, false), 4.5, { color: C.skinLine, taper: [0.2, 0.3] }));
   const my = 140, M = p.mouth || 'smile', talk = p.talk || 0;
   if (talk > 0.08) { const h = 8 + talk * 28, m = catmull([[-20, my], [0, my - 2], [22, my - 1], [12, my + h], [-2, my + h + 4], [-14, my + h]], 6, true);
     g.push(fill(m, C.mouth) + clipped(m, `<ellipse cx="0" cy="${my + h + 2}" rx="12" ry="7" fill="${C.tongue}"/>`) + inkLoop(m, WT.mid)); }
+  else if (M === 'o') { const m = catmull([[-12, my - 2], [0, my - 8], [12, my - 2], [10, my + 14], [0, my + 18], [-10, my + 14]], 6, true); g.push(fill(m, C.mouth) + inkLoop(m, WT.mid)); }
+  else if (M === 'grin') { const m = catmull([[-34, my - 6], [0, my - 2], [34, my - 6], [20, my + 22], [0, my + 28], [-20, my + 22]], 6, true);
+    g.push(fill(m, C.mouth) + clipped(m, `<rect x="-40" y="${my - 10}" width="80" height="12" fill="${C.teeth}"/><ellipse cx="0" cy="${my + 26}" rx="16" ry="8" fill="${C.tongue}"/>`) + inkLoop(m, WT.mid)); }
+  else if (M === 'pout') g.push(ink(catmull([[-16, my + 6], [0, my - 2], [16, my + 6]], 5, false), 5.5, { taper: [0.4, 0.4] }));
   else if (M === 'smirk') g.push(ink(catmull([[-14, my + 4], [6, my + 4], [22, my - 6]], 5, false), 5.5, { taper: [0.4, 0.2] }));
   else g.push(ink(catmull([[-22, my - 2], [-4, my + 10], [20, my - 2]], 5, false), 5.5, { taper: [0.4, 0.4] }));
   for (const s of [-1, 1]) { const jx = s * 212 + (p.jhumka || 0) * s, jy = 104;

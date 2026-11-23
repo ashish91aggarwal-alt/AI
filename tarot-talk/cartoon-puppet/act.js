@@ -47,7 +47,9 @@ function perform(kind, pose, t) {
   const p = { ...pose }, talk = speaking(kind, t), a = talk ? amp(t) : 0, on = talk ? onsetPulse(t) : 0, blink = blinkAt(kind, t);
   const calm = kind === 'shani' || kind === 'vishnu' || kind === 'brahma';
   const [sx, sy] = saccade(kind, t, kind === 'monty' && !talk ? 26 : calm ? 10 : 16);
-  p.tilt = (p.tilt || 0) + on * (calm ? 1.5 : 3.5) + Math.sin(t * (calm ? 1.1 : 1.9) + kind.length) * (calm ? 0.8 : 1.6);
+  // Sakshi: no syllable head jerks (owner: 'just twitching her head'); a slow, small sway only. Others keep the onset nod.
+  p.tilt = kind === 'sakshi' ? (p.tilt || 0) + Math.sin(t * 0.9 + 1.3) * 1.2
+    : (p.tilt || 0) + on * (calm ? 1.5 : 3.5) + Math.sin(t * (calm ? 1.1 : 1.9) + kind.length) * (calm ? 0.8 : 1.6);
   if (talk) { const g = talkGesture(t), calm2 = kind === 'shani' || kind === 'brahma';
     if (p.armR && !(kind === 'shani' && (!p.armR || p.armR.hand === 'relax'))) p.armR = gestureArm(p.armR, t, g, 1, calm2);
     if (kind === 'monty' || kind === 'sakshi') p.armL = gestureArm(p.armL, t + 0.4, g * 0.5, -1, false); }
@@ -72,10 +74,13 @@ function perform(kind, pose, t) {
     if (blink) p.blink = 1;
     p.talk = talk ? Math.min(1, a * 0.95) : 0;
   } else if (kind === 'sakshi') {
-    p.lookX = (p.lookX || 0) + sx; p.lookY = (p.lookY || 0) + sy;
+    // calmer eyes (small darts), brow lifts only at phrase starts, and a happy-eye smile in the pauses between phrases
+    p.lookX = (p.lookX || 0) + sx * 0.4; p.lookY = (p.lookY || 0) + sy * 0.4;
     if (blink && !p.wink && !p.happy) p.blink = 1;
     p.talk = talk ? Math.min(1, a * 0.85) : 0;
-    if (talk && on > 0.5 && !p.browLift) p.browLift = 1;
+    const quietBefore = [0.12, 0.2, 0.3].every(d => amp(t - d) < 0.1);
+    if (talk && on > 0.5 && quietBefore && !p.browLift) p.browLift = 1;
+    if (talk && a < 0.06 && [0.08, 0.16].every(d => amp(t - d) < 0.06) && !p.wink && !p.browSad && !['o', 'pout', 'grin'].includes(p.mouth)) { p.happy = 1; p.mouth = 'smile'; delete p.blink; }
   }
   return p;
 }
