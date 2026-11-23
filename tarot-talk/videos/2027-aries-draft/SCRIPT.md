@@ -1,4 +1,8 @@
-# Aries 2027 — Vishnu ji drafts, Sakshi notes — script v7 (23 Nov 2026, natural rhythm, after review)
+# Aries 2027 — Vishnu ji drafts, Sakshi notes — script v8 (owner 24 Nov 00:33 IST: discount + 'case jeet gaye' disliked)
+
+v8 changes: K04 'Saade saat saal?! Prabhu, Aries walon se toh 7 minute wait nahi hota!'; V05 'Isiliye toh Shani dev sabar sikhayenge. Aur Guru saath hain, ghabrao mat.'; V17 ends at 'behas mat karna.' (discount tease cut); K18 cut; K24 'Aries walo, sun liya na? Apne Aries dost ko ye bhej do, mahine-wise poori guide link mein hai.'
+
+(previous header) Aries 2027 — script v7 (23 Nov 2026, natural rhythm, after review)
 
 Owner (20:40 IST): wants a better script; CTA always link-based, never comments.
 Owner (20:46 IST): the start-pause-continue tempo of every line felt like AI slop. v6 rewrites every line as real talk: full flowing sentences, no 'Topic: fact. X? Y.' pattern, no '…' pauses; Sakshi asks and cuts in like a person; Vishnu ji answers in one breath.
