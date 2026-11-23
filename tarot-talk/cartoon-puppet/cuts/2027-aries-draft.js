@@ -38,17 +38,17 @@ const snapIn = (body, t, t0, z0, z1, cx = 540, cy = 1000) => cam(body, cx, cy, z
 
 // ---------- Vishnu ji faces (all from his approved pose set; arms from his poses) ----------
 const V0 = vp(0), V1 = vp(1), V2 = vp(2), V4 = vp(4), V5 = vp(5);
-const vWrite = { ...V0, lid: 0.35, mouthShape: 'sly', lookX: 14, tilt: 3 };                                        // busy writing, calm
-const vAmused = { ...V2, lid: 0.3, browL: 1, browR: 0.2, mouthShape: 'sly', lookX: 16, tilt: -4 };                // eyebrow up at the wakeel
-const vTease = { ...V2, lid: 0.3, browL: 1.1, browR: 0.1, lookX: 22, tilt: 11, mouthShape: 'sly' };
+const vWrite = { ...V0, lid: 0.2, mouthShape: 'cat', lookX: 10, tilt: 3 };                                        // busy writing, calm
+const vAmused = { ...V2, lid: 0.25, browL: 0.7, browR: 0.5, mouthShape: 'smileBig', lookX: 14, tilt: -4 };                // eyebrow up at the wakeel
+const vTease = { ...V2, lid: 0.05, browL: 0.7, browR: 0.7, lookX: 10, tilt: 8, mouthShape: 'smileBig', blushHatch: true };
 const vSerious = { ...V0, lid: 0.32, browL: -0.3, browR: -0.3, mouthShape: 'cat', lookX: 0, tilt: 0 };             // Sade Sati, calm and respectful
 const vWarm = { ...V2, lid: 0.12, browL: 0.35, browR: 0.35, mouthShape: 'smileBig', lookX: 14, tilt: -3 };
 const vShakeL = { ...vWarm, tilt: -7 }, vShakeR = { ...vWarm, tilt: 6 };
 const vTalk = { ...V2, lookX: 10, tilt: 3 };
-const vPoint = { ...V1, wink: 0, lid: 0.18, browL: 0.8, browR: 0.5, lookX: 18 };
-const vFinger = { ...V4, wink: 0, lid: 0.38, browL: 0.7, browR: 0.3, mouthShape: 'smileBig', lookX: 16, tilt: -5, fx: [] };                 // finger up, chakra glows
-const vDeadpan = { ...V0, lid: 0.62, browL: 0, browR: 0, mouthShape: 'cat', lookX: 20, tilt: 0 };                   // "jaana bhi padega" / "FD."
-const vKnowing = { ...V0, lid: 0.4, browL: 1, browR: -0.2, mouthShape: 'sly', lookX: -8, tilt: -5 };
+const vPoint = { ...V1, wink: 0, lid: 0.22, browL: 0.55, browR: 0.5, lookX: 14 };
+const vFinger = { ...V4, wink: 0, lid: 0.25, browL: 0.55, browR: 0.45, mouthShape: 'smileBig', lookX: 14, tilt: -5, fx: [] };                 // finger up, chakra glows
+const vDeadpan = { ...V0, lid: 0.4, browL: 0.3, browR: 0.3, mouthShape: 'cat', lookX: 0, tilt: 3 };                   // "jaana bhi padega" / "FD."
+const vKnowing = { ...V0, lid: 0.1, browL: 0.6, browR: 0.6, mouthShape: 'smileBig', lookX: 0, tilt: -5 };
 const vLaugh = { ...V5, float: undefined, eyeMode: 'happy', mouthShape: 'smileBig', tilt: 6 };
 const vPleased = { ...V2, lid: 0.15, browL: 0.6, browR: 0.6, mouthShape: 'smileBig', tilt: 4 };
 const vBless = { ...V2, eyeMode: 'happy', mouthShape: 'smileBig', tilt: -3, blushHatch: true };
@@ -222,7 +222,7 @@ function coverText() {
 function coverFrame(t) {
   const S0 = W.cosmos(t, { gold: 1, noPlanets: 1 });
   const body = S0.back + rays(t, 330, 900) + `<circle cx="330" cy="900" r="420" fill="url(#halo)" opacity="0.8"/>` +
-    vishnu({ ...vPoint, mouthShape: 'smileBig', lid: 0.15, browL: 1, browR: 0.6, fx: ['sparkle'], lookX: 18, tilt: -4 }, 320, 1290, 0.74, t) + scroll(t, 330, 1430, 0.5, 'ARIES 2027', -3) +
+    vishnu({ ...V2, wink: 0, eyeMode: 'happy', mouthShape: 'smileBig', lid: 0, browL: 0.5, browR: 0.5, lookX: 0, tilt: -4, blushHatch: true, fx: ['sparkle'] }, 320, 1290, 0.74, t) + scroll(t, 330, 1430, 0.5, 'ARIES 2027', -3) +
     smallCloud(700, 1660, 1.2) + sakshi(C({ ...k2, ...pointUp, browLift: 1, browLiftAmt: 1.3, lid: 0.2, mouth: 'grin', blush: 0.7, lookX: -22, tilt: -6 }), 740, 1320, 0.76, t) + gavel(0.3, 575, 1470, 0.75) +
     coverText();
   return { defs: S0.defs, body };
@@ -251,7 +251,7 @@ const SHOTS = [
   // K07 gym join: excited, arms up
   [at('K07'), at('V08'), t => study(t, snapIn(kClose(t, sExcited, 'idle', `<g transform="translate(-60 0) scale(${pop(t, at('K07', 0.3))})"><rect x="-40" y="-8" width="80" height="16" fill="${INK}"/><rect x="-56" y="-26" width="18" height="52" rx="6" fill="#d22f48" stroke="${INK}" stroke-width="3"/><rect x="38" y="-26" width="18" height="52" rx="6" fill="#d22f48" stroke="${INK}" stroke-width="3"/></g>`), t, at('K07'), 1.1, 1.0, 540, 950))],
   // V08 deadpan: "Join toh har saal karte hain, is baar jaana bhi padega" -> Sakshi caught out
-  [at('V08'), at('V09'), t => study(t, cam(two(t, seq(t, [[at('V08'), vDeadpan], [at('V08', 0.75), { ...vDeadpan, lid: 0.9 }], [at('V08', 0.9), vDeadpan]]), seq(t, [[at('V08'), sExcited], [at('V08', 0.55), sSheepish]])), 380, 1050, 1.15 + 0.05 * fade(t, at('V08'), 2)))],
+  [at('V08'), at('V09'), t => study(t, cam(two(t, seq(t, [[at('V08'), vDeadpan], [at('V08', 0.75), { ...vDeadpan, lid: 0.75 }], [at('V08', 0.9), vDeadpan]]), seq(t, [[at('V08'), sExcited], [at('V08', 0.55), sSheepish]])), 380, 1050, 1.15 + 0.05 * fade(t, at('V08'), 2)))],
   // V09 office: cut-in gag, then Vishnu ji knowing look
   [at('V09'), at('V09', 0.62), t => study(t, officeGag(t, at('V09')))],
   [at('V09', 0.62), at('K10'), t => study(t, push(vClose(t, vKnowing), t, at('V09', 0.62), 0.05))],
@@ -299,4 +299,4 @@ const SHOTS = [
   [B('endcard').start, DUR, t => ({ ...study(t, kClose(t, sProud, 'idle', T(-60, 10, 1, 'ARIES ✓', '#1b8a3a', 40))), over: `<rect x="90" y="270" width="830" height="200" rx="24" fill="#1b1422" opacity="0.9"/>` + txt(505, 350, 1, 'Aries dost ko bhejo', '#ffffff', 54) + txt(505, 430, 1, 'Poori guide: LINK', '#ffd24a', 56) })],
 ];
 SHOTS.forEach((s, i) => { if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; });
-module.exports = { ...K.film(SHOTS, DUR), coverFrame };
+module.exports = { ...K.film(SHOTS, DUR), coverFrame, FACES: { vWrite, vAmused, vTease, vSerious, vWarm, vTalk, vPoint, vFinger, vDeadpan, vKnowing, vLaugh, vPleased, vBless } };

@@ -55,6 +55,7 @@ Reviewer prompt that worked:
 - **Indian look**, never East-Asian. Avoid the "AI look": anime sparkle eyes, perfect symmetry, generic stock vector style. Match the reference style instead.
 
 **Deities**
+- **Kind faces for deities** (owner, 23 Nov 2026: Vishnu ji's cover face "looks evil smiling"). Never half-closed lids with a side glance, never one brow up with a sly smirk: together they read as smug or evil. Use open eyes with level brows and a big smile, or the happy closed-eye smile; teasing comes from the head tilt and a raised pair of brows, not narrowed eyes.
 - **Respect.** Shani dev never looks into the lens, never mocked, no feet toward the camera, trishul upright and never pointed. Vishnu ji is never the butt of the joke. Meme sounds land on the comic lead.
 
 **Acting**
