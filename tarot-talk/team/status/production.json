@@ -1,6 +1,6 @@
 {
  "role": "production",
- "doing": "2027-same-mulank v8.1 rough cut with owner notes applied",
+ "doing": "2027-same-mulank v9: park scene, new Monty outfit/hands",
  "next": "Owner/Sakshi review",
  "blocked": "",
  "outbox": [
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T09:53:53Z"
  },
- "updated_at": "2026-11-23T12:43:15Z"
+ "updated_at": "2026-11-23T13:07:14Z"
 }
