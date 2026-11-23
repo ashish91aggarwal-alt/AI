@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T07:41:29Z",
+  "generated_at": "2026-11-23T23:55:42Z",
   "cards": [
     {
       "id": "F1",
@@ -855,11 +855,5 @@
       ]
     }
   },
-  "last_commits": {
-    "tracker": {
-      "hash": "eefd79d",
-      "at": "2026-11-23T05:55:55Z",
-      "subject": "[tracker] data 2026-11-23T05:55Z"
-    }
-  }
+  "last_commits": {}
 }
