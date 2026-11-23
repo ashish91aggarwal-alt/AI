@@ -1,7 +1,7 @@
 {
  "slug": "2027-same-mulank",
  "title": "Same Mulank, alag saal — 2026 → 2027",
- "script_dur": 59.08,
+ "script_dur": 64.55,
  "cut": "cuts/2027-same-mulank.js",
  "voice_track": "voices/voice_track_timed.wav",
  "cue_sheet": "voices/cue_sheet.csv",
@@ -17,7 +17,7 @@
   {
    "kind": "groove",
    "a": 0,
-   "b": 59.08,
+   "b": 64.55,
    "bpm": 108,
    "root": 220,
    "level": 0.85

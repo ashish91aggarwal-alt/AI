@@ -28,25 +28,29 @@ def squeeze(x,maxp=0.22):
     return np.concatenate(out)
 def rms(x): return float(np.sqrt(np.mean(x[np.abs(x)>0.01]**2)+1e-12))
 T=lambda n:os.path.join(V,'voices','takes',n+'.mp3')
-B=[ # id, who, file/source, tempo, line (Hinglish for captions), picture, camera, sound
-('M01','Monty',T('M01_b'),1.12,'Same Mulank… phir uska sab sahi kaise, mera nahi?!',"Rooftop night. Monty's phone shows a friend's story (face not shown): new car, '2026 ✓'. Frame 0: Monty's jaw half dropped, thin smoke from his head; then his arm drops. Hook text 'SAME MULANK, ALAG KISMAT?' from frame 0, 'Tumhare saath bhi hua?' at 1.5 s.",'Starts on the phone, pulls back to Monty.','Phone ding.'),
-('MEME1','Monty',('emotional-damage-meme.mp3',0,3.3),1.0,'Emotional damage!',"MEME (original Steven He audio), Monty lip-syncs: clutches chest, knees wobble, crack runs across his phone. Vishnu ji NOT on screen.",'Punch-in on Monty.','Vine boom at the end.'),
-('V03','Vishnu ji',T('V03_b'),1.30,'Arre, mulank same hai… saal nahi.',"First time we see Vishnu ji on his cloud: popcorn flies into his mouth, eyebrow up.",'Push in on Vishnu ji.','Chime, munch.'),
-('M04','Monty',T('M04_b'),1.12,'Saal ka kya lena-dena?!','Monty shock pose (spikes).','Close on Monty.','Boing.'),
-('K05','Sakshi',T('K05_a'),1.15,'Maan lo, do log. Dono ka mulank 3.',"Sakshi walks in (two side-steps), cards float by her hand. Two big cards pop with silhouette faces: 'WOH · 12 APRIL' and 'TUM · 3 MARCH', both stamped 'MULANK 3'. Small tag 'Example'.",'Two-shot Sakshi + Monty, cards on top.','Anime wow on entry, card pops.'),
-('K06','Sakshi',T('K06_a'),1.15,'Personal year: date + month + saal… single digit tak jodo.',"On screen: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1' and '15 → 1+5 = 6'.",'Sakshi close.','Ticks.'),
-('K07','Sakshi',T('K07_b'),1.15,'Uska: 1, 2, 4, 1… 8. Tumhara: 3, 3, 1… 7.',"Cards build: '12 APR → 1+2+4+1 = 8' (gold 8 pops on WOH), '3 MAR → 3+3+1 = 7' (quiet 7 on TUM).",'Cards full width.','Abacus ticks, ding.'),
-('K08','Sakshi',T('K08_a'),1.15,'Numerology mein 8 matlab result ka saal. 7 matlab ruk ke, andar kaam karne ka saal.',"Label 'In numerology'. Trophy on 8; lamp and book on 7. Monty slumps, tiny rain cloud over only him.",'Two-shot.','Our sad trombone at the slump.'),
-('MEME2','Monty',('climax-abhi-baaki-hai-carryminati.mp3',0,3.4),1.0,'Aur bhai ruko… climax abhi baaki hai!',"MEME (original CarryMinati audio), Monty lip-syncs: palm up on 'ruko', grin on 'climax'. Behind him the wall calendar's 2026 page tears off by itself, 2027 underneath, fireworks.",'Wide rooftop, calendar on the wall.','Paper rip, whoosh, firework pops.'),
-('K10','Sakshi',T('K10_b'),1.15,'2027 mein plus 2. Ab tumhara 8, uska 9.',"Cards flip: TUM → 8 (gold), WOH → 9.",'Cards full width.','Flip whooshes.'),
-('MEME3','Monty',('ab-tu-gaya-beta-puneet.mp3',2.48,3.88),1.0,'Ab tu gaya beta!',"MEME (original Puneet Superstar audio), Monty lip-syncs with an evil grin, chin toward the WOH card (no finger pointing).",'Crash zoom on Monty.','Vine boom.'),
-('K12','Sakshi',T('K12_a'),1.15,'Arre, 9 bura nahi. Purana samet ke, saaf karne ka saal.',"On the WOH card old boxes pack themselves and a broom sweeps (calm).",'Sakshi + card.','Soft swish.'),
-('K13','Sakshi',T('K13_b'),1.15,'Aur 8 matlab mehnat ka result… lottery nahi.',"Bricks stack beside Monty; a lottery ticket floats away. Label 'In numerology'.",'Two-shot.','Brick thumps.'),
-('V14','Vishnu ji',T('V14_b'),1.10,'Mulank batata hai tum kaun ho… personal year, mausam kaisa hai.',"Vishnu ji serene, chakra spins slowly behind him; sun and rain icons swap over a small Monty. Label 'In numerology'.",'Slow push-in.','Warm swell.'),
-('K15','Sakshi',T('K15_a'),1.15,'Jiska mulank same par haal alag, usse bhejo. Poori 2027 guide ke liye, link pe click karo.',"Sakshi winks; big send arrow, then link chip. No deity. On screen 'SEND IT TO SOMEONE WHO NEEDS IT' then 'COMPLETE GUIDE → LINK'.",'Sakshi close → two-shot.','Send whoosh.'),
+B=[ # id, who, file/source (None = no voice, silent event of that length), tempo, line, picture, camera, sound
+('M01','Monty',T('v7_M01'),1.12,'Dono ka mulank ek… phir uska sab sahi kaise, mera nahi?!',"Rooftop night. Monty's phone: friend's story (face not shown), new car, '2026 ✓'. Frame 0: jealous side-eye, smoke from his head. Hook text 'SAME MULANK, ALAG KISMAT?' from frame 0.",'Starts on the phone, pulls back to Monty.','Phone ding.'),
+('MEME1','Monty',('emotional-damage-meme.mp3',0,3.3),1.0,'Emotional damage!',"MEME (original Steven He audio), Monty lip-syncs: hand on heart, knees buckle, then full wail. Vishnu ji not on screen.",'Punch-in on Monty.','Vine boom.'),
+('V03','Vishnu ji',T('V03_b'),1.30,'Arre, mulank same hai… saal nahi.',"Vishnu ji on his cloud: popcorn, eyebrow up, quick wink.",'Push in.','Chime, munch.'),
+('M04','Monty',T('v7_M04'),1.12,'Saal ka kya logic hai? Sab toh mulank-mulank karte rehte hain!',"Monty confused, arms out.",'Close on Monty.','Boing.'),
+('K05','Sakshi',T('v7_K05'),1.10,'Prabhu, screen ready!',"Sakshi pops in as assistant and switches on a BIG SCREEN on the rooftop wall: WOH · 12 APRIL and TUM · 3 MARCH, both MULANK 3.",'Wide: screen, Vishnu ji, Sakshi, Monty.','Screen power-on, anime wow.'),
+('V06','Vishnu ji',T('v7_V06'),1.25,'Personal year: date + month + saal… single digit tak jodo.',"Big screen in large digits: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1'. Vishnu ji's chakra points like a teacher's pointer.",'Screen big in frame.','Ticks.'),
+('V07','Vishnu ji',T('v7_V07'),1.25,'Uska: 1, 2, 4, 1… 8. Tera: 3, 3, 1… 7. Haan beta, 7. Rona mana hai.',"Big screen builds '12 APR → 1+2+4+1 = 8' (gold 8) and '3 MAR → 3+3+1 = 7'. Monty sulks at 8, lip trembles at 7; Vishnu ji teasing grin on 'rona mana hai'.",'Screen + Monty.','Abacus ticks, ding.'),
+('V08','Vishnu ji',T('v7_V08'),1.25,'Numerology mein 8 matlab result ka saal. 7 matlab ruk ke, khud pe kaam karne ka saal.',"Label 'In numerology'. Screen: trophy on 8; lamp and book on 7. Sakshi gives Monty a sympathetic pout.",'Vishnu ji + screen.','Soft chime.'),
+('M09','Monty',T('v7_M09'),1.12,'Matlab wo party kare, main meditation?!',"Monty cries under a tiny rain cloud.",'Close on Monty.','Our sad trombone.'),
+('FLIP',None,None,1.6,None,"Year flip: Vishnu ji flicks his chakra; the big screen's '2026' tears away like a calendar page, '2027' shows, fireworks. Monty looks up, hopeful.",'Wide.','Paper rip, whoosh, firework pops.'),
+('V11','Vishnu ji',T('v7_V11'),1.25,'2027 ka number 2. Tera 3, 3, 2… 8! Uska 9.',"Big screen recalculates: TUM → 3+3+2 = 8 (gold), WOH → 1+2+4+2 = 9. Monty cheers.",'Screen + Monty.','Flip whooshes, ding.'),
+('V12','Vishnu ji',T('v7_V12'),1.25,'Uska 9: purana samet ke, safai ka saal. Aur tera 8? Result… mehnat ka. Lottery nahi.',"WOH profile packs old boxes, broom sweeps (calm). Bricks stack by Monty, a lottery ticket floats away. Label 'In numerology'.",'Vishnu ji + Monty.','Brick thumps.'),
+('M13','Monty',T('v7_M13'),1.12,'Mehnat?!',"Monty's cheer drops into shock.",'Crash zoom on Monty.','Record scratch.'),
+('MEME3','Vishnu ji',('ab-tu-gaya-beta-puneet.mp3',2.48,3.88),1.0,'Ab tu gaya beta!',"MEME (original Puneet Superstar audio), Vishnu ji lip-syncs to Monty with a playful grin; Sakshi giggles by the screen.",'Push in on Vishnu ji.','Vine boom.'),
+('V14','Vishnu ji',T('V14_b'),1.10,'Mulank batata hai tum kaun ho… personal year, mausam kaisa hai.',"Vishnu ji serene, slow push-in. Label 'In numerology'.",'Slow push-in.','Warm swell.'),
+('K15','Sakshi',T('K15_a'),1.15,'Jiska mulank same par haal alag, usse bhejo. Poori 2027 guide ke liye, link pe click karo.',"Sakshi winks; send arrow, then link chip. No deity.",'Sakshi close.','Send whoosh.'),
 ]
 GAP=0.15; t=0.0; beats=[]; cue=[]; track=[]; ref=None
 for i,(bid,who,src,tempo,line,pic,camr,snd) in enumerate(B):
+    if src is None:
+        s=round(t,2); e=round(t+tempo,2)
+        beats.append({'id':bid,'type':'event','start':s,'end':e,'who':None,'line':None,'picture':pic,'camera':camr,'sound':snd,'voice_file':None,'n':i+1}); t=e+GAP; continue
     if isinstance(src,tuple): x=load(os.path.join(MEM,src[0]),src[1],src[2])
     else: x=squeeze(load(src,tempo=tempo))
     if ref is None: ref=rms(x)
@@ -74,7 +78,7 @@ y=y[:int(end*SR)]
 wavfile.write(os.path.join(V,'voices','voice_track_timed.wav'),SR,(np.clip(y,-1,1)*32767).astype(np.int16))
 with open(os.path.join(V,'voices','cue_sheet.csv'),'w',newline='') as f:
     w=csv.writer(f); w.writerow(['id','who','start_s','end_s','file','line']); w.writerows(cue)
-meta={'title':'Same Mulank, alag saal — 2026 → 2027','channel':'Tarot Talk By Sakshi (Instagram Reels)','version':'v6 voice cut','runtime_s':end,'format':'1080x1920, 24 fps, 9:16','language':'Hindi/Hinglish voice, Hinglish on-screen text','cta':'send to someone who needs it + link to the complete 2027 guide','safe_zones_px':{'top':250,'bottom':400,'right':150},'text_rules':'min 48 px, max 2 text items on screen, captions count'}
+meta={'title':'Same Mulank, alag saal — 2026 → 2027','channel':'Tarot Talk By Sakshi (Instagram Reels)','version':'v7.2 voice cut','runtime_s':end,'format':'1080x1920, 24 fps, 9:16','language':'Hindi/Hinglish voice, Hinglish on-screen text','cta':'send to someone who needs it + link to the complete 2027 guide','safe_zones_px':{'top':250,'bottom':400,'right':150},'text_rules':'min 48 px, max 2 text items on screen, captions count'}
 json.dump({'meta':meta,'beats':beats},open(os.path.join(V,'script.json'),'w'),indent=1,ensure_ascii=False)
 print('runtime',end,'beats',len(beats))
 for b in beats: print(f"{b['id']:7s} {b['start']:6.2f}-{b['end']:6.2f} {b['who'] or ''}")

@@ -15,13 +15,14 @@
   {
    "id": "vishnu",
    "name": "Vishnu ji",
-   "role": "narrator on his cloud with popcorn; never the joke, not in the CTA, lip-syncs no meme clip, off screen in MEME1, never the 'Ab tu gaya beta' pose vp(1)",
+   "role": "teacher and troll (Sakshi feedback 23 Nov): explains every number, big expressions, lip-syncs the original 'Ab tu gaya beta' at Monty; never the joke, not in the CTA",
    "voice": {
     "voice_id": "KWuQEGxZQtpWhRutt6g6",
     "name": "Samar",
     "model": "eleven_v4",
     "speed": {
      "V03": 1.3,
+     "V06-V12": 1.15,
      "V14": 1.1
     }
    }
@@ -29,7 +30,7 @@
   {
    "id": "sakshi",
    "name": "Sakshi",
-   "role": "teacher + CTA (the only one who sells)",
+   "role": "assistant (switches on the big screen, reacts) + CTA only",
    "voice": {
     "voice_id": "hHyd5z9VxRT4YKoDwPRl",
     "name": "Lalita (placeholder)",
@@ -65,14 +66,6 @@
    ]
   },
   {
-   "beat": "MEME2",
-   "file": "assets/audio/memes/climax-abhi-baaki-hai-carryminati.mp3",
-   "use": [
-    0,
-    3.4
-   ]
-  },
-  {
    "beat": "MEME3",
    "file": "assets/audio/memes/ab-tu-gaya-beta-puneet.mp3",
    "use": [
@@ -99,6 +92,25 @@
    "K13": "b",
    "V14": "b",
    "K15": "a"
+  },
+  "batch2": {
+   "date": "23 Nov 2026 17:45 IST",
+   "takes_per_line": 1,
+   "cap": 650,
+   "credits_spent": 579,
+   "lines": [
+    "M01",
+    "M04",
+    "K05",
+    "V06",
+    "V07",
+    "V08",
+    "M09",
+    "V11",
+    "V12",
+    "M13"
+   ],
+   "files": "voices/takes/v7_*.mp3"
   }
  }
 }

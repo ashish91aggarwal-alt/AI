@@ -5,6 +5,7 @@ const H = { monty: 1339, sakshi: 1210, vishnu: 1212, brahma: 1265, shani: 1460 }
 const SHOTS = [ // [label, [char, scale], ...]  (two-shots in the rough cut; portal/foreground shots get a depth note)
   ['terrace two-shot', ['vishnu', 0.62], ['monty', 0.66]], ['V01 open', ['vishnu', 0.72], ['monty', 0.68]],
   ['office (Monty beside the desk)', ['brahma', 0.95 * 0.95 * 0.84], ['monty', 0.72], 'fg'], ['Sakshi entry', ['sakshi', 0.72], ['monty', 0.7]], ['formula', ['sakshi', 0.72], ['monty', 0.7]],
+  ['same-mulank room', ['vishnu', 0.55], ['monty', 0.58]], ['same-mulank room S', ['sakshi', 0.58], ['monty', 0.58]], ['same-mulank end', ['sakshi', 0.66], ['monty', 0.66]], ['same-mulank beta', ['vishnu', 0.66], ['monty', 0.7]],
   ['Shani portal (magic window)', ['shani', 0.62], ['monty', 0.55], 'portal'],
 ];
 let fail = 0;
