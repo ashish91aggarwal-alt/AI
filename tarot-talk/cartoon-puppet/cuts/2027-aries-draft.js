@@ -242,12 +242,12 @@ const SHOTS = [
   [at('V03'), at('K04'), t => ({ ...study(t, push(vishnu(seq(t, [[at('V03'), vWrite], [at('V03', 0.3), vSerious]]), 540, 1180, 0.78, t), t, at('V03'), 0.03), { dim: 0.35 * fade(t, at('V03'), 0.8) }),
     over: card(t, at('V03', 0.35), 'SHANI SADE SATI', [], { h: 250, col: '#3b4fa8', label: 'Vedic maanyata', labelAt: at('V03', 0.35), extra: () => saturn(820, 380, 0.7) }) })],
   // K04 "Saade saat saal? teen kar dijiye!": snap zoom on Sakshi, pen shivers; then she bargains
-  [at('K04'), at('V05'), t => ({ ...study(t, snapIn(kClose(t, seq(t, [[at('K04'), sShock], [at('K04', 0.35), sPlead]]), t < at('K04', 0.35) ? 'shiver' : 'idle'), t, at('K04'), 1.25, 1.05, 540, 900), { dim: 0.25 }),
-    over: t > at('K04', 0.55) ? `<g transform="translate(800 520) scale(${pop(t, at('K04', 0.55))}) rotate(8)"><circle r="96" fill="#ffd24a" stroke="${INK}" stroke-width="8"/>${T(0, 30, 1, '3?', '#1b1422', 92)}</g>` : '' })],
+  [at('K04'), at('V05'), t => ({ ...study(t, snapIn(kClose(t, seq(t, [[at('K04'), sShock], [at('K04', 0.35), sGiggle]]), t < at('K04', 0.35) ? 'shiver' : 'idle'), t, at('K04'), 1.25, 1.05, 540, 900), { dim: 0.25 }),
+    over: t > at('K04', 0.45) ? `<g transform="translate(760 520) scale(${pop(t, at('K04', 0.45))}) rotate(8)"><circle r="110" fill="#ffffff" stroke="${INK}" stroke-width="8"/><path d="M0 0 L0 -90 A90 90 0 ${clamp((t - at('K04', 0.45)) / 1.2) > 0.5 ? 1 : 0} 1 ${(90 * Math.sin(2 * Math.PI * Math.min(0.999, clamp((t - at('K04', 0.45)) / 1.2)))).toFixed(1)} ${(-90 * Math.cos(2 * Math.PI * Math.min(0.999, clamp((t - at('K04', 0.45)) / 1.2)))).toFixed(1)} Z" fill="#ff5c8a"/>${T(0, 30, 1, '7 MIN', '#1b1422', 58)}</g>` : '' })],
   // V05 Shani dev mol-bhaav nahi karte… Guru saath hain: gentle head shake, warm smile, golden glow clears the gloom
   [at('V05'), at('V06'), t => ({ ...study(t, jupiterGlow(t, at('V05', 0.55)) + push(two(t, seq(t, [[at('V05'), vShakeL], [at('V05', 0.12), vShakeR], [at('V05', 0.24), vShakeL], [at('V05', 0.36), vWarm], [at('V05', 0.6), { ...vPoint, mouthShape: 'smileBig' }]]),
       seq(t, [[at('V05'), sPlead], [at('V05', 0.6), sRelief]])), t, at('V05'), 0.012), { dim: 0.25 * (1 - fade(t, at('V05', 0.55), 1)), gold: fade(t, at('V05', 0.55), 1) }),
-    over: card(t, at('V05', 0.5), 'SHANI = MEHNAT KA PHAL', [['GURU = KRIPA', at('V05', 0.75), '#c08a1a', 56]], { size: 50, h: 300, label: 'Vedic maanyata', labelAt: at('V05', 0.75) }) })],
+    over: card(t, at('V05', 0.5), 'SHANI DEV = SABAR KI SEEKH', [['GURU = KRIPA', at('V05', 0.75), '#c08a1a', 56]], { size: 50, h: 300, label: 'Vedic maanyata', labelAt: at('V05', 0.75) }) })],
   // V06 health: the diary card fills on the spoken dates; Sakshi writes
   [at('V06'), at('K07'), t => ({ ...study(t, twoV(two(t, seq(t, [[at('V06'), vTalk], [at('V06', 0.62), vPleased]]), sNote, '', { mode: 'write' }), t, at('V06'))),
     over: card(t, at('V06', 0.02), 'HEALTH ⚠', [['9 Mar–26 Apr', at('V06', 0.12), '#d22f48'], ['24 Aug–8 Oct', at('V06', 0.3), '#d22f48'], ['JULY: FIT 💪', at('V06', 0.68), '#1b8a3a']], { h: 440, label: 'Doctor ki salah zaroor lein', labelAt: at('V06', 0.5) }) })],
@@ -277,12 +277,9 @@ const SHOTS = [
   // K16 "Waah!": claps
   [at('K16'), at('V17'), t => study(t, hearts(t, at('V15')) + snapIn(kClose(t, sClap), t, at('K16'), 1.15, 1.0, 540, 950), { gold: 0.6 })],
   // V17 "Bas August-October behas mat karna. Wakeel sahiba, ab iska bhi discount chahiye?" — he teases first
-  [at('V17'), at('K18'), t => ({ ...study(t, push(two(t, seq(t, [[at('V17'), vFinger], [at('V17', 0.42), vTease], [at('V17', 0.7), vLaugh]]), seq(t, [[at('V17'), sBlush], [at('V17', 0.42), sWow], [at('V17', 0.75), sSheepish]]),
-      t < at('V17', 0.42) ? stormCloud(t, 790, 760) : ''), t, at('V17'), 0.02, 420, 1050)),
-    over: t < at('V17', 0.42) ? card(t, at('V17', 0.05), 'CAREFUL', [['24 Aug–8 Oct', at('V17', 0.12), '#d22f48']], { h: 260, y: 300 }) : '' })],
-  // K18 "Mesh wale aur bina behas ke? Haan Prabhu, chahiye!": despair, then demand
-  [at('K18'), at('V19'), t => ({ ...study(t, snapIn(kClose(t, seq(t, [[at('K18'), sDespair], [at('K18', 0.62), sDemand]])), t, at('K18'), 1.2, 1.02, 540, 950)),
-    over: t > at('K18', 0.1) && t < at('K18', 0.62) ? `<g transform="translate(560 520)">${ram(0, 0, 0.9, 0, 0, (t * 2) % 1)}</g>` : '' })],
+  [at('V17'), at('V19'), t => ({ ...study(t, push(two(t, seq(t, [[at('V17'), vFinger], [at('V17', 0.7), vWarm]]), seq(t, [[at('V17'), sBlush], [at('V17', 0.5), sSheepish]]),
+      stormCloud(t, 790, 760)), t, at('V17'), 0.02, 420, 1050)),
+    over: card(t, at('V17', 0.05), 'CAREFUL', [['24 Aug–8 Oct', at('V17', 0.2), '#d22f48']], { h: 260, y: 300 }) })],
   // V19 family: home cut-in, then calm
   [at('V19'), at('K20'), t => ({ ...study(t, homeGag(t, at('V19'))), over: card(t, at('V19', 0.55), 'FAMILY: BADON KA SAMMAN', [['PROPERTY: sirf saaf deal', at('V19', 0.75), '#3b4fa8', 48]], { h: 290, y: 970, size: 52 }) })],
   // K20 "Mummy ki daant bhi?": loophole face
@@ -298,7 +295,7 @@ const SHOTS = [
   [at('V23', 0.45), at('K24'), t => ({ ...study(t, push(two(t, vBless, sProud), t, at('V23', 0.45), 0.02), { gold: 0.8 }),
     over: card(t, at('V23', 0.5), 'GUSSA KAM, MEHNAT ZYADA', [], { h: 170, y: 320, size: 46 }) })],
   // K24 CTA: Sakshi alone (no deity in the selling part); gavel taps, one wink, link chip
-  [at('K24'), B('endcard').start, t => ({ ...study(t, push(kClose(t, seq(t, [[at('K24'), sWin], [at('K24', 0.3), sWink], [at('K24', 0.5), sWin]])) + (t < at('K24', 0.3) ? gavel(t, 300, 820, 1) : ''), t, at('K24'), 0.02)), over: linkChip(t, at('K24', 0.45)) })],
+  [at('K24'), B('endcard').start, t => ({ ...study(t, push(kClose(t, seq(t, [[at('K24'), sWin], [at('K24', 0.35), sWink], [at('K24', 0.55), sWin]])), t, at('K24'), 0.02)), over: linkChip(t, at('K24', 0.45)) })],
   [B('endcard').start, DUR, t => ({ ...study(t, kClose(t, sProud, 'idle', T(-60, 10, 1, 'ARIES ✓', '#1b8a3a', 40))), over: `<rect x="90" y="270" width="830" height="200" rx="24" fill="#1b1422" opacity="0.9"/>` + txt(505, 350, 1, 'Aries dost ko bhejo', '#ffffff', 54) + txt(505, 430, 1, 'Poori guide: LINK', '#ffd24a', 56) })],
 ];
 SHOTS.forEach((s, i) => { if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; });

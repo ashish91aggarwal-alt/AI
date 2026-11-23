@@ -2,24 +2,23 @@ id,who,start_s,end_s,file,line
 K01,Sakshi,0.0,5.85,voices/lines/K01.wav,"Prabhu, Aries ka 2027 likhne se pehle zara meri baat sun lijiye. Main Aries walon ki wakeel hun."
 V02,Vishnu ji,5.93,9.19,voices/lines/V02.wav,"Mesh walon ko wakeel ki nahi, brake ki zaroorat hai."
 V03,Vishnu ji,9.57,12.61,voices/lines/V03.wav,Waise is saal Shani dev ki Sade Sati chal rahi hai.
-K04,Sakshi,12.69,16.05,voices/lines/K04.wav,"Saade saat saal? Prabhu, teen kar dijiye na, bas teen!"
-V05,Vishnu ji,16.13,21.16,voices/lines/V05.wav,"Shani dev mol-bhaav nahi karte, jitni mehnat utna phal. Aur Guru saath hain, ghabrao mat."
-V06,Vishnu ji,21.24,27.48,voices/lines/V06.wav,March-April aur August se October tak sehat ka thoda dhyaan rakhna. July mein toh ekdum fit rahoge.
-K07,Sakshi,27.56,29.33,voices/lines/K07.wav,Toh July mein gym join kar lete hain!
-V08,Vishnu ji,29.41,32.1,voices/lines/V08.wav,"Join toh har saal karte hain, is baar jaana bhi padega."
-V09,Vishnu ji,32.53,36.43,voices/lines/V09.wav,"Office mein kaam ka pressure rahega, aur koi na koi boss ke kaan bharega."
-K10,Sakshi,36.51,38.54,voices/lines/K10.wav,"Naam bataiye, abhi notice bhejti hun!"
-V11,Vishnu ji,38.62,44.03,voices/lines/V11.wav,Notice-votice chhodo. April-May aur September-October mein naukri chhodne ka risk mat lena.
-V12,Vishnu ji,44.11,48.2,voices/lines/V12.wav,"Paisa theek-thaak se behtar rahega, March-April aur June mein sabse badhiya."
-K13,Sakshi,48.28,49.34,voices/lines/K13.wav,Toh Ferrari?
-V14,Vishnu ji,49.42,50.06,voices/lines/V14.wav,FD.
-V15,Vishnu ji,50.54,53.13,voices/lines/V15.wav,June se November tak pyaar mein Guru ka saath hai.
-K16,Sakshi,53.21,53.82,voices/lines/K16.wav,Waah!
-V17,Vishnu ji,54.0,58.76,voices/lines/V17.wav,"Bas August-October mein behas mat karna. Wakeel sahiba, ab iska bhi discount chahiye?"
-K18,Sakshi,58.84,62.1,voices/lines/K18.wav,"Mesh wale aur bina behas ke? Haan Prabhu, chahiye!"
-V19,Vishnu ji,62.38,64.66,voices/lines/V19.wav,Aur ghar mein badon ki baat dil pe mat lena.
-K20,Sakshi,64.74,65.83,voices/lines/K20.wav,Mummy ki daant bhi?
-V21,Vishnu ji,65.91,69.16,voices/lines/V21.wav,"Wo daant nahi, prasad hai, sar aankhon pe."
-V22,Vishnu ji,69.59,75.73,voices/lines/V22.wav,"Karna bas itna hai: Mangalwar ko Sundarkand padho, chaandi pehno, aur kisi netraheen ko pyaar se khana khilao."
-V23,Vishnu ji,75.81,78.69,voices/lines/V23.wav,"Aur is saal brake bhi lagana, aur gym bhi jaana."
-K24,Sakshi,78.77,83.67,voices/lines/K24.wav,"Case jeet gaye! Apne Aries dost ko ye bhej do, mahine-wise poori guide link mein hai."
+K04,Sakshi,12.69,17.82,voices/lines/K04.wav,"Saade saat saal?! Prabhu, Aries walon se toh 7 minute wait nahi hota!"
+V05,Vishnu ji,18.15,22.65,voices/lines/V05.wav,"Isiliye toh Shani dev sabar sikhayenge. Aur Guru saath hain, ghabrao mat."
+V06,Vishnu ji,22.73,28.96,voices/lines/V06.wav,March-April aur August se October tak sehat ka thoda dhyaan rakhna. July mein toh ekdum fit rahoge.
+K07,Sakshi,29.04,30.81,voices/lines/K07.wav,Toh July mein gym join kar lete hain!
+V08,Vishnu ji,30.89,33.59,voices/lines/V08.wav,"Join toh har saal karte hain, is baar jaana bhi padega."
+V09,Vishnu ji,34.02,37.91,voices/lines/V09.wav,"Office mein kaam ka pressure rahega, aur koi na koi boss ke kaan bharega."
+K10,Sakshi,37.99,40.03,voices/lines/K10.wav,"Naam bataiye, abhi notice bhejti hun!"
+V11,Vishnu ji,40.11,45.52,voices/lines/V11.wav,Notice-votice chhodo. April-May aur September-October mein naukri chhodne ka risk mat lena.
+V12,Vishnu ji,45.6,49.69,voices/lines/V12.wav,"Paisa theek-thaak se behtar rahega, March-April aur June mein sabse badhiya."
+K13,Sakshi,49.77,50.83,voices/lines/K13.wav,Toh Ferrari?
+V14,Vishnu ji,50.91,51.55,voices/lines/V14.wav,FD.
+V15,Vishnu ji,52.03,54.61,voices/lines/V15.wav,June se November tak pyaar mein Guru ka saath hai.
+K16,Sakshi,54.69,55.31,voices/lines/K16.wav,Waah!
+V17,Vishnu ji,55.49,57.82,voices/lines/V17.wav,Bas August-October mein behas mat karna.
+V19,Vishnu ji,57.9,60.18,voices/lines/V19.wav,Aur ghar mein badon ki baat dil pe mat lena.
+K20,Sakshi,60.26,61.35,voices/lines/K20.wav,Mummy ki daant bhi?
+V21,Vishnu ji,61.43,64.68,voices/lines/V21.wav,"Wo daant nahi, prasad hai, sar aankhon pe."
+V22,Vishnu ji,65.11,71.25,voices/lines/V22.wav,"Karna bas itna hai: Mangalwar ko Sundarkand padho, chaandi pehno, aur kisi netraheen ko pyaar se khana khilao."
+V23,Vishnu ji,71.33,74.21,voices/lines/V23.wav,"Aur is saal brake bhi lagana, aur gym bhi jaana."
+K24,Sakshi,74.29,79.63,voices/lines/K24.wav,"Aries walo, sun liya na? Apne Aries dost ko ye bhej do, mahine-wise poori guide link mein hai."

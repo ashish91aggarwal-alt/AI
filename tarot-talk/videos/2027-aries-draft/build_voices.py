@@ -25,11 +25,13 @@ def segs(f):
         a=e
     if dur-a>0.15: r.append((a,dur))
     return [(a/TEMPO[f],b/TEMPO[f]) for a,b in r]
-AUD={'V':load('vishnu_block.mp3'),'K':load('sakshi_block.mp3')}; SEG={'V':segs('vishnu_block.mp3'),'K':segs('sakshi_block.mp3')}
+TEMPO.update({'v8_vishnu.mp3':1.15,'v8_sakshi.mp3':1.12})
+AUD={'V':load('vishnu_block.mp3'),'K':load('sakshi_block.mp3'),'V8':load('v8_vishnu.mp3'),'K8':load('v8_sakshi.mp3')}; SEG={'V':segs('vishnu_block.mp3'),'K':segs('sakshi_block.mp3'),'V8':segs('v8_vishnu.mp3'),'K8':segs('v8_sakshi.mp3')}
+SRC={'K04':[('K8',0),('K8',1)],'V05':[('V8',0),('V8',1),('V8',2)],'K24':[('K8',2),('K',13)]}   # v8 (owner 24 Nov): new takes only where the line changed
 MAP={'K01':[0,1],'V02':[0],'V03':[1],'K04':[2,3,4],'V05':[2,3,4,5],'V06':[6,7],'K07':[5],'V08':[8,9],'V09':[10,11],'K10':[6],'V11':[12],
-     'V12':[13,14],'K13':[7],'V14':[15],'V15':[16],'K16':[8],'V17':[17,18,19],'K18':[9,10],'V19':[20],'K20':[11],'V21':[21,22],'V22':[23,24,25],'V23':[26],'K24':[12,13]}
-INNER={'K04':0.16,'V05':0.12,'V17':0.24,'K24':0.2}   # pause kept between pieces inside one line (s)
-BEAT_AFTER={'V02':0.3,'V08':0.35,'V14':0.4,'K16':0.1,'V21':0.35,'K18':0.2}  # laugh beat after a punchline
+     'V12':[13,14],'K13':[7],'V14':[15],'V15':[16],'K16':[8],'V17':[17],'V19':[20],'K20':[11],'V21':[21,22],'V22':[23,24,25],'V23':[26],'K24':[12,13]}
+INNER={'K04':0.14,'V05':0.12,'K24':0.2}   # pause kept between pieces inside one line (s)
+BEAT_AFTER={'V02':0.3,'K04':0.25,'V08':0.35,'V14':0.4,'K16':0.1,'V21':0.35}  # laugh beat after a punchline
 GAP=0.08
 def piece(x,a,b,pad=0.04):
     y=x[max(0,int((a-pad)*SR)):int((b+pad)*SR)].copy(); n=int(0.01*SR); y[:n]*=np.linspace(0,1,n); y[-n:]*=np.linspace(1,0,n); return y
@@ -37,7 +39,7 @@ S=json.load(open(os.path.join(V,'script.json'))); t=0.0; cue=[]; track=np.zeros(
 for b in S['beats']:
     if b['type']!='line':
         b['start']=round(t,2); b['end']=round(t+1.0,2); t+=1.0; continue
-    k=b['id'][0]; parts=[piece(AUD[k],*SEG[k][i]) for i in MAP[b['id']]]
+    k=b['id'][0]; parts=[piece(AUD[a],*SEG[a][i]) for a,i in SRC[b['id']]] if b['id'] in SRC else [piece(AUD[k],*SEG[k][i]) for i in MAP[b['id']]]
     gap=np.zeros(int(INNER.get(b['id'],0.2)*SR),np.float32)
     x=parts[0]
     for p in parts[1:]: x=np.concatenate([x,gap,p])

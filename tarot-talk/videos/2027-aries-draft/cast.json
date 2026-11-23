@@ -33,6 +33,17 @@
   },
   "takes_per_speaker": 1,
   "cap": 1700,
-  "credits_spent": 1681
+  "credits_spent": 1681,
+  "batch2": {
+   "date": "24 Nov 2026 00:40 IST",
+   "why": "owner disliked discount + 'case jeet gaye'",
+   "lines": [
+    "K04",
+    "V05",
+    "K24 first half"
+   ],
+   "cap": 200,
+   "credits_spent": 197
+  }
  }
 }
