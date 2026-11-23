@@ -1,5 +1,7 @@
 # Character library (reuse these; they are owner-approved)
 
+Voices: `../assets/voices.json` has each character's ElevenLabs voice id, speed and effects. Reuse them so the cast always sounds the same.
+
 Every character is code: `char_<id>.js` draws it from a pose object, and `cast_<id>.js` holds the approved poses as `POSES` (render the sheet with `node render.js cast_<id>.js cast/<id> --stills=0,1,2,...`).
 
 In a cut file, place a character with the kit helper. It runs the acting layer automatically: lip-sync when it is that character's line, blinks, eye darts, brow pops, head nods, and a talking-arm gesture.

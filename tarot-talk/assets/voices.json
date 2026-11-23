@@ -1,0 +1,15 @@
+{
+ "note": "ElevenLabs voices for the Tarot Talk cartoon cast. Read from the 'Tarot Talk - Mulank 8 reel voices v7' flow (ZfSHl2VbESS6CrAuBm6I) on 23 Nov 2026. Model eleven_v4, Hindi script with [emotion] tags. Speed and FX are applied locally after generation. Ask the owner for a credit cap before generating.",
+ "model": "eleven_v4",
+ "cast": {
+  "monty":  {"voice_id": "RvBekjgTX98GYDwlyEKM", "name": "Agastya – Fun, Relatable Comedy Creator", "speed": 1.12, "fx": "Aayein pitched up +4 st; 'P-p-present sir' tremolo; crying line wobble"},
+  "vishnu": {"voice_id": "KWuQEGxZQtpWhRutt6g6", "name": "Samar – Fun & Playful Comedy Actor", "speed": 1.30, "fx": "dry, close, tiny slap echo on punchlines"},
+  "brahma": {"voice_id": "HrEP6VcINSSo6BOoRlQl", "name": "Tinku – Animated Kids Storyteller", "speed": 1.12, "fx": "small office room"},
+  "shani":  {"voice_id": "unEFMOkn1ERDgzALVe2Z", "name": "Kuber J – Deep & Gripping Documentary", "speed": 1.06, "fx": "pitch -3 st, octave-down double at -19 dB, low boost, temple-hall reverb; owner's pick"},
+  "sakshi": {"voice_id": "hHyd5z9VxRT4YKoDwPRl", "name": "Lalita – Funny & Relatable Character", "speed": 1.0, "fx": "dry", "note": "placeholder; Sakshi's own clone is FZ1k4HOPd3f9xLQwPmHO ('Sakshi', cloned from 3 of her reels, 21 Nov 2026), or she records her lines"}
+ },
+ "tried_not_chosen": {
+  "shani": [{"voice_id": "KT5gvoP1NYcdhmoEuP4j", "name": "Guru Gary - Calm, Wise, and Grounded Host"}, {"voice_id": "HvtjkB4qXezhvD9lP84O", "name": "Pavan M - Grand Hindu Mythology Narrator"}]
+ },
+ "sfx": {"crow": "eleven_text_to_sound_v3, 'A single Indian house crow caw' (videos/2027-warmup-mulank8/voices/sfx/crow_one_caw.wav)"}
+}
