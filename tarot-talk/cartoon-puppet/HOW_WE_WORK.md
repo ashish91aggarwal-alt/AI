@@ -22,7 +22,7 @@
 | A video's script package, `video.json`, `captions.json`, `sfx_cues.json` | `tarot-talk/videos/<slug>/` |
 | Its film (shot list + its own graphics) | `tarot-talk/cartoon-puppet/cuts/<slug>.js` |
 | A new character | `tarot-talk/cartoon-puppet/char_<id>.js` + `cast_<id>.js`, plus a row in `CHARACTERS.md` |
-| A new location | a function in `tarot-talk/cartoon-puppet/loc.js` (terrace, office, court, park) |
+| A new location | a function in `tarot-talk/cartoon-puppet/loc.js` (terrace, office, court, park, cloud study) or `loc_world.js` (world tour: space, Alps, city, Dubai, Taj Mahal, Eiffel Tower, Indian temple town) |
 | Meme lines and trending sounds (shared, reusable) | `tarot-talk/assets/audio/memes/` + a row in its `catalog.json`; the video's `video.json` lists the ones it uses |
 | Scratch, renders, check stills | `cartoon-puppet/work/`, `out/`, `cast/` (git-ignored; never commit them) |
 
@@ -66,6 +66,10 @@ Reviewer prompt that worked:
 - **No repeated lines:** check that the end of one voice line doesn't repeat the start of the next (e.g. "Uska 9. Uska 9."). Trim the take instead of re-generating.
 - **Music must be strong:** use the beat kit in make_music.py (`beat` / `sadpad` / `drop`, levelled by `music_rms_db`). The bed should sit about 5 dB under the voice and duck about 9 dB under speech. The old tabla groove alone read as weak.
 - **Sakshi never jerks her head on syllables** (owner: "just twitching her head"). act.js gives her a slow small sway only; the emotion is carried by brows, lids, blush and mouth, with a happy-eye smile in the pauses.
+
+**Staging (owner, 23 Nov 2026)**
+- **No repeated single scene.** The owner rejected one location for a whole reel. Give each topic its own place (e.g. the Aries world tour, with a cloud-wipe 'flight' between places) and change the framing every beat.
+- **Show the deity's supremacy:** the deity floats on his cloud bigger than the world landmark behind him, calm and smiling. In close-ups the landmark sits beside him, not hidden behind.
 
 **Layout**
 - **Instagram safe zones:** captions at about 72–75% of the height; the right 12% and bottom 20% stay free of key items; one full-width card per beat.

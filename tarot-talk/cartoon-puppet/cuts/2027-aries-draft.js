@@ -187,13 +187,22 @@ function gavel(t, x, y, s) { const tap = Math.max(0, Math.sin(t * 10)); return `
 const linkChip = (t, t0) => t < t0 ? '' : `<g transform="translate(500 390) scale(${pop(t, t0)})"><rect x="-440" y="-110" width="880" height="220" rx="60" fill="#ffd24a" stroke="${INK}" stroke-width="10"/>${T(0, -14, 1, 'POORI ARIES 2027 GUIDE', '#1b1422', 56)}${T(0, 66, 1, 'LINK MEIN →', '#8a2238', 60)}</g>` + `<g transform="translate(${760 + 30 * Math.sin(t * 6)} 640) rotate(-20)"><path d="M-70 -26 L30 -26 L30 -60 L90 0 L30 60 L30 26 L-70 26 Z" fill="#ff5c8a" stroke="${INK}" stroke-width="8"/></g>`;
 
 // ---------- scene builders ----------
-const study = (t, actors, o = {}) => { const S0 = L.cloudStudy(t, o); return { defs: S0.defs, body: S0.back + actors + S0.front }; };
+// owner (22:42 IST): world tour — each topic in its own place, Vishnu ji floating bigger than the landmark (supremacy)
+const W = require('../loc_world');
+const PLACES = [['K01', 'cosmos'], ['V02', 'alps'], ['V03', 'cosmos'], ['V06', 'alps'], ['V09', 'cityNight'], ['V12', 'dubai'], ['V15', 'taj'], ['V17', 'eiffel'], ['V19', 'indiaDusk'], ['V23', 'cosmos'], ['K24', 'study']];
+const placeAt = t => { let k = 0; PLACES.forEach(([id], i) => { if (t >= at(id) - 0.05) k = i; }); return k; };
+let DX = 0;   // close-ups set this so the landmark sits beside the character instead of behind
+const study = (t, actors, o = {}) => {
+  const k = placeAt(t), name = PLACES[k][1], S0 = name === 'study' ? L.cloudStudy(t, o) : W[name](t, o), dx = DX; DX = 0;
+  const sc = 1.03 + Math.abs(dx) / 540, back = dx ? `<g transform="translate(${540 + dx} 960) scale(${sc.toFixed(3)}) translate(-540 -960)">${S0.back}</g>` : S0.back;
+  return { defs: S0.defs, body: back + actors + S0.front + (k > 0 ? W.cloudWipe(t, at(PLACES[k][0]) - 0.2) : '') };
+};
 const VX = 300, VY = 1250, VS = 0.6, KX = 790, KY = 1240, KS = 0.64;         // two-shot: Vishnu ji left on his cloud, Sakshi right on a small cloud
 const two = (t, vpose, kpose, extra = '', dOpt = {}) => vishnu(vpose, VX, VY, VS, t) + smallCloud(KX - 40, KY + 380, 1.1) + sakshi(kpose, KX, KY, KS, t) + diary(t, dOpt.x ?? 600, dOpt.y ?? 1170, dOpt.s ?? 0.55, dOpt.mode ?? 'idle', dOpt.page ?? '') + extra;
 const twoV = (body, t, t0) => cam(body, 330, 1000, 1.28 + 0.03 * Math.max(0, t - t0));   // favour Vishnu ji
 const twoK = (body, t, t0) => cam(body, 790, 1000, 1.3 + 0.03 * Math.max(0, t - t0));   // favour Sakshi
-const vClose = (t, pose) => vishnu(pose, 540, 1090, 0.9, t);
-const kClose = (t, pose, dmode = 'idle', page = '') => smallCloud(500, 1720, 1.5) + sakshi(pose, 540, 1150, 0.82, t) + diary(t, 210, 1080, 0.75, dmode, page);
+const vClose = (t, pose) => { DX = 190; return vishnu(pose, 400, 1090, 0.9, t); };
+const kClose = (t, pose, dmode = 'idle', page = '') => { DX = -190; return smallCloud(620, 1720, 1.5) + sakshi(pose, 660, 1150, 0.82, t) + diary(t, 860, 1500, 0.7, dmode, page); };
 const SCROLL = (t, title = 'ARIES 2027', from = 0, extra = '', y = 600) => scroll(t, 560, y, 0.85, title, from, 4, extra);
 
 const SHOTS = [
