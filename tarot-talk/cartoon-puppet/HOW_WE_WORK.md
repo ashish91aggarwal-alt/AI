@@ -9,6 +9,8 @@
 - **One character or batch at a time:** wait for "ok" or "next" before moving on. When the owner says "redraw" or "looks AI", start again from research, not from small tweaks.
 - **Paid credits:** before any voice test, ask how many voices, how many versions and what credit cap to use. Everything else costs nothing (code, local audio).
 - **Spend less on ElevenLabs** (owner, 23 Nov 2026): 1 take per line by default, reuse every good line already made, and re-take or splice only the part that changed.
+- **CTA is always link-based** (owner, 23 Nov 2026: "No cta shall have comments. All link based"). Never "comment karo <keyword>"; use "send to someone + guide on the link".
+- **Script first, credits later** (owner, 23 Nov 2026): get the script strong and reviewed before asking about or spending voice credits. Each script needs a comic engine (a running situation such as Sakshi bargaining with Bhagwan), not a list of facts with jokes on top.
 - **Owner sign-off:** a finished reel needs it before posting. Raise risks plainly (film or song clips may get muted, a comedian's line in a deity's mouth, the CTA product must exist).
 
 ## Where files go (stay in this tight place)
