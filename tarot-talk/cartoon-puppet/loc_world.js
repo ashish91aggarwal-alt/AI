@@ -160,8 +160,10 @@ function indiaDusk(t = 0, o = {}) {
 // cloud wipe: white clouds sweep across for 0.35 s when the place changes (the "flight" between places)
 function cloudWipe(t, t0, d = 0.45) {
   const u = (t - t0) / d; if (u < -0.5 || u > 1) return '';
-  const k = 1 - Math.abs(u * 2 - 1); let o = `<rect width="1080" height="1920" fill="#ffffff" opacity="${(0.55 * Math.max(0, k)).toFixed(2)}"/>`;
-  for (let i = 0; i < 9; i++) o += L.softCloud(-500 + (u + i * 0.08) * 2100, 200 + i * 200, 3.2, i % 2 ? '#ffffff' : '#ece6fa', Math.max(0, k));
+  const k = 1 - Math.abs(u * 2 - 1); if (k <= 0.02) return '';
+  let o = `<rect width="1080" height="1920" fill="#ffffff" opacity="${(0.55 * k).toFixed(2)}"/>`;
+  // (a group with opacity lying fully off the canvas crashes resvg, so off-screen clouds are skipped)
+  for (let i = 0; i < 9; i++) { const x = Math.round(-500 + (u + i * 0.08) * 2100); if (x < -600 || x > 1680) continue; o += L.softCloud(x, 200 + i * 200, 3.2, i % 2 ? '#ffffff' : '#ece6fa', +k.toFixed(2)); }
   return o;
 }
 module.exports = { cosmos, alps, cityNight, dubai, taj, eiffel, indiaDusk, cloudWipe };
