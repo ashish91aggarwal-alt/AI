@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T09:35:11Z",
+ "built": "2026-11-23T09:51:36Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -75,7 +75,7 @@
    "doing": "Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied",
    "next": "Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting",
    "blocked": "",
-   "updated_at": "2026-11-23T09:34:45Z",
+   "updated_at": "2026-11-23T09:51:36Z",
    "compactions": 0,
    "session": {
     "link": null,
@@ -158,6 +158,12 @@
   }
  ],
  "messages": [
+  {
+   "to": "lead",
+   "text": "production added tarot-talk/assets/ (shared reusable assets: audio/memes with catalog.json). Please add it to production's owns and the AGENTS.md folder map.",
+   "at": "2026-11-23T09:51:36Z",
+   "from": "production"
+  },
   {
    "to": "lead",
    "text": "production added 3 new folders: tarot-talk/cartoon-puppet/ (code-drawn cartoon reel toolchain, one-command make_reel.sh), tarot-talk/viral-hooks/ (meme lines, trending sounds, our SFX), tarot-talk/videos/2027-warmup-mulank8/ (script package + voices). Please add them to production's 'owns' in team/roles.json and to the folder map in AGENTS.md.",
