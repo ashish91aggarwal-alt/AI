@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "2027-same-mulank reel: script v3 written, independent review 8.5/10",
- "next": "Owner ok on script; voice count, versions and credit cap; personal-year system; report contents",
+ "doing": "2027-same-mulank single reel: script v5 (generic, original meme voices, share+link CTA)",
+ "next": "Owner ok on v5; Jal lijiye clip; link/guide; voices + credit cap",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T09:53:53Z"
  },
- "updated_at": "2026-11-23T09:59:42Z"
+ "updated_at": "2026-11-23T10:24:59Z"
 }
