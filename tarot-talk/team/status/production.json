@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied",
- "next": "Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting",
+ "doing": "New cartoon-reel session set up; pipeline check passed",
+ "next": "Waiting for owner: script package or a new idea",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T09:53:53Z"
  },
- "updated_at": "2026-11-23T09:54:33Z"
+ "updated_at": "2026-11-23T09:54:36Z"
 }
