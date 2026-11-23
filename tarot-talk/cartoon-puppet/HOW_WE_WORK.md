@@ -70,6 +70,7 @@ Reviewer prompt that worked:
 
 **Staging (owner, 23 Nov 2026)**
 - **No repeated single scene.** The owner rejected one location for a whole reel. Give each topic its own place (e.g. the Aries world tour, with a cloud-wipe 'flight' between places) and change the framing every beat.
+- **Detailed, true-to-life backgrounds** (owner, 23 Nov 2026: "true copy of the desired location… give attention to minute objects too"; chose code-only over an image model). Research each landmark's real parts and draw them all (`loc_hd.js`), then add small life: people in Indian clothes, lamps, benches, birds, flowers, inlay work, boats, cabs, fountains, plus a few moving bits.
 - **Show the deity's supremacy:** the deity floats on his cloud bigger than the world landmark behind him, calm and smiling. In close-ups the landmark sits beside him, not hidden behind.
 
 **Layout**

@@ -189,6 +189,9 @@ const linkChip = (t, t0) => t < t0 ? '' : `<g transform="translate(500 390) scal
 // ---------- scene builders ----------
 // owner (22:42 IST): world tour — each topic in its own place, Vishnu ji floating bigger than the landmark (supremacy)
 const W = require('../loc_world');
+// owner (23:28 IST): detailed, true-copy places with minute objects -> loc_hd.js plates
+const HD = require('../loc_hd');
+Object.assign(W, { alps: HD.alps, cityNight: HD.nyc, dubai: HD.dubai, taj: HD.taj, eiffel: HD.eiffel, indiaDusk: HD.varanasi });
 const PLACES = [['K01', 'cosmos'], ['V02', 'alps'], ['V03', 'cosmos'], ['V06', 'alps'], ['V09', 'cityNight'], ['V12', 'dubai'], ['V15', 'taj'], ['V17', 'eiffel'], ['V19', 'indiaDusk'], ['V23', 'cosmos'], ['K24', 'study']];
 const placeAt = t => { let k = 0; PLACES.forEach(([id], i) => { if (t >= at(id) - 0.05) k = i; }); return k; };
 let DX = 0;   // close-ups set this so the landmark sits beside the character instead of behind
