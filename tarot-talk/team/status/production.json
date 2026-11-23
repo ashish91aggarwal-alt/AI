@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Aries 2027 reel: voices done (84.8 s, 1681 credits)",
- "next": "Owner listens to voice track; then cut length / skeleton",
+ "doing": "Aries 2027 reel: voices approved, skeleton cut rendered",
+ "next": "Batch 2: cloud-study location, scroll/quill/diary props, Sakshi wakeel coat, real shots",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T14:02:58Z"
  },
- "updated_at": "2026-11-23T15:30:39Z"
+ "updated_at": "2026-11-23T16:24:18Z"
 }
