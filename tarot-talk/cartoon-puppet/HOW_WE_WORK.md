@@ -60,7 +60,8 @@ Reviewer prompt that worked:
 - Consistent between characters in a shot (`prop_gate.js`).
 
 **Audio**
-- **Original meme voices beat our re-voices** for viral lines. Add trending meme sounds in gaps. Look in `assets/audio/memes/catalog.json` first.
+- **Meme lines always use the original voice clip, never re-voiced by our cast** (owner, 23 Nov 2026). Normal lines stay our cast. Add trending meme sounds in gaps. Look in `assets/audio/memes/catalog.json` first.
+- **Deities never lip-sync a meme clip.** If a clip in someone else's voice plays, keep the deity off screen in that beat (a woman's film line with Vishnu ji on screen reads as his voice).
 - Clips are saved once in `tarot-talk/assets/audio/memes/` (with `catalog.json`) and reused. Check the catalog before searching the web.
 - Our own SFX and music are synthesised (no paid music).
 
@@ -77,4 +78,5 @@ Reviewer prompt that worked:
   - Fairer skin.
 - **PVR tub:** drawn without research, rejected. Always search first.
 - **Small graphics:** small cards and text in the bottom zone failed the review; one big card per beat.
-- **Meme clips:** many meme buttons online are mislabelled. Always transcribe.
+- **Meme clips:** many meme buttons online are mislabelled. Always transcribe. `find_phrase.py` now decodes with ffmpeg (the installed PyAV broke on mp3).
+- **Generic reels:** for a single standalone reel the owner wants a general example (unnamed "WOH / TUM" cards), not named side cast, and a CTA of "send it to someone who needs it + the guide link".
