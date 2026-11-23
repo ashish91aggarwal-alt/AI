@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T11:31:24Z",
+ "built": "2026-11-23T12:22:22Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "2027-same-mulank v7.1: Vishnu ji leads (Sakshi feedback)",
-   "next": "Owner: credit cap for 9 new lines (~1,000), then voices + rebuild",
+   "doing": "2027-same-mulank v7.2 rough cut done (Vishnu ji leads, big screen)",
+   "next": "Owner + Sakshi review; then music/SFX polish and final",
    "blocked": "",
-   "updated_at": "2026-11-23T11:31:21Z",
+   "updated_at": "2026-11-23T12:22:22Z",
    "compactions": 0,
    "session": {
     "link": null,
