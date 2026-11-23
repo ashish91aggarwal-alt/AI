@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Aries 2027 v6 HD places sent",
- "next": "Owner notes; extras; final review",
+ "doing": "Aries 2027 v7 (script v8) sent",
+ "next": "Owner notes; final review",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T14:02:58Z"
  },
- "updated_at": "2026-11-23T18:06:14Z"
+ "updated_at": "2026-11-23T19:19:02Z"
 }

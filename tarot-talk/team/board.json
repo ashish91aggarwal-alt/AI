@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T18:06:16Z",
+ "built": "2026-11-23T19:19:02Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Aries 2027 v6 HD places sent",
-   "next": "Owner notes; extras; final review",
+   "doing": "Aries 2027 v7 (script v8) sent",
+   "next": "Owner notes; final review",
    "blocked": "",
-   "updated_at": "2026-11-23T18:06:14Z",
+   "updated_at": "2026-11-23T19:19:02Z",
    "compactions": 0,
    "session": {
     "link": null,
