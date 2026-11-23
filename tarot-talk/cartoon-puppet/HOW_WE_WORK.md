@@ -61,6 +61,7 @@ Reviewer prompt that worked:
 
 **Audio**
 - **Meme lines always use the original voice clip, never re-voiced by our cast** (owner, 23 Nov 2026). Normal lines stay our cast. Add trending meme sounds in gaps. Look in `assets/audio/memes/catalog.json` first.
+- **Prefer creator meme clips over film dialogue.** The owner dropped the Vivah "Jal lijiye" and SRK "Picture abhi baaki hai" clips (23 Nov 2026).
 - **Deities never lip-sync a meme clip.** If a clip in someone else's voice plays, keep the deity off screen in that beat (a woman's film line with Vishnu ji on screen reads as his voice).
 - Clips are saved once in `tarot-talk/assets/audio/memes/` (with `catalog.json`) and reused. Check the catalog before searching the web.
 - Our own SFX and music are synthesised (no paid music).
