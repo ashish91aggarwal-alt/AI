@@ -128,13 +128,24 @@ function cards(c) { // fan of purple tarot cards floating by her hand (magic, no
     const m = T([0, -80]); o += star(m[0], m[1], 16 * c.s, C.cardEdge) + `<circle cx="${T([0, -122])[0].toFixed(1)}" cy="${T([0, -122])[1].toFixed(1)}" r="${6 * c.s}" fill="${C.cardEdge}"/>`; }
   return o;
 }
+const COAT = { denim: '#24212c', denimSh: '#15131b', denimLt: '#34303f', stitch: '#3c3848' };
+function bands(p) { // advocate's white neck bands under the chin (only with the coat)
+  return `<g><path d="M524 868 L506 960 L536 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/><path d="M556 868 L574 960 L544 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/></g>`;
+}
 function draw(p) {
-  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: { col: C.denim, sh: C.denimSh, len: 0.45, trim: C.denimLt } };
+  if (p.coat) { // owner script (Aries 2027): 'Aries ki wakeel' -> black advocate coat over her outfit + white bands
+    const keep = {}; for (const k in COAT) { keep[k] = C[k]; C[k] = COAT[k]; }
+    try { return drawInner(p) ; } finally { for (const k in keep) C[k] = keep[k]; }
+  }
+  return drawInner(p);
+}
+function drawInner(p) {
+  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: { col: C.denim, sh: C.denimSh, len: p.coat ? 0.8 : 0.45, trim: C.denimLt } };
   const L = p.armL || { E: [380, 1080], W: [400, 1210], hand: 'relax' }, R = p.armR || { E: [700, 1080], W: [680, 1210], hand: 'relax' };
   const A = (S, X, out) => arm(S, X.E, X.W, { r: [36, 31, 26], handPose: X.hand, handAng: 0, hs: 1, handScale: 1.05, outward: out, ...sk });
   // short chibi body: drawn at the old scale, shrunk toward the feet
   const W0 = { ...WT }; for (const q in WT) WT[q] = W0[q] / 0.72; // keep the outline weight the same as the rest of the cast after shrinking
-  const bodyInner = body(p) + A([400, 935], L, -1) + A([680, 935], R, 1) + puffs(p); for (const q in WT) WT[q] = W0[q];
+  const bodyInner = body(p) + (p.coat ? bands(p) : '') + A([400, 935], L, -1) + A([680, 935], R, 1) + puffs(p); for (const q in WT) WT[q] = W0[q];
   const bodyG = `<g transform="translate(540 1676) scale(0.72) translate(-540 -1676)">${bodyInner}</g>`;
   return bodyG + head({ ...p, head: p.head || [540, 840] }) + (p.cards ? cards(p.cards) : '');
 }

@@ -189,3 +189,40 @@ function park(t = 0, o = {}) {
 }
 
 module.exports = { park, terrace, office, court, sutliBomb, diya, softCloud };
+
+// ---------------- CLOUD STUDY: Vishnu ji's night study above the clouds (Aries 2027) ----------------
+// Deep indigo sky, twinkling stars, a faint golden Vaikunth skyline on the far cloud bank, drifting cloud layers,
+// floating diyas. o.dim darkens (Sade Sati beat), o.gold warms (Guru ji's kripa).
+function cloudStudy(t = 0, o = {}) {
+  const r = i => { const v = Math.sin(i * 127.1) * 43758.5453; return v - Math.floor(v); };
+  const defs = `<linearGradient id="studySky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0f33"/><stop offset="0.5" stop-color="#24206a"/><stop offset="1" stop-color="#4b3286"/></linearGradient>
+    <radialGradient id="studyGlow"><stop offset="0" stop-color="#ffe9a8" stop-opacity="0.55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+    <radialGradient id="halo"><stop offset="0" stop-color="#fff4c4"/><stop offset="0.6" stop-color="#ffe07a" stop-opacity="0.6"/><stop offset="1" stop-color="#ffe07a" stop-opacity="0"/></radialGradient>`;
+  let b = `<rect width="1080" height="1920" fill="url(#studySky)"/>`;
+  for (let i = 0; i < 80; i++) { const x = r(i) * 1080, y = r(i + 99) * 1100, a = 0.3 + 0.6 * Math.abs(Math.sin(t * (0.8 + r(i + 7) * 2) + i));
+    b += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(1.4 + r(i + 3) * 2.4).toFixed(1)}" fill="#fff8e0" opacity="${a.toFixed(2)}"/>`; }
+  // a few slow twinkle-crosses
+  for (let i = 0; i < 6; i++) { const x = 80 + r(i + 40) * 920, y = 120 + r(i + 50) * 700, k = 0.5 + 0.5 * Math.sin(t * 1.3 + i * 2);
+    b += `<path d="M${x} ${y - 14 * k} L${x + 3} ${y - 3} L${x + 14 * k} ${y} L${x + 3} ${y + 3} L${x} ${y + 14 * k} L${x - 3} ${y + 3} L${x - 14 * k} ${y} L${x - 3} ${y - 3} Z" fill="#fff3c4" opacity="${(0.4 + 0.5 * k).toFixed(2)}"/>`; }
+  b += `<circle cx="540" cy="900" r="620" fill="url(#studyGlow)" opacity="${(0.55 + 0.35 * (o.gold || 0)).toFixed(2)}"/>`;
+  // far Vaikunth skyline: golden domes and spires on the far cloud bank (no ink, soft)
+  let sky = '';
+  for (const [x, w, h] of [[120, 90, 170], [230, 60, 120], [330, 120, 230], [470, 80, 150], [610, 140, 260], [760, 70, 130], [870, 110, 200], [990, 80, 140]]) {
+    sky += `<rect x="${x - w / 2}" y="${1060 - h}" width="${w}" height="${h}" fill="#c99a3c"/><path d="M${x - w / 2 - 6} ${1060 - h} Q${x} ${1060 - h - w * 0.9} ${x + w / 2 + 6} ${1060 - h} Z" fill="#e0b450"/><rect x="${x - 3}" y="${1060 - h - w * 0.9 - 30}" width="6" height="34" fill="#e0b450"/>`;
+    for (let k = 0; k < 3; k++) sky += `<rect x="${x - w / 2 + 12 + k * (w - 24) / 3}" y="${1060 - h + 30}" width="${(w - 24) / 3 - 8}" height="26" rx="12" fill="#ffe9a0" opacity="${(0.5 + 0.4 * Math.sin(t * 1.7 + x + k)).toFixed(2)}"/>`; }
+  b += `<g opacity="0.55">${sky}</g>`;
+  // drifting cloud layers (slow parallax), far to near
+  const drift = (sp, w) => ((t * sp) % w + w) % w;
+  for (let i = 0; i < 7; i++) b += softCloud(((i * 190 + drift(6, 1330)) % 1330) - 120, 1040 + (i % 2) * 30, 1.5, '#7f6fb8', 0.85);
+  for (let i = 0; i < 6; i++) b += softCloud(((i * 230 + drift(11, 1380)) % 1380) - 150, 1150 + (i % 2) * 40, 1.9, '#a796d6', 0.9);
+  // floating diyas drifting gently in the sky (their flames flicker)
+  [[130, 760], [960, 640], [880, 900], [190, 1000], [980, 1060]].forEach(([x, y], i) => { b += diya(x, y + Math.sin(t * 0.9 + i) * 10, t, i + 20, 0.7); });
+  // near cloud floor
+  let f = '';
+  for (let i = 0; i < 7; i++) f += softCloud(-60 + i * 190, 1640 + (i % 2) * 40, 2.4, '#d9d0f2', 0.97);
+  for (let i = 0; i < 6; i++) f += softCloud(30 + i * 210, 1780 + (i % 2) * 30, 2.6, '#f2eefc', 1);
+  b += `<rect y="1700" width="1080" height="220" fill="#e6e0f6"/>` + f;
+  if (o.dim) b += `<rect width="1080" height="1920" fill="#05040c" opacity="${o.dim.toFixed(2)}"/>`;
+  return { defs, back: b, front: '' };
+}
+module.exports.cloudStudy = cloudStudy;

@@ -14,12 +14,36 @@
  "sfx_cues": "sfx_cues.json",
  "music": [
   {
-   "kind": "groove",
+   "kind": "beat",
    "a": 0,
-   "b": 84.75,
-   "bpm": 108,
+   "b": 9.57,
+   "bpm": 112,
+   "root": 196,
+   "level": 1.0
+  },
+  {
+   "kind": "sadpad",
+   "a": 9.57,
+   "b": 18.64,
+   "root": 196,
+   "g": 1.0
+  },
+  {
+   "kind": "beat",
+   "a": 18.64,
+   "b": 69.59,
+   "bpm": 112,
    "root": 220,
-   "level": 0.85
+   "level": 0.8,
+   "light": true
+  },
+  {
+   "kind": "beat",
+   "a": 69.59,
+   "b": 84.75,
+   "bpm": 116,
+   "root": 220,
+   "level": 1.0
   }
  ],
  "music_db": -13,

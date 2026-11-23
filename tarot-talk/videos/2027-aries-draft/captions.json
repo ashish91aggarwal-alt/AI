@@ -1,137 +1,217 @@
 [
 [
-"Prabhu,",
+"Prabhu, Aries ka 2027",
 0.0,
-0.29
+1.34
 ],
 [
-"Aries ka 2027 likhne se pehle zara meri baat sun lijiye.",
-0.29,
-4.1
+"likhne se pehle zara",
+1.34,
+2.61
 ],
 [
-"Main Aries walon ki wakeel hun.",
-4.1,
+"meri baat sun lijiye.",
+2.61,
+3.94
+],
+[
+"Main Aries walon ki",
+3.94,
+5.15
+],
+[
+"wakeel hun.",
+5.15,
 5.85
 ],
 [
-"Mesh walon ko wakeel ki nahi,",
+"Mesh walon ko wakeel ki",
 5.93,
-7.89
+7.43
 ],
 [
-"brake ki zaroorat hai.",
-7.89,
+"nahi, brake ki zaroorat",
+7.43,
+8.93
+],
+[
+"hai.",
+8.93,
 9.19
 ],
 [
-"Waise is saal Shani dev ki Sade Sati chal rahi hai.",
+"Waise is saal Shani dev",
 9.57,
+11.0
+],
+[
+"ki Sade Sati chal rahi",
+11.0,
+12.36
+],
+[
+"hai.",
+12.36,
 12.61
 ],
 [
 "Saade saat saal?",
 12.69,
-13.7
+13.72
 ],
 [
-"Prabhu,",
-13.7,
-14.03
+"Prabhu, teen kar dijiye",
+13.72,
+15.21
 ],
 [
-"teen kar dijiye na,",
-14.03,
-15.38
-],
-[
-"bas teen!",
-15.38,
+"na, bas teen!",
+15.21,
 16.05
 ],
 [
-"Shani dev mol-bhaav nahi karte,",
+"Shani dev mol-bhaav nahi",
 16.13,
-18.02
+17.53
 ],
 [
-"jitni mehnat utna phal.",
-18.02,
-19.28
+"karte, jitni mehnat utna",
+17.53,
+18.94
 ],
 [
-"Aur Guru saath hain,",
-19.28,
-20.53
+"phal. Aur Guru saath",
+18.94,
+20.11
 ],
 [
-"ghabrao mat.",
-20.53,
+"hain, ghabrao mat.",
+20.11,
 21.16
 ],
 [
-"March-April aur August se October tak sehat ka thoda dhyaan rakhna.",
+"March-April aur August",
 21.24,
-25.4
+22.69
 ],
 [
-"July mein toh ekdum fit rahoge.",
-25.4,
+"se October tak sehat ka",
+22.69,
+24.2
+],
+[
+"thoda dhyaan rakhna.",
+24.2,
+25.51
+],
+[
+"July mein toh ekdum fit",
+25.51,
+27.02
+],
+[
+"rahoge.",
+27.02,
 27.48
 ],
 [
-"Toh July mein gym join kar lete hain!",
+"Toh July mein gym join",
 27.56,
+28.64
+],
+[
+"kar lete hain!",
+28.64,
 29.33
 ],
 [
-"Join toh har saal karte hain,",
+"Join toh har saal karte",
 29.41,
-30.88
+30.58
 ],
 [
-"is baar jaana bhi padega.",
-30.88,
+"hain, is baar jaana bhi",
+30.58,
+31.74
+],
+[
+"padega.",
+31.74,
 32.1
 ],
 [
-"Office mein kaam ka pressure rahega,",
+"Office mein kaam ka",
 32.53,
-34.2
+33.59
 ],
 [
-"aur koi na koi boss ke kaan bharega.",
-34.2,
+"pressure rahega,",
+33.59,
+34.48
+],
+[
+"aur koi na koi boss ke",
+34.48,
+35.71
+],
+[
+"kaan bharega.",
+35.71,
 36.43
 ],
 [
 "Naam bataiye,",
 36.51,
-37.19
+37.24
 ],
 [
 "abhi notice bhejti hun!",
-37.19,
+37.24,
 38.54
 ],
 [
 "Notice-votice chhodo.",
 38.62,
-39.7
+39.93
 ],
 [
-"April-May aur September-October mein naukri chhodne ka risk mat lena.",
-39.7,
+"April-May aur",
+39.93,
+40.73
+],
+[
+"September-October mein",
+40.73,
+42.1
+],
+[
+"naukri chhodne ka risk",
+42.1,
+43.47
+],
+[
+"mat lena.",
+43.47,
 44.03
 ],
 [
-"Paisa theek-thaak se behtar rahega,",
+"Paisa theek-thaak se",
 44.11,
-46.0
+45.23
 ],
 [
-"March-April aur June mein sabse badhiya.",
-46.0,
+"behtar rahega,",
+45.23,
+46.01
+],
+[
+"March-April aur June",
+46.01,
+47.14
+],
+[
+"mein sabse badhiya.",
+47.14,
 48.2
 ],
 [
@@ -145,8 +225,18 @@
 50.06
 ],
 [
-"June se November tak pyaar mein Guru ka saath hai.",
+"June se November tak",
 50.54,
+51.62
+],
+[
+"pyaar mein Guru ka saath",
+51.62,
+52.91
+],
+[
+"hai.",
+52.91,
 53.13
 ],
 [
@@ -155,38 +245,53 @@
 53.82
 ],
 [
-"Bas August-October mein behas mat karna.",
+"Bas August-October mein",
 54.0,
-56.38
+55.35
+],
+[
+"behas mat karna.",
+55.35,
+56.29
 ],
 [
 "Wakeel sahiba,",
-56.38,
-57.06
+56.29,
+57.11
 ],
 [
-"ab iska bhi discount chahiye?",
-57.06,
+"ab iska bhi discount",
+57.11,
+58.29
+],
+[
+"chahiye?",
+58.29,
 58.76
 ],
 [
-"Mesh wale aur bina behas ke?",
+"Mesh wale aur bina behas",
 58.84,
-61.02
+60.47
 ],
 [
-"Haan Prabhu,",
-61.02,
-61.74
+"ke? Haan Prabhu,",
+60.47,
+61.56
 ],
 [
 "chahiye!",
-61.74,
+61.56,
 62.1
 ],
 [
-"Aur ghar mein badon ki baat dil pe mat lena.",
+"Aur ghar mein badon ki",
 62.38,
+63.55
+],
+[
+"baat dil pe mat lena.",
+63.55,
 64.66
 ],
 [
@@ -197,61 +302,81 @@
 [
 "Wo daant nahi,",
 65.91,
-67.14
+67.05
 ],
 [
 "prasad hai,",
-67.14,
-67.95
+67.05,
+67.94
 ],
 [
 "sar aankhon pe.",
-67.95,
+67.94,
 69.16
 ],
 [
 "Karna bas itna hai:",
 69.59,
-70.96
+70.69
 ],
 [
-"Mangalwar ko Sundarkand padho,",
-70.96,
-72.32
+"Mangalwar ko Sundarkand",
+70.69,
+72.02
 ],
 [
-"chaandi pehno,",
-72.32,
-73.0
+"padho, chaandi pehno,",
+72.02,
+73.24
 ],
 [
-"aur kisi netraheen ko pyaar se khana khilao.",
-73.0,
+"aur kisi netraheen ko",
+73.24,
+74.46
+],
+[
+"pyaar se khana khilao.",
+74.46,
 75.73
 ],
 [
-"Aur is saal brake bhi lagana,",
+"Aur is saal brake bhi",
 75.81,
-77.53
+77.12
 ],
 [
-"aur gym bhi jaana.",
-77.53,
+"lagana, aur gym bhi",
+77.12,
+78.31
+],
+[
+"jaana.",
+78.31,
 78.69
 ],
 [
 "Case jeet gaye!",
 78.77,
-79.62
+79.68
 ],
 [
-"Apne Aries dost ko ye bhej do,",
-79.62,
-81.65
+"Apne Aries dost ko ye",
+79.68,
+80.95
 ],
 [
-"mahine-wise poori guide link mein hai.",
-81.65,
+"bhej do, mahine-wise",
+80.95,
+82.16
+],
+[
+"poori guide link mein",
+82.16,
+83.43
+],
+[
+"hai.",
+83.43,
 83.67
 ]
 ]

@@ -25,18 +25,28 @@
    "line": "Prabhu, Aries ka 2027 likhne se pehle zara meri baat sun lijiye. Main Aries walon ki wakeel hun.",
    "caption_chunks": [
     {
-     "text": "Prabhu,",
+     "text": "Prabhu, Aries ka 2027",
      "from": 0.0,
-     "to": 0.29
+     "to": 1.34
     },
     {
-     "text": "Aries ka 2027 likhne se pehle zara meri baat sun lijiye.",
-     "from": 0.29,
-     "to": 4.1
+     "text": "likhne se pehle zara",
+     "from": 1.34,
+     "to": 2.61
     },
     {
-     "text": "Main Aries walon ki wakeel hun.",
-     "from": 4.1,
+     "text": "meri baat sun lijiye.",
+     "from": 2.61,
+     "to": 3.94
+    },
+    {
+     "text": "Main Aries walon ki",
+     "from": 3.94,
+     "to": 5.15
+    },
+    {
+     "text": "wakeel hun.",
+     "from": 5.15,
      "to": 5.85
     }
    ],
@@ -57,13 +67,18 @@
    "line": "Mesh walon ko wakeel ki nahi, brake ki zaroorat hai.",
    "caption_chunks": [
     {
-     "text": "Mesh walon ko wakeel ki nahi,",
+     "text": "Mesh walon ko wakeel ki",
      "from": 5.93,
-     "to": 7.89
+     "to": 7.43
     },
     {
-     "text": "brake ki zaroorat hai.",
-     "from": 7.89,
+     "text": "nahi, brake ki zaroorat",
+     "from": 7.43,
+     "to": 8.93
+    },
+    {
+     "text": "hai.",
+     "from": 8.93,
      "to": 9.19
     }
    ],
@@ -84,8 +99,18 @@
    "line": "Waise is saal Shani dev ki Sade Sati chal rahi hai.",
    "caption_chunks": [
     {
-     "text": "Waise is saal Shani dev ki Sade Sati chal rahi hai.",
+     "text": "Waise is saal Shani dev",
      "from": 9.57,
+     "to": 11.0
+    },
+    {
+     "text": "ki Sade Sati chal rahi",
+     "from": 11.0,
+     "to": 12.36
+    },
+    {
+     "text": "hai.",
+     "from": 12.36,
      "to": 12.61
     }
    ],
@@ -108,21 +133,16 @@
     {
      "text": "Saade saat saal?",
      "from": 12.69,
-     "to": 13.7
+     "to": 13.72
     },
     {
-     "text": "Prabhu,",
-     "from": 13.7,
-     "to": 14.03
+     "text": "Prabhu, teen kar dijiye",
+     "from": 13.72,
+     "to": 15.21
     },
     {
-     "text": "teen kar dijiye na,",
-     "from": 14.03,
-     "to": 15.38
-    },
-    {
-     "text": "bas teen!",
-     "from": 15.38,
+     "text": "na, bas teen!",
+     "from": 15.21,
      "to": 16.05
     }
    ],
@@ -143,23 +163,23 @@
    "line": "Shani dev mol-bhaav nahi karte, jitni mehnat utna phal. Aur Guru saath hain, ghabrao mat.",
    "caption_chunks": [
     {
-     "text": "Shani dev mol-bhaav nahi karte,",
+     "text": "Shani dev mol-bhaav nahi",
      "from": 16.13,
-     "to": 18.02
+     "to": 17.53
     },
     {
-     "text": "jitni mehnat utna phal.",
-     "from": 18.02,
-     "to": 19.28
+     "text": "karte, jitni mehnat utna",
+     "from": 17.53,
+     "to": 18.94
     },
     {
-     "text": "Aur Guru saath hain,",
-     "from": 19.28,
-     "to": 20.53
+     "text": "phal. Aur Guru saath",
+     "from": 18.94,
+     "to": 20.11
     },
     {
-     "text": "ghabrao mat.",
-     "from": 20.53,
+     "text": "hain, ghabrao mat.",
+     "from": 20.11,
      "to": 21.16
     }
    ],
@@ -180,13 +200,28 @@
    "line": "March-April aur August se October tak sehat ka thoda dhyaan rakhna. July mein toh ekdum fit rahoge.",
    "caption_chunks": [
     {
-     "text": "March-April aur August se October tak sehat ka thoda dhyaan rakhna.",
+     "text": "March-April aur August",
      "from": 21.24,
-     "to": 25.4
+     "to": 22.69
     },
     {
-     "text": "July mein toh ekdum fit rahoge.",
-     "from": 25.4,
+     "text": "se October tak sehat ka",
+     "from": 22.69,
+     "to": 24.2
+    },
+    {
+     "text": "thoda dhyaan rakhna.",
+     "from": 24.2,
+     "to": 25.51
+    },
+    {
+     "text": "July mein toh ekdum fit",
+     "from": 25.51,
+     "to": 27.02
+    },
+    {
+     "text": "rahoge.",
+     "from": 27.02,
      "to": 27.48
     }
    ],
@@ -207,8 +242,13 @@
    "line": "Toh July mein gym join kar lete hain!",
    "caption_chunks": [
     {
-     "text": "Toh July mein gym join kar lete hain!",
+     "text": "Toh July mein gym join",
      "from": 27.56,
+     "to": 28.64
+    },
+    {
+     "text": "kar lete hain!",
+     "from": 28.64,
      "to": 29.33
     }
    ],
@@ -229,13 +269,18 @@
    "line": "Join toh har saal karte hain, is baar jaana bhi padega.",
    "caption_chunks": [
     {
-     "text": "Join toh har saal karte hain,",
+     "text": "Join toh har saal karte",
      "from": 29.41,
-     "to": 30.88
+     "to": 30.58
     },
     {
-     "text": "is baar jaana bhi padega.",
-     "from": 30.88,
+     "text": "hain, is baar jaana bhi",
+     "from": 30.58,
+     "to": 31.74
+    },
+    {
+     "text": "padega.",
+     "from": 31.74,
      "to": 32.1
     }
    ],
@@ -256,13 +301,23 @@
    "line": "Office mein kaam ka pressure rahega, aur koi na koi boss ke kaan bharega.",
    "caption_chunks": [
     {
-     "text": "Office mein kaam ka pressure rahega,",
+     "text": "Office mein kaam ka",
      "from": 32.53,
-     "to": 34.2
+     "to": 33.59
     },
     {
-     "text": "aur koi na koi boss ke kaan bharega.",
-     "from": 34.2,
+     "text": "pressure rahega,",
+     "from": 33.59,
+     "to": 34.48
+    },
+    {
+     "text": "aur koi na koi boss ke",
+     "from": 34.48,
+     "to": 35.71
+    },
+    {
+     "text": "kaan bharega.",
+     "from": 35.71,
      "to": 36.43
     }
    ],
@@ -285,11 +340,11 @@
     {
      "text": "Naam bataiye,",
      "from": 36.51,
-     "to": 37.19
+     "to": 37.24
     },
     {
      "text": "abhi notice bhejti hun!",
-     "from": 37.19,
+     "from": 37.24,
      "to": 38.54
     }
    ],
@@ -312,11 +367,26 @@
     {
      "text": "Notice-votice chhodo.",
      "from": 38.62,
-     "to": 39.7
+     "to": 39.93
     },
     {
-     "text": "April-May aur September-October mein naukri chhodne ka risk mat lena.",
-     "from": 39.7,
+     "text": "April-May aur",
+     "from": 39.93,
+     "to": 40.73
+    },
+    {
+     "text": "September-October mein",
+     "from": 40.73,
+     "to": 42.1
+    },
+    {
+     "text": "naukri chhodne ka risk",
+     "from": 42.1,
+     "to": 43.47
+    },
+    {
+     "text": "mat lena.",
+     "from": 43.47,
      "to": 44.03
     }
    ],
@@ -337,13 +407,23 @@
    "line": "Paisa theek-thaak se behtar rahega, March-April aur June mein sabse badhiya.",
    "caption_chunks": [
     {
-     "text": "Paisa theek-thaak se behtar rahega,",
+     "text": "Paisa theek-thaak se",
      "from": 44.11,
-     "to": 46.0
+     "to": 45.23
     },
     {
-     "text": "March-April aur June mein sabse badhiya.",
-     "from": 46.0,
+     "text": "behtar rahega,",
+     "from": 45.23,
+     "to": 46.01
+    },
+    {
+     "text": "March-April aur June",
+     "from": 46.01,
+     "to": 47.14
+    },
+    {
+     "text": "mein sabse badhiya.",
+     "from": 47.14,
      "to": 48.2
     }
    ],
@@ -408,8 +488,18 @@
    "line": "June se November tak pyaar mein Guru ka saath hai.",
    "caption_chunks": [
     {
-     "text": "June se November tak pyaar mein Guru ka saath hai.",
+     "text": "June se November tak",
      "from": 50.54,
+     "to": 51.62
+    },
+    {
+     "text": "pyaar mein Guru ka saath",
+     "from": 51.62,
+     "to": 52.91
+    },
+    {
+     "text": "hai.",
+     "from": 52.91,
      "to": 53.13
     }
    ],
@@ -452,18 +542,28 @@
    "line": "Bas August-October mein behas mat karna. Wakeel sahiba, ab iska bhi discount chahiye?",
    "caption_chunks": [
     {
-     "text": "Bas August-October mein behas mat karna.",
+     "text": "Bas August-October mein",
      "from": 54.0,
-     "to": 56.38
+     "to": 55.35
+    },
+    {
+     "text": "behas mat karna.",
+     "from": 55.35,
+     "to": 56.29
     },
     {
      "text": "Wakeel sahiba,",
-     "from": 56.38,
-     "to": 57.06
+     "from": 56.29,
+     "to": 57.11
     },
     {
-     "text": "ab iska bhi discount chahiye?",
-     "from": 57.06,
+     "text": "ab iska bhi discount",
+     "from": 57.11,
+     "to": 58.29
+    },
+    {
+     "text": "chahiye?",
+     "from": 58.29,
      "to": 58.76
     }
    ],
@@ -484,18 +584,18 @@
    "line": "Mesh wale aur bina behas ke? Haan Prabhu, chahiye!",
    "caption_chunks": [
     {
-     "text": "Mesh wale aur bina behas ke?",
+     "text": "Mesh wale aur bina behas",
      "from": 58.84,
-     "to": 61.02
+     "to": 60.47
     },
     {
-     "text": "Haan Prabhu,",
-     "from": 61.02,
-     "to": 61.74
+     "text": "ke? Haan Prabhu,",
+     "from": 60.47,
+     "to": 61.56
     },
     {
      "text": "chahiye!",
-     "from": 61.74,
+     "from": 61.56,
      "to": 62.1
     }
    ],
@@ -516,8 +616,13 @@
    "line": "Aur ghar mein badon ki baat dil pe mat lena.",
    "caption_chunks": [
     {
-     "text": "Aur ghar mein badon ki baat dil pe mat lena.",
+     "text": "Aur ghar mein badon ki",
      "from": 62.38,
+     "to": 63.55
+    },
+    {
+     "text": "baat dil pe mat lena.",
+     "from": 63.55,
      "to": 64.66
     }
    ],
@@ -562,16 +667,16 @@
     {
      "text": "Wo daant nahi,",
      "from": 65.91,
-     "to": 67.14
+     "to": 67.05
     },
     {
      "text": "prasad hai,",
-     "from": 67.14,
-     "to": 67.95
+     "from": 67.05,
+     "to": 67.94
     },
     {
      "text": "sar aankhon pe.",
-     "from": 67.95,
+     "from": 67.94,
      "to": 69.16
     }
    ],
@@ -594,21 +699,26 @@
     {
      "text": "Karna bas itna hai:",
      "from": 69.59,
-     "to": 70.96
+     "to": 70.69
     },
     {
-     "text": "Mangalwar ko Sundarkand padho,",
-     "from": 70.96,
-     "to": 72.32
+     "text": "Mangalwar ko Sundarkand",
+     "from": 70.69,
+     "to": 72.02
     },
     {
-     "text": "chaandi pehno,",
-     "from": 72.32,
-     "to": 73.0
+     "text": "padho, chaandi pehno,",
+     "from": 72.02,
+     "to": 73.24
     },
     {
-     "text": "aur kisi netraheen ko pyaar se khana khilao.",
-     "from": 73.0,
+     "text": "aur kisi netraheen ko",
+     "from": 73.24,
+     "to": 74.46
+    },
+    {
+     "text": "pyaar se khana khilao.",
+     "from": 74.46,
      "to": 75.73
     }
    ],
@@ -629,13 +739,18 @@
    "line": "Aur is saal brake bhi lagana, aur gym bhi jaana.",
    "caption_chunks": [
     {
-     "text": "Aur is saal brake bhi lagana,",
+     "text": "Aur is saal brake bhi",
      "from": 75.81,
-     "to": 77.53
+     "to": 77.12
     },
     {
-     "text": "aur gym bhi jaana.",
-     "from": 77.53,
+     "text": "lagana, aur gym bhi",
+     "from": 77.12,
+     "to": 78.31
+    },
+    {
+     "text": "jaana.",
+     "from": 78.31,
      "to": 78.69
     }
    ],
@@ -658,16 +773,26 @@
     {
      "text": "Case jeet gaye!",
      "from": 78.77,
-     "to": 79.62
+     "to": 79.68
     },
     {
-     "text": "Apne Aries dost ko ye bhej do,",
-     "from": 79.62,
-     "to": 81.65
+     "text": "Apne Aries dost ko ye",
+     "from": 79.68,
+     "to": 80.95
     },
     {
-     "text": "mahine-wise poori guide link mein hai.",
-     "from": 81.65,
+     "text": "bhej do, mahine-wise",
+     "from": 80.95,
+     "to": 82.16
+    },
+    {
+     "text": "poori guide link mein",
+     "from": 82.16,
+     "to": 83.43
+    },
+    {
+     "text": "hai.",
+     "from": 83.43,
      "to": 83.67
     }
    ],
