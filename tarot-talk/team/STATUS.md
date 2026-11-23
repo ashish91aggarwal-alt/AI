@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 23 Nov 15:23 IST | Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied | Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting | - |
+| `production` | 23 Nov 15:24 IST | Mulank 8 reel v7 done: independent final review 8/10, no blockers, polish applied | Owner sign-off; confirm the Rakesh Bedi line for Shani dev; 2027 report product/price before posting | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
