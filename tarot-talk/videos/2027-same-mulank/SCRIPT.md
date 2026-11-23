@@ -1,116 +1,111 @@
-# Same Mulank, alag saal — 2026 → 2027 reel — script draft v3 (independent review: 8.5/10, pace fixed)
+# Same Mulank, alag saal — 2026 → 2027 single reel — script v5 (after fresh independent review)
 
-Idea (owner): "Same mulank fir uska sab sahi kaise, mera nhi" — 2026 to 2027 transition.
-Runtime about 53 s incl. 2 s end card (times below are estimates; final times come from the voice track) · 1080x1920, 24 fps · Hindi/Hinglish voice, Hinglish on-screen text · CTA keyword: **REPORT** · Cartoon route B (code-drawn), reuses the approved cast.
+Idea (owner): "Same mulank fir uska sab sahi kaise, mera nhi" — 2026 to 2027 transition. One standalone reel, explained with a general example.
+Runtime about 55 s (estimate; the real voice track sets the final times) · 1080x1920, 24 fps · Hindi/Hinglish voice, Hinglish on-screen text · CTA: send to someone who needs it + link to the complete guide (no comment keyword) · Cartoon route B (code-drawn), approved cast only.
 
-Follows on from the Mulank 8 warm-up reel (same Monty, born 17 Mar; his 2027 = 4 matches that reel).
+## Owner changes in v4 (23 Nov 2026, 15:49 IST)
+- Generic example: two unnamed people ("WOH" and "TUM"); no Bunty and no 8-8.
+- The syllabus line is gone; a fitted meme takes its place ("Jal lijiye", the jealousy pun).
+- "Exam bhi hai" is cut.
+- CTA: send it to someone who needs it, plus click the link for the complete guide.
+- Meme lines use the original voices, not our cast.
 
 ## The numbers (checked)
-- Mulank: Monty 17 Mar → 1+7 = 8. Bunty 8 Aug → 8. Same mulank.
-- Personal year = date + month + year, reduced to one digit. 2026 → 2+0+2+6 = 10 → 1, so "+1". 2027 → 11 → 2, so "+2".
-- 2026: Monty 1+7+3+1 = 12 → **3**. Bunty 8+8+1 = 17 → **8**.
-- 2027: Monty 1+7+3+2 = 13 → **4**. Bunty 8+8+2 = 18 → **9**.
-- Meanings used (standard numerology, said as belief): 3 = fun, friends, expression, money and energy spread out. 8 = results, money, recognition. 4 = foundation, hard work, what you build lasts. 9 = finishing and clearing old things.
+- Mulank: 12 April → 1+2 = 3. 3 March → 3. Same mulank.
+- Personal year = date + month + year, reduced to one digit. 2026 → 10 → 1 ("+1"); 2027 → 11 → 2 ("+2").
+- 2026: WOH 1+2+4+1 = **8**, TUM 3+3+1 = **7**.
+- 2027: TUM 3+3+2 = **8**, WOH 1+2+4+2 = **9**.
+- Meanings (common numerology, said as belief): 7 = pause, inner work and learning, slow outside results. 8 = results, money, recognition. 9 = finishing and clearing old things.
 
 ## Cast
-Monty (comic lead), Vishnu ji (narrator on his cloud, popcorn), Sakshi (teacher + CTA), Bunty (existing bust, only on Monty's phone and on number cards). No new character needed.
+Monty (comic lead and the viewer's stand-in, no birthday given), Vishnu ji (narrator on his cloud, popcorn; never his "Ab tu gaya beta" pose vp(1) in this cut), Sakshi (teacher + CTA). The two example people are simple silhouettes on cards. No new character is needed.
+
+## Meme clips (original voices, all on Monty or as a cutaway; none lip-synced by a deity)
+| Beat | Clip | Status |
+|---|---|---|
+| 2 | "Jal lijiye… aap thak gaye honge" (film Vivah) | not on the free clip sites; needs the owner's copy or Instagram in-app audio |
+| 9 | "Aur bhai ruko… climax abhi baaki hai" (CarryMinati) | saved and transcribed |
+| 11 | "Ab tu gaya beta" (Puneet Superstar) | in the library |
+Meme spacing: at about 3.5 s, 27 s and 34 s, so they do not crowd.
 
 ## Beats
 
 ### 1. 0.0–3.4 s · Monty (M01) · HOOK
 **Line:** "Same Mulank… phir uska sab sahi kaise, mera nahi?!"
-**On screen from frame 0:** "SAME MULANK… USKA SET, MERA UPSET?" + small line "Tumhare saath bhi hua?"
-**Picture:** Rooftop at night. Bunty's story with a new car and "2026 ✓" is visible on Monty's phone at frame 0. Monty's jaw drops, then his arm drops (joints); a tiny rain cloud over only Monty by 0.6 s.
-**Camera:** Starts on the phone, pulls back to Monty.
-**Sound:** Phone ding, then Monty mutters "moye moye" as speech (no tune) on the slump.
+**On screen from frame 0:** "SAME MULANK, ALAG KISMAT?"; small line "Tumhare saath bhi hua?" at 1.5 s
+**Picture:** Rooftop at night. Monty's phone shows a friend's story (generic friend, face not shown): new car, "2026 ✓", visible at frame 0. Frame 0: Monty's jaw already half dropped and thin smoke already curling from his head (jealousy); then his arm drops (joints).
+**Voice:** our cast voice (normal line).
 
-### 2. 3.5–5.6 s · Vishnu ji (V02)
-**Line:** "Arre Monty, jalo mat… syllabus padho!"
-**Picture:** Vishnu ji floats in on his cloud with popcorn, popcorn flies into his mouth. Plays on the truck-art line "Jalo mat, barabari karo".
-**Camera:** Push in on Vishnu ji.
-**Sound:** Chime, munch.
+### 2. 3.5–5.7 s · MEME, original clip · "Jal lijiye… aap thak gaye honge"
+**Picture:** Vishnu ji is OFF screen in this beat. A glass of water glows in from the frame edge and floats to the smoking Monty; the smoke puffs out. The clip plays as the joke; nobody lip-syncs it. Tag: "JAL LIJIYE 💧".
+**Source:** the original "Jal lijiye" film meme (Vivah). Not found on a free clip site yet: see open point 1.
 
-### 3. 5.7–6.9 s · Monty (M03)
-**Line:** "Exam bhi hai?!"
-**Picture:** Monty shock pose (spikes).
-**Sound:** Boing.
+### 3. 5.8–7.8 s · Vishnu ji (V03)
+**Line:** "Arre, mulank same hai… saal nahi."
+**Picture:** First time we see Vishnu ji: popcorn flies into his mouth, eyebrow up. Replaces the old syllabus line.
 
-### 4. 7.0–9.8 s · Sakshi (K04)
-**Line:** "Mulank same. Par har saal ka number alag."
-**Picture:** Sakshi walks in (two side-steps), cards float by her hand. Tag "TOPPER ENTRY" (callback).
-**Camera:** Two-shot Sakshi + Monty.
-**On screen:** "MULANK = TUM · PERSONAL YEAR = TUMHARA SAAL"
+### 4. 7.9–9.5 s · Monty (M04)
+**Line:** "Saal ka kya lena-dena?!"
+**Picture:** Monty shock pose, smoke stops.
 
-### 5. 9.9–15.2 s · Sakshi (K05)
-**Line:** "Date plus month plus ek. Bunty, aath August: aath, aath, ek… satrah… yaani 8!"
-**Picture:** Card builds: "BUNTY 8 AUG → 8+8+1 = 17 → 8". Bunty bust on the card, smiling. Gold "8" pops.
-**Sound:** Abacus ticks, ding.
+### 5. 9.6–12.6 s · Sakshi (K05)
+**Line:** "Maan lo do log. Dono ka mulank 3."
+**Picture:** Sakshi walks in (two side-steps), cards float by her hand. Two big cards pop, faces as simple silhouettes: "WOH · 12 APRIL" and "TUM · 3 MARCH", both stamped "MULANK 3". Small tag: "Example".
 
-### 6. 15.3–18.3 s · Sakshi (K06)
-**Line:** "Numerology mein 8 matlab result, paisa, pehchaan."
-**Picture:** Three icons pop (trophy, coin stack, star badge). Monty side-eyes the phone.
-**On screen label:** "In numerology"
+### 6. 12.7–16.5 s · Sakshi (K06)
+**Line:** "Personal year: date plus month plus saal… single digit tak jodo."
+**On screen:** "DATE + MONTH + SAAL" then "2026 = 2+0+2+6 = 10 → 1" and the reduce rule "15 → 1+5 = 6"
 
-### 7. 18.4–19.4 s · Monty (M07)
-**Line:** "Aur mera?"
-**Picture:** Monty puppy pose, leaning in.
+### 7. 16.6–21.2 s · Sakshi (K07)
+**Line:** "Uska: ek, do, chaar, ek… aath. Tumhara: teen, teen, ek… saat."
+**Picture:** Cards build: "12 APR → 1+2+4+1 = 8", "3 MAR → 3+3+1 = 7". Gold 8 pops on WOH, a quiet 7 on TUM. Abacus ticks.
 
-### 8. 19.5–24.7 s · Sakshi (K08)
-**Line:** "Satrah March: ek, saat, teen, ek… baarah… yaani 3. Party, dost, shopping ka saal."
-**Picture:** Card: "MONTY 17 MAR → 1+7+3+1 = 12 → 3". Then a quick flash of Monty's 2026: party hat, friends' selfies, shopping bags.
-**Sound:** Ticks, then a small party horn.
+### 8. 21.3–26.7 s · Sakshi (K08)
+**Line:** "Numerology mein 8 matlab result ka saal. 7 matlab ruk ke, andar kaam karne ka saal."
+**On screen label:** "In numerology". Icons: trophy on 8; a lamp and a book on 7.
+**Picture:** Monty slumps, a tiny rain cloud over only him. Our own sad trombone SFX.
 
-### 9. 24.8–27.2 s · Monty (M09)
-**Line:** "Credit card ka bill… bas kar pagle!"
-**Picture:** A long bill unrolls from his phone to the floor. Monty cry pose.
-**Sound:** Our own sad trombone SFX.
+### 9. 26.8–30.2 s · MEME, original clip · "Aur bhai ruko… climax abhi baaki hai" (CarryMinati)
+**Picture:** Monty lip-syncs it, palm up ("ruko"), then a grin on "climax". Behind him the wall calendar's "2026" page tears off by itself and flutters away, "2027" underneath, fireworks.
+**Source:** saved and checked (assets/audio/memes/climax-abhi-baaki-hai-carryminati.mp3, transcribed).
 
-### 10. 27.3–28.1 s · [flip] no dialogue
-**Picture:** A big wall calendar on the rooftop: the "2026" page tears off on its own and flutters away, "2027" is under it. Fireworks behind.
-**Sound:** Paper rip, whoosh, firework pops.
+### 10. 30.3–34.1 s · Sakshi (K10)
+**Line:** "2027 mein plus do. Ab tumhara 8, uska 9."
+**Picture:** Cards flip: TUM → 8 (gold), WOH → 9.
 
-### 11. 28.2–31.6 s · Sakshi (K11)
-**Line:** "2027 mein plus do. Tera 4… Bunty ka 9."
-**Picture:** Both cards flip: "MONTY → 4", "BUNTY → 9". Monty counts on his fingers.
+### 11. 34.2–35.7 s · MEME, original clip · "Ab tu gaya beta" (Puneet Superstar)
+**Picture:** Monty lip-syncs it with an evil grin, pointing his chin at the WOH card (no finger pointing at anyone). Vine boom.
+**Source:** already in the library, used in the last reel.
 
-### 12. 31.7–33.9 s · Monty (M12)
-**Line:** "Matlab… paisa hi paisa hoga!"
-**Picture:** Monty cheer pose, fists up, big grin.
-**Sound:** Bass hit.
+### 12. 35.8–39.5 s · Sakshi (K12)
+**Line:** "Arre, 9 bura nahi. Purana samet ke, saaf karne ka saal."
+**Picture:** On the WOH card, old boxes pack themselves and a broom sweeps (calm, not scary).
 
-### 13a. 34.0–36.1 s · Sakshi (K13a)
-**Line:** "Paisa nahi beta, neev ka saal."
-**Picture:** Bricks stack beside Monty (callback to the last reel).
-**On screen label:** "In numerology: 4 = neev"
+### 13. 39.6–42.5 s · Sakshi (K13)
+**Line:** "Aur 8 matlab mehnat ka result… lottery nahi."
+**Picture:** Bricks stack beside Monty; a lottery ticket floats away. Label: "In numerology".
 
-### 13b. 36.2–39.3 s · Sakshi (K13b)
-**Line:** "Bunty ka 9: purana samet ke, saaf karne ka saal."
-**Picture:** On Bunty's card, old boxes pack themselves and a broom sweeps (calm, not scary).
-
-### 14. 39.4–43.9 s · Vishnu ji (V14)
+### 14. 42.6–47.1 s · Vishnu ji (V14)
 **Line:** "Mulank batata hai tum kaun ho… personal year, mausam kaisa hai."
-**Delivery:** Calm, slower than his usual fast talk.
-**Picture:** Vishnu ji, serene, chakra spins slowly behind him. Sun / rain icons swap over a small Monty.
-**Note:** This is the takeaway the viewer keeps (works without buying).
+**Delivery:** Calm, slower than his usual fast talk. Label: "In numerology".
+**Picture:** Chakra spins slowly behind him; sun and rain icons swap over a small Monty. This is the takeaway the viewer keeps.
 
-### 15. 44.0–48.2 s · Sakshi (K15)
-**Line:** "Apne 2027 ka mahine-dar-mahina plan chahiye? Comment karo REPORT."
-**Picture:** Comment box types REPORT and holds about 3 s. Sakshi winks. No deity in this beat.
+### 15. 47.2–53.2 s · Sakshi (K15) · CTA
+**Line:** "Jiska mulank same par haal alag, usse bhejo. Poori 2027 guide ke liye, link pe click karo."
+**Picture:** Sakshi winks; a big send arrow and a link chip pop. No deity in this beat.
+**On screen:** "SEND IT TO SOMEONE WHO NEEDS IT" then "COMPLETE GUIDE → LINK"
 
-### 16. 48.3–51.3 s · Monty (M16)
-**Line:** "Ruk, Bunty ko tag karta hoon… ab tu jal!"
-**Picture:** Monty taps share on his phone, evil grin.
-**End card (2 s):** "Comment REPORT · Next: 2027 mein tumhara personal year kya kehta hai"
-**Sound:** Send whoosh.
+### 16. 53.3–55.3 s · End card
+**Picture:** Monty taps send on his phone and grins; Vishnu ji munches popcorn. Card: "Send to someone who needs it · Complete guide: link". Loops back to frame 0.
 
 ## Rules kept
-- Beliefs labelled ("In numerology"); no promise, no fear, nothing called free.
-- Vishnu ji is the narrator, never the joke, not in the selling beat.
-- Bunty's 9 is framed as clearing, not as a bad year.
-- Meme lines ("bas kar pagle", "paisa hi paisa hoga", "moye moye") are spoken by Monty only, re-voiced by our cast, no film audio and no song tune. Our own SFX only.
-- "Jalo mat, barabari karo" is a visual nod only; the full slogan is not shown next to Vishnu ji.
+- Beliefs labelled ("In numerology"); no promise ("lottery nahi"), no fear; 9 is framed as clearing, not as bad.
+- Vishnu ji is the narrator: never the joke, not in the CTA, and he lip-syncs no meme clip.
+- No song tunes (no "moye moye"); our own SFX for the sad trombone and the booms.
+- Film and creator clips may get muted or flagged by Instagram; this is owner-accepted for meme lines.
 
 ## Open points for the owner
-1. Personal year Jan–Dec or birthday to birthday? (still waiting on Sakshi). This script uses Jan–Dec, same as the last reel. Some readers keep 2027 as master 11; expect comments, Sakshi should pick one system.
-2. CTA: is the 2027 report ready, and does "mahine-dar-mahina" match what it gives?
-3. Voices: reuse the same ElevenLabs voices as the Mulank 8 reel? How many versions, and what credit cap?
+1. "Jal lijiye" clip: can you send it (a screen recording of the reel audio is fine)? If not, use Instagram's in-app audio at upload, or swap in another meme.
+2. The link: which guide, and where is the link? A clickable link on a reel is a limited feature (Meta Verified). If the reel can't carry it, the line becomes "Poori 2027 guide ka link bio mein hai."
+3. Personal year Jan–Dec or birthday to birthday (Sakshi). This script uses Jan–Dec.
+4. Voices for the normal lines (Monty, Vishnu ji, Sakshi): reuse the same ElevenLabs voices as the Mulank 8 reel? How many versions, and what credit cap?

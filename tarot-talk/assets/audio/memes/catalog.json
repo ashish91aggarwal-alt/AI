@@ -15,6 +15,7 @@
   {"file": "oh-no-no-no-no-laugh.mp3", "kind": "sound", "says": "oh no no no (laugh)", "use": [0, 2.55], "fits": "closer after a burn", "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-no-laugh.mp3", "used_in": ["2027-warmup-mulank8"]},
   {"file": "oh-no-no-no-tik-tok-song-sound-effect.mp3", "kind": "sound", "says": "Oh no, oh no, no no no (TikTok song)", "use": [13.0, 17.3], "fits": "disaster about to happen", "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-tik-tok-song-sound-effect.mp3", "used_in": []},
   {"file": "meme-violin-sad-violin.mp3", "kind": "sound", "says": "sad violin", "use": [0, 4.6], "fits": "fake sympathy", "url": "https://www.myinstants.com/media/sounds/meme-violin-sad-violin.mp3", "used_in": []},
-  {"file": "spiderman-meme-song.mp3", "kind": "sound", "says": "Spiderman meme song", "use": [0, 6.0], "fits": "pointing at each other / same problem", "url": "https://www.myinstants.com/media/sounds/spiderman-meme-song.mp3", "used_in": []}
+  {"file": "spiderman-meme-song.mp3", "kind": "sound", "says": "Spiderman meme song", "use": [0, 6.0], "fits": "pointing at each other / same problem", "url": "https://www.myinstants.com/media/sounds/spiderman-meme-song.mp3", "used_in": []},
+  {"file": "climax-abhi-baaki-hai-carryminati.mp3", "kind": "line", "says": "Aur bhai ruko… climax abhi baaki hai", "speaker": "CarryMinati", "use": [0.0, 3.4], "fits": "the story is not over / turnaround coming (year change, twist)", "url": "https://content-storage.voicemod.net/657e72b10bf0c3a0ffd0ec7805ca3e919d85c65cc363123fe727b0ef894cf4f5", "used_in": []}
  ]
 }
