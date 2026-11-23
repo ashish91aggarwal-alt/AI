@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T14:03:40Z",
+ "built": "2026-11-23T14:28:53Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Cartoon reel session set up; pipeline check passed",
-   "next": "Waiting for owner: script package or idea",
+   "doing": "Aries 2027 cartoon reel: script v3 written and reviewed",
+   "next": "Owner: CTA product + voice credit cap, then voices and skeleton",
    "blocked": "",
-   "updated_at": "2026-11-23T14:03:38Z",
+   "updated_at": "2026-11-23T14:28:53Z",
    "compactions": 0,
    "session": {
     "link": null,
