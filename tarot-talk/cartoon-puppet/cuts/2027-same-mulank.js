@@ -61,7 +61,7 @@ function calcRow(t, t0, y, who, bday, parts, total, col = '#ffd24a') {
   // e.g. WOH · 12 APRIL  →  [1+2] + [4] + [1] = 8, each part with a small tag (date / month / saal)
   if (t < t0) return ''; const step = 0.55, n = Math.min(parts.length, 1 + Math.floor((t - t0) / step)), done = t > t0 + parts.length * step;
   let o = W(480, y, 1, `${who} · ${bday}`, '#ffffff', 40); const x0 = 210, dx = 175;
-  parts.slice(0, n).forEach(([v, lab], k) => { const x = x0 + k * dx; o += (k ? W(x - dx / 2, y + 78, 1, '+', '#ffffff', 52) : '') + W(x, y + 78, 1, v, '#ffffff', 56) + W(x, y + 118, 1, lab, '#b9a7ff', 26); });
+  parts.slice(0, n).forEach(([v, lab], k) => { const x = x0 + k * dx; o += (k ? W(x - dx / 2, y + 78, 1, '+', '#ffffff', 52) : '') + W(x, y + 78, 1, v, '#ffffff', 56) + W(x, y + 122, 1, lab, '#e2d8ff', 32); });
   if (done) o += W(x0 + parts.length * dx - 40, y + 78, 1, `= ${total}`, col, 64);
   return o;
 }
@@ -71,8 +71,8 @@ function screenBody(t) {
   if (t < at('V08')) return calcRow(t, at('V07', 0.02), 390, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['1', '2026 → 1']], 8) + calcRow(t, at('V07', 0.42), 590, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['1', '2026 → 1']], 7, '#7fb4ea');
   if (t < at('FLIP')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 520, 1, '8 = RESULT KA SAAL', '#ffd24a', 60) + (t > at('V08', 0.48) ? W(480, 650, 1, '7 = KHUD PE KAAM', '#7fb4ea', 60) : '');
   if (t < at('V11')) { const u = clamp((t - at('FLIP', 0.25)) / 0.6);
-    return W(480, 640, 1, '2027', '#7dff8a', 220) + `<g transform="translate(${(60 * u).toFixed(1)} ${(900 * u * u).toFixed(1)}) rotate(${(-25 * u).toFixed(1)} 480 300)" opacity="${(1 - u).toFixed(2)}"><rect x="110" y="300" width="740" height="460" rx="10" fill="#fff8e8" stroke="#1b1422" stroke-width="7"/>${W(480, 640, 1, '2026', '#c62b34', 220)}</g>`; }
-  if (t < at('V12')) return calcRow(t, at('V11', 0.2), 410, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['2', '2027 → 2']], 8) + calcRow(t, at('V11', 0.55), 590, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['2', '2027 → 2']], 9, '#7fb4ea');
+    return W(480, 640, 1, '2027', '#7dff8a', 220) + `<g transform="translate(${(60 * u).toFixed(1)} ${(900 * u * u).toFixed(1)}) rotate(${(-25 * u).toFixed(1)} 480 300)" opacity="${(1 - u).toFixed(2)}"><rect x="110" y="358" width="740" height="402" rx="10" fill="#fff8e8" stroke="#1b1422" stroke-width="7"/>${W(480, 640, 1, '2026', '#c62b34', 220)}</g>`; }
+  if (t < at('V12')) return calcRow(t, at('V11', 0.08), 410, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['2', '2027 → 2']], 8) + calcRow(t, at('V11', 0.35), 590, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['2', '2027 → 2']], 9, '#7fb4ea');
   if (t < at('V14')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 510, 1, '9 = SAFAI KA SAAL', '#7fb4ea', 58) + (t > at('V12', 0.45) ? W(480, 630, 1, '8 = MEHNAT KA RESULT', '#ffd24a', 56) : '') + (t > at('V12', 0.8) ? W(480, 730, 1, 'Lottery nahi!', '#ff7a9a', 46) : '');
   if (t < at('K15')) return W(480, 480, 1, 'MULANK = TUM KAUN HO', '#ffd24a', 54) + (t > at('V14', 0.45) ? W(480, 630, 1, 'PERSONAL YEAR = MAUSAM', '#7dff8a', 52) : '');
   return W(480, 470, 1, 'MULANK KA KEEDA?', '#ffd24a', 64) + W(480, 560, 1, 'USKO BHEJO!', '#ffffff', 60) + (t > at('K15', 0.5) ? `<g transform="translate(480 680) scale(${pop(t, at('K15', 0.5))})"><rect x="-330" y="-50" width="660" height="90" rx="45" fill="#ffd24a" stroke="#1b1422" stroke-width="6"/><text x="0" y="16" font-family="Arial" font-weight="700" font-size="42" text-anchor="middle" fill="#1b1422">COMPLETE GUIDE → LINK</text></g>` : '');
@@ -101,10 +101,10 @@ const SHOTS = [
   [at('FLIP'), at('V11'), t => room(t, vPointer, sOoh, hopeful)],
   [at('V11'), at('V12'), t => room(t, seq(t, [[at('V11'), vTalk], [at('V11', 0.6), vPoint]]), seq(t, [[at('V11'), sFriendly], [at('V11', 0.55), sOoh]]), seq(t, [[at('V11'), hopeful], [at('V11', 0.55), mp(5)]]))],
   [at('V12'), at('M13'), t => ({ ...room(t, seq(t, [[at('V12'), vTalk], [at('V12', 0.8), vLaugh]]), seq(t, [[at('V12'), sFriendly], [at('V12', 0.8), sGiggle]]), seq(t, [[at('V12'), mp(5)], [at('V12', 0.55), listen]])), over: t > at('V12', 0.55) ? bricks(t, at('V12', 0.55)) : '' })],
-  [at('M13'), at('MEME3'), t => terraceScene(t, cam(monty(mp(1), 540, 1120, 0.95, t), 540, 800, 1.1 + 0.25 * ease(clamp((t - at('M13')) / 0.25))))],
+  [at('M13'), at('MEME3'), t => terraceScene(t, cam(monty({ ...mp(1), armL: relaxL, armR: mp(0).armR }, 540, 1120, 0.95, t), 540, 800, 1.1 + 0.25 * ease(clamp((t - at('M13')) / 0.25))))],
   [at('MEME3'), at('V14'), t => terraceScene(t, push(vishnu(vPoint, 330, 1150, 0.66, t) + monty({ ...mp(2), fx: [] }, 790, 1220, 0.7, t), t, at('MEME3'), 0.04))],
-  [at('V14'), at('K15'), t => terraceScene(t, SCR(t) + push(vishnu(vWarm, 480, 1250, 0.72, t), t, at('V14')))],
-  [at('K15'), B('endcard').start, t => terraceScene(t, SCR(t) + sakshi(seq(t, [[at('K15'), sFriendly], [at('K15', 0.5), sProud]]), 480, 1270, 0.66, t))],
+  [at('V14'), at('K15'), t => terraceScene(t, SCR(t) + push(vishnu(vWarm, 480, 1250, 0.72, t), t, at('V14'), 0.045, 480, 1000))],
+  [at('K15'), B('endcard').start, t => terraceScene(t, SCR(t) + sakshi(seq(t, [[at('K15'), sFriendly], [at('K15', 0.45), sPress]]), 480, 1270, 0.66, t))],
   [B('endcard').start, DUR, t => ({ ...terraceScene(t, sakshi(sProud, 330, 1230, 0.66, t) + monty({ ...mp(5), armR: mp(0).armR }, 730, 1230, 0.66, t)), over: `<rect x="70" y="270" width="830" height="190" rx="24" fill="#1b1422" opacity="0.88"/>` + txt(485, 345, 1, 'Mulank ka keeda? Usko bhejo!', '#ffffff', 44) + txt(485, 420, 1, 'Complete guide: link', '#ffd24a', 50) })],
 ];
 // close the gaps between beats: each shot holds until the next one starts

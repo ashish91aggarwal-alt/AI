@@ -8,6 +8,7 @@
   - Send a short clip of exactly what changed, together with the full video.
 - **One character or batch at a time:** wait for "ok" or "next" before moving on. When the owner says "redraw" or "looks AI", start again from research, not from small tweaks.
 - **Paid credits:** before any voice test, ask how many voices, how many versions and what credit cap to use. Everything else costs nothing (code, local audio).
+- **Spend less on ElevenLabs** (owner, 23 Nov 2026): 1 take per line by default, reuse every good line already made, and re-take or splice only the part that changed.
 - **Owner sign-off:** a finished reel needs it before posting. Raise risks plainly (film or song clips may get muted, a comedian's line in a deity's mouth, the CTA product must exist).
 
 ## Where files go (stay in this tight place)
@@ -53,6 +54,10 @@ Reviewer prompt that worked:
 **Acting**
 - **Faces must be active and catchy:** lip-sync on every line, blinks, eye darts, brow pops, head nods, talking gestures, a small punch on every cut.
 - **Change the expression on the phrase** (owner, 23 Nov 2026: "very least expressive"). Each beat gets its own face and changes with what is being said: Monty reacts while listening; Sakshi teaches with different cute faces line by line. Default poses for a whole beat are not enough.
+- **Few winks** (owner: "too much one eye shutting"): at most one wink per reel; use raised brows, laughs, pointing and posture instead.
+- **Numbers on screen:** show the maths from the birthdate itself (date → digits, month → number, year → digit, each labelled underneath), so viewers can work out their own. Keep the "PERSONAL YEAR 2026/2027" header on the board the whole time, switching at the year flip.
+- **No repeated lines:** check that the end of one voice line doesn't repeat the start of the next (e.g. "Uska 9. Uska 9."). Trim the take instead of re-generating.
+- **Music must be strong:** use the beat kit in make_music.py (`beat` / `sadpad` / `drop`, levelled by `music_rms_db`). The bed should sit about 5 dB under the voice and duck about 9 dB under speech. The old tabla groove alone read as weak.
 - **Sakshi never jerks her head on syllables** (owner: "just twitching her head"). act.js gives her a slow small sway only; the emotion is carried by brows, lids, blush and mouth, with a happy-eye smile in the pauses.
 
 **Layout**
