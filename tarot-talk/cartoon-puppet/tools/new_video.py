@@ -61,6 +61,8 @@ const {{ E, L, M, SD, clamp, ease, backOut, vp, mp, bp, sp, kp, vishnu, monty, s
 const SHOTS = [
 {chr(10).join(lines)}
 ];
+// close the gaps between beats (a frame in a gap crashes resvg): each shot holds until the next one starts
+SHOTS.forEach((s, i) => {{ if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; }});
 module.exports = K.film(SHOTS, {dur});
 """
 os.makedirs(os.path.join(HERE, 'cuts'), exist_ok=True); write(os.path.join(HERE, 'cuts', f'{slug}.js'), cut)

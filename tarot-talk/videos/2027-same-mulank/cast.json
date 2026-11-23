@@ -1,0 +1,104 @@
+{
+ "note": "Cast for the generic 2026→2027 reel. Approved library characters only (see cartoon-puppet/CHARACTERS.md). Voice ids from assets/voices.json.",
+ "characters": [
+  {
+   "id": "monty",
+   "name": "Monty",
+   "role": "comic lead and viewer stand-in (no birthday given in this reel); lip-syncs the three original meme clips",
+   "voice": {
+    "voice_id": "RvBekjgTX98GYDwlyEKM",
+    "name": "Agastya",
+    "model": "eleven_v4",
+    "speed": 1.12
+   }
+  },
+  {
+   "id": "vishnu",
+   "name": "Vishnu ji",
+   "role": "narrator on his cloud with popcorn; never the joke, not in the CTA, lip-syncs no meme clip, off screen in MEME1, never the 'Ab tu gaya beta' pose vp(1)",
+   "voice": {
+    "voice_id": "KWuQEGxZQtpWhRutt6g6",
+    "name": "Samar",
+    "model": "eleven_v4",
+    "speed": {
+     "V03": 1.3,
+     "V14": 1.1
+    }
+   }
+  },
+  {
+   "id": "sakshi",
+   "name": "Sakshi",
+   "role": "teacher + CTA (the only one who sells)",
+   "voice": {
+    "voice_id": "hHyd5z9VxRT4YKoDwPRl",
+    "name": "Lalita (placeholder)",
+    "model": "eleven_v4",
+    "speed": 1.15,
+    "note": "internal pauses squeezed to 0.22 s"
+   }
+  }
+ ],
+ "example_cards": [
+  {
+   "label": "WOH",
+   "born": "12 April",
+   "mulank": 3,
+   "py2026": 8,
+   "py2027": 9
+  },
+  {
+   "label": "TUM",
+   "born": "3 March",
+   "mulank": 3,
+   "py2026": 7,
+   "py2027": 8
+  }
+ ],
+ "meme_clips": [
+  {
+   "beat": "MEME1",
+   "file": "assets/audio/memes/emotional-damage-meme.mp3",
+   "use": [
+    0,
+    3.3
+   ]
+  },
+  {
+   "beat": "MEME2",
+   "file": "assets/audio/memes/climax-abhi-baaki-hai-carryminati.mp3",
+   "use": [
+    0,
+    3.4
+   ]
+  },
+  {
+   "beat": "MEME3",
+   "file": "assets/audio/memes/ab-tu-gaya-beta-puneet.mp3",
+   "use": [
+    2.48,
+    3.88
+   ]
+  }
+ ],
+ "voice_generation": {
+  "flow": "Tarot Talk - 2027-same-mulank voices (wILJbqlZSuS4yPSJtzow)",
+  "takes_per_line": 2,
+  "credits_spent": 1402,
+  "cap": 1500,
+  "picked": {
+   "M01": "b",
+   "V03": "b",
+   "M04": "b",
+   "K05": "a",
+   "K06": "a",
+   "K07": "b",
+   "K08": "a",
+   "K10": "b",
+   "K12": "a",
+   "K13": "b",
+   "V14": "b",
+   "K15": "a"
+  }
+ }
+}
