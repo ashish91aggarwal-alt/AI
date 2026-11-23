@@ -33,25 +33,26 @@ B=[ # id, who, file/source (None = no voice, silent event of that length), tempo
 ('MEME1','Monty',('emotional-damage-meme.mp3',0,3.3),1.0,'Emotional damage!',"MEME (original Steven He audio), Monty lip-syncs: hand on heart, knees buckle, then full wail. Vishnu ji not on screen.",'Punch-in on Monty.','Vine boom.'),
 ('V03','Vishnu ji',T('V03_b'),1.30,'Arre, mulank same hai… saal nahi.',"Vishnu ji on his cloud: popcorn, eyebrow up, quick wink.",'Push in.','Chime, munch.'),
 ('M04','Monty',T('v7_M04'),1.12,'Saal ka kya logic hai? Sab toh mulank-mulank karte rehte hain!',"Monty confused, arms out.",'Close on Monty.','Boing.'),
-('K05','Sakshi',T('v7_K05'),1.10,'Prabhu, screen ready!',"Sakshi pops in as assistant and switches on a BIG SCREEN on the rooftop wall: WOH · 12 APRIL and TUM · 3 MARCH, both MULANK 3.",'Wide: screen, Vishnu ji, Sakshi, Monty.','Screen power-on, anime wow.'),
-('V06','Vishnu ji',T('v7_V06'),1.25,'Personal year: date + month + saal… single digit tak jodo.',"Big screen in large digits: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1'. Vishnu ji's chakra points like a teacher's pointer.",'Screen big in frame.','Ticks.'),
+('V06','Vishnu ji',T('v7_V06'),1.25,'Personal year: date + month + saal… single digit tak jodo.',"Sakshi (assistant, no line) switches on the BIG SCREEN at the start. Big screen in large digits: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1'. Vishnu ji's chakra points like a teacher's pointer.",'Screen big in frame.','Ticks.'),
 ('V07','Vishnu ji',T('v7_V07'),1.25,'Uska: 1, 2, 4, 1… 8. Tera: 3, 3, 1… 7. Haan beta, 7. Rona mana hai.',"Big screen builds '12 APR → 1+2+4+1 = 8' (gold 8) and '3 MAR → 3+3+1 = 7'. Monty sulks at 8, lip trembles at 7; Vishnu ji teasing grin on 'rona mana hai'.",'Screen + Monty.','Abacus ticks, ding.'),
 ('V08','Vishnu ji',T('v7_V08'),1.25,'Numerology mein 8 matlab result ka saal. 7 matlab ruk ke, khud pe kaam karne ka saal.',"Label 'In numerology'. Screen: trophy on 8; lamp and book on 7. Sakshi gives Monty a sympathetic pout.",'Vishnu ji + screen.','Soft chime.'),
 ('M09','Monty',T('v7_M09'),1.12,'Matlab wo party kare, main meditation?!',"Monty cries under a tiny rain cloud.",'Close on Monty.','Our sad trombone.'),
 ('FLIP',None,None,1.6,None,"Year flip: Vishnu ji flicks his chakra; the big screen's '2026' tears away like a calendar page, '2027' shows, fireworks. Monty looks up, hopeful.",'Wide.','Paper rip, whoosh, firework pops.'),
-('V11','Vishnu ji',T('v7_V11'),1.25,'2027 ka number 2. Tera 3, 3, 2… 8! Uska 9.',"Big screen recalculates: TUM → 3+3+2 = 8 (gold), WOH → 1+2+4+2 = 9. Monty cheers.",'Screen + Monty.','Flip whooshes, ding.'),
+('V11','Vishnu ji',('take','v7_V11',0,5.75),1.25,'2027 ka number 2. Tera 3, 3, 2… 8!',"Big screen recalculates: TUM → 3+3+2 = 8 (gold), WOH → 1+2+4+2 = 9. Monty cheers.",'Screen + Monty.','Flip whooshes, ding.'),
 ('V12','Vishnu ji',T('v7_V12'),1.25,'Uska 9: purana samet ke, safai ka saal. Aur tera 8? Result… mehnat ka. Lottery nahi.',"WOH profile packs old boxes, broom sweeps (calm). Bricks stack by Monty, a lottery ticket floats away. Label 'In numerology'.",'Vishnu ji + Monty.','Brick thumps.'),
 ('M13','Monty',T('v7_M13'),1.12,'Mehnat?!',"Monty's cheer drops into shock.",'Crash zoom on Monty.','Record scratch.'),
 ('MEME3','Vishnu ji',('ab-tu-gaya-beta-puneet.mp3',2.48,3.88),1.0,'Ab tu gaya beta!',"MEME (original Puneet Superstar audio), Vishnu ji lip-syncs to Monty with a playful grin; Sakshi giggles by the screen.",'Push in on Vishnu ji.','Vine boom.'),
 ('V14','Vishnu ji',T('V14_b'),1.10,'Mulank batata hai tum kaun ho… personal year, mausam kaisa hai.',"Vishnu ji serene, slow push-in. Label 'In numerology'.",'Slow push-in.','Warm swell.'),
-('K15','Sakshi',T('K15_a'),1.15,'Jiska mulank same par haal alag, usse bhejo. Poori 2027 guide ke liye, link pe click karo.',"Sakshi winks; send arrow, then link chip. No deity.",'Sakshi close.','Send whoosh.'),
+('K15','Sakshi',('concat',[('v8_K15a',0,None),('K15_a',3.70,None)]),1.15,'Jisko mulank ka keeda hai, usko bhejo! Poori 2027 guide ke liye, link pe click karo.',"Sakshi winks; send arrow, then link chip. No deity.",'Sakshi close.','Send whoosh.'),
 ]
 GAP=0.15; t=0.0; beats=[]; cue=[]; track=[]; ref=None
 for i,(bid,who,src,tempo,line,pic,camr,snd) in enumerate(B):
     if src is None:
         s=round(t,2); e=round(t+tempo,2)
         beats.append({'id':bid,'type':'event','start':s,'end':e,'who':None,'line':None,'picture':pic,'camera':camr,'sound':snd,'voice_file':None,'n':i+1}); t=e+GAP; continue
-    if isinstance(src,tuple): x=load(os.path.join(MEM,src[0]),src[1],src[2])
+    if isinstance(src,tuple) and src[0]=='take': x=squeeze(load(T(src[1]),src[2],src[3],tempo=tempo))
+    elif isinstance(src,tuple) and src[0]=='concat': x=squeeze(np.concatenate([np.concatenate([load(T(n),a0,b0,tempo=tempo),np.zeros(int(0.18*SR),np.float32)]) for n,a0,b0 in src[1]]))
+    elif isinstance(src,tuple): x=load(os.path.join(MEM,src[0]),src[1],src[2])
     else: x=squeeze(load(src,tempo=tempo))
     if ref is None: ref=rms(x)
     x=x*(ref/rms(x)) if bid.startswith('MEME') else x
@@ -59,7 +60,7 @@ for i,(bid,who,src,tempo,line,pic,camr,snd) in enumerate(B):
     wavfile.write(os.path.join(V,'voices','lines',bid+'.wav'),SR,(np.clip(x,-1,1)*32767).astype(np.int16))
     track.append((int(s*SR),x))
     # caption chunks split at sentence-ish breaks, timed by characters
-    parts=[p.strip() for p in line.replace('… ','…|').replace('. ','.|').replace('? ','?|').replace(': ',':|').split('|') if p.strip()]
+    parts=[p.strip() for p in line.replace('… ','…|').replace('! ','!|').replace(', ',',|').replace('. ','.|').replace('? ','?|').replace(': ',':|').split('|') if p.strip()]
     merged=[]
     for p in parts:
         if merged and len(merged[-1])+len(p)<22: merged[-1]+=' '+p

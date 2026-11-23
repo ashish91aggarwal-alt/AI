@@ -44,16 +44,47 @@ def pad(a, b, root, g):                     # drone stretched across the mapped 
 def swell(a, b, g):
     A, B = new_t(a), new_t(b); t = np.arange(int(SR * (B - A))) / SR; f = 200 + 1400 * (t / t[-1]) ** 2
     put(A, np.sin(2 * np.pi * np.cumsum(f) / SR) * (t / t[-1]) ** 2 * 0.4 + lp(rng.standard_normal(len(t)), 3000) * (t / t[-1]) ** 3 * 0.3, g)
+# ---- punchier kit (added 23 Nov 2026, owner: "music is weak"): kick, clap, hats, bass line, chord stabs, riser + impact, sad pad
+def kick(): t = np.arange(int(SR * 0.35)) / SR; return np.sin(2 * np.pi * np.cumsum(45 + 110 * np.exp(-t * 28)) / SR) * np.exp(-t * 9) * 1.2
+def clap(): t = np.arange(int(SR * 0.25)) / SR; n = hp(rng.standard_normal(len(t)), 900); env = np.exp(-t * 22) + 0.6 * np.exp(-np.maximum(t - 0.012, 0) * 30) * (t > 0.012); return lp(n, 7000) * env * 0.5
+def hat(o=False): t = np.arange(int(SR * (0.18 if o else 0.05))) / SR; return hp(rng.standard_normal(len(t)), 7000) * np.exp(-t * (14 if o else 70)) * 0.22
+def bassnote(f, d): t = np.arange(int(SR * d)) / SR; x = np.sin(2 * np.pi * f * t) + 0.35 * np.sin(4 * np.pi * f * t) + 0.15 * np.sign(np.sin(2 * np.pi * f * t)); return lp(x, 600) * np.minimum(1, t / 0.01) * np.exp(-t * 2.5) * 0.7
+def stab(fs, d=0.25): t = np.arange(int(SR * d)) / SR; x = sum(np.sign(np.sin(2 * np.pi * f * t)) * 0.5 + np.sin(2 * np.pi * f * 2 * t) * 0.3 for f in fs); return lp(x, 2600) * np.exp(-t * 9) * 0.22
+PROG = {'major': [(0, [0, 4, 7]), (5, [5, 9, 12]), (7, [7, 11, 14]), (5, [5, 9, 12])], 'minor': [(0, [0, 3, 7]), (8, [8, 12, 15]), (5, [5, 8, 12]), (7, [7, 10, 14])]}
+def beat(a, b, bpm, root=196, level=1.0, mode='major', light=False):
+    bt = 60 / bpm; t = a; i = 0; pr = PROG[mode]
+    while t < b - 0.05:
+        T = new_t(t); bar = (i // 4) % len(pr); r, ch = pr[bar]; f0 = root * 2 ** (r / 12)
+        if not light or i % 4 == 0: put(T, kick(), 0.55 * level)
+        if i % 2 == 1: put(T, clap(), (0.3 if light else 0.42) * level)
+        put(T, hat(), 0.5 * level); put(T + bt / 2, hat(i % 4 == 3), 0.45 * level)
+        if i % 4 in (0, 3) or (not light and i % 2 == 0): put(T, bassnote(f0 / 2, bt * 0.9), 0.6 * level)
+        if i % 4 in (1, 3): put(T + bt / 2, stab([root * 2 ** (c / 12) for c in ch]), level * (0.5 if light else 0.7))
+        if i % 2 == 0: put(T, pluck(root * 2 * 2 ** (SCALE[(i // 2 * 3) % len(SCALE)] / 12), 0.6), 0.22 * level)
+        t += bt; i += 1
+def sadpad(a, b, root=196, g=1.0):
+    A, B = new_t(a), new_t(b); t = np.arange(int(SR * (B - A))) / SR; x = np.zeros_like(t)
+    for c in [0, 3, 7, 12]: f = root * 2 ** (c / 12); x += np.sin(2 * np.pi * f * t) * 0.25 + np.sin(2 * np.pi * f * 1.003 * t) * 0.2
+    n = min(len(x) // 3, int(0.3 * SR)); x[:n] *= np.linspace(0, 1, n); x[-n:] *= np.linspace(1, 0, n); put(A, lp(x, 1800) * 0.6, g)
+    for k, c in enumerate([12, 10, 7, 3, 0]): put(A + k * (B - A) / 5, pluck(root * 2 ** (c / 12), 1.2, 0.4), 0.3 * g)
+def drop(a, b, g=1.0):   # riser across [a,b], impact at b
+    swell(a, b, g); B = new_t(b); put(B, kick() * 1.4, g); put(B, clap() * 1.5, g); put(B, lp(rng.standard_normal(int(SR * 1.2)), 4000) * np.exp(-np.arange(int(SR * 1.2)) / SR * 4) * 0.4, g)
 for c in cfg.get('music', []):   # music plan from video.json, script clock
     k = c['kind']
     if k == 'groove': groove(c['a'], c['b'], c['bpm'], c.get('root', 220), tuple(c.get('motif', (0, 2, 4, 2, 5, 4, 2, 0))), c.get('level', 1.0), c.get('ticks', False))
     elif k == 'pad': pad(c['a'], c['b'], c['root'], c['g'])
     elif k == 'swell': swell(c['a'], c['b'], c['g'])
+    elif k == 'beat': beat(c['a'], c['b'], c['bpm'], c.get('root', 196), c.get('level', 1.0), c.get('mode', 'major'), c.get('light', False))
+    elif k == 'sadpad': sadpad(c['a'], c['b'], c.get('root', 196), c.get('g', 1.0))
+    elif k == 'drop': drop(c['a'], c['b'], c.get('g', 1.0))
 # duck under speech (envelope of the voice track, fast attack, slow release)
 raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', os.path.join(work, 'voice.wav'), '-f', 'f32le', '-ac', '1', '-ar', str(SR), '-'], capture_output=True).stdout
 v = np.frombuffer(raw, np.float32); H = 480; n = len(v) // H; e = np.sqrt((v[:n * H].reshape(n, H) ** 2).mean(1)) > 0.012
 g = np.ones(n); cur = 1.0
 for i in range(n): tgt = 10 ** (cfg.get('duck_db', -8) / 20) if e[i] else 1.0; cur += (tgt - cur) * (0.5 if tgt < cur else 0.04); g[i] = cur
 gain = np.repeat(g, H); m = track[: len(gain)] * gain
-m = m[: int(DUR * SR)]; m = m / (np.abs(m).max() + 1e-9) * 0.9
+m = m[: int(DUR * SR)]
+if cfg.get('music_rms_db') is not None:   # opt-in: level by loudness (RMS) with a soft limiter, so kick peaks don't make the bed quiet
+    r = np.sqrt(np.mean(m[np.abs(m) > 1e-4] ** 2)) + 1e-9; m = m / r * 10 ** (cfg['music_rms_db'] / 20); m = np.tanh(m * 1.6) / 1.6
+else: m = m / (np.abs(m).max() + 1e-9) * 0.9
 wavfile.write(os.path.join(work, 'music.wav'), SR, (m * 32767).astype(np.int16)); print('music', round(len(m) / SR, 2), 's')

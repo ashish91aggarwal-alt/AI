@@ -1,7 +1,7 @@
 {
  "slug": "2027-same-mulank",
  "title": "Same Mulank, alag saal — 2026 → 2027",
- "script_dur": 64.55,
+ "script_dur": 61.91,
  "cut": "cuts/2027-same-mulank.js",
  "voice_track": "voices/voice_track_timed.wav",
  "cue_sheet": "voices/cue_sheet.csv",
@@ -15,15 +15,55 @@
  "sfx_cues": "sfx_cues.json",
  "music": [
   {
-   "kind": "groove",
+   "kind": "beat",
    "a": 0,
-   "b": 64.55,
-   "bpm": 108,
+   "b": 12.89,
+   "bpm": 112,
+   "root": 196,
+   "level": 1.0
+  },
+  {
+   "kind": "beat",
+   "a": 12.89,
+   "b": 32.09,
+   "bpm": 112,
+   "root": 196,
+   "level": 0.7,
+   "light": true
+  },
+  {
+   "kind": "sadpad",
+   "a": 32.09,
+   "b": 34.99,
+   "root": 196,
+   "g": 1.0
+  },
+  {
+   "kind": "drop",
+   "a": 34.99,
+   "b": 36.74,
+   "g": 1.0
+  },
+  {
+   "kind": "beat",
+   "a": 36.74,
+   "b": 53.89,
+   "bpm": 120,
    "root": 220,
-   "level": 0.85
+   "level": 1.0
+  },
+  {
+   "kind": "beat",
+   "a": 53.89,
+   "b": 61.91,
+   "bpm": 120,
+   "root": 220,
+   "level": 0.9,
+   "light": true
   }
  ],
- "music_db": -13,
- "duck_db": -8,
- "lufs": -14
+ "music_db": -8,
+ "duck_db": -9,
+ "lufs": -14,
+ "music_rms_db": -16
 }

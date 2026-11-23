@@ -3,7 +3,7 @@
   "title": "Same Mulank, alag saal — 2026 → 2027",
   "channel": "Tarot Talk By Sakshi (Instagram Reels)",
   "version": "v7.2 voice cut",
-  "runtime_s": 64.55,
+  "runtime_s": 61.91,
   "format": "1080x1920, 24 fps, 9:16",
   "language": "Hindi/Hinglish voice, Hinglish on-screen text",
   "cta": "send to someone who needs it + link to the complete 2027 guide",
@@ -26,11 +26,16 @@
     {
      "text": "Dono ka mulank ek…",
      "from": 0.0,
-     "to": 1.12
+     "to": 1.14
     },
     {
-     "text": "phir uska sab sahi kaise, mera nahi?!",
-     "from": 1.12,
+     "text": "phir uska sab sahi kaise,",
+     "from": 1.14,
+     "to": 2.73
+    },
+    {
+     "text": "mera nahi?!",
+     "from": 2.73,
      "to": 3.43
     }
    ],
@@ -115,84 +120,63 @@
    "n": 4
   },
   {
-   "id": "K05",
-   "type": "line",
-   "start": 12.89,
-   "end": 14.1,
-   "who": "Sakshi",
-   "line": "Prabhu, screen ready!",
-   "caption_chunks": [
-    {
-     "text": "Prabhu, screen ready!",
-     "from": 12.89,
-     "to": 14.1
-    }
-   ],
-   "picture": "Sakshi pops in as assistant and switches on a BIG SCREEN on the rooftop wall: WOH · 12 APRIL and TUM · 3 MARCH, both MULANK 3.",
-   "camera": "Wide: screen, Vishnu ji, Sakshi, Monty.",
-   "sound": "Screen power-on, anime wow.",
-   "voice_file": "voices/lines/K05.wav",
-   "meme": false,
-   "n": 5
-  },
-  {
    "id": "V06",
    "type": "line",
-   "start": 14.25,
-   "end": 18.15,
+   "start": 12.89,
+   "end": 16.79,
    "who": "Vishnu ji",
    "line": "Personal year: date + month + saal… single digit tak jodo.",
    "caption_chunks": [
     {
      "text": "Personal year:",
-     "from": 14.25,
-     "to": 15.22
+     "from": 12.89,
+     "to": 13.87
     },
     {
      "text": "date + month + saal…",
-     "from": 15.22,
-     "to": 16.62
+     "from": 13.87,
+     "to": 15.26
     },
     {
      "text": "single digit tak jodo.",
-     "from": 16.62,
-     "to": 18.15
+     "from": 15.26,
+     "to": 16.79
     }
    ],
-   "picture": "Big screen in large digits: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1'. Vishnu ji's chakra points like a teacher's pointer.",
+   "picture": "Sakshi (assistant, no line) switches on the BIG SCREEN at the start. Big screen in large digits: 'DATE + MONTH + SAAL', then '2026 = 2+0+2+6 = 10 → 1'. Vishnu ji's chakra points like a teacher's pointer.",
    "camera": "Screen big in frame.",
    "sound": "Ticks.",
    "voice_file": "voices/lines/V06.wav",
    "meme": false,
-   "n": 6
+   "n": 5
   },
   {
    "id": "V07",
    "type": "line",
-   "start": 18.3,
-   "end": 27.46,
+   "start": 16.94,
+   "end": 26.1,
    "who": "Vishnu ji",
    "line": "Uska: 1, 2, 4, 1… 8. Tera: 3, 3, 1… 7. Haan beta, 7. Rona mana hai.",
    "caption_chunks": [
     {
      "text": "Uska: 1, 2, 4, 1… 8.",
-     "from": 18.3,
-     "to": 21.16
+     "from": 16.94,
+     "to": 19.8
     },
     {
      "text": "Tera: 3, 3, 1… 7.",
-     "from": 21.16,
-     "to": 23.6
+     "from": 19.8,
+     "to": 22.24
     },
     {
      "text": "Haan beta, 7.",
-     "from": 23.6,
-     "to": 25.46
+     "from": 22.24,
+     "to": 24.1
     },
     {
      "text": "Rona mana hai.",
-     "from": 25.46,
-     "to": 27.46
+     "from": 24.1,
+     "to": 26.1
     }
    ],
    "picture": "Big screen builds '12 APR → 1+2+4+1 = 8' (gold 8) and '3 MAR → 3+3+1 = 7'. Monty sulks at 8, lip trembles at 7; Vishnu ji teasing grin on 'rona mana hai'.",
@@ -200,25 +184,30 @@
    "sound": "Abacus ticks, ding.",
    "voice_file": "voices/lines/V07.wav",
    "meme": false,
-   "n": 7
+   "n": 6
   },
   {
    "id": "V08",
    "type": "line",
-   "start": 27.61,
-   "end": 33.3,
+   "start": 26.25,
+   "end": 31.94,
    "who": "Vishnu ji",
    "line": "Numerology mein 8 matlab result ka saal. 7 matlab ruk ke, khud pe kaam karne ka saal.",
    "caption_chunks": [
     {
      "text": "Numerology mein 8 matlab result ka saal.",
-     "from": 27.61,
-     "to": 30.32
+     "from": 26.25,
+     "to": 28.99
     },
     {
-     "text": "7 matlab ruk ke, khud pe kaam karne ka saal.",
-     "from": 30.32,
-     "to": 33.3
+     "text": "7 matlab ruk ke,",
+     "from": 28.99,
+     "to": 30.09
+    },
+    {
+     "text": "khud pe kaam karne ka saal.",
+     "from": 30.09,
+     "to": 31.94
     }
    ],
    "picture": "Label 'In numerology'. Screen: trophy on 8; lamp and book on 7. Sakshi gives Monty a sympathetic pout.",
@@ -226,20 +215,25 @@
    "sound": "Soft chime.",
    "voice_file": "voices/lines/V08.wav",
    "meme": false,
-   "n": 8
+   "n": 7
   },
   {
    "id": "M09",
    "type": "line",
-   "start": 33.45,
-   "end": 36.2,
+   "start": 32.09,
+   "end": 34.84,
    "who": "Monty",
    "line": "Matlab wo party kare, main meditation?!",
    "caption_chunks": [
     {
-     "text": "Matlab wo party kare, main meditation?!",
-     "from": 33.45,
-     "to": 36.2
+     "text": "Matlab wo party kare,",
+     "from": 32.09,
+     "to": 33.61
+    },
+    {
+     "text": "main meditation?!",
+     "from": 33.61,
+     "to": 34.84
     }
    ],
    "picture": "Monty cries under a tiny rain cloud.",
@@ -247,43 +241,38 @@
    "sound": "Our sad trombone.",
    "voice_file": "voices/lines/M09.wav",
    "meme": false,
-   "n": 9
+   "n": 8
   },
   {
    "id": "FLIP",
    "type": "event",
-   "start": 36.35,
-   "end": 37.95,
+   "start": 34.99,
+   "end": 36.59,
    "who": null,
    "line": null,
    "picture": "Year flip: Vishnu ji flicks his chakra; the big screen's '2026' tears away like a calendar page, '2027' shows, fireworks. Monty looks up, hopeful.",
    "camera": "Wide.",
    "sound": "Paper rip, whoosh, firework pops.",
    "voice_file": null,
-   "n": 10
+   "n": 9
   },
   {
    "id": "V11",
    "type": "line",
-   "start": 38.1,
-   "end": 43.37,
+   "start": 36.74,
+   "end": 40.95,
    "who": "Vishnu ji",
-   "line": "2027 ka number 2. Tera 3, 3, 2… 8! Uska 9.",
+   "line": "2027 ka number 2. Tera 3, 3, 2… 8!",
    "caption_chunks": [
     {
      "text": "2027 ka number 2.",
-     "from": 38.1,
-     "to": 40.34
+     "from": 36.74,
+     "to": 38.91
     },
     {
-     "text": "Tera 3, 3, 2…",
-     "from": 40.34,
-     "to": 42.05
-    },
-    {
-     "text": "8! Uska 9.",
-     "from": 42.05,
-     "to": 43.37
+     "text": "Tera 3, 3, 2… 8!",
+     "from": 38.91,
+     "to": 40.95
     }
    ],
    "picture": "Big screen recalculates: TUM → 3+3+2 = 8 (gold), WOH → 1+2+4+2 = 9. Monty cheers.",
@@ -291,40 +280,45 @@
    "sound": "Flip whooshes, ding.",
    "voice_file": "voices/lines/V11.wav",
    "meme": false,
-   "n": 11
+   "n": 10
   },
   {
    "id": "V12",
    "type": "line",
-   "start": 43.52,
-   "end": 49.94,
+   "start": 41.1,
+   "end": 47.52,
    "who": "Vishnu ji",
    "line": "Uska 9: purana samet ke, safai ka saal. Aur tera 8? Result… mehnat ka. Lottery nahi.",
    "caption_chunks": [
     {
      "text": "Uska 9:",
-     "from": 43.52,
-     "to": 44.08
+     "from": 41.1,
+     "to": 41.67
     },
     {
-     "text": "purana samet ke, safai ka saal.",
-     "from": 44.08,
-     "to": 46.57
+     "text": "purana samet ke,",
+     "from": 41.67,
+     "to": 42.97
+    },
+    {
+     "text": "safai ka saal.",
+     "from": 42.97,
+     "to": 44.11
     },
     {
      "text": "Aur tera 8? Result…",
-     "from": 46.57,
-     "to": 48.09
+     "from": 44.11,
+     "to": 45.65
     },
     {
      "text": "mehnat ka.",
-     "from": 48.09,
-     "to": 48.9
+     "from": 45.65,
+     "to": 46.46
     },
     {
      "text": "Lottery nahi.",
-     "from": 48.9,
-     "to": 49.94
+     "from": 46.46,
+     "to": 47.52
     }
    ],
    "picture": "WOH profile packs old boxes, broom sweeps (calm). Bricks stack by Monty, a lottery ticket floats away. Label 'In numerology'.",
@@ -332,20 +326,20 @@
    "sound": "Brick thumps.",
    "voice_file": "voices/lines/V12.wav",
    "meme": false,
-   "n": 12
+   "n": 11
   },
   {
    "id": "M13",
    "type": "line",
-   "start": 50.09,
-   "end": 50.79,
+   "start": 47.67,
+   "end": 48.37,
    "who": "Monty",
    "line": "Mehnat?!",
    "caption_chunks": [
     {
      "text": "Mehnat?!",
-     "from": 50.09,
-     "to": 50.79
+     "from": 47.67,
+     "to": 48.37
     }
    ],
    "picture": "Monty's cheer drops into shock.",
@@ -353,20 +347,20 @@
    "sound": "Record scratch.",
    "voice_file": "voices/lines/M13.wav",
    "meme": false,
-   "n": 13
+   "n": 12
   },
   {
    "id": "MEME3",
    "type": "line",
-   "start": 50.94,
-   "end": 52.13,
+   "start": 48.52,
+   "end": 49.71,
    "who": "Vishnu ji",
    "line": "Ab tu gaya beta!",
    "caption_chunks": [
     {
      "text": "Ab tu gaya beta!",
-     "from": 50.94,
-     "to": 52.13
+     "from": 48.52,
+     "to": 49.71
     }
    ],
    "picture": "MEME (original Puneet Superstar audio), Vishnu ji lip-syncs to Monty with a playful grin; Sakshi giggles by the screen.",
@@ -374,25 +368,30 @@
    "sound": "Vine boom.",
    "voice_file": "voices/lines/MEME3.wav",
    "meme": true,
-   "n": 14
+   "n": 13
   },
   {
    "id": "V14",
    "type": "line",
-   "start": 52.28,
-   "end": 56.16,
+   "start": 49.86,
+   "end": 53.74,
    "who": "Vishnu ji",
    "line": "Mulank batata hai tum kaun ho… personal year, mausam kaisa hai.",
    "caption_chunks": [
     {
      "text": "Mulank batata hai tum kaun ho…",
-     "from": 52.28,
-     "to": 54.16
+     "from": 49.86,
+     "to": 51.77
     },
     {
-     "text": "personal year, mausam kaisa hai.",
-     "from": 54.16,
-     "to": 56.16
+     "text": "personal year,",
+     "from": 51.77,
+     "to": 52.66
+    },
+    {
+     "text": "mausam kaisa hai.",
+     "from": 52.66,
+     "to": 53.74
     }
    ],
    "picture": "Vishnu ji serene, slow push-in. Label 'In numerology'.",
@@ -400,25 +399,35 @@
    "sound": "Warm swell.",
    "voice_file": "voices/lines/V14.wav",
    "meme": false,
-   "n": 15
+   "n": 14
   },
   {
    "id": "K15",
    "type": "line",
-   "start": 56.31,
-   "end": 62.4,
+   "start": 53.89,
+   "end": 59.76,
    "who": "Sakshi",
-   "line": "Jiska mulank same par haal alag, usse bhejo. Poori 2027 guide ke liye, link pe click karo.",
+   "line": "Jisko mulank ka keeda hai, usko bhejo! Poori 2027 guide ke liye, link pe click karo.",
    "caption_chunks": [
     {
-     "text": "Jiska mulank same par haal alag, usse bhejo.",
-     "from": 56.31,
-     "to": 59.32
+     "text": "Jisko mulank ka keeda hai,",
+     "from": 53.89,
+     "to": 55.77
     },
     {
-     "text": "Poori 2027 guide ke liye, link pe click karo.",
-     "from": 59.32,
-     "to": 62.4
+     "text": "usko bhejo!",
+     "from": 55.77,
+     "to": 56.57
+    },
+    {
+     "text": "Poori 2027 guide ke liye,",
+     "from": 56.57,
+     "to": 58.38
+    },
+    {
+     "text": "link pe click karo.",
+     "from": 58.38,
+     "to": 59.76
     }
    ],
    "picture": "Sakshi winks; send arrow, then link chip. No deity.",
@@ -426,20 +435,20 @@
    "sound": "Send whoosh.",
    "voice_file": "voices/lines/K15.wav",
    "meme": false,
-   "n": 16
+   "n": 15
   },
   {
    "id": "endcard",
    "type": "event",
-   "start": 62.55,
-   "end": 64.55,
+   "start": 59.91,
+   "end": 61.91,
    "who": null,
    "line": null,
    "picture": "Monty taps send and grins; Vishnu ji munches popcorn. Card: 'Send to someone who needs it · Complete guide: link'. Loops to frame 0.",
    "camera": "Wide.",
    "sound": "Send whoosh.",
    "voice_file": null,
-   "n": 17
+   "n": 16
   }
  ]
 }
