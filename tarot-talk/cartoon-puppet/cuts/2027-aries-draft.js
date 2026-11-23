@@ -205,9 +205,33 @@ const vClose = (t, pose) => { DX = 190; return vishnu(pose, 400, 1090, 0.9, t); 
 const kClose = (t, pose, dmode = 'idle', page = '') => { DX = -190; return smallCloud(620, 1720, 1.5) + sakshi(pose, 660, 1150, 0.82, t) + diary(t, 860, 1500, 0.7, dmode, page); };
 const SCROLL = (t, title = 'ARIES 2027', from = 0, extra = '', y = 600) => scroll(t, 560, y, 0.85, title, from, 4, extra);
 
+// ---------- COVER / first frame (owner 22:56 IST: "a first frame which clearly shows what it is. Gets clicks. Big big.")
+// Frame 0 of the reel and the Instagram cover: huge ARIES 2027, Vishnu ji large in space with gold rays and planets,
+// Sakshi the lawyer objecting. Two text blocks only. Key items inside the 4:5 grid crop (y 285-1635) and clear of the
+// right 12% and bottom 20%.
+function rays(t, cx, cy) { let o = ''; for (let i = 0; i < 24; i++) { const a = i * Math.PI / 12 + t * 0.15;
+  o += `<path d="M${cx} ${cy} L${(cx + Math.cos(a - 0.06) * 1400).toFixed(0)} ${(cy + Math.sin(a - 0.06) * 1400).toFixed(0)} L${(cx + Math.cos(a + 0.06) * 1400).toFixed(0)} ${(cy + Math.sin(a + 0.06) * 1400).toFixed(0)} Z" fill="#ffd24a" opacity="${i % 2 ? 0.10 : 0.18}"/>`; } return o; }
+function coverText() {
+  const big = (x, y, str, size, fill, sw = 22) => `<text x="${x}" y="${y}" font-family="Arial Black,Arial" font-weight="900" font-size="${size}" text-anchor="middle" fill="${fill}" stroke="#1b1422" stroke-width="${sw}" paint-order="stroke" stroke-linejoin="round">${str}</text>`;
+  let o = `<g transform="rotate(-4 500 420)">` + big(500, 470, 'ARIES 2027', 156, '#ffd24a', 24) + `</g>`;
+  // ram horns badge on the left of the title
+  o += `<g transform="translate(130 290) scale(0.95)"><circle r="62" fill="#d22f48" stroke="#1b1422" stroke-width="9"/><path d="M-6 -6 C-40 -60 -96 -20 -76 18 C-62 44 -26 38 -28 10" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/><path d="M6 -6 C40 -60 96 -20 76 18 C62 44 26 38 28 10" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/></g>`;
+  o += `<g transform="rotate(3 500 640)"><rect x="150" y="530" width="700" height="215" rx="40" fill="#d22f48" stroke="#1b1422" stroke-width="10"/>` + big(500, 620, 'BHAGWAN SE', 80, '#ffffff', 14) + big(500, 715, 'MOL-BHAAV!', 92, '#ffd24a', 14) + `</g>`;
+  return o;
+}
+function coverFrame(t) {
+  const S0 = W.cosmos(t, { gold: 1, noPlanets: 1 });
+  const body = S0.back + rays(t, 330, 900) + `<circle cx="330" cy="900" r="420" fill="url(#halo)" opacity="0.8"/>` +
+    vishnu({ ...vPoint, mouthShape: 'smileBig', lid: 0.15, browL: 1, browR: 0.6, fx: ['sparkle'], lookX: 18, tilt: -4 }, 320, 1290, 0.74, t) + scroll(t, 330, 1430, 0.5, 'ARIES 2027', -3) +
+    smallCloud(700, 1660, 1.2) + sakshi(C({ ...k2, ...pointUp, browLift: 1, browLiftAmt: 1.3, lid: 0.2, mouth: 'grin', blush: 0.7, lookX: -22, tilt: -6 }), 740, 1320, 0.76, t) + gavel(0.3, 575, 1470, 0.75) +
+    coverText();
+  return { defs: S0.defs, body };
+}
+const COVER_HOLD = 0.4;   // frame 0 is the cover; it gives way to the hook shot within 0.4 s
+
 const SHOTS = [
   // K01 hook: quill already writing; Sakshi floats in, objects, then plays the lawyer
-  [0, at('V02'), t => ({ ...study(t, snapIn(SCROLL(t, '', -2, '', 700) + two(t, seq(t, [[0, vWrite], [at('K01', 0.45), vAmused]]), seq(t, [[0, sObject], [at('K01', 0.55), sLawyer]]), '', { mode: 'idle' }), t, 0, 1.12, 1.0, 540, 900)), over: hookCard() })],
+  [0, at('V02'), t => t < COVER_HOLD ? coverFrame(t) : ({ ...study(t, snapIn(SCROLL(t, '', -2, '', 700) + two(t, seq(t, [[0, vWrite], [at('K01', 0.45), vAmused]]), seq(t, [[0, sObject], [at('K01', 0.55), sLawyer]]), '', { mode: 'idle' }), t, 0, 1.12, 1.0, 540, 900)), over: hookCard() })],
   // V02 Mesh = no brakes: Vishnu ji close, amused; the ram gag cut-in
   [at('V02'), at('V02', 0.45), t => study(t, push(vClose(t, seq(t, [[at('V02'), vAmused], [at('V02', 0.25), vTease]])), t, at('V02'), 0.04))],
   [at('V02', 0.45), at('V03'), t => study(t, ramGag(t, at('V02', 0.45)))],
@@ -275,4 +299,4 @@ const SHOTS = [
   [B('endcard').start, DUR, t => ({ ...study(t, kClose(t, sProud, 'idle', T(-60, 10, 1, 'ARIES ✓', '#1b8a3a', 40))), over: `<rect x="90" y="270" width="830" height="200" rx="24" fill="#1b1422" opacity="0.9"/>` + txt(505, 350, 1, 'Aries dost ko bhejo', '#ffffff', 54) + txt(505, 430, 1, 'Poori guide: LINK', '#ffd24a', 56) })],
 ];
 SHOTS.forEach((s, i) => { if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; });
-module.exports = K.film(SHOTS, DUR);
+module.exports = { ...K.film(SHOTS, DUR), coverFrame };

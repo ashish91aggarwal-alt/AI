@@ -31,9 +31,9 @@ function cosmos(t = 0, o = {}) {
   P.forEach(([c, R], i) => { const a = t * 0.35 + i * 1.26, x = cx + Math.cos(a) * 470, y = cy + Math.sin(a) * 150, front = Math.sin(a) > 0;
     if (!front) b += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${R}" fill="${c}" stroke="${INK}" stroke-width="4" opacity="0.85"/>`; });
   // Saturn far off (top left), Jupiter (top right) with its stripes; Jupiter glows on 'gold'
-  b += `<g transform="translate(200 470)"><circle r="58" fill="#3b4fa8" stroke="${INK}" stroke-width="5"/><path d="M-56 -8 Q0 6 56 -8" stroke="#5b6fc8" stroke-width="10" fill="none"/><ellipse rx="112" ry="24" fill="none" stroke="#8fa8ff" stroke-width="9" transform="rotate(-18)"/></g>`;
+  if (!o.noPlanets) b += `<g transform="translate(200 470)"><circle r="58" fill="#3b4fa8" stroke="${INK}" stroke-width="5"/><path d="M-56 -8 Q0 6 56 -8" stroke="#5b6fc8" stroke-width="10" fill="none"/><ellipse rx="112" ry="24" fill="none" stroke="#8fa8ff" stroke-width="9" transform="rotate(-18)"/></g>`;
   const g = o.gold || 0;
-  b += `<circle cx="860" cy="430" r="${150 + 60 * g}" fill="url(#jup)" opacity="${(0.35 + 0.6 * g).toFixed(2)}"/><g transform="translate(860 430)"><circle r="74" fill="#e0b070" stroke="${INK}" stroke-width="5"/>` +
+  if (!o.noPlanets) b += `<circle cx="860" cy="430" r="${150 + 60 * g}" fill="url(#jup)" opacity="${(0.35 + 0.6 * g).toFixed(2)}"/><g transform="translate(860 430)"><circle r="74" fill="#e0b070" stroke="${INK}" stroke-width="5"/>` +
     [-34, -10, 14, 36].map((y, k) => `<path d="M${-Math.sqrt(74 * 74 - y * y)} ${y} Q0 ${y + 8} ${Math.sqrt(74 * 74 - y * y)} ${y}" stroke="${k % 2 ? '#c98a4a' : '#f3d2a0'}" stroke-width="10" fill="none"/>`).join('') + `<ellipse cx="22" cy="20" rx="16" ry="9" fill="#c2463a"/></g>`;
   let f = '';
   P.forEach(([c, R], i) => { const a = t * 0.35 + i * 1.26, x = cx + Math.cos(a) * 470, y = cy + Math.sin(a) * 150, front = Math.sin(a) > 0;
