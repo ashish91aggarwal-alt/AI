@@ -2,8 +2,8 @@
  "meta": {
   "title": "Aries 2027 — Vishnu ji drafts, Sakshi notes",
   "channel": "Tarot Talk By Sakshi (Instagram Reels)",
-  "version": "v7 script draft (natural rhythm, reviewed) (times are estimates until voices exist)",
-  "runtime_s": 102.56,
+  "version": "v7 voice cut (one take per speaker, natural pace)",
+  "runtime_s": 84.75,
   "format": "1080x1920, 24 fps, 9:16",
   "language": "Hindi/Hinglish voice, Hinglish on-screen text",
   "cta": "send to an Aries friend + link to the month-wise Aries 2027 guide (link-based only; owner rule)",
@@ -20,24 +20,24 @@
    "id": "K01",
    "type": "line",
    "start": 0.0,
-   "end": 7.71,
+   "end": 5.85,
    "who": "Sakshi",
    "line": "Prabhu, Aries ka 2027 likhne se pehle zara meri baat sun lijiye. Main Aries walon ki wakeel hun.",
    "caption_chunks": [
     {
      "text": "Prabhu,",
      "from": 0.0,
-     "to": 0.39
+     "to": 0.29
     },
     {
      "text": "Aries ka 2027 likhne se pehle zara meri baat sun lijiye.",
-     "from": 0.39,
-     "to": 5.4
+     "from": 0.29,
+     "to": 4.1
     },
     {
      "text": "Main Aries walon ki wakeel hun.",
-     "from": 5.4,
-     "to": 7.71
+     "from": 4.1,
+     "to": 5.85
     }
    ],
    "picture": "Night cloud study. Vishnu ji on his cloud; the 'ARIES 2027' scroll floats and a magic quill writes by itself. Sakshi zooms in on a small cloud, black wakeel coat over her outfit, diary floating open; she raises a polite hand and the quill pauses mid-word.",
@@ -51,20 +51,20 @@
   {
    "id": "V02",
    "type": "line",
-   "start": 7.79,
-   "end": 11.66,
+   "start": 5.93,
+   "end": 9.19,
    "who": "Vishnu ji",
    "line": "Mesh walon ko wakeel ki nahi, brake ki zaroorat hai.",
    "caption_chunks": [
     {
      "text": "Mesh walon ko wakeel ki nahi,",
-     "from": 7.79,
-     "to": 10.11
+     "from": 5.93,
+     "to": 7.89
     },
     {
      "text": "brake ki zaroorat hai.",
-     "from": 10.11,
-     "to": 11.66
+     "from": 7.89,
+     "to": 9.19
     }
    ],
    "picture": "Vishnu ji amused, eyebrow up. Cut-in: a cartoon ram charges at full speed with no brakes and skids past a STOP sign.",
@@ -78,15 +78,15 @@
   {
    "id": "V03",
    "type": "line",
-   "start": 11.74,
-   "end": 15.97,
+   "start": 9.57,
+   "end": 12.61,
    "who": "Vishnu ji",
    "line": "Waise is saal Shani dev ki Sade Sati chal rahi hai.",
    "caption_chunks": [
     {
      "text": "Waise is saal Shani dev ki Sade Sati chal rahi hai.",
-     "from": 11.74,
-     "to": 15.97
+     "from": 9.57,
+     "to": 12.61
     }
    ],
    "picture": "Vishnu ji calm, writing; the scroll writes 'SADE SATI' in deep blue; a small respectful Shani symbol glows (Shani dev not shown).",
@@ -100,30 +100,30 @@
   {
    "id": "K04",
    "type": "line",
-   "start": 16.05,
-   "end": 20.05,
+   "start": 12.69,
+   "end": 16.05,
    "who": "Sakshi",
    "line": "Saade saat saal? Prabhu, teen kar dijiye na, bas teen!",
    "caption_chunks": [
     {
      "text": "Saade saat saal?",
-     "from": 16.05,
-     "to": 17.25
+     "from": 12.69,
+     "to": 13.7
     },
     {
      "text": "Prabhu,",
-     "from": 17.25,
-     "to": 17.65
+     "from": 13.7,
+     "to": 14.03
     },
     {
      "text": "teen kar dijiye na,",
-     "from": 17.65,
-     "to": 19.25
+     "from": 14.03,
+     "to": 15.38
     },
     {
      "text": "bas teen!",
-     "from": 19.25,
-     "to": 20.05
+     "from": 15.38,
+     "to": 16.05
     }
    ],
    "picture": "Sakshi's eyes go wide, then she bargains like at a sabzi mandi: three fingers up (no gripping), hopeful puppy face.",
@@ -137,30 +137,30 @@
   {
    "id": "V05",
    "type": "line",
-   "start": 20.13,
-   "end": 26.14,
+   "start": 16.13,
+   "end": 21.16,
    "who": "Vishnu ji",
    "line": "Shani dev mol-bhaav nahi karte, jitni mehnat utna phal. Aur Guru saath hain, ghabrao mat.",
    "caption_chunks": [
     {
      "text": "Shani dev mol-bhaav nahi karte,",
-     "from": 20.13,
-     "to": 22.38
+     "from": 16.13,
+     "to": 18.02
     },
     {
      "text": "jitni mehnat utna phal.",
-     "from": 22.38,
-     "to": 23.89
+     "from": 18.02,
+     "to": 19.28
     },
     {
      "text": "Aur Guru saath hain,",
-     "from": 23.89,
-     "to": 25.39
+     "from": 19.28,
+     "to": 20.53
     },
     {
      "text": "ghabrao mat.",
-     "from": 25.39,
-     "to": 26.14
+     "from": 20.53,
+     "to": 21.16
     }
    ],
    "picture": "Vishnu ji gentle smile, shakes his head; a soft golden Jupiter glow rises over the scroll and the gloom clears. Sakshi exhales.",
@@ -174,20 +174,20 @@
   {
    "id": "V06",
    "type": "line",
-   "start": 26.22,
-   "end": 32.95,
+   "start": 21.24,
+   "end": 27.48,
    "who": "Vishnu ji",
    "line": "March-April aur August se October tak sehat ka thoda dhyaan rakhna. July mein toh ekdum fit rahoge.",
    "caption_chunks": [
     {
      "text": "March-April aur August se October tak sehat ka thoda dhyaan rakhna.",
-     "from": 26.22,
-     "to": 30.71
+     "from": 21.24,
+     "to": 25.4
     },
     {
      "text": "July mein toh ekdum fit rahoge.",
-     "from": 30.71,
-     "to": 32.95
+     "from": 25.4,
+     "to": 27.48
     }
    ],
    "picture": "Diary page: HEALTH with the two careful windows; a flexing-arm doodle labelled 'JULY FIT' on the last words.",
@@ -201,15 +201,15 @@
   {
    "id": "K07",
    "type": "line",
-   "start": 33.03,
-   "end": 36.29,
+   "start": 27.56,
+   "end": 29.33,
    "who": "Sakshi",
    "line": "Toh July mein gym join kar lete hain!",
    "caption_chunks": [
     {
      "text": "Toh July mein gym join kar lete hain!",
-     "from": 33.03,
-     "to": 36.29
+     "from": 27.56,
+     "to": 29.33
     }
    ],
    "picture": "Sakshi excited, a tiny dumbbell doodle pops in her diary.",
@@ -223,20 +223,20 @@
   {
    "id": "V08",
    "type": "line",
-   "start": 36.37,
-   "end": 40.6,
+   "start": 29.41,
+   "end": 32.1,
    "who": "Vishnu ji",
    "line": "Join toh har saal karte hain, is baar jaana bhi padega.",
    "caption_chunks": [
     {
      "text": "Join toh har saal karte hain,",
-     "from": 36.37,
-     "to": 38.68
+     "from": 29.41,
+     "to": 30.88
     },
     {
      "text": "is baar jaana bhi padega.",
-     "from": 38.68,
-     "to": 40.6
+     "from": 30.88,
+     "to": 32.1
     }
    ],
    "picture": "Vishnu ji deadpan, slow blink; the dumbbell doodle sags. Sakshi sheepish grin.",
@@ -250,20 +250,20 @@
   {
    "id": "V09",
    "type": "line",
-   "start": 40.68,
-   "end": 45.98,
+   "start": 32.53,
+   "end": 36.43,
    "who": "Vishnu ji",
    "line": "Office mein kaam ka pressure rahega, aur koi na koi boss ke kaan bharega.",
    "caption_chunks": [
     {
      "text": "Office mein kaam ka pressure rahega,",
-     "from": 40.68,
-     "to": 42.95
+     "from": 32.53,
+     "to": 34.2
     },
     {
      "text": "aur koi na koi boss ke kaan bharega.",
-     "from": 42.95,
-     "to": 45.98
+     "from": 34.2,
+     "to": 36.43
     }
    ],
    "picture": "Cut-in: a tiny cartoon office; a faceless colleague whispers into a boss's huge ear. Vishnu ji raises one brow.",
@@ -277,20 +277,20 @@
   {
    "id": "K10",
    "type": "line",
-   "start": 46.06,
-   "end": 48.58,
+   "start": 36.51,
+   "end": 38.54,
    "who": "Sakshi",
    "line": "Naam bataiye, abhi notice bhejti hun!",
    "caption_chunks": [
     {
      "text": "Naam bataiye,",
-     "from": 46.06,
-     "to": 46.9
+     "from": 36.51,
+     "to": 37.19
     },
     {
      "text": "abhi notice bhejti hun!",
-     "from": 46.9,
-     "to": 48.58
+     "from": 37.19,
+     "to": 38.54
     }
    ],
    "picture": "Sakshi rolls up her wakeel sleeves, cunning squint; a 'LEGAL NOTICE' page floats up from her diary.",
@@ -304,20 +304,20 @@
   {
    "id": "V11",
    "type": "line",
-   "start": 48.66,
-   "end": 54.32,
+   "start": 38.62,
+   "end": 44.03,
    "who": "Vishnu ji",
    "line": "Notice-votice chhodo. April-May aur September-October mein naukri chhodne ka risk mat lena.",
    "caption_chunks": [
     {
      "text": "Notice-votice chhodo.",
-     "from": 48.66,
-     "to": 49.79
+     "from": 38.62,
+     "to": 39.7
     },
     {
      "text": "April-May aur September-October mein naukri chhodne ka risk mat lena.",
-     "from": 49.79,
-     "to": 54.32
+     "from": 39.7,
+     "to": 44.03
     }
    ],
    "picture": "Vishnu ji laughs softly; the 'LEGAL NOTICE' folds into a paper plane and turns into 'DATES'.",
@@ -331,20 +331,20 @@
   {
    "id": "V12",
    "type": "line",
-   "start": 54.4,
-   "end": 59.34,
+   "start": 44.11,
+   "end": 48.2,
    "who": "Vishnu ji",
    "line": "Paisa theek-thaak se behtar rahega, March-April aur June mein sabse badhiya.",
    "caption_chunks": [
     {
      "text": "Paisa theek-thaak se behtar rahega,",
-     "from": 54.4,
-     "to": 56.68
+     "from": 44.11,
+     "to": 46.0
     },
     {
      "text": "March-April aur June mein sabse badhiya.",
-     "from": 56.68,
-     "to": 59.34
+     "from": 46.0,
+     "to": 48.2
     }
    ],
    "picture": "Gold coins drift up from the scroll; Sakshi's eyes light up.",
@@ -358,15 +358,15 @@
   {
    "id": "K13",
    "type": "line",
-   "start": 59.42,
-   "end": 60.46,
+   "start": 48.28,
+   "end": 49.34,
    "who": "Sakshi",
    "line": "Toh Ferrari?",
    "caption_chunks": [
     {
      "text": "Toh Ferrari?",
-     "from": 59.42,
-     "to": 60.46
+     "from": 48.28,
+     "to": 49.34
     }
    ],
    "picture": "Sakshi sneaks a red car doodle (generic, no logo) into her diary, side-eye.",
@@ -380,15 +380,15 @@
   {
    "id": "V14",
    "type": "line",
-   "start": 60.54,
-   "end": 61.2,
+   "start": 49.42,
+   "end": 50.06,
    "who": "Vishnu ji",
    "line": "FD.",
    "caption_chunks": [
     {
      "text": "FD.",
-     "from": 60.54,
-     "to": 61.2
+     "from": 49.42,
+     "to": 50.06
     }
    ],
    "picture": "Vishnu ji, one-word deadpan; the car doodle turns into 'FD'. Sakshi pouts.",
@@ -402,15 +402,15 @@
   {
    "id": "V15",
    "type": "line",
-   "start": 61.28,
-   "end": 65.15,
+   "start": 50.54,
+   "end": 53.13,
    "who": "Vishnu ji",
    "line": "June se November tak pyaar mein Guru ka saath hai.",
    "caption_chunks": [
     {
      "text": "June se November tak pyaar mein Guru ka saath hai.",
-     "from": 61.28,
-     "to": 65.15
+     "from": 50.54,
+     "to": 53.13
     }
    ],
    "picture": "Hearts float up from the scroll.",
@@ -424,15 +424,15 @@
   {
    "id": "K16",
    "type": "line",
-   "start": 65.23,
-   "end": 65.9,
+   "start": 53.21,
+   "end": 53.82,
    "who": "Sakshi",
    "line": "Waah!",
    "caption_chunks": [
     {
      "text": "Waah!",
-     "from": 65.23,
-     "to": 65.9
+     "from": 53.21,
+     "to": 53.82
     }
    ],
    "picture": "Sakshi claps and blushes.",
@@ -446,25 +446,25 @@
   {
    "id": "V17",
    "type": "line",
-   "start": 65.98,
-   "end": 71.28,
+   "start": 54.0,
+   "end": 58.76,
    "who": "Vishnu ji",
    "line": "Bas August-October mein behas mat karna. Wakeel sahiba, ab iska bhi discount chahiye?",
    "caption_chunks": [
     {
      "text": "Bas August-October mein behas mat karna.",
-     "from": 65.98,
-     "to": 68.63
+     "from": 54.0,
+     "to": 56.38
     },
     {
      "text": "Wakeel sahiba,",
-     "from": 68.63,
-     "to": 69.39
+     "from": 56.38,
+     "to": 57.06
     },
     {
      "text": "ab iska bhi discount chahiye?",
-     "from": 69.39,
-     "to": 71.28
+     "from": 57.06,
+     "to": 58.76
     }
    ],
    "picture": "A tiny storm cloud passes over a heart; then Vishnu ji leans in with a teasing smile, turning the tables.",
@@ -478,25 +478,25 @@
   {
    "id": "K18",
    "type": "line",
-   "start": 71.36,
-   "end": 74.99,
+   "start": 58.84,
+   "end": 62.1,
    "who": "Sakshi",
    "line": "Mesh wale aur bina behas ke? Haan Prabhu, chahiye!",
    "caption_chunks": [
     {
      "text": "Mesh wale aur bina behas ke?",
-     "from": 71.36,
-     "to": 73.78
+     "from": 58.84,
+     "to": 61.02
     },
     {
      "text": "Haan Prabhu,",
-     "from": 73.78,
-     "to": 74.59
+     "from": 61.02,
+     "to": 61.74
     },
     {
      "text": "chahiye!",
-     "from": 74.59,
-     "to": 74.99
+     "from": 61.74,
+     "to": 62.1
     }
    ],
    "picture": "Sakshi throws up her open palms, comic despair; the ram doodle in her diary huffs steam.",
@@ -510,15 +510,15 @@
   {
    "id": "V19",
    "type": "line",
-   "start": 75.07,
-   "end": 78.94,
+   "start": 62.38,
+   "end": 64.66,
    "who": "Vishnu ji",
    "line": "Aur ghar mein badon ki baat dil pe mat lena.",
    "caption_chunks": [
     {
      "text": "Aur ghar mein badon ki baat dil pe mat lena.",
-     "from": 75.07,
-     "to": 78.94
+     "from": 62.38,
+     "to": 64.66
     }
    ],
    "picture": "Cut-in: a warm family home with diyas. Vishnu ji calm, palm on heart.",
@@ -532,15 +532,15 @@
   {
    "id": "K20",
    "type": "line",
-   "start": 79.02,
-   "end": 80.8,
+   "start": 64.74,
+   "end": 65.83,
    "who": "Sakshi",
    "line": "Mummy ki daant bhi?",
    "caption_chunks": [
     {
      "text": "Mummy ki daant bhi?",
-     "from": 79.02,
-     "to": 80.8
+     "from": 64.74,
+     "to": 65.83
     }
    ],
    "picture": "Sakshi, hopeful loophole face.",
@@ -554,25 +554,25 @@
   {
    "id": "V21",
    "type": "line",
-   "start": 80.88,
-   "end": 84.04,
+   "start": 65.91,
+   "end": 69.16,
    "who": "Vishnu ji",
    "line": "Wo daant nahi, prasad hai, sar aankhon pe.",
    "caption_chunks": [
     {
      "text": "Wo daant nahi,",
-     "from": 80.88,
-     "to": 82.07
+     "from": 65.91,
+     "to": 67.14
     },
     {
      "text": "prasad hai,",
-     "from": 82.07,
-     "to": 82.86
+     "from": 67.14,
+     "to": 67.95
     },
     {
      "text": "sar aankhon pe.",
-     "from": 82.86,
-     "to": 84.04
+     "from": 67.95,
+     "to": 69.16
     }
    ],
    "picture": "Vishnu ji amused smile, gentle head tilt; Sakshi bows her head, giggling.",
@@ -586,30 +586,30 @@
   {
    "id": "V22",
    "type": "line",
-   "start": 84.12,
-   "end": 90.85,
+   "start": 69.59,
+   "end": 75.73,
    "who": "Vishnu ji",
    "line": "Karna bas itna hai: Mangalwar ko Sundarkand padho, chaandi pehno, aur kisi netraheen ko pyaar se khana khilao.",
    "caption_chunks": [
     {
      "text": "Karna bas itna hai:",
-     "from": 84.12,
-     "to": 85.62
+     "from": 69.59,
+     "to": 70.96
     },
     {
      "text": "Mangalwar ko Sundarkand padho,",
-     "from": 85.62,
-     "to": 87.11
+     "from": 70.96,
+     "to": 72.32
     },
     {
      "text": "chaandi pehno,",
-     "from": 87.11,
-     "to": 87.86
+     "from": 72.32,
+     "to": 73.0
     },
     {
      "text": "aur kisi netraheen ko pyaar se khana khilao.",
-     "from": 87.86,
-     "to": 90.85
+     "from": 73.0,
+     "to": 75.73
     }
    ],
    "picture": "One card; the three words of its second row appear on the spoken words. Sakshi writes each, nodding.",
@@ -623,20 +623,20 @@
   {
    "id": "V23",
    "type": "line",
-   "start": 90.93,
-   "end": 94.8,
+   "start": 75.81,
+   "end": 78.69,
    "who": "Vishnu ji",
    "line": "Aur is saal brake bhi lagana, aur gym bhi jaana.",
    "caption_chunks": [
     {
      "text": "Aur is saal brake bhi lagana,",
-     "from": 90.93,
-     "to": 93.25
+     "from": 75.81,
+     "to": 77.53
     },
     {
      "text": "aur gym bhi jaana.",
-     "from": 93.25,
-     "to": 94.8
+     "from": 77.53,
+     "to": 78.69
     }
    ],
    "picture": "Vishnu ji serene blessing with a playful smile; the ram doodle gently brakes at the STOP sign this time. The scroll closes with a glow.",
@@ -650,25 +650,25 @@
   {
    "id": "K24",
    "type": "line",
-   "start": 94.88,
-   "end": 101.48,
+   "start": 78.77,
+   "end": 83.67,
    "who": "Sakshi",
    "line": "Case jeet gaye! Apne Aries dost ko ye bhej do, mahine-wise poori guide link mein hai.",
    "caption_chunks": [
     {
      "text": "Case jeet gaye!",
-     "from": 94.88,
-     "to": 96.04
+     "from": 78.77,
+     "to": 79.62
     },
     {
      "text": "Apne Aries dost ko ye bhej do,",
-     "from": 96.04,
-     "to": 98.76
+     "from": 79.62,
+     "to": 81.65
     },
     {
      "text": "mahine-wise poori guide link mein hai.",
-     "from": 98.76,
-     "to": 101.48
+     "from": 81.65,
+     "to": 83.67
     }
    ],
    "picture": "CTA. Sakshi alone (Vishnu ji not in this beat): gavel tap on her diary, the one wink of the reel, send arrow, then a big link chip.",
@@ -682,8 +682,8 @@
   {
    "id": "endcard",
    "type": "event",
-   "start": 101.56,
-   "end": 102.56,
+   "start": 83.75,
+   "end": 84.75,
    "who": null,
    "line": null,
    "picture": "Sakshi's diary shows 'ARIES 2027 ✓' with a ram doodle; Sakshi alone with her diary (no deity in the selling part). Card: 'Send to your Aries friend · Guide: link'. Loops to frame 0.",

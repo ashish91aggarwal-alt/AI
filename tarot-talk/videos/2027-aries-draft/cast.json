@@ -20,8 +20,19 @@
     "voice_id": "hHyd5z9VxRT4YKoDwPRl",
     "name": "Lalita (placeholder)",
     "model": "eleven_v4",
-    "speed": 1.15
+    "speed": 1.12
    }
   }
- ]
+ ],
+ "voice_generation": {
+  "date": "23 Nov 2026 20:55 IST",
+  "method": "one take per speaker for all their lines (natural flow), split on silences, tempo 1.15 Vishnu / 1.12 Sakshi, internal pauses squeezed",
+  "flows": {
+   "vishnu": "QP6is6eMqIVYw2Mi3D7w (gen S78AqHlTfC8g7Dlpt7dX)",
+   "sakshi": "XC6sA7sSXgk8KsCF2BqG (gen uFsvttyhybkJs3aPp8q4)"
+  },
+  "takes_per_speaker": 1,
+  "cap": 1700,
+  "credits_spent": 1681
+ }
 }
