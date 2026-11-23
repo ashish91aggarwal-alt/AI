@@ -3,9 +3,12 @@
 // - Blinks on a seeded, irregular clock; eye saccades (quick darts that hold); speakers get brow pops and head nods
 //   on syllable onsets; listeners react (Monty darts nervously, deities stay calm and slow).
 // All of it moves through face parts and the neck joint only.
-const L = require('./audio/lipsync.json');
+const path = require('path'), fs = require('fs');
+const LP = path.join(__dirname, 'work', process.env.VIDEO || '2027-warmup-mulank8', 'lipsync.json');
+const L = fs.existsSync(LP) ? JSON.parse(fs.readFileSync(LP, 'utf8')) : { fps: 100, amp: [], zcr: [], onset: [], spk: [], speakers: {} };
 const FPS = L.fps;
-const WHO = { monty: 'Monty', vishnu: 'Vishnu ji', brahma: 'Brahma ji', shani: 'Shani dev', sakshi: 'Sakshi' };
+// script speaker names -> character kinds come from video.json 'speakers'
+const WHO = {}; for (const [name, kind] of Object.entries(L.speakers || { Monty: 'monty', 'Vishnu ji': 'vishnu', 'Brahma ji': 'brahma', 'Shani dev': 'shani', Sakshi: 'sakshi' })) WHO[kind] = name;
 const H = s => [...s].reduce((h, c) => (h * 31 + c.charCodeAt(0)) % 997, 7) / 13.7;
 const rnd = (i, k = 0) => { const v = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return v - Math.floor(v); };
 const at = (arr, t) => { const i = Math.max(0, Math.min(arr.length - 1, Math.round(t * FPS))); return arr[i] || 0; };

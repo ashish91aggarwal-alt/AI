@@ -4,60 +4,38 @@ Turns a script package (script + cast sheet + voice lines) into a finished 1080x
 
 The first reel made this way is Tarot Talk By Sakshi's "2027 warm-up, Mulank 8" (86 s, `../videos/2027-warmup-mulank8/`).
 
-## Quick start (any agent)
+**New session? Read `START.md` first**, then `HOW_WE_WORK.md` (method and owner rules) and `CHARACTERS.md` (reusable cast).
+
+## Quick start
 
 ```bash
-cd tarot-talk/cartoon-puppet
-bash make_reel.sh          # about 3 min on 2 CPU cores -> out/mulank8.mp4
+cd tarot-talk/cartoon-puppet && npm install
+bash make_reel.sh 2027-warmup-mulank8        # ~3 min on 2 CPU cores -> out/2027-warmup-mulank8.mp4 (identical to the approved v7)
+python3 tools/new_video.py <slug>            # new video from videos/<slug>/ script package
+bash make_reel.sh <slug>
 ```
 
-Needs node 18+ (with `@resvg/resvg-js` and `perfect-freehand` from `npm install`), python3 with numpy and scipy, and ffmpeg. `faster-whisper` is optional; `find_phrase.py` uses it to check meme clips.
+Needs node 18+ (`@resvg/resvg-js`, `perfect-freehand`), python3 with numpy and scipy, and ffmpeg. `faster-whisper` is optional (for checking clips).
 
-Pictures to check one moment: `node render.js roughcut.js cast/chk --stills=12.5,45.2` writes `cast/chk_0.png`, `cast/chk_1.png`, and so on. Look at stills; never read frames into chat to make them.
+## Layout
 
-## Tools and what each file does
-
-| File | Job |
+| Path | Job |
 |---|---|
-| `engine.js` | Drawing engine: variable-width ink (perfect-freehand), line boil, one-tone hard shading, `limb()` bending arms and legs, `arm()` with shoulders melted into the torso, hands (palm, point, fist, relax), Rhubarb mouths A–F/X, catmull curves |
-| `render.js` | Worker pool. Draws 12 drawings per second, pipes them to ffmpeg at 24 fps, CRF 18, with a light grain blur. `--stills=` writes PNGs. A scene module exports `DUR` and `svg(t)` |
-| `char_monty.js` | Monty (Mulank 8 guy, comic lead): eye system (iris, lids, watery, happy, squeeze, blink), cute mouths, manpu (sweat, gloom, sparkle, shock lines) |
-| `char_vishnu.js` | Vishnu ji seated on his cloud: popcorn floating into his mouth by magic, chakra, conch, four arms |
-| `char_shani.js` | Shani dev standing: trishul, KARMA register, crow (KAA), spotlight, spinning Saturn. Moods: calm, stern, warm, deadpan, hisaab |
-| `char_brahma.js` | Brahma ji: the Vishnu body re-dressed, cloud beard, four arms, Vedas and kamandalu floating, stamp fused into the fist, token counter |
-| `char_sakshi.js` | Sakshi as a cute modern girl: ponytail, star dress, denim jacket, floating tarot cards |
-| `char_side.js` | Bunty and Khanna sir busts for the Mulank intro cards |
-| `cast_*.js` | Cast sheets: every approved pose, exported as `POSES` (`node render.js cast_monty.js cast/monty --stills=0,1,2,...`) |
-| `loc.js` | Locations: Diwali rooftop at night, cosmic office in the clouds, Shani's court. Also the sutli bomb, diyas and clouds |
-| `act.js` | Acting layer: lip-sync from the voice track, irregular blinks, eye darts, brow pops and head nods on syllables, calmer deities, nervous Monty |
-| `roughcut.js` | The film: every shot (location, actors, poses, camera, graphics, captions), timed on the script clock and mapped to the final voice clock |
-| `build_voice.py` | Splices original meme lines into the voice track through an edit list. Writes `audio/voice_track_v3.wav` and `audio/timeline_v3.json` |
-| `lipsync_prep.py` | 100 Hz loudness, brightness, syllable onsets and speaker windows -> `audio/lipsync.json` |
-| `audio/mix.py` | Voice + our SFX (`../viral-hooks/sfx`) + trending meme sounds, mapped to the new clock |
-| `fetch_clips.sh` | Downloads the original meme clips. They are not kept in git |
-| `make_captions.py` | Captions from the script's `**Captions:**` lines |
-| `prop_gate.js` | Proportions gate: on-screen height ratios against the cast sheet (blocking) |
-| `style_gate.py` | Line width and ink colour against the reference frame (unreliable on dark scenes) |
-| `find_phrase.py` | Transcribes a clip with word times, to check that a meme clip really says the line |
-| `scene_*.js` | Single-character test scenes (Vishnu popcorn, Shani moves, Sakshi moves) |
-
-## Workflow (batches, each one reviewed before the next)
-
-1. **Script package in.** `SCRIPT.md` (beats with times, captions, picture, sound), `cast.json`, `voices/lines/*.wav`, `voices/cue_sheet.csv` and `voice_track_timed.wav`. Copy the folder shape of `../videos/2027-warmup-mulank8/`.
-2. **Batch 1: cast.**
-   - Write `char_<id>.js` and `cast_<id>.js` for each character, then render the sheet and a face close-up.
-   - Show the owner one character at a time and fix until they say ok.
-   - Then send it to an independent reviewer (a fresh agent with the cast PNGs and the rules). It must score 8/10 or higher and break no rule. The first pass scored 6.5; fixes brought it to 8.
-3. **Batch 2: locations and rough cut.**
-   - Build the locations in `loc.js` and the shots in `roughcut.js`, timed to the voice track, with captions and graphics.
-   - Run `prop_gate.js`, review a contact sheet of about 20 stills with the reviewer, then the owner.
-4. **Viral audio.**
-   - Find the original meme lines and trending sounds (method in `../viral-hooks/HOOKS.md`).
-   - Check each one with `find_phrase.py`, add it to `fetch_clips.sh`, splice it with `build_voice.py`, and place it with `audio/mix.py`.
-5. **Batch 3: acting and final.**
-   - The `act.js` faces are on.
-   - Still to do for full polish: arm gestures on the beat, Monty's knee shiver, Shani's trishul thump, a music bed with ducking, and -14 LUFS.
-   - Then the final independent review and the owner's sign-off.
+| `engine.js` | Drawing engine: variable-width ink, line boil, hard shading, bending limbs, melted shoulders, hands, mouths |
+| `render.js` | Worker pool: 12 drawings/s, 24 fps, ffmpeg. `--stills=` writes PNG check pictures |
+| `char_*.js` / `cast_*.js` | The characters and their approved poses (see `CHARACTERS.md`) |
+| `loc.js` | Locations: Diwali rooftop, cosmic office, Shani's court, plus props (sutli bomb, diyas, clouds) |
+| `act.js` | Acting layer: lip-sync, blinks, eye darts, brow pops, head nods, talking gestures, fear shiver |
+| `kit.js` | Everything a film file needs: placed characters, scenes, camera, text, captions, the voice clock, `film()` |
+| `cuts/<slug>.js` | One film per video: its shot list (script clock) and its own graphics |
+| `tools/new_video.py` | Scaffolds a new video (config, captions, cue file, shot list) |
+| `tools/fetch_clips.py` | Downloads that video's meme clips from their links (never committed) |
+| `tools/build_voice.py` | Splices original meme lines into the voice track (edit list) -> `work/<slug>/voice.wav` + `timeline.json` |
+| `tools/lipsync_prep.py` | Drive data for the acting layer -> `work/<slug>/lipsync.json` |
+| `tools/mix_sfx.py`, `tools/make_music.py`, `tools/final_mix.py` | SFX and meme sounds; original tabla, santoor and tanpura bed ducked under speech; -14 LUFS |
+| `prop_gate.js`, `style_gate.py`, `find_phrase.py` | Proportions gate, style check, clip transcription |
+| `../videos/<slug>/` | Script package + `video.json` (speakers, meme lines, sounds, music plan) + `captions.json` + `sfx_cues.json` |
+| `../viral-hooks/` | Meme lines, trending sounds, sources, placement rules, our SFX generator |
 
 ## Decisions made (owner, Nov 2026); keep them
 

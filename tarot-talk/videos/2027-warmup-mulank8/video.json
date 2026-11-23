@@ -1,0 +1,204 @@
+{
+ "slug": "2027-warmup-mulank8",
+ "title": "Tarot Talk 2027 warm-up: Mulank 8",
+ "script_dur": 85.67,
+ "cut": "cuts/2027-warmup-mulank8.js",
+ "voice_track": "voices/voice_track_timed.wav",
+ "cue_sheet": "voices/cue_sheet.csv",
+ "speakers": {
+  "Monty": "monty",
+  "Vishnu ji": "vishnu",
+  "Brahma ji": "brahma",
+  "Shani dev": "shani",
+  "Sakshi": "sakshi"
+ },
+ "line_end_override": {
+  "M07": 18.55
+ },
+ "clips_note": "Original meme lines spliced over our takes. window = script-clock span of our take it replaces. Files are fetched from url, never committed.",
+ "meme_lines": [
+  {
+   "name": "abtugaya1",
+   "file": "ab-tu-gaya-beta-puneet.mp3",
+   "url": "https://www.myinstants.com/media/sounds/ab-tu-gaya-beta-ab-dekh-tu-puneet.mp3",
+   "in": 2.48,
+   "out": 3.88,
+   "window": [
+    0.55,
+    1.57
+   ],
+   "pad": 0.04,
+   "who": "Vishnu ji",
+   "line": "Ab tu gaya beta (Puneet Superstar)"
+  },
+  {
+   "name": "aayein",
+   "file": "aayein-meme.mp3",
+   "url": "https://www.myinstants.com/media/sounds/aayein-meme.mp3",
+   "in": 0.0,
+   "out": null,
+   "window": [
+    3.36,
+    3.98
+   ],
+   "pad": 0.0,
+   "who": "Monty",
+   "line": "Aayein?!"
+  },
+  {
+   "name": "ruko",
+   "file": "ruko-zara-sabar-karo-bhau.mp3",
+   "url": "https://content-storage.voicemod.net/7412005effaccbd51db6b1cf51bf955494549212faa3648fa71b3ed4a09c33ff",
+   "in": 0.04,
+   "out": 1.84,
+   "window": [
+    16.07,
+    17.47
+   ],
+   "pad": 0.06,
+   "who": "Monty",
+   "line": "Ruko zara sabar karo (Hindustani Bhau)"
+  },
+  {
+   "name": "bachcha",
+   "file": "bachcha-hai-tu-mera-rakesh-bedi.mp3",
+   "url": "https://content-storage.voicemod.net/2576d9d56a7dc3381563148175ffa6e286396e89d5690719636a48b31dec6071",
+   "in": 0.3,
+   "out": 1.56,
+   "window": [
+    44.3,
+    45.84
+   ],
+   "pad": 0.0,
+   "who": "Shani dev",
+   "line": "Baccha hai tu mera (Rakesh Bedi)"
+  },
+  {
+   "name": "abtugaya2",
+   "file": "ab-tu-gaya-beta-puneet.mp3",
+   "url": "https://www.myinstants.com/media/sounds/ab-tu-gaya-beta-ab-dekh-tu-puneet.mp3",
+   "in": 2.48,
+   "out": 3.88,
+   "window": [
+    81.68,
+    83.07
+   ],
+   "pad": 0.0,
+   "who": "Vishnu ji",
+   "line": "Ab tu gaya beta (Puneet Superstar)"
+  }
+ ],
+ "sound_files": {
+  "faaah.mp3": "https://www.myinstants.com/media/sounds/faaah.mp3",
+  "vine-boom.mp3": "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+  "moye-moye.mp3": "https://www.myinstants.com/media/sounds/moye-moye.mp3",
+  "anime-wow-sound-effect.mp3": "https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3",
+  "oh-no-no-no-no-laugh.mp3": "https://www.myinstants.com/media/sounds/oh-no-no-no-no-laugh.mp3"
+ },
+ "sfx_cues": "sfx_cues.json",
+ "music": [
+  {
+   "kind": "groove",
+   "a": 0.55,
+   "b": 20.48,
+   "bpm": 112,
+   "root": 220,
+   "level": 0.9
+  },
+  {
+   "kind": "swell",
+   "a": 20.48,
+   "b": 21.78,
+   "g": 0.7
+  },
+  {
+   "kind": "groove",
+   "a": 21.78,
+   "b": 26.66,
+   "bpm": 124,
+   "root": 196,
+   "motif": [
+    0,
+    0,
+    4,
+    0,
+    5,
+    4,
+    0,
+    0
+   ],
+   "level": 0.8,
+   "ticks": true
+  },
+  {
+   "kind": "pad",
+   "a": 27.26,
+   "b": 55.97,
+   "root": 73.4,
+   "g": 0.9
+  },
+  {
+   "kind": "groove",
+   "a": 27.26,
+   "b": 50.06,
+   "bpm": 66,
+   "root": 98,
+   "motif": [
+    0,
+    0,
+    3,
+    0
+   ],
+   "level": 0.45
+  },
+  {
+   "kind": "pad",
+   "a": 50.06,
+   "b": 55.82,
+   "root": 110,
+   "g": 0.5
+  },
+  {
+   "kind": "swell",
+   "a": 55.97,
+   "b": 56.62,
+   "g": 0.6
+  },
+  {
+   "kind": "groove",
+   "a": 59.47,
+   "b": 78.47,
+   "bpm": 100,
+   "root": 262,
+   "motif": [
+    0,
+    2,
+    4,
+    7,
+    4,
+    2,
+    4,
+    5
+   ],
+   "level": 0.85
+  },
+  {
+   "kind": "pad",
+   "a": 79.52,
+   "b": 83.07,
+   "root": 73.4,
+   "g": 0.6
+  },
+  {
+   "kind": "groove",
+   "a": 83.07,
+   "b": 85.67,
+   "bpm": 112,
+   "root": 220,
+   "level": 0.9
+  }
+ ],
+ "music_db": -13,
+ "duck_db": -8,
+ "lufs": -14
+}

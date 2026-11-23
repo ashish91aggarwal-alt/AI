@@ -1,35 +1,6 @@
-// Batch 2 rough cut (animatic) of the Mulank 8 reel: every shot in its location with the approved cast poses, timed to
-// voice_track_timed.wav. Poses are held keys (breathing, ambient motion, camera pushes); lip-sync and full acting come in Batch 3.
-const E = require('./engine'), L = require('./loc');
-const V = require('./char_vishnu'), M = require('./char_monty'), B = require('./char_brahma'), SH = require('./char_shani'), SK = require('./char_sakshi'), SD = require('./char_side');
-const CV = require('./cast_vishnu'), CM = require('./cast_monty'), CB = require('./cast_brahma'), CS = require('./cast_shani'), CK = require('./cast_sakshi');
-const CAPS = require('./captions.json');
-const { clamp, ease, backOut } = E;
-const TL = require('./audio/timeline_v3.json').pieces, A = require('./act');
-const orig = tv => { const p = TL.find(p => tv >= p.A && tv < p.B) || TL[TL.length - 1]; return p.a + (Math.min(tv, p.B) - p.A) * (p.b - p.a) / Math.max(1e-6, p.B - p.A); };
-const DUR = (() => { const p = TL.find(p => 85.67 >= p.a && 85.67 <= p.b); return p.A + (85.67 - p.a) * (p.B - p.A) / (p.b - p.a); })();
-let TV = 0; // current video time (new clock) for the acting layer
-const vp = i => ({ ...CV.base, ...CV.POSES[i] }), mp = i => CM.POSES[i], bp = i => CB.POSES[i], sp = i => ({ standing: true, ...CS.POSES[i] }), kp = i => CK.POSES[i];
-
-// ---- actor placement helpers (x,y = where the character's anchor lands; s = scale) ----
-const cloudSeat = () => `${L.softCloud(420, 1440, 1.3, '#f7f6f1')}${L.softCloud(660, 1450, 1.4, '#f7f6f1')}${L.softCloud(540, 1480, 1.7, '#ffffff')}`;
-const vishnu = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1000)">${cloudSeat()}${V.drawSeated(A.perform('vishnu', { ...p, breath: Math.sin(t * 2), t }, TV))}</g>`;
-const monty = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1100)">${M.draw(A.perform('monty', { ...p, t, breath: Math.sin(t * 2.6) }, TV))}</g>`;
-const shani = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1000)">${SH.draw(A.perform('shani', { ...p, breath: Math.sin(t * 1.4) }, TV))}</g>`;
-const brahma = (p, t, side) => side ? `${B.tokenDisplay(8)}<g transform="translate(380 950) scale(0.84) translate(-540 -1080)"><g transform="translate(540 1000) scale(0.95) translate(-540 -1000)">${B.draw(A.perform('brahma', { ...p, t }, TV))}</g>${B.desk()}</g>` : `${B.tokenDisplay(8)}<g transform="translate(540 1000) scale(0.95) translate(-540 -1000)">${B.draw(A.perform('brahma', { ...p, t }, TV))}</g>${B.desk()}`;
-const sakshi = (p, x, y, s, t) => `<g transform="translate(${x} ${y}) scale(${s}) translate(-540 -1100)">${SK.draw(A.perform('sakshi', { ...p, t, breath: Math.sin(t * 2.2), braidSwing: Math.sin(t * 2.4) * 0.35 }, TV))}</g>`;
-const cam = (body, cx, cy, z) => `<g transform="translate(${cx} ${cy}) scale(${z}) translate(${-cx} ${-cy})">${body}</g>`;
-
-// ---- graphics ----
-const txt = (x, y, s, str, fill = '#fff', size = 64, extra = '') => `<text x="${x}" y="${y}" font-family="Arial Black,Arial" font-weight="900" font-size="${size * s}" text-anchor="middle" fill="${fill}" stroke="#1b1422" stroke-width="${10 * s}" paint-order="stroke" ${extra}>${str}</text>`;
-function caption(tv) {
-  const t = orig(tv); const c = CAPS.find(c => t >= c[1] && t < c[2]); if (!c) return '';
-  const w = Math.min(930, 40 + c[0].length * 30);
-  return `<rect x="${540 - w / 2}" y="1372" width="${w}" height="96" rx="20" fill="#1b1422" opacity="0.78"/>` + txt(540, 1439, 1, c[0].replace(/&/g, '&amp;'), '#ffffff', 50);
-}
-function tag(t, t0, str, x = 540, y = 330, col = '#ffd24a', size = 76) { if (t < t0) return ''; const k = backOut(clamp((t - t0) / 0.3)); return `<g transform="translate(${x} ${y}) scale(${k}) rotate(-4)">` + txt(0, 0, 1, str, col, size) + '</g>'; }
-function pill(t, t0, str, x, y, col = '#ffd24a', size = 50) { if (t < t0) return ''; const k = backOut(clamp((t - t0) / 0.3)), w = 60 + str.length * size * 0.66;
-  return `<g transform="translate(${x} ${y}) scale(${k})"><rect x="${-w / 2}" y="${-size * 0.95}" width="${w}" height="${size * 1.6}" rx="${size * 0.8}" fill="#1b1422" opacity="0.9" stroke="${col}" stroke-width="5"/>` + txt(0, size * 0.2, 1, str, col, size) + '</g>'; }
+// Film: Tarot Talk 2027 warm-up, Mulank 8 (86 s). Shots on the SCRIPT clock; the kit maps them to the final voice clock.
+const K = require('../kit');
+const { E, L, M, SD, clamp, ease, backOut, vp, mp, bp, sp, kp, vishnu, monty, shani, brahma, sakshi, cam, focus, txt, tag, pill, rainCloud, commentBox, bricks, terraceScene, officeScene, courtScene } = K;
 function mulankCard(t, t0, x, i) {
   if (t < t0) return ''; const k = backOut(clamp((t - t0) / 0.35));
   const H = [['TU — MONTY', '17 MAR → 1+7 = 8'], ['COUSIN BUNTY', '8 AUG → 8'], ['BOSS — KHANNA SIR', '26 JUL → 2+6 = 8']][i];
@@ -46,23 +17,11 @@ function phoneIncognito(t, t0) { if (t < t0) return ''; const k = backOut(clamp(
   return `<g transform="translate(800 560) scale(${k}) rotate(8)"><rect x="-120" y="-210" width="240" height="420" rx="34" fill="#22222c" stroke="#1b1422" stroke-width="9"/><rect x="-100" y="-180" width="200" height="350" rx="16" fill="#3a3a4a"/>` +
     `<circle cx="-36" cy="-40" r="26" fill="none" stroke="#fff" stroke-width="9"/><circle cx="36" cy="-40" r="26" fill="none" stroke="#fff" stroke-width="9"/><line x1="-10" y1="-40" x2="10" y2="-40" stroke="#fff" stroke-width="9"/><path d="M-70 -80 L70 -80 L50 -120 L-50 -120 Z" fill="#fff"/>` +
     `<rect x="-86" y="40" width="172" height="40" rx="10" fill="#fff"/><text x="0" y="68" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">7 din mein ameer kaise bane</text></g>`; }
-function rainCloud(t, x, y) { let o = L.softCloud(x, y, 0.9, '#8f97a8'); for (let i = 0; i < 9; i++) { const u = (t * 1.6 + i * 0.13) % 1; o += `<line x1="${x - 110 + i * 26}" y1="${y + 70 + u * 260}" x2="${x - 116 + i * 26}" y2="${y + 100 + u * 260}" stroke="#7fb4ea" stroke-width="6" stroke-linecap="round"/>`; } return o; }
-function commentBox(t, t0) { if (t < t0) return ''; const n = Math.min(6, Math.floor((t - t0) / 0.12)), k = backOut(clamp((t - t0) / 0.3));
-  return `<g transform="translate(540 1270) scale(${k * 0.9})"><rect x="-380" y="-70" width="760" height="140" rx="70" fill="#fff" stroke="#1b1422" stroke-width="8"/><text x="-300" y="22" font-family="Arial Black,Arial" font-weight="900" font-size="62" fill="#1b1422">${'REPORT'.slice(0, n)}${(t * 2) % 1 < 0.5 ? '|' : ''}</text><circle cx="300" cy="0" r="46" fill="#ff3d6e"/><path d="M285 -20 L322 0 L285 20 Z" fill="#fff"/></g>`; }
-function bricks(t, t0) { let o = ''; for (let i = 0; i < 8; i++) { const ti = t0 + i * 0.25; if (t < ti) break; const k = backOut(clamp((t - ti) / 0.25)); const x = 360 + (i % 4) * 120 - (Math.floor(i / 4) % 2) * 60, y = 1530 - Math.floor(i / 4) * 52;
-  o += `<rect x="${x}" y="${y - (1 - k) * 200}" width="112" height="46" rx="4" fill="#b85d42" stroke="#1b1422" stroke-width="5"/>`; } return o; }
 function hookBanner() { return `<rect x="70" y="150" width="940" height="230" rx="26" fill="#1b1422" opacity="0.85"/>` + txt(540, 260, 1, 'MULANK 8 WALO, SUNO!', '#ffd24a', 76) + txt(540, 340, 1, 'born on 8 • 17 • 26', '#ffffff', 48); }
-
-// ---- scene builders: return { defs, body } ----
-function terraceScene(t, actors, o = {}) { const T = L.terrace(t, o); return { defs: T.defs, body: T.back + actors + T.front }; }
-function officeScene(t, actors) { const O = L.office(t); return { defs: O.defs, body: O.back + actors + O.front }; }
-function courtScene(t, actors, o = {}) { const C = L.court(t, o); return { defs: C.defs, body: C.back + actors + C.front }; }
 const bombCU = (t, fuse) => terraceScene(t, cam(L.sutliBomb(540, 1500, 1, t, fuse), 540, 1450, 3.2));
 const twoActors = (t, vpose, mpose) => vishnu(vpose, 300, 1150, 0.62, t) + monty(mpose, 740, 1180, 0.66, t) + L.sutliBomb(540, 1660, 0.9, t, 0);
 const twoShot = (t, vpose, mpose) => terraceScene(t, twoActors(t, vpose, mpose));
-const focus = (body, fx, fy, z) => `<g transform="translate(540 900) scale(${z}) translate(${-fx} ${-fy})">${body}</g>`;
 
-// shot list: [start, end, fn(t, u) -> {defs, body, over}]
 const SHOTS = [
   [0, 0.55, t => ({ ...bombCU(t, 1 - t / 0.6), over: hookBanner() + monty(mp(1), 730, 1000, 0.62, t) })],
   [0.55, 3.38, t => terraceScene(t, cam(vishnu(vp(1), 380, 1080, 0.72, t), 540, 1000, 1 + 0.03 * t) + monty(mp(0), 770, 1180, 0.68, t))],
@@ -112,10 +71,4 @@ const SHOTS = [
   [81.68, 83.07, t => terraceScene(t, cam(vishnu(vp(5), 540, 1080, 0.9, t), 540, 1000, 1))],
   [83.07, 85.67, t => ({ ...bombCU(t, 1), over: hookBanner() + `<rect x="190" y="440" width="700" height="130" rx="65" fill="#ff3d6e" stroke="#1b1422" stroke-width="8"/>` + txt(540, 528, 1, 'Comment REPORT', '#fff', 60) })],
 ];
-function svg(tv) {
-  const t = orig(tv); TV = tv;
-  const sh = SHOTS.find(s => t >= s[0] && t < s[1]) || SHOTS[SHOTS.length - 1];
-  const r = sh[2](t), since = t - sh[0], pop = 1 + 0.04 * Math.max(0, 1 - since / 0.18);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"><defs>${r.defs}</defs><g transform="translate(540 960) scale(${pop.toFixed(4)}) translate(-540 -960)">${r.body}${r.over || ''}</g>${caption(tv)}</svg>`;
-}
-module.exports = { DUR, svg, SHOTS };
+module.exports = K.film(SHOTS, 85.67);
