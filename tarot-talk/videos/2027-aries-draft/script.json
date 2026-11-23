@@ -2,8 +2,8 @@
  "meta": {
   "title": "Aries 2027 — Vishnu ji drafts, Sakshi notes",
   "channel": "Tarot Talk By Sakshi (Instagram Reels)",
-  "version": "v2 script draft (after 2 reviews) (times are estimates until voices exist)",
-  "runtime_s": 81.6,
+  "version": "v3 script draft (after 3 reviews) (times are estimates until voices exist)",
+  "runtime_s": 80.88,
   "format": "1080x1920, 24 fps, 9:16",
   "language": "Hindi/Hinglish voice, Hinglish on-screen text",
   "cta": "send to an Aries friend + comment ARIES for all dates (owner to confirm what the DM sends)",
@@ -176,7 +176,7 @@
    "picture": "Vishnu ji warm smile, open palm; a soft golden Jupiter glow rises over the scroll and the gloom clears. Sakshi exhales.",
    "camera": "Gentle pull back, warm light returns.",
    "sound": "Warm swell, shimmer.",
-   "card": "Card: 'SHANI = MEHNAT KA PHAL · GURU = KRIPA'",
+   "card": "Card: 'SHANI = MEHNAT KA PHAL · GURU = KRIPA' + 'Vedic maanyata'",
    "voice_file": "voices/lines/V05.wav",
    "meme": false,
    "n": 5
@@ -424,9 +424,9 @@
    "id": "V13",
    "type": "line",
    "start": 49.78,
-   "end": 56.51,
+   "end": 56.15,
    "who": "Vishnu ji",
-   "line": "Pyaar? Guru ji ki drishti hai. Love life badhiya, shaadi ke yog bhi. Bas August-October, behas nahi.",
+   "line": "Pyaar? June se November, Guru ji ki drishti. Shaadi ke yog bhi. Bas August-October, behas nahi.",
    "caption_chunks": [
     {
      "text": "Pyaar?",
@@ -434,35 +434,35 @@
      "to": 50.15
     },
     {
-     "text": "Guru ji ki drishti hai.",
+     "text": "June se November,",
      "from": 50.15,
-     "to": 52.02
+     "to": 51.28
     },
     {
-     "text": "Love life badhiya,",
-     "from": 52.02,
-     "to": 53.15
+     "text": "Guru ji ki drishti.",
+     "from": 51.28,
+     "to": 52.78
     },
     {
-     "text": "shaadi ke yog bhi.",
-     "from": 53.15,
-     "to": 54.64
+     "text": "Shaadi ke yog bhi.",
+     "from": 52.78,
+     "to": 54.28
     },
     {
      "text": "Bas August-October,",
-     "from": 54.64,
-     "to": 55.76
+     "from": 54.28,
+     "to": 55.4
     },
     {
      "text": "behas nahi.",
-     "from": 55.76,
-     "to": 56.51
+     "from": 55.4,
+     "to": 56.15
     }
    ],
    "picture": "Hearts float up; Sakshi claps and blushes; on 'behas nahi' a tiny storm cloud passes over a heart and clears.",
    "camera": "Warm push in.",
    "sound": "Sweet chime, tiny thunder.",
-   "card": "Card: 'LOVE ✓ · SHAADI YOG ✓ · careful 24 Aug–8 Oct · Vedic maanyata'",
+   "card": "Card: 'LOVE ✓ SHAADI YOG · Vedic maanyata' + 'careful 24 Aug–8 Oct'",
    "voice_file": "voices/lines/V13.wav",
    "meme": false,
    "n": 13
@@ -470,15 +470,15 @@
   {
    "id": "K14",
    "type": "line",
-   "start": 56.66,
-   "end": 60.29,
+   "start": 56.3,
+   "end": 59.93,
    "who": "Sakshi",
    "line": "Toh mummy ki daant bhi dil pe nahi lena?",
    "caption_chunks": [
     {
      "text": "Toh mummy ki daant bhi dil pe nahi lena?",
-     "from": 56.66,
-     "to": 60.29
+     "from": 56.3,
+     "to": 59.93
     }
    ],
    "picture": "Sakshi, hopeful and cheeky, pen over 'FAMILY'.",
@@ -492,36 +492,36 @@
   {
    "id": "V15",
    "type": "line",
-   "start": 60.44,
-   "end": 66.45,
+   "start": 60.08,
+   "end": 66.09,
    "who": "Vishnu ji",
-   "line": "Mummy ki daant? Wo toh sar aankhon pe. Ghar ki mahilaon ka samman, yahi asli upay.",
+   "line": "Mummy ki daant? Wo toh sar aankhon pe. Ghar ki mahilaon ka samman, sabse bada punya.",
    "caption_chunks": [
     {
      "text": "Mummy ki daant?",
-     "from": 60.44,
-     "to": 61.57
+     "from": 60.08,
+     "to": 61.21
     },
     {
      "text": "Wo toh sar aankhon pe.",
-     "from": 61.57,
-     "to": 63.45
+     "from": 61.21,
+     "to": 63.09
     },
     {
      "text": "Ghar ki mahilaon ka samman,",
-     "from": 63.45,
-     "to": 65.32
+     "from": 63.09,
+     "to": 64.96
     },
     {
-     "text": "yahi asli upay.",
-     "from": 65.32,
-     "to": 66.45
+     "text": "sabse bada punya.",
+     "from": 64.96,
+     "to": 66.09
     }
    ],
    "picture": "Vishnu ji amused, gentle head shake, palm on heart; a cut-in of a warm family home with diyas.",
    "camera": "Two-shot, cut-in.",
    "sound": "Soft tabla.",
-   "card": "Card: 'FAMILY: badon ki baat dil pe nahi · PROPERTY: sirf saaf deal'",
+   "card": "Card: 'FAMILY: badon ka samman' + 'PROPERTY: sirf saaf deal'",
    "voice_file": "voices/lines/V15.wav",
    "meme": false,
    "n": 15
@@ -529,36 +529,36 @@
   {
    "id": "V17",
    "type": "line",
-   "start": 66.6,
-   "end": 71.9,
+   "start": 66.24,
+   "end": 71.18,
    "who": "Vishnu ji",
-   "line": "Upay: har Mangalwar Sundarkand, chaandi ki chain, aur netraheen vyakti ko samman se bhojan.",
+   "line": "Upay: Mangalwar ko Sundarkand, chaandi ki chain, aur netraheen ko samman se bhojan.",
    "caption_chunks": [
     {
      "text": "Upay:",
-     "from": 66.6,
-     "to": 66.98
+     "from": 66.24,
+     "to": 66.62
     },
     {
-     "text": "har Mangalwar Sundarkand,",
-     "from": 66.98,
-     "to": 68.11
+     "text": "Mangalwar ko Sundarkand,",
+     "from": 66.62,
+     "to": 67.76
     },
     {
      "text": "chaandi ki chain,",
-     "from": 68.11,
-     "to": 69.25
+     "from": 67.76,
+     "to": 68.9
     },
     {
-     "text": "aur netraheen vyakti ko samman se bhojan.",
-     "from": 69.25,
-     "to": 71.9
+     "text": "aur netraheen ko samman se bhojan.",
+     "from": 68.9,
+     "to": 71.18
     }
    ],
-   "picture": "One card whose three rows fill in, each synced to the spoken word. Sakshi writes each, nodding.",
+   "picture": "One card; the three words of its second row appear on the spoken words. Sakshi writes each, nodding.",
    "camera": "Card full-width.",
    "sound": "Bell on each row.",
-   "card": "Card: 'UPAY (Vedic maanyata) 1 Sundarkand, Mangalwar · 2 Chaandi ki chain · 3 Netraheen ko bhojan seva'",
+   "card": "Card: 'UPAY · Vedic maanyata' + 'Sundarkand · Chaandi · Bhojan seva'",
    "voice_file": "voices/lines/V17.wav",
    "meme": false,
    "n": 16
@@ -566,28 +566,33 @@
   {
    "id": "V18",
    "type": "line",
-   "start": 72.05,
-   "end": 75.56,
+   "start": 71.33,
+   "end": 74.84,
    "who": "Vishnu ji",
-   "line": "Gussa kam, mehnat zyada. Guru ji ka saath hai.",
+   "line": "Gussa kam, mehnat zyada. Aur Mesh wale, dheere koodna!",
    "caption_chunks": [
     {
      "text": "Gussa kam,",
-     "from": 72.05,
-     "to": 72.83
+     "from": 71.33,
+     "to": 72.11
     },
     {
      "text": "mehnat zyada.",
-     "from": 72.83,
-     "to": 73.61
+     "from": 72.11,
+     "to": 72.89
     },
     {
-     "text": "Guru ji ka saath hai.",
-     "from": 73.61,
-     "to": 75.56
+     "text": "Aur Mesh wale,",
+     "from": 72.89,
+     "to": 74.06
+    },
+    {
+     "text": "dheere koodna!",
+     "from": 74.06,
+     "to": 74.84
     }
    ],
-   "picture": "Vishnu ji serene blessing, closes the scroll with a glow; Sakshi closes her diary with a happy sigh.",
+   "picture": "Vishnu ji serene blessing with a playful smile (the ram doodle hops gently into the pond), closes the scroll with a glow; Sakshi closes her diary with a happy sigh.",
    "camera": "Slow push in, warm.",
    "sound": "Warm swell.",
    "card": "Card: 'GUSSA KAM, MEHNAT ZYADA'",
@@ -598,25 +603,25 @@
   {
    "id": "K19",
    "type": "line",
-   "start": 75.71,
-   "end": 80.45,
+   "start": 74.99,
+   "end": 79.73,
    "who": "Sakshi",
    "line": "Apne Aries dost ko bhejo. Mahine-wise guide chahiye? Comment karo ARIES.",
    "caption_chunks": [
     {
      "text": "Apne Aries dost ko bhejo.",
-     "from": 75.71,
-     "to": 77.69
+     "from": 74.99,
+     "to": 76.97
     },
     {
      "text": "Mahine-wise guide chahiye?",
-     "from": 77.69,
-     "to": 79.27
+     "from": 76.97,
+     "to": 78.55
     },
     {
      "text": "Comment karo ARIES.",
-     "from": 79.27,
-     "to": 80.45
+     "from": 78.55,
+     "to": 79.73
     }
    ],
    "picture": "CTA. Sakshi alone (Vishnu ji not in this beat): diary floats up, the one wink of the reel, send arrow, then a comment-box graphic 'ARIES'.",
@@ -630,8 +635,8 @@
   {
    "id": "endcard",
    "type": "event",
-   "start": 80.6,
-   "end": 81.6,
+   "start": 79.88,
+   "end": 80.88,
    "who": null,
    "line": null,
    "picture": "Sakshi's diary shows 'ARIES 2027 ✓' with a ram doodle; Sakshi alone with her diary (no deity in the selling part). Card: 'Send to your Aries friend · Comment ARIES'. Loops to frame 0.",

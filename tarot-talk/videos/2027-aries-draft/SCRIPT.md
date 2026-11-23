@@ -1,4 +1,4 @@
-# Aries 2027 — Vishnu ji drafts, Sakshi notes — script v2 (23 Nov 2026, after 2 reviews)
+# Aries 2027 — Vishnu ji drafts, Sakshi notes — script v3 (23 Nov 2026, after 3 reviews)
 
 Owner's plot: Vishnu ji drafts 2027 for Aries; Sakshi is his assistant, noting in her diary. Blunt, funny, cunning, teasing, a little fear, supportive. Data: the owner's Aries 2027 summary.
 
@@ -6,7 +6,7 @@ Cast: Vishnu ji (leads, explains, teases) and Sakshi (assistant: notes, reacts, 
 
 Running gags: Aries impatience (hook + ram jump); Sakshi's cunning edits (wants the colleague's name, sneaks in 'Ferrari', tries to skip mummy's scolding) that Vishnu ji calmly corrects.
 
-## Beats (times are estimates at a slow rate; the voices set the final times, likely about 70 s)
+## Beats (times are estimates at a slow rate; the voices set the final times, likely about 65–70 s)
 
 1. **Sakshi (K01).** "Prabhu, Aries ka 2027 likhiye… jaldi! Inse sabar nahi hota."  
    Picture: Night cloud study. Vishnu ji on his cloud; a big glowing scroll 'ARIES 2027' floats beside him and a magic quill writes by itself. Sakshi floats in on a small cloud, diary open in the air, pen glowing by her hand, tapping her foot. Hook card from frame 0: 'ARIES 2027: SADE SATI MEIN BHI ACHHA?' + ram-horn icon. Sound: Quill scratch, page whoosh.
@@ -17,7 +17,7 @@ Running gags: Aries impatience (hook + ram jump); Sakshi's cunning edits (wants 
 4. **Sakshi (K04).** "Sade Sati?! Prabhu, mera pen kaanp raha hai!"  
    Picture: Sakshi's eyes go wide, brows up; her floating pen shivers and scribbles a zig-zag. The comic fear is hers, never about Shani dev. —. Sound: Vine boom on her reaction.
 5. **Vishnu ji (V05).** "Darr mat. Shani dev mehnat ka phal dete hain, aur Guru ji ki kripa saath hai."  
-   Picture: Vishnu ji warm smile, open palm; a soft golden Jupiter glow rises over the scroll and the gloom clears. Sakshi exhales. Card: 'SHANI = MEHNAT KA PHAL · GURU = KRIPA'. Sound: Warm swell, shimmer.
+   Picture: Vishnu ji warm smile, open palm; a soft golden Jupiter glow rises over the scroll and the gloom clears. Sakshi exhales. Card: 'SHANI = MEHNAT KA PHAL · GURU = KRIPA' + 'Vedic maanyata'. Sound: Warm swell, shimmer.
 6. **Vishnu ji (V06).** "Sehat: March-April aur August-October, dhyaan rakhna. July? Full power."  
    Picture: Diary page fills: HEALTH with two careful windows. July is said in the voice only, with a flexing-arm doodle. Card: 'HEALTH ⚠ 9 Mar–26 Apr · 24 Aug–8 Oct' + small 'Doctor ki salah zaroor lein'. Sound: Pen ticks, ding on 'Full power'.
 7. **Vishnu ji (V07).** "Naukri: kaam ka pressure. Aur office mein koi boss ke kaan bharega."  
@@ -32,16 +32,16 @@ Running gags: Aries impatience (hook + ram jump); Sakshi's cunning edits (wants 
    Picture: Sakshi sneakily writes 'FERRARI' big in her diary (a generic red car doodle, no logo), side-eye at him. —. Sound: Sneaky tiptoe.
 12. **Vishnu ji (V12).** "Ferrari nahi. FD."  
    Picture: Vishnu ji lifts a finger; the chakra glows softly (no toy spin) and 'FERRARI' turns into 'FD'. Sakshi pouts. Card: 'FERRARI ✗  FD ✓'. Sound: Soft whoosh, eraser squeak.
-13. **Vishnu ji (V13).** "Pyaar? Guru ji ki drishti hai. Love life badhiya, shaadi ke yog bhi. Bas August-October, behas nahi."  
-   Picture: Hearts float up; Sakshi claps and blushes; on 'behas nahi' a tiny storm cloud passes over a heart and clears. Card: 'LOVE ✓ · SHAADI YOG ✓ · careful 24 Aug–8 Oct · Vedic maanyata'. Sound: Sweet chime, tiny thunder.
+13. **Vishnu ji (V13).** "Pyaar? June se November, Guru ji ki drishti. Shaadi ke yog bhi. Bas August-October, behas nahi."  
+   Picture: Hearts float up; Sakshi claps and blushes; on 'behas nahi' a tiny storm cloud passes over a heart and clears. Card: 'LOVE ✓ SHAADI YOG · Vedic maanyata' + 'careful 24 Aug–8 Oct'. Sound: Sweet chime, tiny thunder.
 14. **Sakshi (K14).** "Toh mummy ki daant bhi dil pe nahi lena?"  
    Picture: Sakshi, hopeful and cheeky, pen over 'FAMILY'. —. Sound: Tiny pop.
-15. **Vishnu ji (V15).** "Mummy ki daant? Wo toh sar aankhon pe. Ghar ki mahilaon ka samman, yahi asli upay."  
-   Picture: Vishnu ji amused, gentle head shake, palm on heart; a cut-in of a warm family home with diyas. Card: 'FAMILY: badon ki baat dil pe nahi · PROPERTY: sirf saaf deal'. Sound: Soft tabla.
-16. **Vishnu ji (V17).** "Upay: har Mangalwar Sundarkand, chaandi ki chain, aur netraheen vyakti ko samman se bhojan."  
-   Picture: One card whose three rows fill in, each synced to the spoken word. Sakshi writes each, nodding. Card: 'UPAY (Vedic maanyata) 1 Sundarkand, Mangalwar · 2 Chaandi ki chain · 3 Netraheen ko bhojan seva'. Sound: Bell on each row.
-17. **Vishnu ji (V18).** "Gussa kam, mehnat zyada. Guru ji ka saath hai."  
-   Picture: Vishnu ji serene blessing, closes the scroll with a glow; Sakshi closes her diary with a happy sigh. Card: 'GUSSA KAM, MEHNAT ZYADA'. Sound: Warm swell.
+15. **Vishnu ji (V15).** "Mummy ki daant? Wo toh sar aankhon pe. Ghar ki mahilaon ka samman, sabse bada punya."  
+   Picture: Vishnu ji amused, gentle head shake, palm on heart; a cut-in of a warm family home with diyas. Card: 'FAMILY: badon ka samman' + 'PROPERTY: sirf saaf deal'. Sound: Soft tabla.
+16. **Vishnu ji (V17).** "Upay: Mangalwar ko Sundarkand, chaandi ki chain, aur netraheen ko samman se bhojan."  
+   Picture: One card; the three words of its second row appear on the spoken words. Sakshi writes each, nodding. Card: 'UPAY · Vedic maanyata' + 'Sundarkand · Chaandi · Bhojan seva'. Sound: Bell on each row.
+17. **Vishnu ji (V18).** "Gussa kam, mehnat zyada. Aur Mesh wale, dheere koodna!"  
+   Picture: Vishnu ji serene blessing with a playful smile (the ram doodle hops gently into the pond), closes the scroll with a glow; Sakshi closes her diary with a happy sigh. Card: 'GUSSA KAM, MEHNAT ZYADA'. Sound: Warm swell.
 18. **Sakshi (K19).** "Apne Aries dost ko bhejo. Mahine-wise guide chahiye? Comment karo ARIES."  
    Picture: CTA. Sakshi alone (Vishnu ji not in this beat): diary floats up, the one wink of the reel, send arrow, then a comment-box graphic 'ARIES'. Card: 'COMMENT  ARIES'. Sound: Send whoosh.
 19. **End card (1 s).** Sakshi's diary shows 'ARIES 2027 ✓' with a ram doodle; Sakshi alone with her diary (no deity in the selling part). Card: 'Send to your Aries friend · Comment ARIES'. Loops to frame 0.
@@ -50,7 +50,7 @@ Running gags: Aries impatience (hook + ram jump); Sakshi's cunning edits (wants 
 - Shani dev is named with respect (giver of the fruits of hard work), not shown, not mocked; the fear lands on Sakshi's shaking pen and is cleared in the next beat. No fear-then-sell.
 - Beliefs labelled 'Vedic maanyata' on the Sade Sati, love and remedy cards. No promises: 'Ferrari nahi. FD.', 'Guru ji ka saath hai'. Health card says 'Doctor ki salah zaroor lein'.
 - Vishnu ji leads, is never the joke, not in the CTA or end card. The chakra only glows softly.
-- Facts checked: Sade Sati runs all 2027; Rahu 10th / Ketu 4th; Jupiter in Leo only Jan and 26 Jun–26 Nov, so no 'poore saal' claim.
+- Jupiter dated in the love line (June–November). Facts checked: Sade Sati runs all 2027; Rahu 10th / Ketu 4th; Jupiter in Leo only Jan and 26 Jun–26 Nov, so no 'poore saal' claim.
 
 ## Open points for the owner
 - CTA: 'Comment karo ARIES' for a month-wise Aries 2027 guide. What does the DM send, and does that guide exist?
