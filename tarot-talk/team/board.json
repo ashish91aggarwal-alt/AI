@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T17:16:43Z",
+ "built": "2026-11-23T17:32:13Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Aries 2027 rough cut v3 (world tour) sent",
-   "next": "Owner picks extras (Garuda, chakra pen, cosmic form, Ksheer Sagar, Lakshmi lotus); review to 8/10",
+   "doing": "Aries 2027 v4 with cover frame sent",
+   "next": "Owner picks extras; final review to 8/10",
    "blocked": "",
-   "updated_at": "2026-11-23T17:16:40Z",
+   "updated_at": "2026-11-23T17:32:13Z",
    "compactions": 0,
    "session": {
     "link": null,

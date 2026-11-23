@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Aries 2027 rough cut v3 (world tour) sent",
- "next": "Owner picks extras (Garuda, chakra pen, cosmic form, Ksheer Sagar, Lakshmi lotus); review to 8/10",
+ "doing": "Aries 2027 v4 with cover frame sent",
+ "next": "Owner picks extras; final review to 8/10",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T14:02:58Z"
  },
- "updated_at": "2026-11-23T17:16:40Z"
+ "updated_at": "2026-11-23T17:32:13Z"
 }
