@@ -10,6 +10,19 @@
 - **Paid credits:** before any voice test, ask how many voices, how many versions and what credit cap to use. Everything else costs nothing (code, local audio).
 - **Owner sign-off:** a finished reel needs it before posting. Raise risks plainly (film or song clips may get muted, a comedian's line in a deity's mouth, the CTA product must exist).
 
+## Where files go (stay in this tight place)
+
+| What | Where |
+|---|---|
+| A video's script package, `video.json`, `captions.json`, `sfx_cues.json` | `tarot-talk/videos/<slug>/` |
+| Its film (shot list + its own graphics) | `tarot-talk/cartoon-puppet/cuts/<slug>.js` |
+| A new character | `tarot-talk/cartoon-puppet/char_<id>.js` + `cast_<id>.js`, plus a row in `CHARACTERS.md` |
+| A new location | a function in `tarot-talk/cartoon-puppet/loc.js` |
+| New meme lines or sounds | links in that video's `video.json` and in `../viral-hooks/HOOKS.md` |
+| Scratch, renders, check stills | `cartoon-puppet/work/`, `out/`, `cast/` (git-ignored; never commit them) |
+
+Write nothing anywhere else in the repo. Other folders belong to other roles (`team/roles.json`); message that role instead.
+
 ## The batches and gates
 
 1. **Batch 1, cast:** sheet and close-up per character, then owner ok, then independent review of 8/10 or better.

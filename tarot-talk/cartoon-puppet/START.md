@@ -2,14 +2,15 @@
 
 For any new session. Read this file, then `HOW_WE_WORK.md` (the method and the owner's rules) and `CHARACTERS.md` (the reusable cast). `README.md` lists every file.
 
-## 0. Session setup (2 minutes)
+## 0. Session setup (1 command, about 1 minute)
 
 ```bash
-git pull --rebase
-python3 tarot-talk/team/team.py start --role production
-cd tarot-talk/cartoon-puppet && npm install
-bash make_reel.sh 2027-warmup-mulank8      # proves the machine works: ~3 min, gives out/2027-warmup-mulank8.mp4
+bash tarot-talk/cartoon-puppet/tools/bootstrap.sh    # pull, team start, install, prove the pipeline, briefing; ends with READY
 ```
+
+Then tell the owner you are ready, and ask for the script package or an idea for a new script. Wait for the answer.
+
+**New script from an idea:** write it with the script-to-video skill (hooks, gates, reviews). Ask the credit cap before any voice generation. Save the result as a package in `videos/<slug>/` (step 1 shape), then go on from step 2.
 
 ## 1. Put the new script package in place
 
