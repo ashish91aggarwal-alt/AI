@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T10:38:07Z",
+ "built": "2026-11-23T10:43:52Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "2027-same-mulank single reel: script v5 (generic, original meme voices, share+link CTA)",
-   "next": "Owner ok on v5; Jal lijiye clip; link/guide; voices + credit cap",
+   "doing": "2027-same-mulank v6 script ready (creator memes only)",
+   "next": "Owner: versions + credit cap, then voices (Agastya/Samar/Lalita) and skeleton",
    "blocked": "",
-   "updated_at": "2026-11-23T10:24:59Z",
+   "updated_at": "2026-11-23T10:43:52Z",
    "compactions": 0,
    "session": {
     "link": null,
