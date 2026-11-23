@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T09:54:38Z",
+ "built": "2026-11-23T09:59:42Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "New cartoon-reel session set up; pipeline check passed",
-   "next": "Waiting for owner: script package or a new idea",
+   "doing": "2027-same-mulank reel: script v3 written, independent review 8.5/10",
+   "next": "Owner ok on script; voice count, versions and credit cap; personal-year system; report contents",
    "blocked": "",
-   "updated_at": "2026-11-23T09:54:36Z",
+   "updated_at": "2026-11-23T09:59:42Z",
    "compactions": 0,
    "session": {
     "link": null,
