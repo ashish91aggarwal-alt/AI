@@ -12,7 +12,30 @@ const montyC = (p, x, y, s, t) => monty({ ...p, outfit: 'casual' }, x, y, s, t);
 const B = id => S.find(b => b.id === id), at = (id, f = 0) => { const b = B(id); return b.start + (b.end - b.start) * f; };
 const DUR = S[S.length - 1].end;
 
-const seq = (t, list) => { let p = list[0][1]; for (const [t0, q] of list) if (t >= t0) p = q; return p; };
+// owner (23 Nov 18:48): "robotic… blend them, animate them better" -> key poses now BLEND into each other through the
+// joints (elbows/wrists/knees, head tilt, eyes, brows) over ~0.3 s with an ease, instead of snapping.
+const ZERO_OK = new Set(['tilt', 'lookX', 'lookY', 'brow', 'browUp', 'browL', 'browR', 'blush', 'lid', 'sweat', 'browSad', 'tears', 'spike', 'pop', 'shiver', 'watery', 'shake', 'evilShade', 'lower', 'lidTilt', 'glint']);
+function mix(a, b, u, key) {
+  if (typeof a === 'number' && typeof b === 'number') return a + (b - a) * u;
+  if (a === undefined && typeof b === 'number' && ZERO_OK.has(key)) return b * u;
+  if (b === undefined && typeof a === 'number' && ZERO_OK.has(key)) return a * (1 - u);
+  if (Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every(x => typeof x === 'number')) return a.map((x, i) => x + (b[i] - x) * u);
+  if (a && b && typeof a === 'object' && typeof b === 'object' && !Array.isArray(a) && !Array.isArray(b)) {
+    const o = {}; for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) o[k] = mix(a[k], b[k], u, k); return o; }
+  return u < 0.5 ? a : b;
+}
+// a transition starts a little BEFORE its key time (anticipation) and eases in and out over ~11 frames; when the face
+// changes, the eyes blink through the middle of the move so expressions never snap
+const PRE = 0.15, BLEND = 0.45, smooth = u => u * u * (3 - 2 * u);
+const faceDiff = (a, b) => a.mouthShape !== b.mouthShape || a.mouth !== b.mouth || JSON.stringify(a.eye || {}) !== JSON.stringify(b.eye || {}) || a.happy !== b.happy || a.eyeMode !== b.eyeMode;
+const seq = (t, list) => {
+  let i = 0; for (let k = 1; k < list.length; k++) if (t >= list[k][0] - PRE) i = k;
+  const u = clamp((t - (list[i][0] - PRE)) / BLEND);
+  if (i === 0 || u >= 1) return list[i][1];
+  const a = list[i - 1][1], b = list[i][1], p = mix(a, b, smooth(u));
+  if (faceDiff(a, b) && u > 0.38 && u < 0.62) { p.blink = 1; p.lid = Math.max(p.lid || 0, 1); p.eye = { ...(p.eye || {}), mode: 'blink' }; }
+  return p;
+};
 const push = (body, t, t0, k = 0.02, cx = 540, cy = 900) => cam(body, cx, cy, 1 + k * Math.max(0, t - t0));
 const pop = (t, t0, d = 0.3) => backOut(clamp((t - t0) / d));
 

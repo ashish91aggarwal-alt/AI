@@ -44,7 +44,8 @@ Reviewer prompt that worked:
 **Drawing**
 - **Code only.** No image or video model, no GPU, no frames through chat (render stills and check them). Never generate one picture and cut it up.
 - **Joints only.** Characters move through their own joints, never by sliding, hopping, rotating or stretching the whole picture, and never by warping. Shoulders melt into the torso; no bolted SVG joints.
-- **Chubby mitten hands** (owner, 23 Nov 2026: Monty's hands looked faulty). Fingers form one soft block with short division lines and a chunky thumb; no spread, spidery fingers.
+- **Toon hands** (owner, 23 Nov 2026: Monty's hands looked faulty, then 'why blobby'). The palm and three short fingers form one clean outline with scalloped tips, plus a smooth thumb (engine `handStyle: 'chubby'` → `toonHand`). No knuckle bumps, no spread spidery fingers, no shapeless mitten.
+- **No robotic motion** (owner: 'why robotic joints? blend them, animate them better'). Elbows are rounded bends in the engine. Key poses blend through the joints (`seq` in the cut: starts 0.15 s early, eases over 0.45 s, with a blink through face changes). Never snap a pose; check a 1/24 s strip of a transition before showing.
 - **Hands never grip props.** Props float by magic with a glow, or are fused into a closed fist. Fingers are short, chubby and cute, never spidery or symmetric.
 - **Research real objects before drawing them** (search what they look like). No real brand logos (use a TT badge).
 - **Indian look**, never East-Asian. Avoid the "AI look": anime sparkle eyes, perfect symmetry, generic stock vector style. Match the reference style instead.

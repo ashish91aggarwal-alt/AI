@@ -10,8 +10,9 @@ const C = {
   pyj: '#efe3c6', pyjSh: '#cdb98f', chappal: '#7a4a2a', chappalSh: '#5a341c', steel: '#c9d0da',
   mouth: '#5a1626', tongue: '#e86a80', teeth: '#fffaf0', tilak: '#d22f48', sweat: '#9fd8ff', palmMid: '#e9958f',
 };
-// casual outfit (owner, 23 Nov 2026: 'change Monty dress'): mustard tee with a teal chest band, denim jeans, white sneakers
-const CASUAL = { tee: '#f2b632', teeSh: '#c98a1c', band: '#2f9c95', jeans: '#3f5f96', jeansSh: '#2c4573', shoe: '#f4f1ea', shoeSh: '#c9c4b8' };
+// casual outfit (owner, 23 Nov 2026: 'change Monty dress', then 'shirt pant shall be better'): sky-blue collared shirt with
+// rolled sleeves and a chest pocket, beige chinos with a brown belt, white sneakers
+const CASUAL = { tee: '#62b0ea', teeSh: '#3f86c2', cuff: '#a9d6f7', jeans: '#d6b57e', jeansSh: '#b28f57', belt: '#6a3f22', shoe: '#f4f1ea', shoeSh: '#c9c4b8' };
 
 // ---------- head (local: face centre at 0,0) ----------
 function head(p) {
@@ -135,31 +136,37 @@ function legs(p) {
   let o = '';
   for (const L of [p.legL, p.legR]) {
     const cas = p.outfit === 'casual';
-    o += E.limb([L.hip, L.knee, L.ankle], 38, { col: cas ? CASUAL.jeans : C.pyj, sh: cas ? CASUAL.jeansSh : C.pyjSh });
+    o += E.limb([L.hip, L.knee, L.ankle], cas ? 44 : 38, { col: cas ? CASUAL.jeans : C.pyj, sh: cas ? CASUAL.jeansSh : C.pyjSh });
     // chappal + foot, planted
     const [ax, ay] = L.ankle, dir = L.dir;
     const sole = catmull([[ax - 46 * dir, ay + 20], [ax + 76 * dir, ay + 18], [ax + 92 * dir, ay + 32], [ax + 70 * dir, ay + 44], [ax - 44 * dir, ay + 44]], 5, true);
     o += part(sole, cas ? CASUAL.shoe : C.chappal, { sh: cas ? CASUAL.shoeSh : C.chappalSh, shPts: sole.map(([x, y]) => [x, y + 10]), w: WT.mid });
     const foot = catmull([[ax - 32 * dir, ay - 8], [ax + 30 * dir, ay - 2], [ax + 74 * dir, ay + 14], [ax + 76 * dir, ay + 26], [ax - 36 * dir, ay + 26]], 5, true);
     o += part(foot, cas ? CASUAL.shoe : C.skin, { sh: cas ? CASUAL.shoeSh : C.skinSh, shPts: foot.map(([x, y]) => [x, y + 12]), w: WT.mid });
-    if (cas) o += ink([[ax - 10 * dir, ay + 2], [ax + 20 * dir, ay + 8]], 5, { color: '#2f9c95', taper: [0.1, 0.1] }); // sneaker stripe
+    if (cas) o += ink([[ax - 10 * dir, ay + 2], [ax + 20 * dir, ay + 8]], 5, { color: '#3f86c2', taper: [0.1, 0.1] }); // sneaker stripe
     else o += ink([[ax + 10 * dir, ay + 4], [ax + 30 * dir, ay + 24]], 8, { color: C.chappal, taper: [0.1, 0.1] }); // strap
     o += ink(catmull([[ax - 40, ay - 26], [ax, ay - 20], [ax + 40, ay - 26]], 4, false), WT.mid); // pyjama hem
   }
   return o;
 }
-function tee(p) {
+function tee(p) {   // casual shirt + chinos (name kept for the outfit switch)
   const b = p.breath || 0, sh = p.shiver || 0, K = CASUAL;
   const T = ([x, y]) => [x + sh * Math.sin(y * 0.05) * 0.6, y - b * 3 * (1340 - y) / 450];
-  const hips = catmull([[380, 1200], [700, 1200], [668, 1300], [640, 1352], [440, 1352], [412, 1300]].map(T), 6, true);   // jeans waist and seat, over the leg tops
-  let o = part(hips, K.jeans, { sh: K.jeansSh, shPts: [[600, 1190], [740, 1190], [740, 1360], [600, 1360]], w: WT.mid });
-  o += ink(catmull([[540, 1230], [542, 1300]].map(T), 4, false), WT.fine + 1);                                // fly seam
-  const body = catmull([[470, 880], [400, 905], [372, 980], [366, 1100], [362, 1236], [540, 1250], [718, 1236], [714, 1100], [708, 980], [680, 905], [610, 880]].map(T), 8, true);
-  o += fill(body, K.tee) + clipped(body, fill(catmull([[620, 880], [740, 900], [760, 1260], [640, 1260], [660, 1100]].map(T), 6, true), K.teeSh) +
-    fill(catmull([[340, 1020], [740, 1020], [740, 1066], [340, 1066]].map(T), 3, true), K.band));
+  // chinos seat: same width as the shirt hem, tapering into the two legs (no bulge)
+  const hips = [[396, 1170], [684, 1170], [674, 1260], [642, 1404], [438, 1404], [406, 1260]].map(T);   // covers the leg tops: one even taper to the legs
+  let o = fill(hips, K.jeans) + clipped(hips, fill([[600, 1160], [740, 1160], [740, 1410], [600, 1410]], K.jeansSh)) +
+    ink([hips[5], hips[4]], WT.sil * 0.85, { taper: [0.05, 0.05] }) + ink([hips[2], hips[3]], WT.sil * 0.85, { taper: [0.05, 0.05] });   // straight side seams, no rounded bulge
+  o += ink(catmull([[540, 1206], [541, 1404]].map(T), 4, false), WT.fine + 1);                                  // centre seam (legs split here)
+  o += fill(catmull([[404, 1172], [676, 1172], [676, 1192], [404, 1192]].map(T), 3, true), K.belt);                // belt
+  // shirt: straight sides, slight A-line, untucked hem with a gentle curve
+  const body = catmull([[470, 880], [404, 905], [386, 980], [384, 1090], [388, 1200], [460, 1212], [540, 1206], [620, 1212], [692, 1200], [696, 1090], [694, 980], [676, 905], [610, 880]].map(T), 8, true);
+  o += fill(body, K.tee) + clipped(body, fill(catmull([[616, 880], [740, 900], [760, 1230], [636, 1230], [654, 1090]].map(T), 6, true), K.teeSh));
   o += inkLoop(body, WT.sil);
-  const col = catmull([[476, 882], [540, 920], [604, 882], [596, 872], [540, 902], [484, 872]].map(T), 5, true);   // round neck rib
-  o += part(col, K.teeSh, { w: WT.mid });
+  o += ink(catmull([[540, 912], [541, 1060], [540, 1204]].map(T), 5, false), WT.mid);                                // placket
+  for (const y of [960, 1020, 1080, 1140]) { const q = T([552, y]); o += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="6.5" fill="#f4f1ea" stroke="${E.INK}" stroke-width="2.4"/>`; }
+  const pocket = catmull([[452, 990], [508, 990], [508, 1048], [480, 1058], [452, 1048]].map(T), 4, true);         // chest pocket
+  o += ink(pocket, WT.mid * 0.9) ;
+  for (const s2 of [-1, 1]) { const c = [[540 + s2 * 6, 906], [540 + s2 * 62, 884], [540 + s2 * 44, 944]].map(T); o += part(c, '#eaf5fd', { w: WT.mid }); }  // pointed shirt collar
   return o;
 }
 function kurta(p) {
@@ -186,7 +193,7 @@ function arms(p) {
     const cas = p.outfit === 'casual';
     o += arm(A.S, A.E, A.W, { r: [30, 26, 22], handPose: A.hand, handAng: A.handAng, hs: A.hs || 0.78, skin: C.skin, skinSh: C.skinSh, gold: C.steel, line: C.skinLine, outward: out, handScale: 1.0,
       handStyle: 'chubby', bracelet: out < 0 ? 'kada' : 'none', palmMid: C.palmMid,
-      sleeve: cas ? { col: CASUAL.tee, sh: CASUAL.teeSh, len: 0.22 } : { col: C.kurta, sh: C.kurtaSh, len: 0.6, trim: C.gold } });
+      sleeve: cas ? { col: CASUAL.tee, sh: CASUAL.teeSh, len: 0.4, trim: CASUAL.cuff, fat: 1.12 } : { col: C.kurta, sh: C.kurtaSh, len: 0.6, trim: C.gold } });
   }
   return o;
 }

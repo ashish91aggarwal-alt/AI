@@ -122,7 +122,10 @@ function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outw
   for (let k = 0; k < 16; k++) { const a = Math.PI * 2 * k / 16; ball.push([S[0] + Math.cos(a) * sr, S[1] + Math.sin(a) * sr]); }
   const arc = []; for (let k = 0; k <= 10; k++) { const a = rad(outward > 0 ? -115 + 13 * k : -65 - 13 * k); arc.push([S[0] + Math.cos(a) * sr, S[1] + Math.sin(a) * sr]); }
   const armR = (r[0] + r[1] + r[2]) / 3;
-  o += limb([S, E, W], armR, { col: skin, sh: skinSh });
+  // soft elbow: replace the sharp S-E-W corner with a rounded bend (no 'robot joint')
+  const E1 = [E[0] + (S[0] - E[0]) * 0.28, E[1] + (S[1] - E[1]) * 0.28], E2 = [E[0] + (W[0] - E[0]) * 0.28, E[1] + (W[1] - E[1]) * 0.28];
+  const Em = [E[0] * 0.4 + (E1[0] + E2[0]) * 0.3, E[1] * 0.4 + (E1[1] + E2[1]) * 0.3], soft = [S, E1, Em, E2, W];
+  o += limb(soft, armR, { col: skin, sh: skinSh });
   // shoulder melt: paint body colour over the limb's start cap and the torso outline under it (no seam, no ball joint),
   // then one smooth outer contour from the trapezius over the shoulder into the arm's outer edge
   const sx = E[0] - S[0], sy = E[1] - S[1], sl = Math.hypot(sx, sy) || 1, u = [sx / sl, sy / sl];
@@ -135,12 +138,12 @@ function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outw
   if (!sleeve) o += ink(outer, WT.sil * 0.85, { taper: [0.6, 0.05] }); // clothes: the torso silhouette already draws the shoulder
   if (sleeve) { // cloth sleeve over the upper arm and part of the forearm, with a cuff
     const k = sleeve.len ?? 0.55, C2 = [E[0] + (W[0] - E[0]) * k, E[1] + (W[1] - E[1]) * k];
-    o += limb([S, E, C2], (r[0] + r[1]) / 2 * 1.32, { col: sleeve.col, sh: sleeve.sh });
+    o += limb(k > 0.3 ? [S, E1, Em, E2, C2] : [S, E1, Em, C2], (r[0] + r[1]) / 2 * (sleeve.fat || 1.32), { col: sleeve.col, sh: sleeve.sh });
     const n2 = [-d[1], d[0]], cw = r[2] * 1.45; o += ink([[C2[0] + n2[0] * cw, C2[1] + n2[1] * cw], [C2[0] - n2[0] * cw, C2[1] - n2[1] * cw]], WT.mid, { taper: [0.1, 0.1] });
     if (sleeve.trim) o += ink([[C2[0] + n2[0] * cw - d[0] * 8, C2[1] + n2[1] * cw - d[1] * 8], [C2[0] - n2[0] * cw - d[0] * 8, C2[1] - n2[1] * cw - d[1] * 8]], 7, { color: sleeve.trim, taper: [0.05, 0.05], amp: 0.4 });
     o += meltPatch; // after the sleeve, so the sleeve's start cap and the kurta outline under it vanish
   }
-  o += handStyle === 'chubby' && FINGERS[handPose] !== undefined ? chubbyHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2])
+  o += handStyle === 'chubby' && FINGERS[handPose] !== undefined ? toonHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2])
     : FINGERS[handPose] !== undefined ? slenderHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2]) : hand(handPose, W, handAng, hs, skin, skinSh, gold, false, r[2], palmMid);
   if (bracelet === 'kada') { const nb = [-d[1], d[0]], bw = r[2] * 1.2, bc = [W[0] - d[0] * 6 * hs, W[1] - d[1] * 6 * hs];
     const k = [[bc[0] + nb[0] * bw - d[0] * 7, bc[1] + nb[1] * bw - d[1] * 7], [bc[0] + nb[0] * bw + d[0] * 7, bc[1] + nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw + d[0] * 7, bc[1] - nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw - d[0] * 7, bc[1] - nb[1] * bw - d[1] * 7]];
@@ -192,27 +195,35 @@ const FINGERS = { // short, chubby, close together, gentle curls: cute not spide
   fist:  { th: [[-22, 36], [[44, 16], [70, 12]]], f: [[[-12, 56], [[146, 16]]], [[2, 58], [[150, 16]]], [[14, 56], [[156, 15]]], [[25, 52], [[162, 13]]]] },
 };
 const FR = [10.5, 11, 10.5, 9]; // fingers thicker
+// cute cartoon fingers (owner 23 Nov 2026: not blobby, not spidery): short, plump, touching, each one readable
+const FINGERS_CUTE = {
+  relax: { th: [[-26, 26], [[-30, 16], [-10, 12]]], f: [[[-19, 54], [[-4, 16], [14, 12]]], [[-6, 57], [[0, 18], [12, 13]]], [[7, 56], [[4, 17], [12, 12]]], [[19, 52], [[8, 14], [12, 10]]]] },
+  palm:  { th: [[-28, 22], [[-52, 18], [-12, 13]]], f: [[[-19, 54], [[-10, 20], [-2, 13]]], [[-6, 57], [[-3, 22], [0, 14]]], [[7, 56], [[3, 21], [2, 13]]], [[19, 52], [[12, 17], [4, 11]]]] },
+  point: { th: [[-22, 32], [[44, 15], [70, 11]]], f: [[[-14, 56], [[-2, 26], [0, 18]]], [[0, 54], [[150, 14]]], [[12, 52], [[156, 13]]], [[23, 48], [[162, 12]]]] },
+  fist:  { th: [[-22, 32], [[44, 15], [70, 11]]], f: [[[-13, 52], [[146, 14]]], [[0, 54], [[150, 14]]], [[12, 52], [[156, 13]]], [[23, 48], [[162, 12]]]] },
+};
+const FR_CUTE = [13.5, 14, 13.5, 12];
 function fingerChain(T, base, segs) {
   const pts = [base]; let a = 0, cur = base;
   for (const [da, len] of segs) { a += da * Math.PI / 180; cur = [cur[0] + Math.sin(a) * len, cur[1] + Math.cos(a) * len]; pts.push(cur); }
   return pts.map(T);
 }
-function slenderHand(pose, W, d, s, mirror, skin, skinSh, wr) {
-  const spec = FINGERS[pose] || FINGERS.relax, n = [-d[1] * mirror, d[0] * mirror];
+function slenderHand(pose, W, d, s, mirror, skin, skinSh, wr, cute = false) {
+  const FS = cute ? FINGERS_CUTE : FINGERS, FRk = cute ? FR_CUTE : FR, spec = FS[pose] || FS.relax, n = [-d[1] * mirror, d[0] * mirror];
   const T = ([x, y]) => [W[0] + (n[0] * x + d[0] * y) * s, W[1] + (n[1] * x + d[1] * y) * s];
   const R = r => r * s;
   let o = '';
   // fingers first (their bases tuck under the palm), pinky -> index so the index overlaps
-  for (let k = 3; k >= 0; k--) { const [b, segs] = spec.f[k]; o += tube(fingerChain(T, b, segs), [R(FR[k]), R(FR[k] * 0.96), R(FR[k] * 0.92)], { col: skin, sh: skinSh, w: WT.mid * 0.7, capStart: false, capEnd: true, endTaper: 0.3 }); }
+  for (let k = 3; k >= 0; k--) { const [b, segs] = spec.f[k]; o += tube(fingerChain(T, b, segs), [R(FRk[k]), R(FRk[k] * 0.98), R(FRk[k] * 0.95)], { col: skin, sh: skinSh, w: WT.mid * (cute ? 0.85 : 0.7), capStart: false, capEnd: true, endTaper: 0.3 }); }
   // palm: flares from the wrist width to the knuckles; inked only on its two outer sides so fingers and wrist melt in
   const w0 = wr / s;
-  const palmL = [[-w0, -6], [-26, 26], [-30, 60]], palmR = [[32, 60], [30, 26], [w0, -6]];
+  const palmL = cute ? [[-w0, -6], [-30, 24], [-32, 56]] : [[-w0, -6], [-26, 26], [-30, 60]], palmR = cute ? [[30, 56], [32, 24], [w0, -6]] : [[32, 60], [30, 26], [w0, -6]];
   const palm = catmull(palmL.concat([[-10, 66], [12, 64]], palmR).map(T), 6, true);
   o += fill(palm, skin) + clipped(palm, fill(catmull([[14, -10], [50, -10], [50, 80], [18, 80]].map(T), 3, true), skinSh));
   o += ink(catmull(palmL.map(T), 6, false), WT.mid, { taper: [0.4, 0.2] }) + ink(catmull(palmR.map(T), 6, false), WT.mid, { taper: [0.2, 0.4] });
   // thumb on top
   const [tb, tsegs] = spec.th;
-  o += tube(fingerChain(T, tb, tsegs), [R(12), R(11), R(10)], { col: skin, sh: skinSh, w: WT.mid * 0.7, capStart: false, capEnd: true, endTaper: 0.3 });
+  o += tube(fingerChain(T, tb, tsegs), cute ? [R(15), R(14), R(13)] : [R(12), R(11), R(10)], { col: skin, sh: skinSh, w: WT.mid * (cute ? 0.85 : 0.7), capStart: false, capEnd: true, endTaper: 0.3 });
   return o;
 }
 // Chubby cartoon "mitten" hand (owner, 23 Nov 2026: Monty's hands looked faulty/spidery). Fingers are one soft block
@@ -244,6 +255,30 @@ function chubbyHand(pose, W, d, s, mirror, skin, skinSh, wr) {
   const tip = open ? 100 : 88, base = open ? 66 : 62;
   for (const x of [-14, 2, 18]) o += ink(catmull([[x, tip - 22], [x, tip - 6]].map(T), 3, false), WT.fine, { color: '#9a5a3c', taper: [0.4, 0.4] });
   return o;
+}
+// Toon hand (owner + review 23 Nov 2026): palm and three short fingers in ONE clean outline with scalloped tips, plus a
+// smooth thumb; no knuckle bumps, no spread spidery fingers, not a shapeless mitten. Local frame as slenderHand.
+function toonHand(pose, W, d, s, mirror, skin, skinSh, wr) {
+  const n = [-d[1] * mirror, d[0] * mirror];
+  const T = ([x, y]) => [W[0] + (n[0] * x + d[0] * y) * s, W[1] + (n[1] * x + d[1] * y) * s];
+  const w0 = Math.max(17, Math.min(22, wr / s)), sm = pts => catmull(pts.map(T), 7, true);
+  const shade = sh => clipped(sh, fill(catmull([[10, -10], [70, -10], [70, 130], [10, 130]].map(T), 3, true), skinSh));
+  const draw = sh => fill(sh, skin) + shade(sh) + inkLoop(sh, WT.mid * 1.15);
+  const crease = pts => ink(catmull(pts.map(T), 4, false), WT.fine + 0.6, { color: '#9a5a3c', taper: [0.5, 0.5] });
+  if (pose === 'fist' || pose === 'point') {
+    let o = '';
+    if (pose === 'point') o += draw(sm([[-30, 46], [-34, 80], [-32, 110], [-22, 118], [-12, 110], [-10, 78], [-12, 48]]));
+    o += draw(sm([[-w0, -4], [-32, 16], [-34, 46], [-26, 66], [-8, 72], [12, 72], [28, 64], [34, 42], [32, 16], [w0, -4]]));
+    o += crease([[-4, 52], [-2, 68]]) + crease([[14, 50], [16, 66]]);
+    o += ink(catmull([[-30, 24], [-10, 36], [12, 34]].map(T), 4, false), WT.mid, { taper: [0.3, 0.3] });   // thumb across the fist
+    return o;
+  }
+  const open = pose === 'palm';
+  const hand = open
+    ? sm([[-w0, -4], [-28, 24], [-30, 60], [-26, 86], [-17, 93], [-10, 84], [-8, 70], [-5, 90], [3, 97], [10, 88], [10, 70], [14, 86], [22, 88], [28, 76], [30, 50], [27, 22], [w0, -4]])
+    : sm([[-w0, -4], [-28, 22], [-30, 52], [-26, 74], [-18, 80], [-10, 72], [-8, 62], [-4, 78], [4, 84], [12, 76], [12, 62], [16, 74], [24, 76], [30, 62], [30, 34], [26, 14], [w0, -4]]);
+  const thumb = open ? sm([[-24, 16], [-42, 22], [-56, 36], [-54, 48], [-40, 46], [-26, 34]]) : sm([[-22, 16], [-36, 28], [-40, 46], [-30, 52], [-22, 40]]);
+  return draw(thumb) + draw(hand);
 }
 // drawn hand key-poses (swapped, not transformed into each other)
 function hand(pose, wrist, angle, s, skin, skinSh, gold, band = true, wr = 0, palmMid = null) {
