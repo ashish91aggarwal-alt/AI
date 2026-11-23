@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T10:43:55Z",
+ "built": "2026-11-23T10:55:12Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "2027-same-mulank v6 script ready (creator memes only)",
-   "next": "Owner: versions + credit cap, then voices (Agastya/Samar/Lalita) and skeleton",
+   "doing": "2027-same-mulank: voices done, lip-synced skeleton rendered (59 s)",
+   "next": "Owner listens; then Batch 2 rough cut (cards, calendar flip, graphics) + review",
    "blocked": "",
-   "updated_at": "2026-11-23T10:43:52Z",
+   "updated_at": "2026-11-23T10:55:12Z",
    "compactions": 0,
    "session": {
     "link": null,
