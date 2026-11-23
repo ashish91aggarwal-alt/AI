@@ -1,0 +1,28 @@
+{
+ "slug": "2027-aries-draft",
+ "title": "Aries 2027 — Vishnu ji drafts, Sakshi notes",
+ "script_dur": 84.75,
+ "cut": "cuts/2027-aries-draft.js",
+ "voice_track": "voices/voice_track_timed.wav",
+ "cue_sheet": "voices/cue_sheet.csv",
+ "speakers": {
+  "Sakshi": "sakshi",
+  "Vishnu ji": "vishnu"
+ },
+ "meme_lines": [],
+ "sound_files": {},
+ "sfx_cues": "sfx_cues.json",
+ "music": [
+  {
+   "kind": "groove",
+   "a": 0,
+   "b": 84.75,
+   "bpm": 108,
+   "root": 220,
+   "level": 0.85
+  }
+ ],
+ "music_db": -13,
+ "duck_db": -8,
+ "lufs": -14
+}
