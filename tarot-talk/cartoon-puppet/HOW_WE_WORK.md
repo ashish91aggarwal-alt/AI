@@ -11,6 +11,7 @@
 - **Spend less on ElevenLabs** (owner, 23 Nov 2026): 1 take per line by default, reuse every good line already made, and re-take or splice only the part that changed.
 - **CTA is always link-based** (owner, 23 Nov 2026: "No cta shall have comments. All link based"). Never "comment karo <keyword>"; use "send to someone + guide on the link".
 - **Script first, credits later** (owner, 23 Nov 2026): get the script strong and reviewed before asking about or spending voice credits. Each script needs a comic engine (a running situation such as Sakshi bargaining with Bhagwan), not a list of facts with jokes on top.
+- **No "AI slop" rhythm in dialogue** (owner, 23 Nov 2026: the start-pause-continue tempo of each line felt like AI slop). Write lines as people really talk: full flowing sentences, no "Topic: fact. X? Y." bulletin pattern, no "…" pauses inside lines, no one-word rhetorical openers on every line. Let characters ask and interrupt each other. Voices: no pause tags, no ellipses in the voice text, gaps between lines about 0.05–0.1 s, and interruptions may overlap slightly.
 - **Owner sign-off:** a finished reel needs it before posting. Raise risks plainly (film or song clips may get muted, a comedian's line in a deity's mouth, the CTA product must exist).
 
 ## Where files go (stay in this tight place)
