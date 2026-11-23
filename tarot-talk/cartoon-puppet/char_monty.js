@@ -10,6 +10,8 @@ const C = {
   pyj: '#efe3c6', pyjSh: '#cdb98f', chappal: '#7a4a2a', chappalSh: '#5a341c', steel: '#c9d0da',
   mouth: '#5a1626', tongue: '#e86a80', teeth: '#fffaf0', tilak: '#d22f48', sweat: '#9fd8ff', palmMid: '#e9958f',
 };
+// casual outfit (owner, 23 Nov 2026: 'change Monty dress'): mustard tee with a teal chest band, denim jeans, white sneakers
+const CASUAL = { tee: '#f2b632', teeSh: '#c98a1c', band: '#2f9c95', jeans: '#3f5f96', jeansSh: '#2c4573', shoe: '#f4f1ea', shoeSh: '#c9c4b8' };
 
 // ---------- head (local: face centre at 0,0) ----------
 function head(p) {
@@ -132,19 +134,36 @@ function head(p) {
 function legs(p) {
   let o = '';
   for (const L of [p.legL, p.legR]) {
-    o += E.limb([L.hip, L.knee, L.ankle], 38, { col: C.pyj, sh: C.pyjSh });
+    const cas = p.outfit === 'casual';
+    o += E.limb([L.hip, L.knee, L.ankle], 38, { col: cas ? CASUAL.jeans : C.pyj, sh: cas ? CASUAL.jeansSh : C.pyjSh });
     // chappal + foot, planted
     const [ax, ay] = L.ankle, dir = L.dir;
     const sole = catmull([[ax - 46 * dir, ay + 20], [ax + 76 * dir, ay + 18], [ax + 92 * dir, ay + 32], [ax + 70 * dir, ay + 44], [ax - 44 * dir, ay + 44]], 5, true);
-    o += part(sole, C.chappal, { sh: C.chappalSh, shPts: sole.map(([x, y]) => [x, y + 10]), w: WT.mid });
+    o += part(sole, cas ? CASUAL.shoe : C.chappal, { sh: cas ? CASUAL.shoeSh : C.chappalSh, shPts: sole.map(([x, y]) => [x, y + 10]), w: WT.mid });
     const foot = catmull([[ax - 32 * dir, ay - 8], [ax + 30 * dir, ay - 2], [ax + 74 * dir, ay + 14], [ax + 76 * dir, ay + 26], [ax - 36 * dir, ay + 26]], 5, true);
-    o += part(foot, C.skin, { sh: C.skinSh, shPts: foot.map(([x, y]) => [x, y + 12]), w: WT.mid });
-    o += ink([[ax + 10 * dir, ay + 4], [ax + 30 * dir, ay + 24]], 8, { color: C.chappal, taper: [0.1, 0.1] }); // strap
+    o += part(foot, cas ? CASUAL.shoe : C.skin, { sh: cas ? CASUAL.shoeSh : C.skinSh, shPts: foot.map(([x, y]) => [x, y + 12]), w: WT.mid });
+    if (cas) o += ink([[ax - 10 * dir, ay + 2], [ax + 20 * dir, ay + 8]], 5, { color: '#2f9c95', taper: [0.1, 0.1] }); // sneaker stripe
+    else o += ink([[ax + 10 * dir, ay + 4], [ax + 30 * dir, ay + 24]], 8, { color: C.chappal, taper: [0.1, 0.1] }); // strap
     o += ink(catmull([[ax - 40, ay - 26], [ax, ay - 20], [ax + 40, ay - 26]], 4, false), WT.mid); // pyjama hem
   }
   return o;
 }
+function tee(p) {
+  const b = p.breath || 0, sh = p.shiver || 0, K = CASUAL;
+  const T = ([x, y]) => [x + sh * Math.sin(y * 0.05) * 0.6, y - b * 3 * (1340 - y) / 450];
+  const hips = catmull([[380, 1200], [700, 1200], [668, 1300], [640, 1352], [440, 1352], [412, 1300]].map(T), 6, true);   // jeans waist and seat, over the leg tops
+  let o = part(hips, K.jeans, { sh: K.jeansSh, shPts: [[600, 1190], [740, 1190], [740, 1360], [600, 1360]], w: WT.mid });
+  o += ink(catmull([[540, 1230], [542, 1300]].map(T), 4, false), WT.fine + 1);                                // fly seam
+  const body = catmull([[470, 880], [400, 905], [372, 980], [366, 1100], [362, 1236], [540, 1250], [718, 1236], [714, 1100], [708, 980], [680, 905], [610, 880]].map(T), 8, true);
+  o += fill(body, K.tee) + clipped(body, fill(catmull([[620, 880], [740, 900], [760, 1260], [640, 1260], [660, 1100]].map(T), 6, true), K.teeSh) +
+    fill(catmull([[340, 1020], [740, 1020], [740, 1066], [340, 1066]].map(T), 3, true), K.band));
+  o += inkLoop(body, WT.sil);
+  const col = catmull([[476, 882], [540, 920], [604, 882], [596, 872], [540, 902], [484, 872]].map(T), 5, true);   // round neck rib
+  o += part(col, K.teeSh, { w: WT.mid });
+  return o;
+}
 function kurta(p) {
+  if (p.outfit === 'casual') return tee(p);
   const b = p.breath || 0, sh = p.shiver || 0;
   const T = ([x, y]) => [x + sh * Math.sin(y * 0.05) * 0.6, y - b * 3 * (1340 - y) / 450];
   const body = catmull([[470, 880], [400, 905], [370, 980], [360, 1120], [348, 1300], [366, 1350], [714, 1350], [732, 1300], [720, 1120], [710, 980], [680, 905], [610, 880]].map(T), 8, true);
@@ -164,8 +183,10 @@ function kurta(p) {
 function arms(p) {
   let o = '';
   for (const [A, out] of [[p.armL, -1], [p.armR, 1]]) {
+    const cas = p.outfit === 'casual';
     o += arm(A.S, A.E, A.W, { r: [30, 26, 22], handPose: A.hand, handAng: A.handAng, hs: A.hs || 0.78, skin: C.skin, skinSh: C.skinSh, gold: C.steel, line: C.skinLine, outward: out, handScale: 1.0,
-      bracelet: out < 0 ? 'kada' : 'none', palmMid: C.palmMid, sleeve: { col: C.kurta, sh: C.kurtaSh, len: 0.6, trim: C.gold } });
+      handStyle: 'chubby', bracelet: out < 0 ? 'kada' : 'none', palmMid: C.palmMid,
+      sleeve: cas ? { col: CASUAL.tee, sh: CASUAL.teeSh, len: 0.22 } : { col: C.kurta, sh: C.kurtaSh, len: 0.6, trim: C.gold } });
   }
   return o;
 }

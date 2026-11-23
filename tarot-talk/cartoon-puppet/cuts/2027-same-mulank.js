@@ -6,6 +6,9 @@ const path = require('path');
 const K = require('../kit');
 const { E, L, M, SD, clamp, ease, backOut, vp, mp, kp, vishnu, monty, sakshi, cam, txt, tag, pill, rainCloud, bricks, terraceScene } = K;
 const S = require(path.join(K.VID, 'script.json')).beats;
+// owner (23 Nov 18:29): simple park instead of the rooftop; Monty in a new casual outfit with redrawn chubby hands
+const parkScene = (t, actors, o = {}) => { const P = L.park(t, { fireworks: t > at('FLIP', 0.5), ...o }); return { defs: P.defs, body: P.back + actors + P.front }; };
+const montyC = (p, x, y, s, t) => monty({ ...p, outfit: 'casual' }, x, y, s, t);
 const B = id => S.find(b => b.id === id), at = (id, f = 0) => { const b = B(id); return b.start + (b.end - b.start) * f; };
 const DUR = S[S.length - 1].end;
 
@@ -50,30 +53,33 @@ function screen(t, inner, on = 1) {
 }
 const W = (x, y, s, str, col = '#ffffff', size = 60) => txt(x, y, s, str, col, size);
 function profiles(t, t0, nWoh = '', nTum = '', colW = '#ffd24a', colT = '#ffd24a') { // two profile tiles with silhouette faces
-  const tile = (x, name, date, n, col, k) => `<g transform="translate(${x} 480) scale(${k})"><rect x="-170" y="-150" width="340" height="300" rx="20" fill="#fff8e8" stroke="#1b1422" stroke-width="7"/>` +
+  const tile = (x, name, date, n, col, k) => `<g transform="translate(${x} 505) scale(${k * 0.8})"><rect x="-170" y="-150" width="340" height="300" rx="20" fill="#fff8e8" stroke="#1b1422" stroke-width="7"/>` +
     `<circle cx="0" cy="-70" r="46" fill="#7a6a8c"/><path d="M-80 10 Q0 -40 80 10 L80 20 L-80 20 Z" fill="#7a6a8c"/>` +
     `<text x="0" y="68" font-family="Arial Black,Arial" font-weight="900" font-size="40" text-anchor="middle" fill="#1b1422">${name}</text>` +
     `<text x="0" y="114" font-family="Arial Black,Arial" font-weight="900" font-size="34" text-anchor="middle" fill="#c62b34">${date}</text>` +
     (n ? `<g transform="translate(120 -110) scale(${pop(t, t0 + 0.2)})"><circle r="46" fill="${col}" stroke="#1b1422" stroke-width="6"/><text y="17" font-family="Arial Black,Arial" font-weight="900" font-size="50" text-anchor="middle" fill="#1b1422">${n}</text></g>` : '') + '</g>';
   return tile(290, 'WOH', '12 APRIL', nWoh, colW, pop(t, t0)) + tile(670, 'TUM', '3 MARCH', nTum, colT, pop(t, t0 + 0.15));
 }
-function calcRow(t, t0, y, who, bday, parts, total, col = '#ffd24a') {
-  // e.g. WOH · 12 APRIL  →  [1+2] + [4] + [1] = 8, each part with a small tag (date / month / saal)
-  if (t < t0) return ''; const step = 0.55, n = Math.min(parts.length, 1 + Math.floor((t - t0) / step)), done = t > t0 + parts.length * step;
-  let o = W(480, y, 1, `${who} · ${bday}`, '#ffffff', 40); const x0 = 210, dx = 175;
-  parts.slice(0, n).forEach(([v, lab], k) => { const x = x0 + k * dx; o += (k ? W(x - dx / 2, y + 78, 1, '+', '#ffffff', 52) : '') + W(x, y + 78, 1, v, '#ffffff', 56) + W(x, y + 122, 1, lab, '#e2d8ff', 32); });
-  if (done) o += W(x0 + parts.length * dx - 40, y + 78, 1, `= ${total}`, col, 64);
+// times = when each part appears (synced to the spoken words), last one = when "= total" lands
+function calcRow(t, times, y, who, bday, parts, total, col = '#ffd24a') {
+  if (t < times[0] - 0.3) return ''; const x0 = 210, dx = 175;
+  let o = W(480, y, 1, `${who} · ${bday}`, '#ffffff', 40);
+  parts.forEach(([v, lab], k) => { if (t < times[k]) return; const x = x0 + k * dx, sc = pop(t, times[k], 0.2);
+    o += (k ? W(x - dx / 2, y + 78, 1, '+', '#ffffff', 52) : '') + `<g transform="translate(${x} ${y + 78}) scale(${sc})">${W(0, 0, 1, v, '#ffffff', 56)}</g>` + W(x, y + 122, 1, lab, '#e2d8ff', 32); });
+  if (t >= times[parts.length]) o += `<g transform="translate(${x0 + parts.length * dx - 40} ${y + 78}) scale(${pop(t, times[parts.length], 0.25)})">${W(0, 0, 1, `= ${total}`, col, 64)}</g>`;
   return o;
 }
+const w = (id, s0) => B(id).start + s0;   // a word time inside a line (seconds from the line start, measured by transcription)
 const YEAR = t => (t < at('FLIP', 0.55) ? '2026' : '2027');
 function screenBody(t) {
-  if (t < at('V07')) return profiles(t, at('V06', 0.05), 3, 3, '#b9a7ff', '#b9a7ff').replace(/translate\((\d+) 480\)/g, 'translate($1 450)') + (t > at('V06', 0.45) ? `<rect x="110" y="640" width="740" height="110" rx="16" fill="#0b1230"/>` + W(480, 690, 1, 'DATE + MONTH + SAAL', '#ffd24a', 46) + W(480, 738, 1, '2026 → 2+0+2+6 = 10 → 1', '#ffffff', 36) : '');
-  if (t < at('V08')) return calcRow(t, at('V07', 0.02), 390, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['1', '2026 → 1']], 8) + calcRow(t, at('V07', 0.42), 590, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['1', '2026 → 1']], 7, '#7fb4ea');
-  if (t < at('FLIP')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 520, 1, '8 = RESULT KA SAAL', '#ffd24a', 60) + (t > at('V08', 0.48) ? W(480, 650, 1, '7 = KHUD PE KAAM', '#7fb4ea', 60) : '');
+  if (t < at('V07')) return profiles(t, at('V06', 0.05), 3, 3, '#b9a7ff', '#b9a7ff') + (t > at('V06', 0.45) ? `<rect x="110" y="640" width="740" height="110" rx="16" fill="#0b1230"/>` + W(480, 690, 1, 'DATE + MONTH + SAAL', '#ffd24a', 46) + W(480, 738, 1, '2026 → 2+0+2+6 = 10 → 1', '#ffffff', 36) : '');
+  if (t < at('V08')) return calcRow(t, [w('V07', 0.4), w('V07', 1.66), w('V07', 2.54), w('V07', 3.16)], 390, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['1', '2026 → 1']], 8) + calcRow(t, [w('V07', 4.22), w('V07', 4.74), w('V07', 5.44), w('V07', 6.1)], 590, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['1', '2026 → 1']], 7, '#7fb4ea');
+  if (t < at('FLIP')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 520, 1, '8 = RESULT KA SAAL', '#ffd24a', 60) + (t > w('V08', 2.8) ? W(480, 650, 1, '7 = KHUD PE KAAM', '#7fb4ea', 60) : '');
   if (t < at('V11')) { const u = clamp((t - at('FLIP', 0.25)) / 0.6);
     return W(480, 640, 1, '2027', '#7dff8a', 220) + `<g transform="translate(${(60 * u).toFixed(1)} ${(900 * u * u).toFixed(1)}) rotate(${(-25 * u).toFixed(1)} 480 300)" opacity="${(1 - u).toFixed(2)}"><rect x="110" y="358" width="740" height="402" rx="10" fill="#fff8e8" stroke="#1b1422" stroke-width="7"/>${W(480, 640, 1, '2026', '#c62b34', 220)}</g>`; }
-  if (t < at('V12')) return calcRow(t, at('V11', 0.08), 410, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['2', '2027 → 2']], 8) + calcRow(t, at('V11', 0.35), 590, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['2', '2027 → 2']], 9, '#7fb4ea');
-  if (t < at('V14')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 510, 1, '9 = SAFAI KA SAAL', '#7fb4ea', 58) + (t > at('V12', 0.45) ? W(480, 630, 1, '8 = MEHNAT KA RESULT', '#ffd24a', 56) : '') + (t > at('V12', 0.8) ? W(480, 730, 1, 'Lottery nahi!', '#ff7a9a', 46) : '');
+  if (t < w('V11', 2.6)) return `<g transform="translate(480 560) scale(${pop(t, at('V11'), 0.3)})">${W(0, -40, 1, 'SAAL 2027', '#7dff8a', 64)}${W(0, 60, 1, '2+0+2+7 = 11 → 1+1 = 2', '#ffffff', 52)}</g>`;
+  if (t < w('V12', 2.9)) return calcRow(t, [w('V11', 2.7), w('V11', 3.0), w('V11', 3.3), w('V11', 3.7)], 410, 'TUM', '3 MARCH', [['3', 'date 3'], ['3', 'March'], ['2', '2027 → 2']], 8) + calcRow(t, [w('V11', 3.9), w('V11', 4.1), w('V12', 0.0), w('V12', 0.2)], 590, 'WOH', '12 APRIL', [['1+2', 'date 12'], ['4', 'April'], ['2', '2027 → 2']], 9, '#7fb4ea');
+  if (t < at('V14')) return W(480, 400, 1, 'IN NUMEROLOGY', '#b9a7ff', 46) + W(480, 510, 1, '9 = SAFAI KA SAAL', '#7fb4ea', 58) + (t > w('V12', 2.96) ? W(480, 630, 1, '8 = MEHNAT KA RESULT', '#ffd24a', 56) : '') + (t > w('V12', 5.7) ? W(480, 730, 1, 'Lottery nahi!', '#ff7a9a', 46) : '');
   if (t < at('K15')) return W(480, 480, 1, 'MULANK = TUM KAUN HO', '#ffd24a', 54) + (t > at('V14', 0.45) ? W(480, 630, 1, 'PERSONAL YEAR = MAUSAM', '#7dff8a', 52) : '');
   return W(480, 470, 1, 'MULANK KA KEEDA?', '#ffd24a', 64) + W(480, 560, 1, 'USKO BHEJO!', '#ffffff', 60) + (t > at('K15', 0.5) ? `<g transform="translate(480 680) scale(${pop(t, at('K15', 0.5))})"><rect x="-330" y="-50" width="660" height="90" rx="45" fill="#ffd24a" stroke="#1b1422" stroke-width="6"/><text x="0" y="16" font-family="Arial" font-weight="700" font-size="42" text-anchor="middle" fill="#1b1422">COMPLETE GUIDE → LINK</text></g>` : '');
 }
@@ -82,7 +88,7 @@ const screenAt = t => t < at('V06', 0.05) ? '' : `<rect x="88" y="288" width="78
 const SCR = t => screen(t, screenAt(t), (t - at('V06')) / 0.15);
 
 // classroom wide: screen above; Vishnu ji left, Sakshi middle under the screen, Monty right
-const room = (t, vpose, kpose, mpose) => terraceScene(t, SCR(t) + (vpose ? vishnu(vpose, 230, 1260, 0.55, t) : '') + (kpose ? sakshi(kpose, 545, 1300, 0.58, t) : '') + (mpose ? monty(mpose, 805, 1300, 0.58, t) : ''));
+const room = (t, vpose, kpose, mpose) => parkScene(t, SCR(t) + (vpose ? vishnu(vpose, 230, 1260, 0.55, t) : '') + (kpose ? sakshi(kpose, 545, 1300, 0.58, t) : '') + (mpose ? montyC(mpose, 805, 1300, 0.58, t) : ''));
 // the friend's story on Monty's phone (hook)
 const phone = (t, t0) => `<g transform="translate(790 640) scale(${pop(t, t0)}) rotate(8)"><rect x="-120" y="-210" width="240" height="420" rx="34" fill="#22222c" stroke="#1b1422" stroke-width="9"/><rect x="-100" y="-180" width="200" height="350" rx="16" fill="#ffd7e6"/>` +
   `<path d="M-70 40 L-50 0 L40 0 L64 40 Z" fill="#d22f48" stroke="#1b1422" stroke-width="5"/><rect x="-80" y="38" width="160" height="40" rx="12" fill="#d22f48" stroke="#1b1422" stroke-width="5"/><circle cx="-46" cy="84" r="16" fill="#1b1422"/><circle cx="46" cy="84" r="16" fill="#1b1422"/>` +
@@ -90,22 +96,22 @@ const phone = (t, t0) => `<g transform="translate(790 640) scale(${pop(t, t0)}) 
 const hook = () => `<rect x="70" y="270" width="790" height="120" rx="24" fill="#1b1422" opacity="0.88"/>` + txt(465, 352, 1, 'SAME MULANK, ALAG KISMAT?', '#ffd24a', 52);
 
 const SHOTS = [
-  [0, at('MEME1'), t => ({ ...terraceScene(t, push(monty(seq(t, [[0, jealous], [at('M01', 0.55), mp(4)]]), 400, 1120, 0.9, t), t, 0) + phone(t, 0)), over: hook() })],
-  [at('MEME1'), at('V03'), t => terraceScene(t, cam(monty(seq(t, [[at('MEME1'), hurt], [at('MEME1', 0.55), damage]]), 540, 1120, 0.95, t), 540, 820, 1.12))],
-  [at('V03'), at('M04'), t => terraceScene(t, push(vishnu(seq(t, [[at('V03'), vLaugh], [at('V03', 0.25), vTalk], [at('V03', 0.7), vPointer]]), 540, 1080, 0.9, t), t, at('V03')))],
-  [at('M04'), at('V06'), t => terraceScene(t, cam(monty(seq(t, [[at('M04'), shrug], [at('M04', 0.5), { ...shrug, mouthShape: 'nervous', tilt: -8 }]]), 540, 1120, 0.95, t), 540, 900, 1.06))],
+  [0, at('MEME1'), t => ({ ...parkScene(t, push(montyC(seq(t, [[0, jealous], [at('M01', 0.55), mp(4)]]), 400, 1120, 0.9, t), t, 0) + phone(t, 0)), over: hook() })],
+  [at('MEME1'), at('V03'), t => parkScene(t, cam(montyC(seq(t, [[at('MEME1'), hurt], [at('MEME1', 0.55), damage]]), 540, 1120, 0.95, t), 540, 820, 1.12))],
+  [at('V03'), at('M04'), t => parkScene(t, push(vishnu(seq(t, [[at('V03'), vLaugh], [at('V03', 0.25), vTalk], [at('V03', 0.7), vPointer]]), 540, 1080, 0.9, t), t, at('V03')))],
+  [at('M04'), at('V06'), t => parkScene(t, cam(montyC(seq(t, [[at('M04'), shrug], [at('M04', 0.5), { ...shrug, mouthShape: 'nervous', tilt: -8 }]]), 540, 1120, 0.95, t), 540, 900, 1.06))],
   [at('V06'), at('V07'), t => room(t, seq(t, [[at('V06'), vPointer], [at('V06', 0.45), vTalk]]), seq(t, [[at('V06'), sPress], [at('V06', 0.3), sFriendly]]), seq(t, [[at('V06'), listen], [at('V06', 0.5), counting]]))],
   [at('V07'), at('V08'), t => room(t, seq(t, [[at('V07'), vPoint], [at('V07', 0.3), vTalk], [at('V07', 0.72), vLaugh]]), seq(t, [[at('V07'), sFriendly], [at('V07', 0.3), sOoh], [at('V07', 0.72), sAww]]), seq(t, [[at('V07'), counting], [at('V07', 0.3), jealous], [at('V07', 0.55), tremble], [at('V07', 0.72), damage]]))],
   [at('V08'), at('M09'), t => room(t, seq(t, [[at('V08'), { ...vTalk, browL: 0.9 }], [at('V08', 0.5), vWarm]]), seq(t, [[at('V08'), sOoh], [at('V08', 0.5), sAww]]), seq(t, [[at('V08'), jealous], [at('V08', 0.5), tremble]]))],
-  [at('M09'), at('FLIP'), t => ({ ...terraceScene(t, cam(monty(mp(6), 540, 1120, 0.95, t), 540, 900, 1.05)), over: rainCloud(t, 540, 330) })],
+  [at('M09'), at('FLIP'), t => ({ ...parkScene(t, cam(montyC(mp(6), 540, 1120, 0.95, t), 540, 900, 1.05)), over: rainCloud(t, 540, 330) })],
   [at('FLIP'), at('V11'), t => room(t, vPointer, sOoh, hopeful)],
   [at('V11'), at('V12'), t => room(t, seq(t, [[at('V11'), vTalk], [at('V11', 0.6), vPoint]]), seq(t, [[at('V11'), sFriendly], [at('V11', 0.55), sOoh]]), seq(t, [[at('V11'), hopeful], [at('V11', 0.55), mp(5)]]))],
   [at('V12'), at('M13'), t => ({ ...room(t, seq(t, [[at('V12'), vTalk], [at('V12', 0.8), vLaugh]]), seq(t, [[at('V12'), sFriendly], [at('V12', 0.8), sGiggle]]), seq(t, [[at('V12'), mp(5)], [at('V12', 0.55), listen]])), over: t > at('V12', 0.55) ? bricks(t, at('V12', 0.55)) : '' })],
-  [at('M13'), at('MEME3'), t => terraceScene(t, cam(monty({ ...mp(1), armL: relaxL, armR: mp(0).armR }, 540, 1120, 0.95, t), 540, 800, 1.1 + 0.25 * ease(clamp((t - at('M13')) / 0.25))))],
-  [at('MEME3'), at('V14'), t => terraceScene(t, push(vishnu(vPoint, 330, 1150, 0.66, t) + monty({ ...mp(2), fx: [] }, 790, 1220, 0.7, t), t, at('MEME3'), 0.04))],
-  [at('V14'), at('K15'), t => terraceScene(t, SCR(t) + push(vishnu(vWarm, 480, 1250, 0.72, t), t, at('V14'), 0.045, 480, 1000))],
-  [at('K15'), B('endcard').start, t => terraceScene(t, SCR(t) + sakshi(seq(t, [[at('K15'), sFriendly], [at('K15', 0.45), sPress]]), 480, 1270, 0.66, t))],
-  [B('endcard').start, DUR, t => ({ ...terraceScene(t, sakshi(sProud, 330, 1230, 0.66, t) + monty({ ...mp(5), armR: mp(0).armR }, 730, 1230, 0.66, t)), over: `<rect x="70" y="270" width="830" height="190" rx="24" fill="#1b1422" opacity="0.88"/>` + txt(485, 345, 1, 'Mulank ka keeda? Usko bhejo!', '#ffffff', 44) + txt(485, 420, 1, 'Complete guide: link', '#ffd24a', 50) })],
+  [at('M13'), at('MEME3'), t => parkScene(t, cam(montyC({ ...mp(1), armL: relaxL, armR: mp(0).armR }, 540, 1120, 0.95, t), 540, 800, 1.1 + 0.25 * ease(clamp((t - at('M13')) / 0.25))))],
+  [at('MEME3'), at('V14'), t => parkScene(t, push(vishnu(vPoint, 330, 1150, 0.66, t) + montyC({ ...mp(2), fx: [] }, 790, 1220, 0.7, t), t, at('MEME3'), 0.04))],
+  [at('V14'), at('K15'), t => parkScene(t, SCR(t) + push(vishnu(vWarm, 480, 1250, 0.72, t), t, at('V14'), 0.045, 480, 1000))],
+  [at('K15'), B('endcard').start, t => parkScene(t, SCR(t) + sakshi(seq(t, [[at('K15'), sFriendly], [at('K15', 0.45), sPress]]), 480, 1270, 0.66, t))],
+  [B('endcard').start, DUR, t => ({ ...parkScene(t, sakshi(sProud, 330, 1230, 0.66, t) + montyC({ ...mp(5), armR: mp(0).armR }, 730, 1230, 0.66, t)), over: `<rect x="70" y="270" width="830" height="190" rx="24" fill="#1b1422" opacity="0.88"/>` + txt(485, 345, 1, 'Mulank ka keeda? Usko bhejo!', '#ffffff', 44) + txt(485, 420, 1, 'Complete guide: link', '#ffd24a', 50) })],
 ];
 // close the gaps between beats: each shot holds until the next one starts
 SHOTS.forEach((s, i) => { if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; });

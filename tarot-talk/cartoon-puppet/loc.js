@@ -126,4 +126,66 @@ function court(t = 0, o = {}) {
   for (let k = 0; k < 6; k++) b += ink([[k * 200 - 60, 1700], [k * 260 - 240, 1920]], 3, { color: '#1e2a5a', taper: [0, 0] });
   return { defs, back: b, front: '' };
 }
-module.exports = { terrace, office, court, sutliBomb, diya, softCloud };
+
+// ---------------- PARK: simple Indian city park at dusk (owner, 23 Nov 2026: "change scene, maybe a simple park") ----------------
+// Warm dusk sky, round-canopy neem/peepal-style trees, lamp posts that glow, a green bench, a walking path, flower beds.
+// Same rules: flat fills + one shade, thick ink on near things, no ink on far things, gentle ambient motion only.
+function tree(x, y, s, t, i, far = false) {
+  const sway = Math.sin(t * 0.8 + i) * 4 * s, g = far ? '#5f9a6a' : '#3f9a52', gs = far ? '#4f8a5c' : '#2e7a40';
+  const trunk = catmull([[x - 22 * s, y], [x - 14 * s, y - 160 * s], [x + 14 * s, y - 160 * s], [x + 22 * s, y]], 4, true);
+  let o = far ? fill(trunk, '#6a5048') : part(trunk, '#8a5a3a', { sh: '#6a4228', shPts: [[x, y - 170 * s], [x + 30 * s, y - 170 * s], [x + 30 * s, y], [x, y]], w: WT.mid });
+  const blobs = [[0, -230, 120], [-90, -190, 85], [90, -190, 85], [-50, -290, 80], [55, -285, 82]];
+  const canopy = blobs.map(([dx, dy, r]) => `<circle cx="${(x + dx * s + sway).toFixed(1)}" cy="${(y + dy * s).toFixed(1)}" r="${(r * s).toFixed(1)}" fill="${g}" ${far ? '' : `stroke="${INK}" stroke-width="${WT.sil}"`}/>`).join('');
+  const inner = blobs.map(([dx, dy, r]) => `<circle cx="${(x + dx * s + sway).toFixed(1)}" cy="${(y + dy * s).toFixed(1)}" r="${(r * s - (far ? 0 : 3.5)).toFixed(1)}" fill="${g}"/>`).join('');
+  const shade = blobs.map(([dx, dy, r]) => `<circle cx="${(x + dx * s + sway + r * s * 0.35).toFixed(1)}" cy="${(y + dy * s + r * s * 0.3).toFixed(1)}" r="${(r * s * 0.62).toFixed(1)}" fill="${gs}"/>`).join('');
+  return o + canopy + inner + shade;
+}
+function lamp(x, y, t, i) {
+  const glow = 0.85 + 0.15 * Math.sin(t * 2 + i);
+  return `<circle cx="${x}" cy="${y - 330}" r="${90 * glow}" fill="#ffe9a8" opacity="0.28"/>` +
+    `<rect x="${x - 8}" y="${y - 320}" width="16" height="320" fill="#2f3b4a" stroke="${INK}" stroke-width="5"/>` +
+    `<path d="M${x - 34} ${y - 330} L${x + 34} ${y - 330} L${x + 22} ${y - 372} L${x - 22} ${y - 372} Z" fill="#fff4c4" stroke="${INK}" stroke-width="6"/>` +
+    `<path d="M${x - 40} ${y - 372} L${x + 40} ${y - 372} L${x} ${y - 400} Z" fill="#2f3b4a" stroke="${INK}" stroke-width="6"/>` +
+    `<rect x="${x - 22}" y="${y - 12}" width="44" height="14" rx="4" fill="#2f3b4a" stroke="${INK}" stroke-width="5"/>`;
+}
+function bench(x, y) {
+  let o = '';
+  for (const [dx, h] of [[-150, 90], [150, 90]]) o += `<rect x="${x + dx - 9}" y="${y - h + 30}" width="18" height="${h}" fill="#2f3b4a" stroke="${INK}" stroke-width="5"/>`;
+  for (const [dy, hh] of [[-110, 26], [-74, 26], [-14, 30]]) o += `<rect x="${x - 180}" y="${y + dy}" width="360" height="${hh}" rx="8" fill="${dy < -20 ? '#3f8f5a' : '#4aa36a'}" stroke="${INK}" stroke-width="6"/>`;
+  return o;
+}
+function flowers(x, y, n, t, seed) {
+  let o = `<ellipse cx="${x}" cy="${y}" rx="${n * 26}" ry="34" fill="#2e7a40" stroke="${INK}" stroke-width="5"/>`;
+  const cols = ['#ff6b8b', '#ffd24a', '#ff9a3c', '#ffffff'];
+  for (let k = 0; k < n * 2; k++) { const fx = x - n * 22 + k * 22 + rnd(seed + k) * 8, fy = y - 12 + rnd(seed + k + 50) * 14, c = cols[k % 4];
+    o += `<circle cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" r="9" fill="${c}" stroke="${INK}" stroke-width="2.5"/><circle cx="${fx.toFixed(1)}" cy="${fy.toFixed(1)}" r="3" fill="#a0522d"/>`; }
+  return o;
+}
+function park(t = 0, o = {}) {
+  const defs = `<linearGradient id="duskSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3f8f"/><stop offset="0.45" stop-color="#8a6cc0"/><stop offset="0.8" stop-color="#f59a8a"/><stop offset="1" stop-color="#ffc88a"/></linearGradient>
+    <radialGradient id="halo"><stop offset="0" stop-color="#fff4c4"/><stop offset="0.6" stop-color="#ffe07a" stop-opacity="0.6"/><stop offset="1" stop-color="#ffe07a" stop-opacity="0"/></radialGradient>`;
+  let b = `<rect width="1080" height="1920" fill="url(#duskSky)"/>`;
+  for (let i = 0; i < 24; i++) { const x = rnd(i) * 1080, y = rnd(i + 99) * 520, a = 0.3 + 0.5 * Math.abs(Math.sin(t * (1 + rnd(i + 7) * 2) + i)); b += `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(1.5 + rnd(i + 3) * 1.6).toFixed(1)}" fill="#fff" opacity="${a.toFixed(2)}"/>`; }
+  if (o.fireworks) b += firework(230, 380, 0.2, t, '#ff5c8a') + firework(820, 470, 1.4, t, '#6ae0ff', 12, 120) + firework(560, 230, 2.4, t, '#ffd24a', 16, 160);
+  // far city skyline (soft, no ink) behind the park
+  const far = [[0, 1120], [0, 940], [110, 940], [110, 880], [220, 880], [220, 960], [330, 960], [330, 860], [430, 860], [430, 930], [560, 930], [560, 870], [690, 870], [690, 950], [820, 950], [820, 890], [950, 890], [950, 950], [1080, 950], [1080, 1120]];
+  b += `<path d="${poly(far)}" fill="#7a6aa8" opacity="0.7"/>`;
+  b += tree(120, 1080, 0.9, t, 1, true) + tree(980, 1070, 0.85, t, 2, true) + tree(620, 1060, 0.7, t, 3, true);
+  // lawn, path, hedge line
+  b += `<rect y="1040" width="1080" height="880" fill="#7cc26b"/>`;
+  b += `<path d="M380 1040 L700 1040 L980 1920 L100 1920 Z" fill="#e8d6a8"/>` + ink([[380, 1040], [100, 1920]], WT.mid, { taper: [0, 0] }) + ink([[700, 1040], [980, 1920]], WT.mid, { taper: [0, 0] });
+  for (let k = 0; k < 10; k++) { const y = 1060 + k * k * 9.5; b += ink([[380 - (y - 1040) * 0.32, y], [700 + (y - 1040) * 0.32, y]], 2.5, { color: '#cdb98a', taper: [0, 0] }); }
+  b += ink([[0, 1040], [1080, 1040]], WT.sil, { taper: [0, 0] });
+  for (let k = 0; k < 14; k++) b += `<circle cx="${k * 80 + 20}" cy="1046" r="34" fill="#4aa35c" stroke="${INK}" stroke-width="5"/>`;
+  for (let k = 0; k < 14; k++) b += `<circle cx="${k * 80 + 20}" cy="1050" r="30" fill="#4aa35c"/>`;
+  b += tree(60, 1180, 1.05, t, 4) + tree(1020, 1190, 1.0, t, 5);
+  b += lamp(250, 1240, t, 1) + lamp(830, 1240, t, 2) + bench(900, 1300) + flowers(160, 1330, 4, t, 11);
+  // grass tufts
+  for (let k = 0; k < 18; k++) { const x = rnd(k + 70) * 1080, y = 1500 + rnd(k + 90) * 380; if (x > 120 && x < 960 && y > 1480) continue;
+    b += ink(catmull([[x - 10, y], [x - 4, y - 22], [x, y]], 3, false), 3, { color: '#3f8f4a', taper: [0.1, 0.6] }) + ink(catmull([[x, y], [x + 6, y - 26], [x + 12, y]], 3, false), 3, { color: '#3f8f4a', taper: [0.1, 0.6] }); }
+  if (o.dim) b += `<rect width="1080" height="1920" fill="#05040c" opacity="${o.dim}"/>`;
+  const front = flowers(940, 1870, 4, t, 33) + flowers(110, 1880, 3, t, 44);
+  return { defs, back: b, front };
+}
+
+module.exports = { park, terrace, office, court, sutliBomb, diya, softCloud };

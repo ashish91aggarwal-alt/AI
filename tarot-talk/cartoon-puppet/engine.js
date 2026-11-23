@@ -113,7 +113,7 @@ function limb(chain, r, { col, sh, w = WT.sil * 0.85 }) {
     `<mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1920"><path d="${d}" fill="none" stroke="#fff" stroke-width="${(2 * r).toFixed(1)}" stroke-linecap="round" stroke-linejoin="round"/></mask>` +
     `<path mask="url(#${id})" d="${d}" transform="translate(${off[0].toFixed(1)} ${off[1].toFixed(1)})" fill="none" stroke="${sh}" stroke-width="${(2 * r * 0.55).toFixed(1)}" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
-function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outward, bracelet = 'beads', palmMid = null, sleeve = null, handScale = 1.1 }) {
+function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outward, bracelet = 'beads', palmMid = null, sleeve = null, handScale = 1.1, handStyle = 'slender' }) {
   const ux = W[0] - E[0], uy = W[1] - E[1], ul = Math.hypot(ux, uy) || 1, d = [ux / ul, uy / ul];
   const tail = 40 * hs, P = [W[0] + d[0] * tail, W[1] + d[1] * tail];
   let o = '';
@@ -140,7 +140,8 @@ function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outw
     if (sleeve.trim) o += ink([[C2[0] + n2[0] * cw - d[0] * 8, C2[1] + n2[1] * cw - d[1] * 8], [C2[0] - n2[0] * cw - d[0] * 8, C2[1] - n2[1] * cw - d[1] * 8]], 7, { color: sleeve.trim, taper: [0.05, 0.05], amp: 0.4 });
     o += meltPatch; // after the sleeve, so the sleeve's start cap and the kurta outline under it vanish
   }
-  o += FINGERS[handPose] !== undefined ? slenderHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2]) : hand(handPose, W, handAng, hs, skin, skinSh, gold, false, r[2], palmMid);
+  o += handStyle === 'chubby' && FINGERS[handPose] !== undefined ? chubbyHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2])
+    : FINGERS[handPose] !== undefined ? slenderHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2]) : hand(handPose, W, handAng, hs, skin, skinSh, gold, false, r[2], palmMid);
   if (bracelet === 'kada') { const nb = [-d[1], d[0]], bw = r[2] * 1.2, bc = [W[0] - d[0] * 6 * hs, W[1] - d[1] * 6 * hs];
     const k = [[bc[0] + nb[0] * bw - d[0] * 7, bc[1] + nb[1] * bw - d[1] * 7], [bc[0] + nb[0] * bw + d[0] * 7, bc[1] + nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw + d[0] * 7, bc[1] - nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw - d[0] * 7, bc[1] - nb[1] * bw - d[1] * 7]];
     return o + fill(k, gold) + inkLoop(catmull(k, 3, true), WT.fine + 1); }
@@ -212,6 +213,36 @@ function slenderHand(pose, W, d, s, mirror, skin, skinSh, wr) {
   // thumb on top
   const [tb, tsegs] = spec.th;
   o += tube(fingerChain(T, tb, tsegs), [R(12), R(11), R(10)], { col: skin, sh: skinSh, w: WT.mid * 0.7, capStart: false, capEnd: true, endTaper: 0.3 });
+  return o;
+}
+// Chubby cartoon "mitten" hand (owner, 23 Nov 2026: Monty's hands looked faulty/spidery). Fingers are one soft block
+// with short division lines, a chunky thumb, round tips: the peepal-farm style the owner likes. Same local frame as
+// slenderHand: wrist at (0,0), +y along the forearm away from the wrist, +x = little-finger side (mirror flips it).
+function chubbyHand(pose, W, d, s, mirror, skin, skinSh, wr) {
+  const n = [-d[1] * mirror, d[0] * mirror];
+  const T = ([x, y]) => [W[0] + (n[0] * x + d[0] * y) * s, W[1] + (n[1] * x + d[1] * y) * s];
+  const w0 = Math.max(18, wr / s);
+  const shape = pts => catmull(pts.map(T), 8, true), line = (pts, w = WT.mid) => ink(catmull(pts.map(T), 5, false), w, { taper: [0.3, 0.3] });
+  const shade = sh => clipped(sh, fill(catmull([[8, -10], [60, -10], [60, 110], [8, 110]].map(T), 3, true), skinSh));
+  let o = '';
+  if (pose === 'fist' || pose === 'point') {
+    const ball = shape([[-w0, -4], [-34, 18], [-36, 44], [-24, 66], [0, 72], [24, 66], [36, 44], [34, 18], [w0, -4]]);
+    if (pose === 'point') { const fin = shape([[-30, 50], [-34, 90], [-30, 118], [-20, 126], [-10, 118], [-8, 88], [-10, 54]]); o += fill(fin, skin) + inkLoop(fin, WT.mid); }
+    o += fill(ball, skin) + shade(ball) + inkLoop(ball, WT.mid);
+    o += line([[-6, 60], [-4, 70]], WT.fine + 1) + line([[12, 58], [14, 68]], WT.fine + 1) + (pose === 'fist' ? line([[-22, 56], [-20, 66]], WT.fine + 1) : '');
+    o += line([[-30, 30], [-8, 40], [14, 38]], WT.mid);                           // thumb wrapped across the front
+    return o;
+  }
+  const open = pose === 'palm';
+  const hand = open
+    ? shape([[-w0, -4], [-30, 20], [-34, 50], [-34, 80], [-26, 96], [-12, 100], [2, 102], [16, 100], [28, 94], [34, 76], [34, 46], [30, 20], [w0, -4]])
+    : shape([[-w0, -4], [-28, 22], [-30, 52], [-26, 78], [-12, 88], [6, 90], [22, 82], [30, 58], [30, 26], [w0, -4]]);
+  const thumb = open ? shape([[-26, 14], [-50, 24], [-60, 40], [-54, 50], [-36, 44], [-24, 34]])
+                     : shape([[-24, 18], [-40, 30], [-44, 48], [-34, 56], [-22, 46]]);
+  o += fill(thumb, skin) + inkLoop(thumb, WT.mid) + fill(hand, skin) + shade(hand) + inkLoop(hand, WT.mid);
+  // finger divisions: short soft lines at the tip end only (3 lines = 4 chubby fingers)
+  const tip = open ? 100 : 88, base = open ? 66 : 62;
+  for (const x of [-14, 2, 18]) o += ink(catmull([[x, tip - 22], [x, tip - 6]].map(T), 3, false), WT.fine, { color: '#9a5a3c', taper: [0.4, 0.4] });
   return o;
 }
 // drawn hand key-poses (swapped, not transformed into each other)

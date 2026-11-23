@@ -18,7 +18,7 @@
 | A video's script package, `video.json`, `captions.json`, `sfx_cues.json` | `tarot-talk/videos/<slug>/` |
 | Its film (shot list + its own graphics) | `tarot-talk/cartoon-puppet/cuts/<slug>.js` |
 | A new character | `tarot-talk/cartoon-puppet/char_<id>.js` + `cast_<id>.js`, plus a row in `CHARACTERS.md` |
-| A new location | a function in `tarot-talk/cartoon-puppet/loc.js` |
+| A new location | a function in `tarot-talk/cartoon-puppet/loc.js` (terrace, office, court, park) |
 | Meme lines and trending sounds (shared, reusable) | `tarot-talk/assets/audio/memes/` + a row in its `catalog.json`; the video's `video.json` lists the ones it uses |
 | Scratch, renders, check stills | `cartoon-puppet/work/`, `out/`, `cast/` (git-ignored; never commit them) |
 
@@ -44,6 +44,7 @@ Reviewer prompt that worked:
 **Drawing**
 - **Code only.** No image or video model, no GPU, no frames through chat (render stills and check them). Never generate one picture and cut it up.
 - **Joints only.** Characters move through their own joints, never by sliding, hopping, rotating or stretching the whole picture, and never by warping. Shoulders melt into the torso; no bolted SVG joints.
+- **Chubby mitten hands** (owner, 23 Nov 2026: Monty's hands looked faulty). Fingers form one soft block with short division lines and a chunky thumb; no spread, spidery fingers.
 - **Hands never grip props.** Props float by magic with a glow, or are fused into a closed fist. Fingers are short, chubby and cute, never spidery or symmetric.
 - **Research real objects before drawing them** (search what they look like). No real brand logos (use a TT badge).
 - **Indian look**, never East-Asian. Avoid the "AI look": anime sparkle eyes, perfect symmetry, generic stock vector style. Match the reference style instead.
@@ -56,6 +57,7 @@ Reviewer prompt that worked:
 - **Change the expression on the phrase** (owner, 23 Nov 2026: "very least expressive"). Each beat gets its own face and changes with what is being said: Monty reacts while listening; Sakshi teaches with different cute faces line by line. Default poses for a whole beat are not enough.
 - **Few winks** (owner: "too much one eye shutting"): at most one wink per reel; use raised brows, laughs, pointing and posture instead.
 - **Numbers on screen:** show the maths from the birthdate itself (date → digits, month → number, year → digit, each labelled underneath), so viewers can work out their own. Keep the "PERSONAL YEAR 2026/2027" header on the board the whole time, switching at the year flip.
+- **Board timing:** sync every number on the board to the spoken word (transcribe the line with find_phrase.py and use its word times), so viewers see each number as it is said.
 - **No repeated lines:** check that the end of one voice line doesn't repeat the start of the next (e.g. "Uska 9. Uska 9."). Trim the take instead of re-generating.
 - **Music must be strong:** use the beat kit in make_music.py (`beat` / `sadpad` / `drop`, levelled by `music_rms_db`). The bed should sit about 5 dB under the voice and duck about 9 dB under speech. The old tabla groove alone read as weak.
 - **Sakshi never jerks her head on syllables** (owner: "just twitching her head"). act.js gives her a slow small sway only; the emotion is carried by brows, lids, blush and mouth, with a happy-eye smile in the pauses.
