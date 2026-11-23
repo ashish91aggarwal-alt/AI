@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "2027-same-mulank v7.2 rough cut done (Vishnu ji leads, big screen)",
- "next": "Owner + Sakshi review; then music/SFX polish and final",
+ "doing": "2027-same-mulank v8.1 rough cut with owner notes applied",
+ "next": "Owner/Sakshi review",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-23T09:53:53Z"
  },
- "updated_at": "2026-11-23T12:22:22Z"
+ "updated_at": "2026-11-23T12:43:15Z"
 }
