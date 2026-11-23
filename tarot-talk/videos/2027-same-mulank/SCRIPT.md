@@ -107,5 +107,5 @@ Meme spacing: at about 3.5 s, 27 s and 34 s, so they do not crowd.
 ## Open points for the owner
 1. "Jal lijiye" clip: can you send it (a screen recording of the reel audio is fine)? If not, use Instagram's in-app audio at upload, or swap in another meme.
 2. The link: which guide, and where is the link? A clickable link on a reel is a limited feature (Meta Verified). If the reel can't carry it, the line becomes "Poori 2027 guide ka link bio mein hai."
-3. Personal year Jan–Dec or birthday to birthday (Sakshi). This script uses Jan–Dec.
+3. Decided (owner, 23 Nov 16:03 IST): Jan–Dec personal year. The owner said yes to: sending the Jal lijiye clip, the link CTA, reusing the last reel's voices, and the SRK clip swap if he has it.
 4. Voices for the normal lines (Monty, Vishnu ji, Sakshi): reuse the same ElevenLabs voices as the Mulank 8 reel? How many versions, and what credit cap?
