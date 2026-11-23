@@ -18,7 +18,7 @@
 | Its film (shot list + its own graphics) | `tarot-talk/cartoon-puppet/cuts/<slug>.js` |
 | A new character | `tarot-talk/cartoon-puppet/char_<id>.js` + `cast_<id>.js`, plus a row in `CHARACTERS.md` |
 | A new location | a function in `tarot-talk/cartoon-puppet/loc.js` |
-| New meme lines or sounds | links in that video's `video.json` and in `../viral-hooks/HOOKS.md` |
+| Meme lines and trending sounds (shared, reusable) | `tarot-talk/assets/audio/memes/` + a row in its `catalog.json`; the video's `video.json` lists the ones it uses |
 | Scratch, renders, check stills | `cartoon-puppet/work/`, `out/`, `cast/` (git-ignored; never commit them) |
 
 Write nothing anywhere else in the repo. Other folders belong to other roles (`team/roles.json`); message that role instead.
@@ -60,8 +60,8 @@ Reviewer prompt that worked:
 - Consistent between characters in a shot (`prop_gate.js`).
 
 **Audio**
-- **Original meme voices beat our re-voices** for viral lines. Add trending meme sounds in gaps.
-- Keep clips out of git; store only their links.
+- **Original meme voices beat our re-voices** for viral lines. Add trending meme sounds in gaps. Look in `assets/audio/memes/catalog.json` first.
+- Clips are saved once in `tarot-talk/assets/audio/memes/` (with `catalog.json`) and reused. Check the catalog before searching the web.
 - Our own SFX and music are synthesised (no paid music).
 
 ## Lessons that cost us time (don't repeat)

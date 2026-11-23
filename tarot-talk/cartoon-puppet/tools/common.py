@@ -22,4 +22,4 @@ def mapper(work):
             if p['a'] <= to <= p['b'] and p['b'] > p['a']: return p['A'] + (to - p['a']) * (p['B'] - p['A']) / (p['b'] - p['a'])
         return to
     return new_t
-def memes_dir(): d = os.path.join(HERE, 'audio', 'memes'); os.makedirs(d, exist_ok=True); return d
+def memes_dir(): d = os.path.join(HERE, '..', 'assets', 'audio', 'memes'); os.makedirs(d, exist_ok=True); return d   # shared, committed assets

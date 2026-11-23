@@ -42,7 +42,7 @@ bash make_reel.sh <slug>        # first watchable skeleton on the real voice tra
    - `node prop_gate.js` must pass.
    - Review a contact sheet of about 20 stills with a fresh reviewer, then show the owner.
 3. **Viral audio.**
-   - Find original meme lines for any viral phrase in the script, and trending sounds for the reaction beats (`../viral-hooks/HOOKS.md`).
+   - Check `../assets/audio/memes/catalog.json` first; find original meme lines for any viral phrase in the script, and trending sounds for the reaction beats (`../viral-hooks/HOOKS.md`).
    - Check each clip with `python3 find_phrase.py <file> small`.
    - Add meme lines to `video.json` `meme_lines` (url, in, out, script-clock window they replace), sounds to `sound_files`, and placements to `sfx_cues.json`.
 4. **Acting and final (Batch 3).**
@@ -56,5 +56,5 @@ Check pictures any time without spending tokens on frames: `VIDEO=<slug> node re
 ## 4. Deliver and save
 
 - Send the mp4, plus short clips of anything that changed.
-- Commit code and `videos/<slug>/` with a message starting `[tt:production]`. Never commit meme clips (`audio/memes/` is ignored).
+- Commit code, `videos/<slug>/` and any new clips in `assets/audio/memes/` (with their `catalog.json` rows), with a message starting `[tt:production]`.
 - Run `python3 tarot-talk/team/team.py status ...` and then `sync`.

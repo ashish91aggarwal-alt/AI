@@ -46,7 +46,7 @@ The cue sheet is `mulank8_sfx_cues.json` (time s, sfx, gain dB, meme flag). Mix 
 
 ## Original meme clips: free direct sources (found 23 Nov 2026)
 
-These clips are not stored in this repo, because the repo is public and the clips belong to their owners. The links below go straight to the audio files.
+The clips are saved for reuse in `../assets/audio/memes/` (see `catalog.json` there). The links below are their sources.
 
 | Line | Speaker | Page | Direct audio | Length |
 |---|---|---|---|---|

@@ -29,7 +29,7 @@ Needs node 18+ (`@resvg/resvg-js`, `perfect-freehand`), python3 with numpy and s
 | `kit.js` | Everything a film file needs: placed characters, scenes, camera, text, captions, the voice clock, `film()` |
 | `cuts/<slug>.js` | One film per video: its shot list (script clock) and its own graphics |
 | `tools/new_video.py` | Scaffolds a new video (config, captions, cue file, shot list) |
-| `tools/fetch_clips.py` | Downloads that video's meme clips from their links (never committed) |
+| `tools/fetch_clips.py` | Takes the video's meme clips from `../assets/audio/memes/`; downloads only missing ones and saves them there |
 | `tools/build_voice.py` | Splices original meme lines into the voice track (edit list) -> `work/<slug>/voice.wav` + `timeline.json` |
 | `tools/lipsync_prep.py` | Drive data for the acting layer -> `work/<slug>/lipsync.json` |
 | `tools/mix_sfx.py`, `tools/make_music.py`, `tools/final_mix.py` | SFX and meme sounds; original tabla, santoor and tanpura bed ducked under speech; -14 LUFS |
@@ -61,7 +61,7 @@ Needs node 18+ (`@resvg/resvg-js`, `perfect-freehand`), python3 with numpy and s
   - These lines play as the original clips: "Ab tu gaya beta" (Puneet Superstar), "Aayein?!", "Ruko zara sabar karo" (Hindustani Bhau) and "Baccha hai tu mera" (Rakesh Bedi, Dhurandhar 2).
   - These trending sounds are in the mix: FAAAH, vine boom, moye moye, anime wow and the oh-no-no-no laugh.
   - Meme sounds land on Monty, never as mockery of a deity, and sit in gaps or low under reactions.
-  - Clips stay out of git (public repo); only their links are stored.
+  - Clips are saved once in `tarot-talk/assets/audio/memes/` with `catalog.json` and reused by every video (owner's choice, 23 Nov 2026).
   - Risk accepted by the owner: Instagram may mute or flag film or song audio.
 - **Faces must be active and catchy:** lip-sync on every line, blinks, eye darts, brow pops, and a small punch on every cut.
 
