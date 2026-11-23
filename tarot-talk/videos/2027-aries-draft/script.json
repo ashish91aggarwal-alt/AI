@@ -1,0 +1,644 @@
+{
+ "meta": {
+  "title": "Aries 2027 — Vishnu ji drafts, Sakshi notes",
+  "channel": "Tarot Talk By Sakshi (Instagram Reels)",
+  "version": "v2 script draft (after 2 reviews) (times are estimates until voices exist)",
+  "runtime_s": 81.6,
+  "format": "1080x1920, 24 fps, 9:16",
+  "language": "Hindi/Hinglish voice, Hinglish on-screen text",
+  "cta": "send to an Aries friend + comment ARIES for all dates (owner to confirm what the DM sends)",
+  "safe_zones_px": {
+   "top": 250,
+   "bottom": 400,
+   "right": 150
+  },
+  "text_rules": "min 48 px, max 2 text items on screen, captions count",
+  "source": "Aries 2027 summary given by the owner, 23 Nov 2026 (Vedic: Saturn 12th then 1st, Jupiter 5th, Rahu 10th / Ketu 4th)"
+ },
+ "beats": [
+  {
+   "id": "K01",
+   "type": "line",
+   "start": 0.0,
+   "end": 4.74,
+   "who": "Sakshi",
+   "line": "Prabhu, Aries ka 2027 likhiye… jaldi! Inse sabar nahi hota.",
+   "caption_chunks": [
+    {
+     "text": "Prabhu,",
+     "from": 0.0,
+     "to": 0.4
+    },
+    {
+     "text": "Aries ka 2027 likhiye…",
+     "from": 0.4,
+     "to": 2.77
+    },
+    {
+     "text": "jaldi!",
+     "from": 2.77,
+     "to": 3.16
+    },
+    {
+     "text": "Inse sabar nahi hota.",
+     "from": 3.16,
+     "to": 4.74
+    }
+   ],
+   "picture": "Night cloud study. Vishnu ji on his cloud; a big glowing scroll 'ARIES 2027' floats beside him and a magic quill writes by itself. Sakshi floats in on a small cloud, diary open in the air, pen glowing by her hand, tapping her foot.",
+   "camera": "Opens mid-motion on the quill; quick pull back to the two-shot.",
+   "sound": "Quill scratch, page whoosh.",
+   "card": "Hook card from frame 0: 'ARIES 2027: SADE SATI MEIN BHI ACHHA?' + ram-horn icon",
+   "voice_file": "voices/lines/K01.wav",
+   "meme": false,
+   "n": 1
+  },
+  {
+   "id": "V02",
+   "type": "line",
+   "start": 4.89,
+   "end": 9.83,
+   "who": "Vishnu ji",
+   "line": "Haan, Mesh wale pehle koodte hain… phir poochte hain, paani kitna gehra tha.",
+   "caption_chunks": [
+    {
+     "text": "Haan,",
+     "from": 4.89,
+     "to": 5.27
+    },
+    {
+     "text": "Mesh wale pehle koodte hain…",
+     "from": 5.27,
+     "to": 7.17
+    },
+    {
+     "text": "phir poochte hain,",
+     "from": 7.17,
+     "to": 8.31
+    },
+    {
+     "text": "paani kitna gehra tha.",
+     "from": 8.31,
+     "to": 9.83
+    }
+   ],
+   "picture": "Vishnu ji sly grin, eyebrow up; cut-in gag: a cartoon ram jumps into a pond, splash. Sakshi giggles and writes.",
+   "camera": "Push in on Vishnu ji, cut-in on the ram gag.",
+   "sound": "Boing, splash.",
+   "card": "Card: 'ARIES = JOSH FIRST, SOCH LATER'",
+   "voice_file": "voices/lines/V02.wav",
+   "meme": false,
+   "n": 2
+  },
+  {
+   "id": "V03",
+   "type": "line",
+   "start": 9.98,
+   "end": 13.14,
+   "who": "Vishnu ji",
+   "line": "Pehle kadwi dawai: Shani dev ki Sade Sati.",
+   "caption_chunks": [
+    {
+     "text": "Pehle kadwi dawai:",
+     "from": 9.98,
+     "to": 11.17
+    },
+    {
+     "text": "Shani dev ki Sade Sati.",
+     "from": 11.17,
+     "to": 13.14
+    }
+   ],
+   "picture": "Vishnu ji turns calm and serious; the scroll writes 'SADE SATI' in deep blue; a small respectful Shani symbol glows in the scroll corner (Shani dev not shown, no gaze).",
+   "camera": "Slow push in, light dims a touch.",
+   "sound": "Low drone, soft bell.",
+   "card": "Card (label inside): 'SHANI SADE SATI · Vedic maanyata'",
+   "voice_file": "voices/lines/V03.wav",
+   "meme": false,
+   "n": 3
+  },
+  {
+   "id": "K04",
+   "type": "line",
+   "start": 13.29,
+   "end": 16.55,
+   "who": "Sakshi",
+   "line": "Sade Sati?! Prabhu, mera pen kaanp raha hai!",
+   "caption_chunks": [
+    {
+     "text": "Sade Sati?!",
+     "from": 13.29,
+     "to": 14.11
+    },
+    {
+     "text": "Prabhu,",
+     "from": 14.11,
+     "to": 14.51
+    },
+    {
+     "text": "mera pen kaanp raha hai!",
+     "from": 14.51,
+     "to": 16.55
+    }
+   ],
+   "picture": "Sakshi's eyes go wide, brows up; her floating pen shivers and scribbles a zig-zag. The comic fear is hers, never about Shani dev.",
+   "camera": "Snap zoom on Sakshi.",
+   "sound": "Vine boom on her reaction.",
+   "card": "—",
+   "voice_file": "voices/lines/K04.wav",
+   "meme": false,
+   "n": 4
+  },
+  {
+   "id": "V05",
+   "type": "line",
+   "start": 16.7,
+   "end": 22.71,
+   "who": "Vishnu ji",
+   "line": "Darr mat. Shani dev mehnat ka phal dete hain, aur Guru ji ki kripa saath hai.",
+   "caption_chunks": [
+    {
+     "text": "Darr mat.",
+     "from": 16.7,
+     "to": 17.45
+    },
+    {
+     "text": "Shani dev mehnat ka phal dete hain,",
+     "from": 17.45,
+     "to": 20.08
+    },
+    {
+     "text": "aur Guru ji ki kripa saath hai.",
+     "from": 20.08,
+     "to": 22.71
+    }
+   ],
+   "picture": "Vishnu ji warm smile, open palm; a soft golden Jupiter glow rises over the scroll and the gloom clears. Sakshi exhales.",
+   "camera": "Gentle pull back, warm light returns.",
+   "sound": "Warm swell, shimmer.",
+   "card": "Card: 'SHANI = MEHNAT KA PHAL · GURU = KRIPA'",
+   "voice_file": "voices/lines/V05.wav",
+   "meme": false,
+   "n": 5
+  },
+  {
+   "id": "V06",
+   "type": "line",
+   "start": 22.86,
+   "end": 27.09,
+   "who": "Vishnu ji",
+   "line": "Sehat: March-April aur August-October, dhyaan rakhna. July? Full power.",
+   "caption_chunks": [
+    {
+     "text": "Sehat:",
+     "from": 22.86,
+     "to": 23.24
+    },
+    {
+     "text": "March-April aur August-October,",
+     "from": 23.24,
+     "to": 25.17
+    },
+    {
+     "text": "dhyaan rakhna.",
+     "from": 25.17,
+     "to": 25.94
+    },
+    {
+     "text": "July?",
+     "from": 25.94,
+     "to": 26.32
+    },
+    {
+     "text": "Full power.",
+     "from": 26.32,
+     "to": 27.09
+    }
+   ],
+   "picture": "Diary page fills: HEALTH with two careful windows. July is said in the voice only, with a flexing-arm doodle.",
+   "camera": "Diary page full-width card.",
+   "sound": "Pen ticks, ding on 'Full power'.",
+   "card": "Card: 'HEALTH ⚠ 9 Mar–26 Apr · 24 Aug–8 Oct' + small 'Doctor ki salah zaroor lein'",
+   "voice_file": "voices/lines/V06.wav",
+   "meme": false,
+   "n": 6
+  },
+  {
+   "id": "V07",
+   "type": "line",
+   "start": 27.24,
+   "end": 31.83,
+   "who": "Vishnu ji",
+   "line": "Naukri: kaam ka pressure. Aur office mein koi boss ke kaan bharega.",
+   "caption_chunks": [
+    {
+     "text": "Naukri:",
+     "from": 27.24,
+     "to": 27.62
+    },
+    {
+     "text": "kaam ka pressure.",
+     "from": 27.62,
+     "to": 28.77
+    },
+    {
+     "text": "Aur office mein koi boss ke kaan bharega.",
+     "from": 28.77,
+     "to": 31.83
+    }
+   ],
+   "picture": "Cut-in gag: a tiny cartoon office; a faceless colleague whispers into a boss's huge ear. Vishnu ji raises one brow knowingly.",
+   "camera": "Cut-in, back to Vishnu ji.",
+   "sound": "Whisper, dun-dun.",
+   "card": "Card: 'JOB: PRESSURE · OFFICE POLITICS'",
+   "voice_file": "voices/lines/V07.wav",
+   "meme": false,
+   "n": 7
+  },
+  {
+   "id": "K08",
+   "type": "line",
+   "start": 31.98,
+   "end": 36.35,
+   "who": "Sakshi",
+   "line": "Naam bata dijiye, Prabhu… main diary mein note kar leti hun!",
+   "caption_chunks": [
+    {
+     "text": "Naam bata dijiye,",
+     "from": 31.98,
+     "to": 33.17
+    },
+    {
+     "text": "Prabhu…",
+     "from": 33.17,
+     "to": 33.57
+    },
+    {
+     "text": "main diary mein note kar leti hun!",
+     "from": 33.57,
+     "to": 36.35
+    }
+   ],
+   "picture": "Sakshi leans in, eyes narrowed, cunning grin, pen ready over a blank 'SUSPECTS' list.",
+   "camera": "Two-shot, she leans toward him.",
+   "sound": "Sneaky pizzicato.",
+   "card": "—",
+   "voice_file": "voices/lines/K08.wav",
+   "meme": false,
+   "n": 8
+  },
+  {
+   "id": "V09",
+   "type": "line",
+   "start": 36.5,
+   "end": 42.16,
+   "who": "Vishnu ji",
+   "line": "Naam nahi, taarikh lo. April-May aur September-October, naukri mein koi risk mat lena.",
+   "caption_chunks": [
+    {
+     "text": "Naam nahi,",
+     "from": 36.5,
+     "to": 37.25
+    },
+    {
+     "text": "taarikh lo.",
+     "from": 37.25,
+     "to": 38.01
+    },
+    {
+     "text": "April-May aur September-October,",
+     "from": 38.01,
+     "to": 39.9
+    },
+    {
+     "text": "naukri mein koi risk mat lena.",
+     "from": 39.9,
+     "to": 42.16
+    }
+   ],
+   "picture": "Vishnu ji laughs softly, shakes his head; 'SUSPECTS' on her page turns into 'DATES'.",
+   "camera": "Diary card.",
+   "sound": "Page flip.",
+   "card": "Card: 'JOB: NO RISKS 5 Apr–6 May · 21 Sep–21 Oct'",
+   "voice_file": "voices/lines/V09.wav",
+   "meme": false,
+   "n": 9
+  },
+  {
+   "id": "V10",
+   "type": "line",
+   "start": 42.31,
+   "end": 46.18,
+   "who": "Vishnu ji",
+   "line": "Paisa? Average se behtar. Best time: March-April, aur June.",
+   "caption_chunks": [
+    {
+     "text": "Paisa?",
+     "from": 42.31,
+     "to": 42.7
+    },
+    {
+     "text": "Average se behtar.",
+     "from": 42.7,
+     "to": 43.86
+    },
+    {
+     "text": "Best time:",
+     "from": 43.86,
+     "to": 44.63
+    },
+    {
+     "text": "March-April,",
+     "from": 44.63,
+     "to": 45.41
+    },
+    {
+     "text": "aur June.",
+     "from": 45.41,
+     "to": 46.18
+    }
+   ],
+   "picture": "Gold coins drift up from the scroll; Sakshi's eyes light up (round eyes, not anime).",
+   "camera": "Push in on coins.",
+   "sound": "Coin chimes.",
+   "card": "Card: 'MONEY ✓ 21 Mar–15 Apr · 4–28 Jun'",
+   "voice_file": "voices/lines/V10.wav",
+   "meme": false,
+   "n": 10
+  },
+  {
+   "id": "K11",
+   "type": "line",
+   "start": 46.33,
+   "end": 48.11,
+   "who": "Sakshi",
+   "line": "Toh likh doon… Ferrari?",
+   "caption_chunks": [
+    {
+     "text": "Toh likh doon…",
+     "from": 46.33,
+     "to": 47.67
+    },
+    {
+     "text": "Ferrari?",
+     "from": 47.67,
+     "to": 48.11
+    }
+   ],
+   "picture": "Sakshi sneakily writes 'FERRARI' big in her diary (a generic red car doodle, no logo), side-eye at him.",
+   "camera": "Close on the diary.",
+   "sound": "Sneaky tiptoe.",
+   "card": "—",
+   "voice_file": "voices/lines/K11.wav",
+   "meme": false,
+   "n": 11
+  },
+  {
+   "id": "V12",
+   "type": "line",
+   "start": 48.26,
+   "end": 49.63,
+   "who": "Vishnu ji",
+   "line": "Ferrari nahi. FD.",
+   "caption_chunks": [
+    {
+     "text": "Ferrari nahi.",
+     "from": 48.26,
+     "to": 49.17
+    },
+    {
+     "text": "FD.",
+     "from": 49.17,
+     "to": 49.63
+    }
+   ],
+   "picture": "Vishnu ji lifts a finger; the chakra glows softly (no toy spin) and 'FERRARI' turns into 'FD'. Sakshi pouts.",
+   "camera": "Quick two-shot.",
+   "sound": "Soft whoosh, eraser squeak.",
+   "card": "Card: 'FERRARI ✗  FD ✓'",
+   "voice_file": "voices/lines/V12.wav",
+   "meme": false,
+   "n": 12
+  },
+  {
+   "id": "V13",
+   "type": "line",
+   "start": 49.78,
+   "end": 56.51,
+   "who": "Vishnu ji",
+   "line": "Pyaar? Guru ji ki drishti hai. Love life badhiya, shaadi ke yog bhi. Bas August-October, behas nahi.",
+   "caption_chunks": [
+    {
+     "text": "Pyaar?",
+     "from": 49.78,
+     "to": 50.15
+    },
+    {
+     "text": "Guru ji ki drishti hai.",
+     "from": 50.15,
+     "to": 52.02
+    },
+    {
+     "text": "Love life badhiya,",
+     "from": 52.02,
+     "to": 53.15
+    },
+    {
+     "text": "shaadi ke yog bhi.",
+     "from": 53.15,
+     "to": 54.64
+    },
+    {
+     "text": "Bas August-October,",
+     "from": 54.64,
+     "to": 55.76
+    },
+    {
+     "text": "behas nahi.",
+     "from": 55.76,
+     "to": 56.51
+    }
+   ],
+   "picture": "Hearts float up; Sakshi claps and blushes; on 'behas nahi' a tiny storm cloud passes over a heart and clears.",
+   "camera": "Warm push in.",
+   "sound": "Sweet chime, tiny thunder.",
+   "card": "Card: 'LOVE ✓ · SHAADI YOG ✓ · careful 24 Aug–8 Oct · Vedic maanyata'",
+   "voice_file": "voices/lines/V13.wav",
+   "meme": false,
+   "n": 13
+  },
+  {
+   "id": "K14",
+   "type": "line",
+   "start": 56.66,
+   "end": 60.29,
+   "who": "Sakshi",
+   "line": "Toh mummy ki daant bhi dil pe nahi lena?",
+   "caption_chunks": [
+    {
+     "text": "Toh mummy ki daant bhi dil pe nahi lena?",
+     "from": 56.66,
+     "to": 60.29
+    }
+   ],
+   "picture": "Sakshi, hopeful and cheeky, pen over 'FAMILY'.",
+   "camera": "Close on Sakshi.",
+   "sound": "Tiny pop.",
+   "card": "—",
+   "voice_file": "voices/lines/K14.wav",
+   "meme": false,
+   "n": 14
+  },
+  {
+   "id": "V15",
+   "type": "line",
+   "start": 60.44,
+   "end": 66.45,
+   "who": "Vishnu ji",
+   "line": "Mummy ki daant? Wo toh sar aankhon pe. Ghar ki mahilaon ka samman, yahi asli upay.",
+   "caption_chunks": [
+    {
+     "text": "Mummy ki daant?",
+     "from": 60.44,
+     "to": 61.57
+    },
+    {
+     "text": "Wo toh sar aankhon pe.",
+     "from": 61.57,
+     "to": 63.45
+    },
+    {
+     "text": "Ghar ki mahilaon ka samman,",
+     "from": 63.45,
+     "to": 65.32
+    },
+    {
+     "text": "yahi asli upay.",
+     "from": 65.32,
+     "to": 66.45
+    }
+   ],
+   "picture": "Vishnu ji amused, gentle head shake, palm on heart; a cut-in of a warm family home with diyas.",
+   "camera": "Two-shot, cut-in.",
+   "sound": "Soft tabla.",
+   "card": "Card: 'FAMILY: badon ki baat dil pe nahi · PROPERTY: sirf saaf deal'",
+   "voice_file": "voices/lines/V15.wav",
+   "meme": false,
+   "n": 15
+  },
+  {
+   "id": "V17",
+   "type": "line",
+   "start": 66.6,
+   "end": 71.9,
+   "who": "Vishnu ji",
+   "line": "Upay: har Mangalwar Sundarkand, chaandi ki chain, aur netraheen vyakti ko samman se bhojan.",
+   "caption_chunks": [
+    {
+     "text": "Upay:",
+     "from": 66.6,
+     "to": 66.98
+    },
+    {
+     "text": "har Mangalwar Sundarkand,",
+     "from": 66.98,
+     "to": 68.11
+    },
+    {
+     "text": "chaandi ki chain,",
+     "from": 68.11,
+     "to": 69.25
+    },
+    {
+     "text": "aur netraheen vyakti ko samman se bhojan.",
+     "from": 69.25,
+     "to": 71.9
+    }
+   ],
+   "picture": "One card whose three rows fill in, each synced to the spoken word. Sakshi writes each, nodding.",
+   "camera": "Card full-width.",
+   "sound": "Bell on each row.",
+   "card": "Card: 'UPAY (Vedic maanyata) 1 Sundarkand, Mangalwar · 2 Chaandi ki chain · 3 Netraheen ko bhojan seva'",
+   "voice_file": "voices/lines/V17.wav",
+   "meme": false,
+   "n": 16
+  },
+  {
+   "id": "V18",
+   "type": "line",
+   "start": 72.05,
+   "end": 75.56,
+   "who": "Vishnu ji",
+   "line": "Gussa kam, mehnat zyada. Guru ji ka saath hai.",
+   "caption_chunks": [
+    {
+     "text": "Gussa kam,",
+     "from": 72.05,
+     "to": 72.83
+    },
+    {
+     "text": "mehnat zyada.",
+     "from": 72.83,
+     "to": 73.61
+    },
+    {
+     "text": "Guru ji ka saath hai.",
+     "from": 73.61,
+     "to": 75.56
+    }
+   ],
+   "picture": "Vishnu ji serene blessing, closes the scroll with a glow; Sakshi closes her diary with a happy sigh.",
+   "camera": "Slow push in, warm.",
+   "sound": "Warm swell.",
+   "card": "Card: 'GUSSA KAM, MEHNAT ZYADA'",
+   "voice_file": "voices/lines/V18.wav",
+   "meme": false,
+   "n": 17
+  },
+  {
+   "id": "K19",
+   "type": "line",
+   "start": 75.71,
+   "end": 80.45,
+   "who": "Sakshi",
+   "line": "Apne Aries dost ko bhejo. Mahine-wise guide chahiye? Comment karo ARIES.",
+   "caption_chunks": [
+    {
+     "text": "Apne Aries dost ko bhejo.",
+     "from": 75.71,
+     "to": 77.69
+    },
+    {
+     "text": "Mahine-wise guide chahiye?",
+     "from": 77.69,
+     "to": 79.27
+    },
+    {
+     "text": "Comment karo ARIES.",
+     "from": 79.27,
+     "to": 80.45
+    }
+   ],
+   "picture": "CTA. Sakshi alone (Vishnu ji not in this beat): diary floats up, the one wink of the reel, send arrow, then a comment-box graphic 'ARIES'.",
+   "camera": "Sakshi close.",
+   "sound": "Send whoosh.",
+   "card": "Card: 'COMMENT  ARIES'",
+   "voice_file": "voices/lines/K19.wav",
+   "meme": false,
+   "n": 18
+  },
+  {
+   "id": "endcard",
+   "type": "event",
+   "start": 80.6,
+   "end": 81.6,
+   "who": null,
+   "line": null,
+   "picture": "Sakshi's diary shows 'ARIES 2027 ✓' with a ram doodle; Sakshi alone with her diary (no deity in the selling part). Card: 'Send to your Aries friend · Comment ARIES'. Loops to frame 0.",
+   "camera": "Wide.",
+   "sound": "Chime.",
+   "voice_file": null,
+   "n": 19
+  }
+ ]
+}

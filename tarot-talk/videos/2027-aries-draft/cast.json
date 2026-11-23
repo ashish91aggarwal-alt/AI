@@ -1,0 +1,27 @@
+{
+ "note": "Cast for Aries 2027. Approved library characters only.",
+ "characters": [
+  {
+   "id": "vishnu",
+   "name": "Vishnu ji",
+   "role": "drafts Aries 2027, explains every area, teases; never the joke, not in the CTA",
+   "voice": {
+    "voice_id": "KWuQEGxZQtpWhRutt6g6",
+    "name": "Samar",
+    "model": "eleven_v4",
+    "speed": 1.15
+   }
+  },
+  {
+   "id": "sakshi",
+   "name": "Sakshi",
+   "role": "assistant noting in her diary: hook, fear and cunning gags, CTA only",
+   "voice": {
+    "voice_id": "hHyd5z9VxRT4YKoDwPRl",
+    "name": "Lalita (placeholder)",
+    "model": "eleven_v4",
+    "speed": 1.15
+   }
+  }
+ ]
+}
