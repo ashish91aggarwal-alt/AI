@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T16:24:22Z",
+ "built": "2026-11-23T16:48:02Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Aries 2027 reel: voices approved, skeleton cut rendered",
-   "next": "Batch 2: cloud-study location, scroll/quill/diary props, Sakshi wakeel coat, real shots",
+   "doing": "Aries 2027 rough cut v2 sent to owner",
+   "next": "Owner notes; then acting polish + final review",
    "blocked": "",
-   "updated_at": "2026-11-23T16:24:18Z",
+   "updated_at": "2026-11-23T16:48:02Z",
    "compactions": 0,
    "session": {
     "link": null,
