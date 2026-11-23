@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T13:07:17Z",
+ "built": "2026-11-23T13:28:21Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "2027-same-mulank v9: park scene, new Monty outfit/hands",
-   "next": "Owner/Sakshi review",
+   "doing": "2027-same-mulank v10: Monty redesign, toon hands, blended motion",
+   "next": "Owner review",
    "blocked": "",
-   "updated_at": "2026-11-23T13:07:14Z",
+   "updated_at": "2026-11-23T13:28:21Z",
    "compactions": 0,
    "session": {
     "link": null,
