@@ -1,0 +1,10 @@
+{
+ "note": "Mol-bhaav rashi series, Aries. Only Vishnu ji and Sakshi (owner, 24 Nov 2026). Approved library characters. Free voices, no credits.",
+ "characters": [
+  {"id": "vishnu", "name": "Vishnu ji", "role": "decides each round with one advice line; kind, in charge; never the joke; not in the CTA",
+   "voice": {"engine": "Kokoro-82M (Apache-2.0, local CPU)", "voice": "hm_psi", "tempo": 1.06, "pitch_semitones": -0.6}},
+  {"id": "sakshi", "name": "Sakshi", "role": "Aries ki wakeel: bargains, lip-syncs the meme clips, does the CTA alone",
+   "voice": {"engine": "Kokoro-82M (Apache-2.0, local CPU)", "voice": "hf_beta", "tempo": 1.10}}
+ ],
+ "voice_generation": {"date": "24 Nov 2026 IST", "credits_spent": 0, "script": "build_voices.py"}
+}

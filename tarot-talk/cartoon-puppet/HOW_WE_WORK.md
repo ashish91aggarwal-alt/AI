@@ -103,3 +103,9 @@ Reviewer prompt that worked:
 - **Small graphics:** small cards and text in the bottom zone failed the review; one big card per beat.
 - **Meme clips:** many meme buttons online are mislabelled. Always transcribe. `find_phrase.py` now decodes with ffmpeg (the installed PyAV broke on mp3).
 - **Generic reels:** for a single standalone reel the owner wants a general example (unnamed "WOH / TUM" cards), not named side cast, and a CTA of "send it to someone who needs it + the guide link".
+
+## Free voices when the owner says "no credits" (24 Nov 2026)
+- Kokoro-82M (Apache-2.0, local CPU, no account): Vishnu ji `hm_psi` (tempo 1.06, −0.6 st), Sakshi `hf_beta` (tempo 1.10). Feed the lines in Devanagari. A 92 s reel builds in about a minute. Script: `videos/molbhav-aries/build_voices.py` (model files: kokoro-onnx releases, model-files-v1.0, kept in `work/tts/`, never committed).
+- Piper Hindi voices (pratham, priyamvada, rohan) are non-commercial licences: do not use them for the channel.
+- Meme clips can be baked straight into the voice track by the voice script (cue-sheet rows `meme:<file>`, who = the character who lip-syncs). `meme_lines` then stays empty.
+- Every Vishnu ji pose in a cut goes through a kind-face filter (open lids, level raised brows, no 'sly'/'cat' mouth, no wink, small glance). See `kindV` in `cuts/molbhav-aries.js`.
