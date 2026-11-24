@@ -60,7 +60,7 @@ const vPleased = { ...V2, lid: 0.15, browL: 0.6, browR: 0.6, mouthShape: 'smileB
 const vBless = { ...V2, eyeMode: 'happy', mouthShape: 'smileBig', tilt: -3, blushHatch: true };
 
 // ---------- Sakshi faces (with the wakeel coat) ----------
-const C = p => ({ ...p, coat: 1 });
+const C = p => ({ ...p, lawyer: 1 });   // owner 24 Nov 16:09: complete vakil costume (BCI rules for women advocates)
 const k0 = kp(0), k2 = kp(2);
 const armsUp = { armL: { E: [330, 990], W: [300, 870], hand: 'palm' }, armR: { E: [750, 990], W: [780, 870], hand: 'palm' } };
 const armsOut = { armL: { E: [300, 1060], W: [220, 1000], hand: 'palm' }, armR: { E: [780, 1060], W: [860, 1000], hand: 'palm' } };
@@ -167,13 +167,13 @@ function officeGag(t, t0) {
   return panel(t, t0, o, '#e9e2d0');
 }
 // family cut-in: a warm home with diyas
-function homeGag(t, t0) {
+function homeGag(t, t0, people = true) {
   let o = `<rect x="100" y="300" width="820" height="640" fill="#2a2058"/>` + glow(510, 640, 380, 0.7);
   o += `<path d="M280 620 L510 430 L740 620 Z" fill="#c2463a" stroke="${INK}" stroke-width="8"/><rect x="310" y="610" width="400" height="250" fill="#f3d9a8" stroke="${INK}" stroke-width="8"/><rect x="470" y="720" width="80" height="140" rx="6" fill="#8a5a3a" stroke="${INK}" stroke-width="6"/>`;
   for (const wx of [350, 590]) o += `<rect x="${wx}" y="660" width="80" height="70" fill="#ffd56a" stroke="${INK}" stroke-width="6"/>`;
   o += `<path d="M310 612 ${[0,1,2,3,4,5,6,7].map(k => `Q${335 + k * 50} 650 ${360 + k * 50} 612`).join(' ')}" fill="none" stroke="#2f8a3a" stroke-width="6"/>` + [0,1,2,3,4,5,6,7].map(k => `<path d="M${335 + k * 50} 628 l-10 22 l20 0 Z" fill="${k % 2 ? '#ff9a2a' : '#2f8a3a'}" stroke="${INK}" stroke-width="3"/>`).join('');
   o += `<g transform="translate(510 905)"><ellipse rx="120" ry="32" fill="#ff5c8a" stroke="${INK}" stroke-width="5"/><ellipse rx="80" ry="20" fill="#ffd24a"/><ellipse rx="40" ry="10" fill="#2fb3a0"/></g>`;
-  for (const [x, h, c] of [[380, 120, '#c2463a'], [440, 150, '#7a2f5a'], [600, 140, '#3a4a7a'], [650, 100, '#e0a030']]) o += `<g transform="translate(${x} 860)"><circle cx="0" cy="${-h}" r="22" fill="#d9a77e" stroke="${INK}" stroke-width="5"/><path d="M-26 ${-h + 24} Q0 ${-h + 10} 26 ${-h + 24} L30 0 L-30 0 Z" fill="${c}" stroke="${INK}" stroke-width="5"/></g>`;
+  if (people) for (const [x, h, c] of [[380, 120, '#c2463a'], [440, 150, '#7a2f5a'], [600, 140, '#3a4a7a'], [650, 100, '#e0a030']]) o += `<g transform="translate(${x} 860)"><circle cx="0" cy="${-h}" r="22" fill="#d9a77e" stroke="${INK}" stroke-width="5"/><path d="M-26 ${-h + 24} Q0 ${-h + 10} 26 ${-h + 24} L30 0 L-30 0 Z" fill="${c}" stroke="${INK}" stroke-width="5"/></g>`;
   [170, 270, 750, 850].forEach((x, i) => { o += L.diya(x, 900, t, i + 40, 0.8); });
   return panel(t, t0, o, '#2a2058');
 }
@@ -199,7 +199,7 @@ const W = require('../loc_world');
 const HD = require('../loc_hd');
 Object.assign(W, { alps: HD.alps, cityNight: HD.nyc, dubai: HD.dubai, taj: HD.taj, eiffel: HD.eiffel, indiaDusk: HD.varanasi });
 // one place per topic (owner rule: no single repeated scene); a cloud-wipe 'flight' between places
-const PLACES = [['K01', 'study'], ['V04', 'cosmos'], ['abhi_maza', 'dubai'], ['K12', 'cityNight'], ['K16', 'indiaDusk'], ['V19', 'taj'], ['K20', 'cosmos'], ['K23', 'study']];
+const PLACES = [['K01', 'study'], ['V04', 'cosmos'], ['abhi_maza', 'cityNight'], ['K11', 'indiaDusk'], ['K13', 'taj'], ['K16', 'cosmos'], ['K19', 'study']];
 const placeAt = t => { let k = 0; PLACES.forEach(([id], i) => { if (t >= at(id) - 0.05) k = i; }); return k; };
 let DX = 0;   // close-ups set this so the landmark sits beside the character instead of behind
 const study = (t, actors, o = {}) => {
@@ -315,67 +315,83 @@ const linkChip2 = (t, t0) => t < t0 ? '' : `<g transform="translate(500 400) sca
 const kC = (t, pose, dmode, page) => kClose(t, pose, dmode, page);
 const END = DUR - 1.0;
 
+// ---------- v12.1 props: Mangal vakri, home with Guru and Ketu, Shani's first knock ----------
+function marsRetro(t, t0) {   // red Mangal loops backwards along a dotted path; a calendar reads 10 JAN → 1 APR
+  const u = clamp((t - t0) / 2.2), a = Math.PI * (0.2 + 1.2 * ease(u)), x = 540 + 230 * Math.cos(a), y = 640 - 120 * Math.sin(a) * (u < 0.5 ? 1 : -0.4);
+  let o = `<rect x="100" y="300" width="820" height="640" fill="#140f2e"/>` + `<path d="M310 640 A230 120 0 1 1 770 640" fill="none" stroke="#8f7fd8" stroke-width="5" stroke-dasharray="10 12"/>`;
+  o += `<g transform="translate(${x} ${y})">${glow(0, 0, 110, 0.5)}<circle r="58" fill="#d8452f" stroke="${INK}" stroke-width="7"/><circle cx="-16" cy="-14" r="12" fill="#b8341f"/><circle cx="18" cy="16" r="9" fill="#b8341f"/></g>`;
+  o += `<g transform="translate(${x - 90} ${y - 10}) rotate(180)"><path d="M0 0 L40 -22 L40 22 Z" fill="#ffd24a" stroke="${INK}" stroke-width="4"/></g>`;
+  o += T(510, 400, 1, 'MANGAL VAKRI', '#ff8a6a', 60) + `<g transform="translate(510 860) scale(${pop(t, t0 + 0.6)})"><rect x="-260" y="-50" width="520" height="100" rx="20" fill="#fffaf0" stroke="${INK}" stroke-width="6"/>${T(0, 18, 1, '10 JAN → 1 APR', '#d22f48', 54)}</g>`;
+  return panel(t, t0, o, '#140f2e');
+}
+function homeGuruKetu(t, t0, tKetu) {   // the warm home (from the approved cut) with Guru's golden glow; Ketu's grey shadow drifts in
+  let extra = ''; if (t > tKetu) { const k = fade(t, tKetu, 0.6); extra += `<g opacity="${(0.75 * k).toFixed(2)}"><circle cx="760" cy="460" r="70" fill="#5a5a72"/><path d="M700 480 Q600 520 520 470" fill="none" stroke="#5a5a72" stroke-width="22" stroke-linecap="round"/>${T(760, 470, 1, 'KETU', '#eceaf6', 30)}</g>`; }
+  return homeGag(t, t0, false) + `<g transform="translate(250 450)">${glow(0, 0, 120, 0.7)}<circle r="54" fill="#e8b84a" stroke="${INK}" stroke-width="6"/>${T(0, 12, 1, 'GURU', '#5a3a0a', 30)}</g>` + extra;
+}
+function dastak(t, t0) {   // a closed door with a calm blue glow; three soft knock rings (no figure shown)
+  let o = `<rect x="380" y="430" width="260" height="440" rx="16" fill="#3a2a5a" stroke="${INK}" stroke-width="8"/><rect x="410" y="460" width="200" height="380" rx="10" fill="#4b3a72" stroke="${INK}" stroke-width="5"/><circle cx="590" cy="660" r="12" fill="#ffd24a" stroke="${INK}" stroke-width="4"/>`;
+  o = glow(510, 650, 300, 0.25) + o;
+  for (let i = 0; i < 3; i++) { const ti = t0 + 0.3 + i * 0.5; if (t < ti) continue; const k = clamp((t - ti) / 0.6); o += `<circle cx="510" cy="650" r="${150 + 300 * k}" fill="none" stroke="#c9d6ff" stroke-width="${18 * (1 - k) + 2}" opacity="${(1 - 0.8 * k).toFixed(2)}"/>`; }
+  return `<g transform="translate(0 260)">${o}</g>` + saturn(820, 760, 0.8);
+}
+const tally2 = (t, t0) => card(t, t0, 'FINAL HISAAB', [['PYAAR ✓   GHAR ½', t0 + 0.3, '#1b8a3a', 60], ['KAAM: APRIL KE BAAD', t0 + 0.7, '#d22f48', 58]], { h: 360 });
+
 const SHOTS = [
-  // K01 hook: the ARIES 2026 scroll drops from Sakshi's diary and keeps unrolling; Vishnu ji looks on, amused
+  // 1 K01 hook: cover, then the wakeel arrives; the 2026 scroll drops and keeps unrolling
   [0, at('V02'), t => t < COVER_HOLD ? coverFrame(t) : ({ ...study(t, snapIn(longScroll(t, Math.max(2.6, at('K01', 0.55)), 560, 760, 0.75) + two(t, seq(t, [[0, vWrite], [at('K01', 0.6), vAmused]]), seq(t, [[0, sObject], [at('K01', 0.5), sLawyer]]), '', { mode: 'idle' }), t, 0, 1.12, 1.0, 540, 900)), over: hookCard2(t) })],
-  // V02 "itni lambi list? shikayat hai ya shaadi ka menu?": he leans to watch it still unrolling, then laughs
+  // 2 V02 "itni lambi list… shaadi ka menu?": he watches it unroll, then laughs
   [at('V02'), at('K03'), t => study(t, push(vClose(t, seq(t, [[at('V02'), vAmused], [at('V02', 0.55), vTease], [at('V02', 0.85), vLaugh]])) + longScroll(t, Math.max(2.6, at('K01', 0.55)), 770, 430, 0.62, 2000), t, at('V02'), 0.03))],
-  // K03 the 2026 pain list: doodles pop on the words (salary, 3 AM, share)
-  [at('K03'), at('K03', 0.8), t => study(t, sakshi(seq(t, [[at('K03'), sPout], [at('K03', 0.3), sDespair], [at('K03', 0.6), sShock]]), 790, 1220, 0.45, t) + painPanel(t, at('K03'), at('K03', 0.27), at('K03', 0.6)))],
-  // FAAAH on the crash: Sakshi's jaw drops (snap zoom), the chart falls past her
+  // 3 K03 2026 pain: doodles pop on the words (kharcha, neend, share)
+  [at('K03'), at('K03', 0.8), t => study(t, sakshi(seq(t, [[at('K03'), sPout], [at('K03', 0.3), sDespair], [at('K03', 0.6), sShock]]), 790, 1220, 0.45, t) + painPanel(t, at('K03'), at('K03', 0.3), at('K03', 0.65)))],
+  // FAAAH on the crash
   [at('K03', 0.8), at('V04'), t => study(t, snapIn(kC(t, seq(t, [[at('K03', 0.8), C({ ...k0, browUp: 1.3, lid: 0, mouth: 'o', blush: 0.2, lookX: -20, lookY: 10, tilt: 3 })], [at('K03', 0.97), sShock]]), 'shiver') + fallingChart(t, at('K03', 0.82)), t, at('K03', 0.8), 1.25, 1.05, 540, 900))],
-  // V04 "Sade Sati chal rahi hai…": calm and kind, small shrug; respectful Saturn sign; card fades before the meme
-  [at('V04'), at('arey_baap_re'), t => ({ ...study(t, push(vishnu(seq(t, [[at('V04'), vSerious], [at('V04', 0.45), vShrug]]), 540, 1180, 0.78, t) + saturn(800, 700, 0.9), t, at('V04'), 0.03), { dim: 0.3 * fade(t, at('V04'), 0.8) }),
-    over: t < at('V04', 0.92) ? card(t, at('V04', 0.15), 'SADE SATI', [['Shani kharchon ke ghar mein', at('V04', 0.3), '#3b4fa8', 46]], { h: 300, col: '#3b4fa8', label: 'Chandra rashi · Vedic maanyata', labelAt: at('V04', 0.3) }) : '' })],
-  // MEME "Arey baap re" (cheek grab, punch-in) then K05 "Toh gadbad hai re baba!" (fans herself with the diary)
-  [at('arey_baap_re'), at('V06'), t => ({ ...study(t, snapIn(kC(t, seq(t, [[at('arey_baap_re'), sCheek], [at('K05'), sPanic]]), t < at('K05') ? 'shiver' : 'idle'), t, at('arey_baap_re'), 1.3, 1.08, 540, 860), { dim: 0.3 }),
+  // 4 V04 why 2026 hurt: Shani dev in the 12th (expenses); calm, kind; card fades before the meme
+  [at('V04'), at('arey_baap_re'), t => ({ ...study(t, push(vishnu(seq(t, [[at('V04'), vAdvise], [at('V04', 0.5), vWarm]]), 540, 1180, 0.78, t) + saturn(800, 700, 0.9), t, at('V04'), 0.03), { dim: 0.3 * fade(t, at('V04'), 0.8) }),
+    over: t < at('V04', 0.94) ? card(t, at('V04', 0.15), '2026: SHANI 12TH BHAAV', [['kharcha + neend', at('V04', 0.4), '#3b4fa8', 52]], { h: 300, col: '#3b4fa8', label: 'Chandra rashi · Vedic maanyata', labelAt: at('V04', 0.3) }) : '' })],
+  // 5 MEME "Arey baap re" -> K05 "Toh kya 2027 bhi aisa hi jayega?"
+  [at('arey_baap_re'), at('V06'), t => ({ ...study(t, snapIn(kC(t, seq(t, [[at('arey_baap_re'), sCheek], [at('K05'), sPlead]]), t < at('K05') ? 'shiver' : 'idle'), t, at('arey_baap_re'), 1.3, 1.08, 540, 860), { dim: 0.3 }),
     over: t < at('K05') ? memeTag(t, at('arey_baap_re'), 'AREY BAAP RE!') : '' })],
-  // V06 "Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai. Bolo, kya chahiye?": warm laugh, gold clears the gloom, open palm invites
-  [at('V06'), at('abhi_maza'), t => ({ ...study(t, jupiterGlow(t, at('V06', 0.1)) + push(two(t, seq(t, [[at('V06'), vLaugh], [at('V06', 0.3), vWarm], [at('V06', 0.65), vInvite]]), seq(t, [[at('V06'), sPanic], [at('V06', 0.35), sRelief], [at('V06', 0.7), sExcited]])), t, at('V06'), 0.015), { dim: 0.3 * (1 - fade(t, at('V06', 0.1), 1)), gold: fade(t, at('V06', 0.1), 1) }) })],
-  // MEME "Abhi maza aayega na bhidu" (rubs palms, Dubai) then K07 "salary double!"
+  // 6 V06 "Ghabrao mat, isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?": warm laugh, gold clears the gloom
+  [at('V06'), at('abhi_maza'), t => ({ ...study(t, jupiterGlow(t, at('V06', 0.1)) + push(two(t, seq(t, [[at('V06'), vLaugh], [at('V06', 0.35), vWarm], [at('V06', 0.7), vInvite]]), seq(t, [[at('V06'), sPlead], [at('V06', 0.35), sRelief], [at('V06', 0.75), sExcited]])), t, at('V06'), 0.015), { dim: 0.3 * (1 - fade(t, at('V06', 0.1), 1)), gold: fade(t, at('V06', 0.1), 1) }) })],
+  // 7 MEME "Abhi maza aayega na bhidu" (fist pumps) -> K07 "January se hi naya kaam"
   [at('abhi_maza'), at('V08'), t => ({ ...study(t, snapIn(kC(t, t < at('K07') ? sRub(t) : C({ ...sExcited, blush: 1, browUp: 1.2, tilt: -8 })), t, at('abhi_maza'), 1.25, 1.05, 540, 900)),
-    over: t < at('K07') ? memeTag(t, at('abhi_maza'), 'ABHI MAZA AAYEGA', 'NA BHIDU!') : card(t, at('K07', 0.5), 'SALARY x2 ?', [], { h: 170, y: 320, size: 72 }) })],
-  // V08 "Double nahi, par March-April aur June…": coins rise; PAISA card
-  [at('V08'), at('lekin_ek_second'), t => ({ ...study(t, coins(t, at('V08', 0.3)) + twoV(two(t, seq(t, [[at('V08'), { ...vAdvise, tilt: -4 }], [at('V08', 0.12), { ...vAdvise, tilt: 4 }], [at('V08', 0.25), vAdvise], [at('V08', 0.7), vPleased]]), seq(t, [[at('V08'), sPout], [at('V08', 0.35), sWow], [at('V08', 0.7), sNote]]), '', { mode: 'write' }), t, at('V08'))),
-    over: card(t, at('V08', 0.3), 'PAISA ✓', [['Mar–Apr · Jun', at('V08', 0.4), '#1b8a3a'], ['pehle bachat, phir kharcha', at('V08', 0.8), '#3b4fa8', 44]], { h: 400, label: 'Aam trend · Vedic maanyata', labelAt: at('V08', 0.4) }) })],
-  // MEME "Lekin ek second" (one finger up, deal-maker) then K09 "Dedh guna? sawa guna, final!" (counts, puppy face)
-  [at('lekin_ek_second'), at('V10'), t => ({ ...study(t, snapIn(kC(t, seq(t, [[at('lekin_ek_second'), sDealer], [at('K09'), sCount], [at('K09', 0.55), sPlead]])), t, at('lekin_ek_second'), 1.25, 1.05, 540, 880)),
-    over: t < at('K09') ? memeTag(t, at('lekin_ek_second'), 'LEKIN EK SECOND!') : pill(t, at('K09', 0.1), t < at('K09', 0.5) ? '1.5x ?' : '1.25x FINAL!', 520, 420, t < at('K09', 0.5) ? '#ffd24a' : '#ff5c8a', 66) })],
-  // V10 "Wakeel sahiba, ye sabzi mandi nahi hai.": he laughs softly and shakes his head
-  [at('V10'), at('K11'), t => study(t, push(vClose(t, seq(t, [[at('V10'), vLaugh], [at('V10', 0.3), vShakeL], [at('V10', 0.5), vShakeR], [at('V10', 0.7), vShakeL], [at('V10', 0.85), vWarm]])), t, at('V10'), 0.04))],
-  // K11 "Toh kam se kam dhaniya toh free kar dijiye!": dead serious; dhaniya floats up; vine boom; he chuckles in the two-shot
-  [at('K11'), at('K11', 1.0) + 0.3, t => study(t, cam(kC(t, C({ ...k2, browUp: 0, browLift: -1, browLiftAmt: 0.6, lid: 0.2, mouth: 'pout', blush: 0.2, ...pointV, lookX: -24, tilt: -9 })) + dhaniya(t, at('K11', 0.1), 270, 760), 540, 950, 1.12))],
-  [at('K11', 1.0) + 0.3, at('K12'), t => study(t, two(t, vLaugh, sGiggle))],
-  // K12 job: NYC-style night office lights; the boss's Sunday message buzzes; she glares at it, then folds her hands
-  [at('K12'), at('V13'), t => ({ ...study(t, push(kC(t, seq(t, [[at('K12'), sNote], [at('K12', 0.45), sGlare], [at('K12', 0.82), sJoin]])) + (t > at('K12', 0.4) ? bossPhone(t, 300, 640, 0.75 * pop(t, at('K12', 0.4)), { buzz: t < at('K12', 0.8) }) : ''), t, at('K12'), 0.02)),
-    over: card(t, at('K12', 0.05), 'NAUKRI', [['Appraisal: 3% 😐', at('K12', 0.2), '#d22f48', 50]], { h: 270, y: 300 }) })],
-  // V13 "Naye mauke… April-May aur September-October mein resign mat karna": MAUKE card
-  [at('V13'), at('K14'), t => ({ ...study(t, twoV(two(t, seq(t, [[at('V13'), vAdvise], [at('V13', 0.45), { ...vAdvise, tilt: 3 }], [at('V13', 0.8), vPleased]]), seq(t, [[at('V13'), sWow], [at('V13', 0.5), sNote]]), '', { mode: 'write' }), t, at('V13'))),
-    over: card(t, at('V13', 0.1), 'MAUKE ✓', [['resign ✗ Apr–May · Sep–Oct', at('V13', 0.45), '#d22f48', 46]], { h: 320, label: 'Aam trend · Vedic maanyata', labelAt: at('V13', 0.45) }) })],
-  // K14 "Toh boss ko block kar dein? Sirf Sunday ko?": cunning idea, BLOCK button pops on the phone
-  [at('K14'), at('V15'), t => study(t, cam(kC(t, seq(t, [[at('K14'), sCunning], [at('K14', 0.55), sLoophole]])) + bossPhone(t, 300, 640, 0.75, { block: pop(t, at('K14', 0.3)) }), 540, 950, 1.1))],
-  // V15 "Block nahi, mute.": one-word deadpan with a small smile; the bell gets a slash
-  [at('V15'), at('K16'), t => ({ ...study(t, snapIn(vClose(t, seq(t, [[at('V15'), vDeadpan], [at('V15', 0.6), vPleased]])) + bossPhone(t, 170, 760, 0.7, { mute: fade(t, at('V15', 0.5), 0.3), rot: -8, notext: 1 }), t, at('V15'), 1.0, 1.15, 540, 760)),
-    over: card(t, at('V15', 0.3), 'BLOCK ✗   MUTE ✓', [], { h: 170, y: 320, size: 70 }) })],
-  // K16 maasi: Varanasi dusk; wedding cut-in; the bubble grows SHAADI KAB? -> GOOD NEWS KAB? on the words
-  [at('K16'), at('hey_bhagwan'), t => study(t, weddingPanel(t, at('K16'), at('K16', 0.62)))],
-  // MEME "Hey Bhagwan, kya karun main": palms up to the sky in despair (he is right there)
-  [at('hey_bhagwan'), at('V18'), t => ({ ...study(t, snapIn(kC(t, sSky), t, at('hey_bhagwan'), 1.2, 1.02, 540, 860)), over: memeTag(t, at('hey_bhagwan'), 'HEY BHAGWAN!') })],
-  // V18 "Haan, sun raha hun.": deadpan, gentle open-palm blessing; she freezes, then giggles
-  [at('V18'), at('V19'), t => study(t, cam(two(t, seq(t, [[at('V18'), vListen], [at('V18', 0.5), vBless]]), seq(t, [[at('V18'), sFreeze], [at('V18', 0.7), sGiggle]])), 420, 1050, 1.15))],
-  // V19 rishte: Taj at dusk, hearts; RISHTE card
-  [at('V19'), at('K20'), t => ({ ...study(t, hearts(t, at('V19')) + two(t, seq(t, [[at('V19'), vWarm], [at('V19', 0.5), vPleased]]), seq(t, [[at('V19'), sWow], [at('V19', 0.45), sBlush]]), '', { mode: 'idle' }), { gold: 0.6 }),
-    over: card(t, at('V19', 0.25), 'RISHTE ✓', [['end Jun – Nov', at('V19', 0.45), '#c62b6a']], { h: 300, label: 'Vedic maanyata', labelAt: at('V19', 0.45) }) })],
-  // K20 "Aur last demand Prabhu, Sade Sati cancel kar dijiye na.": joined hands, sweetest smile (no meme from here)
-  [at('K20'), at('V21'), t => study(t, push(kC(t, seq(t, [[at('K20'), sJoin], [at('K20', 0.5), { ...sPlead, ...{ armL: sJoin.armL, armR: sJoin.armR } }]])), t, at('K20'), 0.03))],
-  // V21 "Wo Shani dev ka vibhag hai…": calm and respectful; Saturn sign glows deep blue; card
-  [at('V21'), at('V22'), t => ({ ...study(t, push(vishnu(seq(t, [[at('V21'), vSerious], [at('V21', 0.6), { ...vSerious, mouthShape: 'smileBig', browL: 0, browR: 0 }]]), 540, 1180, 0.78, t) + saturn(800, 700, 0.9), t, at('V21'), 0.02), { dim: 0.3 }),
-    over: card(t, at('V21', 0.2), 'SADE SATI: CANCEL ✗', [['mehnat = phal', at('V21', 0.6), '#3b4fa8', 54]], { h: 300, col: '#3b4fa8', label: 'Vedic maanyata', labelAt: at('V21', 0.6) }) })],
-  // V22 "Ghabrana mat, Guru bhi saath hain.": golden glow, blessing; then the FINAL HISAAB tally under the cheer
-  [at('V22'), at('K23'), t => ({ ...study(t, jupiterGlow(t, at('V22')) + push(two(t, vBless, seq(t, [[at('V22'), sRelief], [at('V22', 1.2), sProud]])), t, at('V22'), 0.02), { gold: fade(t, at('V22'), 0.8) }),
-    over: t > at('V22', 0.75) ? tally(t, at('V22', 0.75)) : '' })],
-  // K23 CTA: Sakshi alone (no deity in the selling part); link chip; end card names the next file
-  [at('K23'), END, t => ({ ...study(t, push(kC(t, seq(t, [[at('K23'), sWin], [at('K23', 0.5), sDemand]])), t, at('K23'), 0.02)), over: linkChip2(t, at('K23', 0.05)) })],
+    over: t < at('K07') ? memeTag(t, at('abhi_maza'), 'ABHI MAZA AAYEGA', 'NA BHIDU!') : card(t, at('K07', 0.35), 'JANUARY: NAYA KAAM!', [], { h: 170, y: 320, size: 64 }) })],
+  // 8 V08 Mangal vakri 10 Jan – 1 Apr: the backwards-looping Mars cut-in, then his advice face
+  [at('V08'), at('V08', 0.55), t => study(t, marsRetro(t, at('V08')))],
+  [at('V08', 0.55), at('lekin_ek_second'), t => ({ ...study(t, push(vClose(t, seq(t, [[at('V08', 0.55), vAdvise], [at('V08', 0.85), vPleased]])), t, at('V08', 0.55), 0.04)), over: card(t, at('V08', 0.6), 'BADE FAISLE: APRIL KE BAAD', [], { h: 170, y: 320, size: 52, label: '' }) })],
+  // 9 MEME "Lekin ek second" -> K09 "Aries wale teen mahine rukenge?"
+  [at('lekin_ek_second'), at('V10'), t => ({ ...study(t, snapIn(kC(t, seq(t, [[at('lekin_ek_second'), sDealer], [at('K09'), sLoophole], [at('K09', 0.6), sGiggle]])), t, at('lekin_ek_second'), 1.25, 1.05, 540, 880)),
+    over: t < at('K09') ? memeTag(t, at('lekin_ek_second'), 'LEKIN EK SECOND!') : '' })],
+  // 10 V10 "Yahi toh asli pariksha hai, jo ruk gaya wahi jeetega": the ram brakes at the STOP sign (from the approved cut)
+  [at('V10'), at('V10', 0.45), t => study(t, push(vClose(t, seq(t, [[at('V10'), vKnowing], [at('V10', 0.3), vPleased]])), t, at('V10'), 0.04))],
+  [at('V10', 0.45), at('K11'), t => study(t, vishnu(seq(t, [[at('V10', 0.45), vPleased], [at('V10', 0.8), vLaugh]]), 280, 1210, 0.42, t) + ramGag(t, at('V10', 0.45) - 0.2, true))],
+  // 11 K11 home: Varanasi dusk; she asks for full peace at home for Aries
+  [at('K11'), at('V12'), t => study(t, push(kC(t, seq(t, [[at('K11'), sJoin], [at('K11', 0.5), sDemand]])), t, at('K11'), 0.03))],
+  // 12 V12 Guru in the home house till June, Ketu there too -> make family time yourself
+  [at('V12'), at('V12', 0.55), t => study(t, homeGuruKetu(t, at('V12'), at('V12', 0.3)))],
+  [at('V12', 0.55), at('K13'), t => ({ ...study(t, twoV(two(t, seq(t, [[at('V12', 0.55), vAdvise], [at('V12', 0.85), vWarm]]), seq(t, [[at('V12', 0.55), sNote], [at('V12', 0.85), sRelief]]), '', { mode: 'write' }), t, at('V12', 0.55))),
+    over: card(t, at('V12', 0.6), 'GHAR: JUNE TAK GURU', [['family time khud nikaalo', at('V12', 0.75), '#3b4fa8', 46]], { h: 300, label: 'Chandra rashi · Vedic maanyata', labelAt: at('V12', 0.75) }) })],
+  // 13 K13 maasi: the hall (no third character), bubble SHAADI KAB? -> GOOD NEWS KAB?
+  [at('K13'), at('hey_bhagwan'), t => study(t, weddingPanel(t, at('K13'), at('K13', 0.62)))],
+  // MEME "Hey Bhagwan, kya karun main" (palms up to the sky)
+  [at('hey_bhagwan'), at('V14'), t => ({ ...study(t, snapIn(kC(t, sSky), t, at('hey_bhagwan'), 1.2, 1.02, 540, 860)), over: memeTag(t, at('hey_bhagwan'), 'HEY BHAGWAN!') })],
+  // 14 V14 "Haan, sun raha hun.": gentle blessing hand; she freezes, then giggles
+  [at('V14'), at('V15'), t => study(t, cam(two(t, seq(t, [[at('V14'), vListen], [at('V14', 0.5), vBless]]), seq(t, [[at('V14'), sFreeze], [at('V14', 0.7), sGiggle]])), 420, 1050, 1.15))],
+  // 15 V15 Ketu leaves love/kids, Guru arrives after June: Taj, hearts
+  [at('V15'), at('K16'), t => ({ ...study(t, hearts(t, at('V15', 0.4)) + two(t, seq(t, [[at('V15'), vAdvise], [at('V15', 0.55), vPleased]]), seq(t, [[at('V15'), sNote], [at('V15', 0.5), sBlush]]), '', { mode: 'idle' }), { gold: 0.6 }),
+    over: card(t, at('V15', 0.35), 'PYAAR + BACHCHE ✓', [['June ke baad Guru', at('V15', 0.55), '#c62b6a', 50]], { h: 300, label: 'Chandra rashi · Vedic maanyata', labelAt: at('V15', 0.55) }) })],
+  // 16 K16 "Sade Sati hi cancel kar dijiye na." (no meme from here to the tally)
+  [at('K16'), at('V17'), t => study(t, push(kC(t, seq(t, [[at('K16'), sJoin], [at('K16', 0.5), { ...sPlead, armL: sJoin.armL, armR: sJoin.armR }]])), t, at('K16'), 0.03))],
+  // 17 V17 "pehli dastak Jun–Oct… mehnat ka phal, darr ka nahi": calm; the door with soft knock rings
+  [at('V17'), at('V17', 0.45), t => ({ ...study(t, push(vishnu(seq(t, [[at('V17'), vAdvise], [at('V17', 0.3), vWarm]]), 540, 1180, 0.78, t), t, at('V17'), 0.02), { dim: 0.25 }),
+    over: card(t, at('V17', 0.1), 'SADE SATI: CANCEL ✗', [], { h: 170, y: 320, col: '#3b4fa8', size: 56 }) })],
+  [at('V17', 0.45), at('V18'), t => ({ ...study(t, dastak(t, at('V17', 0.45)), { dim: 0.2 }), over: card(t, at('V17', 0.5), 'PEHLI DASTAK: JUN–OCT', [['mehnat ka phal, darr ka nahi', at('V17', 0.75), '#3b4fa8', 44]], { h: 300, col: '#3b4fa8', label: 'Vedic maanyata', labelAt: at('V17', 0.75) }) })],
+  // 18 V18 "neend aur sehat… Guru saath hain": golden glow, blessing
+  [at('V18'), at('K19'), t => ({ ...study(t, jupiterGlow(t, at('V18')) + push(two(t, vBless, seq(t, [[at('V18'), sRelief], [at('V18', 0.6), sJoin]])), t, at('V18'), 0.02), { gold: fade(t, at('V18'), 0.8) }) })],
+  // 19 K19 tally: "ek haan, ek aadha haan, ek mein intezaar, ek pehli dastak… record!"
+  [at('K19'), at('K20'), t => ({ ...study(t, push(two(t, vLaugh, seq(t, [[at('K19'), sNote], [at('K19', 0.7), sProud]]), '', { mode: 'write' }), t, at('K19'), 0.02)), over: tally2(t, at('K19', 0.05)) })],
+  // 20 K20 CTA: Sakshi alone, link chip; end card
+  [at('K20'), END, t => ({ ...study(t, push(kC(t, seq(t, [[at('K20'), sWin], [at('K20', 0.5), sDemand]])), t, at('K20'), 0.02)), over: linkChip2(t, at('K20', 0.05)) })],
   [END, DUR, t => ({ ...study(t, kC(t, sProud, 'idle', T(-60, 10, 1, 'ARIES ✓', '#1b8a3a', 40))), over: `<rect x="90" y="270" width="830" height="200" rx="24" fill="#1b1422" opacity="0.9"/>` + txt(505, 345, 1, 'Guide: BIO KE LINK MEIN', '#ffd24a', 50) + txt(505, 430, 1, 'Agli file: TAURUS', '#ffffff', 58) })],
 ];
 SHOTS.forEach((s, i) => { if (SHOTS[i + 1]) s[1] = SHOTS[i + 1][0]; });

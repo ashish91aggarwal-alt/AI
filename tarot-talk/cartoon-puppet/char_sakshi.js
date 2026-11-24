@@ -74,6 +74,7 @@ function head(p) {
   return `<g transform="translate(${p.head[0].toFixed(1)} ${p.head[1].toFixed(1)}) rotate(${(p.tilt || 0).toFixed(2)}) scale(1.2)">${g.join('')}</g>`;
 }
 function body(p) {
+  if (p.lawyer) return lawyerBody(p);
   // Modern look: purple skater dress with a tiny star print, cropped denim jacket with rolled sleeves and a moon pin,
   // white ankle socks and chunky white sneakers with pink laces.
   const b = p.breath || 0, T = ([x, y]) => [540 + (x - 540) * (1 + b * 0.01), y - b * 3 * (1500 - y) / 600];
@@ -116,6 +117,47 @@ function body(p) {
   { const [bx, by] = T([600, 940]); o += `<circle cx="${bx}" cy="${by}" r="15" fill="${C.pink}" stroke="${E.INK}" stroke-width="3"/><path d="M${bx - 3} ${by - 9} A10 10 0 1 0 ${bx - 3} ${by + 9} A7 7 0 1 1 ${bx - 3} ${by - 9}Z" fill="#fff4c8"/>`; }
   return o;
 }
+
+// Full advocate's costume (owner, 24 Nov 2026: "complete Vakil costume"). Researched from the Bar Council of India rules for
+// women advocates: black open-breasted coat, white shirt/blouse with a white collar, white bands, advocate's gown, and a long
+// black skirt (no print); formal black shoes instead of sneakers.
+function lawyerBody(p) {
+  const b = p.breath || 0, T = ([x, y]) => [540 + (x - 540) * (1 + b * 0.01), y - b * 3 * (1500 - y) / 600], sw = p.skirtSwing || 0;
+  const BLK = '#1b1822', BLKsh = '#0f0d14', GOWN = '#4a4360', GOWNsh = '#363049', WH = '#fbfaf4', WHsh = '#dcd9cc';
+  let o = '';
+  // advocate's gown behind everything: falls from the shoulders, gathered yoke, open front, wide hem
+  const gown = catmull([[440, 880], [360, 930], [300, 1180], [262, 1560], [400, 1585], [470, 1300], [610, 1300], [680, 1585], [818, 1560], [780, 1180], [720, 930], [640, 880]].map(T), 6, true);
+  o += `<path d="${E.poly(gown)}" fill="none" stroke="#b9b0e0" stroke-width="26" stroke-linejoin="round" opacity="0.55"/>`;   // soft light rim so she reads on night scenes (art review)
+  o += part(gown, GOWN, { sh: GOWNsh, shPts: [[560, 900], [820, 900], [820, 1600], [560, 1600]].map(T), w: WT.sil });
+  for (const x of [330, 370, 710, 750]) o += ink(catmull([[x + (x < 540 ? 30 : -30), 960], [x, 1250], [x - (x < 540 ? 20 : -20), 1550]].map(T), 4, false), 4, { color: GOWNsh, taper: [0.3, 0.2] });
+  // legs end in formal black shoes (the long skirt covers the rest)
+  for (const [ax, dir] of [[500, -1], [580, 1]]) {
+    o += E.limb([[ax, 1560], [ax, 1625]], 26, { col: C.skin, sh: C.skinSh });
+    const sh = catmull([[ax - 30 * dir, 1676], [ax - 32 * dir, 1640], [ax - 6 * dir, 1628], [ax + 30 * dir, 1636], [ax + 58 * dir, 1652], [ax + 62 * dir, 1676]], 6, true);
+    o += part(sh, BLK, { sh: '#000', shPts: sh.map(([x, y]) => [x, y + 10]), w: WT.sil * 0.8 }) + ink([[ax - 20 * dir, 1638], [ax + 20 * dir, 1640]], 3, { color: '#5a566a' });
+  }
+  // long black skirt to the ankle, gentle A-line with soft pleats
+  const sk = catmull([[420, 1110], [660, 1110], [700, 1300], [722 + sw * 8, 1600], [540, 1612], [358 + sw * 8, 1600], [380, 1300]].map(T), 6, true);
+  let pl = ''; for (const x of [450, 500, 580, 630]) pl += ink(catmull([[x, 1180], [x + (x - 540) * 0.25, 1590]].map(T), 3, false), 4, { color: BLKsh, taper: [0.4, 0.1] });
+  o += fill(sk, '#26232e') + clipped(sk, pl) + inkLoop(sk, WT.sil);
+  // white shirt front with a pointed white collar
+  const shirt = catmull([[470, 884], [610, 884], [640, 1000], [630, 1125], [450, 1125], [440, 1000]].map(T), 6, true);
+  o += part(shirt, WH, { sh: WHsh, shPts: [[560, 900], [640, 900], [640, 1125], [560, 1125]].map(T), w: WT.mid });
+  for (let y = 960; y < 1110; y += 45) { const [bx, by] = T([540, y]); o += `<circle cx="${bx}" cy="${by}" r="5" fill="#e8e4d8" stroke="${E.INK}" stroke-width="1.5"/>`; }
+  for (const s of [-1, 1]) { const X = x => 540 + s * x;
+    const col = catmull([[X(6), 880], [X(70), 872], [X(64), 916], [X(18), 908]].map(T), 4, true); o += part(col, WH, { sh: WHsh, shPts: col.map(([x, y]) => [x, y + 6]), w: WT.mid }); }
+  // black open-breasted coat, hip length, notched lapels, two buttons
+  for (const s of [-1, 1]) {
+    const X = x => 540 + s * x;
+    const pn = catmull([[X(40), 884], [X(130), 896], [X(160), 960], [X(160), 1120], [X(168), 1210], [X(60), 1220], [X(58), 1060], [X(34), 960]].map(T), 7, true);
+    o += part(pn, BLK, { sh: BLKsh, shPts: (s > 0 ? [[560, 880], [720, 880], [720, 1230], [560, 1230]] : [[380, 1120], [480, 1120], [480, 1230], [380, 1230]]).map(T), w: WT.sil * 0.85 });
+    const lap = catmull([[X(38), 890], [X(92), 900], [X(84), 950], [X(58), 1040], [X(46), 1000]].map(T), 5, true);
+    o += part(lap, '#34303f', { sh: BLKsh, shPts: lap.map(([x, y]) => [x + s * 8, y + 8]), w: WT.mid });
+    o += ink(catmull([[X(92), 1150], [X(150), 1150]].map(T), 3, false), 4, { color: '#3a3646', taper: [0.1, 0.1] }); // pocket welt
+    if (s < 0) for (const y of [1080, 1150]) { const [bx, by] = T([X(66), y]); o += `<circle cx="${bx}" cy="${by}" r="7" fill="#3a3646" stroke="${E.INK}" stroke-width="2"/>`; }
+  }
+  return o;
+}
 function puffs(p) { return ''; }
 function cards(c) { // fan of purple tarot cards floating by her hand (magic, no grip)
   let o = `<circle cx="${c.x}" cy="${c.y}" r="${140 * c.s}" fill="url(#halo)" opacity="${0.5 + (c.glow || 0) * 0.4}"/>`;
@@ -130,9 +172,10 @@ function cards(c) { // fan of purple tarot cards floating by her hand (magic, no
 }
 const COAT = { denim: '#24212c', denimSh: '#15131b', denimLt: '#34303f', stitch: '#3c3848' };
 function bands(p) { // advocate's white neck bands under the chin (only with the coat)
-  return `<g><path d="M524 868 L506 960 L536 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/><path d="M556 868 L574 960 L544 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/></g>`;
+  return p.lawyer ? `<g><path d="M528 866 L512 990 L537 994 L540 870 Z" fill="#ffffff" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/><path d="M552 866 L568 990 L543 994 L540 870 Z" fill="#ffffff" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/></g>` : `<g><path d="M524 868 L506 960 L536 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/><path d="M556 868 L574 960 L544 966 Z" fill="#fbfaf4" stroke="${E.INK}" stroke-width="4" stroke-linejoin="round"/></g>`;
 }
 function draw(p) {
+  if (p.lawyer) p = { ...p, coat: 1 };
   if (p.coat) { // owner script (Aries 2027): 'Aries ki wakeel' -> black advocate coat over her outfit + white bands
     const keep = {}; for (const k in COAT) { keep[k] = C[k]; C[k] = COAT[k]; }
     try { return drawInner(p) ; } finally { for (const k in keep) C[k] = keep[k]; }
@@ -140,12 +183,12 @@ function draw(p) {
   return drawInner(p);
 }
 function drawInner(p) {
-  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: { col: C.denim, sh: C.denimSh, len: p.coat ? 0.8 : 0.45, trim: C.denimLt } };
+  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: { col: C.denim, sh: C.denimSh, len: p.lawyer ? 1.0 : p.coat ? 0.8 : 0.45, trim: C.denimLt } };
   const L = p.armL || { E: [380, 1080], W: [400, 1210], hand: 'relax' }, R = p.armR || { E: [700, 1080], W: [680, 1210], hand: 'relax' };
   const A = (S, X, out) => arm(S, X.E, X.W, { r: [36, 31, 26], handPose: X.hand, handAng: 0, hs: 1, handScale: 1.05, outward: out, ...sk });
   // short chibi body: drawn at the old scale, shrunk toward the feet
   const W0 = { ...WT }; for (const q in WT) WT[q] = W0[q] / 0.72; // keep the outline weight the same as the rest of the cast after shrinking
-  const bodyInner = body(p) + (p.coat ? bands(p) : '') + A([400, 935], L, -1) + A([680, 935], R, 1) + puffs(p); for (const q in WT) WT[q] = W0[q];
+  const bodyInner = body(p) + (p.coat || p.lawyer ? bands(p) : '') + A([400, 935], L, -1) + A([680, 935], R, 1) + puffs(p); for (const q in WT) WT[q] = W0[q];
   const bodyG = `<g transform="translate(540 1676) scale(0.72) translate(-540 -1676)">${bodyInner}</g>`;
   return bodyG + head({ ...p, head: p.head || [540, 840] }) + (p.cards ? cards(p.cards) : '');
 }

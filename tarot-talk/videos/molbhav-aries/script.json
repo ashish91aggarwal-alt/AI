@@ -2,8 +2,8 @@
  "meta": {
   "title": "Rashi ki file: Aries 2026 ka dard, 2027 ka mol-bhaav",
   "channel": "Tarot Talk By Sakshi (Instagram Reels)",
-  "version": "v11 script, free Kokoro voices (no credits)",
-  "runtime_s": 92.82,
+  "version": "v12.1 script, free Kokoro voices (no credits)",
+  "runtime_s": 109.12,
   "format": "1080x1920, 24 fps, 9:16"
  },
  "beats": [
@@ -11,129 +11,144 @@
    "id": "K01",
    "type": "line",
    "start": 0.0,
-   "end": 4.487,
+   "end": 4.675,
    "who": "Sakshi",
-   "line": "Prabhu, main Aries walon ki wakeel hun, aur ye raha unka 2026 ka hisaab!",
+   "line": "Prabhu, main Aries walon ki wakeel hun aur unka 2026 ka poora hisaab lekar aayi hun.",
    "caption_chunks": [
     {
      "text": "Prabhu, main Aries walon",
      "from": 0.0,
-     "to": 1.56
+     "to": 1.39
     },
     {
-     "text": "ki wakeel hun, aur",
-     "from": 1.56,
-     "to": 2.73
+     "text": "ki wakeel hun aur",
+     "from": 1.39,
+     "to": 2.37
     },
     {
-     "text": "ye raha unka 2026",
-     "from": 2.73,
-     "to": 3.84
+     "text": "unka 2026 ka poora",
+     "from": 2.37,
+     "to": 3.41
     },
     {
-     "text": "ka hisaab!",
-     "from": 3.84,
-     "to": 4.49
+     "text": "hisaab lekar aayi hun.",
+     "from": 3.41,
+     "to": 4.67
     }
    ]
   },
   {
    "id": "V02",
    "type": "line",
-   "start": 4.567,
-   "end": 8.038,
+   "start": 4.755,
+   "end": 8.297,
    "who": "Vishnu ji",
-   "line": "Arre, itni lambi list? Ye shikayat hai ya shaadi ka menu?",
+   "line": "Itni lambi list hai, ye shikayat hai ya kisi shaadi ka menu hai?",
    "caption_chunks": [
     {
-     "text": "Arre, itni lambi list?",
-     "from": 4.57,
-     "to": 5.96
+     "text": "Itni lambi list hai,",
+     "from": 4.75,
+     "to": 5.92
     },
     {
-     "text": "Ye shikayat hai ya",
-     "from": 5.96,
-     "to": 7.09
+     "text": "ye shikayat hai ya",
+     "from": 5.92,
+     "to": 6.96
     },
     {
-     "text": "shaadi ka menu?",
-     "from": 7.09,
-     "to": 8.04
+     "text": "kisi shaadi ka menu",
+     "from": 6.96,
+     "to": 8.06
+    },
+    {
+     "text": "hai?",
+     "from": 8.06,
+     "to": 8.3
     }
    ]
   },
   {
    "id": "K03",
    "type": "line",
-   "start": 8.388,
-   "end": 14.41,
+   "start": 8.647,
+   "end": 13.451,
    "who": "Sakshi",
-   "line": "Suniye na, salary paanch tarikh tak gayab, neend reels mein gayi, aur jo share kharida, wo kharidte hi gir gaya!",
+   "line": "Poore saal kharcha zyada hua, raat ko neend nahi aayi, aur jo share kharida wo turant gir gaya.",
    "caption_chunks": [
     {
-     "text": "Suniye na, salary paanch",
-     "from": 8.39,
-     "to": 9.73
+     "text": "Poore saal kharcha zyada",
+     "from": 8.65,
+     "to": 9.91
     },
     {
-     "text": "tarikh tak gayab, neend",
-     "from": 9.73,
-     "to": 11.01
+     "text": "hua, raat ko neend",
+     "from": 9.91,
+     "to": 10.86
     },
     {
-     "text": "reels mein gayi, aur",
-     "from": 11.01,
-     "to": 12.12
+     "text": "nahi aayi, aur jo",
+     "from": 10.86,
+     "to": 11.76
     },
     {
-     "text": "jo share kharida, wo",
-     "from": 12.12,
-     "to": 13.24
+     "text": "share kharida wo turant",
+     "from": 11.76,
+     "to": 12.98
     },
     {
-     "text": "kharidte hi gir gaya!",
-     "from": 13.24,
-     "to": 14.41
+     "text": "gir gaya.",
+     "from": 12.98,
+     "to": 13.45
     }
    ]
   },
   {
    "id": "V04",
    "type": "line",
-   "start": 15.96,
-   "end": 19.502,
+   "start": 15.001,
+   "end": 21.792,
    "who": "Vishnu ji",
-   "line": "Sade Sati chal rahi hai, toh thoda hilna-dulna toh banta hai.",
+   "line": "Shani dev abhi tumhare kharchon wale ghar mein baithe hain, isliye 2026 mein paisa aur neend dono hil gaye.",
    "caption_chunks": [
     {
-     "text": "Sade Sati chal rahi",
-     "from": 15.96,
-     "to": 17.1
+     "text": "Shani dev abhi tumhare",
+     "from": 15.0,
+     "to": 16.45
     },
     {
-     "text": "hai, toh thoda hilna-dulna",
-     "from": 17.1,
-     "to": 18.66
+     "text": "kharchon wale ghar mein",
+     "from": 16.45,
+     "to": 17.97
     },
     {
-     "text": "toh banta hai.",
-     "from": 18.66,
-     "to": 19.5
+     "text": "baithe hain, isliye 2026",
+     "from": 17.97,
+     "to": 19.55
+    },
+    {
+     "text": "mein paisa aur neend",
+     "from": 19.55,
+     "to": 20.87
+    },
+    {
+     "text": "dono hil gaye.",
+     "from": 20.87,
+     "to": 21.79
     }
    ]
   },
   {
    "id": "arey_baap_re",
    "type": "meme",
-   "start": 19.622,
-   "end": 20.832,
+   "start": 21.912,
+   "end": 23.122,
    "who": "Sakshi",
    "line": "Arey baap re!",
    "caption_chunks": [
     {
      "text": "Arey baap re!",
-     "from": 19.62,
-     "to": 20.83
+     "from": 21.91,
+     "to": 23.12
     }
    ],
    "meme_file": "arey-baap-re.mp3",
@@ -143,60 +158,60 @@
   {
    "id": "K05",
    "type": "line",
-   "start": 20.892,
-   "end": 22.182,
+   "start": 23.182,
+   "end": 25.632,
    "who": "Sakshi",
-   "line": "Toh gadbad hai re baba!",
+   "line": "Toh kya 2027 bhi aisa hi jayega?",
    "caption_chunks": [
     {
-     "text": "Toh gadbad hai re",
-     "from": 20.89,
-     "to": 21.89
+     "text": "Toh kya 2027 bhi",
+     "from": 23.18,
+     "to": 24.45
     },
     {
-     "text": "baba!",
-     "from": 21.89,
-     "to": 22.18
+     "text": "aisa hi jayega?",
+     "from": 24.45,
+     "to": 25.63
     }
    ]
   },
   {
    "id": "V06",
    "type": "line",
-   "start": 22.262,
-   "end": 26.424,
+   "start": 25.712,
+   "end": 29.238,
    "who": "Vishnu ji",
-   "line": "Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai. Bolo, kya chahiye?",
+   "line": "Ghabrao mat, isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?",
    "caption_chunks": [
     {
-     "text": "Arre ghabrao mat, isiliye",
-     "from": 22.26,
-     "to": 23.77
+     "text": "Ghabrao mat, isiliye toh",
+     "from": 25.71,
+     "to": 27.06
     },
     {
-     "text": "toh mol-bhaav ho raha",
-     "from": 23.77,
-     "to": 25.04
+     "text": "mol-bhaav ho raha hai,",
+     "from": 27.06,
+     "to": 28.29
     },
     {
-     "text": "hai. Bolo, kya chahiye?",
-     "from": 25.04,
-     "to": 26.42
+     "text": "bolo kya chahiye?",
+     "from": 28.29,
+     "to": 29.24
     }
    ]
   },
   {
    "id": "abhi_maza",
    "type": "meme",
-   "start": 26.544,
-   "end": 28.954,
+   "start": 29.358,
+   "end": 31.768,
    "who": "Sakshi",
    "line": "Abhi maza aayega na bhidu!",
    "caption_chunks": [
     {
      "text": "Abhi maza aayega na bhidu!",
-     "from": 26.54,
-     "to": 28.95
+     "from": 29.36,
+     "to": 31.77
     }
    ],
    "meme_file": "abhi-maza-aayega-na-bhidu.mp3",
@@ -206,65 +221,85 @@
   {
    "id": "K07",
    "type": "line",
-   "start": 29.034,
-   "end": 31.608,
+   "start": 31.848,
+   "end": 34.773,
    "who": "Sakshi",
-   "line": "Toh Prabhu, 2027 mein salary double!",
+   "line": "Pehli demand ye hai ki January se hi naya kaam shuru ho jaye.",
    "caption_chunks": [
     {
-     "text": "Toh Prabhu, 2027 mein",
-     "from": 29.03,
-     "to": 30.58
+     "text": "Pehli demand ye hai",
+     "from": 31.85,
+     "to": 32.81
     },
     {
-     "text": "salary double!",
-     "from": 30.58,
-     "to": 31.61
+     "text": "ki January se hi",
+     "from": 32.81,
+     "to": 33.61
+    },
+    {
+     "text": "naya kaam shuru ho",
+     "from": 33.61,
+     "to": 34.52
+    },
+    {
+     "text": "jaye.",
+     "from": 34.52,
+     "to": 34.77
     }
    ]
   },
   {
    "id": "V08",
    "type": "line",
-   "start": 31.688,
-   "end": 36.803,
+   "start": 34.853,
+   "end": 42.318,
    "who": "Vishnu ji",
-   "line": "Double nahi, par March-April aur June mein paisa achha aa sakta hai, bas pehle bachat.",
+   "line": "Aries ke swami Mangal khud dus January se ek April tak vakri rahenge, isliye bade faisle April tak rok ke rakho.",
    "caption_chunks": [
     {
-     "text": "Double nahi, par March-April",
-     "from": 31.69,
-     "to": 33.41
+     "text": "Aries ke swami Mangal",
+     "from": 34.85,
+     "to": 36.32
     },
     {
-     "text": "aur June mein paisa",
-     "from": 33.41,
-     "to": 34.58
+     "text": "khud dus January se",
+     "from": 36.32,
+     "to": 37.64
     },
     {
-     "text": "achha aa sakta hai,",
-     "from": 34.58,
-     "to": 35.76
+     "text": "ek April tak vakri",
+     "from": 37.64,
+     "to": 38.9
     },
     {
-     "text": "bas pehle bachat.",
-     "from": 35.76,
-     "to": 36.8
+     "text": "rahenge, isliye bade faisle",
+     "from": 38.9,
+     "to": 40.78
+    },
+    {
+     "text": "April tak rok ke",
+     "from": 40.78,
+     "to": 41.9
+    },
+    {
+     "text": "rakho.",
+     "from": 41.9,
+     "to": 42.32
     }
    ]
   },
   {
    "id": "lekin_ek_second",
    "type": "meme",
-   "start": 36.923,
-   "end": 38.153,
+   "start": 42.438,
+   "end": 43.668,
    "who": "Sakshi",
    "line": "Lekin ek second!",
    "caption_chunks": [
     {
      "text": "Lekin ek second!",
-     "from": 36.92,
-     "to": 38.15
+     "from": 42.44,
+     "to": 43.67
     }
    ],
    "meme_file": "lekin-ek-second.mp3",
@@ -274,225 +309,175 @@
   {
    "id": "K09",
    "type": "line",
-   "start": 38.213,
-   "end": 40.282,
+   "start": 43.728,
+   "end": 46.942,
    "who": "Sakshi",
-   "line": "Dedh guna? Chaliye sawa guna, final!",
+   "line": "Aries wale teen mahine rukenge, aapko sach mein aisa lagta hai?",
    "caption_chunks": [
     {
-     "text": "Dedh guna? Chaliye sawa",
-     "from": 38.21,
-     "to": 39.57
+     "text": "Aries wale teen mahine",
+     "from": 43.73,
+     "to": 44.89
     },
     {
-     "text": "guna, final!",
-     "from": 39.57,
-     "to": 40.28
+     "text": "rukenge, aapko sach mein",
+     "from": 44.89,
+     "to": 46.15
+    },
+    {
+     "text": "aisa lagta hai?",
+     "from": 46.15,
+     "to": 46.94
     }
    ]
   },
   {
    "id": "V10",
    "type": "line",
-   "start": 40.362,
-   "end": 42.769,
+   "start": 47.022,
+   "end": 50.856,
    "who": "Vishnu ji",
-   "line": "Wakeel sahiba, ye sabzi mandi nahi hai.",
+   "line": "Yahi toh is saal ki asli pariksha hai, jo ruk gaya wahi jeetega.",
    "caption_chunks": [
     {
-     "text": "Wakeel sahiba, ye sabzi",
-     "from": 40.36,
-     "to": 41.82
+     "text": "Yahi toh is saal",
+     "from": 47.02,
+     "to": 48.03
     },
     {
-     "text": "mandi nahi hai.",
-     "from": 41.82,
-     "to": 42.77
+     "text": "ki asli pariksha hai,",
+     "from": 48.03,
+     "to": 49.35
+    },
+    {
+     "text": "jo ruk gaya wahi",
+     "from": 49.35,
+     "to": 50.35
+    },
+    {
+     "text": "jeetega.",
+     "from": 50.35,
+     "to": 50.86
     }
    ]
   },
   {
    "id": "K11",
    "type": "line",
-   "start": 42.849,
-   "end": 44.98,
+   "start": 51.206,
+   "end": 55.502,
    "who": "Sakshi",
-   "line": "Toh kam se kam dhaniya toh free kar dijiye!",
+   "line": "Theek hai, toh 2027 mein Aries walon ko ghar mein poora sukoon dila dijiye.",
    "caption_chunks": [
     {
-     "text": "Toh kam se kam",
-     "from": 42.85,
-     "to": 43.58
+     "text": "Theek hai, toh 2027",
+     "from": 51.21,
+     "to": 52.34
     },
     {
-     "text": "dhaniya toh free kar",
-     "from": 43.58,
-     "to": 44.62
+     "text": "mein Aries walon ko",
+     "from": 52.34,
+     "to": 53.47
     },
     {
-     "text": "dijiye!",
-     "from": 44.62,
-     "to": 44.98
+     "text": "ghar mein poora sukoon",
+     "from": 53.47,
+     "to": 54.79
+    },
+    {
+     "text": "dila dijiye.",
+     "from": 54.79,
+     "to": 55.5
     }
    ]
   },
   {
-   "id": "K12",
+   "id": "V12",
    "type": "line",
-   "start": 45.73,
-   "end": 53.035,
-   "who": "Sakshi",
-   "line": "Accha dhaniya chhodiye, naukri ki suniye na, appraisal teen percent aur upar se boss ke Sunday wale WhatsApp, promotion toh pakka kijiye!",
-   "caption_chunks": [
-    {
-     "text": "Accha dhaniya chhodiye, naukri",
-     "from": 45.73,
-     "to": 47.39
-    },
-    {
-     "text": "ki suniye na, appraisal",
-     "from": 47.39,
-     "to": 48.66
-    },
-    {
-     "text": "teen percent aur upar",
-     "from": 48.66,
-     "to": 49.82
-    },
-    {
-     "text": "se boss ke Sunday",
-     "from": 49.82,
-     "to": 50.77
-    },
-    {
-     "text": "wale WhatsApp, promotion toh",
-     "from": 50.77,
-     "to": 52.32
-    },
-    {
-     "text": "pakka kijiye!",
-     "from": 52.32,
-     "to": 53.03
-    }
-   ]
-  },
-  {
-   "id": "V13",
-   "type": "line",
-   "start": 53.115,
-   "end": 59.022,
+   "start": 55.582,
+   "end": 61.86,
    "who": "Vishnu ji",
-   "line": "Naye mauke aa sakte hain, bas April-May aur September-October mein gusse mein resign mat karna.",
+   "line": "June tak Guru ghar ke bhaav mein hain, par Ketu bhi wahin baithe hain, toh family ke liye waqt khud nikaalna padega.",
    "caption_chunks": [
     {
-     "text": "Naye mauke aa sakte",
-     "from": 53.11,
-     "to": 54.33
+     "text": "June tak Guru ghar",
+     "from": 55.58,
+     "to": 56.6
     },
     {
-     "text": "hain, bas April-May aur",
-     "from": 54.33,
-     "to": 55.81
+     "text": "ke bhaav mein hain,",
+     "from": 56.6,
+     "to": 57.67
     },
     {
-     "text": "September-October mein gusse mein",
-     "from": 55.81,
-     "to": 57.93
+     "text": "par Ketu bhi wahin",
+     "from": 57.67,
+     "to": 58.69
     },
     {
-     "text": "resign mat karna.",
-     "from": 57.93,
-     "to": 59.02
+     "text": "baithe hain, toh family",
+     "from": 58.69,
+     "to": 59.99
+    },
+    {
+     "text": "ke liye waqt khud",
+     "from": 59.99,
+     "to": 60.96
+    },
+    {
+     "text": "nikaalna padega.",
+     "from": 60.96,
+     "to": 61.86
     }
    ]
   },
   {
-   "id": "K14",
+   "id": "K13",
    "type": "line",
-   "start": 59.102,
-   "end": 61.344,
+   "start": 61.94,
+   "end": 66.809,
    "who": "Sakshi",
-   "line": "Toh boss ko block kar dein? Sirf Sunday ko?",
-   "caption_chunks": [
-    {
-     "text": "Toh boss ko block",
-     "from": 59.1,
-     "to": 60.03
-    },
-    {
-     "text": "kar dein? Sirf Sunday",
-     "from": 60.03,
-     "to": 61.18
-    },
-    {
-     "text": "ko?",
-     "from": 61.18,
-     "to": 61.34
-    }
-   ]
-  },
-  {
-   "id": "V15",
-   "type": "line",
-   "start": 61.424,
-   "end": 62.668,
-   "who": "Vishnu ji",
-   "line": "Block nahi, mute.",
-   "caption_chunks": [
-    {
-     "text": "Block nahi, mute.",
-     "from": 61.42,
-     "to": 62.67
-    }
-   ]
-  },
-  {
-   "id": "K16",
-   "type": "line",
-   "start": 63.018,
-   "end": 67.274,
-   "who": "Sakshi",
-   "line": "Aur har function mein maasi ka sawaal, shaadi kab, aur shaadi ho gayi toh good news kab.",
+   "line": "Aur har function mein maasi poochti hain ki shaadi kab hogi, aur shaadi ho gayi toh good news kab aayegi.",
    "caption_chunks": [
     {
      "text": "Aur har function mein",
-     "from": 63.02,
-     "to": 64.08
+     "from": 61.94,
+     "to": 62.95
     },
     {
-     "text": "maasi ka sawaal, shaadi",
-     "from": 64.08,
-     "to": 65.25
+     "text": "maasi poochti hain ki",
+     "from": 62.95,
+     "to": 63.96
     },
     {
-     "text": "kab, aur shaadi ho",
-     "from": 65.25,
-     "to": 66.16
+     "text": "shaadi kab hogi, aur",
+     "from": 63.96,
+     "to": 64.93
     },
     {
-     "text": "gayi toh good news",
-     "from": 66.16,
-     "to": 67.07
+     "text": "shaadi ho gayi toh",
+     "from": 64.93,
+     "to": 65.8
     },
     {
-     "text": "kab.",
-     "from": 67.07,
-     "to": 67.27
+     "text": "good news kab aayegi.",
+     "from": 65.8,
+     "to": 66.81
     }
    ]
   },
   {
    "id": "hey_bhagwan",
    "type": "meme",
-   "start": 67.374,
-   "end": 68.904,
+   "start": 66.909,
+   "end": 68.439,
    "who": "Sakshi",
    "line": "Hey Bhagwan, kya karun main!",
    "caption_chunks": [
     {
      "text": "Hey Bhagwan, kya karun main!",
-     "from": 67.37,
-     "to": 68.9
+     "from": 66.91,
+     "to": 68.44
     }
    ],
    "meme_file": "hey-bhagwan-kya-karun-main.mp3",
@@ -500,152 +485,252 @@
    "meme_out": 1.53
   },
   {
-   "id": "V18",
+   "id": "V14",
    "type": "line",
-   "start": 69.024,
-   "end": 70.086,
+   "start": 68.559,
+   "end": 69.566,
    "who": "Vishnu ji",
    "line": "Haan, sun raha hun.",
    "caption_chunks": [
     {
      "text": "Haan, sun raha hun.",
-     "from": 69.02,
-     "to": 70.09
+     "from": 68.56,
+     "to": 69.57
     }
    ]
   },
   {
-   "id": "V19",
+   "id": "V15",
    "type": "line",
-   "start": 70.436,
-   "end": 75.547,
+   "start": 69.916,
+   "end": 78.629,
    "who": "Vishnu ji",
-   "line": "Par June ke aakhir se November tak Guru saath hain, rishton mein mithas aa sakti hai.",
+   "line": "2026 mein Ketu ne pyaar aur bachchon ke maamle mein jo ulajhan di thi, June ke baad wahan Guru aa rahe hain, toh rishte ki baat aage badh sakti hai.",
    "caption_chunks": [
     {
-     "text": "Par June ke aakhir",
-     "from": 70.44,
-     "to": 71.56
+     "text": "2026 mein Ketu ne",
+     "from": 69.92,
+     "to": 70.97
     },
     {
-     "text": "se November tak Guru",
-     "from": 71.56,
-     "to": 72.8
+     "text": "pyaar aur bachchon ke",
+     "from": 70.97,
+     "to": 72.26
     },
     {
-     "text": "saath hain, rishton mein",
-     "from": 72.8,
-     "to": 74.3
+     "text": "maamle mein jo ulajhan",
+     "from": 72.26,
+     "to": 73.62
     },
     {
-     "text": "mithas aa sakti hai.",
-     "from": 74.3,
-     "to": 75.55
+     "text": "di thi, June ke",
+     "from": 73.62,
+     "to": 74.55
+    },
+    {
+     "text": "baad wahan Guru aa",
+     "from": 74.55,
+     "to": 75.66
+    },
+    {
+     "text": "rahe hain, toh rishte",
+     "from": 75.66,
+     "to": 76.96
+    },
+    {
+     "text": "ki baat aage badh",
+     "from": 76.96,
+     "to": 78.01
+    },
+    {
+     "text": "sakti hai.",
+     "from": 78.01,
+     "to": 78.63
+    }
+   ]
+  },
+  {
+   "id": "K16",
+   "type": "line",
+   "start": 78.709,
+   "end": 81.757,
+   "who": "Sakshi",
+   "line": "Aur last demand Prabhu, Sade Sati hi cancel kar dijiye na.",
+   "caption_chunks": [
+    {
+     "text": "Aur last demand Prabhu,",
+     "from": 78.71,
+     "to": 79.96
+    },
+    {
+     "text": "Sade Sati hi cancel",
+     "from": 79.96,
+     "to": 80.99
+    },
+    {
+     "text": "kar dijiye na.",
+     "from": 80.99,
+     "to": 81.76
+    }
+   ]
+  },
+  {
+   "id": "V17",
+   "type": "line",
+   "start": 81.837,
+   "end": 92.493,
+   "who": "Vishnu ji",
+   "line": "Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti, par 2027 mein June se October tak bas unki pehli dastak hai, aur Shani dev mehnat ka phal dete hain, darr ka nahi.",
+   "caption_chunks": [
+    {
+     "text": "Wo Shani dev ka",
+     "from": 81.84,
+     "to": 82.82
+    },
+    {
+     "text": "vibhag hai, wahan sifaarish",
+     "from": 82.82,
+     "to": 84.58
+    },
+    {
+     "text": "nahi chalti, par 2027",
+     "from": 84.58,
+     "to": 85.96
+    },
+    {
+     "text": "mein June se October",
+     "from": 85.96,
+     "to": 87.26
+    },
+    {
+     "text": "tak bas unki pehli",
+     "from": 87.26,
+     "to": 88.44
+    },
+    {
+     "text": "dastak hai, aur Shani",
+     "from": 88.44,
+     "to": 89.81
+    },
+    {
+     "text": "dev mehnat ka phal",
+     "from": 89.81,
+     "to": 90.99
+    },
+    {
+     "text": "dete hain, darr ka",
+     "from": 90.99,
+     "to": 92.17
+    },
+    {
+     "text": "nahi.",
+     "from": 92.17,
+     "to": 92.49
+    }
+   ]
+  },
+  {
+   "id": "V18",
+   "type": "line",
+   "start": 92.643,
+   "end": 96.726,
+   "who": "Vishnu ji",
+   "line": "Tab tak neend aur sehat ka dhyaan rakho, aur ghabrao mat, Guru saath hain.",
+   "caption_chunks": [
+    {
+     "text": "Tab tak neend aur",
+     "from": 92.64,
+     "to": 93.62
+    },
+    {
+     "text": "sehat ka dhyaan rakho,",
+     "from": 93.62,
+     "to": 94.89
+    },
+    {
+     "text": "aur ghabrao mat, Guru",
+     "from": 94.89,
+     "to": 96.09
+    },
+    {
+     "text": "saath hain.",
+     "from": 96.09,
+     "to": 96.73
+    }
+   ]
+  },
+  {
+   "id": "K19",
+   "type": "line",
+   "start": 97.326,
+   "end": 102.253,
+   "who": "Sakshi",
+   "line": "Matlab ek haan, ek aadha haan, ek mein intezaar aur ek pehli dastak, Aries ke liye toh ye bhi record hai!",
+   "caption_chunks": [
+    {
+     "text": "Matlab ek haan, ek",
+     "from": 97.33,
+     "to": 98.21
+    },
+    {
+     "text": "aadha haan, ek mein",
+     "from": 98.21,
+     "to": 99.15
+    },
+    {
+     "text": "intezaar aur ek pehli",
+     "from": 99.15,
+     "to": 100.18
+    },
+    {
+     "text": "dastak, Aries ke liye",
+     "from": 100.18,
+     "to": 101.22
+    },
+    {
+     "text": "toh ye bhi record",
+     "from": 101.22,
+     "to": 102.06
+    },
+    {
+     "text": "hai!",
+     "from": 102.06,
+     "to": 102.25
     }
    ]
   },
   {
    "id": "K20",
    "type": "line",
-   "start": 75.627,
-   "end": 78.782,
+   "start": 102.603,
+   "end": 108.219,
    "who": "Sakshi",
-   "line": "Aur last demand Prabhu, Sade Sati cancel kar dijiye na.",
+   "line": "Apne Aries dost ko ye bhejo, poori 2027 guide bio ke link mein hai, aur agli file Taurus ki hogi.",
    "caption_chunks": [
     {
-     "text": "Aur last demand Prabhu,",
-     "from": 75.63,
-     "to": 77.0
+     "text": "Apne Aries dost ko",
+     "from": 102.6,
+     "to": 103.69
     },
     {
-     "text": "Sade Sati cancel kar",
-     "from": 77.0,
-     "to": 78.19
+     "text": "ye bhejo, poori 2027",
+     "from": 103.69,
+     "to": 104.9
     },
     {
-     "text": "dijiye na.",
-     "from": 78.19,
-     "to": 78.78
-    }
-   ]
-  },
-  {
-   "id": "V21",
-   "type": "line",
-   "start": 78.862,
-   "end": 83.972,
-   "who": "Vishnu ji",
-   "line": "Wo Shani dev ka vibhag hai, wahan sifaarish nahi, sirf mehnat ka hisaab chalta hai.",
-   "caption_chunks": [
-    {
-     "text": "Wo Shani dev ka",
-     "from": 78.86,
-     "to": 79.82
+     "text": "guide bio ke link",
+     "from": 104.9,
+     "to": 105.92
     },
     {
-     "text": "vibhag hai, wahan sifaarish",
-     "from": 79.82,
-     "to": 81.54
+     "text": "mein hai, aur agli",
+     "from": 105.92,
+     "to": 107.01
     },
     {
-     "text": "nahi, sirf mehnat ka",
-     "from": 81.54,
-     "to": 82.82
-    },
-    {
-     "text": "hisaab chalta hai.",
-     "from": 82.82,
-     "to": 83.97
-    }
-   ]
-  },
-  {
-   "id": "V22",
-   "type": "line",
-   "start": 84.172,
-   "end": 86.052,
-   "who": "Vishnu ji",
-   "line": "Ghabrana mat, Guru bhi saath hain.",
-   "caption_chunks": [
-    {
-     "text": "Ghabrana mat, Guru bhi",
-     "from": 84.17,
-     "to": 85.43
-    },
-    {
-     "text": "saath hain.",
-     "from": 85.43,
-     "to": 86.05
-    }
-   ]
-  },
-  {
-   "id": "K23",
-   "type": "line",
-   "start": 87.352,
-   "end": 91.922,
-   "who": "Sakshi",
-   "line": "Aries dost ko ye bhejo, mahine-wise guide bio ke link mein hai. Agli file, Taurus!",
-   "caption_chunks": [
-    {
-     "text": "Aries dost ko ye",
-     "from": 87.35,
-     "to": 88.28
-    },
-    {
-     "text": "bhejo, mahine-wise guide bio",
-     "from": 88.28,
-     "to": 89.9
-    },
-    {
-     "text": "ke link mein hai.",
-     "from": 89.9,
-     "to": 90.88
-    },
-    {
-     "text": "Agli file, Taurus!",
-     "from": 90.88,
-     "to": 91.92
+     "text": "file Taurus ki hogi.",
+     "from": 107.01,
+     "to": 108.22
     }
    ]
   }

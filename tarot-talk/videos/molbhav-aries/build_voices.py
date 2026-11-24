@@ -12,38 +12,36 @@ from kokoro_onnx import Kokoro
 
 HERE = os.path.dirname(os.path.abspath(__file__)); SR = 44100
 MEMES = os.path.join(HERE, '..', '..', 'assets', 'audio', 'memes')
-VOICE = {'Vishnu ji': dict(voice='hm_psi', speed=1.0, tempo=1.06, semis=-0.6),
-         'Sakshi': dict(voice='hf_beta', speed=1.0, tempo=1.10, semis=0.0)}
+VOICE = {'Vishnu ji': dict(voice='hm_psi', speed=1.0, tempo=1.14, semis=-0.6),
+         'Sakshi': dict(voice='hf_beta', speed=1.0, tempo=1.18, semis=0.0)}
 GAP, LAUGH = 0.08, 0.35
 
 # (id, who, roman line for captions, devanagari text for the voice, gap_after)  -- or ('MEME', name, file, in, out, gap_after)
 SCRIPT = [
- ('K01', 'Sakshi', "Prabhu, main Aries walon ki wakeel hun, aur ye raha unka 2026 ka hisaab!", "प्रभु, मैं एरीज़ वालों की वकील हूँ, और ये रहा उनका दो हज़ार छब्बीस का हिसाब!", GAP),
- ('V02', 'Vishnu ji', "Arre, itni lambi list? Ye shikayat hai ya shaadi ka menu?", "अरे, इतनी लंबी लिस्ट? ये शिकायत है, या शादी का मेन्यू?", LAUGH),
- ('K03', 'Sakshi', "Suniye na, salary paanch tarikh tak gayab, neend reels mein gayi, aur jo share kharida, wo kharidte hi gir gaya!", "सुनिए ना, सैलरी पाँच तारीख तक गायब, नींद रील्स में गई, और जो शेयर खरीदा, वो खरीदते ही गिर गया!", 1.55),
- ('V04', 'Vishnu ji', "Sade Sati chal rahi hai, toh thoda hilna-dulna toh banta hai.", "साढ़े साती चल रही है, तो थोड़ा हिलना डुलना तो बनता है।", 0.12),
+ ('K01', 'Sakshi', "Prabhu, main Aries walon ki wakeel hun aur unka 2026 ka poora hisaab lekar aayi hun.", "प्रभु, मैं एरीज़ वालों की वकील हूँ और उनका दो हज़ार छब्बीस का पूरा हिसाब लेकर आई हूँ।", GAP),
+ ('V02', 'Vishnu ji', "Itni lambi list hai, ye shikayat hai ya kisi shaadi ka menu hai?", "इतनी लंबी लिस्ट है, ये शिकायत है या किसी शादी का मेन्यू है?", LAUGH),
+ ('K03', 'Sakshi', "Poore saal kharcha zyada hua, raat ko neend nahi aayi, aur jo share kharida wo turant gir gaya.", "पूरे साल खर्चा ज़्यादा हुआ, रात को नींद नहीं आई, और जो शेयर खरीदा वो तुरंत गिर गया।", 1.55),
+ ('V04', 'Vishnu ji', "Shani dev abhi tumhare kharchon wale ghar mein baithe hain, isliye 2026 mein paisa aur neend dono hil gaye.", "शनि देव अभी तुम्हारे खर्चों वाले घर में बैठे हैं, इसलिए दो हज़ार छब्बीस में पैसा और नींद दोनों हिल गए।", 0.12),
  ('MEME', 'arey_baap_re', 'arey-baap-re.mp3', 0.0, 1.21, 0.06),
- ('K05', 'Sakshi', "Toh gadbad hai re baba!", "तो गड़बड़ है रे बाबा!", GAP),
- ('V06', 'Vishnu ji', "Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai. Bolo, kya chahiye?", "अरे घबराओ मत, इसीलिए तो मोल भाव हो रहा है। बोलो, क्या चाहिए?", 0.12),
+ ('K05', 'Sakshi', "Toh kya 2027 bhi aisa hi jayega?", "तो क्या दो हज़ार सत्ताईस भी ऐसा ही जाएगा?", GAP),
+ ('V06', 'Vishnu ji', "Ghabrao mat, isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?", "घबराओ मत, इसीलिए तो मोल भाव हो रहा है, बोलो क्या चाहिए?", 0.12),
  ('MEME', 'abhi_maza', 'abhi-maza-aayega-na-bhidu.mp3', 1.95, 4.36, 0.08),
- ('K07', 'Sakshi', "Toh Prabhu, 2027 mein salary double!", "तो प्रभु, दो हज़ार सत्ताईस में सैलरी डबल!", GAP),
- ('V08', 'Vishnu ji', "Double nahi, par March-April aur June mein paisa achha aa sakta hai, bas pehle bachat.", "डबल नहीं, पर मार्च अप्रैल और जून में पैसा अच्छा आ सकता है, बस पहले बचत।", 0.12),
+ ('K07', 'Sakshi', "Pehli demand ye hai ki January se hi naya kaam shuru ho jaye.", "पहली डिमांड ये है कि जनवरी से ही नया काम शुरू हो जाए।", GAP),
+ ('V08', 'Vishnu ji', "Aries ke swami Mangal khud dus January se ek April tak vakri rahenge, isliye bade faisle April tak rok ke rakho.", "एरीज़ के स्वामी मंगल ख़ुद दस जनवरी से एक अप्रैल तक वक्री रहेंगे, इसलिए बड़े फ़ैसले अप्रैल तक रोक के रखो।", 0.12),
  ('MEME', 'lekin_ek_second', 'lekin-ek-second.mp3', 0.0, 1.23, 0.06),
- ('K09', 'Sakshi', "Dedh guna? Chaliye sawa guna, final!", "डेढ़ गुना? चलिए सवा गुना, फ़ाइनल!", GAP),
- ('V10', 'Vishnu ji', "Wakeel sahiba, ye sabzi mandi nahi hai.", "वकील साहिबा, ये सब्ज़ी मंडी नहीं है।", GAP),
- ('K11', 'Sakshi', "Toh kam se kam dhaniya toh free kar dijiye!", "तो कम से कम धनिया तो फ़्री कर दीजिए!", 0.75),
- ('K12', 'Sakshi', "Accha dhaniya chhodiye, naukri ki suniye na, appraisal teen percent aur upar se boss ke Sunday wale WhatsApp, promotion toh pakka kijiye!", "अच्छा धनिया छोड़िए, नौकरी की सुनिए ना, अप्रेज़ल तीन परसेंट और ऊपर से बॉस के संडे वाले व्हाट्सऐप, प्रमोशन तो पक्का कीजिए!", GAP),
- ('V13', 'Vishnu ji', "Naye mauke aa sakte hain, bas April-May aur September-October mein gusse mein resign mat karna.", "नए मौके आ सकते हैं, बस अप्रैल मई और सितंबर अक्टूबर में गुस्से में रिज़ाइन मत करना।", GAP),
- ('K14', 'Sakshi', "Toh boss ko block kar dein? Sirf Sunday ko?", "तो बॉस को ब्लॉक कर दें? सिर्फ़ संडे को?", GAP),
- ('V15', 'Vishnu ji', "Block nahi, mute.", "ब्लॉक नहीं, म्यूट।", LAUGH),
- ('K16', 'Sakshi', "Aur har function mein maasi ka sawaal, shaadi kab, aur shaadi ho gayi toh good news kab.", "और हर फ़ंक्शन में मासी का सवाल, शादी कब, और शादी हो गई तो गुड न्यूज़ कब।", 0.1),
+ ('K09', 'Sakshi', "Aries wale teen mahine rukenge, aapko sach mein aisa lagta hai?", "एरीज़ वाले तीन महीने रुकेंगे, आपको सच में ऐसा लगता है?", GAP),
+ ('V10', 'Vishnu ji', "Yahi toh is saal ki asli pariksha hai, jo ruk gaya wahi jeetega.", "यही तो इस साल की असली परीक्षा है, जो रुक गया वही जीतेगा।", LAUGH),
+ ('K11', 'Sakshi', "Theek hai, toh 2027 mein Aries walon ko ghar mein poora sukoon dila dijiye.", "ठीक है, तो दो हज़ार सत्ताईस में एरीज़ वालों को घर में पूरा सुकून दिला दीजिए।", GAP),
+ ('V12', 'Vishnu ji', "June tak Guru ghar ke bhaav mein hain, par Ketu bhi wahin baithe hain, toh family ke liye waqt khud nikaalna padega.", "जून तक गुरु घर के भाव में हैं, पर केतु भी वहीं बैठे हैं, तो फ़ैमिली के लिए वक़्त ख़ुद निकालना पड़ेगा।", GAP),
+ ('K13', 'Sakshi', "Aur har function mein maasi poochti hain ki shaadi kab hogi, aur shaadi ho gayi toh good news kab aayegi.", "और हर फ़ंक्शन में मासी पूछती हैं कि शादी कब होगी, और शादी हो गई तो गुड न्यूज़ कब आएगी।", 0.1),
  ('MEME', 'hey_bhagwan', 'hey-bhagwan-kya-karun-main.mp3', 0.0, 1.53, 0.12),
- ('V18', 'Vishnu ji', "Haan, sun raha hun.", "हाँ, सुन रहा हूँ।", LAUGH),
- ('V19', 'Vishnu ji', "Par June ke aakhir se November tak Guru saath hain, rishton mein mithas aa sakti hai.", "पर जून के आख़िर से नवंबर तक गुरु साथ हैं, रिश्तों में मिठास आ सकती है।", GAP),
- ('K20', 'Sakshi', "Aur last demand Prabhu, Sade Sati cancel kar dijiye na.", "और लास्ट डिमांड प्रभु, साढ़े साती कैंसल कर दीजिए ना।", GAP),
- ('V21', 'Vishnu ji', "Wo Shani dev ka vibhag hai, wahan sifaarish nahi, sirf mehnat ka hisaab chalta hai.", "वो शनि देव का विभाग है, वहाँ सिफ़ारिश नहीं, सिर्फ़ मेहनत का हिसाब चलता है।", 0.2),
- ('V22', 'Vishnu ji', "Ghabrana mat, Guru bhi saath hain.", "घबराना मत, गुरु भी साथ हैं।", 1.3),
- ('K23', 'Sakshi', "Aries dost ko ye bhejo, mahine-wise guide bio ke link mein hai. Agli file, Taurus!", "एरीज़ दोस्त को ये भेजो, महीने वार गाइड बायो के लिंक में है। अगली फ़ाइल, टॉरस!", 0.9),
+ ('V14', 'Vishnu ji', "Haan, sun raha hun.", "हाँ, सुन रहा हूँ।", LAUGH),
+ ('V15', 'Vishnu ji', "2026 mein Ketu ne pyaar aur bachchon ke maamle mein jo ulajhan di thi, June ke baad wahan Guru aa rahe hain, toh rishte ki baat aage badh sakti hai.", "दो हज़ार छब्बीस में केतु ने प्यार और बच्चों के मामले में जो उलझन दी थी, जून के बाद वहाँ गुरु आ रहे हैं, तो रिश्ते की बात आगे बढ़ सकती है।", GAP),
+ ('K16', 'Sakshi', "Aur last demand Prabhu, Sade Sati hi cancel kar dijiye na.", "और लास्ट डिमांड प्रभु, साढ़े साती ही कैंसल कर दीजिए ना।", GAP),
+ ('V17', 'Vishnu ji', "Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti, par 2027 mein June se October tak bas unki pehli dastak hai, aur Shani dev mehnat ka phal dete hain, darr ka nahi.", "वो शनि देव का विभाग है, वहाँ सिफ़ारिश नहीं चलती, पर दो हज़ार सत्ताईस में जून से अक्टूबर तक बस उनकी पहली दस्तक है, और शनि देव मेहनत का फल देते हैं, डर का नहीं।", 0.15),
+ ('V18', 'Vishnu ji', "Tab tak neend aur sehat ka dhyaan rakho, aur ghabrao mat, Guru saath hain.", "तब तक नींद और सेहत का ध्यान रखो, और घबराओ मत, गुरु साथ हैं।", 0.6),
+ ('K19', 'Sakshi', "Matlab ek haan, ek aadha haan, ek mein intezaar aur ek pehli dastak, Aries ke liye toh ye bhi record hai!", "मतलब एक हाँ, एक आधा हाँ, एक में इंतज़ार और एक पहली दस्तक, एरीज़ के लिए तो ये भी रिकॉर्ड है!", 0.35),
+ ('K20', 'Sakshi', "Apne Aries dost ko ye bhejo, poori 2027 guide bio ke link mein hai, aur agli file Taurus ki hogi.", "अपने एरीज़ दोस्त को ये भेजो, पूरी दो हज़ार सत्ताईस गाइड बायो के लिंक में है, और अगली फ़ाइल टॉरस की होगी।", 0.9),
 ]
 MEME_TEXT = {'arey_baap_re': 'Arey baap re!', 'abhi_maza': 'Abhi maza aayega na bhidu!', 'lekin_ek_second': 'Lekin ek second!', 'hey_bhagwan': 'Hey Bhagwan, kya karun main!'}
 
@@ -97,11 +95,11 @@ def main(model, voices):
     with open(os.path.join(HERE, 'voices', 'cue_sheet.csv'), 'w', newline='') as fh:
         w = csv.writer(fh); w.writerow(['id', 'who', 'start_s', 'end_s', 'file', 'line']); w.writerows(rows)
     S = {'meta': {'title': 'Rashi ki file: Aries 2026 ka dard, 2027 ka mol-bhaav', 'channel': 'Tarot Talk By Sakshi (Instagram Reels)',
-                  'version': 'v11 script, free Kokoro voices (no credits)', 'runtime_s': round(len(y) / SR, 2), 'format': '1080x1920, 24 fps, 9:16'},
+                  'version': 'v12.1 script, free Kokoro voices (no credits)', 'runtime_s': round(len(y) / SR, 2), 'format': '1080x1920, 24 fps, 9:16'},
          'beats': beats}
     json.dump(S, open(os.path.join(HERE, 'script.json'), 'w'), ensure_ascii=False, indent=1)
     by = {b['id']: b for b in beats}
-    cues = [[round(by['K03']['end'] - 0.15, 2), 'meme:faaah.mp3', -6, 0, 1.9], [round(by['K11']['end'] + 0.02, 2), 'meme:vine-boom.mp3', -8]]
+    cues = [[round(by['K03']['end'] - 0.15, 2), 'meme:faaah.mp3', -6, 0, 1.9], [round(by['V10']['end'] + 0.02, 2), 'meme:vine-boom.mp3', -10]]
     json.dump({'note': '[script time s, sound, gain dB, (in s), (out s)]: our sfx name, meme:<file>, or voice:<path>', 'cues': cues},
               open(os.path.join(HERE, 'sfx_cues.json'), 'w'), indent=0)
     words = sum(len(re.findall(r"[A-Za-z']+|\d+", b['line'])) for b in beats if b['type'] == 'line')

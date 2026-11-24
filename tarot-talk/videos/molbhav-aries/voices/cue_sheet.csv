@@ -1,27 +1,25 @@
 id,who,start_s,end_s,file,line
-K01,Sakshi,0.0,4.487,voices/lines/K01.wav,"Prabhu, main Aries walon ki wakeel hun, aur ye raha unka 2026 ka hisaab!"
-V02,Vishnu ji,4.567,8.038,voices/lines/V02.wav,"Arre, itni lambi list? Ye shikayat hai ya shaadi ka menu?"
-K03,Sakshi,8.388,14.41,voices/lines/K03.wav,"Suniye na, salary paanch tarikh tak gayab, neend reels mein gayi, aur jo share kharida, wo kharidte hi gir gaya!"
-V04,Vishnu ji,15.96,19.502,voices/lines/V04.wav,"Sade Sati chal rahi hai, toh thoda hilna-dulna toh banta hai."
-arey_baap_re,Sakshi,19.622,20.832,meme:arey-baap-re.mp3,Arey baap re!
-K05,Sakshi,20.892,22.182,voices/lines/K05.wav,Toh gadbad hai re baba!
-V06,Vishnu ji,22.262,26.424,voices/lines/V06.wav,"Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai. Bolo, kya chahiye?"
-abhi_maza,Sakshi,26.544,28.954,meme:abhi-maza-aayega-na-bhidu.mp3,Abhi maza aayega na bhidu!
-K07,Sakshi,29.034,31.608,voices/lines/K07.wav,"Toh Prabhu, 2027 mein salary double!"
-V08,Vishnu ji,31.688,36.803,voices/lines/V08.wav,"Double nahi, par March-April aur June mein paisa achha aa sakta hai, bas pehle bachat."
-lekin_ek_second,Sakshi,36.923,38.153,meme:lekin-ek-second.mp3,Lekin ek second!
-K09,Sakshi,38.213,40.282,voices/lines/K09.wav,"Dedh guna? Chaliye sawa guna, final!"
-V10,Vishnu ji,40.362,42.769,voices/lines/V10.wav,"Wakeel sahiba, ye sabzi mandi nahi hai."
-K11,Sakshi,42.849,44.98,voices/lines/K11.wav,Toh kam se kam dhaniya toh free kar dijiye!
-K12,Sakshi,45.73,53.035,voices/lines/K12.wav,"Accha dhaniya chhodiye, naukri ki suniye na, appraisal teen percent aur upar se boss ke Sunday wale WhatsApp, promotion toh pakka kijiye!"
-V13,Vishnu ji,53.115,59.022,voices/lines/V13.wav,"Naye mauke aa sakte hain, bas April-May aur September-October mein gusse mein resign mat karna."
-K14,Sakshi,59.102,61.344,voices/lines/K14.wav,Toh boss ko block kar dein? Sirf Sunday ko?
-V15,Vishnu ji,61.424,62.668,voices/lines/V15.wav,"Block nahi, mute."
-K16,Sakshi,63.018,67.274,voices/lines/K16.wav,"Aur har function mein maasi ka sawaal, shaadi kab, aur shaadi ho gayi toh good news kab."
-hey_bhagwan,Sakshi,67.374,68.904,meme:hey-bhagwan-kya-karun-main.mp3,"Hey Bhagwan, kya karun main!"
-V18,Vishnu ji,69.024,70.086,voices/lines/V18.wav,"Haan, sun raha hun."
-V19,Vishnu ji,70.436,75.547,voices/lines/V19.wav,"Par June ke aakhir se November tak Guru saath hain, rishton mein mithas aa sakti hai."
-K20,Sakshi,75.627,78.782,voices/lines/K20.wav,"Aur last demand Prabhu, Sade Sati cancel kar dijiye na."
-V21,Vishnu ji,78.862,83.972,voices/lines/V21.wav,"Wo Shani dev ka vibhag hai, wahan sifaarish nahi, sirf mehnat ka hisaab chalta hai."
-V22,Vishnu ji,84.172,86.052,voices/lines/V22.wav,"Ghabrana mat, Guru bhi saath hain."
-K23,Sakshi,87.352,91.922,voices/lines/K23.wav,"Aries dost ko ye bhejo, mahine-wise guide bio ke link mein hai. Agli file, Taurus!"
+K01,Sakshi,0.0,4.675,voices/lines/K01.wav,"Prabhu, main Aries walon ki wakeel hun aur unka 2026 ka poora hisaab lekar aayi hun."
+V02,Vishnu ji,4.755,8.297,voices/lines/V02.wav,"Itni lambi list hai, ye shikayat hai ya kisi shaadi ka menu hai?"
+K03,Sakshi,8.647,13.451,voices/lines/K03.wav,"Poore saal kharcha zyada hua, raat ko neend nahi aayi, aur jo share kharida wo turant gir gaya."
+V04,Vishnu ji,15.001,21.792,voices/lines/V04.wav,"Shani dev abhi tumhare kharchon wale ghar mein baithe hain, isliye 2026 mein paisa aur neend dono hil gaye."
+arey_baap_re,Sakshi,21.912,23.122,meme:arey-baap-re.mp3,Arey baap re!
+K05,Sakshi,23.182,25.632,voices/lines/K05.wav,Toh kya 2027 bhi aisa hi jayega?
+V06,Vishnu ji,25.712,29.238,voices/lines/V06.wav,"Ghabrao mat, isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?"
+abhi_maza,Sakshi,29.358,31.768,meme:abhi-maza-aayega-na-bhidu.mp3,Abhi maza aayega na bhidu!
+K07,Sakshi,31.848,34.773,voices/lines/K07.wav,Pehli demand ye hai ki January se hi naya kaam shuru ho jaye.
+V08,Vishnu ji,34.853,42.318,voices/lines/V08.wav,"Aries ke swami Mangal khud dus January se ek April tak vakri rahenge, isliye bade faisle April tak rok ke rakho."
+lekin_ek_second,Sakshi,42.438,43.668,meme:lekin-ek-second.mp3,Lekin ek second!
+K09,Sakshi,43.728,46.942,voices/lines/K09.wav,"Aries wale teen mahine rukenge, aapko sach mein aisa lagta hai?"
+V10,Vishnu ji,47.022,50.856,voices/lines/V10.wav,"Yahi toh is saal ki asli pariksha hai, jo ruk gaya wahi jeetega."
+K11,Sakshi,51.206,55.502,voices/lines/K11.wav,"Theek hai, toh 2027 mein Aries walon ko ghar mein poora sukoon dila dijiye."
+V12,Vishnu ji,55.582,61.86,voices/lines/V12.wav,"June tak Guru ghar ke bhaav mein hain, par Ketu bhi wahin baithe hain, toh family ke liye waqt khud nikaalna padega."
+K13,Sakshi,61.94,66.809,voices/lines/K13.wav,"Aur har function mein maasi poochti hain ki shaadi kab hogi, aur shaadi ho gayi toh good news kab aayegi."
+hey_bhagwan,Sakshi,66.909,68.439,meme:hey-bhagwan-kya-karun-main.mp3,"Hey Bhagwan, kya karun main!"
+V14,Vishnu ji,68.559,69.566,voices/lines/V14.wav,"Haan, sun raha hun."
+V15,Vishnu ji,69.916,78.629,voices/lines/V15.wav,"2026 mein Ketu ne pyaar aur bachchon ke maamle mein jo ulajhan di thi, June ke baad wahan Guru aa rahe hain, toh rishte ki baat aage badh sakti hai."
+K16,Sakshi,78.709,81.757,voices/lines/K16.wav,"Aur last demand Prabhu, Sade Sati hi cancel kar dijiye na."
+V17,Vishnu ji,81.837,92.493,voices/lines/V17.wav,"Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti, par 2027 mein June se October tak bas unki pehli dastak hai, aur Shani dev mehnat ka phal dete hain, darr ka nahi."
+V18,Vishnu ji,92.643,96.726,voices/lines/V18.wav,"Tab tak neend aur sehat ka dhyaan rakho, aur ghabrao mat, Guru saath hain."
+K19,Sakshi,97.326,102.253,voices/lines/K19.wav,"Matlab ek haan, ek aadha haan, ek mein intezaar aur ek pehli dastak, Aries ke liye toh ye bhi record hai!"
+K20,Sakshi,102.603,108.219,voices/lines/K20.wav,"Apne Aries dost ko ye bhejo, poori 2027 guide bio ke link mein hai, aur agli file Taurus ki hogi."
