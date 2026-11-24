@@ -38,19 +38,19 @@ function head(p) {
   g.push(ink(catmull([[156, -256], [190, -270]], 3, false), 4, { color: '#ffc0d6', taper: [0.3, 0.3] }));
   g.push(ink(catmull([[-70, -180], [-96, -130], [-90, -84]], 5, false), 4.5, { taper: [0.2, 0.7] }));
   g.push(`<circle cx="-8" cy="-74" r="8" fill="#d22f48" stroke="${E.INK}" stroke-width="2.5"/>`);
-  const lid = p.lid ?? 0, look = p.lookX ?? 0, ly = p.lookY ?? 0;
+  const lid = p.lid ?? 0, low = p.lidLow ?? 0, look = p.lookX ?? 0, ly = p.lookY ?? 0;   // lidLow: lower lid rises (smile squint, suspicion)
   for (const s of [-1, 1]) {
     const cx = s * 82 - 6, cy = 20, rx = 44, ry = 36;
     if (p.blink) { g.push(ink(catmull([[cx - 42, cy + 2], [cx, cy + 12], [cx + 42, cy + 2]], 6, false), 9, { taper: [0.3, 0.3] }) + ink([[cx + s * 40, cy + 2], [cx + s * 54, cy - 6]], 5, { taper: [0.1, 0.8] })); }
     else if (p.wink === s || p.happy) { g.push(ink(catmull([[cx - 40, cy + 8], [cx, cy - 18], [cx + 40, cy + 8]], 6, false), 10, { taper: [0.3, 0.3] }) + ink([[cx + s * 38, cy + 4], [cx + s * 54, cy - 8]], 6, { taper: [0.1, 0.8] })); }
     else {
       const top = cy - ry + 2 * ry * lid;
-      const ey = catmull([[cx - s * rx, cy + 4], [cx - s * rx * 0.4, top - (1 - lid) * 4], [cx + s * rx * 0.5, top + 2], [cx + s * rx, cy - 2], [cx + s * rx * 0.4, cy + ry * 0.85], [cx - s * rx * 0.5, cy + ry * 0.75]], 8, true);
+      const ey = catmull([[cx - s * rx, cy + 4], [cx - s * rx * 0.4, top - (1 - lid) * 4], [cx + s * rx * 0.5, top + 2], [cx + s * rx, cy - 2], [cx + s * rx * 0.4, cy + ry * (0.85 - 0.55 * low)], [cx - s * rx * 0.5, cy + ry * (0.75 - 0.5 * low)]], 8, true);
       const px = cx + look, py = cy + 6 + ly;
       g.push(fill(ey, C.white, 0) + clipped(ey, `<ellipse cx="${px}" cy="${py}" rx="24" ry="28" fill="#2a1408"/><ellipse cx="${px}" cy="${py + 12}" rx="15" ry="10" fill="#6b3a1a"/><circle cx="${px + 9}" cy="${py - 11}" r="7" fill="#fff"/>`));
       const tl = catmull([[cx - s * (rx + 4), cy + 6], [cx - s * rx * 0.4, top - 2], [cx + s * rx * 0.5, top], [cx + s * (rx + 4), cy - 4], [cx + s * (rx + 18), cy - 14]], 8, false);
       g.push(ink(s > 0 ? tl : tl.slice().reverse(), 9, { prof: u => 0.35 + 0.65 * Math.sin(Math.PI * u * 0.9), taper: [0.25, 0.05], amp: 0.4 }));
-      g.push(ink([[cx - s * rx * 0.3, cy + ry * 0.8], [cx + s * rx * 0.5, cy + ry * 0.68]], 2.5, { taper: [0.5, 0.5] }));
+      g.push(ink([[cx - s * rx * 0.3, cy + ry * (0.8 - 0.55 * low)], [cx + s * rx * 0.5, cy + ry * (0.68 - 0.5 * low)]], 2.5 + 3 * low, { taper: [0.5, 0.5] }));
     }
     // expression extras (optional, default = approved look): browUp lifts both brows, browSad raises the inner ends
     const lift = (p.browLift === s ? (p.browLiftAmt || 1) : 0) + (p.browUp || 0), sad = p.browSad || 0, by = cy - ry - 30 - lift * 16;

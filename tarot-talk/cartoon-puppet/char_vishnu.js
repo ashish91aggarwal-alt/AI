@@ -19,15 +19,15 @@ function gem(x, y, r, col, w) {
 }
 const pearl = (x, y, r, w) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="#fffaf2" stroke="${E.INK}" stroke-width="${w}"/><circle cx="${(x - r * 0.35).toFixed(1)}" cy="${(y - r * 0.35).toFixed(1)}" r="${r * 0.3}" fill="#fff"/>`;
 
-function eye(cx, cy, lid, lx, brow, side, soft = 0) {   // soft: lifts the inner brow end so the brows read level and kind
+function eye(cx, cy, lid, lx, brow, side, soft = 0, low = 0, ly = 0) {   // low: lower lid rises (smile squint); ly: gaze up/down   // soft: lifts the inner brow end so the brows read level and kind
   const rx = 52, ry = 50;
-  const shape = catmull([[cx - rx, cy + 6], [cx - rx * 0.55, cy - ry], [cx + rx * 0.5, cy - ry * 1.04], [cx + rx, cy - 4], [cx + rx * 0.45, cy + ry * 0.92], [cx - rx * 0.5, cy + ry * 0.88]], 8, true);
+  const shape = catmull([[cx - rx, cy + 6], [cx - rx * 0.55, cy - ry], [cx + rx * 0.5, cy - ry * 1.04], [cx + rx, cy - 4], [cx + rx * 0.45, cy + ry * (0.92 - 0.6 * low)], [cx - rx * 0.5, cy + ry * (0.88 - 0.6 * low)]], 8, true);
   const lidY = cy - ry + (2 * ry + 8) * lid;
   const outer = side > 0 ? 1 : -1; // outer corner direction
   const lidLine = catmull([[cx - outer * (rx + 4), lidY + 8], [cx - outer * 10, lidY - 10], [cx + outer * (rx + 6), lidY + 2], [cx + outer * (rx + 14), lidY - 4]], 8, false);
   const browY = cy - 92 - brow * 26;
-  const inner = '<circle cx="' + (cx + lx) + '" cy="' + (cy + 10) + '" r="25" fill="' + C.iris + '"/>' +
-    '<circle cx="' + (cx + lx + 9) + '" cy="' + (cy + 2) + '" r="8" fill="#fff"/><circle cx="' + (cx + lx - 10) + '" cy="' + (cy + 22) + '" r="4.5" fill="#fff" opacity="0.85"/>' +
+  const inner = '<circle cx="' + (cx + lx) + '" cy="' + (cy + 10 + ly) + '" r="25" fill="' + C.iris + '"/>' +
+    '<circle cx="' + (cx + lx + 9) + '" cy="' + (cy + 2 + ly) + '" r="8" fill="#fff"/><circle cx="' + (cx + lx - 10) + '" cy="' + (cy + 22 + ly) + '" r="4.5" fill="#fff" opacity="0.85"/>' +
     `<path d="${E.poly(lidLine.concat([[lidLine[lidLine.length - 1][0], cy - 140], [lidLine[0][0], cy - 140]]))}" fill="${C.skin}"/>` +
     `<path d="${E.poly(lidLine.concat(lidLine.slice().reverse().map(([x, y]) => [x, y - 14])))}" fill="${C.skinSh}"/>`;
   const rimTop = shape.slice(0, Math.floor(shape.length * 0.55));
@@ -79,7 +79,7 @@ function head(p) {
   for (const side of [-1, 1]) {
     const cx = side * 90, mode = p.eyeMode === 'happy' || (p.wink === side) ? 'happy' : null;
     if (mode) { g.push(happyEye(cx, side)); g.push(ink(catmull([[cx - side * 48, -96 - (side < 0 ? p.browL : p.browR) * 22], [cx, -110 - (side < 0 ? p.browL : p.browR) * 22], [cx + side * 50, -96]], 6, false), 11.5, { taper: [0.2, 0.5] })); }
-    else g.push(eye(cx, -6, p.lid, p.lookX, side < 0 ? p.browL : p.browR, side, p.browSoft || 0));
+    else g.push(eye(cx, -6, p.lid, p.lookX, side < 0 ? p.browL : p.browR, side, p.browSoft || 0, p.lidLow || 0, p.lookY || 0));
   }
   if (p.blushHatch) for (const k of [-1, 1]) g.push([-14, 0, 14].map(dx => `<line x1="${k * 126 + dx - 6}" y1="100" x2="${k * 126 + dx + 6}" y2="84" stroke="#e0457a" stroke-width="3.2" stroke-linecap="round" opacity="0.7"/>`).join(''));
   g.push(ink(catmull([[-4, 42], [-16, 70], [4, 76]], 6, false), WT.fine * 1.6, { taper: [0.3, 0.3], color: C.skinLine }));

@@ -28,6 +28,14 @@ function trail(t, st) {
   return o;
 }
 // kind face (owner rule): open eyes, level raised brows, gentle smile; teasing from head tilt, not narrowed eyes
+// ---------- faces: keyframed and blended (owner, 24 Nov 20:58: "eyes always wide open, unrealistic; use both lids and movements to match expression and mood")
+// numeric fields ease over 0.3 s; switches (eyeMode, mouth, happy) flip at the blend midpoint. Blinks and lip-sync still come from act.js.
+function blendF(t, keys, def, d = 0.3) {
+  let i = 0; for (let k = 1; k < keys.length; k++) if (t >= keys[k][0]) i = k;
+  const a = { ...def, ...keys[Math.max(0, i - 1)][1] }, b = { ...def, ...keys[i][1] }, u = i ? sm(clamp((t - keys[i][0]) / d)) : 1, o = {};
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) o[k] = typeof a[k] === 'number' && typeof b[k] === 'number' ? lerp(a[k], b[k], u) : (u < 0.5 ? a[k] : b[k]);
+  return o;
+}
 const kind = { ...vp(2), lid: 0, browL: 0.6, browR: 0.6, browSoft: 1, mouthShape: undefined, viseme: 'A', lookX: 8, tilt: 0, wink: 0 };
 // right arm per line: [time, pose] (motivated gestures only; rest while listening)
 const vR = [[0, 'rest'],
@@ -40,6 +48,26 @@ const vR = [[0, 'rest'],
   [at('V14', 0.4), 'point'], [B('V14').end + 0.2, 'rest'],
   [at('V16', 0.12), 'palm'], [at('V16', 0.38), 'point'], [at('V16', 0.72), 'bless'], [VEND - 0.1, 'wave']];
 const vL = [[0, 'Ltrail'], [FLY_IN[1], 'L0'], [at('V10', 0.6), 'Lram'], [at('V10', 0.88), 'L0'], [FLY_OUT[0] - 0.1, 'Ltrail']];
+const VD = { lid: 0.15, lidLow: 0, browL: 0.6, browR: 0.6, browSoft: 1, lookX: 8, lookY: 4, tiltF: 0, eyeMode: null, mouthShape: undefined };
+const LAUGH_F = { eyeMode: 'happy', mouthShape: 'smileBig', tiltF: 4 }, LISTEN_V = { lid: 0.2, lidLow: 0.05, lookY: 6 };
+const VF = [[0, { lid: 0.25, lookY: 6 }],
+  [at('V02', 0) - 0.2, { lid: 0.05, browL: 0.95, browR: 0.95, tiltF: 3 }], [B('V02').end - 0.15, LAUGH_F], [B('V02').end + 0.6, LISTEN_V],
+  [at('K03', 0.62), { lid: 0.08, browL: 0.85, browR: 0.85, browSoft: 1.5 }],                 // "share turant gir gaya": sympathetic surprise
+  [B('K03').end + 0.3, { lid: 0.15, lidLow: 0.2, tiltF: 2 }],                                   // soft, kind smile through the FAAAH
+  [at('V04', 0), { lid: 0.05, lidLow: 0.2, browL: 0.95, browR: 0.95, tiltF: 4 }],               // teasing: "Mangal ki speed" (squint smile, eyes on her)
+  [at('V04', 0.42), { lid: 0.1 }],                                                                // explains Shani plainly
+  [B('gadbad').start, { lid: 0.15, lidLow: 0.1, browSoft: 1.7, lookY: 8 }],                     // sympathy while she panics
+  [at('V06', 0), { lid: 0.15, lidLow: 0.2, tiltF: -3 }], [at('V06', 0.55), { lid: 0.05, browL: 0.95, browR: 0.95, tiltF: 4 }],
+  [B('abhi_maza').start + 0.3, LAUGH_F], [B('K07').start, { lid: 0.05, browL: 0.85, browR: 0.85 }],
+  [at('V08', 0), { lid: 0.1 }], [at('V08', 0.62), { lid: 0.15, browL: 0.5, browR: 0.5, browSoft: 0.6 }],   // "April tak roko": firm, still kind
+  [B('lekin_ek_second').start, { lid: 0.15, lidLow: 0.15, tiltF: -3 }],
+  [at('V10', 0), { lid: 0.2, lidLow: 0.15 }], [B('V10').end, LAUGH_F], [B('V10').end + 0.4, LISTEN_V],
+  [at('V12', 0), { lid: 0.1 }], [B('V12').end, LISTEN_V],
+  [at('K13', 0.3), { eyeMode: 'happy', tiltF: 4 }],                                       // holding back a laugh at the maasi line
+  [B('hey_bhagwan').start, LAUGH_F], [at('V14', 0.25), { lid: 0.2, lidLow: 0.1 }],
+  [B('K15').start, { lid: 0.2, browSoft: 1.7, lookY: 6 }],
+  [at('V16', 0), { lid: 0.15, browL: 0.55, browR: 0.55, browSoft: 1.2 }], [at('V16', 0.6), { lid: 0.1, lidLow: 0.2, browL: 0.75, browR: 0.75, tiltF: 2 }],
+  [B('V16').end + 0.2, LAUGH_F]];
 const laughs = [[B('V02').end - 0.1, B('V02').end + 0.45], [at('V14', 0), at('V14', 0.22)], [B('V10').end, B('V10').end + 0.35]];
 const nods = [at('V10', 0.86), at('V06', 0.3)];
 function vishnuNow(t) {
@@ -53,7 +81,8 @@ function vishnuNow(t) {
   const lean = t < FLY_IN[1] ? 7 * Math.sin(Math.PI * st.u) : t < FLY_IN[1] + 0.8 ? -5 * Math.sin(Math.PI * (t - FLY_IN[1]) / 0.8) : t > FLY_OUT[0] ? -7 * Math.sin(Math.PI * st.u) : 0;
   const tilt = (t < FLY_IN[1] ? 4 : t > FLY_OUT[0] ? -4 : 0) * Math.sin(Math.PI * st.u) + nod + shake;
   const atRam = t > at('V10', 0.6) && t < at('V10', 0.85), laugh = laughs.some(([a, b]) => t > a && t < b);
-  const pose = { ...kind, lean, tilt: Math.max(-4, Math.min(4, tilt)), armR, armL, lookX: atRam ? -20 : 8, lookY: atRam ? 15 : 0, eyeMode: laugh ? 'happy' : null, mouthShape: laugh ? 'smileBig' : undefined };
+  const f = blendF(t, VF, VD);
+  const pose = { ...kind, ...f, lean, tilt: Math.max(-5, Math.min(5, tilt + f.tiltF)), armR, armL, lookX: atRam ? -20 : f.lookX, lookY: atRam ? 15 : f.lookY };
   if (spin) { const W = armR.W, a = Math.atan2(W[1] - armR.E[1], W[0] - armR.E[0]), fx = W[0] + Math.cos(a) * 95, fy = W[1] + Math.sin(a) * 95; pose.chakra = { x: fx + 30 * Math.cos(t * 8), y: fy - 10 + 18 * Math.sin(t * 8), spin: t * 9, scale: 0.8 }; }   // twirls round the fingertip like a keychain
   const vj = `<g transform="translate(${st.x.toFixed(1)} ${st.y.toFixed(1)}) scale(${(st.s / 0.46).toFixed(4)}) translate(${-PX} ${-(PY + 230)})">${vishnu(pose, PX, PY + 230, 0.46, t)}</g>`;
   const r = pr(t), cr = Math.max(1, r) + sm(clamp((st.u - 0.25) / 0.55)) * 1500;
@@ -90,10 +119,33 @@ const kF = {   // faces (talking mouths come from act.js)
   proud: C({ ...kp(0), happy: 1, mouth: 'smile', blush: 0.7, tilt: 3 }),
   friendly: C({ ...kp(0), mouth: 'smile', blush: 0.5 }),
 };
-const kFace = [[0, 'earnest'], [B('K01').end, 'listen'], [B('K03').start, 'sad'], [B('K03').end, 'listen'], [B('gadbad').start - 0.05, 'shock'], [B('K05').start, 'sad'],
-  [B('V06').start, 'listen'], [B('abhi_maza').start, 'smug'], [B('K07').end, 'listen'], [B('lekin_ek_second').start, 'indignant'], [B('K09').end, 'listen'],
-  [R_BRAKE + 0.2, 'smug'], [R_BRAKE + 1.4, 'listen'], [B('K11').start, 'earnest'], [B('K11').end, 'listen'], [B('K13').start, 'sad'], [B('hey_bhagwan').end + 0.2, 'listen'],
-  [B('K15').start, 'sad'], [B('K15').end, 'listen'], [B('K17').start, 'proud'], [B('K18').start, 'friendly']];
+const KD = { lid: 0.18, lidLow: 0.1, browUp: 0, browSad: 0, lookX: -16, lookY: -10, tilt: -2, mouth: 'smile', happy: 0, blush: 0.4 };
+const LISTEN = { lid: 0.18, lidLow: 0.1, browUp: 0, browSad: 0, lookX: -16, lookY: -10, tilt: -2, mouth: 'smile' };
+const BUBBLE = { lookX: 24, lookY: -30 };   // eyes up to her thought bubble (right), away from Prabhu
+const KFK = [[0, { lid: 0, browUp: 0.6, lookX: -22, lookY: -16, mouth: 'o' }],                  // the portal opens
+  [1.6, { lid: 0.1, browUp: 0.3 }], [B('K01').end, LISTEN],
+  [B('V02').end - 0.2, { lid: 0.3, lidLow: 0.3, blush: 0.9, tilt: 3, lookY: -4 }],               // caught out: "shaadi ka menu"
+  [B('K03').start, { lid: 0.3, browSad: 1, lookY: 0, tilt: -4, mouth: 'pout' }],               // complaining
+  [B('K03').end - 0.1, { lid: 0.55, lidLow: 0.2, browSad: 1, lookX: -8, lookY: 8, mouth: 'pout' }],   // FAAAH: wince, eyes down
+  [at('V04', 0.1), { ...LISTEN, lid: 0.25, browSad: 0.4, mouth: 'pout' }],
+  [B('gadbad').start, { lid: 0, browUp: 0.8, ...BUBBLE, mouth: 'o', tilt: 4 }],
+  [B('K05').start, { ...LISTEN, lid: 0.15, browSad: 1, mouth: 'pout', tilt: -3 }],
+  [B('V06').start + 0.3, { ...LISTEN, lid: 0.2, browSad: 0.2 }],
+  [B('abhi_maza').start, { lid: 0.35, lidLow: 0.35, browUp: 0.3, ...BUBBLE, mouth: 'smirk', tilt: 5 }],
+  [B('K07').start, { ...LISTEN, lid: 0.15, browUp: 0.2, mouth: 'smirk', tilt: 2 }], [B('K07').end, LISTEN],
+  [at('V08', 0.65), { ...LISTEN, lid: 0, browUp: 0.8, mouth: 'o' }],                             // "April tak roko?!"
+  [B('lekin_ek_second').start, { lid: 0.1, lidLow: 0.1, browUp: 0.7, browSad: 0.3, ...BUBBLE, mouth: 'pout', tilt: -4 }],   // objection   // suspicious
+  [B('K09').start, { ...LISTEN, lid: 0, browUp: 0.7, tilt: -3 }], [B('K09').end, LISTEN],
+  [R_BRAKE + 0.2, { lid: 0.3, lidLow: 0.35, lookX: -26, lookY: 6, mouth: 'smirk' }], [R_BRAKE + 1.4, LISTEN],
+  [B('K11').start, { ...LISTEN, lid: 0.4, browSad: 0.5, lookY: -4 }], [B('K11').end, LISTEN],
+  [B('K13').start, { ...LISTEN, lid: 0.35, browSad: 0.7, tilt: -5 }], [at('K13', 0.7), { ...LISTEN, lid: 0.25, browSad: 0.7, lookX: 4, lookY: -22 }],   // eye roll
+  [B('hey_bhagwan').start, { lid: 0.3, browSad: 1, ...BUBBLE, mouth: 'pout' }], [B('hey_bhagwan').end, LISTEN],
+  [at('V14', 0.3), { ...LISTEN, lid: 0.15, lidLow: 0.2, blush: 0.8 }],
+  [B('K15').start, { ...LISTEN, lid: 0.1, browSad: 1, lookY: -12, mouth: 'pout' }], [B('K15').end, { ...LISTEN, browSad: 0.6 }],
+  [at('V16', 0.6), { ...LISTEN, lid: 0.25, lidLow: 0.2, browSad: 0.2 }],
+  [FLY_OUT[0] - 0.3, { ...LISTEN, lookX: -24, lookY: -18 }],
+  [B('K17').start, { lid: 0.15, lidLow: 0.15, lookX: 0, lookY: 0, mouth: 'smile', tilt: 3 }], [at('K17', 0.9), { lid: 0.15, lookX: 0, lookY: 0, happy: 1, blush: 0.8, tilt: 4 }],
+  [B('K18').start, { lid: 0.1, lidLow: 0.15, lookX: 0, lookY: 0, happy: 0, tilt: 2 }]];
 const kArmKeys = [[0, 'rest'], [at('K01', 0.25), 'present'], [B('K01').end + 0.2, 'hold'],
   [at('K03', 0.1), 'present'], [B('K03').end + 0.2, 'hold'],
   [B('K05').start, 'chest'], [B('K05').end + 0.2, 'hold'],
@@ -103,10 +155,7 @@ const kArmKeys = [[0, 'rest'], [at('K01', 0.25), 'present'], [B('K01').end + 0.2
   [at('K15', 0.1), 'present'], [B('K15').end + 0.2, 'hold'],
   [at('K18', 0.25), 'cta'], [at('K18', 0.85), 'hold']];
 function sakshiNow(t) {
-  const lab = kFace.reduce((a, [tt, l]) => t >= tt ? l : a, 'listen'), face = kF[lab];
-  const alone = t > FLY_OUT[0];
-  const look = alone ? { lookX: 0, lookY: 0 } : t < FLY_IN[1] ? { lookX: -22, lookY: -14 } : (t > R_BRAKE - 0.2 && t < R_BRAKE + 1.4) || (t > B('K03').end - 0.1 && t < B('K03').end + 1.6) ? { lookX: -26, lookY: 6 } : { lookX: -16, lookY: -10 };
-  if (t > FLY_OUT[0] - 0.3 && t < CLOSE[1]) { look.lookX = -24; look.lookY = -18; }   // watches him go
+  const f = blendF(t, KFK, KD), face = C({ ...kp(0), ...f, happy: f.happy > 0.5 ? 1 : 0 }), look = { lookX: f.lookX, lookY: f.lookY };
   const out = `<ellipse cx="730" cy="1352" rx="95" ry="14" fill="#a8742c" opacity="0.45"/>` + sakshi({ ...face, ...look, armL: null, ...(() => { const a = kArms(t, kArmKeys); return { armL: a.L, armR: a.R }; })() }, 730, 1065, 0.5, t);
   CLOCK.svg(t); return out;
 }
@@ -146,7 +195,36 @@ const icon = {
   send: (x, y) => `<g transform="translate(${x} ${y})"><path d="M-40 10 L40 -30 L10 40 L2 14 Z" fill="#3b4fa8" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/></g>`,
 };
 const VED = 'Chandra rashi · Vedic maanyata';
+// ---------- thought bubble on the meme lines (owner voice note, 24 Nov: she looks away from Prabhu into a thought cloud on the
+// other side, as if thinking "ab toh maza aayega", then Prabhu drops the bomb). Our own doodles (no film footage).
+const MEMES = ['gadbad', 'abhi_maza', 'lekin_ek_second', 'hey_bhagwan'];
+const memeAt = t => MEMES.find(id => t > B(id).start - 0.1 && t < B(id).end + 0.2);
+const doodle = {
+  gadbad: (t, x, y) => `<rect x="${x - 95}" y="${y - 70}" width="110" height="140" rx="8" fill="#fbf7ee" stroke="${INK}" stroke-width="6" transform="rotate(-8 ${x - 40} ${y})"/>` +
+    `<path d="M${x - 75} ${y - 35} h70 M${x - 75} ${y - 5} h70 M${x - 75} ${y + 25} h45" stroke="#a89a88" stroke-width="7" transform="rotate(-8 ${x - 40} ${y})"/>` + TS(x - 45, y + 58, '₹₹₹', 26, '#b3262e') +
+    `<path d="M${x + 20} ${y - 70} L${x + 55} ${y - 30} L${x + 75} ${y - 45} L${x + 110} ${y + 40}" fill="none" stroke="#b3262e" stroke-width="10" stroke-linejoin="round"/><path d="M${x + 88} ${y + 38} L${x + 115} ${y + 50} L${x + 120} ${y + 20} Z" fill="#b3262e"/>` + TS(x + 80, y + 100, '?!', 50, '#b3262e'),
+  abhi_maza: (t, x, y) => { let o = `<path d="M${x - 60} ${y - 30} L${x + 60} ${y - 30} L${x + 44} ${y + 80} L${x - 44} ${y + 80} Z" fill="#fbf7ee" stroke="${INK}" stroke-width="6"/>`;
+    for (const dx of [-38, -8, 22]) o += `<path d="M${x + dx} ${y - 30} L${x + dx + 14} ${y - 30} L${x + dx + 10} ${y + 80} L${x + dx + 2} ${y + 80} Z" fill="#d2462a"/>`;
+    for (let k = 0; k < 7; k++) { const px = x - 50 + k * 17, py = y - 40 - 12 * Math.abs(Math.sin(k * 1.7 + t * 3)); o += `<circle cx="${px}" cy="${py}" r="14" fill="#fff6d8" stroke="${INK}" stroke-width="4"/>`; }
+    return o + `<path d="M${x - 92} ${y - 98} h64 v22 h-64z M${x + 28} ${y - 98} h64 v22 h-64z M${x - 28} ${y - 90} h56" fill="${INK}" stroke="${INK}" stroke-width="5" opacity="0.9"/>`; },
+  lekin_ek_second: (t, x, y) => `<circle cx="${x}" cy="${y + 10}" r="78" fill="#fbf7ee" stroke="${INK}" stroke-width="7"/><rect x="${x - 16}" y="${y - 92}" width="32" height="22" rx="5" fill="${INK}"/>` +
+    `<path d="M${x} ${y + 10} L${x} ${y - 40}" stroke="${INK}" stroke-width="7" stroke-linecap="round"/><path d="M${x} ${y + 10} L${x + Math.sin(t * 6) * 50} ${y + 10 - Math.cos(t * 6) * 50}" stroke="#b3262e" stroke-width="6" stroke-linecap="round"/>` + TS(x, y + 62, '1 sec', 28, '#3b4fa8'),
+  hey_bhagwan: (t, x, y) => `<path d="M${x - 80} ${y - 70} C${x - 115} ${y - 10} ${x - 110} ${y + 40} ${x - 80} ${y + 40} C${x - 50} ${y + 40} ${x - 45} ${y - 10} ${x - 80} ${y - 70} Z" fill="#9fd8ff" stroke="${INK}" stroke-width="6"/>` +
+    TS(x + 40, y - 20, 'Shaadi?', 30) + TS(x + 40, y + 30, 'Good news?', 26, '#b3262e') + `<path d="M${x - 110} ${y + 70} q20 -30 40 0 t40 0 t40 0 t40 0" stroke="${INK}" stroke-width="5" fill="none"/>`,
+};
+function thought(t) {
+  const id = memeAt(t); if (!id) return '';
+  const b = B(id), k = K.backOut(clamp((t - b.start + 0.1) / 0.25)) * (1 - clamp((t - b.end - 0.05) / 0.15)), cx = 760, cy = 520;
+  let o = `<g transform="translate(${cx} ${cy}) scale(${k.toFixed(3)}) translate(${-cx} ${-cy})">`;
+  o += [[cx - 100, cy - 40, 75], [cx - 20, cy - 105, 95], [cx + 80, cy - 70, 90], [cx + 100, cy + 55, 85], [cx - 5, cy + 105, 90], [cx - 95, cy + 65, 70]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#ffffff" stroke="${INK}" stroke-width="6"/>`).join('');
+  o += [[cx - 100, cy - 40, 69], [cx - 20, cy - 105, 89], [cx + 80, cy - 70, 84], [cx + 100, cy + 55, 79], [cx - 5, cy + 105, 84], [cx - 95, cy + 65, 64]].map(([x, y, r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#ffffff"/>`).join('') + `<circle cx="${cx}" cy="${cy}" r="125" fill="#ffffff"/>`;
+  o += doodle[id](t, cx, cy) + `</g>`;
+  // trail of small puffs from her head up to the cloud
+  for (const [x, y, r, d] of [[812, 765, 13, 0], [828, 718, 19, 0.05], [812, 660, 25, 0.1]]) { const kk = K.backOut(clamp((t - b.start - d) / 0.2)) * (1 - clamp((t - b.end - 0.05) / 0.15)); o += `<circle cx="${x}" cy="${y}" r="${(r * kk).toFixed(1)}" fill="#ffffff" stroke="${INK}" stroke-width="5"/>`; }
+  return o;
+}
 function cards(t) {
+  if (memeAt(t)) return '';
   const mid = CX0 + CW / 2; let o = '';
   // hook (first 2.4 s): works on mute
   o += card(t, 0.05, 2.4, 'RASHI KI FILE: ARIES', TS(mid, CY0 + 150, '2026 ka dard', 40, '#8e1b2c') + TS(mid, CY0 + 215, '2027 ka', 34) + TS(mid, CY0 + 275, 'MOL-BHAAV', 50, '#3b4fa8'), 320);
@@ -188,7 +266,7 @@ function frame(t) {
   body += vishnuNow(t);
   body += ramNow(t);
   body += sakshiNow(t);
-  body += fatFile(t) + complaintScroll(t) + cards(t);
+  body += fatFile(t) + (memeAt(t) ? '' : complaintScroll(t)) + cards(t) + thought(t);
   const cap = K.caption(t);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920"><defs><radialGradient id="halo"><stop offset="0" stop-color="#fff4c4"/><stop offset="1" stop-color="#ffe07a" stop-opacity="0"/></radialGradient></defs>${body}${cap}</svg>`;
 }

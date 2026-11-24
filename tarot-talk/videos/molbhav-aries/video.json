@@ -1,7 +1,7 @@
 {
  "slug": "molbhav-aries",
  "title": "Rashi ki file: Aries 2026 → 2027 mol-bhaav (v13.2)",
- "script_dur": 124.18,
+ "script_dur": 124.48,
  "cut": "cuts/molbhav-aries.js",
  "voice_track": "voices/voice_track_timed.wav",
  "cue_sheet": "voices/cue_sheet.csv",
@@ -34,7 +34,7 @@
   {
    "kind": "beat",
    "a": 34.994,
-   "b": 88.65,
+   "b": 88.949,
    "bpm": 112,
    "root": 220,
    "level": 0.85,
@@ -42,15 +42,15 @@
   },
   {
    "kind": "sadpad",
-   "a": 88.65,
-   "b": 105.754,
+   "a": 88.949,
+   "b": 106.053,
    "root": 196,
    "g": 0.8
   },
   {
    "kind": "beat",
-   "a": 105.754,
-   "b": 124.18,
+   "a": 106.053,
+   "b": 124.48,
    "bpm": 116,
    "root": 220,
    "level": 1.0

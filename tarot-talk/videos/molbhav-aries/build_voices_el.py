@@ -11,7 +11,7 @@ import os, json, csv, re, subprocess, numpy as np, soundfile as sf
 import build_voices as BV
 HERE = BV.HERE; SR = BV.SR; TK = os.path.join(HERE, 'voices', 'takes')
 TEMPO = {'Vishnu ji': 1.08, 'Sakshi': 1.08}
-LINE_TEMPO = {'K07': 0.92, 'K13': 0.95, 'K15': 1.0}   # reviewer: these ran over 3.6 words/s
+LINE_TEMPO = {'K07': 0.85, 'K13': 0.95, 'K15': 1.0}   # reviewer: these ran over 3.6 words/s
 INSERT = {'V02': [(4.6, 0.55)], 'K17': [(8.42, 0.3)]}   # (raw s from the line start, s of silence): beat before 'shaadi ka menu' and 'Wakeel haari nahi'
 BEAT = {'V02': 0.45, 'V14': 0.45, 'K17': 0.45, 'V04': 0.35, 'K09': 0.3}   # let the punchline pauses breathe (default cap 0.2 s)   # v4 Hindi reads a touch slow; this lands near 3 words/s without sounding rushed
 # rough boundaries (s, in the raw take) from the transcript; each is snapped to the quietest 20 ms inside +-0.35 s
@@ -46,7 +46,7 @@ for item in BV.SCRIPT:
         _, name, f, a, b, gap = item; p = os.path.join(tmp, name + '.wav')
         BV.ff(os.path.join(BV.MEMES, f), f'atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.01,afade=t=out:st={b - a - 0.05}:d=0.05,loudnorm=I=-18:TP=-2', p)
         x, _ = sf.read(p); x = x.astype(np.float32); d = len(x) / SR
-        rows.append([name, 'Meme' if name == 'gadbad' else 'Sakshi', round(t, 3), round(t + d, 3), 'meme:' + f, BV.MEME_TEXT[name]])   # gadbad: Paresh Rawal's voice-over, Sakshi only reacts
+        rows.append([name, 'Meme', round(t, 3), round(t + d, 3), 'meme:' + f, BV.MEME_TEXT[name]])   # memes are her thoughts (thought cloud), not lip-synced (owner voice note 24 Nov)
         beats.append({'id': name, 'type': 'meme', 'start': round(t, 3), 'end': round(t + d, 3), 'who': 'Sakshi', 'line': BV.MEME_TEXT[name],
                       'caption_chunks': [{'text': BV.MEME_TEXT[name], 'from': round(t, 2), 'to': round(t + d, 2)}], 'meme_file': f, 'meme_in': a, 'meme_out': b})
     else:
