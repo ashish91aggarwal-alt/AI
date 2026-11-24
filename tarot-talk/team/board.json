@@ -1,5 +1,5 @@
 {
- "built": "2026-11-24T18:15:42Z",
+ "built": "2026-11-24T18:21:24Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Taurus: scene options v3 (haveli, ghat, lake) with life-size bull",
-   "next": "owner picks scene; Gate-2 review of bull; Kokoro voices; rough cut",
+   "doing": "Taurus: Jaipur scene options v4 shown, bull dropped, script v2.3",
+   "next": "owner picks scene; plate into poster.js; Kokoro voices; rough cut",
    "blocked": "",
-   "updated_at": "2026-11-24T18:15:39Z",
+   "updated_at": "2026-11-24T18:21:24Z",
    "compactions": 0,
    "session": {
     "link": null,
