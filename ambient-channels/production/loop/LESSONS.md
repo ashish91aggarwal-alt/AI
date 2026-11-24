@@ -375,3 +375,11 @@ c4 targets: hearth 6–16%, armchair 5–16%, rug near the fire 3–10%, lamp ta
   shadow lines there are in front. Erode masks with borderValue=0, or the image edge counts as "deep inside".
 - Start long renders with `setsid nohup ... < /dev/null & disown`: a plain background job died when the owner pressed
   stop; the setsid one survived an interruption and finished (98 min 4K: 9.8 min setup + 268 min, 5.0 GB).
+
+## 24 Nov 2026 - open bright, with sound, at 0:00 (video 1 data)
+- After 48 h video 1 had 30 impressions, CTR 6.7%, but average view duration 0:14: the opening was a 12 s fade from black
+  + title card + near-silence, so clickers left before the scene appeared (and the hover preview showed a dark frame).
+- Rule from now on: the first frame is the full, bright scene with the fire/ambience already audible; no fade from black at
+  the start, no big title card in the first seconds (channel name small, later, or only in the closing note). Keep the
+  slow music opening, but under an already-audible bed. Fade-out at the end stays.
+- Video 1 fix: trim the first 12 s in Studio Editor (owner, guide PDF) and shift chapters by -12 s.

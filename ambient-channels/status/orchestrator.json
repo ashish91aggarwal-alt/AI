@@ -1,12 +1,12 @@
 {
   "role": "orchestrator",
   "session": null,
-  "updated_at": "2026-11-22T10:00:00Z",
+  "updated_at": "2026-11-24T03:51:35Z",
   "doing": "moved ambient-channels into AI/ambient-channels",
   "next": "owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker",
   "blocked": "",
   "files_last_commit": [
-    "production/HANDOFF_paws_nooks.md"
+    "production/loop/LESSONS.md"
   ],
   "sessions": [],
   "outbox": [
@@ -14,6 +14,11 @@
       "to": "channel-pets",
       "text": "Welcome. P1 (Mochi) is live since 22 Nov 05:30 IST; first 48 h read Tue 24 Nov morning IST. Then plan P2 per production/HANDOFF_paws_nooks.md.",
       "at": "2026-11-22T09:50:47Z"
+    },
+    {
+      "to": "channel-pets",
+      "text": "New rule for P2+: start on the full bright scene with sound at 0:00 - no fade from black, no title card in the first seconds (see LESSONS.md 24 Nov). Video 1 AVD was 0:14 because of the dark 12 s opening.",
+      "at": "2026-11-24T03:51:32Z"
     }
   ]
 }
