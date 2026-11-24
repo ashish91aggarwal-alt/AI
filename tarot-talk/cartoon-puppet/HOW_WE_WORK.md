@@ -95,7 +95,7 @@ Reviewer prompt that worked:
 - **Sakshi never jerks her head on syllables** (owner: "just twitching her head"). act.js gives her a slow small sway only; the emotion is carried by brows, lids, blush and mouth, with a happy-eye smile in the pauses.
 
 **Staging (owner, 23 Nov 2026)**
-- **No repeated single scene.** The owner rejected one location for a whole reel. Give each topic its own place (e.g. the Aries world tour, with a cloud-wipe 'flight' between places) and change the framing every beat.
+- **Mol-bhaav rashi series is the exception: ONE locked scene per rashi** (owner, 24 Nov 2026: "No theme scene change for aries. Lock per rashi"). See Gate 1. Everything else: **no repeated single scene.** The owner rejected one location for a whole reel. Give each topic its own place (e.g. the Aries world tour, with a cloud-wipe 'flight' between places) and change the framing every beat.
 - **Detailed, true-to-life backgrounds** (owner, 23 Nov 2026: "true copy of the desired location… give attention to minute objects too"; chose code-only over an image model). Research each landmark's real parts and draw them all (`loc_hd.js`), then add small life: people in Indian clothes, lamps, benches, birds, flowers, inlay work, boats, cabs, fountains, plus a few moving bits.
 - **Show the deity's supremacy:** the deity floats on his cloud bigger than the world landmark behind him, calm and smiling. In close-ups the landmark sits beside him, not hidden behind.
 
@@ -107,8 +107,8 @@ Reviewer prompt that worked:
 
 **Audio**
 - **Meme lines always use the original voice clip, never re-voiced by our cast** (owner, 23 Nov 2026). Normal lines stay our cast. Add trending meme sounds in gaps. Look in `assets/audio/memes/catalog.json` first.
-- **Prefer creator meme clips over film dialogue.** The owner dropped the Vivah "Jal lijiye" and SRK "Picture abhi baaki hai" clips (23 Nov 2026).
-- **Deities may lip-sync a playful male meme line** ("Ab tu gaya beta", Sakshi's ask, 23 Nov 2026), aimed at Monty. Never a woman's or film line on a deity: keep the deity off screen for those.
+- **Prefer creator meme clips over film dialogue.** The owner dropped the Vivah "Jal lijiye" and SRK "Picture abhi baaki hai" clips (23 Nov 2026). A film clip goes in only when the owner asks for it (24 Nov 2026: Paresh Rawal's "Arey Deva, ye gadbad hai baba"; the whole line is his, so never split it into clip + our voice). Flag the Instagram mute risk once.
+- **Deities may lip-sync a playful male meme line** ("Ab tu gaya beta", Sakshi's ask, 23 Nov 2026), aimed at Monty. Never a woman's line or a film *clip* on a deity. A famous film line *re-worded in our own voice* is fine when the moment needs it (owner, 24 Nov 2026: Vishnu ji's "Tension lene ka nahi, wakeel saahiba", Munna Bhai).
 - **The deity leads, the girl assists** (Sakshi, 23 Nov 2026: "God wali zyada achhi lagti thi"). Vishnu ji explains and carries the expressions and jokes. Sakshi is the assistant who brings cards and reacts, and she does only the CTA (deities never sell). Every reel needs real gags for Monty, not a lesson with jokes on top.
 - **Mol-bhaav content comes from the real planet shifts** (owner, 24 Nov 2026: v11 was "too job centric" and "scripted"). Each bargain = one real 2026→2027 change for that rashi (Shani, Guru, Rahu-Ketu, the rashi lord's retrograde), checked on Lahiri sources, with a practical takeaway. No invented month windows.
 - **Complete clear sentences** (owner, 24 Nov 2026: "Script shall not be play pause"). Every line is one or two full sentences; no clipped lists or one-word answers.
@@ -137,3 +137,39 @@ Reviewer prompt that worked:
 - Piper Hindi voices (pratham, priyamvada, rohan) are non-commercial licences: do not use them for the channel.
 - Meme clips can be baked straight into the voice track by the voice script (cue-sheet rows `meme:<file>`, who = the character who lip-syncs). `meme_lines` then stays empty.
 - Every Vishnu ji pose in a cut goes through a kind-face filter (open lids, level raised brows, no 'sly'/'cat' mouth, no wink, small glance). See `kindV` in `cuts/molbhav-aries.js`.
+
+## Mol-bhaav rashi series: what the owner taught us (24 Nov 2026, Aries reel final = `out/molbhav-aries_v10.mp4`, commit 42ab96f)
+Template for the next rashi (Taurus next): copy `cuts/molbhav-aries.js`, add a new locked plate to `poster.js` (show 3 plate options first, Gate 1), rewrite the script from that rashi's real 2026→2027 shifts, reuse everything else.
+
+**Script**
+- Vishnu ji "maze leta hai" like Akshay Kumar's Krishna in OMG: calm, smiling, cheeky, always one step ahead, chakra twirled on a fingertip like a keychain on his first line. Vibe only, no likeness or voice. He teases habits and drama, never anyone's pain or loss.
+- Bollywood lines only where the moment needs them ("Don't push dialogues. Make safe space and logical need"); mould the script around them. Never a line over a fact; the fact is always said plainly first. Aries used 3: Munna Bhai (calming her panic), Damini "tareekh pe tareekh" (a wakeel told to wait till April), Dabangg twist on Sade Sati.
+- Fact care: Sade Sati phases (Aries Sade Sati began Mar 2025; Jun 2027 is the first knock of the heavy middle phase), say a planet's window from today's position ("January ke aakhir se June tak"), dates as "10 January" in captions.
+- Meme placement the owner fixed: FAAAH right after the share falls (−40% card), "Arey Deva, ye gadbad hai baba" right after the Shani explanation, "Abhi maza aayega na bhidu" right after "Isiliye toh mol-bhaav ho raha hai".
+- Ending: a wakeel's verdict that maps every demand truthfully (KAAM / GHAR / RISHTA / SADE SATI rows + a stamp on the last words). "Ek haan, ek aadha haan" did not work.
+- CTA (Sakshi alone): "2027 ko manifest karna hai toh link pe click karo, aur ye video us dost ko bhejo jo isse relate karega."
+
+**Staging and look**
+- One locked silkscreen-poster scene per rashi; Vishnu ji comes out of the spark portal when Sakshi says "Prabhu" (curved flight, waist lean, clipped to the ring while inside) and goes back after his last line. Sakshi grounded on the right verge with a shadow. The rashi animal is her client and acts physically (Aries ram trots to the APRIL km-stone and brakes on "jo ruk gaya").
+- One poster card per beat in the top-right card area (x 590–942, y 270–~730). Any list on screen must be completely filled (owner: "the list was long but not filled completely").
+- Practicality first: nothing stands on a road, nothing passes through anything, real sizes for distance, 25 px gaps.
+
+**Acting**
+- No overacting, no gesture just to show movement; a listener's hands rest loosely together at the waist. Under-acting (frozen) also fails.
+- Faces are keyframed and blended per beat (`blendF` + `VF` / `KFK` in the cut) using BOTH lids (`lid`, `lidLow`), brows, gaze and tilt (owner: "eyes always wide open, unrealistic"). Vishnu ji: brows always level, lid ≤ 0.2 except laughs (happy closed eyes), so he never reads smug.
+- Meme lines are Sakshi's thoughts: a thought cloud with our own doodle pops up on her right, her eyes go up into it, she does NOT lip-sync (cue-sheet `who = Meme`), cards hide meanwhile (owner voice note).
+- Sakshi's hands: chubby toon hands; on a raised open palm the thumb is on the upper, body side. Check with a close-up render (`work/palm_test2.js` pattern) before trusting it.
+
+**Voices with ElevenLabs (when the owner allows credits)**
+- Ask the cap first. Cost is about 1 credit per character INCLUDING tags. Use paragraph breaks instead of `[pause]` tags between lines to save credits.
+- One `eleven_v4` take per speaker for all their lines (Samar `KWuQEGxZQtpWhRutt6g6` = Vishnu ji, Lalita `hHyd5z9VxRT4YKoDwPRl` = Sakshi), one emotion tag where the delivery changes, Devanagari text. Aries cost 1,915 credits.
+- `videos/molbhav-aries/build_voices_el.py` cuts the takes per line (word timestamps, snapped to the quietest point), sets per-line tempo (target 2.8–3.5 words/s), inserts a 0.4–0.5 s beat before punchlines, then splices memes and writes the usual cue sheet / script.json / captions.
+- Whisper can drop a word's first consonant when a clip has no lead-in silence; pad 0.5 s before judging.
+
+**Bugs that cost time**
+- ffmpeg `atrim` keeps the source timestamps, so a later `afade=out` fires early and mutes the clip. Always `atrim=…,asetpts=PTS-STARTPTS,afade…`.
+- A face param that act.js also drives (mouth while talking, happy-eye in pauses) overrides the cut; mark meme rows as `Meme` instead of freezing the clock.
+
+**Reviewing**
+- Resume the same Gate-3 reviewer for re-checks (it remembers its own measurements). The reviewer cannot hear tone: ask the owner to listen once.
+
