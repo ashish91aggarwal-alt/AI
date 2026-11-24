@@ -183,7 +183,7 @@ function draw(p) {
   return drawInner(p);
 }
 function drawInner(p) {
-  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: { col: C.denim, sh: C.denimSh, len: p.lawyer ? 1.0 : p.coat ? 0.8 : 0.45, trim: C.denimLt } };
+  const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: p.lawyer ? { col: '#5a5276', sh: '#3c3550', len: 1.0, trim: '#d8d2f0' } : { col: C.denim, sh: C.denimSh, len: p.coat ? 0.8 : 0.45, trim: C.denimLt } };
   const L = p.armL || { E: [380, 1080], W: [400, 1210], hand: 'relax' }, R = p.armR || { E: [700, 1080], W: [680, 1210], hand: 'relax' };
   const A = (S, X, out) => arm(S, X.E, X.W, { r: [36, 31, 26], handPose: X.hand, handAng: 0, hs: 1, handScale: 1.05, outward: out, ...sk });
   // short chibi body: drawn at the old scale, shrunk toward the feet

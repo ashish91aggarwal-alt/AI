@@ -323,11 +323,13 @@ function drawSeated(p) {
     heldBits = E.limb([L.S, mid, gh.wrist, tip], 28, { col: C.skin, sh: C.skinSh }) + armband(L.S, mid, 34) + snack(held) + gh.front;
   }
   const armLeft = held ? '' : arm(L.S, L.E, L.W, { r: [36, 30, 25], handPose: 'rest', handAng: Math.atan2(L.W[1] - L.E[1], L.W[0] - L.E[0]) - Math.PI / 2, hs: 0.9, handScale: 0.85, skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, outward: -1 }) + armband(L.S, L.E, 36);
-  return back(pr) + lap(p) + torsoSeated(p) + vanamala(p) + (held ? '' : (p.noConch ? '' : conch(L.W[0] + 4, L.W[1] + 70, -0.35, 0.9)) + armLeft) +
+  // waist joint: p.lean bends the whole upper body (torso, garland, arms, head, hair) over the seated lap
+  const up0 = p.lean ? `<g transform="rotate(${p.lean.toFixed(2)} 540 1185)">` : '', up1 = p.lean ? '</g>' : '';
+  return up0 + back(pr) + up1 + lap(p) + up0 + torsoSeated(p) + vanamala(p) + (held ? '' : (p.noConch ? '' : conch(L.W[0] + 4, L.W[1] + 70, -0.35, 0.9)) + armLeft) +
     head(pr) + heldBits +
     arm(p.armR.S, p.armR.E, p.armR.W, { r: [38, 31, 26], handPose: p.armR.hand, handAng: p.armR.handAng, hs: 0.9, handScale: 0.85, skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, outward: 1 }) +
     armband(p.armR.S, p.armR.E, 38) +
-    (p.chakra ? chakra(p.chakra) : '') + floatItem;
+    (p.chakra ? chakra(p.chakra) : '') + up1 + floatItem;
 }
 // where the hand closes on each object (object-local), and how wide the object is there
 const GRIP = { kulhad: [-4, 22], icecream: [-2, 44], lollipop: [0, 76], popcorn: [-34, 34] };

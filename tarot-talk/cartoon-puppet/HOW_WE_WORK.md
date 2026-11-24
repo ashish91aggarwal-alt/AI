@@ -15,6 +15,31 @@
 - **Voices: one take per speaker** (owner approved the Aries 2027 track, 23 Nov 2026: "works well"). Each character reads all of their lines in one eleven_v4 call (Hindi script, one emotion tag per line, `[pause]` between lines), 1 take. Split on silences, check with a transcript, gentle atempo (about 1.12–1.15) so the pace is about 3 words/s, squeeze pauses inside a line to about 0.16 s, gaps between lines 0.08 s, and a 0.3–0.4 s laugh beat only after punchlines. Example: `videos/2027-aries-draft/build_voices.py`. Cheaper and far more natural than one call per line.
 - **Owner sign-off:** a finished reel needs it before posting. Raise risks plainly (film or song clips may get muted, a comedian's line in a deity's mouth, the CTA product must exist).
 
+## HARD RULES: the three gates (owner, 24 Nov 2026, "add this as restriction and hard rule")
+
+Nothing moves past a gate until it passes. No exceptions, no "small" changes that skip a gate.
+
+**Gate 1: Theme (look of scenes)**
+- Work out the theme from the repos we have before drawing: Lemo-Opuscar styles (`/home/claude/ext/lemo-opuscar`, MIT code; never copy its guides into our repo), p5.brush plates (`/home/claude/ext/p5plates`), and our own engine (`loc.js`, `loc_hd.js`, `engine.js`). Compare them, then pick per scene type.
+- **Anything new = show several options first.** At least 3 rendered examples of a new theme or a new scene type, side by side at phone size, then wait for the owner's pick. Only then build forward.
+- Approved theme (owner, 24 Nov 2026: "scene is very nice, the colour combination outstands both the cast; make new scenes like this"): **Silkscreen travel poster**. Flat inks, stepped sky bands, sun rings, lit and shade faces on hills, simple deodar trees and a roadside milestone. Reference scene: `work/test_portal.js` (render `out/test_portal_v9.mp4`). Gilded touches are allowed on deity moments.
+
+**Gate 2: Cast (every new character, animal or prop that acts)**
+- Build it from the repos we have and from the owner's reference art first (e.g. the folk ram `char_ram.js drawFolk` was matched to the owner's Lemo card). Research the real object or animal first.
+- **Anything new = show several options first.** At least 3 rendered versions (sheet + face close-up), then the owner's pick, then build.
+- It must sit in the approved theme: same ink weight, flat fills, palette that holds next to the scene.
+
+**Gate 3: Review (every cut, every version, before it goes to the owner)**
+- A fresh, strict reviewer agent that did not make the work, with the full checklist below. It extracts its own full-resolution frames (24+ across the clip) and 12 fps path grids of every moving thing. Contact sheets alone are not enough.
+- Pass = 8/10 or more AND no fault in A (practicality). Fix, then re-review with the same reviewer. Never send the owner a version the reviewer has not seen, and say plainly when a polish tweak was added after the last review.
+- Checklist (owner faults the old reviewer missed: a tree in the middle of the road, the ram walking through a milestone, Sakshi over-smiling and over-gesturing):
+  - **A. Practicality and layout.** Everything stands on a surface it really could (trees on grass, stones on the verge, feet on the ground). Depth order is right. Nothing intersects or passes through anything. Scale fits the distance. Keep a 25 px or larger gap between separate things.
+  - **B. Entrances and exits.** Nothing pops, teleports or starts mid-air. Every path makes sense (enter from off-frame, from behind something, or through a portal).
+  - **C. Acting.** Proportional and motivated, judged like a film director. No gesture or expression just to show movement. Under-acting (a frozen, stiff body) also fails. Gestures point at what the line is about. A listener listens: hands at rest or loosely joined, a few small reactions only.
+  - **D. Joints only.** No whole-picture slide, rotation or stretch (flying on a cloud is fine). Arms never pass through the body or head.
+  - **E. Instagram.** Keep the top 250 px, the right 12% and the bottom 20% clear. At most 2 text items, readable on a phone. Captions only during real lines, and no half-sentences at a clip's edges.
+  - **F. Polish.** Would it pass as a professional animated short?
+
 ## Where files go (stay in this tight place)
 
 | What | Where |
@@ -35,7 +60,7 @@ Write nothing anywhere else in the repo. Other folders belong to other roles (`t
 3. **Viral audio:** original meme lines and trending sounds, each clip transcribed before use.
 4. **Batch 3, acting and final:** faces from `act.js`, body business in the shots, music bed, -14 LUFS, final review, owner sign-off.
 
-**Independent reviewer:** a fresh agent that did not make the work. Give it the PNG paths, what the beat is, and the rules below. Ask for scores out of 10, then blocking fixes, then ranked polish, in under 350 words. Fix, then re-score; the target is 8/10 or better with nothing blocking. Do not count owner-approved choices against the score; tell the reviewer what they are.
+**Independent reviewer:** see HARD RULES Gate 3 above; it overrides this paragraph where they differ. A fresh agent that did not make the work. Give it the PNG paths, what the beat is, and the rules below. Ask for scores out of 10, then blocking fixes, then ranked polish, in under 350 words. Fix, then re-score; the target is 8/10 or better with nothing blocking. Do not count owner-approved choices against the score; tell the reviewer what they are.
 
 Reviewer prompt that worked:
 > You are an independent art director reviewing <what>. You have NOT seen how it was made. Be strict and specific.
