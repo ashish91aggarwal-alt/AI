@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Taurus mol-bhaav reel: facts, script v1, 3 scene options shown",
- "next": "owner picks scene; script review; bull cast options (Gate 2); voices free (Kokoro) first",
+ "doing": "Taurus mol-bhaav: script v2.1 passed review 8/10; 3 scene options shown",
+ "next": "owner picks scene + ok on script; then bull options (Gate 2), Kokoro voices",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-24T17:27:42Z"
  },
- "updated_at": "2026-11-24T17:35:20Z"
+ "updated_at": "2026-11-24T17:37:45Z"
 }
