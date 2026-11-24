@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 24 Nov 10:42 IST | Mol-bhaav rashi series: Aries script v3 sent to owner | Owner notes on script; then voices plan (ask voices/versions/credit cap) | - |
+| `production` | 24 Nov 10:58 IST | Mol-bhaav Aries script v5 (Vishnu ji + Sakshi only) sent | Owner notes; then voices plan (ask voices/versions/credit cap) | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
