@@ -1,5 +1,5 @@
 {
- "built": "2026-11-24T08:16:32Z",
+ "built": "2026-11-24T08:59:29Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Mol-bhaav Aries v11 sent",
-   "next": "Owner ok on script; then ask voices/versions/credit cap",
+   "doing": "Mol-bhaav Aries reel v1 animated (free voices) sent to owner",
+   "next": "Owner notes; Taurus file next",
    "blocked": "",
-   "updated_at": "2026-11-24T08:16:29Z",
+   "updated_at": "2026-11-24T08:59:29Z",
    "compactions": 0,
    "session": {
     "link": null,

@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Mol-bhaav Aries v11 sent",
- "next": "Owner ok on script; then ask voices/versions/credit cap",
+ "doing": "Mol-bhaav Aries reel v1 animated (free voices) sent to owner",
+ "next": "Owner notes; Taurus file next",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-24T04:56:34Z"
  },
- "updated_at": "2026-11-24T08:16:29Z"
+ "updated_at": "2026-11-24T08:59:29Z"
 }
