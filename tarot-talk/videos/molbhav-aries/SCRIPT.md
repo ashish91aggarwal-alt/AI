@@ -1,4 +1,4 @@
-# Rashi ki file: 2026 ka dard, 2027 ka mol-bhaav — Aries (episode 1) — script v9 (24 Nov 2026; more memes + to-and-fro reactions, after script and sensitivity reviews)
+# Rashi ki file: 2026 ka dard, 2027 ka mol-bhaav — Aries (episode 1) — script v11 (24 Nov 2026; owner allowed the left-out memes where they fit; reviewed)
 
 v4 (owner, 24 Nov 10:56 IST): "Remove Monty and Shani ji, keep it just God and Sakshi." Monty's lines are cut or moved to Sakshi; Shani dev's line moved to Vishnu ji (Shani dev is named with respect, not shown). v3 was reviewed 8.2/10 (script) and passed the sensitivity and facts review.
 
@@ -33,8 +33,8 @@ Picture: meme lip-sync: Sakshi grabs her cheeks with open palms (no grip), eyes 
 **6. Vishnu ji (V06).** "Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai. Bolo, kya chahiye?"
 Picture: Vishnu ji laughs softly and opens a palm toward her, inviting; the gloom card fades. (Reassures at once: no fear left hanging.)
 
-**7. Sakshi (K07).** "Chaliye Prabhu, ab deal karte hain, 2027 mein salary double!"
-Picture: Sakshi rolls up her coat sleeves, bazaar face. Sound: cash-register ding.
+**7. Sakshi (K07).** **MEME: "Abhi maza aayega na bhidu"** (2.41 s), then "Toh Prabhu, 2027 mein salary double!"
+Picture: on the meme Sakshi rubs her palms together and rolls up her coat sleeves, bazaar face, punch-in, caption 'ABHI MAZA AAYEGA NA BHIDU'; then she points at the scroll. Sound: cash-register ding on "double".
 
 **8. Vishnu ji (V08).** "Double nahi, par March-April aur June mein paisa achha aa sakta hai, bas pehle bachat."
 Picture: gold coins drift up from the scroll. Card: 'PAISA ✓ Mar–Apr · Jun — pehle bachat, phir kharcha' + small 'Chandra rashi ka aam trend · Vedic maanyata'.
@@ -48,9 +48,8 @@ Picture: Vishnu ji laughs softly, shakes his head.
 **11. Sakshi (K11).** "Toh kam se kam dhaniya toh free kar dijiye!"
 Picture: Sakshi, dead serious, leans in; a tiny dhaniya bunch doodle floats up. Vishnu ji chuckles. Sound: vine boom.
 
-**12. Sakshi (K12).** "Accha dhaniya chhodiye, naukri ki suniye na, appraisal teen percent, aur ye boss ke Sunday wale WhatsApp"
-Picture: a phone doodle floats up buzzing with 'Boss: urgent 🙂 (Sunday 9:14 PM)'. Card: 'NAUKRI'.
-**MEME: "Is sajjan ko kya takleef hai bhai?"** (2.1 s) as Sakshi points only at the buzzing phone doodle (never toward Vishnu ji), caption 'IS SAJJAN KO KYA TAKLEEF HAI?'; then she adds: "Promotion toh pakka kijiye!"
+**12. Sakshi (K12).** "Accha dhaniya chhodiye, naukri ki suniye na, appraisal teen percent aur upar se boss ke Sunday wale WhatsApp, promotion toh pakka kijiye!"
+Picture: a phone doodle floats up buzzing with 'Boss: urgent 🙂 (Sunday 9:14 PM)'; Sakshi glares at the phone, then joins her hands to Vishnu ji. Card: 'NAUKRI'.
 
 **13. Vishnu ji (V13).** "Naye mauke aa sakte hain, bas April-May aur September-October mein gusse mein resign mat karna."
 Picture: doors open on the scroll; then two dates glow red. Card: 'MAUKE ✓ · resign ✗ Apr–May, Sep–Oct' + small 'Chandra rashi ka aam trend · Vedic maanyata'.
@@ -90,13 +89,13 @@ Picture: Sakshi alone (no deity), send arrow, big link chip. Card: 'POORI ARIES 
 |---|---|---|---|
 | 3, ~8 s | FAAAH | share chart crashes | V04 "Sade Sati… hilna-dulna toh banta hai" |
 | 5, ~13 s | "Arey baap re" + her "Toh gadbad hai re baba!" | V04 | V06 "Arre ghabrao mat, isiliye toh mol-bhaav ho raha hai" |
-| 9, ~24 s | "Lekin ek second" | V08 "Double nahi" | V10 "sabzi mandi nahi hai" |
+| 7, ~18 s | "Abhi maza aayega na bhidu" | V06 "Bolo, kya chahiye?" | V08 "Double nahi…" |
+| 9, ~25 s | "Lekin ek second" | V08 "Double nahi" | V10 "sabzi mandi nahi hai" |
 | 11, ~29 s | vine boom (sound) | dhaniya ask | Vishnu ji's chuckle |
-| 12, ~35 s | "Is sajjan ko kya takleef hai bhai?" | boss's Sunday WhatsApp | V13 job advice |
 | 17, ~48 s | "Hey Bhagwan, kya karun main" | maasi's "good news kab" | V19 "Haan, sun raha hun" |
 
-Files in `assets/audio/memes/` (use windows in `catalog.json`; several clips go on into other words, so never play past the window): faaah.mp3, arey-baap-re.mp3 (0–1.21), lekin-ek-second.mp3 (0–1.23), vine-boom.mp3, is-sajjan-ko-kya-takleef-hai-bhai.mp3 (0–2.10), hey-bhagwan-kya-karun-main.mp3 (0–1.53). All checked by transcription.
-Searched about 60 phrases on myinstants (24 Nov). Considered and left out: "Paisa hi paisa hoga" (film line, and the clip did not transcribe cleanly), "Nahi nahi Salunke, kuch toh gadbad hai" (TV line; Sakshi says "gadbad" herself instead), "Abhi maza aayega na bhidu" (film), "Salary hold" (has abuse), "Kya baat hai sir" (calling Bhagwan 'sir' reads flippant; cut after review), "Arre kya baat kar rahe ho", "Achha ji aisa hai kya", "Bhai yahan kya ho raha hai" (spares if the owner wants a swap). No meme near the Sade Sati demand (beats 20–22) or on Vishnu ji's own lines.
+Files in `assets/audio/memes/` (use windows in `catalog.json`; several clips go on into other words, so never play past the window): faaah.mp3, arey-baap-re.mp3 (0–1.21), lekin-ek-second.mp3 (0–1.23), vine-boom.mp3, hey-bhagwan-kya-karun-main.mp3 (0–1.53), abhi-maza-aayega-na-bhidu.mp3 (1.95–4.36). All checked by transcription.
+Searched about 60 phrases on myinstants (24 Nov). v10 (owner 13:44 IST: use any left-out meme if it fits): added "Abhi maza aayega na bhidu" (Vishnu ji asks "Bolo, kya chahiye?" and the haggle starts). Then cut "Is sajjan ko kya takleef hai bhai" (weakest fit; four memes in 17 s blurred together; kept as a spare). Still left out, by judgement: "Paisa hi paisa hoga" (the free clip does not transcribe as the line, so it can't be verified; the money beat is already full), "Kuch toh gadbad hai" (Sakshi's own "gadbad hai re baba" is your line), "Kya baat hai sir" (calls Bhagwan 'sir'). Considered and left out earlier: "Paisa hi paisa hoga" (film line, and the clip did not transcribe cleanly), "Nahi nahi Salunke, kuch toh gadbad hai" (TV line; Sakshi says "gadbad" herself instead), "Salary hold" (has abuse), "Kya baat hai sir" (calling Bhagwan 'sir' reads flippant; cut after review), "Arre kya baat kar rahe ho", "Achha ji aisa hai kya", "Bhai yahan kya ho raha hai" (spares if the owner wants a swap). No meme near the Sade Sati demand (beats 20–22) or on Vishnu ji's own lines.
 
 ## Rules kept
 - Only Vishnu ji and Sakshi on screen (owner, 24 Nov). Vishnu ji decides and wins every round with the advice line; he is never the joke. Sakshi bargains and takes the comic sounds.
