@@ -250,6 +250,51 @@
    "used_in": [
     "molbhav-aries"
    ]
+  },
+  {
+   "file": "hey-bhagwan-kya-karun-main.mp3",
+   "kind": "line",
+   "says": "Hey Bhagwan, kya karun main",
+   "speaker": "meme (full clip goes on 'saara kaam karun main, khaye wo…': never use past 1.53 s)",
+   "use": [
+    0.0,
+    1.53
+   ],
+   "fits": "exasperated plea to the sky; funny when said in front of a deity who then answers",
+   "url": "https://www.myinstants.com/media/sounds/hey-bhagwan.mp3",
+   "used_in": [
+    "molbhav-aries"
+   ]
+  },
+  {
+   "file": "kya-baat-hai-sir.mp3",
+   "kind": "line",
+   "says": "Kya baat hai sir",
+   "speaker": "meme (repeats 3 times; use the first only)",
+   "use": [
+    0.0,
+    1.16
+   ],
+   "fits": "impressed praise after a clever answer",
+   "url": "https://www.myinstants.com/media/sounds/kya-baat-hai-sir.mp3",
+   "used_in": [
+    "molbhav-aries"
+   ]
+  },
+  {
+   "file": "is-sajjan-ko-kya-takleef-hai-bhai.mp3",
+   "kind": "line",
+   "says": "Is sajjan ko kya takleef hai bhai?",
+   "speaker": "meme",
+   "use": [
+    0.0,
+    2.1
+   ],
+   "fits": "annoyed at someone bothering you (boss, neighbour, caller)",
+   "url": "https://www.myinstants.com/media/sounds/is-sajjan-ko-kya-takleef-hai-bhai.mp3",
+   "used_in": [
+    "molbhav-aries"
+   ]
   }
  ]
 }
