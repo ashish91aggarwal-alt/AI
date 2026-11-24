@@ -1,21 +1,255 @@
 {
  "note": "Reusable meme voice lines and trending meme sounds. Files sit next to this catalog. 'use' = in/out seconds of the useful part. Verified by transcription (find_phrase.py) on 23 Nov 2026. Add every new clip here with its source url.",
  "clips": [
-  {"file": "ab-tu-gaya-beta-puneet.mp3", "kind": "line", "says": "Ab tu gaya beta", "speaker": "Puneet Superstar", "use": [2.48, 3.88], "fits": "threat / tease opener or closer", "url": "https://www.myinstants.com/media/sounds/ab-tu-gaya-beta-ab-dekh-tu-puneet.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "aayein-meme.mp3", "kind": "line", "says": "Aayein?!", "speaker": "meme", "use": [0, 0.65], "fits": "confused shock", "url": "https://www.myinstants.com/media/sounds/aayein-meme.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "ruko-zara-sabar-karo-bhau.mp3", "kind": "line", "says": "Ruko zara, sabar karo", "speaker": "Hindustani Bhau", "use": [0.04, 1.84], "fits": "hold on / stalling", "url": "https://content-storage.voicemod.net/7412005effaccbd51db6b1cf51bf955494549212faa3648fa71b3ed4a09c33ff", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "bachcha-hai-tu-mera-rakesh-bedi.mp3", "kind": "line", "says": "Baccha hai (yaar) tu mera", "speaker": "Rakesh Bedi (Jameel Jamali, Dhurandhar: The Revenge)", "use": [0.30, 1.56], "fits": "playful 'I own you'; 2026's biggest viral dialogue", "url": "https://content-storage.voicemod.net/2576d9d56a7dc3381563148175ffa6e286396e89d5690719636a48b31dec6071", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "aree-bas-kar-bhai.mp3", "kind": "line", "says": "Arre bas kar bhai", "speaker": "meme", "use": [0, 1.6], "fits": "enough already / stop talking", "url": "https://www.myinstants.com/media/sounds/aree-bas-kar-bhai.mp3", "used_in": []},
-  {"file": "emotional-damage-meme.mp3", "kind": "line", "says": "Emotional damage", "speaker": "Steven He", "use": [0, 3.3], "fits": "after a roast lands", "url": "https://www.myinstants.com/media/sounds/emotional-damage-meme.mp3", "used_in": []},
-  {"file": "bruh.mp3", "kind": "line", "says": "Bruh", "speaker": "meme", "use": [0, 0.86], "fits": "deadpan disbelief", "url": "https://www.myinstants.com/media/sounds/movie_1.mp3", "used_in": []},
-  {"file": "faaah.mp3", "kind": "sound", "says": "FAAAH (scream)", "use": [0, 1.9], "fits": "panic / fail moment", "url": "https://www.myinstants.com/media/sounds/faaah.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "vine-boom.mp3", "kind": "sound", "says": "vine boom", "use": [0, 1.3], "fits": "punchline hit", "url": "https://www.myinstants.com/media/sounds/vine-boom.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "moye-moye.mp3", "kind": "sound", "says": "Moye moye (song hook; commercial song, highest mute risk)", "use": [0, 3.1], "fits": "sad / comic failure, low under the line", "url": "https://www.myinstants.com/media/sounds/moye-moye.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "anime-wow-sound-effect.mp3", "kind": "sound", "says": "anime 'Wow!'", "use": [0.15, 1.9], "fits": "grand entry / impressed", "url": "https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "oh-no-no-no-no-laugh.mp3", "kind": "sound", "says": "oh no no no (laugh)", "use": [0, 2.55], "fits": "closer after a burn", "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-no-laugh.mp3", "used_in": ["2027-warmup-mulank8"]},
-  {"file": "oh-no-no-no-tik-tok-song-sound-effect.mp3", "kind": "sound", "says": "Oh no, oh no, no no no (TikTok song)", "use": [13.0, 17.3], "fits": "disaster about to happen", "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-tik-tok-song-sound-effect.mp3", "used_in": []},
-  {"file": "meme-violin-sad-violin.mp3", "kind": "sound", "says": "sad violin", "use": [0, 4.6], "fits": "fake sympathy", "url": "https://www.myinstants.com/media/sounds/meme-violin-sad-violin.mp3", "used_in": []},
-  {"file": "spiderman-meme-song.mp3", "kind": "sound", "says": "Spiderman meme song", "use": [0, 6.0], "fits": "pointing at each other / same problem", "url": "https://www.myinstants.com/media/sounds/spiderman-meme-song.mp3", "used_in": []},
-  {"file": "climax-abhi-baaki-hai-carryminati.mp3", "kind": "line", "says": "Aur bhai ruko… climax abhi baaki hai", "speaker": "CarryMinati", "use": [0.0, 3.4], "fits": "the story is not over / turnaround coming (year change, twist)", "url": "https://content-storage.voicemod.net/657e72b10bf0c3a0ffd0ec7805ca3e919d85c65cc363123fe727b0ef894cf4f5", "used_in": []}
+  {
+   "file": "ab-tu-gaya-beta-puneet.mp3",
+   "kind": "line",
+   "says": "Ab tu gaya beta",
+   "speaker": "Puneet Superstar",
+   "use": [
+    2.48,
+    3.88
+   ],
+   "fits": "threat / tease opener or closer",
+   "url": "https://www.myinstants.com/media/sounds/ab-tu-gaya-beta-ab-dekh-tu-puneet.mp3",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "aayein-meme.mp3",
+   "kind": "line",
+   "says": "Aayein?!",
+   "speaker": "meme",
+   "use": [
+    0,
+    0.65
+   ],
+   "fits": "confused shock",
+   "url": "https://www.myinstants.com/media/sounds/aayein-meme.mp3",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "ruko-zara-sabar-karo-bhau.mp3",
+   "kind": "line",
+   "says": "Ruko zara, sabar karo",
+   "speaker": "Hindustani Bhau",
+   "use": [
+    0.04,
+    1.84
+   ],
+   "fits": "hold on / stalling",
+   "url": "https://content-storage.voicemod.net/7412005effaccbd51db6b1cf51bf955494549212faa3648fa71b3ed4a09c33ff",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "bachcha-hai-tu-mera-rakesh-bedi.mp3",
+   "kind": "line",
+   "says": "Baccha hai (yaar) tu mera",
+   "speaker": "Rakesh Bedi (Jameel Jamali, Dhurandhar: The Revenge)",
+   "use": [
+    0.3,
+    1.56
+   ],
+   "fits": "playful 'I own you'; 2026's biggest viral dialogue",
+   "url": "https://content-storage.voicemod.net/2576d9d56a7dc3381563148175ffa6e286396e89d5690719636a48b31dec6071",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "aree-bas-kar-bhai.mp3",
+   "kind": "line",
+   "says": "Arre bas kar bhai",
+   "speaker": "meme",
+   "use": [
+    0,
+    1.6
+   ],
+   "fits": "enough already / stop talking",
+   "url": "https://www.myinstants.com/media/sounds/aree-bas-kar-bhai.mp3",
+   "used_in": []
+  },
+  {
+   "file": "emotional-damage-meme.mp3",
+   "kind": "line",
+   "says": "Emotional damage",
+   "speaker": "Steven He",
+   "use": [
+    0,
+    3.3
+   ],
+   "fits": "after a roast lands",
+   "url": "https://www.myinstants.com/media/sounds/emotional-damage-meme.mp3",
+   "used_in": []
+  },
+  {
+   "file": "bruh.mp3",
+   "kind": "line",
+   "says": "Bruh",
+   "speaker": "meme",
+   "use": [
+    0,
+    0.86
+   ],
+   "fits": "deadpan disbelief",
+   "url": "https://www.myinstants.com/media/sounds/movie_1.mp3",
+   "used_in": []
+  },
+  {
+   "file": "faaah.mp3",
+   "kind": "sound",
+   "says": "FAAAH (scream)",
+   "use": [
+    0,
+    1.9
+   ],
+   "fits": "panic / fail moment",
+   "url": "https://www.myinstants.com/media/sounds/faaah.mp3",
+   "used_in": [
+    "2027-warmup-mulank8",
+    "molbhav-aries"
+   ]
+  },
+  {
+   "file": "vine-boom.mp3",
+   "kind": "sound",
+   "says": "vine boom",
+   "use": [
+    0,
+    1.3
+   ],
+   "fits": "punchline hit",
+   "url": "https://www.myinstants.com/media/sounds/vine-boom.mp3",
+   "used_in": [
+    "2027-warmup-mulank8",
+    "molbhav-aries"
+   ]
+  },
+  {
+   "file": "moye-moye.mp3",
+   "kind": "sound",
+   "says": "Moye moye (song hook; commercial song, highest mute risk)",
+   "use": [
+    0,
+    3.1
+   ],
+   "fits": "sad / comic failure, low under the line",
+   "url": "https://www.myinstants.com/media/sounds/moye-moye.mp3",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "anime-wow-sound-effect.mp3",
+   "kind": "sound",
+   "says": "anime 'Wow!'",
+   "use": [
+    0.15,
+    1.9
+   ],
+   "fits": "grand entry / impressed",
+   "url": "https://www.myinstants.com/media/sounds/anime-wow-sound-effect.mp3",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "oh-no-no-no-no-laugh.mp3",
+   "kind": "sound",
+   "says": "oh no no no (laugh)",
+   "use": [
+    0,
+    2.55
+   ],
+   "fits": "closer after a burn",
+   "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-no-laugh.mp3",
+   "used_in": [
+    "2027-warmup-mulank8"
+   ]
+  },
+  {
+   "file": "oh-no-no-no-tik-tok-song-sound-effect.mp3",
+   "kind": "sound",
+   "says": "Oh no, oh no, no no no (TikTok song)",
+   "use": [
+    13.0,
+    17.3
+   ],
+   "fits": "disaster about to happen",
+   "url": "https://www.myinstants.com/media/sounds/oh-no-no-no-tik-tok-song-sound-effect.mp3",
+   "used_in": []
+  },
+  {
+   "file": "meme-violin-sad-violin.mp3",
+   "kind": "sound",
+   "says": "sad violin",
+   "use": [
+    0,
+    4.6
+   ],
+   "fits": "fake sympathy",
+   "url": "https://www.myinstants.com/media/sounds/meme-violin-sad-violin.mp3",
+   "used_in": []
+  },
+  {
+   "file": "spiderman-meme-song.mp3",
+   "kind": "sound",
+   "says": "Spiderman meme song",
+   "use": [
+    0,
+    6.0
+   ],
+   "fits": "pointing at each other / same problem",
+   "url": "https://www.myinstants.com/media/sounds/spiderman-meme-song.mp3",
+   "used_in": []
+  },
+  {
+   "file": "climax-abhi-baaki-hai-carryminati.mp3",
+   "kind": "line",
+   "says": "Aur bhai ruko… climax abhi baaki hai",
+   "speaker": "CarryMinati",
+   "use": [
+    0.0,
+    3.4
+   ],
+   "fits": "the story is not over / turnaround coming (year change, twist)",
+   "url": "https://content-storage.voicemod.net/657e72b10bf0c3a0ffd0ec7805ca3e919d85c65cc363123fe727b0ef894cf4f5",
+   "used_in": []
+  },
+  {
+   "file": "arey-baap-re.mp3",
+   "kind": "line",
+   "says": "Arey baap re",
+   "speaker": "meme (full clip continues 'ye toh dhoti khol raha hai': never use past 1.21 s)",
+   "use": [
+    0.0,
+    1.21
+   ],
+   "fits": "overwhelmed shock at something endless or too much",
+   "url": "https://www.myinstants.com/media/sounds/arey-baap-re-ye-toh-dhoti.mp3",
+   "used_in": [
+    "molbhav-aries"
+   ]
+  },
+  {
+   "file": "lekin-ek-second.mp3",
+   "kind": "line",
+   "says": "Lekin ek second",
+   "speaker": "meme (full clip continues 'kya wo Thala hai?': never use past 1.23 s)",
+   "use": [
+    0.0,
+    1.23
+   ],
+   "fits": "pivot: 'hold on, but…' before a counter-offer or twist",
+   "url": "https://www.myinstants.com/media/sounds/thala-ek-sec.mp3",
+   "used_in": [
+    "molbhav-aries"
+   ]
+  }
  ]
 }

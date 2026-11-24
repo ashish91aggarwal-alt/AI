@@ -1,4 +1,4 @@
-# Rashi ki file: 2026 ka dard, 2027 ka mol-bhaav — Aries (episode 1) — script v5 (24 Nov 2026; two-character re-score 8.0/10, nothing blocking)
+# Rashi ki file: 2026 ka dard, 2027 ka mol-bhaav — Aries (episode 1) — script v6 (24 Nov 2026; meme voice-overs added)
 
 v4 (owner, 24 Nov 10:56 IST): "Remove Monty and Shani ji, keep it just God and Sakshi." Monty's lines are cut or moved to Sakshi; Shani dev's line moved to Vishnu ji (Shani dev is named with respect, not shown). v3 was reviewed 8.2/10 (script) and passed the sensitivity and facts review.
 
@@ -19,7 +19,7 @@ Picture: Sakshi zooms in on a small cloud, slaps her floating diary open; a scro
 Picture: Vishnu ji leans to watch the scroll still unrolling, both brows up, amused smile.
 
 **3. Sakshi (K03).** "Suniye na, salary pehli ko aayi aur paanch tak gayab, neend teen baje tak reels mein gayi, aur jo share kharida, wo kharidte hi gir gaya!"
-Picture: doodles pop off the scroll on each item: an empty wallet with a moth, a glowing phone at '3:00 AM', a stock chart that drops straight down. Sakshi's face falls on the last one. Card: '2026: KHARCHE · NEEND · NUKSAAN' + small 'Vajah: Shani kharchon ke ghar mein · Vedic maanyata'. Sound: sad trombone, short (on the chart drop).
+Picture: doodles pop off the scroll on each item: an empty wallet with a moth, a glowing phone at '3:00 AM', a stock chart that drops straight down. Sakshi's face falls on the last one. Card: '2026: KHARCHE · NEEND · NUKSAAN' + small 'Vajah: Shani kharchon ke ghar mein · Vedic maanyata'. Sound: **MEME FAAAH** (original, 1.9 s) on the chart drop; Sakshi's jaw drops, eyes go wide.
 
 **4. Sakshi (K04).** "Chaliye Prabhu, ab deal ki baat karte hain, 2027 mein salary double!"
 Picture: Sakshi rolls up her coat sleeves, bazaar face. Sound: cash-register ding.
@@ -27,8 +27,8 @@ Picture: Sakshi rolls up her coat sleeves, bazaar face. Sound: cash-register din
 **5. Vishnu ji (V05).** "Double nahi, par March-April aur June mein paisa achha aa sakta hai, bas aate hi pehle bachat."
 Picture: gold coins drift up from the scroll. Card: 'PAISA ✓ Mar–Apr · Jun — pehle bachat, phir kharcha' + small 'Chandra rashi ka aam trend · Vedic maanyata'.
 
-**6. Sakshi (K06).** "Accha, dedh guna? Chaliye sawa guna, final!"
-Picture: Sakshi counts on her fingers (no props), hopeful puppy face.
+**6. Sakshi (K06).** [MEME: "Lekin ek second"] "Dedh guna? Chaliye sawa guna, final!"
+Picture: on the meme clip (original voice, 1.23 s) Sakshi shoots one finger up and narrows her eyes as a "deal-maker" (meme lip-sync with a punch-in and caption 'LEKIN EK SECOND'); then she counts on her fingers (no props), hopeful puppy face.
 
 **7. Vishnu ji (V07).** "Wakeel sahiba, ye sabzi mandi nahi hai."
 Picture: Vishnu ji laughs softly, shakes his head.
@@ -52,7 +52,8 @@ Picture: one-word deadpan with a small smile; the phone's bell icon gets a slash
 Picture: cut-in doodle: a wedding hall, a speech bubble 'SHAADI KAB?' grows into 'GOOD NEWS KAB?'. Sakshi does a tired face.
 
 **14. Vishnu ji (V14).** "Maasi ka 'shaadi kab' toh yugon se chal raha hai, wakeel sahiba."
-Picture: Vishnu ji's warm laugh, gentle head tilt; he stays in charge. Sound: soft tabla tag.
+Picture: Vishnu ji's warm laugh, gentle head tilt; he stays in charge.
+Then **MEME: "Arey baap re"** (original voice, 1.21 s) on Sakshi: she grabs her cheeks with open palms (no grip), eyes huge, a tiny 'YUGON SE?!' caption; punch-in. Then straight on to V15.
 
 **15. Vishnu ji (V15).** "Par June ke aakhir se November tak Guru saath hain, rishton mein mithas aur maasi ka jawab, dono aa sakte hain."
 Picture: hearts float up from the scroll; Sakshi blushes and claps. Card: 'RISHTE ✓ end Jun–Nov · Vedic maanyata'.
@@ -71,6 +72,16 @@ Picture: Sakshi's diary floats up as the tally card: three green ticks (PAISA, M
 
 **20. Sakshi (K20, CTA, alone).** "Apne Aries dost ko ye bhejo, mahine-wise 2027 guide bio ke link mein hai. Agli file, Taurus!"
 Picture: Sakshi alone (no deity), send arrow, big link chip. Card: 'POORI ARIES 2027 GUIDE → LINK'. End card 1 s: 'Agli file: TAURUS'.
+
+## Meme audio (owner, 24 Nov 13:15 IST: "Arre baap re, Lekin ek minute, Faaaah, at the right events only")
+Placed only where the moment is a real reaction, and always on Sakshi, never on Vishnu ji and never on the Shani/Sade Sati beat. Spaced well apart.
+| Where | Meme | Why there |
+|---|---|---|
+| K03 end, the share chart crashes (~8 s) | FAAAH | the panic/fail beat; replaces the sad trombone |
+| K06 start (~14 s) | "Lekin ek second" (replaces Sakshi's "Accha,") | the classic pivot right before her counter-offer after "Double nahi" |
+| K08 dhaniya (~20 s) | vine boom (kept) | punchline hit |
+| After V14 "yugon se chal raha hai" (~48 s) | "Arey baap re" | Sakshi realises maasi's question is eternal; Vishnu ji then rescues her with V15 |
+Clips are the original voices (`assets/audio/memes/lekin-ek-second.mp3` use 0–1.23 s, `arey-baap-re.mp3` use 0–1.21 s; both clips go on into other words, so never past those cuts). Checked by transcription. "Lekin ek minute" was not found as a clip; "Lekin ek second" is the viral original. Not used on purpose: any meme near Shani dev's beat (would read as mocking), Ab tu gaya beta (no comic lead to aim at).
 
 ## Rules kept
 - Only Vishnu ji and Sakshi on screen (owner, 24 Nov). Vishnu ji decides and wins every round with the advice line; he is never the joke. Sakshi bargains and takes the comic sounds.
