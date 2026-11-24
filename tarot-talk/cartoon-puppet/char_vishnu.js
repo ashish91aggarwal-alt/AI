@@ -19,7 +19,7 @@ function gem(x, y, r, col, w) {
 }
 const pearl = (x, y, r, w) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="#fffaf2" stroke="${E.INK}" stroke-width="${w}"/><circle cx="${(x - r * 0.35).toFixed(1)}" cy="${(y - r * 0.35).toFixed(1)}" r="${r * 0.3}" fill="#fff"/>`;
 
-function eye(cx, cy, lid, lx, brow, side) {
+function eye(cx, cy, lid, lx, brow, side, soft = 0) {   // soft: lifts the inner brow end so the brows read level and kind
   const rx = 52, ry = 50;
   const shape = catmull([[cx - rx, cy + 6], [cx - rx * 0.55, cy - ry], [cx + rx * 0.5, cy - ry * 1.04], [cx + rx, cy - 4], [cx + rx * 0.45, cy + ry * 0.92], [cx - rx * 0.5, cy + ry * 0.88]], 8, true);
   const lidY = cy - ry + (2 * ry + 8) * lid;
@@ -34,7 +34,7 @@ function eye(cx, cy, lid, lx, brow, side) {
   return fill(shape, C.white) + clipped(shape, inner) + (lid > 0.15 ? `<path d="M${rimTop.map(q => q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' L')}" fill="none" stroke="${C.skin}" stroke-width="5"/>` : '') +
     ink(lidLine, 9.5, { prof: u => 0.3 + 0.7 * Math.sin(Math.PI * Math.min(1, 0.2 + u)), taper: [0.15, 0.2] }) + // heavy lash line with outer flick
     ink(shape.slice(Math.floor(shape.length * 0.58), Math.floor(shape.length * 0.92)), WT.fine, { taper: [0.35, 0.35] }) +
-    ink(catmull([[cx - outer * 50, browY + 14], [cx - outer * 4, browY - 14], [cx + outer * 54, browY + 4 - brow * 10]], 8, false), 11.5, { prof: u => 0.35 + 0.65 * Math.sin(Math.PI * (0.2 + 0.65 * u)), taper: [0.2, 0.5], color: C.brow || E.INK });
+    ink(catmull([[cx - outer * 50, browY + 14 - soft * 20], [cx - outer * 4, browY - 14 - soft * 6], [cx + outer * 54, browY + 4 - brow * 10]], 8, false), 11.5, { prof: u => 0.35 + 0.65 * Math.sin(Math.PI * (0.2 + 0.65 * u)), taper: [0.2, 0.5], color: C.brow || E.INK });
 }
 
 // back layer: halo + long hair behind shoulders (drawn before the body)
@@ -79,7 +79,7 @@ function head(p) {
   for (const side of [-1, 1]) {
     const cx = side * 90, mode = p.eyeMode === 'happy' || (p.wink === side) ? 'happy' : null;
     if (mode) { g.push(happyEye(cx, side)); g.push(ink(catmull([[cx - side * 48, -96 - (side < 0 ? p.browL : p.browR) * 22], [cx, -110 - (side < 0 ? p.browL : p.browR) * 22], [cx + side * 50, -96]], 6, false), 11.5, { taper: [0.2, 0.5] })); }
-    else g.push(eye(cx, -6, p.lid, p.lookX, side < 0 ? p.browL : p.browR, side));
+    else g.push(eye(cx, -6, p.lid, p.lookX, side < 0 ? p.browL : p.browR, side, p.browSoft || 0));
   }
   if (p.blushHatch) for (const k of [-1, 1]) g.push([-14, 0, 14].map(dx => `<line x1="${k * 126 + dx - 6}" y1="100" x2="${k * 126 + dx + 6}" y2="84" stroke="#e0457a" stroke-width="3.2" stroke-linecap="round" opacity="0.7"/>`).join(''));
   g.push(ink(catmull([[-4, 42], [-16, 70], [4, 76]], 6, false), WT.fine * 1.6, { taper: [0.3, 0.3], color: C.skinLine }));
