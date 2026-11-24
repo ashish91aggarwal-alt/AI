@@ -22,7 +22,7 @@ SCRIPT = [   # v13.2 (owner edits 24 Nov 18:17 IST)
  ('V02', 'Vishnu ji', "Itni moti file? Wakeel saahiba, ye shikayat hai ya kisi shaadi ka menu hai?", "इतनी मोटी फ़ाइल? वकील साहिबा, ये शिकायत है या किसी शादी का मेन्यू है?", LAUGH),
  ('K03', 'Sakshi', "Poore saal kharcha zyada hua, neend nahi aayi, aur jo share kharida wo turant gir gaya.", "पूरे साल खर्चा ज़्यादा हुआ, नींद नहीं आई, और जो शेयर खरीदा वो तुरंत गिर गया।", 1.55),
  ('V04', 'Vishnu ji', "Aries wale share bhi Mangal ki speed se kharidte hain. Khair, 2026 mein Shani dev baarahve, kharchon wale ghar mein hain, isliye paisa aur neend dono hile.", "एरीज़ वाले शेयर भी मंगल की स्पीड से खरीदते हैं। ख़ैर, दो हज़ार छब्बीस में शनि देव बारहवें, खर्चों वाले घर में हैं, इसलिए पैसा और नींद दोनों हिले।", 0.12),
- ('MEME', 'gadbad', 'arey-deva-ye-gadbad-hai-baba.mp3', 0.0, 4.31, 0.08),   # Paresh Rawal's whole line (owner, 24 Nov 19:48 IST)
+ ('MEME', 'gadbad', 'arey-deva-ye-gadbad-hai-baba.mp3', 0.35, 4.31, 0.08),   # Paresh Rawal's whole line (owner, 24 Nov 19:48 IST)
  ('K05', 'Sakshi', "Prabhu, kahin 2027 bhi aisa hi na jaye!", "प्रभु, कहीं दो हज़ार सत्ताईस भी ऐसा ही ना जाए!", GAP),
  ('V06', 'Vishnu ji', "Tension lene ka nahi, wakeel saahiba. Isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?", "टेंशन लेने का नहीं, वकील साहिबा। इसीलिए तो मोल भाव हो रहा है, बोलो क्या चाहिए?", 0.12),
  ('MEME', 'abhi_maza', 'abhi-maza-aayega-na-bhidu.mp3', 1.95, 4.36, 0.08),

@@ -10,7 +10,10 @@ build_voices.py (memes spliced from the originals).    python3 build_voices_el.p
 import os, json, csv, re, subprocess, numpy as np, soundfile as sf
 import build_voices as BV
 HERE = BV.HERE; SR = BV.SR; TK = os.path.join(HERE, 'voices', 'takes')
-TEMPO = {'Vishnu ji': 1.08, 'Sakshi': 1.08}   # v4 Hindi reads a touch slow; this lands near 3 words/s without sounding rushed
+TEMPO = {'Vishnu ji': 1.08, 'Sakshi': 1.08}
+LINE_TEMPO = {'K07': 0.92, 'K13': 0.95, 'K15': 1.0}   # reviewer: these ran over 3.6 words/s
+INSERT = {'V02': [(4.6, 0.55)], 'K17': [(8.42, 0.3)]}   # (raw s from the line start, s of silence): beat before 'shaadi ka menu' and 'Wakeel haari nahi'
+BEAT = {'V02': 0.45, 'V14': 0.45, 'K17': 0.45, 'V04': 0.35, 'K09': 0.3}   # let the punchline pauses breathe (default cap 0.2 s)   # v4 Hindi reads a touch slow; this lands near 3 words/s without sounding rushed
 # rough boundaries (s, in the raw take) from the transcript; each is snapped to the quietest 20 ms inside +-0.35 s
 CUTS = {
  'Sakshi':    ('v13_sakshi.mp3', ['K01', 'K03', 'K05', 'K07', 'K09', 'K11', 'K13', 'K15', 'K17', 'K18'], [5.1, (10.45, 0.1), 13.9, 17.45, 22.8, 26.14, 30.55, 37.27, 48.6]),
@@ -28,10 +31,12 @@ PIECES = {}
 for who, (f, ids, bounds) in CUTS.items():
     x = load(f); bb = [0.0] + [snap(x, *t) if isinstance(t, tuple) else snap(x, t) for t in bounds] + [len(x) / SR]
     for k, lid in enumerate(ids):
-        y = x[int(bb[k] * SR):int(bb[k + 1] * SR)]; p = os.path.join(TK, f'_{lid}.wav'); sf.write(p, y, SR)
+        y = x[int(bb[k] * SR):int(bb[k + 1] * SR)]
+        for at_s, d in sorted(INSERT.get(lid, []), reverse=True): i = int(at_s * SR); y = np.concatenate([y[:i], np.zeros(int(d * SR), np.float32), y[i:]])
+        p = os.path.join(TK, f'_{lid}.wav'); sf.write(p, y, SR)
         q = os.path.join(HERE, 'voices', 'lines', lid + '.wav')
-        BV.ff(p, f'atempo={TEMPO[who]},highpass=f=70,loudnorm=I=-18:TP=-2', q)
-        z, _ = sf.read(q); z = BV.squeeze_pauses(BV.trim(z.astype(np.float32)), 0.2); sf.write(q, z, SR); PIECES[lid] = z
+        BV.ff(p, f'atempo={LINE_TEMPO.get(lid, TEMPO[who])},highpass=f=70,loudnorm=I=-18:TP=-2', q)
+        z, _ = sf.read(q); z = BV.squeeze_pauses(BV.trim(z.astype(np.float32)), BEAT.get(lid, 0.2)); sf.write(q, z, SR); PIECES[lid] = z
     print(who, [round(b, 2) for b in bb])
 
 track, t, rows, beats = [], 0.0, [], []
@@ -41,7 +46,7 @@ for item in BV.SCRIPT:
         _, name, f, a, b, gap = item; p = os.path.join(tmp, name + '.wav')
         BV.ff(os.path.join(BV.MEMES, f), f'atrim={a}:{b},asetpts=PTS-STARTPTS,afade=t=in:d=0.01,afade=t=out:st={b - a - 0.05}:d=0.05,loudnorm=I=-18:TP=-2', p)
         x, _ = sf.read(p); x = x.astype(np.float32); d = len(x) / SR
-        rows.append([name, 'Sakshi', round(t, 3), round(t + d, 3), 'meme:' + f, BV.MEME_TEXT[name]])
+        rows.append([name, 'Meme' if name == 'gadbad' else 'Sakshi', round(t, 3), round(t + d, 3), 'meme:' + f, BV.MEME_TEXT[name]])   # gadbad: Paresh Rawal's voice-over, Sakshi only reacts
         beats.append({'id': name, 'type': 'meme', 'start': round(t, 3), 'end': round(t + d, 3), 'who': 'Sakshi', 'line': BV.MEME_TEXT[name],
                       'caption_chunks': [{'text': BV.MEME_TEXT[name], 'from': round(t, 2), 'to': round(t + d, 2)}], 'meme_file': f, 'meme_in': a, 'meme_out': b})
     else:

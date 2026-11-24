@@ -35,11 +35,11 @@ const vR = [[0, 'rest'],
   [at('V04', 0.05), 'palm'], [at('V04', 0.45), 'point'], [B('V04').end + 0.2, 'rest'],          // points at the Shani card
   [at('V06', 0.02), 'bless'], [at('V06', 0.5), 'palm'], [B('V06').end + 0.2, 'rest'],           // calming palm, then "bolo kya chahiye"
   [at('V08', 0.05), 'finger'], [at('V08', 0.62), 'palm'], [B('V08').end + 0.2, 'rest'],         // Mangal; "April tak roko" (stop palm)
-  [at('V10', 0.02), 'bless'], [at('V10', 0.3), 'finger'], [at('V10', 0.52), 'bless'], [B('V10').end + 0.4, 'rest'],
+  [at('V10', 0.02), 'bless'], [at('V10', 0.3), 'finger'], [at('V10', 0.6), 'bless'], [B('V10').end + 0.4, 'rest'],
   [at('V12', 0.05), 'palm'], [at('V12', 0.3), 'point'], [at('V12', 0.72), 'palm'], [B('V12').end + 0.2, 'rest'],
   [at('V14', 0.4), 'point'], [B('V14').end + 0.2, 'rest'],
   [at('V16', 0.12), 'palm'], [at('V16', 0.38), 'point'], [at('V16', 0.72), 'bless'], [VEND - 0.1, 'wave']];
-const vL = [[0, 'Ltrail'], [FLY_IN[1], 'L0'], [at('V10', 0.5), 'Lram'], [at('V10', 0.8), 'L0'], [FLY_OUT[0] - 0.1, 'Ltrail']];
+const vL = [[0, 'Ltrail'], [FLY_IN[1], 'L0'], [at('V10', 0.6), 'Lram'], [at('V10', 0.88), 'L0'], [FLY_OUT[0] - 0.1, 'Ltrail']];
 const laughs = [[B('V02').end - 0.1, B('V02').end + 0.45], [at('V14', 0), at('V14', 0.22)], [B('V10').end, B('V10').end + 0.35]];
 const nods = [at('V10', 0.86), at('V06', 0.3)];
 function vishnuNow(t) {
@@ -52,7 +52,7 @@ function vishnuNow(t) {
   const shake = t > at('V16', 0) && t < at('V16', 0.18) ? 3 * Math.sin((t - at('V16', 0)) * 14) : 0;   // "wahan sifaarish nahi chalti"
   const lean = t < FLY_IN[1] ? 7 * Math.sin(Math.PI * st.u) : t < FLY_IN[1] + 0.8 ? -5 * Math.sin(Math.PI * (t - FLY_IN[1]) / 0.8) : t > FLY_OUT[0] ? -7 * Math.sin(Math.PI * st.u) : 0;
   const tilt = (t < FLY_IN[1] ? 4 : t > FLY_OUT[0] ? -4 : 0) * Math.sin(Math.PI * st.u) + nod + shake;
-  const atRam = t > at('V10', 0.52) && t < at('V10', 0.75), laugh = laughs.some(([a, b]) => t > a && t < b);
+  const atRam = t > at('V10', 0.6) && t < at('V10', 0.85), laugh = laughs.some(([a, b]) => t > a && t < b);
   const pose = { ...kind, lean, tilt: Math.max(-4, Math.min(4, tilt)), armR, armL, lookX: atRam ? -20 : 8, lookY: atRam ? 15 : 0, eyeMode: laugh ? 'happy' : null, mouthShape: laugh ? 'smileBig' : undefined };
   if (spin) { const W = armR.W, a = Math.atan2(W[1] - armR.E[1], W[0] - armR.E[0]), fx = W[0] + Math.cos(a) * 95, fy = W[1] + Math.sin(a) * 95; pose.chakra = { x: fx + 30 * Math.cos(t * 8), y: fy - 10 + 18 * Math.sin(t * 8), spin: t * 9, scale: 0.8 }; }   // twirls round the fingertip like a keychain
   const vj = `<g transform="translate(${st.x.toFixed(1)} ${st.y.toFixed(1)}) scale(${(st.s / 0.46).toFixed(4)}) translate(${-PX} ${-(PY + 230)})">${vishnu(pose, PX, PY + 230, 0.46, t)}</g>`;
@@ -63,7 +63,7 @@ function vishnuNow(t) {
 }
 
 // ---------- the ram (Sakshi's client) ----------
-const R_IN = [0.2, 3.4], R_GO = at('V10', 0) - 1.6, R_BRAKE = at('V10', 0.55);
+const R_IN = [0.2, 3.4], R_GO = at('V10', 0) - 1.6, R_BRAKE = at('V10', 0.65);
 const RA = [-90, 1088], RB = [90, 1094], RC = [228, 1183];
 function ramNow(t) {
   let x, y, s, speed = 0, brake = 0, look = 'happy', lookX = 0;
@@ -107,7 +107,6 @@ function sakshiNow(t) {
   const alone = t > FLY_OUT[0];
   const look = alone ? { lookX: 0, lookY: 0 } : t < FLY_IN[1] ? { lookX: -22, lookY: -14 } : (t > R_BRAKE - 0.2 && t < R_BRAKE + 1.4) || (t > B('K03').end - 0.1 && t < B('K03').end + 1.6) ? { lookX: -26, lookY: 6 } : { lookX: -16, lookY: -10 };
   if (t > FLY_OUT[0] - 0.3 && t < CLOSE[1]) { look.lookX = -24; look.lookY = -18; }   // watches him go
-  const baap = B('gadbad'); if (t > baap.start && t < baap.end) CLOCK.svg(baap.start - 0.3);
   const out = `<ellipse cx="730" cy="1352" rx="95" ry="14" fill="#a8742c" opacity="0.45"/>` + sakshi({ ...face, ...look, armL: null, ...(() => { const a = kArms(t, kArmKeys); return { armL: a.L, armR: a.R }; })() }, 730, 1065, 0.5, t);
   CLOCK.svg(t); return out;
 }
@@ -154,7 +153,7 @@ function cards(t) {
   // FAAAH beat: the share falls 40 %
   o += card(t, at('K03', 0.66), at('V04', 0.42), 'SHARE', icon.chartDown(t, at('K03', 0.7)), 430);
   // Shani in the 12th, all 2026
-  o += card(t, at('V04', 0.45), B('V06').start - 0.1, 'SHANI · 2026', icon.saturn(mid, CY0 + 175, 0.9) + TS(mid, CY0 + 290, '12th ghar', 40) + TS(mid, CY0 + 340, 'kharcha + neend', 30, '#8e1b2c'), 420, { foot: VED });
+  o += card(t, at('V04', 0.47), B('V06').start - 0.1, 'SHANI · 2026', icon.saturn(mid, CY0 + 175, 0.9) + TS(mid, CY0 + 290, '12th ghar', 40) + TS(mid, CY0 + 340, 'kharcha + neend', 30, '#8e1b2c'), 420, { foot: VED });
   // mol-bhaav starts
   o += card(t, at('V06', 0.45), B('K07').start + 0.4, 'MOL-BHAAV SHURU', icon.scale(t, mid, CY0 + 230), 380, { head: '#9fd0a8' });
   // demand 1 → Mangal vakri → tareekh pe tareekh (same card; month tiles get stamped)
@@ -175,7 +174,7 @@ function cards(t) {
   o += card(t, at('V16', 0.37), B('K17').start - 0.05, 'SADE SATI', icon.door(t, at('V16', 0.45), mid - 95, CY0 + 220) + TS(mid + 75, CY0 + 160, 'beech ka', 28) + TS(mid + 75, CY0 + 196, 'charan', 28) + TS(mid + 75, CY0 + 260, 'pehli', 28, '#3b4fa8') + TS(mid + 75, CY0 + 296, 'dastak', 28, '#3b4fa8') + TS(mid, CY0 + 375, 'Jun – Oct 2027', 30, '#8e1b2c'), 440, { foot: VED });
   // the wakeel's verdict: every row filled, each appears on its word
   const rows = [['KAAM', 'April ki tareekh', 0.2], ['GHAR', 'aadha sukoon', 0.34], ['RISHTA', 'Guru ka saath', 0.48], ['SADE SATI', 'mehnat ka raasta', 0.64]];
-  o += card(t, B('K17').start, B('K18').start + 0.1, 'FAISLA', rows.map(([a, b, f], i) => TS(CX0 + 26, CY0 + 135 + i * 66, a, 26, '#8e1b2c', 'start') + (t < at('K17', f) ? `<path d="M${CX0 + 26} ${CY0 + 171 + i * 66} H${CX0 + 300}" stroke="#c9b9a2" stroke-width="4" stroke-dasharray="10 8"/>` : TS(CX0 + 26, CY0 + 169 + i * 66, b, 30, INK, 'start'))).join('') + stamp(t, at('K17', 0.84), mid, CY0 + 410, 'ARIES JEET GAYE', '#1f5a35', 24, -5), 450, { head: '#f2b84b' });
+  o += card(t, B('K17').start, B('K18').start + 0.1, 'FAISLA', rows.map(([a, b, f], i) => TS(CX0 + 24, CY0 + 132 + i * 72, a, 28, '#8e1b2c', 'start') + (t < at('K17', f) ? `<path d="M${CX0 + 24} ${CY0 + 170 + i * 72} H${CX0 + 300}" stroke="#c9b9a2" stroke-width="4" stroke-dasharray="10 8"/>` : TS(CX0 + 24, CY0 + 168 + i * 72, b, 30, INK, 'start'))).join('') + stamp(t, at('K17', 0.95), mid, CY0 + 428, 'ARIES JEET GAYE', '#1f5a35', 24, -5), 470, { head: '#f2b84b' });
   // CTA: link-based (owner rule)
   o += card(t, B('K18').start + 0.1, DUR, 'MANIFEST 2027', icon.link(mid, CY0 + 150) + TS(mid, CY0 + 235, 'Link pe click', 38, '#3b4fa8') + icon.send(mid - 135, CY0 + 300) + TS(mid + 35, CY0 + 312, 'Dost ko bhejo', 28), 360, { head: '#9fd0a8' });
   return o;

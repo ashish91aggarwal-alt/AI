@@ -61,11 +61,11 @@ const VA = {
 const KA = {
   rest: { L: { E: [372, 1080], W: [385, 1205], hand: 'relax' }, R: { E: [708, 1080], W: [695, 1205], hand: 'relax' } },
   hold: { L: { E: [415, 1090], W: [515, 1170], hand: 'relax' }, R: { E: [665, 1090], W: [565, 1170], hand: 'relax' } },   // relaxed hands resting together, backs to the viewer
-  present: { L: { E: [318, 1040], W: [240, 975], hand: 'palm' }, R: { E: [670, 1085], W: [558, 1165], hand: 'palm' } },   // open palm out (toward Prabhu / the file)
-  chest: { L: { E: [410, 1085], W: [522, 1165], hand: 'palm' }, R: { E: [705, 1070], W: [585, 1000], hand: 'palm' } },   // worried hand on chest
-  one: { L: { E: [300, 1030], W: [195, 950], hand: 'point' }, R: { E: [670, 1085], W: [558, 1165], hand: 'palm' } },      // "pehli demand": one finger, clear of the face
+  present: { L: { E: [318, 1040], W: [240, 975], hand: 'palm' }, R: { E: [665, 1090], W: [565, 1170], hand: 'relax' } },   // open palm out (toward Prabhu / the file)
+  chest: { L: { E: [415, 1090], W: [515, 1170], hand: 'relax' }, R: { E: [705, 1070], W: [585, 1000], hand: 'palm' } },   // worried hand on chest
+  one: { L: { E: [300, 1030], W: [195, 950], hand: 'point' }, R: { E: [665, 1090], W: [565, 1170], hand: 'relax' } },      // "pehli demand": one finger, clear of the face
   shrug: { L: { E: [335, 1070], W: [262, 1015], hand: 'palm' }, R: { E: [745, 1070], W: [818, 1015], hand: 'palm' } },
-  cta: { L: { E: [410, 1085], W: [522, 1165], hand: 'palm' }, R: { E: [770, 1000], W: [880, 830], hand: 'point' } },     // points up at the link card above her
+  cta: { L: { E: [415, 1090], W: [515, 1170], hand: 'relax' }, R: { E: [800, 1010], W: [990, 875], hand: 'point' } },     // points up at the link card above her
 };
 const kArms = (t, keys) => ({ L: armKF(t, keys.map(([a, k]) => [a, KA[k].L])), R: armKF(t, keys.map(([a, k]) => [a, KA[k].R])) });
 
