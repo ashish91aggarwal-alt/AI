@@ -1,5 +1,5 @@
 {
- "built": "2026-11-24T19:00:14Z",
+ "built": "2026-11-24T19:31:24Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Taurus rough cut v1 rendered; Gate-3 review running",
-   "next": "fix review faults, send to owner",
+   "doing": "Taurus rough cut v2 passed Gate 3 (8/10); sent to owner",
+   "next": "owner listens + feedback; then Sakshi body business, ElevenLabs only if owner allows credits",
    "blocked": "",
-   "updated_at": "2026-11-24T19:00:09Z",
+   "updated_at": "2026-11-24T19:31:24Z",
    "compactions": 0,
    "session": {
     "link": null,
