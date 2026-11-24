@@ -185,7 +185,7 @@ function draw(p) {
 function drawInner(p) {
   const sk = { skin: C.skin, skinSh: C.skinSh, gold: C.gold, line: C.skinLine, bracelet: 'kada', sleeve: p.lawyer ? { col: '#5a5276', sh: '#3c3550', len: 1.0, trim: '#d8d2f0' } : { col: C.denim, sh: C.denimSh, len: p.coat ? 0.8 : 0.45, trim: C.denimLt } };
   const L = p.armL || { E: [380, 1080], W: [400, 1210], hand: 'relax' }, R = p.armR || { E: [700, 1080], W: [680, 1210], hand: 'relax' };
-  const A = (S, X, out) => arm(S, X.E, X.W, { r: [36, 31, 26], handPose: X.hand, handAng: 0, hs: 1, handScale: 1.05, outward: out, ...sk });
+  const A = (S, X, out) => arm(S, X.E, X.W, { r: [36, 31, 26], handPose: X.hand, handAng: 0, hs: 1, handScale: 1.05, outward: out, palmSide: -1, ...sk });
   // short chibi body: drawn at the old scale, shrunk toward the feet
   const W0 = { ...WT }; for (const q in WT) WT[q] = W0[q] / 0.72; // keep the outline weight the same as the rest of the cast after shrinking
   const bodyInner = body(p) + (p.coat || p.lawyer ? bands(p) : '') + A([400, 935], L, -1) + A([680, 935], R, 1) + puffs(p); for (const q in WT) WT[q] = W0[q];

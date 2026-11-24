@@ -16,10 +16,10 @@ Film lines used: 3. Each is in our own cast's voice, not a clip.
 - Damini, "Tareekh pe tareekh". Sakshi, a wakeel in court, hears that her client must wait three months. Adjournments are exactly what a wakeel complains about.
 - Dabangg, "Thappad se darr nahi lagta…" twisted to Shani / Sade Sati. Sakshi explains why she wants Sade Sati cancelled. It comes after the fact is set up and before Vishnu ji gives the real Shani timing.
 
-Memes (original clips, already in the catalog): FAAAH (after the share drop; owner: correct, keep the -40% card), Arey baap re, Abhi maza aayega na bhidu (owner: placed correctly, keep), Lekin ek second, Hey Bhagwan kya karun main.
+Memes (original clips, already in the catalog): FAAAH (after the share drop; owner: correct, keep the -40% card), Arey Deva ye gadbad hai baba (Paresh Rawal, original clip), Abhi maza aayega na bhidu (owner: placed correctly, keep), Lekin ek second, Hey Bhagwan kya karun main.
 
 Owner edits (24 Nov, 18:17 IST):
-- "Arey baap re" was misused. It belongs right after the Shani explanation, as Sakshi's "ye toh gadbad hai re baba".
+- "Arey baap re" was misused. It belongs right after the Shani explanation, as "ye gadbad hai re baba". (19:48 IST) That whole line is Paresh Rawal's, so it is now his original clip, "Arey Deva, ye gadbad hai baba", and Sakshi only adds "Prabhu, kahin 2027 bhi aisa hi na jaye!"
 - Restore "Isiliye toh mol-bhaav ho raha hai" and the "Abhi maza aayega na bhidu" meme.
 - The "ek haan, ek aadha haan" summary was not working. Replaced with a wakeel's verdict that maps each demand truthfully.
 - New CTA: click the link to manifest 2027, and send it to someone who will relate.
@@ -31,7 +31,7 @@ Owner edits (24 Nov, 18:17 IST):
 2. Vishnu ji (chakra twirling on one finger, smiling): "Itni moti file? Wakeel saahiba, ye shikayat hai ya kisi shaadi ka menu hai?"
 3. Sakshi: "Poore saal kharcha zyada hua, neend nahi aayi, aur jo share kharida wo turant gir gaya." [FAAAH]
 4. Vishnu ji: "Aries wale share bhi Mangal ki speed se kharidte hain. Khair, 2026 mein Shani dev baarahve, kharchon wale ghar mein hain, isliye paisa aur neend dono hile."
-5. Sakshi: [AREY BAAP RE] "Ye toh gadbad hai re baba, kahin 2027 bhi aisa hi na jaye!"
+5. Sakshi: [AREY DEVA, YE GADBAD HAI BABA — original Paresh Rawal clip] "Prabhu, kahin 2027 bhi aisa hi na jaye!"
 6. Vishnu ji: "Tension lene ka nahi, wakeel saahiba. Isiliye toh mol-bhaav ho raha hai, bolo kya chahiye?"
 7. Sakshi: [ABHI MAZA AAYEGA NA BHIDU] "Pehli demand ye hai ki January se hi naya kaam shuru ho jaye."
 8. Vishnu ji: "Aries ke swami Mangal das January se ek April tak vakri rahenge, toh bade faisle April tak roko."

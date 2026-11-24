@@ -310,6 +310,19 @@
    "used_in": [
     "molbhav-aries"
    ]
+  },
+  {
+   "file": "arey-deva-ye-gadbad-hai-baba.mp3",
+   "kind": "line",
+   "says": "Arey Deva, ye gadbad hai baba",
+   "speaker": "Paresh Rawal as Baburao (Hera Pheri meme); our copy has the 0.6 s pause after \"Deva\" trimmed (2.32-2.95 s of the source)",
+   "use": [
+    0.0,
+    4.33
+   ],
+   "fits": "something has clearly gone wrong (after a bad news explanation)",
+   "source": "https://indianmemetemplates.com/wp-content/uploads/Are-Deva-Ye-Gadbad-Hai-Baba.mp4",
+   "added": "24 Nov 2026 (owner: the whole \"ye gadbad hai re baba\" line is Paresh Rawal's, use the original)"
   }
  ]
 }

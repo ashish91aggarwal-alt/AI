@@ -113,7 +113,7 @@ function limb(chain, r, { col, sh, w = WT.sil * 0.85 }) {
     `<mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1920"><path d="${d}" fill="none" stroke="#fff" stroke-width="${(2 * r).toFixed(1)}" stroke-linecap="round" stroke-linejoin="round"/></mask>` +
     `<path mask="url(#${id})" d="${d}" transform="translate(${off[0].toFixed(1)} ${off[1].toFixed(1)})" fill="none" stroke="${sh}" stroke-width="${(2 * r * 0.55).toFixed(1)}" stroke-linecap="round" stroke-linejoin="round"/>`;
 }
-function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outward, bracelet = 'beads', palmMid = null, sleeve = null, handScale = 1.1, handStyle = 'slender' }) {
+function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outward, bracelet = 'beads', palmMid = null, sleeve = null, handScale = 1.1, handStyle = 'slender', palmSide = 1 }) {   // palmSide -1: open palm faces the viewer with the thumb toward the body (Sakshi)
   const ux = W[0] - E[0], uy = W[1] - E[1], ul = Math.hypot(ux, uy) || 1, d = [ux / ul, uy / ul];
   const tail = 40 * hs, P = [W[0] + d[0] * tail, W[1] + d[1] * tail];
   let o = '';
@@ -143,8 +143,8 @@ function arm(S, E, W, { r, handPose, handAng, hs, skin, skinSh, gold, line, outw
     if (sleeve.trim) o += ink([[C2[0] + n2[0] * cw - d[0] * 8, C2[1] + n2[1] * cw - d[1] * 8], [C2[0] - n2[0] * cw - d[0] * 8, C2[1] - n2[1] * cw - d[1] * 8]], 7, { color: sleeve.trim, taper: [0.05, 0.05], amp: 0.4 });
     o += meltPatch; // after the sleeve, so the sleeve's start cap and the kurta outline under it vanish
   }
-  o += handStyle === 'chubby' && FINGERS[handPose] !== undefined ? toonHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2])
-    : FINGERS[handPose] !== undefined ? slenderHand(handPose, W, d, handScale, handPose === 'palm' ? outward : -outward, skin, skinSh, r[2]) : hand(handPose, W, handAng, hs, skin, skinSh, gold, false, r[2], palmMid);
+  o += handStyle === 'chubby' && FINGERS[handPose] !== undefined ? toonHand(handPose, W, d, handScale, handPose === 'palm' ? outward * palmSide : -outward, skin, skinSh, r[2])
+    : FINGERS[handPose] !== undefined ? slenderHand(handPose, W, d, handScale, handPose === 'palm' ? outward * palmSide : -outward, skin, skinSh, r[2]) : hand(handPose, W, handAng, hs, skin, skinSh, gold, false, r[2], palmMid);
   if (bracelet === 'kada') { const nb = [-d[1], d[0]], bw = r[2] * 1.2, bc = [W[0] - d[0] * 6 * hs, W[1] - d[1] * 6 * hs];
     const k = [[bc[0] + nb[0] * bw - d[0] * 7, bc[1] + nb[1] * bw - d[1] * 7], [bc[0] + nb[0] * bw + d[0] * 7, bc[1] + nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw + d[0] * 7, bc[1] - nb[1] * bw + d[1] * 7], [bc[0] - nb[0] * bw - d[0] * 7, bc[1] - nb[1] * bw - d[1] * 7]];
     return o + fill(k, gold) + inkLoop(catmull(k, 3, true), WT.fine + 1); }

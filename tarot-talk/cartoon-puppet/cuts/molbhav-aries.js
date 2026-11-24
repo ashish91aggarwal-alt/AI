@@ -90,7 +90,7 @@ const kF = {   // faces (talking mouths come from act.js)
   proud: C({ ...kp(0), happy: 1, mouth: 'smile', blush: 0.7, tilt: 3 }),
   friendly: C({ ...kp(0), mouth: 'smile', blush: 0.5 }),
 };
-const kFace = [[0, 'earnest'], [B('K01').end, 'listen'], [B('K03').start, 'sad'], [B('K03').end, 'listen'], [B('arey_baap_re').start - 0.05, 'shock'], [B('K05').start, 'sad'],
+const kFace = [[0, 'earnest'], [B('K01').end, 'listen'], [B('K03').start, 'sad'], [B('K03').end, 'listen'], [B('gadbad').start - 0.05, 'shock'], [B('K05').start, 'sad'],
   [B('V06').start, 'listen'], [B('abhi_maza').start, 'smug'], [B('K07').end, 'listen'], [B('lekin_ek_second').start, 'indignant'], [B('K09').end, 'listen'],
   [R_BRAKE + 0.2, 'smug'], [R_BRAKE + 1.4, 'listen'], [B('K11').start, 'earnest'], [B('K11').end, 'listen'], [B('K13').start, 'sad'], [B('hey_bhagwan').end + 0.2, 'listen'],
   [B('K15').start, 'sad'], [B('K15').end, 'listen'], [B('K17').start, 'proud'], [B('K18').start, 'friendly']];
@@ -107,7 +107,7 @@ function sakshiNow(t) {
   const alone = t > FLY_OUT[0];
   const look = alone ? { lookX: 0, lookY: 0 } : t < FLY_IN[1] ? { lookX: -22, lookY: -14 } : (t > R_BRAKE - 0.2 && t < R_BRAKE + 1.4) || (t > B('K03').end - 0.1 && t < B('K03').end + 1.6) ? { lookX: -26, lookY: 6 } : { lookX: -16, lookY: -10 };
   if (t > FLY_OUT[0] - 0.3 && t < CLOSE[1]) { look.lookX = -24; look.lookY = -18; }   // watches him go
-  const baap = B('arey_baap_re'); if (t > baap.start && t < baap.end) CLOCK.svg(baap.start - 0.3);
+  const baap = B('gadbad'); if (t > baap.start && t < baap.end) CLOCK.svg(baap.start - 0.3);
   const out = `<ellipse cx="730" cy="1352" rx="95" ry="14" fill="#a8742c" opacity="0.45"/>` + sakshi({ ...face, ...look, armL: null, ...(() => { const a = kArms(t, kArmKeys); return { armL: a.L, armR: a.R }; })() }, 730, 1065, 0.5, t);
   CLOCK.svg(t); return out;
 }

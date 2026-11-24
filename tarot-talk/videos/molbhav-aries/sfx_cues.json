@@ -2,14 +2,14 @@
 "note": "[script time s, sound, gain dB, (in s), (out s)]: our sfx name, meme:<file>, or voice:<path>",
 "cues": [
 [
-13.23,
+15.54,
 "meme:faaah.mp3",
 -6,
 0,
 1.9
 ],
 [
-55.62,
+60.78,
 "meme:vine-boom.mp3",
 -10
 ]
