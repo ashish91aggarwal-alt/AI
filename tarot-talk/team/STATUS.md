@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 24 Nov 23:07 IST | Taurus mol-bhaav: script v2.1 passed review 8/10; 3 scene options shown | owner picks scene + ok on script; then bull options (Gate 2), Kokoro voices | - |
+| `production` | 24 Nov 23:35 IST | Taurus: scene options v2 (Lemo technique + Remotion noise) and 3 natural bull options shown | owner picks scene + bull; then Gate-2 review of bull, Kokoro voices, rough cut | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
