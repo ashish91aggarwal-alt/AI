@@ -80,14 +80,14 @@ function flight(PX, PY) {
 const CX0 = 590, CW = 352, CY0 = 270;
 function card(t, t0, t1, title, inner, h = 420, o = {}) {
   if (t < t0 - 0.01 || t > t1 + 0.15) return '';
-  const k = t < t0 + 0.3 ? backOut(clamp((t - t0) / 0.3)) : 1, out = 1 - clamp((t - t1) / 0.15);
+  const k = t < t0 + 0.3 ? (o.soft ? ease : backOut)(clamp((t - t0) / 0.3)) : 1, out = 1 - clamp((t - t1) / 0.15);
   const head = o.head || '#f2b84b', foot = o.foot;
   return `<g opacity="${out.toFixed(2)}" transform="translate(${CX0 + CW / 2} ${CY0}) scale(${k.toFixed(3)}) translate(${-(CX0 + CW / 2)} ${-CY0})">` +
     `<rect x="${CX0 + 8}" y="${CY0 + 10}" width="${CW}" height="${h}" rx="22" fill="#2a1418" opacity="0.25"/>` +
     `<rect x="${CX0}" y="${CY0}" width="${CW}" height="${h}" rx="22" fill="#fbf3e2" stroke="${INK}" stroke-width="6"/>` +
     `<path d="M${CX0} ${CY0 + 22} Q${CX0} ${CY0} ${CX0 + 22} ${CY0} L${CX0 + CW - 22} ${CY0} Q${CX0 + CW} ${CY0} ${CX0 + CW} ${CY0 + 22} L${CX0 + CW} ${CY0 + 74} L${CX0} ${CY0 + 74} Z" fill="${head}" stroke="${INK}" stroke-width="6"/>` +
     TS(CX0 + CW / 2, CY0 + 50, title, Math.min(34, Math.floor((CW - 40) / (title.length * 0.68)))) + inner +
-    (foot ? TS(CX0 + CW / 2, CY0 + h - 18, foot, 17, '#6b4a3a') : '') + `</g>`;
+    (foot ? TS(CX0 + CW / 2, CY0 + h - 16, foot, 18, '#6b4a3a') : '') + `</g>`;
 }
 const stamp = (t, t0, x, y, str, col = '#b3262e', size = 30, rot = -12) => t < t0 ? '' :
   `<g transform="translate(${x} ${y}) rotate(${rot}) scale(${(1.6 - 0.6 * ease(clamp((t - t0) / 0.18))).toFixed(3)})" opacity="${clamp((t - t0) / 0.08).toFixed(2)}"><rect x="${-str.length * size * 0.36 - 12}" y="${-size * 0.85}" width="${str.length * size * 0.72 + 24}" height="${size * 1.25}" rx="6" fill="none" stroke="${col}" stroke-width="5"/>${TS(0, size * 0.18, str, size, col)}</g>`;
