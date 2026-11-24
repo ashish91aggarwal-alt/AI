@@ -1,4 +1,4 @@
-# Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v2.1 (24 Nov 2026, IST). Gate review: v1 7/10 → v2 8/10 PASS, nothing blocking; v2.1 = 4 reviewer polish fixes (not re-reviewed)
+# Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v2.2 (24 Nov 2026, 23:25 IST; owner edits: verdict ends "Touchwood to Vrishabh!", new CTA ending). Gate review: v1 7/10 → v2 8/10 PASS, nothing blocking; v2.1 = 4 reviewer polish fixes (not re-reviewed)
 
 Same series as Aries (`videos/molbhav-aries/SCRIPT.md`, final `out/molbhav-aries_v10.mp4`).
 Cast on screen: Vishnu ji and Sakshi only. Sakshi is the Vrishabh wakeel. Her client is a folk bull (new cast item, Gate 2: 3 options first).
@@ -43,8 +43,8 @@ Meme lines are Sakshi's thoughts: thought cloud, no lip-sync, cards hide meanwhi
 16. **V16 Vishnu ji:** "Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, October se February tak break milega, aur 23 February 2028 se wahi charan phir chalega." [HEY BHAGWAN, KYA KARUN MAIN]
 17. **V17 Vishnu ji** (smiling at the seated bull): "Aur aapka client ek baar commitment kar de toh khud ki bhi nahi sunta, toh June se pehle mehnat aur bachat ka commitment karo, kyunki baarahva ghar kharchon ka hai."
 18. **V19 Vishnu ji** (blessing hand, then back into the portal): "Jaate jaate ek tohfa lo, aapke swami Shukra dev 2027 mein ek baar bhi vakri nahi honge, toh aaraam aur sundar cheezon ka maza bina atke milega."
-19. **K20 Sakshi** (wakeel's verdict, the bull gets up happily): "Toh faisla aa gaya: kaam ko kam shor, ghar ko Guru ka saath, rishton ko November, aur Sade Sati ko bachat aur mehnat. Vrishabh jeet gaye!"
-20. **K21 Sakshi** (alone, CTA): "2027 ko manifest karna hai toh link pe click karo, aur ye video us Vrishabh dost ko bhejo jo isse relate karega."
+19. **K20 Sakshi** (wakeel's verdict, the bull gets up happily): "Toh faisla aa gaya: kaam ko kam shor, ghar ko Guru ka saath, rishton ko November, aur Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
+20. **K21 Sakshi** (alone, CTA): "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."
 
 ## Cards (one per beat, top-right card area; all planet cards say "Chandra rashi · Vedic maanyata")
 - V04: 2026 KI FILE: SHANI 11 · labh ✓ / RAHU 10 · office ka shor / KETU 4 · ghar ka sukoon
@@ -60,7 +60,7 @@ Ambles in behind Sakshi chewing grass (K01–V02) · flicks an ear and keeps che
 
 ## Risks to flag to the owner
 - Two film lines (Deewar, Wanted) in our own voices; the Wanted line is a Salman line in Vishnu ji's mouth, aimed at the bull's habit, not at a person.
-- CTA wording adds "Vrishabh" to the owner's Aries CTA ("us Vrishabh dost ko bhejo"). Easy to revert.
+- CTA (owner, 24 Nov 23:22 IST): "…aur ye video usko bhejo jisse apna 2027 jaanna hai."
 - The linked guide must use the same dates.
 
 ## Review log
