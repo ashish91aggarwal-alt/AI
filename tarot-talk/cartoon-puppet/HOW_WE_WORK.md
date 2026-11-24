@@ -84,6 +84,7 @@ Reviewer prompt that worked:
 - **Prefer creator meme clips over film dialogue.** The owner dropped the Vivah "Jal lijiye" and SRK "Picture abhi baaki hai" clips (23 Nov 2026).
 - **Deities may lip-sync a playful male meme line** ("Ab tu gaya beta", Sakshi's ask, 23 Nov 2026), aimed at Monty. Never a woman's or film line on a deity: keep the deity off screen for those.
 - **The deity leads, the girl assists** (Sakshi, 23 Nov 2026: "God wali zyada achhi lagti thi"). Vishnu ji explains and carries the expressions and jokes. Sakshi is the assistant who brings cards and reacts, and she does only the CTA (deities never sell). Every reel needs real gags for Monty, not a lesson with jokes on top.
+- **Mol-bhaav rashi series cast** (owner, 24 Nov 2026: "Remove Monty and Shani ji, keep it just God and Sakshi"). Only Vishnu ji and Sakshi on screen. Sakshi is the rashi's wakeel and haggles; Vishnu ji decides with one advice line per round. Shani dev is named with respect, not shown. Complaints are acted by small doodles, not extra characters. Script and template: `videos/molbhav-aries/SCRIPT.md`.
 - Clips are saved once in `tarot-talk/assets/audio/memes/` (with `catalog.json`) and reused. Check the catalog before searching the web.
 - Our own SFX and music are synthesised (no paid music).
 
