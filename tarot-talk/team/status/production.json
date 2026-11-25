@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Taurus rough cut v2 passed Gate 3 (8/10); sent to owner",
- "next": "owner listens + feedback; then Sakshi body business, ElevenLabs only if owner allows credits",
+ "doing": "Taurus script v3.1 (problems + pitch) passed review; waiting owner ok",
+ "next": "re-voice (Kokoro), update cut cards, render, Gate 3",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-24T17:27:42Z"
  },
- "updated_at": "2026-11-24T19:31:24Z"
+ "updated_at": "2026-11-25T00:39:01Z"
 }
