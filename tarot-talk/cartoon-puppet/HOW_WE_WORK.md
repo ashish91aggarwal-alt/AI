@@ -139,13 +139,31 @@ Reviewer prompt that worked:
 - Every Vishnu ji pose in a cut goes through a kind-face filter (open lids, level raised brows, no 'sly'/'cat' mouth, no wink, small glance). See `kindV` in `cuts/molbhav-aries.js`.
 
 ## Mol-bhaav rashi series: what the owner taught us (24 Nov 2026, Aries reel final = `out/molbhav-aries_v10.mp4`, commit 42ab96f)
-Template for the next rashi (Taurus next): copy `cuts/molbhav-aries.js`, add a new locked plate to `poster.js` (show 3 plate options first, Gate 1), rewrite the script from that rashi's real 2026→2027 shifts, reuse everything else.
+### Status (updated 25 Nov 2026, 15:10 IST)
+| Rashi | Scene (locked) | Script | Cut | Next |
+|---|---|---|---|---|
+| Aries (Mesh) | hill road, `plateAries` | v13.2 | final `out/molbhav-aries_v10.mp4` (ElevenLabs, 1,915 credits) | posted/owner's call |
+| Taurus (Vrishabh) | Jaipur, Hawa Mahal across the bazaar, `plateTaurus` | **v3.1** `videos/molbhav-taurus/SCRIPT.md` (problems + report/healing pitch), review 8/10 PASS | rough cut `out/molbhav-taurus_v2.mp4` is the OLD v2.3 script (Gate 3 PASS 8/10, free Kokoro voices) | **waiting for the owner's ok on script v3.1**, then: re-voice (Kokoro), update the cut's beats and cards to v3.1 (V14/V15/V16, K17–K19 ids changed, rishte demand cut, pitch card + CTA card "Report + healing: link"), render, Gate 3, send. ElevenLabs only after the owner gives a credit cap. |
+| Gemini onward | not started | | | follow the procedure below |
+
+Not in git on purpose: `out/`, `work/`, `cast/` (renders, option sheets) and voice tracks that contain original meme audio. Rebuild a voice track with the video's `build_voices.py`.
+
+### Procedure for the next rashi (what worked on Taurus, in order, each step gated)
+1. **Facts first.** Search Lahiri dates for the rashi's Moon sign: Shani, Guru (incl. retro hops), Rahu-Ketu (5 Dec 2026 change), the rashi lord's vakri periods, Sade Sati / dhaiya. Count houses from the Moon sign. Report them to the owner with a script plan before building anything.
+2. **Script** with the script-to-video skill, saved as `videos/<slug>/SCRIPT.md` (facts, engine, film lines with their need, memes, numbered lines, cards, risks, review log). Shape since 25 Nov: 2026 complaint → bargains where every "yes" carries the honest 2027 **catch** (problem) → Vishnu ji's calm remedy → verdict → **Sakshi's pitch** ("ye poori rashi ka hisaab hai; aapki kundli mein kitna asar, wo personal 2027 report batayegi; healing se taiyari abhi") → owner's CTA. Fresh script reviewer (script doctor + facts + sensitivity + urgency), 8/10 to pass, then the owner's ok. Aim ~370–390 spoken words (≈130 s).
+3. **Scene: 3 options** in the silkscreen poster theme at a location never used before in the series (Aries hill road, Taurus Jaipur Hawa Mahal; no crop fields). Render each with the portal, Vishnu ji and Sakshi in place at phone size. Owner picks; then redraw the pick in detail (real landmark research, small life, Lemo technique) and move it into `poster.js` as `plate<Rashi>`.
+4. **Cast:** none to build (Vishnu ji + Sakshi). Ask before adding any animal.
+5. **Voices (free first):** copy `videos/molbhav-taurus/build_voices.py`, replace `SCRIPT` (id, who, roman text, Devanagari text, gap; meme rows from the catalog). Kokoro models: `work/tts/` (download `kokoro-v1.0.onnx` + `voices-v1.0.bin` from github.com/thewh1teagle/kokoro-onnx releases, `pip install kokoro-onnx soundfile --break-system-packages`). Run it, then `python3 tools/new_video.py <slug>`. Transcribe every line (faster-whisper small, pad 0.5–1 s) before building on it.
+6. **Cut:** copy `cuts/molbhav-taurus.js` (no ram, Jaipur plate, soft-pop verdict card). Rewrite `vR`, `VF`, `laughs`, `KFK`, `kArmKeys`, `ROWS`, memes/doodles and `cards()` for the new beat ids. Contact sheet of ~22 stills at key beats first (`--stills=`), fix, then `bash make_reel.sh <slug>` (~19 min with the paper-grain plate; run it in the background with a 40 min timeout).
+7. **Gate 3** with a fresh reviewer (prompt pattern in this file), resume the same reviewer for re-checks. Fix only what changed with `tools/seg_render.js` + `tools/splice.sh` (about 3 min instead of 19).
+8. Send the mp4 to the owner, commit (`[tt:production] …`), `team.py status` + `team.py sync`, and log reviews in `videos/<slug>/reviews/`.
 
 **Script**
 - Vishnu ji "maze leta hai" like Akshay Kumar's Krishna in OMG: calm, smiling, cheeky, always one step ahead, chakra twirled on a fingertip like a keychain on his first line. Vibe only, no likeness or voice. He teases habits and drama, never anyone's pain or loss.
 - Bollywood lines only where the moment needs them ("Don't push dialogues. Make safe space and logical need"); mould the script around them. Never a line over a fact; the fact is always said plainly first. Aries used 3: Munna Bhai (calming her panic), Damini "tareekh pe tareekh" (a wakeel told to wait till April), Dabangg twist on Sade Sati.
 - Fact care: Sade Sati phases (Aries Sade Sati began Mar 2025; Jun 2027 is the first knock of the heavy middle phase), say a planet's window from today's position ("January ke aakhir se June tak"), dates as "10 January" in captions.
 - Meme placement the owner fixed: FAAAH right after the share falls (−40% card), "Arey Deva, ye gadbad hai baba" right after the Shani explanation, "Abhi maza aayega na bhidu" right after "Isiliye toh mol-bhaav ho raha hai".
+- **Create urgency for a consultation** (owner, 25 Nov 2026 06:06 IST: Taurus v2 "did not create urgency… We need some problems too, so we can pitch them solution with reports and healing"). Every bargain names the real 2027 catch for that rashi; Sakshi alone pitches the personal 2027 report + healing before the deadline month (Taurus: June, Sade Sati). Honest and calm: effects as "Vedic maanyata mein… asar daal sakte hain", healing as "taiyari", never a promised result or a health claim, no fear words. Vishnu ji never sells. The link must really offer the report and healing booking.
 - Ending: a wakeel's verdict that maps every demand truthfully (KAAM / GHAR / RISHTA / SADE SATI rows + a stamp on the last words). "Ek haan, ek aadha haan" did not work.
 - CTA (Sakshi alone): "2027 ko manifest karna hai toh link pe click karo, aur ye video us dost ko bhejo jo isse relate karega."
 - CTA from Taurus on (owner, 24 Nov 2026 23:22 IST): "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai." Verdict ends "Touchwood to <rashi>!" (not "<rashi> jeet gaye").
@@ -176,6 +194,12 @@ Template for the next rashi (Taurus next): copy `cuts/molbhav-aries.js`, add a n
 **Bugs that cost time**
 - ffmpeg `atrim` keeps the source timestamps, so a later `afade=out` fires early and mutes the clip. Always `atrim=…,asetpts=PTS-STARTPTS,afade…`.
 - A face param that act.js also drives (mouth while talking, happy-eye in pauses) overrides the cut; mark meme rows as `Meme` instead of freezing the clock.
+
+**Taurus craft notes (25 Nov 2026)**
+- A card that pops near Sakshi's head must use `{ soft: true }` in `card()` (no overshoot); the overshoot of the default pop crossed her bow by 3 px.
+- Check gaps by pixels, not by eye: render each element alone with a transparent background and compare bounding boxes (`work/taurus/bbox.js` pattern).
+- Bigger text on a card pushes into icons: re-check every card after any font change. Card footers are 18 px.
+- Kokoro mispronunciations are invisible to the reviewer; Whisper often misses fast "do hazaar sattaais"; check energy instead of trusting a missing transcript.
 
 **Reviewing**
 - Resume the same Gate-3 reviewer for re-checks (it remembers its own measurements). The reviewer cannot hear tone: ask the owner to listen once.

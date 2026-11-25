@@ -1,6 +1,6 @@
 # START HERE: make a new cartoon reel
 
-For any new session. Read this file, then `HOW_WE_WORK.md` (the method and the owner's rules) and `CHARACTERS.md` (the reusable cast). `README.md` lists every file.
+For any new session. **Mol-bhaav rashi series (Aries done, Taurus in progress):** status table and the step-by-step procedure are in `HOW_WE_WORK.md` → "Mol-bhaav rashi series". Read this file, then `HOW_WE_WORK.md` (the method and the owner's rules) and `CHARACTERS.md` (the reusable cast). `README.md` lists every file.
 
 ## 0. Session setup (1 command, about 1 minute)
 
