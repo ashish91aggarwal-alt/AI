@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 25 Nov 06:09 IST | Taurus script v3.1 (problems + pitch) passed review; waiting owner ok | re-voice (Kokoro), update cut cards, render, Gate 3 | - |
+| `production` | 25 Nov 15:06 IST | Taurus: script v3.1 waiting owner ok; repo docs updated (status + procedure) | after ok: re-voice, update cut to v3.1, render, Gate 3 | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
