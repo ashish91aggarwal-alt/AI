@@ -1,12 +1,12 @@
 # STATUS
 
-_Generated 2026-11-24T22:29:17Z by `scripts/agent.py build`. Do not edit._
+_Generated 2026-11-25T08:37:51Z by `scripts/agent.py build`. Do not edit._
 
 ## Sessions
 
 | Role | Updated | Doing | Next | Blocked | Last commit |
 |---|---|---|---|---|---|
-| `orchestrator` | 18h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | - |
+| `orchestrator` | 28h ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | - |
 | `reviewer` | 7d ago | brand gate: avatars + banners (fantasy, worship) | write reviews/brand/*-art-2026-11-17.md | - | - |
 | `channel-fantasy` | 7d ago | not started | Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1 | waiting for G0 sign-off on F1 | - |
 | `channel-worship` | 7d ago | not started | Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement | waiting for G0 sign-off on W3 | - |
@@ -39,6 +39,6 @@ _Generated 2026-11-24T22:29:17Z by `scripts/agent.py build`. Do not edit._
 
 ## Tracking
 
-- Last tracker run: 2026-11-24T22:28:17Z (1m ago)
+- Last tracker run: 2026-11-25T08:36:59Z (0m ago)
 - Channels tracked: 33
 
