@@ -1,7 +1,7 @@
 {
  "slug": "molbhav-taurus",
  "title": "Rashi ki file: Vrishabh 2026 \u2192 2027 mol-bhaav",
- "script_dur": 128.471,
+ "script_dur": 88.094,
  "cut": "cuts/molbhav-taurus.js",
  "voice_track": "voices/voice_track_timed.wav",
  "cue_sheet": "voices/cue_sheet.csv",
@@ -18,32 +18,32 @@
   {
    "kind": "beat",
    "a": 0,
-   "b": 25.523,
-   "bpm": 112,
+   "b": 20.719,
+   "bpm": 116,
    "root": 220,
    "level": 1.0
   },
   {
    "kind": "beat",
-   "a": 25.523,
-   "b": 65.68,
-   "bpm": 112,
+   "a": 20.719,
+   "b": 43.154,
+   "bpm": 116,
    "root": 220,
    "level": 0.85,
    "light": true
   },
   {
    "kind": "sadpad",
-   "a": 65.68,
-   "b": 96.443,
+   "a": 43.154,
+   "b": 62.26,
    "root": 196,
    "g": 0.8
   },
   {
    "kind": "beat",
-   "a": 96.443,
-   "b": 128.471,
-   "bpm": 116,
+   "a": 62.26,
+   "b": 88.094,
+   "bpm": 120,
    "root": 220,
    "level": 1.0
   }

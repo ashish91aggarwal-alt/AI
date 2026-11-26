@@ -1,24 +1,19 @@
 id,who,start_s,end_s,file,line
-K01,Sakshi,0.0,4.175,voices/lines/K01.wav,"Prabhu, main Vrishabh walon ki wakeel hun, aur mera client 2026 se naraaz hai."
-V02,Vishnu ji,4.255,9.251,voices/lines/V02.wav,"Naraaz hai ya bhookha, wakeel saahiba? Vrishabh ka gussa toh khaane se hi utarta hai."
-K03,Sakshi,9.601,13.267,voices/lines/K03.wav,"Office mein roz naya drama hota tha, aur ghar pe chain ki neend nahi milti thi."
-V04,Vishnu ji,13.347,20.96,voices/lines/V04.wav,"Par Shani dev toh labh wale gyarahve ghar mein the. Office Rahu ne dasve ghar se hilaya, aur sukoon Ketu ne chauthe se liya."
-lekin_ek_second,Sakshi,21.08,22.31,meme:lekin-ek-second.mp3,Lekin ek second!
-K05,Sakshi,22.37,25.523,voices/lines/K05.wav,"Matlab kamaai bhi hui aur chain bhi gaya, ye kaisa hisaab hai?"
-V06,Vishnu ji,25.603,29.95,voices/lines/V06.wav,"Isiliye toh mol-bhaav ho raha hai. Bolo, 2027 mein kya chahiye?"
-abhi_maza,Sakshi,30.07,32.48,meme:abhi-maza-aayega-na-bhidu.mp3,Abhi maza aayega na bhidu!
-K07,Sakshi,32.56,34.882,voices/lines/K07.wav,Pehli demand ye hai ki office ka drama band ho.
-V08,Vishnu ji,34.962,44.013,voices/lines/V08.wav,"Paanch December ko Rahu nauve ghar mein jaayenge, toh office ka shor kam hone ki ummeed hai, par galat salah, shortcut aur pita ji se matbhed se bachna hoga."
-K09,Sakshi,44.093,46.753,voices/lines/K09.wav,"Doosri demand, mere client ko ghar mein sukoon chahiye."
-V10,Vishnu ji,46.833,57.027,voices/lines/V10.wav,"Usi din Ketu chauthe ghar se niklenge, par January ke aakhir se June tak Guru teesre ghar mein mehnat badhayenge aur nateeja dheere denge, phir November tak wapas chauthe mein."
-ruko_zara,Sakshi,57.147,58.947,meme:ruko-zara-sabar-karo-bhau.mp3,"Ruko zara, sabar karo!"
-K11,Sakshi,59.027,62.413,voices/lines/K11.wav,"Toh ab mera client bhi bolega, mere paas ghar hai, sukoon hai, Guru hain!"
-V12,Vishnu ji,62.493,65.33,voices/lines/V12.wav,"Aur maa bhi hai, kyunki chautha ghar maa ka hi hota hai."
-K13,Sakshi,65.68,69.007,voices/lines/K13.wav,"Aur last demand, Sade Sati ko bas ek saal aage khiska dijiye."
-V14,Vishnu ji,69.087,86.262,voices/lines/V14.wav,"Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur Vedic maanyata mein baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain. October se February tak break milega, aur 23 February 2028 se wahi charan phir chalega."
-hey_bhagwan,Sakshi,86.382,87.912,meme:hey-bhagwan-kya-karun-main.mp3,"Hey Bhagwan, kya karun main!"
-V15,Vishnu ji,88.032,96.443,voices/lines/V15.wav,"Par darna nahi hai. Aapka client ek baar commitment kar de toh khud ki bhi nahi sunta, toh June se pehle mehnat aur bachat ka commitment karo."
-V16,Vishnu ji,96.523,102.996,voices/lines/V16.wav,"Aur jaate jaate ek tohfa lo, aapke swami Shukra dev 2027 mein ek baar bhi vakri nahi honge."
-K17,Sakshi,103.596,109.767,voices/lines/K17.wav,"Toh faisla aa gaya: office ko kam shor, Guru ko thoda sabar, aur Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
-K18,Sakshi,110.167,121.043,voices/lines/K18.wav,"Par ye poori rashi ka hisaab hai. Aapki kundli mein ye kitna asar karega, wo aapki personal 2027 report batayegi, aur June se pehle ke ye chhah mahine taiyari ke hain, aur healing se aap aaj hi shuruaat kar sakte hain."
-K19,Sakshi,121.393,128.205,voices/lines/K19.wav,"2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."
+K01,Sakshi,0.0,4.378,voices/lines/K01.wav,"Prabhu, main Vrishabh walon ki wakeel hun, aur mera client 2026 se naraaz hai."
+V02,Vishnu ji,4.458,8.463,voices/lines/V02.wav,Naraaz hai ya bhookha? Vrishabh ka gussa toh khaane se hi utarta hai.
+K03,Sakshi,8.813,11.669,voices/lines/K03.wav,"Office mein roz drama hota tha, aur ghar pe neend nahi aati thi."
+V04,Vishnu ji,11.749,17.068,voices/lines/V04.wav,"Shani dev toh labh ke ghar mein the, par office Rahu ne hilaya aur sukoon Ketu ne liya."
+V06,Vishnu ji,17.148,20.719,voices/lines/V06.wav,"Isiliye toh mol-bhaav ho raha hai. Bolo, 2027 mein kya chahiye?"
+abhi_maza,Meme,20.819,23.229,meme:abhi-maza-aayega-na-bhidu.mp3,Abhi maza aayega na bhidu!
+K07,Sakshi,23.309,25.666,voices/lines/K07.wav,Pehli demand ye hai ki office ka drama band ho.
+V08,Vishnu ji,25.746,32.111,voices/lines/V08.wav,"Paanch December ko Rahu nauve ghar mein jaayenge, toh shor kam hone ki ummeed hai, par galat salah aur shortcut se bachna hoga."
+K09,Sakshi,32.191,34.102,voices/lines/K09.wav,"Doosri demand, ghar mein sukoon chahiye."
+V10,Vishnu ji,34.182,43.074,voices/lines/V10.wav,"Usi din Ketu chauthe ghar se niklenge, aur Guru abhi wahin hain. January ke aakhir se June tak wo teesre ghar mein mehnat badhayenge, phir June mein wapas chauthe ghar mein aayenge."
+K13,Sakshi,43.154,46.287,voices/lines/K13.wav,"Aur last demand, Sade Sati ko ek saal aage khiska dijiye."
+V14,Vishnu ji,46.367,57.06,voices/lines/V14.wav,"Wo Shani dev ka vibhag hai. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur maanyata hai ki baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain."
+hey_bhagwan,Meme,57.16,58.69,meme:hey-bhagwan-kya-karun-main.mp3,"Hey Bhagwan, kya karun main!"
+V15,Vishnu ji,58.77,62.26,voices/lines/V15.wav,Par darna nahi hai. June se pehle mehnat aur bachat ka commitment karo.
+V16,Vishnu ji,62.34,66.97,voices/lines/V16.wav,"Aur tohfa lo, Shukra dev 2027 mein ek baar bhi vakri nahi honge."
+K17,Sakshi,67.47,73.635,voices/lines/K17.wav,"Toh faisla aa gaya: office ko kam shor, Guru ko sabar, Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
+K18,Sakshi,73.935,81.408,voices/lines/K18.wav,"Par ye rashi ka general hisaab hai. Aapki kundli par asar personal 2027 report batayegi, aur healing se June ki taiyari aaj hi shuru karo."
+K19,Sakshi,81.708,88.094,voices/lines/K19.wav,"2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."

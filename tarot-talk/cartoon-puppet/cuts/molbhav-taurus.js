@@ -1,4 +1,4 @@
-// Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v3.1 (owner ok 26 Nov 2026): 2027 catches + Sakshi's report/healing pitch. Free Kokoro voices.
+// Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v4 (owner 26 Nov 2026 14:45 IST: 90 s max, ElevenLabs): 2027 catches + Sakshi's report/healing pitch.
 // ONE locked scene for Taurus (Gate 1, owner picked Jaipur A 24 Nov 23:56 IST): Hawa Mahal across the bazaar, silkscreen poster (poster.js plateTaurus).
 // Only Vishnu ji and Sakshi (owner dropped the bull). Vishnu ji comes out of the spark portal when Sakshi calls "Prabhu", stays for the
 // bargain and goes back after his last line (V16). Sakshi (the wakeel) stands on the near footpath. One poster card per beat, top right.
@@ -43,7 +43,6 @@ const vR = [[0, 'rest'],
   [at('V06', 0.02), 'bless'], [at('V06', 0.5), 'palm'], [B('V06').end + 0.2, 'rest'],           // "Isiliye toh mol-bhaav", then "bolo"
   [at('V08', 0.05), 'finger'], [at('V08', 0.7), 'palm'], [B('V08').end + 0.2, 'rest'],          // 5 December; "bada daav mat lagana" (stop palm)
   [at('V10', 0.05), 'palm'], [at('V10', 0.4), 'point'], [B('V10').end + 0.2, 'rest'],
-  [at('V12', 0.1), 'bless'], [B('V12').end + 0.4, 'rest'],                                      // "aur maa bhi hai": warm blessing hand
   [at('V14', 0.12), 'palm'], [at('V14', 0.38), 'point'], [B('V14').end + 0.2, 'rest'],
   [at('V15', 0.1), 'finger'], [at('V15', 0.6), 'bless'], [B('V15').end + 0.2, 'rest'],
   [at('V16', 0.1), 'bless'], [VEND - 0.1, 'wave']];
@@ -55,20 +54,17 @@ const VF = [[0, { lid: 0.25, lookY: 6 }],
   [at('K03', 0.5), { lid: 0.08, browL: 0.85, browR: 0.85, browSoft: 1.5 }],                    // hears "chain ki neend nahi": sympathy
   [at('V04', 0), { lid: 0.05, lidLow: 0.2, browL: 0.95, browR: 0.95, tiltF: 4 }],               // "Par Shani dev toh labh wale ghar mein the": teasing
   [at('V04', 0.45), { lid: 0.1 }],                                                                // explains Rahu and Ketu plainly
-  [B('lekin_ek_second').start, { lid: 0.15, lidLow: 0.15, tiltF: -3 }],
   [at('V06', 0), { lid: 0.15, lidLow: 0.2, tiltF: -3 }], [at('V06', 0.55), { lid: 0.05, browL: 0.95, browR: 0.95, tiltF: 4 }],
   [B('abhi_maza').start + 0.3, LAUGH_F], [B('K07').start, { lid: 0.05, browL: 0.85, browR: 0.85 }],
   [at('V08', 0), { lid: 0.1 }], [at('V08', 0.7), { lid: 0.15, browL: 0.5, browR: 0.5, browSoft: 0.6 }],   // "bada daav mat lagana": firm, still kind
-  [at('V10', 0), { lid: 0.1 }], [B('ruko_zara').start, { lid: 0.2, lidLow: 0.15, tiltF: 3 }],
-  [at('K11', 0.5), { eyeMode: 'happy', tiltF: 4 }],                                               // amused by "mere paas ghar hai"
-  [at('V12', 0), { lid: 0.05, browL: 0.9, browR: 0.9, tiltF: 3 }], [B('V12').end - 0.1, LAUGH_F], [B('V12').end + 0.5, LISTEN_V],
+  [at('V10', 0), { lid: 0.1 }], [B('V10').end, LISTEN_V],
   [B('K13').start, { lid: 0.2, browSoft: 1.7, lookY: 6 }],
   [at('V14', 0), { lid: 0.15, browL: 0.55, browR: 0.55, browSoft: 1.2 }], [at('V14', 0.6), { lid: 0.1, lidLow: 0.2, browL: 0.75, browR: 0.75, tiltF: 2 }],
   [B('hey_bhagwan').start, { lid: 0.15, lidLow: 0.15, browSoft: 1.6, lookY: 8 }],
   [at('V15', 0), { lid: 0.08, lidLow: 0.25, browL: 0.8, browR: 0.8, browSoft: 1.4, tiltF: 3 }], [at('V15', 0.2), { lid: 0.05, lidLow: 0.2, browL: 0.95, browR: 0.95, tiltF: 4 }], [at('V15', 0.6), { lid: 0.1 }],   // "darna nahi hai": warm, then teases the zid, then the remedy
   [at('V16', 0), { lid: 0.05, browL: 0.9, browR: 0.9, tiltF: 3 }], [B('V16').end - 0.2, LAUGH_F]];
-const laughs = [[B('V02').end - 0.1, B('V02').end + 0.45], [B('V12').end - 0.1, B('V12').end + 0.4]];
-const nods = [at('V06', 0.3), at('V12', 0.3), at('V16', 0.4)];
+const laughs = [[B('V02').end - 0.1, B('V02').end + 0.45]];
+const nods = [at('V06', 0.3), at('V16', 0.4)];
 function vishnuNow(t) {
   const st = vState(t); if (!(st.u > 0.001 || (t > FLY_IN[0] && t < FLY_OUT[1]))) return '';
   let armR = fixV(armKF(t, vR.map(([a, k]) => [a, VA[k]]), 0.4));
@@ -111,18 +107,12 @@ const KFK = [[0, { lid: 0, browUp: 0.6, lookX: -22, lookY: -16, mouth: 'o' }],  
   [B('K03').start, { lid: 0.3, browSad: 1, lookY: 0, tilt: -4, mouth: 'pout' }],               // complaining
   [B('K03').end, { ...LISTEN, lid: 0.25, browSad: 0.5, mouth: 'pout' }],
   [at('V04', 0.3), { ...LISTEN, lid: 0.05, browUp: 0.6, mouth: 'o' }],                            // "labh wale ghar"?! surprised
-  [B('lekin_ek_second').start, { lid: 0.1, lidLow: 0.1, browUp: 0.7, browSad: 0.3, ...BUBBLE, mouth: 'pout', tilt: -4 }],   // objection
-  [B('K05').start, { ...LISTEN, lid: 0.15, browUp: 0.5, browSad: 0.6, mouth: 'pout', tilt: -3 }],
   [B('V06').start + 0.3, { ...LISTEN, lid: 0.2, browSad: 0.2 }],
   [B('abhi_maza').start, { lid: 0.35, lidLow: 0.35, browUp: 0.3, ...BUBBLE, mouth: 'smirk', tilt: 5 }],
   [B('K07').start, { ...LISTEN, lid: 0.15, browUp: 0.2, mouth: 'smirk', tilt: 2 }], [B('K07').end, LISTEN],
   [at('V08', 0.7), { ...LISTEN, lid: 0.15, browUp: 0.4, mouth: 'smile' }],
   [B('K09').start, { ...LISTEN, lid: 0.2, browSad: 0.5, tilt: -3 }], [B('K09').end, LISTEN],
   [at('V10', 0.45), { ...LISTEN, lid: 0, browUp: 0.6, mouth: 'smile', blush: 0.6 }],            // Guru coming home: brightens
-  [B('ruko_zara').start, { lid: 0.3, lidLow: 0.25, browUp: 0.2, ...BUBBLE, mouth: 'pout', tilt: -3 }],
-  [B('K11').start, { lid: 0.15, lidLow: 0.2, lookX: -16, lookY: -10, happy: 0, blush: 0.7, mouth: 'grin', tilt: 4 }],   // proud Deewar moment
-  [B('K11').end, { ...LISTEN, blush: 0.6 }],
-  [at('V12', 0.5), { ...LISTEN, lid: 0.5, lidLow: 0.45, mouth: 'grin', blush: 0.9, tilt: 3 }], [B('V12').end + 0.6, LISTEN],
   [B('K13').start, { ...LISTEN, lid: 0.1, browSad: 0.8, lookY: -12, mouth: 'pout' }], [B('K13').end, { ...LISTEN, browSad: 0.6 }],
   [at('V14', 0.6), { ...LISTEN, lid: 0.25, lidLow: 0.2, browSad: 0.4 }],
   [B('hey_bhagwan').start, { lid: 0.3, browSad: 1, ...BUBBLE, mouth: 'pout' }], [B('hey_bhagwan').end, LISTEN],
@@ -135,10 +125,8 @@ const KFK = [[0, { lid: 0, browUp: 0.6, lookX: -22, lookY: -16, mouth: 'o' }],  
   [B('K19').start, { lid: 0.1, lidLow: 0.15, lookX: 0, lookY: 0, happy: 0, tilt: 2 }]];
 const kArmKeys = [[0, 'rest'], [at('K01', 0.25), 'present'], [B('K01').end + 0.2, 'hold'],
   [at('K03', 0.1), 'present'], [B('K03').end + 0.2, 'hold'],
-  [B('K05').start, 'shrug'], [B('K05').end + 0.2, 'hold'],
   [at('K07', 0.05), 'one'], [B('K07').end + 0.2, 'hold'],
   [at('K09', 0.1), 'present'], [B('K09').end + 0.2, 'hold'],
-  [at('K11', 0.25), 'chest'], [B('K11').end + 0.2, 'hold'],
   [at('K13', 0.1), 'present'], [B('K13').end + 0.2, 'hold'],
   [at('K18', 0.1), 'present'], [at('K18', 0.5), 'chest'], [B('K18').end + 0.1, 'hold'],
   [at('K19', 0.25), 'cta'], [at('K19', 0.85), 'hold']];
@@ -185,7 +173,7 @@ const icon = {
 const VED = 'Chandra rashi · Vedic maanyata';
 // ---------- thought bubble on the meme lines (owner voice note, 24 Nov: she looks away from Prabhu into a thought cloud on the
 // other side, as if thinking "ab toh maza aayega", then Prabhu drops the bomb). Our own doodles (no film footage).
-const MEMES = ['lekin_ek_second', 'abhi_maza', 'ruko_zara', 'hey_bhagwan'];
+const MEMES = ['abhi_maza', 'hey_bhagwan'];
 const memeAt = t => MEMES.find(id => t > B(id).start - 0.1 && t < B(id).end + 0.2);
 const doodle = {
   gadbad: (t, x, y) => `<rect x="${x - 95}" y="${y - 70}" width="110" height="140" rx="8" fill="#fbf7ee" stroke="${INK}" stroke-width="6" transform="rotate(-8 ${x - 40} ${y})"/>` +
@@ -230,28 +218,24 @@ function cards(t) {
   // demand 1: office → Rahu 10 → 9
   o += card(t, at('K07', 0.05), at('V08', 0.08), 'DEMAND 1', TS(mid, CY0 + 170, 'Office ka', 44) + TS(mid, CY0 + 230, 'drama band', 40, '#3b4fa8'), 300, { head: '#9fd0a8' });
   o += card(t, at('V08', 0.1), B('K09').start - 0.05, 'RAHU · 5 DEC 2026', TS(mid, CY0 + 160, '10th → 9th ghar', 36) + TS(mid, CY0 + 230, 'office ka shor', 30, '#1f5a35') + TS(mid, CY0 + 268, 'kam hone ki ummeed', 26, '#1f5a35') +
-    (t > at('V08', 0.55) ? TS(mid, CY0 + 318, 'Bachna hai:', 24, '#b3262e') + TS(mid, CY0 + 348, 'galat salah, shortcut,', 22) + TS(mid, CY0 + 376, 'pita ji se matbhed', 22) : ''), 440, { foot: VED, soft: true });
+    (t > at('V08', 0.55) ? TS(mid, CY0 + 318, 'Bachna hai:', 24, '#b3262e') + TS(mid, CY0 + 352, 'galat salah, shortcut', 24) : ''), 440, { foot: VED, soft: true });
   // demand 2: ghar → Ketu out, Guru in the 4th
   o += card(t, B('K09').start, at('V10', 0.05), 'DEMAND 2', TS(mid, CY0 + 170, 'Ghar mein', 44) + TS(mid, CY0 + 230, 'sukoon', 44, '#3b4fa8'), 300, { head: '#9fd0a8' });
   const ketuX = t < at('V10', 0.1) ? 0 : ease(clamp((t - at('V10', 0.1)) / 0.8)) * 120;
-  o += card(t, at('V10', 0.06), B('ruko_zara').start - 0.05, '4th GHAR · GHAR', icon.house(mid - 40, CY0 + 182, 0.8) + icon.ketu(mid + 30 + ketuX * 0.3, CY0 + 135, 0.7) + (t > at('V10', 0.4) ? icon.guru(mid - 40, CY0 + 105, 0.7) : '') +
+  o += card(t, at('V10', 0.06), B('K13').start - 0.05, '4th GHAR · GHAR', icon.house(mid - 40, CY0 + 182, 0.8) + icon.ketu(mid + 30 + ketuX * 0.3, CY0 + 135, 0.7) + (t > at('V10', 0.4) ? icon.guru(mid - 40, CY0 + 105, 0.7) : '') +
     TS(mid, CY0 + 300, 'Ketu bahar: 5 Dec', 26) + (t > at('V10', 0.3) ? TS(mid, CY0 + 334, 'Guru 3rd: 25 Jan – 26 Jun', 21) + TS(mid, CY0 + 362, 'mehnat zyada, nateeja dheere', 19, '#b3262e') : '') + (t > at('V10', 0.8) ? TS(mid, CY0 + 392, 'Wapas 4th: 26 Jun–26 Nov 2027', 18, '#1f5a35') : ''), 440, { foot: VED, soft: true });
-  // the Deewar list: "mere paas ghar hai, sukoon hai, Guru hain" + Vishnu ji's "aur maa bhi"
-  const ticks = [['GHAR', 0.38], ['SUKOON', 0.62], ['GURU', 0.85]];
-  o += card(t, B('K11').start, B('K13').start - 0.05, 'MERE PAAS…', ticks.map(([w, f], i) => t < at('K11', f) ? '' : TS(CX0 + 60, CY0 + 150 + i * 62, w + ' ✓', 34, INK, 'start')).join('') +
-    (t > at('V12', 0.05) ? icon.heart(CX0 + 80, CY0 + 340, 0.42) + TS(CX0 + 120, CY0 + 352, 'MAA ✓', 34, '#b3262e', 'start') : ''), 420, { head: '#f2b84b' });
   // demand 3: pyaar + bachche → Guru 5th, 26 Nov 2027
   // demand 4: move Sade Sati → Shani dev's department; the real dates
-  o += card(t, B('K13').start, at('V14', 0.2), 'LAST DEMAND', TS(mid, CY0 + 170, 'Sade Sati', 44) + TS(mid, CY0 + 230, '1 saal aage?', 40, '#b3262e'), 300, { head: '#9fd0a8' });
-  o += card(t, at('V14', 0.22), B('V14').end + 0.1, 'SADE SATI · PEHLA CHARAN',
-    row(at('V14', 0.26), CY0 + 150, 'SHURU', '3 June 2027') + row(at('V14', 0.42), CY0 + 224, '12th GHAR (maanyata)', 'kharche, neend, mann', INK, 24) + row(at('V14', 0.7), CY0 + 298, 'BREAK · 2027–28', '20 Oct – 23 Feb') + row(at('V14', 0.87), CY0 + 372, 'PHIR SE', '23 Feb 2028'), 440, { foot: VED, soft: true });
+  o += card(t, B('K13').start, at('V14', 0.16), 'LAST DEMAND', TS(mid, CY0 + 170, 'Sade Sati', 44) + TS(mid, CY0 + 230, '1 saal aage?', 40, '#b3262e'), 300, { head: '#9fd0a8' });
+  o += card(t, at('V14', 0.18), B('V14').end + 0.1, 'SADE SATI · PEHLA CHARAN',
+    row(at('V14', 0.22), CY0 + 170, 'SHURU', '3 June 2027') + row(at('V14', 0.55), CY0 + 270, '12th GHAR (maanyata)', 'kharche, neend, mann', INK, 24), 360, { foot: VED, soft: true });
   // the remedy: 12th house is expenses → save before June
   o += card(t, at('V15', 0.45), B('V16').start - 0.05, 'DARNA NAHI · JUNE SE PEHLE', TS(mid, CY0 + 170, 'commitment:', 32) + TS(mid, CY0 + 240, 'MEHNAT', 44, '#3b4fa8') + TS(mid, CY0 + 300, '+ BACHAT', 44, '#1f5a35'), 400, { foot: VED });
   // the gift: Venus not retrograde in 2027
   o += card(t, at('V16', 0.15), B('K17').start - 0.05, 'TOHFA · SHUKRA 2027', `<circle cx="${mid}" cy="${CY0 + 170}" r="70" fill="url(#halo)"/><circle cx="${mid}" cy="${CY0 + 170}" r="42" fill="#f6e7c8" stroke="${INK}" stroke-width="5"/>` + TS(mid, CY0 + 290, 'vakri nahi ✓', 40, '#1f5a35'), 380, { foot: VED, head: '#f2b84b' });
   // the wakeel's verdict: every row filled, each on its word, plus the bonus row
-  const rows = [['OFFICE', 'kam shor', 0.21], ['GURU', 'thoda sabar', 0.37], ['SADE SATI', 'bachat + mehnat', 0.57], ['BONUS', 'Shukra ka tohfa', 0.7]];
-  o += card(t, B('K17').start, B('K18').start - 0.05, 'FAISLA', rows.map(([a, b, f], i) => TS(CX0 + 24, CY0 + 110 + i * 54, a, 22, '#8e1b2c', 'start') + (t < at('K17', f) ? `<path d="M${CX0 + 24} ${CY0 + 136 + i * 54} H${CX0 + 300}" stroke="#c9b9a2" stroke-width="4" stroke-dasharray="10 8"/>` : TS(CX0 + 24, CY0 + 136 + i * 54, b, 27, INK, 'start'))).join('') + stamp(t, at('K17', 0.84), mid + 32, CY0 + 360, 'TOUCHWOOD!', '#1f5a35', 26, -5), 415, { head: '#f2b84b', soft: true });
+  const rows = [['OFFICE', 'kam shor', 0.26], ['GURU', 'sabar', 0.42], ['SADE SATI', 'bachat + mehnat', 0.6], ['BONUS', 'Shukra ka tohfa', 0.72]];
+  o += card(t, B('K17').start, B('K18').start - 0.05, 'FAISLA', rows.map(([a, b, f], i) => TS(CX0 + 24, CY0 + 110 + i * 54, a, 22, '#8e1b2c', 'start') + (t < at('K17', f) ? `<path d="M${CX0 + 24} ${CY0 + 136 + i * 54} H${CX0 + 300}" stroke="#c9b9a2" stroke-width="4" stroke-dasharray="10 8"/>` : TS(CX0 + 24, CY0 + 136 + i * 54, b, 27, INK, 'start'))).join('') + stamp(t, at('K17', 0.8), mid + 32, CY0 + 360, 'TOUCHWOOD!', '#1f5a35', 26, -5), 415, { head: '#f2b84b', soft: true });
   // the pitch (Sakshi only): rashi-level vs your own kundli; report + healing before June
   const kundli = (x, y, w) => `<rect x="${x - w / 2}" y="${y - w / 2}" width="${w}" height="${w}" fill="#fff6dc" stroke="${INK}" stroke-width="5"/><path d="M${x - w / 2} ${y - w / 2} L${x + w / 2} ${y + w / 2} M${x + w / 2} ${y - w / 2} L${x - w / 2} ${y + w / 2} M${x} ${y - w / 2} L${x + w / 2} ${y} L${x} ${y + w / 2} L${x - w / 2} ${y} Z" stroke="#b3262e" stroke-width="3" fill="none"/>`;
   o += card(t, at('K18', 0.05), B('K19').start - 0.05, 'AAPKI KUNDLI, AAPKA 2027', kundli(mid, CY0 + 160, 120) +

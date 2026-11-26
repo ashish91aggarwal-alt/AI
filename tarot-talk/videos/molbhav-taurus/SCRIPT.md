@@ -1,10 +1,12 @@
-# Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v3.1 (25 Nov 2026, IST)
+# Rashi ki file: Taurus (Vrishabh) 2026 → 2027 mol-bhaav. Script v4 (26 Nov 2026, 14:50 IST): 90 s cut for ElevenLabs
 
 Same series as Aries (`videos/molbhav-aries/SCRIPT.md`, final `out/molbhav-aries_v10.mp4`).
 Cast on screen: Vishnu ji and Sakshi only (owner, 24 Nov 23:48 IST: no bull). Sakshi is the Vrishabh wakeel; her "client" is the Vrishabh people.
 Shani dev is named with respect, never shown. One locked scene for Taurus (Gate 1: 3 options shown, owner picks).
 
 v3 change (owner, 25 Nov 06:06 IST): "it did not create urgency to taurus for getting consultation for their 2027 problems. We need some problems too, so we can pitch them solution with reports and healing." Each bargain now gives the honest catch (Rahu 9th, Guru 3rd Jan–Jun, Shani 12th from June), and Sakshi bridges to a personal 2027 report + healing before June. The deity never sells; only Sakshi pitches. No fear words, no guaranteed results. Cut for length: the rishte demand (K13/V14, Guru 5th from 26 Nov 2027). Previous: SCRIPT_v2.3.md.
+
+v4 change (owner, 26 Nov 2026 14:45 IST: "Use elevenlabs voice. But make it a little faster 90seconds max"; cap 2,000 credits). From v3.1 (`SCRIPT_v3.1.md`) cut: the Deewar beat (K11/V12), the Wanted line (V15 now the reviewer's short remedy), memes "Lekin ek second" and "Ruko zara" (K05 with it), the Sade Sati break dates in speech. Kept: every 2027 catch, the remedy, the Shukra gift, the verdict, the pitch, the owner's CTA.
 
 ## Facts used (Chandra rashi Vrishabh, Lahiri, mean nodes, dates in IST; checked 24 Nov 2026)
 Houses are counted from the Taurus Moon.
@@ -29,33 +31,29 @@ The twist in the open: Taurus actually had Shani in the labh house in 2026, so t
 Lekin ek second (before K05), Abhi maza aayega na bhidu (after V06, same spot the owner fixed in Aries), Ruko zara sabar karo bhau (after V10, Sakshi's thought: she wanted sukoon now, it comes in June), Hey Bhagwan kya karun main (after V16, Sakshi's reaction to the Shani dates; V17 then reassures).
 Meme lines are Sakshi's thoughts: thought cloud, no lip-sync, cards hide meanwhile.
 
-## Lines (about 391 words; ~132 s with memes; the voice render sets the final time)
+## Lines (target ≤ 90 s with ElevenLabs at ~3.4 words/s)
 1. **K01 Sakshi** (walks in): "Prabhu, main Vrishabh walon ki wakeel hun, aur mera client 2026 se naraaz hai."
-2. **V02 Vishnu ji** (chakra twirling on one finger, smiling): "Naraaz hai ya bhookha, wakeel saahiba? Vrishabh ka gussa toh khaane se hi utarta hai."
-3. **K03 Sakshi:** "Office mein roz naya drama hota tha, aur ghar pe chain ki neend nahi milti thi."
-4. **V04 Vishnu ji:** "Par Shani dev toh labh wale gyarahve ghar mein the. Office Rahu ne dasve ghar se hilaya, aur sukoon Ketu ne chauthe se liya."
-5. **K05 Sakshi:** [LEKIN EK SECOND] "Matlab kamaai bhi hui aur chain bhi gaya, ye kaisa hisaab hai?"
-6. **V06 Vishnu ji:** "Isiliye toh mol-bhaav ho raha hai. Bolo, 2027 mein kya chahiye?" [ABHI MAZA AAYEGA NA BHIDU]
-7. **K07 Sakshi:** "Pehli demand ye hai ki office ka drama band ho."
-8. **V08 Vishnu ji:** "Paanch December ko Rahu nauve ghar mein jaayenge, toh office ka shor kam hone ki ummeed hai, par galat salah, shortcut aur pita ji se matbhed se bachna hoga."
-9. **K09 Sakshi:** "Doosri demand, mere client ko ghar mein sukoon chahiye."
-10. **V10 Vishnu ji:** "Usi din Ketu chauthe ghar se niklenge, par January ke aakhir se June tak Guru teesre ghar mein mehnat badhayenge aur nateeja dheere denge, phir November tak wapas chauthe mein." [RUKO ZARA SABAR KARO BHAU: Sakshi's thought, sukoon comes in June]
-11. **K11 Sakshi** (proud): "Toh ab mera client bhi bolega, mere paas ghar hai, sukoon hai, Guru hain!"
-12. **V12 Vishnu ji** (laughing softly): "Aur maa bhi hai, kyunki chautha ghar maa ka hi hota hai."
-13. **K13 Sakshi:** "Aur last demand, Sade Sati ko bas ek saal aage khiska dijiye."
-14. **V14 Vishnu ji:** "Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur Vedic maanyata mein baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain. October se February tak break milega, aur 23 February 2028 se wahi charan phir chalega." [HEY BHAGWAN, KYA KARUN MAIN]
-15. **V15 Vishnu ji** (smiling, calm): "Par darna nahi hai. Aapka client ek baar commitment kar de toh khud ki bhi nahi sunta, toh June se pehle mehnat aur bachat ka commitment karo."
-16. **V16 Vishnu ji** (blessing hand, then back into the portal): "Aur jaate jaate ek tohfa lo, aapke swami Shukra dev 2027 mein ek baar bhi vakri nahi honge."
-17. **K17 Sakshi** (wakeel's verdict): "Toh faisla aa gaya: office ko kam shor, Guru ko thoda sabar, aur Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
-18. **K18 Sakshi** (alone, to camera, the pitch): "Par ye poori rashi ka hisaab hai. Aapki kundli mein ye kitna asar karega, wo aapki personal 2027 report batayegi, aur June se pehle ke ye chhah mahine taiyari ke hain, aur healing se aap aaj hi shuruaat kar sakte hain."
-19. **K19 Sakshi** (CTA, owner's words): "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."
+2. **V02 Vishnu ji** (chakra on a fingertip, smiling): "Naraaz hai ya bhookha? Vrishabh ka gussa toh khaane se hi utarta hai."
+3. **K03 Sakshi:** "Office mein roz drama hota tha, aur ghar pe neend nahi aati thi."
+4. **V04 Vishnu ji:** "Shani dev toh labh ke ghar mein the, par office Rahu ne hilaya aur sukoon Ketu ne liya."
+5. **V06 Vishnu ji:** "Isiliye toh mol-bhaav ho raha hai. Bolo, 2027 mein kya chahiye?" [ABHI MAZA AAYEGA NA BHIDU]
+6. **K07 Sakshi:** "Pehli demand ye hai ki office ka drama band ho."
+7. **V08 Vishnu ji:** "Paanch December ko Rahu nauve ghar mein jaayenge, toh shor kam hone ki ummeed hai, par galat salah aur shortcut se bachna hoga."
+8. **K09 Sakshi:** "Doosri demand, ghar mein sukoon chahiye."
+9. **V10 Vishnu ji:** "Usi din Ketu chauthe ghar se niklenge, aur Guru abhi wahin hain. January ke aakhir se June tak wo teesre ghar mein mehnat badhayenge, phir June mein wapas chauthe ghar mein aayenge."
+10. **K13 Sakshi:** "Aur last demand, Sade Sati ko ek saal aage khiska dijiye."
+11. **V14 Vishnu ji:** "Wo Shani dev ka vibhag hai. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur maanyata hai ki baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain." [HEY BHAGWAN, KYA KARUN MAIN]
+12. **V15 Vishnu ji** (calm, warm): "Par darna nahi hai. June se pehle mehnat aur bachat ka commitment karo."
+13. **V16 Vishnu ji** (blessing hand, then back into the portal): "Aur tohfa lo, Shukra dev 2027 mein ek baar bhi vakri nahi honge."
+14. **K17 Sakshi** (verdict): "Toh faisla aa gaya: office ko kam shor, Guru ko sabar, Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
+15. **K18 Sakshi** (to camera, the pitch): "Par ye rashi ka general hisaab hai. Aapki kundli par asar personal 2027 report batayegi, aur healing se June ki taiyari aaj hi shuru karo."
+16. **K19 Sakshi** (CTA, owner's words): "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."
 
 ## Cards
 - V04: 2026 KI FILE: SHANI 11 · labh ✓ / RAHU 10 · office ka shor / KETU 4 · ghar ka sukoon
-- V08: RAHU · 5 DEC 2026: 10th → 9th ghar / office ka shor kam (ummeed) / CHUNAUTI: galat salah, shortcut, pita ji se matbhed
+- V08: RAHU · 5 DEC 2026: 10th → 9th ghar / office ka shor kam (ummeed) / Bachna hai: galat salah, shortcut
 - V10: 4th GHAR: Ketu bahar 5 Dec / Guru 25 Jan → 3rd: mehnat zyada, nateeja dheere / wapas 26 Jun – 26 Nov 2027
-- K11/V12: MERE PAAS… GHAR ✓ SUKOON ✓ GURU ✓ MAA ✓
-- V14: SADE SATI · PEHLA CHARAN: shuru 3 June 2027 / 12th ghar: kharche, neend, bechaini / break 20 Oct 2027 – 23 Feb 2028, phir se
+- V14: SADE SATI · PEHLA CHARAN: shuru 3 June 2027 / 12th ghar (maanyata): kharche, neend, mann
 - V15: JUNE SE PEHLE: mehnat + bachat
 - V16: TOHFA · SHUKRA 2027: vakri nahi ✓
 - K17 verdict: OFFICE: kam shor · GURU: thoda sabar · SADE SATI: bachat + mehnat · BONUS: Shukra ka tohfa · stamp TOUCHWOOD!
@@ -69,6 +67,7 @@ Meme lines are Sakshi's thoughts: thought cloud, no lip-sync, cards hide meanwhi
 - The linked guide must use the same dates.
 
 ## Review log
+- v4: 7.5/10 FAIL: V10 had lost Guru's current position ("wapas ghar mein" made no sense) → rewritten; trims to ~270 words. Passes with these (reviewer). If the render runs past 90 s, drop the "Abhi maza aayega" meme.
 - v3.1: 8/10 PASS (comedy 7.5, clarity 8, facts 9, sensitivity 8.5, urgency 8). ~137 s expected; if over ~132 s trim V15.
 - v3: 7.5/10 FAIL: V14 stated sleep/mind effect as certain (now "Vedic maanyata mein… asar daal sakte hain"); K18 promised healing results (now "taiyari abhi shuru kar sakte hain"). Cut ~35 words. Reviewer's "Vrishabh taiyaar hain" not taken: owner chose "Touchwood to Vrishabh!".
 - v1: 7/10 FAIL. Blocking: Sade Sati "poori tarah" read as heavier (fixed: same first phase resumes), Guru window not from today (fixed), V14 promise on children (fixed). Runtime cut 402 → ~370 words.

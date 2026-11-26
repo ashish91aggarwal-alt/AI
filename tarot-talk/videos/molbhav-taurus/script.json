@@ -2,8 +2,8 @@
  "meta": {
   "title": "Rashi ki file: Vrishabh 2026 → 2027 mol-bhaav",
   "channel": "Tarot Talk By Sakshi (Instagram Reels)",
-  "version": "v3.1 script, free Kokoro voices (no credits)",
-  "runtime_s": 129.11,
+  "version": "v4 script (90 s), ElevenLabs eleven_v4 one take per speaker (Samar / Lalita), 1,583 credits",
+  "runtime_s": 88.69,
   "format": "1080x1920, 24 fps, 9:16"
  },
  "beats": [
@@ -11,212 +11,164 @@
    "id": "K01",
    "type": "line",
    "start": 0.0,
-   "end": 4.175,
+   "end": 4.378,
    "who": "Sakshi",
    "line": "Prabhu, main Vrishabh walon ki wakeel hun, aur mera client 2026 se naraaz hai.",
    "caption_chunks": [
     {
      "text": "Prabhu, main Vrishabh walon",
      "from": 0.0,
-     "to": 1.5
+     "to": 1.58
     },
     {
      "text": "ki wakeel hun, aur",
-     "from": 1.5,
-     "to": 2.51
+     "from": 1.58,
+     "to": 2.63
     },
     {
      "text": "mera client 2026 se",
-     "from": 2.51,
-     "to": 3.56
+     "from": 2.63,
+     "to": 3.74
     },
     {
      "text": "naraaz hai.",
-     "from": 3.56,
-     "to": 4.18
+     "from": 3.74,
+     "to": 4.38
     }
    ]
   },
   {
    "id": "V02",
    "type": "line",
-   "start": 4.255,
-   "end": 9.251,
+   "start": 4.458,
+   "end": 8.463,
    "who": "Vishnu ji",
-   "line": "Naraaz hai ya bhookha, wakeel saahiba? Vrishabh ka gussa toh khaane se hi utarta hai.",
+   "line": "Naraaz hai ya bhookha? Vrishabh ka gussa toh khaane se hi utarta hai.",
    "caption_chunks": [
     {
-     "text": "Naraaz hai ya bhookha,",
-     "from": 4.26,
-     "to": 5.6
+     "text": "Naraaz hai ya bhookha?",
+     "from": 4.46,
+     "to": 5.79
     },
     {
-     "text": "wakeel saahiba? Vrishabh ka",
-     "from": 5.6,
-     "to": 7.24
+     "text": "Vrishabh ka gussa toh",
+     "from": 5.79,
+     "to": 7.07
     },
     {
-     "text": "gussa toh khaane se",
-     "from": 7.24,
-     "to": 8.4
+     "text": "khaane se hi utarta",
+     "from": 7.07,
+     "to": 8.22
     },
     {
-     "text": "hi utarta hai.",
-     "from": 8.4,
-     "to": 9.25
+     "text": "hai.",
+     "from": 8.22,
+     "to": 8.46
     }
    ]
   },
   {
    "id": "K03",
    "type": "line",
-   "start": 9.601,
-   "end": 13.267,
+   "start": 8.813,
+   "end": 11.669,
    "who": "Sakshi",
-   "line": "Office mein roz naya drama hota tha, aur ghar pe chain ki neend nahi milti thi.",
+   "line": "Office mein roz drama hota tha, aur ghar pe neend nahi aati thi.",
    "caption_chunks": [
     {
-     "text": "Office mein roz naya",
-     "from": 9.6,
-     "to": 10.57
+     "text": "Office mein roz drama",
+     "from": 8.81,
+     "to": 9.8
     },
     {
-     "text": "drama hota tha, aur",
-     "from": 10.57,
+     "text": "hota tha, aur ghar",
+     "from": 9.8,
+     "to": 10.64
+    },
+    {
+     "text": "pe neend nahi aati",
+     "from": 10.64,
      "to": 11.48
     },
     {
-     "text": "ghar pe chain ki",
+     "text": "thi.",
      "from": 11.48,
-     "to": 12.25
-    },
-    {
-     "text": "neend nahi milti thi.",
-     "from": 12.25,
-     "to": 13.27
+     "to": 11.67
     }
    ]
   },
   {
    "id": "V04",
    "type": "line",
-   "start": 13.347,
-   "end": 20.96,
+   "start": 11.749,
+   "end": 17.068,
    "who": "Vishnu ji",
-   "line": "Par Shani dev toh labh wale gyarahve ghar mein the. Office Rahu ne dasve ghar se hilaya, aur sukoon Ketu ne chauthe se liya.",
+   "line": "Shani dev toh labh ke ghar mein the, par office Rahu ne hilaya aur sukoon Ketu ne liya.",
    "caption_chunks": [
     {
-     "text": "Par Shani dev toh",
-     "from": 13.35,
-     "to": 14.43
+     "text": "Shani dev toh labh",
+     "from": 11.75,
+     "to": 12.9
     },
     {
-     "text": "labh wale gyarahve ghar",
-     "from": 14.43,
-     "to": 15.91
+     "text": "ke ghar mein the,",
+     "from": 12.9,
+     "to": 13.99
     },
     {
-     "text": "mein the. Office Rahu",
-     "from": 15.91,
-     "to": 17.25
+     "text": "par office Rahu ne",
+     "from": 13.99,
+     "to": 15.15
     },
     {
-     "text": "ne dasve ghar se",
-     "from": 17.25,
-     "to": 18.27
+     "text": "hilaya aur sukoon Ketu",
+     "from": 15.15,
+     "to": 16.56
     },
     {
-     "text": "hilaya, aur sukoon Ketu",
-     "from": 18.27,
-     "to": 19.74
-    },
-    {
-     "text": "ne chauthe se liya.",
-     "from": 19.74,
-     "to": 20.96
-    }
-   ]
-  },
-  {
-   "id": "lekin_ek_second",
-   "type": "meme",
-   "start": 21.08,
-   "end": 22.31,
-   "who": "Sakshi",
-   "line": "Lekin ek second!",
-   "caption_chunks": [
-    {
-     "text": "Lekin ek second!",
-     "from": 21.08,
-     "to": 22.31
-    }
-   ],
-   "meme_file": "lekin-ek-second.mp3",
-   "meme_in": 0.0,
-   "meme_out": 1.23
-  },
-  {
-   "id": "K05",
-   "type": "line",
-   "start": 22.37,
-   "end": 25.523,
-   "who": "Sakshi",
-   "line": "Matlab kamaai bhi hui aur chain bhi gaya, ye kaisa hisaab hai?",
-   "caption_chunks": [
-    {
-     "text": "Matlab kamaai bhi hui",
-     "from": 22.37,
-     "to": 23.47
-    },
-    {
-     "text": "aur chain bhi gaya,",
-     "from": 23.47,
-     "to": 24.47
-    },
-    {
-     "text": "ye kaisa hisaab hai?",
-     "from": 24.47,
-     "to": 25.52
+     "text": "ne liya.",
+     "from": 16.56,
+     "to": 17.07
     }
    ]
   },
   {
    "id": "V06",
    "type": "line",
-   "start": 25.603,
-   "end": 29.95,
+   "start": 17.148,
+   "end": 20.719,
    "who": "Vishnu ji",
    "line": "Isiliye toh mol-bhaav ho raha hai. Bolo, 2027 mein kya chahiye?",
    "caption_chunks": [
     {
      "text": "Isiliye toh mol-bhaav ho",
-     "from": 25.6,
-     "to": 27.31
+     "from": 17.15,
+     "to": 18.55
     },
     {
      "text": "raha hai. Bolo, 2027",
-     "from": 27.31,
-     "to": 28.74
+     "from": 18.55,
+     "to": 19.72
     },
     {
      "text": "mein kya chahiye?",
-     "from": 28.74,
-     "to": 29.95
+     "from": 19.72,
+     "to": 20.72
     }
    ]
   },
   {
    "id": "abhi_maza",
    "type": "meme",
-   "start": 30.07,
-   "end": 32.48,
+   "start": 20.819,
+   "end": 23.229,
    "who": "Sakshi",
    "line": "Abhi maza aayega na bhidu!",
    "caption_chunks": [
     {
      "text": "Abhi maza aayega na bhidu!",
-     "from": 30.07,
-     "to": 32.48
+     "from": 20.82,
+     "to": 23.23
     }
    ],
    "meme_file": "abhi-maza-aayega-na-bhidu.mp3",
@@ -226,343 +178,230 @@
   {
    "id": "K07",
    "type": "line",
-   "start": 32.56,
-   "end": 34.882,
+   "start": 23.309,
+   "end": 25.666,
    "who": "Sakshi",
    "line": "Pehli demand ye hai ki office ka drama band ho.",
    "caption_chunks": [
     {
      "text": "Pehli demand ye hai",
-     "from": 32.56,
-     "to": 33.54
+     "from": 23.31,
+     "to": 24.3
     },
     {
      "text": "ki office ka drama",
-     "from": 33.54,
-     "to": 34.47
+     "from": 24.3,
+     "to": 25.25
     },
     {
      "text": "band ho.",
-     "from": 34.47,
-     "to": 34.88
+     "from": 25.25,
+     "to": 25.67
     }
    ]
   },
   {
    "id": "V08",
    "type": "line",
-   "start": 34.962,
-   "end": 44.013,
+   "start": 25.746,
+   "end": 32.111,
    "who": "Vishnu ji",
-   "line": "Paanch December ko Rahu nauve ghar mein jaayenge, toh office ka shor kam hone ki ummeed hai, par galat salah, shortcut aur pita ji se matbhed se bachna hoga.",
+   "line": "Paanch December ko Rahu nauve ghar mein jaayenge, toh shor kam hone ki ummeed hai, par galat salah aur shortcut se bachna hoga.",
    "caption_chunks": [
     {
      "text": "Paanch December ko Rahu",
-     "from": 34.96,
-     "to": 36.35
+     "from": 25.75,
+     "to": 26.95
     },
     {
      "text": "nauve ghar mein jaayenge,",
-     "from": 36.35,
-     "to": 37.86
+     "from": 26.95,
+     "to": 28.25
     },
     {
-     "text": "toh office ka shor",
-     "from": 37.86,
-     "to": 38.94
+     "text": "toh shor kam hone",
+     "from": 28.25,
+     "to": 29.14
     },
     {
-     "text": "kam hone ki ummeed",
-     "from": 38.94,
-     "to": 40.03
+     "text": "ki ummeed hai, par",
+     "from": 29.14,
+     "to": 30.08
     },
     {
-     "text": "hai, par galat salah,",
-     "from": 40.03,
-     "to": 41.3
+     "text": "galat salah aur shortcut",
+     "from": 30.08,
+     "to": 31.33
     },
     {
-     "text": "shortcut aur pita ji",
-     "from": 41.3,
-     "to": 42.5
-    },
-    {
-     "text": "se matbhed se bachna",
-     "from": 42.5,
-     "to": 43.71
-    },
-    {
-     "text": "hoga.",
-     "from": 43.71,
-     "to": 44.01
+     "text": "se bachna hoga.",
+     "from": 31.33,
+     "to": 32.11
     }
    ]
   },
   {
    "id": "K09",
    "type": "line",
-   "start": 44.093,
-   "end": 46.753,
+   "start": 32.191,
+   "end": 34.102,
    "who": "Sakshi",
-   "line": "Doosri demand, mere client ko ghar mein sukoon chahiye.",
+   "line": "Doosri demand, ghar mein sukoon chahiye.",
    "caption_chunks": [
     {
-     "text": "Doosri demand, mere client",
-     "from": 44.09,
-     "to": 45.4
+     "text": "Doosri demand, ghar mein",
+     "from": 32.19,
+     "to": 33.37
     },
     {
-     "text": "ko ghar mein sukoon",
-     "from": 45.4,
-     "to": 46.35
-    },
-    {
-     "text": "chahiye.",
-     "from": 46.35,
-     "to": 46.75
+     "text": "sukoon chahiye.",
+     "from": 33.37,
+     "to": 34.1
     }
    ]
   },
   {
    "id": "V10",
    "type": "line",
-   "start": 46.833,
-   "end": 57.027,
+   "start": 34.182,
+   "end": 43.074,
    "who": "Vishnu ji",
-   "line": "Usi din Ketu chauthe ghar se niklenge, par January ke aakhir se June tak Guru teesre ghar mein mehnat badhayenge aur nateeja dheere denge, phir November tak wapas chauthe mein.",
+   "line": "Usi din Ketu chauthe ghar se niklenge, aur Guru abhi wahin hain. January ke aakhir se June tak wo teesre ghar mein mehnat badhayenge, phir June mein wapas chauthe ghar mein aayenge.",
    "caption_chunks": [
     {
      "text": "Usi din Ketu chauthe",
-     "from": 46.83,
-     "to": 48.04
+     "from": 34.18,
+     "to": 35.2
     },
     {
-     "text": "ghar se niklenge, par",
-     "from": 48.04,
-     "to": 49.31
+     "text": "ghar se niklenge, aur",
+     "from": 35.2,
+     "to": 36.28
+    },
+    {
+     "text": "Guru abhi wahin hain.",
+     "from": 36.28,
+     "to": 37.35
     },
     {
      "text": "January ke aakhir se",
-     "from": 49.31,
-     "to": 50.51
+     "from": 37.35,
+     "to": 38.37
     },
     {
-     "text": "June tak Guru teesre",
-     "from": 50.51,
-     "to": 51.72
+     "text": "June tak wo teesre",
+     "from": 38.37,
+     "to": 39.29
     },
     {
-     "text": "ghar mein mehnat badhayenge",
-     "from": 51.72,
-     "to": 53.35
+     "text": "ghar mein mehnat badhayenge,",
+     "from": 39.29,
+     "to": 40.72
     },
     {
-     "text": "aur nateeja dheere denge,",
-     "from": 53.35,
-     "to": 54.86
+     "text": "phir June mein wapas",
+     "from": 40.72,
+     "to": 41.74
     },
     {
-     "text": "phir November tak wapas",
-     "from": 54.86,
-     "to": 56.24
-    },
-    {
-     "text": "chauthe mein.",
-     "from": 56.24,
-     "to": 57.03
-    }
-   ]
-  },
-  {
-   "id": "ruko_zara",
-   "type": "meme",
-   "start": 57.147,
-   "end": 58.947,
-   "who": "Sakshi",
-   "line": "Ruko zara, sabar karo!",
-   "caption_chunks": [
-    {
-     "text": "Ruko zara, sabar karo!",
-     "from": 57.15,
-     "to": 58.95
-    }
-   ],
-   "meme_file": "ruko-zara-sabar-karo-bhau.mp3",
-   "meme_in": 0.04,
-   "meme_out": 1.84
-  },
-  {
-   "id": "K11",
-   "type": "line",
-   "start": 59.027,
-   "end": 62.413,
-   "who": "Sakshi",
-   "line": "Toh ab mera client bhi bolega, mere paas ghar hai, sukoon hai, Guru hain!",
-   "caption_chunks": [
-    {
-     "text": "Toh ab mera client",
-     "from": 59.03,
-     "to": 59.9
-    },
-    {
-     "text": "bhi bolega, mere paas",
-     "from": 59.9,
-     "to": 60.91
-    },
-    {
-     "text": "ghar hai, sukoon hai,",
-     "from": 60.91,
-     "to": 61.93
-    },
-    {
-     "text": "Guru hain!",
-     "from": 61.93,
-     "to": 62.41
-    }
-   ]
-  },
-  {
-   "id": "V12",
-   "type": "line",
-   "start": 62.493,
-   "end": 65.33,
-   "who": "Vishnu ji",
-   "line": "Aur maa bhi hai, kyunki chautha ghar maa ka hi hota hai.",
-   "caption_chunks": [
-    {
-     "text": "Aur maa bhi hai,",
-     "from": 62.49,
-     "to": 63.33
-    },
-    {
-     "text": "kyunki chautha ghar maa",
-     "from": 63.33,
-     "to": 64.54
-    },
-    {
-     "text": "ka hi hota hai.",
-     "from": 64.54,
-     "to": 65.33
+     "text": "chauthe ghar mein aayenge.",
+     "from": 41.74,
+     "to": 43.07
     }
    ]
   },
   {
    "id": "K13",
    "type": "line",
-   "start": 65.68,
-   "end": 69.007,
+   "start": 43.154,
+   "end": 46.287,
    "who": "Sakshi",
-   "line": "Aur last demand, Sade Sati ko bas ek saal aage khiska dijiye.",
+   "line": "Aur last demand, Sade Sati ko ek saal aage khiska dijiye.",
    "caption_chunks": [
     {
      "text": "Aur last demand, Sade",
-     "from": 65.68,
-     "to": 66.86
+     "from": 43.15,
+     "to": 44.35
     },
     {
-     "text": "Sati ko bas ek",
-     "from": 66.86,
-     "to": 67.65
+     "text": "Sati ko ek saal",
+     "from": 44.35,
+     "to": 45.2
     },
     {
-     "text": "saal aage khiska dijiye.",
-     "from": 67.65,
-     "to": 69.01
+     "text": "aage khiska dijiye.",
+     "from": 45.2,
+     "to": 46.29
     }
    ]
   },
   {
    "id": "V14",
    "type": "line",
-   "start": 69.087,
-   "end": 86.262,
+   "start": 46.367,
+   "end": 57.06,
    "who": "Vishnu ji",
-   "line": "Wo Shani dev ka vibhag hai, wahan sifaarish nahi chalti. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur Vedic maanyata mein baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain. October se February tak break milega, aur 23 February 2028 se wahi charan phir chalega.",
+   "line": "Wo Shani dev ka vibhag hai. Teen June 2027 se Sade Sati ka pehla charan shuru hoga, aur maanyata hai ki baarahve ghar ke Shani kharche, neend aur mann ki shaanti pe asar daal sakte hain.",
    "caption_chunks": [
     {
      "text": "Wo Shani dev ka",
-     "from": 69.09,
-     "to": 69.96
+     "from": 46.37,
+     "to": 47.27
     },
     {
-     "text": "vibhag hai, wahan sifaarish",
-     "from": 69.96,
-     "to": 71.54
-    },
-    {
-     "text": "nahi chalti. Teen June",
-     "from": 71.54,
-     "to": 72.83
+     "text": "vibhag hai. Teen June",
+     "from": 47.27,
+     "to": 48.53
     },
     {
      "text": "2027 se Sade Sati",
-     "from": 72.83,
-     "to": 73.82
+     "from": 48.53,
+     "to": 49.55
     },
     {
      "text": "ka pehla charan shuru",
-     "from": 73.82,
-     "to": 75.05
+     "from": 49.55,
+     "to": 50.81
     },
     {
-     "text": "hoga, aur Vedic maanyata",
-     "from": 75.05,
-     "to": 76.45
+     "text": "hoga, aur maanyata hai",
+     "from": 50.81,
+     "to": 52.13
     },
     {
-     "text": "mein baarahve ghar ke",
-     "from": 76.45,
-     "to": 77.67
+     "text": "ki baarahve ghar ke",
+     "from": 52.13,
+     "to": 53.28
     },
     {
      "text": "Shani kharche, neend aur",
-     "from": 77.67,
-     "to": 79.08
+     "from": 53.28,
+     "to": 54.72
     },
     {
      "text": "mann ki shaanti pe",
-     "from": 79.08,
-     "to": 80.13
+     "from": 54.72,
+     "to": 55.8
     },
     {
      "text": "asar daal sakte hain.",
-     "from": 80.13,
-     "to": 81.36
-    },
-    {
-     "text": "October se February tak",
-     "from": 81.36,
-     "to": 82.7
-    },
-    {
-     "text": "break milega, aur 23",
-     "from": 82.7,
-     "to": 83.87
-    },
-    {
-     "text": "February 2028 se wahi",
-     "from": 83.87,
-     "to": 85.09
-    },
-    {
-     "text": "charan phir chalega.",
-     "from": 85.09,
-     "to": 86.26
+     "from": 55.8,
+     "to": 57.06
     }
    ]
   },
   {
    "id": "hey_bhagwan",
    "type": "meme",
-   "start": 86.382,
-   "end": 87.912,
+   "start": 57.16,
+   "end": 58.69,
    "who": "Sakshi",
    "line": "Hey Bhagwan, kya karun main!",
    "caption_chunks": [
     {
      "text": "Hey Bhagwan, kya karun main!",
-     "from": 86.38,
-     "to": 87.91
+     "from": 57.16,
+     "to": 58.69
     }
    ],
    "meme_file": "hey-bhagwan-kya-karun-main.mp3",
@@ -572,220 +411,175 @@
   {
    "id": "V15",
    "type": "line",
-   "start": 88.032,
-   "end": 96.443,
+   "start": 58.77,
+   "end": 62.26,
    "who": "Vishnu ji",
-   "line": "Par darna nahi hai. Aapka client ek baar commitment kar de toh khud ki bhi nahi sunta, toh June se pehle mehnat aur bachat ka commitment karo.",
+   "line": "Par darna nahi hai. June se pehle mehnat aur bachat ka commitment karo.",
    "caption_chunks": [
     {
      "text": "Par darna nahi hai.",
-     "from": 88.03,
-     "to": 89.21
+     "from": 58.77,
+     "to": 59.75
     },
     {
-     "text": "Aapka client ek baar",
-     "from": 89.21,
-     "to": 90.44
+     "text": "June se pehle mehnat",
+     "from": 59.75,
+     "to": 60.77
     },
     {
-     "text": "commitment kar de toh",
-     "from": 90.44,
-     "to": 91.74
+     "text": "aur bachat ka commitment",
+     "from": 60.77,
+     "to": 62.0
     },
     {
-     "text": "khud ki bhi nahi",
-     "from": 91.74,
-     "to": 92.73
-    },
-    {
-     "text": "sunta, toh June se",
-     "from": 92.73,
-     "to": 93.85
-    },
-    {
-     "text": "pehle mehnat aur bachat",
-     "from": 93.85,
-     "to": 95.27
-    },
-    {
-     "text": "ka commitment karo.",
-     "from": 95.27,
-     "to": 96.44
+     "text": "karo.",
+     "from": 62.0,
+     "to": 62.26
     }
    ]
   },
   {
    "id": "V16",
    "type": "line",
-   "start": 96.523,
-   "end": 102.996,
+   "start": 62.34,
+   "end": 66.97,
    "who": "Vishnu ji",
-   "line": "Aur jaate jaate ek tohfa lo, aapke swami Shukra dev 2027 mein ek baar bhi vakri nahi honge.",
+   "line": "Aur tohfa lo, Shukra dev 2027 mein ek baar bhi vakri nahi honge.",
    "caption_chunks": [
     {
-     "text": "Aur jaate jaate ek",
-     "from": 96.52,
-     "to": 97.86
+     "text": "Aur tohfa lo, Shukra",
+     "from": 62.34,
+     "to": 63.86
     },
     {
-     "text": "tohfa lo, aapke swami",
-     "from": 97.86,
-     "to": 99.43
+     "text": "dev 2027 mein ek",
+     "from": 63.86,
+     "to": 65.07
     },
     {
-     "text": "Shukra dev 2027 mein",
-     "from": 99.43,
-     "to": 100.91
+     "text": "baar bhi vakri nahi",
+     "from": 65.07,
+     "to": 66.51
     },
     {
-     "text": "ek baar bhi vakri",
-     "from": 100.91,
-     "to": 102.18
-    },
-    {
-     "text": "nahi honge.",
-     "from": 102.18,
-     "to": 103.0
+     "text": "honge.",
+     "from": 66.51,
+     "to": 66.97
     }
    ]
   },
   {
    "id": "K17",
    "type": "line",
-   "start": 103.596,
-   "end": 109.767,
+   "start": 67.47,
+   "end": 73.635,
    "who": "Sakshi",
-   "line": "Toh faisla aa gaya: office ko kam shor, Guru ko thoda sabar, aur Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!",
+   "line": "Toh faisla aa gaya: office ko kam shor, Guru ko sabar, Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!",
    "caption_chunks": [
     {
      "text": "Toh faisla aa gaya:",
-     "from": 103.6,
-     "to": 104.62
+     "from": 67.47,
+     "to": 68.59
     },
     {
      "text": "office ko kam shor,",
-     "from": 104.62,
-     "to": 105.65
+     "from": 68.59,
+     "to": 69.7
     },
     {
-     "text": "Guru ko thoda sabar,",
-     "from": 105.65,
-     "to": 106.74
+     "text": "Guru ko sabar, Sade",
+     "from": 69.7,
+     "to": 70.82
     },
     {
-     "text": "aur Sade Sati ko",
-     "from": 106.74,
-     "to": 107.6
+     "text": "Sati ko bachat aur",
+     "from": 70.82,
+     "to": 71.87
     },
     {
-     "text": "bachat aur mehnat. Touchwood",
-     "from": 107.6,
-     "to": 109.12
-    },
-    {
-     "text": "to Vrishabh!",
-     "from": 109.12,
-     "to": 109.77
+     "text": "mehnat. Touchwood to Vrishabh!",
+     "from": 71.87,
+     "to": 73.63
     }
    ]
   },
   {
    "id": "K18",
    "type": "line",
-   "start": 110.167,
-   "end": 121.043,
+   "start": 73.935,
+   "end": 81.408,
    "who": "Sakshi",
-   "line": "Par ye poori rashi ka hisaab hai. Aapki kundli mein ye kitna asar karega, wo aapki personal 2027 report batayegi, aur June se pehle ke ye chhah mahine taiyari ke hain, aur healing se aap aaj hi shuruaat kar sakte hain.",
+   "line": "Par ye rashi ka general hisaab hai. Aapki kundli par asar personal 2027 report batayegi, aur healing se June ki taiyari aaj hi shuru karo.",
    "caption_chunks": [
     {
-     "text": "Par ye poori rashi",
-     "from": 110.17,
-     "to": 111.11
+     "text": "Par ye rashi ka",
+     "from": 73.93,
+     "to": 74.78
     },
     {
-     "text": "ka hisaab hai. Aapki",
-     "from": 111.11,
-     "to": 112.15
+     "text": "general hisaab hai. Aapki",
+     "from": 74.78,
+     "to": 76.2
     },
     {
-     "text": "kundli mein ye kitna",
-     "from": 112.15,
-     "to": 113.2
+     "text": "kundli par asar personal",
+     "from": 76.2,
+     "to": 77.56
     },
     {
-     "text": "asar karega, wo aapki",
-     "from": 113.2,
-     "to": 114.3
+     "text": "2027 report batayegi, aur",
+     "from": 77.56,
+     "to": 78.97
     },
     {
-     "text": "personal 2027 report batayegi,",
-     "from": 114.3,
-     "to": 115.87
+     "text": "healing se June ki",
+     "from": 78.97,
+     "to": 79.99
     },
     {
-     "text": "aur June se pehle",
-     "from": 115.87,
-     "to": 116.76
+     "text": "taiyari aaj hi shuru",
+     "from": 79.99,
+     "to": 81.12
     },
     {
-     "text": "ke ye chhah mahine",
-     "from": 116.76,
-     "to": 117.7
-    },
-    {
-     "text": "taiyari ke hain, aur",
-     "from": 117.7,
-     "to": 118.74
-    },
-    {
-     "text": "healing se aap aaj",
-     "from": 118.74,
-     "to": 119.68
-    },
-    {
-     "text": "hi shuruaat kar sakte",
-     "from": 119.68,
-     "to": 120.78
-    },
-    {
-     "text": "hain.",
-     "from": 120.78,
-     "to": 121.04
+     "text": "karo.",
+     "from": 81.12,
+     "to": 81.41
     }
    ]
   },
   {
    "id": "K19",
    "type": "line",
-   "start": 121.393,
-   "end": 128.205,
+   "start": 81.708,
+   "end": 88.094,
    "who": "Sakshi",
    "line": "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai.",
    "caption_chunks": [
     {
      "text": "2027 ko manifest karna",
-     "from": 121.39,
-     "to": 122.92
+     "from": 81.71,
+     "to": 83.14
     },
     {
      "text": "hai toh link pe",
-     "from": 122.92,
-     "to": 123.96
+     "from": 83.14,
+     "to": 84.12
     },
     {
      "text": "click karo, aur ye",
-     "from": 123.96,
-     "to": 125.22
+     "from": 84.12,
+     "to": 85.29
     },
     {
      "text": "video usko bhejo jisse",
-     "from": 125.22,
-     "to": 126.75
+     "from": 85.29,
+     "to": 86.73
     },
     {
      "text": "apna 2027 jaanna hai.",
-     "from": 126.75,
-     "to": 128.21
+     "from": 86.73,
+     "to": 88.09
     }
    ]
   }
