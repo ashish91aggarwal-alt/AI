@@ -1,5 +1,5 @@
 {
- "built": "2026-11-25T09:36:51Z",
+ "built": "2026-11-26T09:05:53Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Taurus: script v3.1 waiting owner ok; repo docs updated (status + procedure)",
-   "next": "after ok: re-voice, update cut to v3.1, render, Gate 3",
+   "doing": "Taurus v3.1 cut passed Gate 3 (8/10), sent to owner",
+   "next": "owner feedback; ElevenLabs only with a credit cap",
    "blocked": "",
-   "updated_at": "2026-11-25T09:36:48Z",
+   "updated_at": "2026-11-26T09:05:53Z",
    "compactions": 0,
    "session": {
     "link": null,

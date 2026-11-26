@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Taurus: script v3.1 waiting owner ok; repo docs updated (status + procedure)",
- "next": "after ok: re-voice, update cut to v3.1, render, Gate 3",
+ "doing": "Taurus v3.1 cut passed Gate 3 (8/10), sent to owner",
+ "next": "owner feedback; ElevenLabs only with a credit cap",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-24T17:27:42Z"
  },
- "updated_at": "2026-11-25T09:36:48Z"
+ "updated_at": "2026-11-26T09:05:53Z"
 }
