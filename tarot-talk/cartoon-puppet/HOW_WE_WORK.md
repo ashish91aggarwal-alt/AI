@@ -199,6 +199,8 @@ Not in git on purpose: `out/`, `work/`, `cast/` (renders, option sheets) and voi
 - A card that pops near Sakshi's head must use `{ soft: true }` in `card()` (no overshoot); the overshoot of the default pop crossed her bow by 3 px.
 - Check gaps by pixels, not by eye: render each element alone with a transparent background and compare bounding boxes (`work/taurus/bbox.js` pattern).
 - Bigger text on a card pushes into icons: re-check every card after any font change. Card footers are 18 px.
+- `tools/new_video.py` KEEPS existing `captions.json`, `video.json`, `sfx_cues.json`: after re-voicing, delete `captions.json` first or the captions stay on the old lines (cost us a contact sheet on 26 Nov). `video.json` music times use beat ids: recompute them after a re-voice.
+- Kokoro can stutter on "aap abhi" (heard as "aap aap aap hi"); reword ("aap aaj hi").
 - Kokoro mispronunciations are invisible to the reviewer; Whisper often misses fast "do hazaar sattaais"; check energy instead of trusting a missing transcript.
 
 **Reviewing**

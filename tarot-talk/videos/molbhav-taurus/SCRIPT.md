@@ -47,7 +47,7 @@ Meme lines are Sakshi's thoughts: thought cloud, no lip-sync, cards hide meanwhi
 15. **V15 Vishnu ji** (smiling, calm): "Par darna nahi hai. Aapka client ek baar commitment kar de toh khud ki bhi nahi sunta, toh June se pehle mehnat aur bachat ka commitment karo."
 16. **V16 Vishnu ji** (blessing hand, then back into the portal): "Aur jaate jaate ek tohfa lo, aapke swami Shukra dev 2027 mein ek baar bhi vakri nahi honge."
 17. **K17 Sakshi** (wakeel's verdict): "Toh faisla aa gaya: office ko kam shor, Guru ko thoda sabar, aur Sade Sati ko bachat aur mehnat. Touchwood to Vrishabh!"
-18. **K18 Sakshi** (alone, to camera, the pitch): "Par ye poori rashi ka hisaab hai. Aapki kundli mein ye kitna asar karega, wo aapki personal 2027 report batayegi, aur June se pehle ke ye chhah mahine taiyari ke hain, aur healing se aap abhi shuru kar sakte hain."
+18. **K18 Sakshi** (alone, to camera, the pitch): "Par ye poori rashi ka hisaab hai. Aapki kundli mein ye kitna asar karega, wo aapki personal 2027 report batayegi, aur June se pehle ke ye chhah mahine taiyari ke hain, aur healing se aap aaj hi shuruaat kar sakte hain."
 19. **K19 Sakshi** (CTA, owner's words): "2027 ko manifest karna hai toh link pe click karo, aur ye video usko bhejo jisse apna 2027 jaanna hai."
 
 ## Cards
