@@ -1,16 +1,16 @@
 # STATUS
 
-_Generated 2026-11-26T08:21:31Z by `scripts/agent.py build`. Do not edit._
+_Generated 2026-11-26T21:34:29Z by `scripts/agent.py build`. Do not edit._
 
 ## Sessions
 
 | Role | Updated | Doing | Next | Blocked | Last commit |
 |---|---|---|---|---|---|
 | `orchestrator` | 2d ago | moved ambient-channels into AI/ambient-channels | owner adds YOUTUBE_API_KEY secret to the AI repo; then disable the old repo's tracker | - | - |
-| `reviewer` | 8d ago | brand gate: avatars + banners (fantasy, worship) | write reviews/brand/*-art-2026-11-17.md | - | - |
-| `channel-fantasy` | 8d ago | not started | Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1 | waiting for G0 sign-off on F1 | - |
-| `channel-worship` | 8d ago | not started | Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement | waiting for G0 sign-off on W3 | - |
-| `channel-pets` | 3d ago | P2 planned; G0 sent to orchestrator | After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces) | - | - |
+| `reviewer` | 9d ago | brand gate: avatars + banners (fantasy, worship) | write reviews/brand/*-art-2026-11-17.md | - | - |
+| `channel-fantasy` | 9d ago | not started | Claim F1; generate base plate + fox element in ChatGPT from channels/fantasy/pilots/F1.md; pass G1 | waiting for G0 sign-off on F1 | - |
+| `channel-worship` | 9d ago | not started | Claim W3; build local piano/strings render setup (Salamander Grand) and arrange Silent Night + O Holy Night; G3 measurement | waiting for G0 sign-off on W3 | - |
+| `channel-pets` | 4d ago | P2 planned; G0 sent to orchestrator | After G0 sign-off: owner runs the 3 picture prompts in P2_plan.md; meanwhile make the P2 music set locally (sleep_suites.py new seed, ~15 pieces) | - | - |
 
 ## Production board
 
@@ -39,6 +39,6 @@ _Generated 2026-11-26T08:21:31Z by `scripts/agent.py build`. Do not edit._
 
 ## Tracking
 
-- Last tracker run: 2026-11-26T08:20:43Z (0m ago)
+- Last tracker run: 2026-11-26T21:33:39Z (0m ago)
 - Channels tracked: 33
 
