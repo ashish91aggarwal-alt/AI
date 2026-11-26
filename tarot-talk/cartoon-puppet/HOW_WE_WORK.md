@@ -139,18 +139,18 @@ Reviewer prompt that worked:
 - Every Vishnu ji pose in a cut goes through a kind-face filter (open lids, level raised brows, no 'sly'/'cat' mouth, no wink, small glance). See `kindV` in `cuts/molbhav-aries.js`.
 
 ## Mol-bhaav rashi series: what the owner taught us (24 Nov 2026, Aries reel final = `out/molbhav-aries_v10.mp4`, commit 42ab96f)
-### Status (updated 26 Nov 2026, 14:35 IST)
+### Status (updated 26 Nov 2026, 15:30 IST)
 | Rashi | Scene (locked) | Script | Cut | Next |
 |---|---|---|---|---|
 | Aries (Mesh) | hill road, `plateAries` | v13.2 | final `out/molbhav-aries_v10.mp4` (ElevenLabs, 1,915 credits) | posted/owner's call |
-| Taurus (Vrishabh) | Jaipur, Hawa Mahal across the bazaar, `plateTaurus` | **v3.1** `videos/molbhav-taurus/SCRIPT.md` (2027 catches + report/healing pitch), owner ok 26 Nov 13:37 IST, review 8/10 PASS | `out/molbhav-taurus_v3.mp4` (129 s, free Kokoro voices), Gate 3 PASS 8/10 (`videos/molbhav-taurus/reviews/`) | owner's feedback; then ElevenLabs voices only with a credit cap; polish: Sakshi's body movement |
+| Taurus (Vrishabh) | Jaipur, Hawa Mahal across the bazaar, `plateTaurus` | **v4** `videos/molbhav-taurus/SCRIPT.md` (90 s: 2027 catches + report/healing pitch; v3.1 kept as `SCRIPT_v3.1.md`) | `out/molbhav-taurus_v4.mp4` (88.7 s, ElevenLabs Samar/Lalita, 1,583 credits), Gate 3 PASS 8/10 | owner sign-off; polish left: Sakshi's body movement |
 | Gemini onward | not started | | | follow the procedure below |
 
 Not in git on purpose: `out/`, `work/`, `cast/` (renders, option sheets) and voice tracks that contain original meme audio. Rebuild a voice track with the video's `build_voices.py`.
 
 ### Procedure for the next rashi (what worked on Taurus, in order, each step gated)
 1. **Facts first.** Search Lahiri dates for the rashi's Moon sign: Shani, Guru (incl. retro hops), Rahu-Ketu (5 Dec 2026 change), the rashi lord's vakri periods, Sade Sati / dhaiya. Count houses from the Moon sign. Report them to the owner with a script plan before building anything.
-2. **Script** with the script-to-video skill, saved as `videos/<slug>/SCRIPT.md` (facts, engine, film lines with their need, memes, numbered lines, cards, risks, review log). Shape since 25 Nov: 2026 complaint → bargains where every "yes" carries the honest 2027 **catch** (problem) → Vishnu ji's calm remedy → verdict → **Sakshi's pitch** ("ye poori rashi ka hisaab hai; aapki kundli mein kitna asar, wo personal 2027 report batayegi; healing se taiyari abhi") → owner's CTA. Fresh script reviewer (script doctor + facts + sensitivity + urgency), 8/10 to pass, then the owner's ok. Aim ~370–390 spoken words (≈130 s).
+2. **Script** with the script-to-video skill, saved as `videos/<slug>/SCRIPT.md` (facts, engine, film lines with their need, memes, numbered lines, cards, risks, review log). Shape since 25 Nov: 2026 complaint → bargains where every "yes" carries the honest 2027 **catch** (problem) → Vishnu ji's calm remedy → verdict → **Sakshi's pitch** ("ye poori rashi ka hisaab hai; aapki kundli mein kitna asar, wo personal 2027 report batayegi; healing se taiyari abhi") → owner's CTA. Fresh script reviewer (script doctor + facts + sensitivity + urgency), 8/10 to pass, then the owner's ok. Length: the owner wants **90 s max** (26 Nov 2026 14:45 IST): about 270–280 spoken words at ~3.4 words/s with ElevenLabs, 2 memes.
 3. **Scene: 3 options** in the silkscreen poster theme at a location never used before in the series (Aries hill road, Taurus Jaipur Hawa Mahal; no crop fields). Render each with the portal, Vishnu ji and Sakshi in place at phone size. Owner picks; then redraw the pick in detail (real landmark research, small life, Lemo technique) and move it into `poster.js` as `plate<Rashi>`.
 4. **Cast:** none to build (Vishnu ji + Sakshi). Ask before adding any animal.
 5. **Voices (free first):** copy `videos/molbhav-taurus/build_voices.py`, replace `SCRIPT` (id, who, roman text, Devanagari text, gap; meme rows from the catalog). Kokoro models: `work/tts/` (download `kokoro-v1.0.onnx` + `voices-v1.0.bin` from github.com/thewh1teagle/kokoro-onnx releases, `pip install kokoro-onnx soundfile --break-system-packages`). Run it, then `python3 tools/new_video.py <slug>`. Transcribe every line (faster-whisper small, pad 0.5–1 s) before building on it.
@@ -186,6 +186,7 @@ Not in git on purpose: `out/`, `work/`, `cast/` (renders, option sheets) and voi
 - Sakshi's hands: chubby toon hands; on a raised open palm the thumb is on the upper, body side. Check with a close-up render (`work/palm_test2.js` pattern) before trusting it.
 
 **Voices with ElevenLabs (when the owner allows credits)**
+- Taurus v4 (26 Nov): `videos/molbhav-taurus/build_voices_el.py` is the current template. Price first with `creative_generate_speech(estimate_only=true)`, one flow (`creative_create_flow`), `generations_count: 1`, download from `creative_get_generations` → `full_res_url`. Cut points from faster-whisper word times (silences inside lines are as long as between lines); verify every line by transcript and fix edges that leak a word into the next line. Tempo 1.17–1.19 gave 3.4 words/s and 88.7 s.
 - Ask the cap first. Cost is about 1 credit per character INCLUDING tags. Use paragraph breaks instead of `[pause]` tags between lines to save credits.
 - One `eleven_v4` take per speaker for all their lines (Samar `KWuQEGxZQtpWhRutt6g6` = Vishnu ji, Lalita `hHyd5z9VxRT4YKoDwPRl` = Sakshi), one emotion tag where the delivery changes, Devanagari text. Aries cost 1,915 credits.
 - `videos/molbhav-aries/build_voices_el.py` cuts the takes per line (word timestamps, snapped to the quietest point), sets per-line tempo (target 2.8–3.5 words/s), inserts a 0.4–0.5 s beat before punchlines, then splices memes and writes the usual cue sheet / script.json / captions.

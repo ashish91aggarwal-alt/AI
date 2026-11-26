@@ -1,8 +1,8 @@
-# Taurus (Vrishabh) mol-bhaav reel: where it stands (26 Nov 2026, 14:35 IST)
+# Taurus (Vrishabh) mol-bhaav reel: where it stands (26 Nov 2026, 15:30 IST)
 
-- **Script:** `SCRIPT.md` = v3.1 (2027 catches: Rahu 9th, Guru 3rd Jan–Jun, Shani 12th from 3 Jun; Sakshi's personal-report + healing pitch; owner's CTA). Script review 8/10 PASS, owner ok 26 Nov 13:37 IST. Old version: `SCRIPT_v2.3.md`.
-- **Scene:** Jaipur, Hawa Mahal across Sireh Deori Bazaar, morning (`poster.js` → `plateTaurus`). Locked. No milestone, no bull.
-- **Cut:** `cartoon-puppet/cuts/molbhav-taurus.js` (v3.1 beat ids). Latest video `out/molbhav-taurus_v3.mp4` (129 s, not in git) = full render + spliced fixes (segments 3–15, 46–58, 69–87, 103–129 s via `tools/seg_render.js` + `tools/splice.sh`). Gate 3 PASS 8/10, log in `reviews/`.
-- **Voices:** free Kokoro (`build_voices.py`). The timed track with meme clips is not in git: rebuild with `python3 build_voices.py ../../cartoon-puppet/work/tts/kokoro-v1.0.onnx ../../cartoon-puppet/work/tts/voices-v1.0.bin`, then delete `captions.json` and run `python3 tools/new_video.py molbhav-taurus`.
-- **Next:** owner's feedback. ElevenLabs only with an owner credit cap (Aries used 1,915). Polish left: small body movement for Sakshi.
-- **Before posting:** the link must offer the personal 2027 report and healing booking; the dates in the guide must match the reel.
+- **Script:** `SCRIPT.md` = v4 (90 s: 2027 catches Rahu 9th, Guru 3rd Jan–Jun, Shani 12th from 3 Jun; Sakshi's personal-report + healing pitch; owner's CTA). Review PASS. Older: `SCRIPT_v3.1.md` (129 s), `SCRIPT_v2.3.md`.
+- **Scene:** Jaipur, Hawa Mahal across Sireh Deori Bazaar (`poster.js` → `plateTaurus`). Locked. No milestone, no bull.
+- **Voices:** ElevenLabs eleven_v4, one take per speaker (Samar = Vishnu ji, Lalita = Sakshi), 1,583 credits, takes in `voices/takes/v4_*.mp3`, prompts `voices/takes/*_v4.txt`. Build: `python3 build_voices_el.py`, then `rm captions.json` and `python3 ../../cartoon-puppet/tools/new_video.py molbhav-taurus`, then recompute the music in `video.json`.
+- **Cut:** `cartoon-puppet/cuts/molbhav-taurus.js` (v4 beats). Latest video `out/molbhav-taurus_v4.mp4` (88.7 s, not in git): full render + spliced polish (11–20 s, 61–68 s). Gate 3 PASS 8/10 (`reviews/`).
+- **Next:** owner sign-off. Polish left: Sakshi's body movement.
+- **Before posting:** the link must offer the personal 2027 report and healing booking; guide dates must match the reel.

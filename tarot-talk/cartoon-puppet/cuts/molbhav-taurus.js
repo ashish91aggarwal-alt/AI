@@ -117,7 +117,7 @@ const KFK = [[0, { lid: 0, browUp: 0.6, lookX: -22, lookY: -16, mouth: 'o' }],  
   [at('V14', 0.6), { ...LISTEN, lid: 0.25, lidLow: 0.2, browSad: 0.4 }],
   [B('hey_bhagwan').start, { lid: 0.3, browSad: 1, ...BUBBLE, mouth: 'pout' }], [B('hey_bhagwan').end, LISTEN],
   [at('V15', 0.6), { ...LISTEN, lid: 0.15, browUp: 0.3 }],
-  [at('V16', 0.3), { ...LISTEN, lid: 0, browUp: 0.7, mouth: 'o', blush: 0.6 }], [at('V16', 0.7), { ...LISTEN, lid: 0.45, lidLow: 0.4, mouth: 'grin', blush: 0.8 }],
+  [at('V16', 0.3), { ...LISTEN, lid: 0, browUp: 0.7, mouth: 'o', blush: 0.6 }], [at('V16', 0.7), { ...LISTEN, lid: 0.2, lidLow: 0.25, lookX: -18, mouth: 'smile', blush: 0.8 }],
   [FLY_OUT[0] - 0.3, { ...LISTEN, lookX: -24, lookY: -18 }],
   [B('K17').start, { lid: 0.15, lidLow: 0.15, lookX: 0, lookY: 0, mouth: 'smile', tilt: 3 }], [at('K17', 0.9), { lid: 0.15, lookX: 0, lookY: 0, happy: 1, blush: 0.8, tilt: 4 }],
   [B('K18').start, { lid: 0.12, lidLow: 0.2, lookX: 0, lookY: 0, happy: 0, browUp: 0.2, mouth: 'smile', tilt: -2 }],    // the pitch: sincere, to camera
@@ -211,8 +211,8 @@ function cards(t) {
   // hook (first 2.4 s): works on mute
   o += card(t, 0.05, 2.4, 'VRISHABH KI FILE', TS(mid, CY0 + 150, '2026 ka dard', 40, '#8e1b2c') + TS(mid, CY0 + 215, '2027 ka', 34) + TS(mid, CY0 + 275, 'MOL-BHAAV', 50, '#3b4fa8'), 320);
   // 2026, house by house, each row on its word
-  o += card(t, at('V04', 0.06), B('V04').end + 0.15, '2026 KI FILE',
-    row(at('V04', 0.1), CY0 + 170, 'SHANI · 11th ghar', 'labh ✓', '#1f5a35') + row(at('V04', 0.52), CY0+ 260, 'RAHU · 10th ghar', 'office ka shor') + row(at('V04', 0.8), CY0 + 350, 'KETU · 4th ghar', 'ghar ka sukoon'), 420, { foot: VED });
+  o += card(t, at('V04', 0.06), B('V06').start + 0.35, '2026 KI FILE',
+    row(at('V04', 0.1), CY0 + 170, 'SHANI · 11th ghar', 'labh ✓', '#1f5a35') + row(at('V04', 0.52), CY0+ 260, 'RAHU · 10th ghar', 'office ka shor') + row(at('V04', 0.72), CY0 + 350, 'KETU · 4th ghar', 'ghar ka sukoon'), 420, { foot: VED });
   // mol-bhaav starts
   o += card(t, at('V06', 0.45), at('K07', 0.05) - 0.17, 'MOL-BHAAV SHURU', icon.scale(t, mid, CY0 + 230), 380, { head: '#9fd0a8' });
   // demand 1: office → Rahu 10 → 9
