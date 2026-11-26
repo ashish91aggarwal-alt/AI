@@ -139,11 +139,11 @@ Reviewer prompt that worked:
 - Every Vishnu ji pose in a cut goes through a kind-face filter (open lids, level raised brows, no 'sly'/'cat' mouth, no wink, small glance). See `kindV` in `cuts/molbhav-aries.js`.
 
 ## Mol-bhaav rashi series: what the owner taught us (24 Nov 2026, Aries reel final = `out/molbhav-aries_v10.mp4`, commit 42ab96f)
-### Status (updated 25 Nov 2026, 15:10 IST)
+### Status (updated 26 Nov 2026, 14:35 IST)
 | Rashi | Scene (locked) | Script | Cut | Next |
 |---|---|---|---|---|
 | Aries (Mesh) | hill road, `plateAries` | v13.2 | final `out/molbhav-aries_v10.mp4` (ElevenLabs, 1,915 credits) | posted/owner's call |
-| Taurus (Vrishabh) | Jaipur, Hawa Mahal across the bazaar, `plateTaurus` | **v3.1** `videos/molbhav-taurus/SCRIPT.md` (problems + report/healing pitch), review 8/10 PASS | rough cut `out/molbhav-taurus_v2.mp4` is the OLD v2.3 script (Gate 3 PASS 8/10, free Kokoro voices) | **waiting for the owner's ok on script v3.1**, then: re-voice (Kokoro), update the cut's beats and cards to v3.1 (V14/V15/V16, K17–K19 ids changed, rishte demand cut, pitch card + CTA card "Report + healing: link"), render, Gate 3, send. ElevenLabs only after the owner gives a credit cap. |
+| Taurus (Vrishabh) | Jaipur, Hawa Mahal across the bazaar, `plateTaurus` | **v3.1** `videos/molbhav-taurus/SCRIPT.md` (2027 catches + report/healing pitch), owner ok 26 Nov 13:37 IST, review 8/10 PASS | `out/molbhav-taurus_v3.mp4` (129 s, free Kokoro voices), Gate 3 PASS 8/10 (`videos/molbhav-taurus/reviews/`) | owner's feedback; then ElevenLabs voices only with a credit cap; polish: Sakshi's body movement |
 | Gemini onward | not started | | | follow the procedure below |
 
 Not in git on purpose: `out/`, `work/`, `cast/` (renders, option sheets) and voice tracks that contain original meme audio. Rebuild a voice track with the video's `build_voices.py`.

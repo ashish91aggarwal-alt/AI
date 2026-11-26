@@ -157,13 +157,13 @@ function fatFile(t) {   // the client's 2026 file: a fat rolled scroll floating 
 }
 function complaintScroll(t) {   // the long list, fully filled (owner: "list was long but not filled completely, take care")
   const t0 = B('V02').start, t1 = at('V04', 0.02); if (t < t0 || t > t1 + 0.3) return '';
-  const u = ease(clamp((t - t0) / 1.1)), H = 470 * u, out = 1 - clamp((t - t1) / 0.3);
+  const u = ease(clamp((t - t0) / 1.1)), H = 420 * u, out = 1 - clamp((t - t1) / 0.3);
   let o = `<g opacity="${out.toFixed(2)}"><defs><clipPath id="scr"><rect x="${CX0}" y="${CY0}" width="${CW}" height="${H.toFixed(1)}"/></clipPath></defs>`;
-  o += `<rect x="${CX0 + 8}" y="${CY0 + 10}" width="${CW}" height="${H.toFixed(1)}" fill="#2a1418" opacity="0.2"/><g clip-path="url(#scr)"><rect x="${CX0}" y="${CY0}" width="${CW}" height="470" fill="#fbf3e2" stroke="${INK}" stroke-width="6"/>`;
+  o += `<rect x="${CX0 + 8}" y="${CY0 + 10}" width="${CW}" height="${H.toFixed(1)}" fill="#2a1418" opacity="0.2"/><g clip-path="url(#scr)"><rect x="${CX0}" y="${CY0}" width="${CW}" height="420" fill="#fbf3e2" stroke="${INK}" stroke-width="6"/>`;
   o += TS(CX0 + CW / 2, CY0 + 50, 'VRISHABH 2026', 34, '#8e1b2c');
   const hot = [at('K03', 0.12), at('K03', 0.6), at('K03', 0.3)];
-  ROWS.forEach((r, i) => { const y = CY0 + 96 + i * 31, h = i < 2 && t > hot[i];
-    o += `<circle cx="${CX0 + 28}" cy="${y - 8}" r="5" fill="${h ? '#b3262e' : INK}"/>` + TS(CX0 + 44, y, r, 26, h ? '#b3262e' : INK, 'start') + (h ? `<path d="M${CX0 + 40} ${y + 6} q90 ${-4} ${r.length * 12} 0" stroke="#b3262e" stroke-width="4" fill="none"/>` : ''); });
+  ROWS.forEach((r, i) => { const y = CY0 + 92 + i * 27, h = i < 2 && t > hot[i];
+    o += `<circle cx="${CX0 + 28}" cy="${y - 8}" r="5" fill="${h ? '#b3262e' : INK}"/>` + TS(CX0 + 44, y, r, 23, h ? '#b3262e' : INK, 'start') + (h ? `<path d="M${CX0 + 40} ${y + 6} q90 ${-4} ${r.length * 12} 0" stroke="#b3262e" stroke-width="4" fill="none"/>` : ''); });
   o += `</g><rect x="${CX0 - 6}" y="${CY0 - 14}" width="${CW + 12}" height="26" rx="12" fill="#b5502a" stroke="${INK}" stroke-width="5"/><rect x="${CX0 - 6}" y="${(CY0 + H - 12).toFixed(1)}" width="${CW + 12}" height="26" rx="12" fill="#b5502a" stroke="${INK}" stroke-width="5"/></g>`;
   return o;
 }
@@ -235,7 +235,7 @@ function cards(t) {
   o += card(t, B('K09').start, at('V10', 0.05), 'DEMAND 2', TS(mid, CY0 + 170, 'Ghar mein', 44) + TS(mid, CY0 + 230, 'sukoon', 44, '#3b4fa8'), 300, { head: '#9fd0a8' });
   const ketuX = t < at('V10', 0.1) ? 0 : ease(clamp((t - at('V10', 0.1)) / 0.8)) * 120;
   o += card(t, at('V10', 0.06), B('ruko_zara').start - 0.05, '4th GHAR · GHAR', icon.house(mid - 40, CY0 + 182, 0.8) + icon.ketu(mid + 30 + ketuX * 0.3, CY0 + 135, 0.7) + (t > at('V10', 0.4) ? icon.guru(mid - 40, CY0 + 105, 0.7) : '') +
-    TS(mid, CY0 + 300, 'Ketu bahar: 5 Dec', 26) + (t > at('V10', 0.3) ? TS(mid, CY0 + 334, 'Guru 3rd: 25 Jan – 26 Jun', 21) + TS(mid, CY0 + 362, 'mehnat zyada, nateeja dheere', 19, '#b3262e') : '') + (t > at('V10', 0.8) ? TS(mid, CY0 + 392, 'Wapas 4th: 26 Jun–26 Nov 2027', 19, '#1f5a35') : ''), 440, { foot: VED, soft: true });
+    TS(mid, CY0 + 300, 'Ketu bahar: 5 Dec', 26) + (t > at('V10', 0.3) ? TS(mid, CY0 + 334, 'Guru 3rd: 25 Jan – 26 Jun', 21) + TS(mid, CY0 + 362, 'mehnat zyada, nateeja dheere', 19, '#b3262e') : '') + (t > at('V10', 0.8) ? TS(mid, CY0 + 392, 'Wapas 4th: 26 Jun–26 Nov 2027', 18, '#1f5a35') : ''), 440, { foot: VED, soft: true });
   // the Deewar list: "mere paas ghar hai, sukoon hai, Guru hain" + Vishnu ji's "aur maa bhi"
   const ticks = [['GHAR', 0.38], ['SUKOON', 0.62], ['GURU', 0.85]];
   o += card(t, B('K11').start, B('K13').start - 0.05, 'MERE PAAS…', ticks.map(([w, f], i) => t < at('K11', f) ? '' : TS(CX0 + 60, CY0 + 150 + i * 62, w + ' ✓', 34, INK, 'start')).join('') +
@@ -244,20 +244,20 @@ function cards(t) {
   // demand 4: move Sade Sati → Shani dev's department; the real dates
   o += card(t, B('K13').start, at('V14', 0.2), 'LAST DEMAND', TS(mid, CY0 + 170, 'Sade Sati', 44) + TS(mid, CY0 + 230, '1 saal aage?', 40, '#b3262e'), 300, { head: '#9fd0a8' });
   o += card(t, at('V14', 0.22), B('V14').end + 0.1, 'SADE SATI · PEHLA CHARAN',
-    row(at('V14', 0.26), CY0 + 160, 'SHURU', '3 June 2027') + row(at('V14', 0.42), CY0 + 240, '12th GHAR (maanyata)', 'kharche, neend, mann', INK, 24) + row(at('V14', 0.7), CY0 + 320, 'BREAK · 2027–28', '20 Oct – 23 Feb') + row(at('V14', 0.87), CY0 + 400, 'PHIR SE', '23 Feb 2028'), 460, { foot: VED, soft: true });
+    row(at('V14', 0.26), CY0 + 150, 'SHURU', '3 June 2027') + row(at('V14', 0.42), CY0 + 224, '12th GHAR (maanyata)', 'kharche, neend, mann', INK, 24) + row(at('V14', 0.7), CY0 + 298, 'BREAK · 2027–28', '20 Oct – 23 Feb') + row(at('V14', 0.87), CY0 + 372, 'PHIR SE', '23 Feb 2028'), 440, { foot: VED, soft: true });
   // the remedy: 12th house is expenses → save before June
   o += card(t, at('V15', 0.45), B('V16').start - 0.05, 'DARNA NAHI · JUNE SE PEHLE', TS(mid, CY0 + 170, 'commitment:', 32) + TS(mid, CY0 + 240, 'MEHNAT', 44, '#3b4fa8') + TS(mid, CY0 + 300, '+ BACHAT', 44, '#1f5a35'), 400, { foot: VED });
   // the gift: Venus not retrograde in 2027
   o += card(t, at('V16', 0.15), B('K17').start - 0.05, 'TOHFA · SHUKRA 2027', `<circle cx="${mid}" cy="${CY0 + 170}" r="70" fill="url(#halo)"/><circle cx="${mid}" cy="${CY0 + 170}" r="42" fill="#f6e7c8" stroke="${INK}" stroke-width="5"/>` + TS(mid, CY0 + 290, 'vakri nahi ✓', 40, '#1f5a35'), 380, { foot: VED, head: '#f2b84b' });
   // the wakeel's verdict: every row filled, each on its word, plus the bonus row
-  const rows = [['OFFICE', 'kam shor', 0.25], ['GURU', 'thoda sabar', 0.42], ['SADE SATI', 'bachat + mehnat', 0.62], ['BONUS', 'Shukra ka tohfa', 0.74]];
+  const rows = [['OFFICE', 'kam shor', 0.21], ['GURU', 'thoda sabar', 0.37], ['SADE SATI', 'bachat + mehnat', 0.57], ['BONUS', 'Shukra ka tohfa', 0.7]];
   o += card(t, B('K17').start, B('K18').start - 0.05, 'FAISLA', rows.map(([a, b, f], i) => TS(CX0 + 24, CY0 + 110 + i * 54, a, 22, '#8e1b2c', 'start') + (t < at('K17', f) ? `<path d="M${CX0 + 24} ${CY0 + 136 + i * 54} H${CX0 + 300}" stroke="#c9b9a2" stroke-width="4" stroke-dasharray="10 8"/>` : TS(CX0 + 24, CY0 + 136 + i * 54, b, 27, INK, 'start'))).join('') + stamp(t, at('K17', 0.84), mid + 32, CY0 + 360, 'TOUCHWOOD!', '#1f5a35', 26, -5), 415, { head: '#f2b84b', soft: true });
   // the pitch (Sakshi only): rashi-level vs your own kundli; report + healing before June
   const kundli = (x, y, w) => `<rect x="${x - w / 2}" y="${y - w / 2}" width="${w}" height="${w}" fill="#fff6dc" stroke="${INK}" stroke-width="5"/><path d="M${x - w / 2} ${y - w / 2} L${x + w / 2} ${y + w / 2} M${x + w / 2} ${y - w / 2} L${x - w / 2} ${y + w / 2} M${x} ${y - w / 2} L${x + w / 2} ${y} L${x} ${y + w / 2} L${x - w / 2} ${y} Z" stroke="#b3262e" stroke-width="3" fill="none"/>`;
   o += card(t, at('K18', 0.05), B('K19').start - 0.05, 'AAPKI KUNDLI, AAPKA 2027', kundli(mid, CY0 + 160, 120) +
-    (t > at('K18', 0.5) ? TS(CX0 + 30, CY0 + 290, '✓ Personal 2027 report', 28, INK, 'start') : '') + (t > at('K18', 0.82) ? TS(CX0 + 30, CY0 + 340, '✓ Healing: aaj se taiyari', 26, '#1f5a35', 'start') : ''), 400, { head: '#f2b84b' });
+    (t > at('K18', 0.5) ? TS(CX0 + 24, CY0 + 282, '✓ Personal 2027 report', 22, INK, 'start') : '') + (t > at('K18', 0.82) ? TS(CX0 + 24, CY0 + 326, '✓ Healing: aaj se taiyari', 22, '#1f5a35', 'start') : ''), 400, { head: '#f2b84b' });
   // CTA: link-based (owner rule), tied back to the offer
-  o += card(t, B('K19').start + 0.1, DUR, 'MANIFEST 2027', icon.link(mid, CY0 + 150) + TS(mid, CY0 + 235, 'Report + healing: link', 28, '#3b4fa8') + icon.send(mid - 135, CY0 + 300) + TS(mid + 35, CY0 + 312, 'Usko bhejo', 28), 360, { head: '#9fd0a8' });
+  o += card(t, B('K19').start + 0.1, DUR, 'MANIFEST 2027', icon.link(mid, CY0 + 150) + TS(mid, CY0 + 222, 'Report + healing:', 26, '#3b4fa8') + TS(mid, CY0 + 252, 'link pe', 24, '#3b4fa8') + icon.send(mid - 118, CY0 + 300) + TS(mid + 35, CY0 + 312, 'Usko bhejo', 28), 360, { head: '#9fd0a8' });
   return o;
 }
 
