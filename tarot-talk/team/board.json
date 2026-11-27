@@ -1,5 +1,5 @@
 {
- "built": "2026-11-27T10:10:59Z",
+ "built": "2026-11-27T10:11:02Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -72,10 +72,10 @@
   },
   {
    "role": "production",
-   "doing": "Taurus v4 (88.7 s, ElevenLabs) passed Gate 3, sent to owner",
-   "next": "owner sign-off",
+   "doing": "Gemini mol-bhaav: facts + script v1 (office drama, Vishnu ji roasts Gemini while writing 2027)",
+   "next": "script review, owner ok, then 3 scene options",
    "blocked": "",
-   "updated_at": "2026-11-27T10:10:59Z",
+   "updated_at": "2026-11-27T10:11:02Z",
    "compactions": 0,
    "session": {
     "link": null,
