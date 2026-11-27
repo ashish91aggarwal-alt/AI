@@ -1,7 +1,7 @@
 {
  "role": "production",
- "doing": "Gemini mol-bhaav: facts + script v1 (office drama, Vishnu ji roasts Gemini while writing 2027)",
- "next": "script review, owner ok, then 3 scene options",
+ "doing": "Gemini: script v1.1 + 3 scene drafts sent to owner",
+ "next": "owner picks scene + script ok, then detail the plate and voices",
  "blocked": "",
  "outbox": [
   {
@@ -21,5 +21,5 @@
   "link": null,
   "started": "2026-11-27T10:10:18Z"
  },
- "updated_at": "2026-11-27T10:11:02Z"
+ "updated_at": "2026-11-27T10:18:15Z"
 }

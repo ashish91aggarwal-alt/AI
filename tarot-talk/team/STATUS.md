@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 27 Nov 15:41 IST | Gemini mol-bhaav: facts + script v1 (office drama, Vishnu ji roasts Gemini while writing 2027) | script review, owner ok, then 3 scene options | - |
+| `production` | 27 Nov 15:48 IST | Gemini: script v1.1 + 3 scene drafts sent to owner | owner picks scene + script ok, then detail the plate and voices | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
