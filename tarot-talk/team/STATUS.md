@@ -8,7 +8,7 @@ _Built by `team/team.py build`. Do not edit by hand._
 |---|---|---|---|---|
 | `abroad` | 22 Nov 20:20 IST | Abroad plan: lane choice, reach path from India, where the audience lives | Waiting for the owner's answers on the abroad plan | - |
 | `lead` | 22 Nov 20:13 IST | Moved all Tarot Talk work into one folder and set up the team system | Owner: git pull, reinstall the desktop app, and update the scheduled task's text | - |
-| `production` | 26 Nov 15:19 IST | Taurus v4 (88.7 s, ElevenLabs) passed Gate 3, sent to owner | owner sign-off | - |
+| `production` | 27 Nov 15:40 IST | Taurus v4 (88.7 s, ElevenLabs) passed Gate 3, sent to owner | owner sign-off | - |
 | `research` | 22 Nov 20:20 IST | Four research helpers and the outside-pages scout ran on 21 Nov; results reviewed and on the dashboard | Daily 9:04 pm run: study the 15 queued transcripts, India checks, more pages abroad | - |
 
 ## Tasks
