@@ -1,5 +1,5 @@
 {
- "built": "2026-11-27T10:10:18Z",
+ "built": "2026-11-27T10:10:21Z",
  "roles": {
   "lead": {
    "about": "Plans and decides for Tarot Talk: priorities, which ideas get made, strategy funnel, owner questions, and the dashboard and desktop app code.",
@@ -75,7 +75,7 @@
    "doing": "Taurus v4 (88.7 s, ElevenLabs) passed Gate 3, sent to owner",
    "next": "owner sign-off",
    "blocked": "",
-   "updated_at": "2026-11-27T10:10:18Z",
+   "updated_at": "2026-11-27T10:10:21Z",
    "compactions": 0,
    "session": {
     "link": null,
